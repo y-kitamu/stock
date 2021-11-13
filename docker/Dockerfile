@@ -38,6 +38,7 @@ RUN git clone https://github.com/kpe/jupyterlab-emacskeys.git &&\
     npm install &&\
     npm run build &&\
     jupyter labextension link .
+RUN jupyter lab build
 
 # requirements
 WORKDIR /tmp
