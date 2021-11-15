@@ -2,6 +2,7 @@ FROM python:latest
 
 ENV DEBIAN_FRONTEND=noninteractive
 
+USER root
 # add user
 ARG user
 ARG uid
@@ -14,7 +15,7 @@ RUN mkdir /var/run/sshd
 RUN sed -ri 's/^#?PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config
 RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
 
-# apt
+# node
 RUN apt-get update && apt-get upgrade -y &&\
     apt-get install git curl gcc nodejs npm sudo cmake build-essential -y
 # npm
@@ -40,11 +41,16 @@ RUN git clone https://github.com/kpe/jupyterlab-emacskeys.git &&\
     jupyter labextension link .
 RUN jupyter lab build
 
+# remove old version python
+RUN rm -rf /usr/bin/python* && cp /usr/local/bin/python* /usr/bin/
+
 # requirements
 WORKDIR /tmp
 ADD requirements_dev.txt /tmp
-RUN pip3 install -r requirements_dev.txt && rm requirements_dev.txt
+RUN pip install -r requirements_dev.txt && rm requirements_dev.txt
+RUN apt-get install -y libjpeg-dev
 ADD requirements.txt /tmp
-RUN pip3 install -r requirements.txt && rm requirements.txt
+RUN pip install -r requirements.txt && rm requirements.txt
+WORKDIR /
 
 ENV DEBIAN_FRONTEND=newt

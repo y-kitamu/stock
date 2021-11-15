@@ -1,11 +1,18 @@
 version: '3'
 
 services:
-  jupyter_lab:
+  chrome_driver:
+    image: selenium/standalone-chrome:latest
+    ports:
+      - "4545:4444" #
+    restart: always
+
+  stock_dev:
     hostname: stock_dev
     build:
       context: ..
       dockerfile: docker/Dockerfile
+      shm_size: "2g"
       args:
         user: ${UESR}
         uid: ${USER_ID}
@@ -17,9 +24,10 @@ services:
       - /etc/passwd:/etc/passwd
       - /etc/shadow:/etc/shadow
       - /etc/group:/etc/group
-      - ../:${HOME}/work/stock
+      - ../:${HOME}/work/Projects/stock
       - ./.jupyter:${HOME}/.jupyter
+      - ${HOME}/.ssh:${HOME}/.ssh
     environment:
       USER_NAME: ${USER}
-    entrypoint: ${HOME}/work/stock/docker/entrypoint.sh
+    entrypoint: ${HOME}/work/Projects/stock/docker/entrypoint.sh
     restart: always
