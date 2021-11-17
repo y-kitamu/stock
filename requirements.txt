@@ -3,3 +3,6 @@ beautifulsoup4==4.9.0
 matplotlib==3.4.3
 selenium==4.0.0
 fake_useragent==0.1.11
+google-auth==2.3.3
+google-auth-httplib2==2.0.1
+google-api-python-client==2.31.0
