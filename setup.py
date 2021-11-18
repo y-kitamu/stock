@@ -1,15 +1,13 @@
 #!/usr/bin/env python
 """The setup script."""
+import os
 
-from setuptools import setup, find_packages
+from setuptools import find_packages, setup
 
 with open('README.md') as readme_file:
     readme = readme_file.read()
 
-with open('HISTORY.rst') as history_file:
-    history = history_file.read()
-
-init = os.path.join(os.path.dirname(__file__), "src", "{0}", "__init__.py")
+init = os.path.join(os.path.dirname(__file__), "stock", "__init__.py")
 version_line = list(filter(lambda l: l.startswith("__version__"), open(init)))[0]
 VERSION = ".".join(["{{}}".format(x) for x in eval(version_line.split("=")[-1])])
 
@@ -37,7 +35,7 @@ setup(
     description="Analyze stock market",
     install_requires=load_requirements("requirements.txt"),
     license="MIT license",
-    long_description=readme + '\n\n' + history,
+    long_description=readme,
     include_package_data=True,
     keywords='stock',
     name='stock',

@@ -4,13 +4,15 @@ Author : Yusuke Kitamura
 Create Date : 2021-11-14 16:11:52
 Copyright (c) 2019- Yusuke Kitamura <ymyk6602@gmail.com>
 """
-import csv
 import datetime
 import sys
+import traceback
 from io import StringIO
-from typing import Any, List, Tuple
+from pathlib import Path
+from typing import Any, List, Optional
 
 import numpy as np
+import pandas as pd
 import requests
 from fake_useragent import UserAgent
 
@@ -25,7 +27,7 @@ class Downloader:
 
     # period1=0&period2=1636761600&interval=1d&events=history&includeAdjustedClose=true
 
-    def __init__(self, timeout: int = 100):
+    def __init__(self, save_dir: Path, timeout: int = 100):
         start_epoch: int = 0
         day_sec = 24 * 60 * 60
         end_epoch: int = int(datetime.datetime.today().timestamp()) // day_sec * day_sec
@@ -39,9 +41,11 @@ class Downloader:
         ua = UserAgent()
         self.header = {'User-Agent': ua.chrome}
         self.timeout = 100
+        self.save_dir = save_dir
+        self.save_dir.mkdir(parents=True, exist_ok=True)
 
-    def download(self, code: str) -> Tuple[bool, List]:
-        """指定した証券codeの株式dataをdownloadする
+    def download(self, code: str, is_save: bool = True) -> Optional[pd.DataFrame]:
+        """指定した証券codeの株式dataをdownload、保存する
         Args:
            code (str) : stock code
          Return:
@@ -52,30 +56,17 @@ class Downloader:
         url = self.URL_TEMPLATE.format(code, url_param_str)
         try:
             res = requests.get(url, timeout=self.timeout)
-        except Exception as e:
-            tb = sys.exc_info()[2]
-            stock.logger.error("Failed to get data from {}. message: {}".format(
-                url, e.with_traceback(tb)))
-            return (False, [])
+        except Exception:
+            stock.logger.error("Failed to download data from {}\n{}".format(url, traceback.format_exc()))
+            return None
 
         if not res.status_code == requests.codes.ok:
             stock.logger.warning("Status = {}. Failed to get data from {}".format(res.status_code, url))
-            return (False, [])
+            return None
 
         with StringIO(res.text) as ss:
-            csv_reader = csv.reader(ss)
-            next(csv_reader)
-            rows = [process_row(row) for row in csv_reader]
-        return (True, rows)
+            df = pd.read_csv(ss)
 
-
-def to_float(val_str: str) -> float:
-    try:
-        val = float(val_str)
-        return val
-    except:
-        return np.nan
-
-
-def process_row(row: List[str]) -> List[Any]:
-    return [row[0]] + [to_float(val) for val in row[1:]]
+        if is_save:
+            df.to_csv(self.save_dir / f"{code}.csv")
+        return df
