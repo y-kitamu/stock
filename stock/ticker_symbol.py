@@ -11,7 +11,7 @@ from pathlib import Path
 from stock import PROJECT_ROOT, logger
 
 
-def getLatestCodes(input_dir: Path, output_csv: Path) -> bool:
+def getLatestTickerSymbols(input_dir: Path, output_csv: Path) -> bool:
     """`input_dir`内の最新のcsvから証券codeの情報を取得、保存する
     """
     try:
@@ -21,10 +21,10 @@ def getLatestCodes(input_dir: Path, output_csv: Path) -> bool:
         logger.error("Failed to find input csv file: {}/nasdaq_screener_*.csv.\n{}".format(
             input_dir, traceback.format_exc()))
         return False
-    return getUSMarketCodes(stock_file, etf_file, output_csv)
+    return getUSTickerSymbols(stock_file, etf_file, output_csv)
 
 
-def getUSMarketCodes(stock_csv: Path, etf_csv: Path, output_csv: Path) -> bool:
+def getUSTickerSymbols(stock_csv: Path, etf_csv: Path, output_csv: Path) -> bool:
     """Nasdaqのhome pageからdownloadしたstock listのcsvとetf listのcsvから
     証券codeを抜き出す。
     https://www.nasdaq.com/market-activity/stocks/screener
@@ -57,4 +57,4 @@ def getUSMarketCodes(stock_csv: Path, etf_csv: Path, output_csv: Path) -> bool:
 if __name__ == "__main__":
     input_dir = PROJECT_ROOT / "data"
     output_csv = PROJECT_ROOT / "data" / "code.csv"
-    getLatestCodes(input_dir, output_csv)
+    getLatestTickerSymbols(input_dir, output_csv)
