@@ -75,7 +75,7 @@ class Downloader:
         sleep = self.interval - (now - self.last_time)
         if sleep > 0:
             time.sleep(sleep)
-        self.last_time = now
+        self.last_time = self.last_time + self.interval
 
     def download(self, code: str, is_save: bool = True) -> Optional[pd.DataFrame]:
         """指定した証券codeの株式dataをdownload、保存する
