@@ -47,5 +47,5 @@ build:
 
 collect_data: build # collect stock data from api
 	python stock/downloader.py
-	dvc add ./data
+	dvc add data
 	dvc push
