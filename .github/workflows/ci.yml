@@ -9,6 +9,7 @@
 name: Update Stock Data
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: '17 22 * * *'
 
