@@ -41,6 +41,7 @@ class Downloader:
         }
         ua = UserAgent()
         self.header = {'User-Agent': ua.chrome}
+        logger.info(f"user agent = {ua.chrome}")
         self.timeout = timeout
         self.interval = interval  #
         self.last_time = time.time() - self.interval  # 最後にdataをdownloadした(http requestをした)日時
@@ -91,8 +92,8 @@ class Downloader:
         url = self.URL_TEMPLATE.format(code=code, url_params=url_param_str)
         try:
             res = requests.get(url, headers=self.header, timeout=self.timeout)
-        except Exception:
-            stock.logger.error("Failed to download data from {}\n{}".format(url, traceback.format_exc()))
+        except Exception as exc:
+            stock.logger.error("Failed to download data from {}".format(url), exc_info=exc)
             return None
 
         if not res.status_code == requests.codes.ok:

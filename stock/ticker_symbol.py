@@ -17,9 +17,8 @@ def getLatestTickerSymbols(input_dir: Path, output_csv: Path) -> bool:
     try:
         stock_file = sorted(input_dir.glob("nasdaq_screener_*.csv"))[-1]
         etf_file = sorted(input_dir.glob("nasdaq_etf_screener_*.csv"))[-1]
-    except IndexError:
-        logger.error("Failed to find input csv file: {}/nasdaq_screener_*.csv.\n{}".format(
-            input_dir, traceback.format_exc()))
+    except IndexError as exc:
+        logger.error(f"Failed to find input csv file: {input_dir}/nasdaq_screener_*.csv.", exc_info=exc)
         return False
     return getUSTickerSymbols(stock_file, etf_file, output_csv)
 
