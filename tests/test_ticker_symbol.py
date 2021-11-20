@@ -35,7 +35,7 @@ def test_getUSTickerSymbols3(tmp_path):
     output_csv = tmp_path / "code.csv"
 
     res = getUSTickerSymbols(stock_csv, etf_csv, output_csv)
-    assert res == False
+    assert not res
     assert not output_csv.exists()
 
 

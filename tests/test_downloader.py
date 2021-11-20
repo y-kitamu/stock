@@ -86,12 +86,12 @@ def test_donwloader_get_all(tmp_path, mocker):
     interval = 2
     dl = Downloader(tmp_path, timeout=timeout, interval=interval)
     res = dl.get_all(tmp_path / "foo.csv")
-    assert res == False
+    assert not res
 
     csv_path = stock.PROJECT_ROOT / "data" / "code.csv"
     mocker.patch.object(stock.downloader.Downloader, "download", new=stub_downloader_download)
     res = dl.get_all(csv_path)
-    assert res == True
+    assert not res
 
 
 def stub_requests_get(url, headers=None, timeout=None):
