@@ -25,7 +25,7 @@ clean-test: ## remove test and coverage artifacts
 build-test:
 	pip install -r requirements.txt
 	pip install -r requirements_dev.txt
-	pip install .
+	pip install -e .
 	dvc remote modify gdr --local gdrive_service_account_json_file_path cert/stockdata-332410-704571e36294.json
 	dvc pull
 
