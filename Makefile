@@ -40,6 +40,7 @@ test: build-test ## run tests quickly with the default Python
 coverage: build-test ## check code coverage quickly with the default Python
 	coverage run --source stock -m pytest
 	coverage report -m
+	coverage xml
 
 build:
 	pip install -r requirements.txt
