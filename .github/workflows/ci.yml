@@ -6,7 +6,7 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Upload Python Package
+name: Update Stock Data
 
 on:
   schedule:
@@ -22,6 +22,10 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: '3.9.5'
+    - name: Decrypt large secret
+      run: source ./cert/decrypt.sh
+      env:
+        LARGE_SECRET_PASSPHRASE: ${{ secrets.LARGE_SECRET_PASSPHRASE }}
     - name: collect data
       run: make collect_data
     - name: git setting
