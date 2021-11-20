@@ -2,6 +2,8 @@
 
 clean: clean-build clean-pyc clean-test ## remove all build, test, coverage and Python artifacts
 
+root_dir := $(dir $(realpath $(firstword $(MAKEFILE_LIST))))
+
 clean-build: ## remove build artifacts
 	rm -fr build/
 	rm -fr dist/
@@ -46,6 +48,6 @@ build:
 	dvc pull
 
 collect_data: build # collect stock data from api
-	python stock/downloader.py
+	python stock/downloader.py -s ${root_dir}/data/stock -t ${root_dir}/data/code.csv
 	dvc add data
 	dvc push
