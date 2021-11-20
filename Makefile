@@ -36,3 +36,11 @@ test: build-test ## run tests quickly with the default Python
 coverage: build-test ## check code coverage quickly with the default Python
 	coverage run --source stock -m pytest
 	coverage report -m
+
+build:
+	pip install -r requirements.txt
+	dvc pull
+
+collect_data: build # collect stock data from api
+	python stock/downloader.py
+	dvc add .
