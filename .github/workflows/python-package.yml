@@ -24,6 +24,10 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: ${{ matrix.python-version }}
+    - name: Decrypt large secret
+      run: source ./cert/decrypt.sh
+      env:
+        LARGE_SECRET_PASSPHRASE: ${{ secrets.LARGE_SECRET_PASSPHRASE }}        
     - name: Lint with flake8
       run: make lint
     - name: Test with pytest
