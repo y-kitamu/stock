@@ -42,5 +42,7 @@ build:
 	dvc pull
 
 collect_data: build # collect stock data from api
+	dvc remote modify myremote --local gdrive_service_account_json_file_path cert/stockdata-332410-704571e36294.json
 	python stock/downloader.py
 	dvc add .
+	dvc push
