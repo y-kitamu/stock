@@ -5,14 +5,12 @@ Create Date : 2021-11-14 16:11:52
 Copyright (c) 2019- Yusuke Kitamura <ymyk6602@gmail.com>
 """
 import csv
-import sys
 import time
 import traceback
 from io import StringIO
 from pathlib import Path
-from typing import Any, List, Optional
+from typing import Optional
 
-import numpy as np
 import pandas as pd
 import requests
 from fake_useragent import UserAgent
@@ -49,13 +47,15 @@ class Downloader:
         self.save_dir = save_dir
         self.save_dir.mkdir(parents=True, exist_ok=True)
 
-    def get_all(self, csv_path: Path):
+    def get_all(self, csv_path: Path) -> bool:
         """csv_pathに記載されているすべての証券codeの株式dataを取得する
         Args:
             csv_path (Path) : csv file in which ticker symbols are listed.
         Output:
             (csv files) : csv files of stock historical data saved in `self.save_dir`
         """
+        if not csv_path.exists():
+            return False
         with open(csv_path, 'rt') as f:
             csv_reader = csv.reader(f)
             next(csv_reader)
@@ -66,6 +66,7 @@ class Downloader:
             if res is not None:
                 logger.info("[{} / {}] Download success : ticker symbol = {}, save file = {}".format(
                     i, len(ticker_symbols), symbol, self.save_dir / f"{symbol}.csv"))
+        return True
 
     def tick(self):
         """`self.last_time`からの経過時間が`self.interval`以下の場合、

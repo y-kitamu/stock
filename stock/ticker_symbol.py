@@ -41,10 +41,14 @@ def getUSTickerSymbols(stock_csv: Path, etf_csv: Path, output_csv: Path) -> bool
     for csv_path in [stock_csv, etf_csv]:
         if not csv_path.exists():
             logger.warning(f"Input csv file does not exist : {csv_path}")
+            continue
         with open(csv_path, 'r') as f:
             csv_reader = csv.reader(f)
             next(csv_reader)
             code_list += [[row[0]] for row in csv_reader if "Data as of" not in row[0]]
+    if len(code_list) == 0:
+        logger.error("No ticker symbol is found.")
+        return False
 
     with open(output_csv, 'w') as f:
         csv_writer = csv.writer(f)
