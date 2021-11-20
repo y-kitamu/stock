@@ -23,7 +23,7 @@ clean-test: ## remove test and coverage artifacts
 build-test:
 	pip install -r requirements.txt
 	pip install -r requirements_dev.txt
-	dvc remote modify myremote --local gdrive_service_account_json_file_path cert/stockdata-332410-704571e36294.json
+	dvc remote modify gdr --local gdrive_service_account_json_file_path cert/stockdata-332410-704571e36294.json
 	dvc pull
 
 lint/flake8: build-test ## check style with flake8
@@ -40,7 +40,7 @@ coverage: build-test ## check code coverage quickly with the default Python
 
 build:
 	pip install -r requirements.txt
-	dvc remote modify myremote --local gdrive_service_account_json_file_path cert/stockdata-332410-704571e36294.json
+	dvc remote modify gdr --local gdrive_service_account_json_file_path cert/stockdata-332410-704571e36294.json
 	dvc pull
 
 collect_data: build # collect stock data from api
