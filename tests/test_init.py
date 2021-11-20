@@ -8,6 +8,8 @@ from stock import enable_logging_to_file, enable_logging_to_stdout, logger
 
 
 def test_enable_logging_to_file(tmp_path):
+    default_level = logger.level
+    logger.setLevel(0)
     out1 = tmp_path / "test1.log"
     enable_logging_to_file(str(out1), remove_old_handler=False)
     logger.debug("test message1")
@@ -38,3 +40,4 @@ def test_enable_logging_to_file(tmp_path):
         assert message in f.read()
 
     enable_logging_to_stdout()
+    logger.setLevel(default_level)
