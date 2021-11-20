@@ -32,6 +32,8 @@ jobs:
       run: make lint
     - name: Test with pytest
       run: make test
+    - name: Coverage
+      run: make coverage      
     - name: "Upload coverage to Codecov"
       uses: codecov/codecov-action@v2
       with:
