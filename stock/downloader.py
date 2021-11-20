@@ -39,14 +39,15 @@ class Downloader:
             "events": "history",
             "includeAdjustedClose": "true",
         }
-        ua = UserAgent()
-        self.header = {'User-Agent': ua.chrome}
-        logger.info(f"user agent = {ua.chrome}")
         self.timeout = timeout
         self.interval = interval  #
         self.last_time = time.time() - self.interval  # 最後にdataをdownloadした(http requestをした)日時
         self.save_dir = save_dir
         self.save_dir.mkdir(parents=True, exist_ok=True)
+
+    def get_random_user_agent(self):
+        ua = UserAgent()
+        return ua.random
 
     def get_all(self, csv_path: Path) -> bool:
         """csv_pathに記載されているすべての証券codeの株式dataを取得する
@@ -95,10 +96,11 @@ class Downloader:
         if not self.is_need_update(code):
             return pd.read_csv(self.get_output_csv_path(code))
         self.tick()
+        header = {'User-Agent': self.get_random_user_agent()}
         url_param_str = "&".join(["{}={}".format(key, val) for key, val in self.url_params.items()])
         url = self.URL_TEMPLATE.format(code=code, url_params=url_param_str)
         try:
-            res = requests.get(url, headers=self.header, timeout=self.timeout)
+            res = requests.get(url, headers=header, timeout=self.timeout)
         except Exception as exc:
             stock.logger.error("Failed to download data from {}".format(url), exc_info=exc)
             return None

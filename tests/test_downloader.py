@@ -27,7 +27,6 @@ def test_downloader_init(tmp_path):
     assert dl.interval == interval
     assert dl.save_dir == tmp_path
     assert dl.save_dir.exists()
-    assert 'User-Agent' in dl.header
 
 
 def test_downloader_tick(tmp_path):
@@ -62,6 +61,26 @@ def test_downloader_dowenload(tmp_path, mocker):
     assert df["baz"][2] == 400
 
     assert (tmp_path / "A.csv").exists()
+
+
+def test_downloader_download_no_need(tmp_path, mocker):
+    timeout = 10
+    interval = 2
+    dl = Downloader(tmp_path, timeout=timeout, interval=interval)
+
+    mocker.patch.object(stock.downloader.Downloader,
+                        "is_need_update",
+                        new=stub_downloader_is_need_update2)
+    df = dl.download("A", is_save=False)
+    assert df["foo"][0] == "2021-11-20"
+    assert df["foo"][1] == "2021-11-21"
+    assert df["foo"][2] == "2021-11-22"
+    assert df["bar"][0] == 100
+    assert df["bar"][1] == 200
+    assert df["bar"][2] == 300
+    assert df["baz"][0] == 200
+    assert df["baz"][1] == 300
+    assert df["baz"][2] == 400
 
 
 def test_downloader_download_fail(tmp_path, mocker):
@@ -153,3 +172,10 @@ def stub_downloader_download(obj, ticker_symbol, is_save=True):
 
 def stub_downloader_is_need_update(obj, code):
     return True
+
+
+def stub_downloader_is_need_update2(obj, code):
+    path = obj.get_output_csv_path(code)
+    with open(path, 'w') as f:
+        f.write(RESPONSE_TEXT.decode())
+    return False
