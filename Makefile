@@ -51,3 +51,6 @@ collect_data: build # collect stock data from api
 	python stock/downloader.py -s ${root_dir}/data/stock -t ${root_dir}/data/code.csv
 	dvc add data
 	dvc push
+
+build-docker:
+	./docker/build_docker.sh
