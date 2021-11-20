@@ -43,9 +43,9 @@ build:
 	pip install -r requirements.txt
 	pip install .
 	dvc remote modify gdr --local gdrive_service_account_json_file_path cert/stockdata-332410-704571e36294.json
-	dvc pull
+# dvc pull
 
 collect_data: build # collect stock data from api
 	python stock/downloader.py
-	dvc add .
+	dvc add ./data
 	dvc push
