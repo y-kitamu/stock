@@ -36,11 +36,11 @@ jobs:
     - name: Extract branch name
       shell: bash
       run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
-      id: extract_branch        
+      id: extract_branch
     - name: git commit
       run: |
         git fetch
         git merge origin/${{ steps.extract_branch.outputs.branch }}
         git add .
-        git commit -m "update dvc"
+        git commit -m "update dvc" --allow-empty
         git push origin ${{ steps.extract_branch.outputs.branch }}

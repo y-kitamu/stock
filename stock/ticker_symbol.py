@@ -5,7 +5,6 @@ Create Date : 2021-11-18 21:08:22
 Copyright (c) 2019- Yusuke Kitamura <ymyk6602@gmail.com>
 """
 import csv
-import traceback
 from pathlib import Path
 
 from stock import PROJECT_ROOT, logger

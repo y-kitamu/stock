@@ -6,7 +6,6 @@ Copyright (c) 2019- Yusuke Kitamura <ymyk6602@gmail.com>
 """
 import csv
 import time
-import traceback
 from io import StringIO
 from pathlib import Path
 from typing import Optional
@@ -56,12 +55,14 @@ class Downloader:
             (csv files) : csv files of stock historical data saved in `self.save_dir`
         """
         if not csv_path.exists():
+            logger.warning(f"Ticker symbol csv does not exist : {csv_path}")
             return False
         with open(csv_path, 'rt') as f:
             csv_reader = csv.reader(f)
             next(csv_reader)
             ticker_symbols = [row[0] for row in csv_reader]
 
+        logger.info("Number of tickers = {}".format(len(ticker_symbols)))
         for i, symbol in enumerate(ticker_symbols):
             res = self.download(symbol, is_save=True)
             if res is not None:
