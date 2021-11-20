@@ -6,6 +6,7 @@ Copyright (c) 2019- Yusuke Kitamura <ymyk6602@gmail.com>
 """
 import csv
 import time
+from datetime import date, timedelta
 from io import StringIO
 from pathlib import Path
 from typing import Optional
@@ -80,6 +81,9 @@ class Downloader:
             time.sleep(sleep)
         self.last_time = now + sleep
 
+    def get_output_csv_path(self, code: str) -> Path:
+        return self.save_dir / f"{code}.csv"
+
     def download(self, code: str, is_save: bool = True) -> Optional[pd.DataFrame]:
         """指定した証券codeの株式dataをdownload、保存する
         Args:
@@ -88,6 +92,8 @@ class Downloader:
            (bool) : Return True if download is success, else False.
            (List) : stock data. [Date, Open, High, Low, Close, Adj Close, Volume]
         """
+        if not self.is_need_update(code):
+            return pd.read_csv(self.get_output_csv_path(code))
         self.tick()
         url_param_str = "&".join(["{}={}".format(key, val) for key, val in self.url_params.items()])
         url = self.URL_TEMPLATE.format(code=code, url_params=url_param_str)
@@ -105,8 +111,19 @@ class Downloader:
             df = pd.read_csv(ss)
 
         if is_save:
-            df.to_csv(self.save_dir / f"{code}.csv")
+            df.to_csv(self.get_output_csv_path(code))
         return df
+
+    def is_need_update(self, code: str) -> bool:
+        csv_path = self.get_output_csv_path(code)
+        if not csv_path.exists():
+            return True
+
+        today = date.today()
+        latest = today - timedelta(days=max(0, today.weekday() - 4))
+        latest_str = latest.strftime("%Y-%m-%d")
+        df = pd.read_csv(str(csv_path))
+        return latest_str not in df["Date"].unique()
 
 
 if __name__ == "__main__":

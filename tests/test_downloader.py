@@ -4,6 +4,8 @@ Author : Yusuke Kitamura
 Create Date : 2021-11-20 10:18:58
 Copyright (c) 2019- Yusuke Kitamura <ymyk6602@gmail.com>
 """
+from datetime import date, timedelta
+
 import requests
 import stock
 from requests.models import Response
@@ -45,6 +47,9 @@ def test_downloader_dowenload(tmp_path, mocker):
     dl = Downloader(tmp_path, timeout=timeout, interval=interval)
 
     mocker.patch.object(stock.downloader.requests, "get", new=stub_requests_get)
+    mocker.patch.object(stock.downloader.Downloader,
+                        "is_need_update",
+                        new=stub_downloader_is_need_update)
     df = dl.download("A", is_save=True)
     assert df["foo"][0] == "2021-11-20"
     assert df["foo"][1] == "2021-11-21"
@@ -65,6 +70,9 @@ def test_downloader_download_fail(tmp_path, mocker):
     dl = Downloader(tmp_path, timeout=timeout, interval=interval)
 
     mocker.patch.object(stock.downloader.requests, "get", new=stub_requests_get_fail)
+    mocker.patch.object(stock.downloader.Downloader,
+                        "is_need_update",
+                        new=stub_downloader_is_need_update)
     df = dl.download("A", is_save=True)
     assert df is None
     assert not (tmp_path / "A.csv").exists()
@@ -76,6 +84,9 @@ def test_downloader_download_error(tmp_path, mocker):
     dl = Downloader(tmp_path, timeout=timeout, interval=interval)
 
     mocker.patch.object(stock.downloader.requests, "get", new=stub_requests_get_error)
+    mocker.patch.object(stock.downloader.Downloader,
+                        "is_need_update",
+                        new=stub_downloader_is_need_update)
     df = dl.download("A", is_save=True)
     assert df is None
     assert not (tmp_path / "A.csv").exists()
@@ -94,6 +105,27 @@ def test_donwloader_get_all(tmp_path, mocker):
     res = dl.get_all(csv_path)
     stock.logger.setLevel(0)
     assert res
+
+
+def test_downloader_is_need_update(tmp_path):
+    timeout = 10
+    interval = 2
+    dl = Downloader(tmp_path, timeout=timeout, interval=interval)
+
+    code = "foo"
+    assert dl.is_need_update(code)
+
+    csv_path = tmp_path / f"{code}.csv"
+    with open(csv_path, 'w') as f:
+        f.write(",Date,Foo\n")
+    assert dl.is_need_update(code)
+
+    today = date.today()
+    latest = today - timedelta(days=max(0, today.weekday() - 4))
+    latest_str = latest.strftime("%Y-%m-%d")
+    with open(csv_path, 'a') as f:
+        f.write(f"1,{latest_str},")
+    assert not dl.is_need_update(code)
 
 
 def stub_requests_get(url, headers=None, timeout=None):
@@ -116,4 +148,8 @@ def stub_requests_get_error(url, headers=None, timeout=None):
 
 
 def stub_downloader_download(obj, ticker_symbol, is_save=True):
+    return True
+
+
+def stub_downloader_is_need_update(obj, code):
     return True
