@@ -135,7 +135,7 @@ if __name__ == "__main__":
     parser.add_argument("-s", "--save_dir", default=str(PROJECT_ROOT / "data" / "stock"))
     parser.add_argument("-t", "--ticker_symbol_csv", default=str(PROJECT_ROOT / "data" / "code.csv"))
     parser.add_argument("--timeout", default=int(100), type=int)
-    parser.add_argument("--interval", default=int(1), type=int)
+    parser.add_argument("--interval", default=int(2), type=int)
 
     args = parser.parse_args()
 
