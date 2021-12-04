@@ -6,7 +6,6 @@ Copyright (c) 2019- Yusuke Kitamura <ymyk6602@gmail.com>
 """
 from pathlib import Path
 
-import pytest
 import stock
 from googleapiclient.discovery import build
 from oauth2client.service_account import ServiceAccountCredentials
@@ -18,7 +17,7 @@ def test_get_service(tmp_path):
     try:
         stock.gdr.get_service(test_path)
         assert False
-    except:
+    except Exception:
         assert True
 
     try:
@@ -58,7 +57,7 @@ def test_download(tmp_path):
         stock.gdr.download(str(tmp_path), tmp_path)
     except GDRException:
         assert True
-    except:
+    except Exception:
         assert False
 
 

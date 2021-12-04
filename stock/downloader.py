@@ -142,6 +142,8 @@ if __name__ == "__main__":
     args = parser.parse_args()
     save_dir = Path(args.save_dir)
 
+    PROJECT_ROOT = save_dir.parents[1]
+
     # download old data from gdrive
     zip_file = stock.gdr.download(STOCK_DATA_FILENAME, PROJECT_ROOT)
     stock.zip.unzip(zip_file, save_dir.parent)
