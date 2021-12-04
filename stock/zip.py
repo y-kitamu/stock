@@ -8,7 +8,6 @@ import zipfile
 from pathlib import Path
 
 from stock import PROJECT_ROOT, logger
-from stock.downloader import STOCK_DATA_FILENAME
 
 
 def zip_directory(zip_path: Path, src_path: Path):
@@ -39,6 +38,7 @@ if __name__ == "__main__":
     import argparse
 
     import stock
+    STOCK_DATA_FILENAME = "stock_data.zip"
 
     parser = argparse.ArgumentParser()
     parser.add_argument("-s", "--save_dir", default=str(PROJECT_ROOT / "data" / "stock"))
