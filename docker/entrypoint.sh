@@ -4,6 +4,7 @@ function run_as_user() {
     jupyter lab --ip='*' --port=5000 --no-browser --NotebookApp.token='' --notebook-dir=/home/`id -n -u`/work
 }
 
+cd ${PROJECT_ROOT} && pip install -e .
 # start sshd
 /usr/sbin/sshd
 # start jupyter

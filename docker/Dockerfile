@@ -51,6 +51,7 @@ RUN pip install -r requirements_dev.txt && rm requirements_dev.txt
 RUN apt-get install -y libjpeg-dev
 ADD requirements.txt /tmp
 RUN pip install -r requirements.txt && rm requirements.txt
-WORKDIR /
 
 ENV DEBIAN_FRONTEND=newt
+
+WORKDIR /
