@@ -46,7 +46,6 @@ build:
 
 collect_data: build # collect stock data from api
 	python stock/downloader.py -s ${root_dir}/data/stock -t ${root_dir}/data/code.csv
-	python stock/uploader.py -r ${root_dir}
 
 build-docker:
 	./docker/build_docker.sh
