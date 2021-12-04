@@ -7,7 +7,8 @@ Copyright (c) 2019- Yusuke Kitamura <ymyk6602@gmail.com>
 import zipfile
 from pathlib import Path
 
-from stock import logger
+from stock import PROJECT_ROOT, logger
+from stock.downloader import STOCK_DATA_FILENAME
 
 
 def zip_directory(zip_path: Path, src_path: Path):
@@ -32,3 +33,17 @@ def unzip(zip_path: Path, output_path: Path):
     output_path.mkdir(exist_ok=True, parents=True)
     with zipfile.ZipFile(zip_path, 'r') as f:
         f.extractall(output_path)
+
+
+if __name__ == "__main__":
+    import argparse
+
+    import stock
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-s", "--save_dir", default=str(PROJECT_ROOT / "data" / "stock"))
+    args = parser.parse_args()
+    save_dir = Path(args.save_dir)
+
+    zip_file = stock.gdr.download(STOCK_DATA_FILENAME, save_dir.parents[1])
+    unzip(zip_file, save_dir.parent)

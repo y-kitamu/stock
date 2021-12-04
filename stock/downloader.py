@@ -143,7 +143,7 @@ if __name__ == "__main__":
     save_dir = Path(args.save_dir)
 
     # download old data from gdrive
-    zip_file = stock.gdr.download(STOCK_DATA_FILENAME, PROJECT_ROOT)
+    zip_file = stock.gdr.download(STOCK_DATA_FILENAME, save_dir.parents[1])
     stock.zip.unzip(zip_file, save_dir.parent)
 
     # download stock data from yahoo finance
