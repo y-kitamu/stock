@@ -26,8 +26,6 @@ build-test:
 	pip install -r requirements.txt
 	pip install -r requirements_dev.txt
 	pip install -e .
-	dvc remote modify gdr --local gdrive_service_account_json_file_path cert/stockdata-332410-704571e36294.json
-	dvc pull
 
 lint/flake8: build-test ## check style with flake8
 	flake8 stock tests
@@ -45,13 +43,10 @@ coverage: build-test ## check code coverage quickly with the default Python
 build:
 	pip install -r requirements.txt
 	pip install .
-	dvc remote modify gdr --local gdrive_service_account_json_file_path cert/stockdata-332410-704571e36294.json
-	dvc pull
 
 collect_data: build # collect stock data from api
 	python stock/downloader.py -s ${root_dir}/data/stock -t ${root_dir}/data/code.csv
-	dvc add data
-	dvc push
+	python stock/uploader.py -r ${root_dir}
 
 build-docker:
 	./docker/build_docker.sh

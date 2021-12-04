@@ -78,3 +78,4 @@ def enable_logging_to_file(filename: str,
 enable_logging_to_stdout()
 
 from . import downloader  # noqa: E402 F401
+from . import gdr, zip

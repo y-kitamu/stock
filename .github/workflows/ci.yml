@@ -29,18 +29,18 @@ jobs:
         LARGE_SECRET_PASSPHRASE: ${{ secrets.LARGE_SECRET_PASSPHRASE }}
     - name: collect data
       run: make collect_data
-    - name: git setting
-      run: |
-        git config --local user.email "ymyk6602@gmail.com"
-        git config --local user.name "y-kitamu"
-    - name: Extract branch name
-      shell: bash
-      run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
-      id: extract_branch
-    - name: git commit
-      run: |
-        git fetch
-        git merge origin/${{ steps.extract_branch.outputs.branch }}
-        git add .
-        git commit -m "update dvc" --allow-empty
-        git push origin ${{ steps.extract_branch.outputs.branch }}
+    # - name: git setting
+    #   run: |
+    #     git config --local user.email "ymyk6602@gmail.com"
+    #     git config --local user.name "y-kitamu"
+    # - name: Extract branch name
+    #   shell: bash
+    #   run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+    #   id: extract_branch
+    # - name: git commit
+    #   run: |
+    #     git fetch
+    #     git merge origin/${{ steps.extract_branch.outputs.branch }}
+    #     git add .
+    #     git commit -m "update dvc" --allow-empty
+    #     git push origin ${{ steps.extract_branch.outputs.branch }}

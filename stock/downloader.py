@@ -131,6 +131,8 @@ class Downloader:
 if __name__ == "__main__":
     import argparse
 
+    STOCK_DATA_FILENAME = "stock_data.zip"
+
     parser = argparse.ArgumentParser()
     parser.add_argument("-s", "--save_dir", default=str(PROJECT_ROOT / "data" / "stock"))
     parser.add_argument("-t", "--ticker_symbol_csv", default=str(PROJECT_ROOT / "data" / "code.csv"))
@@ -138,6 +140,17 @@ if __name__ == "__main__":
     parser.add_argument("--interval", default=int(2), type=int)
 
     args = parser.parse_args()
+    save_dir = Path(args.save_dir)
 
-    downloader = Downloader(Path(args.save_dir), args.timeout, args.interval)
+    # download old data from gdrive
+    zip_file = stock.gdr.download(STOCK_DATA_FILENAME, PROJECT_ROOT)
+    stock.zip.unzip(zip_file, save_dir.parent)
+
+    # download stock data from yahoo finance
+    downloader = Downloader(save_dir, args.timeout, args.interval)
     downloader.get_all(Path(args.ticker_symbol_csv))
+
+    # upload
+    zip_path = PROJECT_ROOT / "stock_data.zip"
+    stock.zip.zip_directory(zip_path, save_dir.parent)
+    stock.gdr.upload(zip_path)
