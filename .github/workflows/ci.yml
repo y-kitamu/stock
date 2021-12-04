@@ -24,7 +24,7 @@ jobs:
       with:
         python-version: '3.9.5'
     - name: Decrypt large secret
-      run: source ./cert/decrypt.sh
+      run: source ./stock/cert/decrypt.sh
       env:
         LARGE_SECRET_PASSPHRASE: ${{ secrets.LARGE_SECRET_PASSPHRASE }}
     - name: collect data

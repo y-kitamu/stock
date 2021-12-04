@@ -7,9 +7,7 @@ from setuptools import find_packages, setup
 with open('README.md') as readme_file:
     readme = readme_file.read()
 
-init = os.path.join(os.path.dirname(__file__), "stock", "__init__.py")
-version_line = list(filter(lambda l: l.startswith("__version__"), open(init)))[0]
-VERSION = ".".join(["{{}}".format(x) for x in eval(version_line.split("=")[-1])])
+VERSION = "0.1.0"
 
 
 def load_requirements(f):
@@ -36,10 +34,10 @@ setup(
     install_requires=load_requirements("requirements.txt"),
     license="MIT license",
     long_description=readme,
-    include_package_data=True,
     keywords='stock',
     name='stock',
     packages=find_packages(include=['stock', 'stock.*']),
+    package_data={'stock': ['cert/stockdata-332410-704571e36294.json']},
     test_suite='tests',
     tests_require=load_requirements("requirements_dev.txt"),
     url='https://github.com/y-kitamu/stock',

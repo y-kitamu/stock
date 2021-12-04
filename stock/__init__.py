@@ -1,15 +1,9 @@
 """Top-level package for stock."""
-
-__author__ = "Yusuke Kitamura"
-__email__ = 'ymyk6602@gmail.com'
-__version__ = (0, 1, 0)
-
 import logging
 import os
 import sys
 from pathlib import Path
 
-VERSION = (1, 0, 0)
 PROJECT_ROOT = Path(__file__).parent.parent
 
 logging.getLogger().setLevel(logging.DEBUG)

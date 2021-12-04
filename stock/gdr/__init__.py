@@ -13,7 +13,7 @@ from oauth2client.service_account import ServiceAccountCredentials
 from stock import PROJECT_ROOT, logger
 
 SCOPES = ['https://www.googleapis.com/auth/drive']
-CERT_FILE = Path("cert") / "stockdata-332410-704571e36294.json"
+CERT_FILE = Path("stock") / "cert" / "stockdata-332410-704571e36294.json"
 STOCK_FOLDER_ID = "17KV7NK7DZA7MHLsuDG9VeV-lalizcE3I"
 
 
