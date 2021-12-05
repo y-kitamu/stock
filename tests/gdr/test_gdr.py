@@ -48,7 +48,7 @@ def test_upload_download_delete(tmp_path):
     assert down.read_text() == "content"
 
     # delete file
-    delete_ids = stock.gdr.delete_file(down.name)
+    delete_ids = stock.gdr.delete_file_by_name(down.name)
     assert fid in delete_ids
 
 

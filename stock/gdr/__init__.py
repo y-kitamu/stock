@@ -5,7 +5,7 @@ Create Date : 2021-12-04 17:03:27
 Copyright (c) 2019- Yusuke Kitamura <ymyk6602@gmail.com>
 """
 from pathlib import Path
-from typing import List
+from typing import List, Optional
 
 from googleapiclient.discovery import Resource, build
 from googleapiclient.http import MediaFileUpload, MediaIoBaseDownload
@@ -105,10 +105,12 @@ def download(fname: str, save_dir: Path) -> Path:
     return save_file
 
 
-def delete_file(fname: str) -> List[str]:
-    """Google Drive上のファイル名が`fname`と一致するファイルを削除する
+def delete_file_by_name(fname: str, dry_run=False) -> List[str]:
+    """Google Drive上のファイル名が`fname`と一致するファイルを削除する。
+    `dry_run` == Trueの場合、削除は実行せず、削除対象のidを収集する。
     Args:
         fname (str) : filename to be deleted.
+        dry_run (bool) :
     Return:
         (List[str]) : List of google drive file id which is deleted.
     """
@@ -124,13 +126,15 @@ def delete_file(fname: str) -> List[str]:
                 batch.add(service.files().delete(fileId=fid))
                 delete_ids.append(fid)
                 break
-    batch.execute()
+    if dry_run is False:
+        batch.execute()
     logger.info("Delete file of filename = {} from Google Drive".format(fname))
     return delete_ids
 
 
-def delete_all() -> List[str]:
-    """Google Drive上のすべてのファイルを削除する
+def delete_all(ids: Optional[List[str]] = None) -> List[str]:
+    """Google Drive上のすべてのファイルを削除する。
+    `ids`を指定した場合、`ids`に含まれているもののみ削除する。
     Return:
         (List[str]) : List of google drive file ids which is deleted.
     """
@@ -144,6 +148,8 @@ def delete_all() -> List[str]:
         batch = service.new_batch_http_request()
         for item in items:
             fid = item.get('id')
+            if ids is not None and fid not in ids:
+                continue
             batch.add(service.files().delete(fileId=fid))
             deleted_ids.append(fid)
         batch.execute()

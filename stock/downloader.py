@@ -147,10 +147,16 @@ if __name__ == "__main__":
     stock.zip.unzip(zip_file, save_dir.parents[1])
 
     # download stock data from yahoo finance
-    downloader = Downloader(save_dir, args.timeout, args.interval)
-    downloader.get_all(Path(args.ticker_symbol_csv))
+    # downloader = Downloader(save_dir, args.timeout, args.interval)
+    # downloader.get_all(Path(args.ticker_symbol_csv))
+
+    # search data on gdrive
+    delete_target = stock.gdr.delete_file_by_name("stock_data.zip", dry_run=True)
 
     # upload
     zip_path = save_dir.parents[1] / "stock_data.zip"
     stock.zip.zip_directory(zip_path, save_dir.parent)
     stock.gdr.upload(zip_path)
+
+    # delete old files
+    stock.gdr.delete_all(delete_target)
