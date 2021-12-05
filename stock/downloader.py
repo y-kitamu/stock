@@ -141,6 +141,8 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
     save_dir = Path(args.save_dir)
+    logger.info("save_dir = {}, save_dir.parents[0] = {}, save_dir.parents[1] = {}".format(
+        save_dir, save_dir.parents[0], save_dir.parents[1]))
 
     # download old data from gdrive
     zip_file = stock.gdr.download(STOCK_DATA_FILENAME, save_dir.parents[1])
@@ -151,6 +153,6 @@ if __name__ == "__main__":
     downloader.get_all(Path(args.ticker_symbol_csv))
 
     # upload
-    zip_path = PROJECT_ROOT / "stock_data.zip"
+    zip_path = save_dir.parents[1] / "stock_data.zip"
     stock.zip.zip_directory(zip_path, save_dir.parent)
     stock.gdr.upload(zip_path)

@@ -50,4 +50,4 @@ if __name__ == "__main__":
     save_dir = Path(args.save_dir)
 
     zip_file = stock.gdr.download(STOCK_DATA_FILENAME, save_dir.parents[1])
-    unzip(zip_file, save_dir.parent)
+    unzip(zip_file, save_dir.parents[1])
