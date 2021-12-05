@@ -5,6 +5,7 @@ Create Date : 2021-11-20 10:18:58
 Copyright (c) 2019- Yusuke Kitamura <ymyk6602@gmail.com>
 """
 from datetime import date, timedelta
+from pathlib import Path
 
 import requests
 import stock
@@ -119,7 +120,7 @@ def test_donwloader_get_all(tmp_path, mocker):
     assert not res
 
     stock.logger.setLevel(20)
-    csv_path = stock.PROJECT_ROOT / "data" / "code.csv"
+    csv_path = Path(__file__).parent.parent / "data" / "code.csv"
     mocker.patch.object(stock.downloader.Downloader, "download", new=stub_downloader_download)
     res = dl.get_all(csv_path)
     stock.logger.setLevel(0)
