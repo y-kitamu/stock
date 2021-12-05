@@ -7,7 +7,6 @@ Copyright (c) 2019- Yusuke Kitamura <ymyk6602@gmail.com>
 
 from pathlib import Path
 
-from stock import PROJECT_ROOT
 from stock.ticker_symbol import getLatestTickerSymbols, getUSTickerSymbols
 
 PROJECT_ROOT = Path(__file__).parent.parent
