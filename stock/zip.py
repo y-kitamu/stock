@@ -41,7 +41,6 @@ def unzip(zip_path: Path, output_path: Path):
 if __name__ == "__main__":
     import argparse
 
-    import stock
     STOCK_DATA_FILENAME = "stock_data.zip"
 
     parser = argparse.ArgumentParser()
