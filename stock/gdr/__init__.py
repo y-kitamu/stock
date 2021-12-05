@@ -78,7 +78,7 @@ def upload(file_path: Path, folder_id: str = STOCK_FOLDER_ID) -> str:
     }
     media = MediaFileUpload(str(file_path), resumable=True)
     result = service.files().create(body=file_metadata, media_body=media, fields='id').execute()
-    logger.info("Upload file of id = {} to Google Drive".format(result.get('id')))
+    logger.info("Upload file {} to Google Drive.  gid = {}".format(file_path, result.get('id')))
     return result.get('id')
 
 
