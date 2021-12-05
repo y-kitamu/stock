@@ -141,8 +141,6 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
     save_dir = Path(args.save_dir)
-    logger.info("save_dir = {}, save_dir.parents[0] = {}, save_dir.parents[1] = {}".format(
-        save_dir, save_dir.parents[0], save_dir.parents[1]))
 
     # download old data from gdrive
     zip_file = stock.gdr.download(STOCK_DATA_FILENAME, save_dir.parents[1])
