@@ -26,7 +26,7 @@ build-test:
 	pip install -r requirements.txt
 	pip install -r requirements_dev.txt
 	pip install -e .
-	python stock/zip.py -s ${root_dir}/data/stock
+	python stock/zip.py -s ${root_dir}data/stock
 
 lint/flake8: build-test ## check style with flake8
 	flake8 stock tests
@@ -46,7 +46,7 @@ build:
 	pip install .
 
 collect_data: build # collect stock data from api
-	python stock/downloader.py -s ${root_dir}/data/stock -t ${root_dir}/data/code.csv
+	python stock/downloader.py -s ${root_dir}data/stock -t ${root_dir}data/code.csv
 
 build-docker:
 	./docker/build_docker.sh

@@ -50,5 +50,4 @@ if __name__ == "__main__":
     save_dir = Path(args.save_dir)
 
     zip_file = stock.gdr.download(STOCK_DATA_FILENAME, save_dir.parents[1])
-    # zip_file = PROJECT_ROOT / STOCK_DATA_FILENAME
     unzip(zip_file, save_dir.parent)
