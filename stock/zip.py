@@ -41,6 +41,7 @@ def unzip(zip_path: Path, output_path: Path):
 if __name__ == "__main__":
     import argparse
 
+    import stock
     STOCK_DATA_FILENAME = "stock_data.zip"
 
     parser = argparse.ArgumentParser()
@@ -51,8 +52,8 @@ if __name__ == "__main__":
     logger.info("save_dir = {}, save_dir.parents[0] = {}, save_dir.parents[1] = {}".format(
         save_dir, save_dir.parents[0], save_dir.parents[1]))
 
-    # zip_file = stock.gdr.download(STOCK_DATA_FILENAME, save_dir.parents[1])
-    zip_file = save_dir.parents[1] / STOCK_DATA_FILENAME
+    zip_file = stock.gdr.download(STOCK_DATA_FILENAME, save_dir.parents[1])
+    # zip_file = save_dir.parents[1] / STOCK_DATA_FILENAME
     unzip(zip_file, save_dir.parents[1])
 
     # zip_path = save_dir.parents[1] / "stock_data.zip"
