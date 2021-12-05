@@ -6,7 +6,7 @@ Copyright (c) 2019- Yusuke Kitamura <ymyk6602@gmail.com>
 """
 import csv
 import time
-from datetime import date, timedelta
+from datetime import date, datetime, timedelta
 from io import StringIO
 from pathlib import Path
 from typing import Optional
@@ -157,6 +157,7 @@ if __name__ == "__main__":
     zip_path = save_dir.parents[1] / "stock_data.zip"
     stock.zip.zip_directory(zip_path, save_dir.parent)
     stock.gdr.upload(zip_path)
+    stock.gdr.spreadsheet.update_row_to_ss([datetime.today().strftime("%Y/%m/%d-%H:%M:%S")])
 
     # delete old files
     stock.gdr.delete_all(delete_target)

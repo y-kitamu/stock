@@ -16,8 +16,6 @@ SCOPES = ['https://www.googleapis.com/auth/drive']
 CERT_FILE = Path("stock") / "cert" / "stockdata-332410-704571e36294.json"
 STOCK_FOLDER_ID = "17KV7NK7DZA7MHLsuDG9VeV-lalizcE3I"
 
-from . import spreadsheet  # noqa: E402 F401
-
 
 class GDRException(Exception):
     """Google Drive APIに関連するerror
@@ -27,7 +25,10 @@ class GDRException(Exception):
         super().__init__(message)
 
 
-def get_service(project_root: Path = PROJECT_ROOT, scopes: List[str] = SCOPES) -> Resource:
+def get_service(project_root: Path = PROJECT_ROOT,
+                scopes: List[str] = SCOPES,
+                api_name: str = "drive",
+                api_ver: str = "v3") -> Resource:
     """Google APIを初期化、`Resource` objectを取得する
     Args:
         project_root (Path) :
@@ -39,7 +40,7 @@ def get_service(project_root: Path = PROJECT_ROOT, scopes: List[str] = SCOPES) -
     creds = ServiceAccountCredentials.from_json_keyfile_name(cert_file, scopes=scopes)
     if creds.invalid:
         raise GDRException("Credential is invalid : {}".format(cert_file))
-    service = build('drive', 'v3', credentials=creds)
+    service = build(api_name, api_ver, credentials=creds)
     return service
 
 
@@ -162,3 +163,6 @@ def delete_all(ids: Optional[List[str]] = None) -> List[str]:
             break
     logger.info("Finish delete files. Number of deleted files : {}".format(len(deleted_ids)))
     return deleted_ids
+
+
+from . import spreadsheet  # noqa: E402 F401
