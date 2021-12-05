@@ -12,9 +12,9 @@ from typing import List
 import bs4
 import requests
 from bs4 import BeautifulSoup
-from build.lib import stock
 from fake_useragent import UserAgent
 
+import stock
 from stock import PROJECT_ROOT, logger
 
 DEFAULT_URL = "https://www.bls.gov/news.release/cpi.htm"
