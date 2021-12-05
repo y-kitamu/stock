@@ -35,6 +35,7 @@ def unzip(zip_path: Path, output_path: Path):
     output_path.mkdir(exist_ok=True, parents=True)
     with zipfile.ZipFile(zip_path, 'r') as f:
         f.extractall(output_path)
+    logger.info("Unzip {} to {}".format(zip_path, output_path))
 
 
 if __name__ == "__main__":
