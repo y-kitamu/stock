@@ -56,6 +56,6 @@ if __name__ == "__main__":
     zip_file = save_dir.parents[1] / STOCK_DATA_FILENAME
     unzip(zip_file, save_dir.parents[1])
 
-    zip_path = save_dir.parents[1] / "stock_data.zip"
-    stock.zip.zip_directory(zip_path, save_dir.parent)
-    stock.gdr.upload(zip_path)
+    # zip_path = save_dir.parents[1] / "stock_data.zip"
+    # stock.zip.zip_directory(zip_path, save_dir.parent)
+    # stock.gdr.upload(zip_path)

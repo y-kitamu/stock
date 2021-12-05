@@ -16,6 +16,8 @@ SCOPES = ['https://www.googleapis.com/auth/drive']
 CERT_FILE = Path("stock") / "cert" / "stockdata-332410-704571e36294.json"
 STOCK_FOLDER_ID = "17KV7NK7DZA7MHLsuDG9VeV-lalizcE3I"
 
+from . import spreadsheet  # noqa: E402 F401
+
 
 class GDRException(Exception):
     """Google Drive APIに関連するerror
