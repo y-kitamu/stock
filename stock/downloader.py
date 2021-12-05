@@ -144,7 +144,7 @@ if __name__ == "__main__":
 
     # download old data from gdrive
     zip_file = stock.gdr.download(STOCK_DATA_FILENAME, save_dir.parents[1])
-    stock.zip.unzip(zip_file, save_dir.parent)
+    stock.zip.unzip(zip_file, save_dir.parents[1])
 
     # download stock data from yahoo finance
     downloader = Downloader(save_dir, args.timeout, args.interval)

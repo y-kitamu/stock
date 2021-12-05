@@ -29,6 +29,9 @@ def unzip(zip_path: Path, output_path: Path):
         zip_path (Path) : Path to zip file.
         output_path (Path) : Path to output directory.
     """
+    if not zip_path.exists():
+        logger.warning("Zip file does not exist : {}. Skip unzip".format(zip_path))
+        return
     output_path.mkdir(exist_ok=True, parents=True)
     with zipfile.ZipFile(zip_path, 'r') as f:
         f.extractall(output_path)
@@ -46,4 +49,5 @@ if __name__ == "__main__":
     save_dir = Path(args.save_dir)
 
     zip_file = stock.gdr.download(STOCK_DATA_FILENAME, save_dir.parents[1])
+    # zip_file = PROJECT_ROOT / STOCK_DATA_FILENAME
     unzip(zip_file, save_dir.parent)
