@@ -22,12 +22,13 @@ CPI_FOLDER_GID = "1K39G7mshxkj1LGWfxCuKIdjAGCUlZv-l"
 
 
 class CPIException(Exception):
-
     def __init__(self, msg):
         super().__init__(msg)
 
 
-def save_cpi_table_datas(save_dir: Path, url: str = DEFAULT_URL, overwrite: bool = False) -> List[Path]:
+def save_cpi_table_datas(
+    save_dir: Path, url: str = DEFAULT_URL, overwrite: bool = False
+) -> List[Path]:
     """Download Consumer Price Index from U.S. bls web site and save table data to `save_dir`.
     Args:
         save_dir (Path) : Path to directory in which download data is saved.
@@ -36,16 +37,21 @@ def save_cpi_table_datas(save_dir: Path, url: str = DEFAULT_URL, overwrite: bool
     Return:
         List[str] : list of saved files.
     """
-    logger.debug("save_dir = {}, url = {}, overwrite = {}".format(save_dir, url, overwrite))
+    logger.debug(
+        "save_dir = {}, url = {}, overwrite = {}".format(save_dir, url, overwrite)
+    )
     save_dir.mkdir(parents=True, exist_ok=True)
 
     # download html from `url`
     ua = UserAgent()
-    header = {'User-Agent': ua.chrome}
+    header = {"User-Agent": ua.chrome}
     res = requests.get(url, headers=header)
     if not res.status_code == 200:
-        raise CPIException("Failed to download html from {}. status code = {}".format(
-            url, res.status_code))
+        raise CPIException(
+            "Failed to download html from {}. status code = {}".format(
+                url, res.status_code
+            )
+        )
 
     # scrape html
     bs = BeautifulSoup(res.content, "html.parser")
@@ -158,10 +164,12 @@ if __name__ == "__main__":
     import argparse
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("-s",
-                        "--save_dir",
-                        help="Path to save dir",
-                        default=str(PROJECT_ROOT / "data" / "index" / "cpi"))
+    parser.add_argument(
+        "-s",
+        "--save_dir",
+        help="Path to save dir",
+        default=str(PROJECT_ROOT / "data" / "index" / "cpi"),
+    )
     parser.add_argument("-u", "--url", help="URL", default=DEFAULT_URL)
     args = parser.parse_args()
 
