@@ -8,7 +8,7 @@ authors = ["Kitamura <ymyk6602@gmail.com>"]
 python = "^3.8"
 requests = "^2.27.1"
 bs4 = "^0.0.1"
-pydantic = "^1.9.0"
+pydantic = "^1.9.1"
 
 [tool.poetry.dev-dependencies]
 
