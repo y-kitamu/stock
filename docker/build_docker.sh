@@ -9,6 +9,6 @@ USER=$(id -u ${USER_ID} -n)
 
 cd ${SCRIPT_DIR}
 # docker-compose build --build-arg uid=${USER_ID} --build-arg gid=${GROUP_ID} --build-arg user=${USER}
-docker-compose build --no-cache\
+docker-compose build\
                --build-arg uid=${USER_ID} --build-arg gid=${GROUP_ID} --build-arg user=${USER}
 cd ${CUR_DIR}

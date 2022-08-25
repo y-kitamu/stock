@@ -44,13 +44,10 @@ RUN jupyter lab build
 # remove old version python
 RUN rm -rf /usr/bin/python* && cp /usr/local/bin/python* /usr/bin/
 
-# requirements
-WORKDIR /tmp
-ADD requirements_dev.txt /tmp
-RUN pip install -r requirements_dev.txt && rm requirements_dev.txt
-RUN apt-get install -y libjpeg-dev
-ADD requirements.txt /tmp
-RUN pip install -r requirements.txt && rm requirements.txt
+# poetry
+USER ${user}
+RUN curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+USER root
 
 ENV DEBIAN_FRONTEND=newt
 

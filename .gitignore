@@ -105,3 +105,9 @@ ENV/
 .vscode/
 .idea/
 /data
+
+# poetry
+poetry.lock
+
+# project
+notebooks/

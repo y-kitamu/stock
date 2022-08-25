@@ -24,11 +24,11 @@ services:
       - /etc/passwd:/etc/passwd
       - /etc/shadow:/etc/shadow
       - /etc/group:/etc/group
-      - ${HOME}/work:${HOME}/work
+      - ../:${HOME}/work/stock
       - ./.jupyter:${HOME}/.jupyter
       - ${HOME}/.ssh:${HOME}/.ssh
     environment:
       USER_NAME: ${USER}
-      PROJECT_ROOT: ${HOME}/work/Projects/stock
-    entrypoint: ${HOME}/work/Projects/stock/docker/entrypoint.sh
+      PROJECT_ROOT: ${HOME}/work/stock
+    entrypoint: ${HOME}/work/stock/docker/entrypoint.sh
     restart: always
