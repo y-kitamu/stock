@@ -6,29 +6,29 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Update Stock Data
+# name: Update Stock Data
 
-on:
-  workflow_dispatch:
-  schedule:
-    - cron: '17 22 * * *'
+# on:
+#   workflow_dispatch:
+#   schedule:
+#     - cron: '17 22 * * *'
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
 
-    steps:
-    - uses: actions/checkout@v2
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.9.5'
-    - name: Decrypt large secret
-      run: source ./stock/cert/decrypt.sh
-      env:
-        LARGE_SECRET_PASSPHRASE: ${{ secrets.LARGE_SECRET_PASSPHRASE }}
-    - name: collect data
-      run: make collect_data
+#     steps:
+#     - uses: actions/checkout@v2
+#     - name: Set up Python
+#       uses: actions/setup-python@v2
+#       with:
+#         python-version: '3.9.5'
+#     - name: Decrypt large secret
+#       run: source ./stock/cert/decrypt.sh
+#       env:
+#         LARGE_SECRET_PASSPHRASE: ${{ secrets.LARGE_SECRET_PASSPHRASE }}
+#     - name: collect data
+#       run: make collect_data
     # - name: git setting
     #   run: |
     #     git config --local user.email "ymyk6602@gmail.com"
