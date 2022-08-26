@@ -4,22 +4,26 @@ Author : Yusuke Kitamura
 Create Date : 2022-05-06 14:34:49
 Copyright (c) 2019- Yusuke Kitamura <ymyk6602@gmail.com>
 """
+from typing import Type, TypeVar
+
 from sqlalchemy import Column, DateTime, Float, ForeignKey, Integer, String
 
 from .database import Base
+
+T = TypeVar('T', bound='BaseStatistics')
 
 
 class Company(Base):
     """Company statistics"""
 
-    __tablename__ = "base_companies"
+    __tablename__ = "companies"
     id = Column("id", Integer, primary_key=True)
     name = Column("name", String, nullable=False)
     code = Column("code", Integer, nullable=False)
 
 
 class BaseStockTimeSeries(Base):
-    """時系列株価データのmodel"""
+    """時系列株価データのmodel。企業/データ毎にsubclassにして使用する。"""
 
     __tablename__ = "base_stock_timeseries"
 
@@ -27,16 +31,19 @@ class BaseStockTimeSeries(Base):
     # データを取得した日時
     date = Column("date", DateTime, nullable=False)
     # 株価
-    value = Column("date", Float, nullable=False)
+    value = Column("value", Float, nullable=False)
 
 
 class BaseStatistics(Base):
-    """Yahoo Financeに記載されている統計を格納するmodel"""
+    """Yahoo Financeに記載されている統計を格納するmodel。企業毎にsubclassにして使用する。"""
 
     __tablename__ = "base_statistics"
 
     id = Column("id", Integer, primary_key=True)
+    # データを取得した日時
+    archive_date = Column("archive_date", DateTime, nullable=False)
 
+    # statistics
     market_cap = Column("market_cap", Float)
     enterprise_value = Column("enterprise_value", Float)
     trailing_pe = Column("trailing_pe", Float)
@@ -55,7 +62,7 @@ class BaseStatistics(Base):
     fiscal_year_ends = Column("fiscal_year", DateTime)
     most_recent_quarter = Column("most_recent_quarter", DateTime)
     profit_margin = Column("profit_margin", Float)
-    operating_margin = Column("operating_margin", Float)a
+    operating_margin = Column("operating_margin", Float)
     return_on_assets = Column("return_on_assets", Float)
     return_on_equity = Column("return_on_equity", Float)
     revenue = Column("revenue", Float)
@@ -74,6 +81,7 @@ class BaseStatistics(Base):
     book_value_per_share = Column("book_value_per_share", Float)
     operating_cash_flow = Column("operating_cash_flow", Float)
     levered_free_cash_flow = Column("levered_free_cash_flow", Float)
+
 
 
 def create_timeseries_table_for_company(company_name: str):
