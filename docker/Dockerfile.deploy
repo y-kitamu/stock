@@ -9,6 +9,9 @@ ARG uid
 ARG gid
 RUN groupadd --gid ${gid} ${user} && useradd -m --uid ${uid} --gid ${gid} ${user}
 
+# remove old version python
+RUN rm -rf /usr/bin/python* && cp /usr/local/bin/python* /usr/bin/
+
 # poetry
 USER ${user}
 RUN curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -

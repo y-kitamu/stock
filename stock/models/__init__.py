@@ -8,3 +8,5 @@ from .database import DATABASE
 from .models import Company, Statistics, StockTimeSeries
 
 DATABASE.create_all()
+
+from .crud import add_company, get_all_companies, get_company_stats
