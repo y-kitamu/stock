@@ -4,7 +4,8 @@ function run_as_user() {
     HOMEDIR=/home/`id -n -u`
     if [ -e ${HOMEDIR}/.poetry/bin/poetry ]; then
         export PATH=${HOMEDIR}/.poetry/bin${PATH:+:${PATH}}
-        ~/.poetry/bin/poetry config virtualenvs.in-project true
+        # To avoid conflict with host machine venv
+        ~/.poetry/bin/poetry config virtualenvs.in-project false
         # poetry config
         cd ${PROJECT_ROOT} && rm -rf .venv && poetry install
         poetry run ipython kernel install --user --name=stock_dev

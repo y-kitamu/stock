@@ -4,91 +4,182 @@ Author : Yusuke Kitamura
 Create Date : 2022-05-06 14:34:49
 Copyright (c) 2019- Yusuke Kitamura <ymyk6602@gmail.com>
 """
-from typing import Type, TypeVar
+import inspect
+from typing import List, Optional, Type, TypeVar
 
-from sqlalchemy import Column, DateTime, Float, ForeignKey, Integer, String
+from sqlalchemy import (Column, DateTime, Float, ForeignKey, Integer, String,
+                        select)
+from sqlalchemy.orm import Session, relationship
+from sqlalchemy.sql.schema import UniqueConstraint
 
+from .. import logger
 from .database import Base
 
-T = TypeVar('T', bound='BaseStatistics')
+T = TypeVar("T", bound="CrudMixin")
 
 
-class Company(Base):
+def _log_call_stack() -> None:
+    caller = inspect.stack()[2]
+    logger.exception(f"Called from {caller.filename}, line {caller.lineno}, in {caller.function}")
+
+
+class CrudMixin:
+    @classmethod
+    def create(cls: Type[T], db: Session, with_commit: bool = True, **kwargs) -> bool:
+        try:
+            db.add(cls(**kwargs))
+            if with_commit:
+                db.commit()
+        except Exception as e:
+            _log_call_stack()
+            return False
+        return True
+
+    @classmethod
+    def get(cls: Type[T], db: Session, with_for_update=False, **kwargs) -> Optional[T]:
+        try:
+            stmt = select(cls).filter_by(**kwargs)
+            db.execute(stmt)
+            if with_for_update:
+                stmt = stmt.with_for_update()
+            return db.execute(stmt).one()[0]
+        except:
+            _log_call_stack()
+        return None
+
+    @classmethod
+    def get_all(cls: Type[T], db: Session, with_for_update=False, **kwargs) -> List[T]:
+        try:
+            stmt = select(cls).filter_by(**kwargs)
+            db.execute(stmt)
+            if with_for_update:
+                stmt = stmt.with_for_update()
+            return [row[0] for row in db.execute(stmt)]
+        except:
+            _log_call_stack()
+        return []
+
+
+class Company(Base, CrudMixin):
     """Company statistics"""
 
     __tablename__ = "companies"
-    id = Column("id", Integer, primary_key=True)
-    name = Column("name", String, nullable=False)
-    code = Column("code", Integer, nullable=False)
+    code = Column("code", String, nullable=False, primary_key=True)
+
+    stocktimeseries = relationship("StockTimeSeries", back_populates="company")
+    statistics = relationship("Statistics", back_populates="company")
 
 
-class BaseStockTimeSeries(Base):
-    """時系列株価データのmodel。企業/データ毎にsubclassにして使用する。"""
+class StockTimeSeries(Base, CrudMixin):
+    """Stock time series"""
 
-    __tablename__ = "base_stock_timeseries"
-
-    id = Column("id", Integer, primary_key=True)
-    # データを取得した日時
-    date = Column("date", DateTime, nullable=False)
-    # 株価
-    value = Column("value", Float, nullable=False)
-
-
-class BaseStatistics(Base):
-    """Yahoo Financeに記載されている統計を格納するmodel。企業毎にsubclassにして使用する。"""
-
-    __tablename__ = "base_statistics"
+    __tablename__ = "stock_time_series"
+    __table_args__ = (UniqueConstraint("company_code", "timestamp", "interval"),)
 
     id = Column("id", Integer, primary_key=True)
-    # データを取得した日時
+    company_code = Column(String, ForeignKey("companies.code"), nullable=False)
+
+    timestamp = Column("timestamp", Integer, nullable=False)
+    interval = Column("interval", Float, nullable=False)
+    start = Column("start", Float, nullable=False)
+    end = Column("end", Float, nullable=False)
+    high = Column("high", Float, nullable=False)
+    low = Column("low", Float, nullable=False)
+    volume = Column("volume", Integer, nullable=False)
+
+    company = relationship("Company", back_populates="stocktimeseries")
+
+
+class Statistics(Base, CrudMixin):
+    """Statistics"""
+
+    __tablename__ = "statistics"
+
+    id = Column("id", Integer, primary_key=True)
     archive_date = Column("archive_date", DateTime, nullable=False)
+    company_code = Column(String, ForeignKey("companies.code"), nullable=False)
+
+    company = relationship("Company", back_populates="statistics")
 
     # statistics
-    market_cap = Column("market_cap", Float)
-    enterprise_value = Column("enterprise_value", Float)
-    trailing_pe = Column("trailing_pe", Float)
-    forward_pe = Column("forward_pe", Float)
-    peg = Column("peg", Float)
-    price_per_sales = Column("price_per_sales", Float)
-    price_per_book = Column("price_per_book", Float)
-    enterprise_value_per_revenue = Column("enterprise_value_per_revenue", Float)
-    enterprise_value_per_ebitda = Column("enterprise_value_per_ebitda", Float)
-    shares_outstanding = Column("shares_outstanding", Float)
-    shares_float = Column("shares_float", Float)
-    shares_short = Column("shares_short", Float)
-    forward_dividend = Column("forward_dividend", Float)
-    trailing_dividend = Column("trailing_dividend", Float)
-    dividend_date = Column("dividend_date", DateTime)
-    fiscal_year_ends = Column("fiscal_year", DateTime)
-    most_recent_quarter = Column("most_recent_quarter", DateTime)
-    profit_margin = Column("profit_margin", Float)
-    operating_margin = Column("operating_margin", Float)
-    return_on_assets = Column("return_on_assets", Float)
-    return_on_equity = Column("return_on_equity", Float)
-    revenue = Column("revenue", Float)
-    revenue_per_share = Column("revenue_per_share", Float)
-    qtrly_revenue_growth = Column("qtrly_revenue_growth", Float)
-    gross_profit = Column("gross_profit", Float)
-    ebitda = Column("ebitda", Float)
-    net_income = Column("net_income", Float)
-    diluted_eps = Column("diluted_eps", Float)
-    qtrly_earnings_growth = Column("qtrly_earnings_growth", Float)
-    total_cash = Column("total_cash", Float)
-    total_cache_per_share = Column("total_cache_per_share", Float)
-    total_debt = Column("total_debt", Float)
-    total_debt_per_equity = Column("total_debt_per_equity", Float)
-    current_ratio = Column("current_ratio", Float)
-    book_value_per_share = Column("book_value_per_share", Float)
-    operating_cash_flow = Column("operating_cash_flow", Float)
-    levered_free_cash_flow = Column("levered_free_cash_flow", Float)
-
-
-
-def create_timeseries_table_for_company(company_name: str):
-    """ """
-
-    class StockTimeSeries(Base):
-        __tablename__ = f"{company_name}_stock_timeseries"
-
-    class Statistics(Base):
-        __tablename__ = f"{company_name}_statistics"
+    FiftyTwoWeekChange = Column("52WeekChange", Float, nullable=True)
+    SandP52WeekChange = Column("SandP52WeekChange", Float, nullable=True)
+    annualHoldingsTurnover = Column("annualHoldingsTurnover", Float, nullable=True)
+    annualReportExpenseRatio = Column("annualReportExpenseRatio", Float, nullable=True)
+    beta = Column("beta", Float, nullable=True)
+    beta3Year = Column("beta3Year", Float, nullable=True)
+    bookValue = Column("bookValue", Float, nullable=True)
+    category = Column("category", Float, nullable=True)
+    dateShortInterest = Column("dateShortInterest", Float, nullable=True)
+    earningsQuarterlyGrowth = Column("earningsQuarterlyGrowth", Float, nullable=True)
+    enterpriseToEbitda = Column("enterpriseToEbitda", Float, nullable=True)
+    enterpriseToRevenue = Column("enterpriseToRevenue", Float, nullable=True)
+    enterpriseValue = Column("enterpriseValue", Float, nullable=True)
+    fiveYearAverageReturn = Column("fiveYearAverageReturn", Float, nullable=True)
+    floatShares = Column("floatShares", Float, nullable=True)
+    forwardEps = Column("forwardEps", Float, nullable=True)
+    forwardPE = Column("forwardPE", Float, nullable=True)
+    fundFamily = Column("fundFamily", String, nullable=True)
+    fundInceptionDate = Column("fundInceptionDate", Float, nullable=True)
+    heldPercentInsiders = Column("heldPercentInsiders", Float, nullable=True)
+    heldPercentInstitutions = Column("heldPercentInstitutions", Float, nullable=True)
+    impliedSharesOutstanding = Column("impliedSharesOutstanding", Float, nullable=True)
+    lastCapGain = Column("lastCapGain", Float, nullable=True)
+    lastDividendDate = Column("lastDividendDate", Float, nullable=True)
+    lastDividendValue = Column("lastDividendValue", Float, nullable=True)
+    lastFiscalYearEnd = Column("lastFiscalYearEnd", Float, nullable=True)
+    lastSplitDate = Column("lastSplitDate", Float, nullable=True)
+    lastSplitFactor = Column("lastSplitFactor", Float, nullable=True)
+    legalType = Column("legalType", String, nullable=True)
+    morningStarOverallRating = Column("morningStarOverallRating", Float, nullable=True)
+    morningStarRiskRating = Column("morningStarRiskRating", Float, nullable=True)
+    mostRecentQuarter = Column("mostRecentQuarter", Float, nullable=True)
+    netIncomeToCommon = Column("netIncomeToCommon", Float, nullable=True)
+    nextFiscalYearEnd = Column("nextFiscalYearEnd", Float, nullable=True)
+    pegRatio = Column("pegRatio", Float, nullable=True)
+    priceHint = Column("priceHint", String, nullable=True)
+    priceToBook = Column("priceToBook", Float, nullable=True)
+    priceToSalesTrailing12Months = Column("priceToSalesTrailing12Months", Float, nullable=True)
+    profitMargins = Column("profitMargins", Float, nullable=True)
+    revenueQuarterlyGrowth = Column("revenueQuarterlyGrowth", Float, nullable=True)
+    sharesOutstanding = Column("sharesOutstanding", Float, nullable=True)
+    sharesPercentSharesOut = Column("sharesPercentSharesOut", Float, nullable=True)
+    sharesShort = Column("sharesShort", Float, nullable=True)
+    sharesShortPreviousMonthDate = Column("sharesShortPreviousMonthDate", Float, nullable=True)
+    sharesShortPriorMonth = Column("sharesShortPriorMonth", Float, nullable=True)
+    shortPercentOfFloat = Column("shortPercentOfFloat", Float, nullable=True)
+    shortRatio = Column("shortRatio", Float, nullable=True)
+    threeYearAverageReturn = Column("threeYearAverageReturn", Float, nullable=True)
+    totalAssets = Column("totalAssets", Float, nullable=True)
+    trailingEps = Column("trailingEps", Float, nullable=True)
+    dividendYield = Column("yield", Float, nullable=True)
+    ytdReturn = Column("ytdReturn", Float, nullable=True)
+    currentPrice = Column("currentPrice", Float, nullable=True)
+    currentRatio = Column("currentRatio", Float, nullable=True)
+    debtToEquity = Column("debtToEquity", Float, nullable=True)
+    earningsGrowth = Column("earningsGrowth", Float, nullable=True)
+    ebitda = Column("ebitda", Float, nullable=True)
+    ebitdaMargins = Column("ebitdaMargins", Float, nullable=True)
+    financialCurrency = Column("financialCurrency", String, nullable=True)
+    freeCashflow = Column("freeCashflow", Float, nullable=True)
+    grossMargins = Column("grossMargins", Float, nullable=True)
+    grossProfits = Column("grossProfits", Float, nullable=True)
+    numberOfAnalystOpinions = Column("numberOfAnalystOpinions", Float, nullable=True)
+    operatingCashflow = Column("operatingCashflow", Float, nullable=True)
+    operatingMargins = Column("operatingMargins", Float, nullable=True)
+    profitMargins = Column("profitMargins", Float, nullable=True)
+    quickRatio = Column("quickRatio", Float, nullable=True)
+    recommendationKey = Column("recommendationKey", String, nullable=True)
+    recommendationMean = Column("recommendationMean", Float, nullable=True)
+    returnOnAssets = Column("returnOnAssets", Float, nullable=True)
+    returnOnEquity = Column("returnOnEquity", Float, nullable=True)
+    revenueGrowth = Column("revenueGrowth", Float, nullable=True)
+    revenuePerShare = Column("revenuePerShare", Float, nullable=True)
+    targetHighPrice = Column("targetHighPrice", Float, nullable=True)
+    targetLowPrice = Column("targetLowPrice", Float, nullable=True)
+    targetMeanPrice = Column("targetMeanPrice", Float, nullable=True)
+    targetMedianPrice = Column("targetMedianPrice", Float, nullable=True)
+    totalCash = Column("totalCash", Float, nullable=True)
+    totalCashPerShare = Column("totalCashPerShare", Float, nullable=True)
+    totalDebt = Column("totalDebt", Float, nullable=True)
+    totalRevenue = Column("totalRevenue", Float, nullable=True)

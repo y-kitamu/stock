@@ -13,7 +13,7 @@ Base = declarative_base()
 
 
 class Database:
-    def __init__(self, db_url: str):
+    def __init__(self, db_url: str = "sqlite:///:memory:"):
         self.update_db_url(db_url)
 
     def update_db_url(self, db_url: str):
