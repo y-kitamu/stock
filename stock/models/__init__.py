@@ -4,8 +4,7 @@ Author : Yusuke Kitamura
 Create Date : 2022-05-06 14:34:06
 Copyright (c) 2019- Yusuke Kitamura <ymyk6602@gmail.com>
 """
-from . import database
-from .models import *
+from .database import DATABASE
+from .models import Company, Statistics, StockTimeSeries
 
-DATABASE = database.Database()
 DATABASE.create_all()

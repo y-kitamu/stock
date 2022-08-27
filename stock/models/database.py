@@ -9,10 +9,8 @@ from contextlib import contextmanager
 from sqlalchemy import create_engine
 from sqlalchemy.orm import declarative_base, scoped_session, sessionmaker
 
-Base = declarative_base()
 
-
-class Database:
+class _Database:
     def __init__(self, db_url: str = "sqlite:///:memory:"):
         self.update_db_url(db_url)
 
@@ -41,3 +39,7 @@ class Database:
             yield db
         finally:
             db.close()
+
+
+DATABASE = _Database()
+Base = declarative_base()

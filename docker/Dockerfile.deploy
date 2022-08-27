@@ -1,0 +1,20 @@
+FROM python:latest
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+USER root
+# add user
+ARG user
+ARG uid
+ARG gid
+RUN groupadd --gid ${gid} ${user} && useradd -m --uid ${uid} --gid ${gid} ${user}
+
+# poetry
+USER ${user}
+RUN curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+USER root
+
+ENV DEBIAN_FRONTEND=newt
+
+USER ${user}
+WORKDIR /home/${user}

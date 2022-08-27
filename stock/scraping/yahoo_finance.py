@@ -6,7 +6,7 @@ Copyright (c) 2019- Yusuke Kitamura <ymyk6602@gmail.com>
 """
 import json
 import re
-from typing import Dict, List, Optional
+from typing import Dict, List, NamedTuple, Optional
 
 import requests
 from fake_useragent import UserAgent
@@ -23,16 +23,21 @@ REQUEST_CONFIG = {"timeout": (3, 10)}  # (connect, read)
 
 # Regex for extract statistics from respond html of yahoo finance
 STATISTICS_REGEX = re.compile("root\.App\.main = (\{.*\});")
-STAT_KEYS_MAP = {
-    "yield": "dividendYield",
-    "52WeekChange": "FiftyTwoWeekChange",
-}
 #
-STAT_UNNECESSARY_KEYS = ["maxAge"]
+class TimeSeries(NamedTuple):
+    timestamp: List[float] = []
+    open: List[Optional[float]] = []
+    high: List[Optional[float]] = []
+    low: List[Optional[float]] = []
+    close: List[Optional[float]] = []
+    volume: List[Optional[float]] = []
 
 
 def get_statistics(code: str) -> Dict[str, Optional[float]]:
-    """ """
+    """Get stock statistics from yahoo finance.
+    Args:
+        code (str): Stock code.
+    """
     # Get html from yahoo finance
     url = f"{BASE_URL}quote/{code}/key-statistics?p={code}"
     response = requests.get(url, headers=REQUEST_HEADER, **REQUEST_CONFIG)
@@ -59,15 +64,6 @@ def get_statistics(code: str) -> Dict[str, Optional[float]]:
         **quote_summary["financialData"],
     }
 
-    # Replace statistics keys if necessary
-    for from_key, to_key in STAT_KEYS_MAP.items():
-        if from_key in raw_stat_dict:
-            raw_stat_dict[to_key] = raw_stat_dict.pop(from_key)
-    # Remove unnecessary stats
-    for key in STAT_UNNECESSARY_KEYS:
-        if key in raw_stat_dict:
-            raw_stat_dict.pop(key)
-
     stats = {}
     for key, value in raw_stat_dict.items():
         if value is None:
@@ -81,8 +77,13 @@ def get_statistics(code: str) -> Dict[str, Optional[float]]:
     return stats
 
 
-def get_stock_time_series(code: str, interval="1m", time_range="1d") -> Dict[str, List[float]]:
-    """ """
+def get_stock_time_series(code: str, interval="1m", time_range="1d") -> TimeSeries:
+    """Get stock time series from yahoo finance.
+    Args:
+        code (str): Stock code.
+        interval (str): Interval of time series.
+        time_range (str): Time range of time series.
+    """
     kwargs = {
         "region": "US",
         "lang": "en-US",
@@ -98,14 +99,14 @@ def get_stock_time_series(code: str, interval="1m", time_range="1d") -> Dict[str
         logger.error(
             f"Failed to fetch data from {url}. status_code = {response.status_code}\n{response.text}"
         )
-        return {}
+        return TimeSeries()
 
     data = json.loads(response.text)["chart"]["result"][0]
-    return {
-        "timestamp": data["timestamp"],
-        "open": data["indicators"]["quote"][0]["open"],
-        "high": data["indicators"]["quote"][0]["high"],
-        "low": data["indicators"]["quote"][0]["low"],
-        "close": data["indicators"]["quote"][0]["close"],
-        "volume": data["indicators"]["quote"][0]["volume"],
-    }
+    return TimeSeries(
+        timestamp=data["timestamp"],
+        open=data["indicators"]["quote"][0]["open"],
+        high=data["indicators"]["quote"][0]["high"],
+        low=data["indicators"]["quote"][0]["low"],
+        close=data["indicators"]["quote"][0]["close"],
+        volume=data["indicators"]["quote"][0]["volume"],
+    )

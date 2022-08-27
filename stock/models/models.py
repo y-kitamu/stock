@@ -26,6 +26,14 @@ def _log_call_stack() -> None:
 class CrudMixin:
     @classmethod
     def create(cls: Type[T], db: Session, with_commit: bool = True, **kwargs) -> bool:
+        """Create a new record in the database.
+        Args:
+            db (Session): Database session.
+            with_commit (bool): If True, commit the transaction.
+            **kwargs: Keyword arguments for the new record.
+        Returns:
+            bool: True if the record is created successfully.
+        """
         try:
             db.add(cls(**kwargs))
             if with_commit:
@@ -37,6 +45,14 @@ class CrudMixin:
 
     @classmethod
     def get(cls: Type[T], db: Session, with_for_update=False, **kwargs) -> Optional[T]:
+        """Get a record from the database.
+        Args:
+            db (Session): Database session.
+            with_for_update (bool): If True, add FOR UPDATE clause to the query.
+            **kwargs: Keyword arguments for the query.
+        Returns:
+            Optional[T]: The record if found.
+        """
         try:
             stmt = select(cls).filter_by(**kwargs)
             db.execute(stmt)
@@ -49,6 +65,14 @@ class CrudMixin:
 
     @classmethod
     def get_all(cls: Type[T], db: Session, with_for_update=False, **kwargs) -> List[T]:
+        """Get all records matched with a condition from the database.
+        Args:
+            db (Session): Database session.
+            with_for_update (bool): If True, add FOR UPDATE clause to the query.
+            **kwargs: Keyword arguments for the query.
+        Returns:
+            List[T]: The records matched with a condition.
+        """
         try:
             stmt = select(cls).filter_by(**kwargs)
             db.execute(stmt)
@@ -81,10 +105,10 @@ class StockTimeSeries(Base, CrudMixin):
 
     timestamp = Column("timestamp", Integer, nullable=False)
     interval = Column("interval", Float, nullable=False)
-    start = Column("start", Float, nullable=False)
-    end = Column("end", Float, nullable=False)
-    high = Column("high", Float, nullable=False)
-    low = Column("low", Float, nullable=False)
+    open = Column("open", Float, nullable=True)
+    close = Column("close", Float, nullable=True)
+    high = Column("high", Float, nullable=True)
+    low = Column("low", Float, nullable=True)
     volume = Column("volume", Integer, nullable=False)
 
     company = relationship("Company", back_populates="stocktimeseries")

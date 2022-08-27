@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  stock_server:
+    hostname: stock_dev
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.deploy
+      shm_size: "2g"
+      args:
+        user: ${UESR}
+        uid: ${USER_ID}
+        gid: ${GROUP_ID}
+    ports:
+      - "5050:5000" # for web server
+    volumes:
+      - ../:${HOME}/work/stock
+    environment:
+      USER_NAME: ${USER}
+      PROJECT_ROOT: ${HOME}/work/stock
+    entrypoint: ${HOME}/work/stock/docker/entrypoint.deploy.sh
+    restart: always
