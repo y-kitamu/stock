@@ -4,11 +4,12 @@ Author : Yusuke Kitamura
 Create Date : 2022-05-06 14:34:49
 Copyright (c) 2019- Yusuke Kitamura <ymyk6602@gmail.com>
 """
+import datetime
 import inspect
 from typing import List, Optional, Type, TypeVar
 
-from sqlalchemy import (Column, DateTime, Float, ForeignKey, Integer, String,
-                        select)
+from sqlalchemy import (Column, DateTime, Float, ForeignKey, Index, Integer,
+                        String, select)
 from sqlalchemy.orm import Session, relationship
 from sqlalchemy.sql.schema import UniqueConstraint
 
@@ -83,6 +84,17 @@ class CrudMixin:
             _log_call_stack()
         return []
 
+    @classmethod
+    def exists(cls: Type[T], db: Session, **kwargs) -> bool:
+        """Check if a record exists in the database.
+        Args:
+            db (Session): Database session.
+            **kwargs: Keyword arguments for the query.
+        Returns:
+            bool: True if the record exists.
+        """
+        raise NotImplementedError()
+
 
 class Company(Base, CrudMixin):
     """Company statistics"""
@@ -92,6 +104,10 @@ class Company(Base, CrudMixin):
 
     stocktimeseries = relationship("StockTimeSeries", back_populates="company")
     statistics = relationship("Statistics", back_populates="company")
+
+    @classmethod
+    def exists(cls: Type[T], db: Session, code: str, **kwargs) -> bool:
+        return cls.get(db, code=code) is not None
 
 
 class StockTimeSeries(Base, CrudMixin):
@@ -113,11 +129,21 @@ class StockTimeSeries(Base, CrudMixin):
 
     company = relationship("Company", back_populates="stocktimeseries")
 
+    @classmethod
+    def exists(
+        cls: Type[T], db: Session, company_code: str, timestamp: int, interval: float, **kwargs
+    ) -> bool:
+        return (
+            cls.get(db, company_code=company_code, timestamp=timestamp, interval=interval)
+            is not None
+        )
+
 
 class Statistics(Base, CrudMixin):
     """Statistics"""
 
     __tablename__ = "statistics"
+    __table_args__ = (UniqueConstraint("company_code", "archive_date"),)
 
     id = Column("id", Integer, primary_key=True)
     archive_date = Column("archive_date", DateTime, nullable=False)
@@ -207,3 +233,24 @@ class Statistics(Base, CrudMixin):
     totalCashPerShare = Column("totalCashPerShare", Float, nullable=True)
     totalDebt = Column("totalDebt", Float, nullable=True)
     totalRevenue = Column("totalRevenue", Float, nullable=True)
+
+    @classmethod
+    def exists(
+        cls: Type[T], db: Session, company_code: str, archive_date: datetime.date, **kwargs
+    ) -> bool:
+        return cls.get(db, company_code=company_code, archive_date=archive_date) is not None
+
+
+# composite index for faster lookup
+Index(
+    "ix_stock_time_series_company_code_timestamp_interval",
+    StockTimeSeries.company_code,
+    StockTimeSeries.timestamp,
+    StockTimeSeries.interval,
+)
+
+Index(
+    "ix_statistics_company_code_archive_date",
+    Statistics.company_code,
+    Statistics.archive_date,
+)

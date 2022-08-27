@@ -8,6 +8,7 @@ from contextlib import contextmanager
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import declarative_base, scoped_session, sessionmaker
+from sqlalchemy.pool import StaticPool
 
 
 class _Database:
@@ -16,7 +17,17 @@ class _Database:
 
     def update_db_url(self, db_url: str):
         self.url = db_url
-        self.engine = create_engine(db_url, future=True, echo=__debug__)
+        args = {}
+        if "sqlite" in self.url:
+            args["connect_args"] = {"check_same_thread": False}
+            args["poolclass"] = StaticPool
+
+        self.engine = create_engine(
+            db_url,
+            future=True,
+            echo=__debug__,
+            **args,
+        )
 
         session_factory = sessionmaker(autocommit=False, autoflush=False, bind=self.engine)
         self.SessionLocal = scoped_session(session_factory)

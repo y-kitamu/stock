@@ -11,6 +11,6 @@ CUR_DIR=$(pwd)
 cd ${PROJECT_ROOT}
 ${HOME}/.poetry/bin/poetry config virtualenvs.in-project false
 ${HOME}/.poetry/bin/poetry install
-${HOME}/.poetry/bin/poetry run uvicorn stock.server.api:app --reload --port=$1 --host=0.0.0.0
+${HOME}/.poetry/bin/poetry run python stock/server/api.py --port $1
 
 cd ${CUR_DIR}

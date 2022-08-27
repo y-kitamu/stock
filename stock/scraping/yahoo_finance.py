@@ -25,7 +25,7 @@ REQUEST_CONFIG = {"timeout": (3, 10)}  # (connect, read)
 STATISTICS_REGEX = re.compile("root\.App\.main = (\{.*\});")
 #
 class TimeSeries(NamedTuple):
-    timestamp: List[float] = []
+    timestamp: List[int] = []
     open: List[Optional[float]] = []
     high: List[Optional[float]] = []
     low: List[Optional[float]] = []

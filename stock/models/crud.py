@@ -18,13 +18,15 @@ def get_all_companies() -> List[Company]:
         return Company.get_all(db)
 
 
-def add_company(code: str):
+def create_company(code: str) -> bool:
     """Add company to the database
     Args:
         code (str): Code of the company
     """
     with DATABASE.context() as db:
-        return Company.create(db, code=code, with_commit=True)
+        if not Company.exists(db, code=code):
+            return Company.create(db, code=code, with_commit=True)
+    return True
 
 
 def get_company_stats(code: str) -> Optional[Statistics]:
@@ -36,7 +38,7 @@ def get_company_stats(code: str) -> Optional[Statistics]:
     """
 
     with DATABASE.context() as db:
-        stats = Statistics.get_all(db, code=code)
+        stats = Statistics.get_all(db, company_code=code)
 
     if len(stats) == 0:
         return None

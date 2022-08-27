@@ -49,15 +49,19 @@ def store_stock_time_series(code: str, interval: str = "1m", time_range: str = "
         == len(data.volume)
     )
     num_rows = len(data.timestamp)
-
+    interval_sec = _get_interval_sec(interval)
     with models.DATABASE.context() as db:
         for i in range(num_rows):
+            if models.StockTimeSeries.exists(
+                db, company_code=code, timestamp=data.timestamp[i], interval=interval_sec
+            ):
+                continue
             models.StockTimeSeries.create(
                 db,
                 with_commit=False,
                 company_code=code,
                 timestamp=data.timestamp[i],
-                interval=_get_interval_sec(interval),
+                interval=interval_sec,
                 open=data.open[i],
                 high=data.high[i],
                 low=data.low[i],
@@ -98,6 +102,8 @@ def store_statistics(code: str) -> bool:
 
     today = datetime.date.today()
     with models.DATABASE.context() as db:
+        if models.Statistics.exists(db, company_code=code, archive_date=today):
+            return True
         is_success = models.Statistics.create(
             db, with_commit=True, company_code=code, archive_date=today, **data
         )
