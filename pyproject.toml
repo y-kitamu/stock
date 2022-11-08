@@ -14,7 +14,7 @@ fake-useragent = "^0.1.11"
 lxml = "^4.9.1"
 pandas = "^1.4.3"
 matplotlib = "^3.5.3"
-fastapi = "^0.81.0"
+fastapi = "^0.86.0"
 sentry-sdk = "^1.9.5"
 fastapi-utils = "^0.2.1"
 uvicorn = {extras = ["standard"], version = "^0.18.3"}
