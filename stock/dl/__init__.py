@@ -1,7 +1,6 @@
 """__init__.py
-Data scraping module for stock data.
+Deep learning module for stock prediction.
 Author : Yusuke Kitamura
-Create Date : 2022-05-06 13:53:53
+Create Date : 2022-11-19 08:14:50
 Copyright (c) 2019- Yusuke Kitamura <ymyk6602@gmail.com>
 """
-from . import yahoo_finance

@@ -9,20 +9,25 @@ import re
 from typing import Dict, List, NamedTuple, Optional
 
 import requests
-from fake_useragent import UserAgent
 
 try:
     from .. import logger
 except:
     from stock import logger
 
-
 BASE_URL: str = "https://finance.yahoo.com/"
-REQUEST_HEADER = {"User-Agent": UserAgent().chrome}
+REQUEST_HEADER = {}
 REQUEST_CONFIG = {"timeout": (3, 10)}  # (connect, read)
-
 # Regex for extract statistics from respond html of yahoo finance
 STATISTICS_REGEX = re.compile("root\.App\.main = (\{.*\});")
+
+try:
+    from fake_useragent import UserAgent
+
+    REQUEST_HEADER = {"User-Agent": UserAgent().chrome}
+except:
+    logger.exception("Failed to import fake_useragent")
+
 #
 class TimeSeries(NamedTuple):
     timestamp: List[int] = []

@@ -5,8 +5,10 @@ Create Date : 2022-08-27 17:18:04
 Copyright (c) 2019- Yusuke Kitamura <ymyk6602@gmail.com>
 """
 import datetime
+import json
+import time
 
-from .. import logger, models
+from .. import COMPANY_LIST_JSON, REQUEST_INTERVAL_SEC, logger, models
 from ..scraping import yahoo_finance as yf
 
 STAT_KEYS_MAP = {
@@ -15,6 +17,7 @@ STAT_KEYS_MAP = {
 }
 #
 STAT_UNNECESSARY_KEYS = ["maxAge"]
+#
 
 
 def _get_interval_sec(interval: str) -> int:
@@ -109,3 +112,22 @@ def store_statistics(code: str) -> bool:
         )
 
     return is_success
+
+
+def update_database():
+    """ """
+    logger.info("Update statistics")
+    company_list = json.loads(COMPANY_LIST_JSON.read_text())["codes"]
+
+    for code in company_list:
+        try:
+            if models.create_company(code):
+                store_statistics(code)
+                store_stock_time_series(code)
+            else:
+                logger.error(f"Failed to create company: {code}")
+        except Exception:
+            logger.exception(f"Failed to update statistics : {code}")
+
+        time.sleep(REQUEST_INTERVAL_SEC)
+    logger.info("Update statistics completed")

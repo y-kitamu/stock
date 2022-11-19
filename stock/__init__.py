@@ -8,6 +8,8 @@ import logging
 import sys
 from pathlib import Path
 
+from .constants import *
+
 ## Logger settings
 logging.getLogger().setLevel(logging.DEBUG)
 
