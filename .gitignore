@@ -110,4 +110,4 @@ ENV/
 poetry.lock
 
 # project
-notebooks/
+*.log
