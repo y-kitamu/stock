@@ -82,7 +82,9 @@ def get_statistics(code: str) -> Dict[str, Optional[float]]:
     return stats
 
 
-def get_stock_time_series(code: str, interval="1m", time_range="1d") -> TimeSeries:
+def get_stock_time_series(
+    code: str, interval="1m", time_range="1d", include_pre_post=False
+) -> TimeSeries:
     """Get stock time series from yahoo finance.
     Args:
         code (str): Stock code.
@@ -92,7 +94,7 @@ def get_stock_time_series(code: str, interval="1m", time_range="1d") -> TimeSeri
     kwargs = {
         "region": "US",
         "lang": "en-US",
-        "includePrePost": "false",
+        "includePrePost": "true" if include_pre_post else "false",
         "interval": interval,
         "range": time_range,
     }
