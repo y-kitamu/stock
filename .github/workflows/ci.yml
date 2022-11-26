@@ -7,11 +7,8 @@ on:
 
 jobs:
   build:
-    name: Build
+    name: Run
     uses: ./.github/workflows/python-package.yml
-  update:
-    name: Fetch and update
-    needs: Reuse
     steps:
     - name: Run
       run: poetry run python scripts/daily_update.py
