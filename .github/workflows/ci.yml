@@ -6,9 +6,15 @@ on:
     - cron: '17 22 * * *'
 
 jobs:
-  build:
-    name: Run
-    uses: ./.github/workflows/python-package.yml
+  update:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.8", "3.9", "3.10"]
+        poetry-version: ["1.2.2"]
     steps:
+    - name: Build
+      uses: ./.github/actions/build
     - name: Run
       run: poetry run python scripts/daily_update.py
