@@ -15,6 +15,6 @@ jobs:
         poetry-version: ["1.2.2"]
     steps:
     - name: Build
-      uses: ./.github/actions/build
+      uses: ./.github/actions/install_deps
     - name: Run
       run: poetry run python scripts/daily_update.py
