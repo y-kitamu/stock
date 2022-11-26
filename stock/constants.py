@@ -6,7 +6,7 @@ Copyright (c) 2019- Yusuke Kitamura <ymyk6602@gmail.com>
 """
 from pathlib import Path
 
-PROJECT_ROOT = Path(__file__).parent.parent
+PROJECT_ROOT = Path(__file__).absolute().parent.parent
 DATA_DIR = PROJECT_ROOT / "data"
 
 # Interval seconds for each requests of scraping

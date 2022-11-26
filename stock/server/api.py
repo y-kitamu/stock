@@ -15,12 +15,14 @@ from fastapi.exceptions import HTTPException
 from fastapi_utils.tasks import repeat_every
 
 try:
+    from .. import COMPANY_LIST_JSON
     from . import schemas
 except:
+    from stock import COMPANY_LIST_JSON
+
     import schemas
 
 REQUEST_INTERVAL_SEC = 5
-COMPANY_LIST_JSON = Path(__file__).parent / "company_list.json"
 
 app = FastAPI()
 

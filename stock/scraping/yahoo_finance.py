@@ -6,9 +6,10 @@ Copyright (c) 2019- Yusuke Kitamura <ymyk6602@gmail.com>
 """
 import json
 import re
-from typing import Dict, List, NamedTuple, Optional
+from typing import Dict, List, Optional
 
 import requests
+from pydantic import BaseModel
 
 try:
     from .. import logger
@@ -28,13 +29,13 @@ try:
 except:
     logger.exception("Failed to import fake_useragent")
 
-#
-class TimeSeries(NamedTuple):
+
+class TimeSeries(BaseModel):
     timestamp: List[int] = []
-    open: List[Optional[float]] = []
+    start: List[Optional[float]] = []
     high: List[Optional[float]] = []
     low: List[Optional[float]] = []
-    close: List[Optional[float]] = []
+    end: List[Optional[float]] = []
     volume: List[Optional[float]] = []
 
 
@@ -111,9 +112,9 @@ def get_stock_time_series(
     data = json.loads(response.text)["chart"]["result"][0]
     return TimeSeries(
         timestamp=data["timestamp"],
-        open=data["indicators"]["quote"][0]["open"],
+        start=data["indicators"]["quote"][0]["open"],
         high=data["indicators"]["quote"][0]["high"],
         low=data["indicators"]["quote"][0]["low"],
-        close=data["indicators"]["quote"][0]["close"],
+        end=data["indicators"]["quote"][0]["close"],
         volume=data["indicators"]["quote"][0]["volume"],
     )

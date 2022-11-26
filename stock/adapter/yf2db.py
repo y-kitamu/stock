@@ -45,10 +45,10 @@ def store_stock_time_series(code: str, interval: str = "1m", time_range: str = "
     data = yf.get_stock_time_series(code, interval=interval, time_range=time_range)
     assert (
         len(data.timestamp)
-        == len(data.open)
+        == len(data.start)
         == len(data.high)
         == len(data.low)
-        == len(data.close)
+        == len(data.end)
         == len(data.volume)
     )
     num_rows = len(data.timestamp)
@@ -65,10 +65,10 @@ def store_stock_time_series(code: str, interval: str = "1m", time_range: str = "
                 company_code=code,
                 timestamp=data.timestamp[i],
                 interval=interval_sec,
-                open=data.open[i],
+                open=data.start[i],
                 high=data.high[i],
                 low=data.low[i],
-                close=data.close[i],
+                close=data.end[i],
                 volume=data.volume[i] or 0,
             )
         try:
