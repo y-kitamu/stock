@@ -9,9 +9,10 @@ Copyright (c) 2019- Yusuke Kitamura <ymyk6602@gmail.com>
 """
 import decimal
 from datetime import datetime
-from typing import List, Optional
+from typing import Dict, List, Optional
 
 import boto3
+from boto3.dynamodb.conditions import Key
 from pydantic import BaseModel
 # TODO: class (`TImeSeries`)を適切な場所に配置する
 from stock.scraping.yahoo_finance import TimeSeries
@@ -44,7 +45,7 @@ class StockRecord(BaseModel):
     volume: List[decimal.Decimal]
 
     @classmethod
-    def from_timeseries(cls, code: str, ts: TimeSeries):
+    def from_timeseries(cls, code: str, ts: TimeSeries) -> "StockRecord":
         date = datetime.fromtimestamp(ts.timestamp[-1]).strftime("%Y%m%d")
         return cls(
             code=code,
@@ -57,8 +58,18 @@ class StockRecord(BaseModel):
             volume=to_decimal((replace_none(ts.volume))),
         )
 
-    def get_key(self):
+    def get_key(self) -> Dict[str, str]:
         return {"code": self.code, "date": self.date}
+
+    def to_timeseries(self) -> TimeSeries:
+        return TimeSeries(
+            timestamp=self.timestamp,
+            start=[float(val) for val in self.start],
+            high=[float(val) for val in self.high],
+            low=[float(val) for val in self.low],
+            end=[float(val) for val in self.end],
+            volume=[float(val) for val in self.volume],
+        )
 
 
 class DynamoDBHandler:
@@ -106,3 +117,23 @@ class DynamoDBHandler:
             self.stock_table.delete_item(Key=record.get_key())
 
         self.stock_table.put_item(Item=record.dict())
+
+    def get_data(self, code: str, max_scan_size: int = 10):
+        """指定したcodeの株価データを取得する。"""
+        stmt = Key("code").eq(code)
+        kwargs = {
+            "KeyConditionExpression": stmt,
+            "Limit": max_scan_size,
+        }
+        items = []
+        while True:
+            res = self.stock_table.query(**kwargs)
+            if "Items" not in res:
+                break
+            items += [StockRecord(**item).to_timeseries() for item in res["Items"]]
+
+            if "LastEvaluatedKey" not in res:
+                break
+            kwargs["ExclusiveStartKey"] = res["LastEvaluatedKey"]
+
+        return items

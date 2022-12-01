@@ -6,6 +6,7 @@ Copyright (c) 2019- Yusuke Kitamura <ymyk6602@gmail.com>
 """
 import json
 import re
+from datetime import datetime
 from typing import Dict, List, Optional
 
 import requests
@@ -37,6 +38,16 @@ class TimeSeries(BaseModel):
     low: List[Optional[float]] = []
     end: List[Optional[float]] = []
     volume: List[Optional[float]] = []
+
+    def range(self, start: int, end: int) -> "TimeSeries":
+        return TimeSeries(
+            timestamp=self.timestamp[start:end],
+            start=self.start[start:end],
+            high=self.high[start:end],
+            low=self.low[start:end],
+            end=self.end[start:end],
+            volume=self.volume[start:end],
+        )
 
 
 def get_statistics(code: str) -> Dict[str, Optional[float]]:
@@ -84,7 +95,12 @@ def get_statistics(code: str) -> Dict[str, Optional[float]]:
 
 
 def get_stock_time_series(
-    code: str, interval="1m", time_range="1d", include_pre_post=False
+    code: str,
+    interval="1m",
+    time_range="1d",
+    include_pre_post=False,
+    start_date: Optional[datetime] = None,
+    end_date: Optional[datetime] = None,
 ) -> TimeSeries:
     """Get stock time series from yahoo finance.
     Args:
@@ -97,11 +113,18 @@ def get_stock_time_series(
         "lang": "en-US",
         "includePrePost": "true" if include_pre_post else "false",
         "interval": interval,
-        "range": time_range,
     }
+    is_date_specified = start_date is not None and end_date is not None
+    if is_date_specified:
+        kwargs["period1"] = str(int(start_date.timestamp()))
+        kwargs["period2"] = str(int(end_date.timestamp()))
+    else:
+        kwargs["range"] = time_range
+
     kwargs_str = "&".join([f"{key}={value}" for key, value in kwargs.items()])
     url = f"https://query1.finance.yahoo.com/v8/finance/chart/{code}?{kwargs_str}"
     response = requests.get(url, headers=REQUEST_HEADER, **REQUEST_CONFIG)
+    # logger.debug(url)
 
     if response.status_code != requests.codes.ok:
         logger.error(
@@ -110,11 +133,28 @@ def get_stock_time_series(
         return TimeSeries()
 
     data = json.loads(response.text)["chart"]["result"][0]
-    return TimeSeries(
+
+    ts = TimeSeries(
         timestamp=data["timestamp"],
         start=data["indicators"]["quote"][0]["open"],
         high=data["indicators"]["quote"][0]["high"],
         low=data["indicators"]["quote"][0]["low"],
         end=data["indicators"]["quote"][0]["close"],
         volume=data["indicators"]["quote"][0]["volume"],
+    )
+
+    if is_date_specified:
+        return ts.range(0, len(ts.timestamp) - 1)
+
+    return ts
+
+
+if __name__ == "__main__":
+    from datetime import timezone
+
+    code = "META"
+    start_date = datetime(2021, 11, 6, 9, 0, 0, tzinfo=timezone.utc)
+    end_date = datetime(2021, 11, 7, 8, 59, 59, tzinfo=timezone.utc)
+    ts = get_stock_time_series(
+        code, include_pre_post=True, start_date=start_date, end_date=end_date
     )
