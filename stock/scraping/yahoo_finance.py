@@ -4,9 +4,11 @@ Author : Yusuke Kitamura
 Create Date : 2022-05-06 13:53:59
 Copyright (c) 2019- Yusuke Kitamura <ymyk6602@gmail.com>
 """
+import csv
 import json
 import re
 from datetime import datetime
+from pathlib import Path
 from typing import Dict, List, Optional
 
 import requests
@@ -31,6 +33,7 @@ except:
     logger.exception("Failed to import fake_useragent")
 
 
+# TODO : classの定義を適切な場所に移動する
 class TimeSeries(BaseModel):
     timestamp: List[int] = []
     start: List[Optional[float]] = []
@@ -38,6 +41,9 @@ class TimeSeries(BaseModel):
     low: List[Optional[float]] = []
     end: List[Optional[float]] = []
     volume: List[Optional[float]] = []
+
+    def __len__(self) -> int:
+        return len(self.timestamp)
 
     def range(self, start: int, end: int) -> "TimeSeries":
         return TimeSeries(
@@ -48,6 +54,25 @@ class TimeSeries(BaseModel):
             end=self.end[start:end],
             volume=self.volume[start:end],
         )
+
+    def to_csv(self, csv_path: Path):
+        csv_path.parent.mkdir(parents=True, exist_ok=True)
+        with open(csv_path, "w") as f:
+            csv_writer = csv.writer(f)
+            csv_writer.writerow(["timestamp", "start", "high", "low", "end", "volume"])
+            csv_writer.writerows(
+                [
+                    [
+                        self.timestamp[i],
+                        self.start[i],
+                        self.high[i],
+                        self.low[i],
+                        self.end[i],
+                        self.volume[i],
+                    ]
+                    for i in range(len(self.timestamp))
+                ]
+            )
 
 
 def get_statistics(code: str) -> Dict[str, Optional[float]]:
