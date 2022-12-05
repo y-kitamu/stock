@@ -89,4 +89,4 @@ def remove_logfile(logdir: Path, max_save: int = 10):
 enable_logging_to_stdout(log_level=logging.DEBUG)
 
 
-from . import scraping, storage
+from . import dl, scraping, storage

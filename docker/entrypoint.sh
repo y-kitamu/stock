@@ -7,7 +7,7 @@ function run_as_user() {
         # To avoid conflict with host machine venv
         ~/.poetry/bin/poetry config virtualenvs.in-project false
         # poetry config
-        cd ${PROJECT_ROOT} && rm -rf .venv && poetry install
+        cd ${PROJECT_ROOT} && poetry install
         poetry run ipython kernel install --user --name=stock_dev
     fi
 

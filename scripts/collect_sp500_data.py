@@ -28,7 +28,7 @@ def run(output_dir, interval="1d", time_range="10y", overwrite=False):
             )
             if len(data) == 0:
                 continue
-            data.to_csv(output_csv)
+             data.to_csv(output_csv)
         except:
             stock.logger.exception(f"Failed to get data: {ticker}")
 
