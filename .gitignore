@@ -111,3 +111,5 @@ poetry.lock
 # project
 *.log
 tmp/
+*.npy
+data/sp500/*.csv
