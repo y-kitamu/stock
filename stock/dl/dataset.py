@@ -1,5 +1,5 @@
 from pathlib import Path
-from typing import List
+from typing import List, Tuple
 
 import numpy as np
 import pandas as pd
@@ -30,7 +30,7 @@ class DatasetParams(BaseModel):
 
 class Dataset:
     STOCK_DATA_KEYS = ["start", "high", "low", "end", "volume"]
-    TRAIN_VAL_TEST_RATIO = [0.7, 0.1, 0.2]
+    TRAIN_VAL_TEST_RATIO = [0.7, 0.1, 0.2]  # train, val, test ratio
 
     def __init__(self, params: DatasetParams):
         self.params = params
@@ -40,11 +40,16 @@ class Dataset:
 
         self.input_labels = np.arange(self.params.input_width)
         self.ouptut_labels = self.input_labels + self.params.shift
-
+        # 正規化用パラメータ
+        self.maen = np.zeros(self.data.shape[1])
+        self.std = np.zeros(self.data.shape[1])
+        # データセットをファイルに保存
         if not self.params.dataset_path.exists():
             self.save_data(self.params.dataset_path)
+        # 前処理
+        self.data = self.preprocess_on_init(self.data)
 
-    def load_data(self):
+    def load_data(self) -> np.ndarray:
         """`self.symbols`に格納されている銘柄の株価データを読み込む。
         timestampがindexになるように整列したnumpy array (2d)を返す
         (行 : timestamp, 列 : 各銘柄の株価(start, hihg, low, end, volume))
@@ -83,7 +88,31 @@ class Dataset:
         path.parent.mkdir(parents=True, exist_ok=True)
         np.save(path, self.data)
 
-    def make_dataset(self, is_train):
+    def get_train_val_test_dataset(
+        self,
+    ) -> Tuple[tf.data.Dataset, tf.data.Dataset, tf.data.Dataset]:
+        """`self.data`をtrain, val, testに分割して、それぞれのtf.data.Datasetを返す"""
+        ratio = np.array(self.TRAIN_VAL_TEST_RATIO) / sum(self.TRAIN_VAL_TEST_RATIO)
+        n_data = len(self.data)
+        n_train = int(n_data * ratio[0])
+        n_val = int(n_data * ratio[1])
+
+        train_data = self.data[:n_train]
+        self.mean = train_data.mean(axis=0)
+        self.std = train_data.std(axis=0)
+
+        train_ds = self.make_dataset(train_data, is_train=True)
+        val_ds = self.make_dataset(self.data[n_train : n_train + n_val], is_train=False)
+        test_ds = self.make_dataset(self.data[n_train + n_val :], is_train=False)
+        return train_ds, val_ds, test_ds
+
+    def make_dataset(self, data: np.ndarray, is_train: bool) -> tf.data.Dataset:
+        """tf.data.Dataset objectを作成する
+        Args:
+            data (np.ndarray): 入力データ
+            is_train (bool): trainデータかどうか
+        """
+
         def map_func(window: tf.data.Dataset):
             arr = list(window.as_numpy_iterator())
             input = arr[: self.params.input_width]
@@ -92,16 +121,29 @@ class Dataset:
                 output = output[0]
             return input, output
 
+        data = self.preprocess_on_make(data)
         window_size = self.params.shift + self.params.output_width
-        ds = tf.data.Dataset.from_tensor_slices(self.data.astype(np.float32))
+        ds = tf.data.Dataset.from_tensor_slices(data.astype(np.float32))
         ds = ds.window(window_size, stride=self.params.stride, shift=1, drop_remainder=True)
         ds = ds.map(
             lambda x: tf.py_function(func=map_func, inp=[x], Tout=[tf.float32, tf.float32]),
             num_parallel_calls=8,
         )
         if is_train:
-            ds = ds.shuffle(len(self.data), reshuffle_each_iteration=True)
+            ds = ds.shuffle(len(data), reshuffle_each_iteration=True)
         ds = ds.batch(self.params.batch_size, drop_remainder=is_train).prefetch(
             self.params.prefetch
         )
         return ds
+
+    def preprocess_on_init(self, data):
+        """データ読み込み時の前処理"""
+        # nanを0に置き換える
+        data[np.isnan(data)] = 0
+        return data
+
+    def preprocess_on_make(self, data: np.ndarray):
+        """データセット作成時の前処理"""
+        # 正規化
+        data = (data - self.mean) / (self.std + 1e-9)
+        return data
