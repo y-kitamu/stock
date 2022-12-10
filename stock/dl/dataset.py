@@ -55,7 +55,7 @@ class Dataset:
 
     @property
     def num_symbols(self) -> int:
-        return len(self.symbols)
+        return (self.data.shape[-1] - 1) // len(self.STOCK_DATA_KEYS)
 
     @property
     def high_low_indices(self) -> List[List[int]]:
@@ -83,15 +83,22 @@ class Dataset:
             return np.load(self.params.dataset_path)
 
         dfs: List[pd.DataFrame] = []
+        unused_symbols = []
         timestamp_set = set()
         for symbol in self.symbols:
             data_csv = self.params.data_dir / f"{symbol}.csv"
             if not data_csv.exists():
+                unused_symbols.append(symbol)
+                logger.warning(f"CSV file dose not exist: {data_csv}")
                 continue
             df = pd.read_csv(data_csv)
             timestamp_set.update(df.timestamp.to_list())
             dfs.append(df)
 
+        for symbol in unused_symbols:
+            self.symbols.remove(symbol)
+
+        print(f"Number of data frames  = {len(dfs)}")
         arr = np.zeros((len(timestamp_set), len(dfs) * len(self.STOCK_DATA_KEYS) + 1))
         timestamps = sorted(list(timestamp_set))
         arr[:, 0] = timestamps
