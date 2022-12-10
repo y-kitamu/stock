@@ -5,7 +5,10 @@ import tensorflow as tf
 from pydantic import BaseModel
 
 from .dataset import Dataset, DatasetParams
+from .losses import LossParams, get_loss
 from .models import ModelParams, load_model
+
+# TODO: 実験管理ツールの導入（omniboard + sacred を試してみる）
 
 
 class TrainerParams(BaseModel):
@@ -13,8 +16,10 @@ class TrainerParams(BaseModel):
 
     dataset_params: DatasetParams
     model_params: ModelParams
+    loss_params: LossParams
 
     epochs: int = 10
+    n_output_classes: int = -1
 
 
 class Trainer:
@@ -22,15 +27,31 @@ class Trainer:
         """ """
         self.params = params
         self.dataset = Dataset(self.params.dataset_params)
+
+        self.base_model = None
+        self.model = None
+        self.loss_fn = None
+        self.optimizer = None
+
+    def build(self):
+        """モデル、loss関数、optimizerを作成する
+        constructorではなく、別メソッドにしているのは、
+        これらの初期化に必要な情報をconstructr時には(`self.params`に)持っていない可能性があるため。
+        """
         self.base_model = load_model(params=self.params.model_params)
         self.model = tf.keras.Sequential(
             [
                 self.base_model,
-                tf.keras.layers.Dense(self.dataset.data.shape[-1]),
+                tf.keras.layers.Dense(self.params.n_output_classes),
             ]
         )
 
-        self.loss_fn = tf.keras.losses.MeanSquaredError()
+        inputs = tf.keras.Input(
+            shape=(self.params.dataset_params.input_width, self.dataset.num_features)
+        )
+        self.model(inputs)
+
+        self.loss_fn = get_loss(self.params.loss_params)
         self.optimizer = tf.keras.optimizers.Adam()
 
     def train(self):

@@ -49,6 +49,31 @@ class Dataset:
         # 前処理
         self.data = self.preprocess_on_init(self.data)
 
+    @property
+    def num_features(self):
+        return self.data.shape[-1]
+
+    @property
+    def num_symbols(self) -> int:
+        return len(self.symbols)
+
+    @property
+    def high_low_indices(self) -> List[List[int]]:
+        """`self.data`のhigh, lowの列のindexを返す
+        Return:
+            [[high column index1, low column index1], [high2, low2], ...]
+        """
+        high_idx = self.STOCK_DATA_KEYS.index("high")
+        low_idx = self.STOCK_DATA_KEYS.index("low")
+        offset = 1  # timestampの分
+        return [
+            [
+                i * len(self.STOCK_DATA_KEYS) + high_idx + offset,
+                i * len(self.STOCK_DATA_KEYS) + low_idx + offset,
+            ]
+            for i in range(self.num_symbols)
+        ]
+
     def load_data(self) -> np.ndarray:
         """`self.symbols`に格納されている銘柄の株価データを読み込む。
         timestampがindexになるように整列したnumpy array (2d)を返す
