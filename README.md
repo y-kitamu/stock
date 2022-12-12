@@ -27,4 +27,4 @@ poetry run nbstripout --install --attributes .gitattributes
 ## データ収集方針
 
 米国株データはyahoo financeからスクレイピングで取得。ローカルファイル + mongo dbで保存する。  
-日本株データをMarket SpeedからPower Automateで自動取得（準備中）。Google Driveにcsvをアップする。
+日本株データをMarket SpeedからPower Automateで半自動取得。Google Driveにcsvをアップする。
