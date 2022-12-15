@@ -19,4 +19,4 @@ if __name__ == "__main__":
     parser.add_argument("--output_dir", type=pathlib.Path, default=stock.DATA_DIR / "nikkei225")
     args = parser.parse_args()
 
-    run(args.input_dir, args.output_dir)
+    stock.run_debug(run, args.input_dir, args.output_dir)

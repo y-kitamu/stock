@@ -5,7 +5,9 @@ Create Date : 2022-05-06 13:53:21
 Copyright (c) 2019- Yusuke Kitamura <ymyk6602@gmail.com>
 """
 import logging
+import pdb
 import sys
+import traceback
 from pathlib import Path
 
 from .constants import *
@@ -87,6 +89,16 @@ def remove_logfile(logdir: Path, max_save: int = 10):
 
 
 enable_logging_to_stdout(log_level=logging.DEBUG)
+
+
+def run_debug(func, *args, **kwargs):
+    """エラーが発生したときにpdbを起動する"""
+    try:
+        return func(*args, **kwargs)
+    except:
+        extype, value, tb = sys.exc_info()
+        traceback.print_exc()
+        pdb.post_mortem(tb)
 
 
 from . import dl, scraping, storage

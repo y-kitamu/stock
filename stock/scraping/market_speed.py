@@ -30,11 +30,11 @@ def create_formatted_csv(csv_path: Path, output_dir: Path):
         rows.append(
             [
                 int(timestamp),
-                row["始値"].replace(",", ""),
-                row["高値"].replace(",", ""),
-                row["安値"].replace(",", ""),
-                row["終値"].replace(",", ""),
-                row["出来高"].replace(",", ""),
+                str(row["始値"]).replace(",", ""),
+                str(row["高値"]).replace(",", ""),
+                str(row["安値"]).replace(",", ""),
+                str(row["終値"]).replace(",", ""),
+                str(row["出来高"]).replace(",", ""),
             ]
         )
 

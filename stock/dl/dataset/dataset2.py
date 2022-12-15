@@ -1,3 +1,10 @@
+"""
+Input: 米国株価データ
+Output (予測): 日本株価データ
+のデータセット
+"""
+
+
 from pathlib import Path
 from typing import List, Tuple
 
@@ -12,20 +19,21 @@ from .. import logger
 
 class DatasetParams(BaseModel):
     # Path to the csv file which contains list of symbols to use.
-    symbols_csv_path: Path
+    # symbols_csv_path: Path
     # Path to the directory where the stock data is stored.
     # Assuming the symbol's data is storead to {data_dir}/{symbol}.csv.
-    data_dir: Path
-    # Path to the directory where the dataset will be stored.
+    us_data_dir: Path
+    jp_data_dir: Path
+    # # Path to the directory where the dataset will be stored.
     dataset_path: Path
-    # window parameters
-    input_width: int = 30
-    output_width: int = 30
-    stride: int = 1
-    shift: int = 1
-    #
-    batch_size: int = 32
-    prefetch: int = 32
+    # # window parameters
+    # input_width: int = 30
+    # output_width: int = 30
+    # stride: int = 1
+    # shift: int = 1
+    # #
+    # batch_size: int = 32
+    # prefetch: int = 32
 
 
 class Dataset:
@@ -34,20 +42,12 @@ class Dataset:
 
     def __init__(self, params: DatasetParams):
         self.params = params
-        df = pd.read_csv(self.params.symbols_csv_path)
-        self.symbols = df["Symbol"].to_list()
-        self.data = self.load_data()
+        self.us_symbols = self._get_symbols(self.params.us_data_dir)
+        self.jp_symbols = self._get_symbols(self.params.jp_data_dir)
 
-        self.input_labels = np.arange(self.params.input_width)
-        self.ouptut_labels = self.input_labels + self.params.shift
-        # 正規化用パラメータ
-        self.maen = np.zeros(self.data.shape[1])
-        self.std = np.zeros(self.data.shape[1])
-        # データセットをファイルに保存
-        if not self.params.dataset_path.exists():
-            self.save_data(self.params.dataset_path)
-        # 前処理
-        self.data = self.preprocess_on_init(self.data)
+        self.us_data = self._load_data(self.us_symbols, self.params.us_data_dir)
+        self.jp_data = self._load_data(self.jp_symbols, self.params.jp_data_dir)
+        self.data = self._merge_data(self.us_data, self.jp_data)
 
     @property
     def num_features(self):
@@ -74,29 +74,22 @@ class Dataset:
             for i in range(self.num_symbols)
         ]
 
-    def load_data(self) -> np.ndarray:
-        """`self.symbols`に格納されている銘柄の株価データを読み込む。
+    def _get_symbols(self, input_dir: Path) -> List[str]:
+        """`input_dir`に格納されているcsvのbasename(銘柄のコード)のリストを返す"""
+        return [p.stem for p in input_dir.glob("*.csv")]
+
+    def _load_data(self, symbols: List[str], input_dir: Path) -> np.ndarray:
+        """`symbols`に格納されている銘柄の株価データを`input_dir`から読み込む。
         timestampがindexになるように整列したnumpy array (2d)を返す
         (行 : timestamp, 列 : 各銘柄の株価(start, hihg, low, end, volume))
         """
-        if self.params.dataset_path.exists():
-            return np.load(self.params.dataset_path)
-
         dfs: List[pd.DataFrame] = []
-        unused_symbols = []
         timestamp_set = set()
-        for symbol in self.symbols:
-            data_csv = self.params.data_dir / f"{symbol}.csv"
-            if not data_csv.exists():
-                unused_symbols.append(symbol)
-                logger.warning(f"CSV file dose not exist: {data_csv}")
-                continue
+        for symbol in symbols:
+            data_csv = input_dir / f"{symbol}.csv"
             df = pd.read_csv(data_csv)
             timestamp_set.update(df.timestamp.to_list())
             dfs.append(df)
-
-        for symbol in unused_symbols:
-            self.symbols.remove(symbol)
 
         print(f"Number of data frames  = {len(dfs)}")
         arr = np.zeros((len(timestamp_set), len(dfs) * len(self.STOCK_DATA_KEYS) + 1))
@@ -114,6 +107,20 @@ class Dataset:
                     ] = df.loc[idx, self.STOCK_DATA_KEYS].to_numpy()
         logger.debug("Finish create dataset array")
         return arr
+
+    def _merge_data(self, us_data: np.ndarray, jp_data: np.ndarray):
+        """ """
+        # timestampが一致するものだけを抽出する
+        us_timestamps = set(us_data[:, 0] + ) 
+        jp_timestamps = set(jp_data[:, 0] + 9 * 60 * 60 * 1000)  # utcに変換
+        common_timestamps = us_timestamps & jp_timestamps
+        us_data = us_data[np.isin(us_data[:, 0], common_timestamps)]
+        jp_data = jp_data[np.isin(jp_data[:, 0], common_timestamps)]
+        # us_dataとjp_dataを結合する
+        data = np.concatenate([us_data, jp_data[:, 1:]], axis=1)
+        # 前処理
+        data = self.preprocess_on_init(data)
+        return data
 
     def save_data(self, path: Path):
         """`self.data`をnpyファイルに保存する"""
