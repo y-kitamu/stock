@@ -113,3 +113,5 @@ poetry.lock
 tmp/
 *.npy
 data/sp500/*.csv
+data/nikkei225/*.csv
+data/nikkei225/raw
