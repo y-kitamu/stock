@@ -3,8 +3,6 @@ Input: 米国株価データ
 Output (予測): 日本株価データ
 のデータセット
 """
-
-
 from pathlib import Path
 from typing import List, Tuple
 
@@ -18,8 +16,6 @@ from .. import logger
 
 
 class DatasetParams(BaseModel):
-    # Path to the csv file which contains list of symbols to use.
-    # symbols_csv_path: Path
     # Path to the directory where the stock data is stored.
     # Assuming the symbol's data is storead to {data_dir}/{symbol}.csv.
     us_data_dir: Path
@@ -110,9 +106,8 @@ class Dataset:
 
     def _merge_data(self, us_data: np.ndarray, jp_data: np.ndarray):
         """ """
-        # timestampが一致するものだけを抽出する
-        us_timestamps = set(us_data[:, 0] + ) 
-        jp_timestamps = set(jp_data[:, 0] + 9 * 60 * 60 * 1000)  # utcに変換
+        us_timestamps = set(us_data[:, 0])  # utcでYYYY/MM/DD 00:00:00のタイムスタンプ
+        jp_timestamps = set(jp_data[:, 0])
         common_timestamps = us_timestamps & jp_timestamps
         us_data = us_data[np.isin(us_data[:, 0], common_timestamps)]
         jp_data = jp_data[np.isin(jp_data[:, 0], common_timestamps)]

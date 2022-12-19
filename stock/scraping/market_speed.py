@@ -1,7 +1,7 @@
 """Power automateでMarket Speedから取得したデータを加工する
 """
 import csv
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, List
 
@@ -9,7 +9,8 @@ import pandas as pd
 
 
 def create_formatted_csv(csv_path: Path, output_dir: Path):
-    """Market Speedから取得したcsvをS&P500のcsvデータと同じ形式のcsvにする
+    """Market Speedから取得したcsvをS&P500のcsvデータと同じ形式のcsvにする。
+    データのタイムスタンプはUTCのYYYY/MM/DD 00:00:00にする。
     Args:
         csv_path (Path): Market Speedから取得したcsvのパス
         output_dir (Path): 出力先のディレクトリ
@@ -24,9 +25,9 @@ def create_formatted_csv(csv_path: Path, output_dir: Path):
             year=date.year,
             month=date.month,
             day=date.day,
-            tzinfo=datetime.now().astimezone().tzinfo,
+            tzinfo=timezone.utc,
         )
-        timestamp = date.timestamp() - date.utcoffset().seconds
+        timestamp = date.timestamp()
         rows.append(
             [
                 int(timestamp),

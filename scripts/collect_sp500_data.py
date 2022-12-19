@@ -3,6 +3,7 @@
 """
 import csv
 import time
+from datetime import datetime, timezone
 
 import stock
 
@@ -10,8 +11,16 @@ SP500_COMPANY_LIST = "sp500_companies.csv"
 DEFAULT_OUTPUT_DIR = stock.DATA_DIR / "sp500"
 
 
+def convert_timestamp_to_day(timestamp: int):
+    """取得したTimestampをUTCでYYYY/MM/DD 00:00:00のものに変換する"""
+    dt = datetime.fromtimestamp(timestamp)
+    return int(datetime(dt.year, dt.month, dt.day, tzinfo=timezone.utc).timestamp())
+
+
 def run(output_dir, interval="1d", time_range="10y", overwrite=False):
-    """ """
+    """s&p500のデータを取得する。
+    データのタイムスタンプはUTCのYYYY/MM/DD 00:00:00にする。
+    """
     csv_path = stock.DATA_DIR / SP500_COMPANY_LIST
     with open(csv_path, "r") as f:
         csv_reader = csv.reader(f)
@@ -28,7 +37,9 @@ def run(output_dir, interval="1d", time_range="10y", overwrite=False):
             )
             if len(data) == 0:
                 continue
-             data.to_csv(output_csv)
+
+            data.timestamp = [convert_timestamp_to_day(t) for t in data.timestamp]
+            data.to_csv(output_csv)
         except:
             stock.logger.exception(f"Failed to get data: {ticker}")
 
