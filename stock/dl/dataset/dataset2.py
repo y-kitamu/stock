@@ -12,7 +12,7 @@ import tensorflow as tf
 from pydantic import BaseModel
 from tqdm import tqdm
 
-from .. import logger
+from ... import logger
 
 
 class DatasetParams(BaseModel):
