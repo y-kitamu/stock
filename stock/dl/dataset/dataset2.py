@@ -4,7 +4,7 @@ Output (予測): 日本株価データ
 のデータセット
 """
 from pathlib import Path
-from typing import List, Tuple
+from typing import List, Set, Tuple
 
 import numpy as np
 import pandas as pd
@@ -23,13 +23,13 @@ class DatasetParams(BaseModel):
     # # Path to the directory where the dataset will be stored.
     dataset_path: Path
     # # window parameters
-    # input_width: int = 30
-    # output_width: int = 30
-    # stride: int = 1
-    # shift: int = 1
+    input_width: int = 30
+    output_width: int = 1
+    stride: int = 1
+    shift: int = 1
     # #
-    # batch_size: int = 32
-    # prefetch: int = 32
+    batch_size: int = 32
+    prefetch: int = 32
 
 
 class Dataset:
@@ -43,7 +43,7 @@ class Dataset:
 
         self.us_data = self._load_data(self.us_symbols, self.params.us_data_dir)
         self.jp_data = self._load_data(self.jp_symbols, self.params.jp_data_dir)
-        self.data = self._merge_data(self.us_data, self.jp_data)
+        self.data, self.invalid_mask = self._merge_data(self.us_data, self.jp_data)
 
     @property
     def num_features(self):
@@ -52,6 +52,14 @@ class Dataset:
     @property
     def num_symbols(self) -> int:
         return (self.data.shape[-1] - 1) // len(self.STOCK_DATA_KEYS)
+
+    @property
+    def us_data_indices(self) -> List[int]:
+        return list(range(1, self.us_data.shape[1]))
+
+    @property
+    def jp_data_indices(self) -> List[int]:
+        return list(range(self.us_data.shape[1], self.data.shape[1]))
 
     @property
     def high_low_indices(self) -> List[List[int]]:
@@ -106,16 +114,18 @@ class Dataset:
 
     def _merge_data(self, us_data: np.ndarray, jp_data: np.ndarray):
         """ """
-        us_timestamps = set(us_data[:, 0])  # utcでYYYY/MM/DD 00:00:00のタイムスタンプ
-        jp_timestamps = set(jp_data[:, 0])
-        common_timestamps = us_timestamps & jp_timestamps
+        us_timestamps: Set[int] = set(us_data[:, 0])  # utcでYYYY/MM/DD 00:00:00のタイムスタンプ
+        jp_timestamps: Set[int] = set(jp_data[:, 0])
+        common_timestamps = sorted(us_timestamps & jp_timestamps)
         us_data = us_data[np.isin(us_data[:, 0], common_timestamps)]
         jp_data = jp_data[np.isin(jp_data[:, 0], common_timestamps)]
         # us_dataとjp_dataを結合する
         data = np.concatenate([us_data, jp_data[:, 1:]], axis=1)
+        # 不正なデータの位置のマスクを作成
+        invalid_mask = np.isnan(data) | data < 1e-5
         # 前処理
-        data = self.preprocess_on_init(data)
-        return data
+        data, invalid_mask = self.preprocess_on_init(data, invalid_mask)
+        return data, invalid_mask
 
     def save_data(self, path: Path):
         """`self.data`をnpyファイルに保存する"""
@@ -149,8 +159,8 @@ class Dataset:
 
         def map_func(window: tf.data.Dataset):
             arr = list(window.as_numpy_iterator())
-            input = arr[: self.params.input_width]
-            output = arr[self.params.shift :]
+            input = arr[: self.params.input_width, self.us_data_indices]
+            output = arr[self.params.shift :, self.jp_data_indices]
             if self.params.output_width == 1:
                 output = output[0]
             return input, output
@@ -170,14 +180,16 @@ class Dataset:
         )
         return ds
 
-    def preprocess_on_init(self, data):
+    def preprocess_on_init(self, data, invalid_mask):
         """データ読み込み時の前処理"""
         # nanを0に置き換える
         data[np.isnan(data)] = 0
-        return data
+        # 変化率を計算する
+        data[:, 1:] = data[:, 1:] / (data[:, :-1] + 1e-5) - 1
+        #
+        invalid_mask[:, 1:] = invalid_mask[:, 1:] | invalid_mask[:, :-1]
+        return data, invalid_mask
 
     def preprocess_on_make(self, data: np.ndarray):
         """データセット作成時の前処理"""
-        # 正規化
-        data = (data - self.mean) / (self.std + 1e-9)
         return data
