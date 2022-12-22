@@ -8,6 +8,7 @@ import tensorflow as tf
 from pydantic import BaseModel
 
 from .. import logger
+from .callbacks import SummaryWriter
 from .dataset import Dataset, DatasetParams
 from .losses import LossParams, get_loss
 from .models import ModelParams, load_model
@@ -28,6 +29,7 @@ class TrainerParams(BaseModel):
 
 
 class Trainer:
+    LOG_DIR = "logs"
     CHECKPOINT_DIR = "checkpoints"
     CHECKPOINT_TEMPLATE = "ckpt-{step:08d}"
 
@@ -42,6 +44,8 @@ class Trainer:
         self.loss_fn = None
         self.optimizer = None
         self.checkpoint = None
+
+        self.callbacks = tf.keras.callbacks.CallbackList([])
 
     def build(self):
         """モデル、loss関数、optimizerを作成する
@@ -69,6 +73,12 @@ class Trainer:
         )
         self.load()
 
+        self.callbacks = tf.keras.callbacks.CallbackList(
+            callbacks=[
+                SummaryWriter(self.params.output_dir / self.LOG_DIR, self.step),
+            ]
+        )
+
     def train(self):
         """ """
         train_ds, val_ds, test_ds = self.dataset.get_train_val_test_dataset()
@@ -76,10 +86,17 @@ class Trainer:
         for i in range(self.params.epochs):
 
             for x, y in train_ds:
-                self.train_step(x, y)
+                with self.train_writer.as_default(self.step):
+                    self.train_step(x, y)
+                    self.train_writer.flush()
 
-            val_loss = np.array([self.val_step(x, y) for x, y in val_ds]).mean()
-            print(f"Epoch {i}: val_loss={val_loss}")
+            with self.val_writer.as_default(self.step):
+                val_loss = np.array([self.val_step(x, y) for x, y in val_ds]).mean()
+
+                print(f"Epoch {i}: val_loss={val_loss}")
+                tf.summary.scalar("loss", val_loss)
+                self.val_writer.flush()
+
             self.save()
 
     def train_step(self, x: tf.Tensor, y: tf.Tensor, debug: bool = False):
@@ -92,6 +109,7 @@ class Trainer:
         self.optimizer.apply_gradients(zip(grads, self.model.trainable_weights))
         self.step.assign_add(1)
 
+        tf.summary.scalar("loss", loss_value)
         if __debug__:
             losses = self.loss_fn.get_loss_detail()
             detail = " + ".join(f"{key:.4f} = {value:.4f}" for key, value in losses.items())

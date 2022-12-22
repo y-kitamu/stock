@@ -3,6 +3,7 @@ Input: 米国株価データ
 Output (予測): 日本株価データ
 のデータセット
 """
+from datetime import datetime
 from pathlib import Path
 from typing import List, Set, Tuple
 
@@ -43,7 +44,11 @@ class Dataset:
 
         self.us_data = self._load_data(self.us_symbols, self.params.us_data_dir)
         self.jp_data = self._load_data(self.jp_symbols, self.params.jp_data_dir)
-        self.data, self.invalid_mask = self._merge_data(self.us_data, self.jp_data)
+        # self.data, self.invalid_mask = self._merge_data(self.us_data, self.jp_data)
+
+        # self.save_data(
+        #     params.dataset_path / "dataset_{}.npy".format(datetime.now().strftime("%Y%m%d_%H%M%S"))
+        # )
 
     @property
     def num_features(self):
@@ -122,7 +127,7 @@ class Dataset:
         # us_dataとjp_dataを結合する
         data = np.concatenate([us_data, jp_data[:, 1:]], axis=1)
         # 不正なデータの位置のマスクを作成
-        invalid_mask = np.isnan(data) | data < 1e-5
+        invalid_mask = np.logical_or(np.isnan(data), data < 1e-5)
         # 前処理
         data, invalid_mask = self.preprocess_on_init(data, invalid_mask)
         return data, invalid_mask

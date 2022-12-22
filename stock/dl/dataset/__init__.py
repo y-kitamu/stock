@@ -1,1 +1,1 @@
-from .dataset import Dataset, DatasetParams
+from .dataset2 import Dataset, DatasetParams
