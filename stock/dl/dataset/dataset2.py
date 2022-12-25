@@ -3,14 +3,16 @@ Input: 米国株価データ
 Output (予測): 日本株価データ
 のデータセット
 """
+import re
 from datetime import datetime
 from pathlib import Path
-from typing import List, Set, Tuple
+from typing import List, Optional, Set, Tuple
 
 import numpy as np
 import pandas as pd
 import tensorflow as tf
 from pydantic import BaseModel
+from tensorflow.python.ops.array_ops import Slice
 from tqdm import tqdm
 
 from ... import logger
@@ -27,7 +29,7 @@ class DatasetParams(BaseModel):
     input_width: int = 30
     output_width: int = 1
     stride: int = 1
-    shift: int = 1
+    shift: int = 30
     # #
     batch_size: int = 32
     prefetch: int = 32
@@ -42,13 +44,17 @@ class Dataset:
         self.us_symbols = self._get_symbols(self.params.us_data_dir)
         self.jp_symbols = self._get_symbols(self.params.jp_data_dir)
 
-        self.us_data = self._load_data(self.us_symbols, self.params.us_data_dir)
-        self.jp_data = self._load_data(self.jp_symbols, self.params.jp_data_dir)
-        # self.data, self.invalid_mask = self._merge_data(self.us_data, self.jp_data)
+        if not self._restore_dataset():
+            self.us_data = self._load_data(self.us_symbols, self.params.us_data_dir)
+            self.jp_data = self._load_data(self.jp_symbols, self.params.jp_data_dir)
+            self.data, self.invalid_mask = self._merge_data(self.us_data, self.jp_data)
 
-        # self.save_data(
-        #     params.dataset_path / "dataset_{}.npy".format(datetime.now().strftime("%Y%m%d_%H%M%S"))
-        # )
+            basename = "dataset_{}".format(datetime.now().strftime("%Y%m%d_%H%M%S"))
+            self.save_data(
+                self.params.dataset_path / f"{basename}.npy", [self.data, self.invalid_mask]
+            )
+            self.save_data(self.params.dataset_path / f"{basename}_us.npy", self.us_data)
+            self.save_data(self.params.dataset_path / f"{basename}_jp.npy", self.jp_data)
 
     @property
     def num_features(self):
@@ -59,12 +65,12 @@ class Dataset:
         return (self.data.shape[-1] - 1) // len(self.STOCK_DATA_KEYS)
 
     @property
-    def us_data_indices(self) -> List[int]:
-        return list(range(1, self.us_data.shape[1]))
+    def us_data_indices(self) -> Slice:
+        return slice(1, self.us_data.shape[1])
 
     @property
-    def jp_data_indices(self) -> List[int]:
-        return list(range(self.us_data.shape[1], self.data.shape[1]))
+    def jp_data_indices(self) -> Slice:
+        return slice(self.us_data.shape[1], self.data.shape[1])
 
     @property
     def high_low_indices(self) -> List[List[int]]:
@@ -86,6 +92,34 @@ class Dataset:
     def _get_symbols(self, input_dir: Path) -> List[str]:
         """`input_dir`に格納されているcsvのbasename(銘柄のコード)のリストを返す"""
         return [p.stem for p in input_dir.glob("*.csv")]
+
+    def _restore_dataset(self):
+        """保存済みのデータセットを復元する"""
+        if not self.params.dataset_path.exists():
+            return False
+
+        # 保存済みのdatasetを検索
+        regex = re.compile(r"dataset_\d{8}_\d{6}\.npy")
+        dataset_paths = []
+        for path in self.params.dataset_path.glob("*.npy"):
+            if regex.match(path.name):
+                us_path = path.parent / path.name.replace(".npy", "_us.npy")
+                jp_path = path.parent / path.name.replace(".npy", "_jp.npy")
+                if us_path.exists() and jp_path.exists():
+                    dataset_paths.append([path, us_path, jp_path])
+
+        if len(dataset_paths) == 0:
+            return False
+
+        # 最新のdatasetを取得
+        path, us_path, jp_path = sorted(dataset_paths, key=lambda x: x[0].name)[-1]
+
+        # 復元
+        self.data, self.invalid_mask = np.load(path)
+        self.us_data = np.load(us_path)
+        self.jp_data = np.load(jp_path)
+
+        return True
 
     def _load_data(self, symbols: List[str], input_dir: Path) -> np.ndarray:
         """`symbols`に格納されている銘柄の株価データを`input_dir`から読み込む。
@@ -132,10 +166,11 @@ class Dataset:
         data, invalid_mask = self.preprocess_on_init(data, invalid_mask)
         return data, invalid_mask
 
-    def save_data(self, path: Path):
-        """`self.data`をnpyファイルに保存する"""
+    def save_data(self, path: Path, data: Optional[np.ndarray] = None):
+        """`data`をnpyファイルに保存する"""
+        _data: np.ndarray = self.data if data is None else data
         path.parent.mkdir(parents=True, exist_ok=True)
-        np.save(path, self.data)
+        np.save(path, _data)
 
     def get_train_val_test_dataset(
         self,
@@ -163,12 +198,12 @@ class Dataset:
         """
 
         def map_func(window: tf.data.Dataset):
-            arr = list(window.as_numpy_iterator())
-            input = arr[: self.params.input_width, self.us_data_indices]
-            output = arr[self.params.shift :, self.jp_data_indices]
+            arr = np.array(list(window.as_numpy_iterator()))
+            inputs = arr[: self.params.input_width, self.us_data_indices]
+            outputs = arr[self.params.shift :, self.jp_data_indices]
             if self.params.output_width == 1:
-                output = output[0]
-            return input, output
+                outputs = outputs[0]
+            return inputs, outputs
 
         data = self.preprocess_on_make(data)
         window_size = self.params.shift + self.params.output_width
