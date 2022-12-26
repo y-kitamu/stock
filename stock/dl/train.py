@@ -37,8 +37,10 @@ class Trainer:
         """ """
         self.params = params
         self.dataset = Dataset(self.params.dataset_params)
+        if params.n_output_classes < 0:
+            self.params.n_output_classes = self.dataset.num_output_features
 
-        self.step = tf.Variable(0, trainable=False)
+        self.step = tf.Variable(0, trainable=False, dtype=tf.int64)
         self.base_model = None
         self.model = None
         self.loss_fn = None
@@ -46,6 +48,7 @@ class Trainer:
         self.checkpoint = None
 
         self.callbacks = tf.keras.callbacks.CallbackList([])
+        self.callbacks._should_call_train_batch_hooks = True
 
     def build(self):
         """モデル、loss関数、optimizerを作成する
@@ -61,7 +64,7 @@ class Trainer:
         )
 
         inputs = tf.keras.Input(
-            shape=(self.params.dataset_params.input_width, self.dataset.num_features)
+            shape=(self.params.dataset_params.input_width, self.dataset.num_input_features)
         )
         self.model(inputs)
 
@@ -73,50 +76,53 @@ class Trainer:
         )
         self.load()
 
-        self.callbacks = tf.keras.callbacks.CallbackList(
-            callbacks=[
-                SummaryWriter(self.params.output_dir / self.LOG_DIR, self.step),
-            ]
-        )
+        self.callbacks.append(SummaryWriter(self.params.output_dir / self.LOG_DIR, self.step))
 
     def train(self):
         """ """
+        if self.model is None or self.loss_fn is None or self.optimizer is None:
+            logger.warning("model, loss_fn or optimizer is not initialized")
+            return
+
         train_ds, val_ds, test_ds = self.dataset.get_train_val_test_dataset()
 
         for i in range(self.params.epochs):
+            self.callbacks.on_epoch_begin(i, {})
 
             for x, y in train_ds:
-                with self.train_writer.as_default(self.step):
-                    self.train_step(x, y)
-                    self.train_writer.flush()
+                self.train_step(x, y)
 
-            with self.val_writer.as_default(self.step):
-                val_loss = np.array([self.val_step(x, y) for x, y in val_ds]).mean()
-
-                print(f"Epoch {i}: val_loss={val_loss}")
-                tf.summary.scalar("loss", val_loss)
-                self.val_writer.flush()
+            val_losses = tf.stack([self.val_step(x, y) for x, y in val_ds])
+            val_loss = tf.reduce_mean(val_losses)
 
             self.save()
+            self.callbacks.on_epoch_end(i, {"val_loss": val_loss})
 
-    def train_step(self, x: tf.Tensor, y: tf.Tensor, debug: bool = False):
+    def train_step(self, x: tf.Tensor, y: tf.Tensor, debug: bool = False) -> np.ndarray:
         """ """
+        self.callbacks.on_train_batch_begin([x, y], {})
+
         with tf.GradientTape() as tape:
             y_pred = self.model(x)
-            loss_value = self.loss_fn(y, y_pred, debug=debug)
+            loss_value = self.loss_fn(y, y_pred)
 
         grads = tape.gradient(loss_value, self.model.trainable_weights)
         self.optimizer.apply_gradients(zip(grads, self.model.trainable_weights))
         self.step.assign_add(1)
 
-        tf.summary.scalar("loss", loss_value)
-        if __debug__:
-            losses = self.loss_fn.get_loss_detail()
-            detail = " + ".join(f"{key:.4f} = {value:.4f}" for key, value in losses.items())
-            print(
-                "train loss = {:.4f}, ({})".format(loss_value.numpy(), detail),
-                end="\r",
-            )
+        self.callbacks.on_train_batch_end(
+            [x, y],
+            {"lr": self.optimizer.lr, "loss": loss_value},
+        )
+
+        # if __debug__:
+        #     losses = self.loss_fn.get_loss_detail()
+        #     detail = " + ".join(f"{key:.4f} = {value:.4f}" for key, value in losses.items())
+        #     print(
+        #         "train loss = {:.4f}, ({})".format(loss_value.numpy(), detail),
+        #         end="\r",
+        #     )
+        return loss_value
 
     def load(self):
         """保存済みの学習状態（重み、optimizer、step数）を読み込む
@@ -149,9 +155,13 @@ class Trainer:
         output = self.checkpoint.save(checkpoint_path)
         logger.info(f"checkpoint is saved: {output}")
 
-    def val_step(self, x: tf.Tensor, y: tf.Tensor) -> np.ndarray:
+    def val_step(self, x: tf.Tensor, y: tf.Tensor) -> tf.Tensor:
         """ """
+        self.callbacks.on_test_batch_begin([x, y], {})
+
         y_pred = self.model(x, training=False)
         loss_value: tf.Tensor = self.loss_fn(y, y_pred)
 
-        return loss_value.numpy()
+        self.callbacks.on_test_batch_end([x, y], {})
+
+        return loss_value

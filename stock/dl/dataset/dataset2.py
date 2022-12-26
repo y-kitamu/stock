@@ -16,15 +16,16 @@ from tensorflow.python.ops.array_ops import Slice
 from tqdm import tqdm
 
 from ... import logger
+from ...constants import DATA_DIR
 
 
 class DatasetParams(BaseModel):
     # Path to the directory where the stock data is stored.
     # Assuming the symbol's data is storead to {data_dir}/{symbol}.csv.
-    us_data_dir: Path
-    jp_data_dir: Path
+    us_data_dir: Path = DATA_DIR / "sp500"
+    jp_data_dir: Path = DATA_DIR / "nikkei225"
     # # Path to the directory where the dataset will be stored.
-    dataset_path: Path
+    dataset_path: Path = DATA_DIR / "dataset"
     # # window parameters
     input_width: int = 30
     output_width: int = 1
@@ -45,8 +46,12 @@ class Dataset:
         self.jp_symbols = self._get_symbols(self.params.jp_data_dir)
 
         if not self._restore_dataset():
-            self.us_data = self._load_data(self.us_symbols, self.params.us_data_dir)
-            self.jp_data = self._load_data(self.jp_symbols, self.params.jp_data_dir)
+            self.us_data = self._load_data(
+                self.us_symbols, self.params.us_data_dir, only_high_lows=False
+            )
+            self.jp_data = self._load_data(
+                self.jp_symbols, self.params.jp_data_dir, only_high_lows=True
+            )
             self.data, self.invalid_mask = self._merge_data(self.us_data, self.jp_data)
 
             basename = "dataset_{}".format(datetime.now().strftime("%Y%m%d_%H%M%S"))
@@ -57,37 +62,24 @@ class Dataset:
             self.save_data(self.params.dataset_path / f"{basename}_jp.npy", self.jp_data)
 
     @property
-    def num_features(self):
-        return self.data.shape[-1]
+    def num_input_features(self):
+        return len(self.us_data_indices)
+
+    @property
+    def num_output_features(self):
+        return len(self.jp_data_indices)
 
     @property
     def num_symbols(self) -> int:
         return (self.data.shape[-1] - 1) // len(self.STOCK_DATA_KEYS)
 
     @property
-    def us_data_indices(self) -> Slice:
-        return slice(1, self.us_data.shape[1])
+    def us_data_indices(self) -> List[int]:
+        return list(range(1, self.us_data.shape[1]))
 
     @property
-    def jp_data_indices(self) -> Slice:
-        return slice(self.us_data.shape[1], self.data.shape[1])
-
-    @property
-    def high_low_indices(self) -> List[List[int]]:
-        """`self.data`のhigh, lowの列のindexを返す
-        Return:
-            [[high column index1, low column index1], [high2, low2], ...]
-        """
-        high_idx = self.STOCK_DATA_KEYS.index("high")
-        low_idx = self.STOCK_DATA_KEYS.index("low")
-        offset = 1  # timestampの分
-        return [
-            [
-                i * len(self.STOCK_DATA_KEYS) + high_idx + offset,
-                i * len(self.STOCK_DATA_KEYS) + low_idx + offset,
-            ]
-            for i in range(self.num_symbols)
-        ]
+    def jp_data_indices(self) -> List[int]:
+        return list(range(self.us_data.shape[1], self.data.shape[1]))
 
     def _get_symbols(self, input_dir: Path) -> List[str]:
         """`input_dir`に格納されているcsvのbasename(銘柄のコード)のリストを返す"""
@@ -121,10 +113,17 @@ class Dataset:
 
         return True
 
-    def _load_data(self, symbols: List[str], input_dir: Path) -> np.ndarray:
+    def _load_data(
+        self, symbols: List[str], input_dir: Path, only_high_lows: bool = False
+    ) -> np.ndarray:
         """`symbols`に格納されている銘柄の株価データを`input_dir`から読み込む。
         timestampがindexになるように整列したnumpy array (2d)を返す
         (行 : timestamp, 列 : 各銘柄の株価(start, hihg, low, end, volume))
+
+        Args:
+            symbols: 銘柄のコードのリスト
+            input_dir: 株価データが格納されているディレクトリ
+            only_high_lows: high, lowのみを読み込むかどうか
         """
         dfs: List[pd.DataFrame] = []
         timestamp_set = set()
@@ -132,6 +131,8 @@ class Dataset:
             data_csv = input_dir / f"{symbol}.csv"
             df = pd.read_csv(data_csv)
             timestamp_set.update(df.timestamp.to_list())
+            if only_high_lows:
+                df = df[["timestamp", "high", "low"]]
             dfs.append(df)
 
         print(f"Number of data frames  = {len(dfs)}")

@@ -1,31 +1,13 @@
 """
 """
-from typing import List
-
 import tensorflow as tf
-from pydantic import BaseModel
 
-
-class LossParams(BaseModel):
-    name: str
-
-
-def get_loss(params: LossParams):
-    if params.name == "mse":
-        return tf.keras.losses.MeanSquaredError()
-    elif params.name == "mae":
-        return tf.keras.losses.MeanAbsoluteError()
-    elif params.name == "simulated":
-        params = SimulatedLossParams(**params.dict())
-        return SimulatedLoss(params)
-    else:
-        raise ValueError(f"Unknown loss: {params.name}")
+from . import LossParams
 
 
 class SimulatedLossParams(LossParams):
     n_classes: int = -1
     fee_rate: float = 0.005  # 手数料（デフォルト：約定代金の0.5%）
-    high_lows: List[List[int]] = []
     profit_scale: float = 1.0  # 利益のスケール（デフォルト：100倍、値が小さくなりすぎるのを回避）
     profit_loss_weight: float = 1.0  # 儲けが大きくなるようにするlossの重み
     variance_loss_weight: float = 1.0  # lossの正規化項の重み

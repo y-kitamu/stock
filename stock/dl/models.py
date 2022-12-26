@@ -6,7 +6,7 @@ from pydantic import BaseModel
 
 
 class ModelParams(BaseModel):
-    name: str
+    name: str = "lstm"
 
 
 class LSTMParams(ModelParams):

@@ -5,6 +5,8 @@ import tensorflow as tf
 
 
 class SummaryWriter(tf.keras.callbacks.Callback):
+    VALIDATION = "val"
+
     def __init__(self, log_dir: Path, step: tf.Variable, **kwargs):
         super().__init__(**kwargs)
         self.log_dir = log_dir
@@ -16,6 +18,7 @@ class SummaryWriter(tf.keras.callbacks.Callback):
         with self.train_writer.as_default(self.step):
             for k, v in logs.items():
                 tf.summary.scalar(k, v)
+        self.train_writer.flush()
 
         return super().on_train_batch_end(batch, logs)
 
@@ -23,15 +26,24 @@ class SummaryWriter(tf.keras.callbacks.Callback):
         with self.val_writer.as_default(self.step):
             for k, v in logs.items():
                 tf.summary.scalar(k, v)
+        self.val_writer.flush()
 
         return super().on_test_batch_end(batch, logs)
 
     def on_epoch_end(self, epoch, logs=None):
         logs = logs or {}
-        with self.train_writer.as_default():
+        with self.train_writer.as_default(self.step):
             for name, value in logs.items():
-                tf.summary.scalar(name, value, step=epoch)
+                if name.startswith(self.VALIDATION):
+                    continue
+                tf.summary.scalar(name, value)
         self.train_writer.flush()
+
+        with self.val_writer.as_default(self.step):
+            for name, value in logs.items():
+                if name.startswith(self.VALIDATION):
+                    tf.summary.scalar(name, value)
+        self.val_writer.flush()
 
     def on_train_end(self, logs=None):
         self.train_writer.close()
