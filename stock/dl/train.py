@@ -24,7 +24,6 @@ class TrainerParams(BaseModel):
     loss_params: LossParams
 
     epochs: int = 10
-    n_output_classes: int = -1
     output_dir: Path
 
 
@@ -37,8 +36,6 @@ class Trainer:
         """ """
         self.params = params
         self.dataset = Dataset(self.params.dataset_params)
-        if params.n_output_classes < 0:
-            self.params.n_output_classes = self.dataset.num_output_features
 
         self.step = tf.Variable(0, trainable=False, dtype=tf.int64)
         self.base_model = None
@@ -59,13 +56,11 @@ class Trainer:
         self.model = tf.keras.Sequential(
             [
                 self.base_model,
-                tf.keras.layers.Dense(self.params.n_output_classes),
+                tf.keras.layers.Dense(self.dataset.num_output_features),
             ]
         )
 
-        inputs = tf.keras.Input(
-            shape=(self.params.dataset_params.input_width, self.dataset.num_input_features)
-        )
+        inputs = tf.keras.Input(shape=(self.dataset.num_input_features))
         self.model(inputs)
 
         self.loss_fn = get_loss(self.params.loss_params)
