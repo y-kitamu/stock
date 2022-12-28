@@ -193,10 +193,9 @@ class Dataset(DatasetBase):
             is_train (bool): trainデータかどうか
         """
 
-        def map_func(window: tf.data.Dataset):
-            arr = np.array(list(window.as_numpy_iterator()))
-            inputs = arr[: self.params.input_width, self._us_data_indices]
-            outputs = arr[self.params.shift :, self._jp_data_indices]
+        def map_func(data: tf.Tensor):
+            inputs = data.numpy()[self._us_data_indices]
+            outputs = data.numpy()[self._jp_data_indices]
             return inputs, outputs
 
         # data = self.preprocess_on_make(data)

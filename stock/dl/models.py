@@ -9,6 +9,12 @@ class ModelParams(BaseModel):
     name: str = "lstm"
 
 
+class NNParams(ModelParams):
+    """ """
+
+    n_units: int = 32
+
+
 class LSTMParams(ModelParams):
     """ """
 
@@ -17,7 +23,10 @@ class LSTMParams(ModelParams):
 
 def load_model(params: ModelParams):
     """ """
-    if params.name == "lstm":
+    if params.name == "nn":
+        params = NNParams(**params.dict())
+        return tf.keras.layers.Dense(params.n_units)
+    elif params.name == "lstm":
         params = LSTMParams(**params.dict())
         return tf.keras.layers.LSTM(params.n_units)
 

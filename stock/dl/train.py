@@ -38,20 +38,6 @@ class Trainer:
         self.dataset = Dataset(self.params.dataset_params)
 
         self.step = tf.Variable(0, trainable=False, dtype=tf.int64)
-        self.base_model = None
-        self.model = None
-        self.loss_fn = None
-        self.optimizer = None
-        self.checkpoint = None
-
-        self.callbacks = tf.keras.callbacks.CallbackList([])
-        self.callbacks._should_call_train_batch_hooks = True
-
-    def build(self):
-        """モデル、loss関数、optimizerを作成する
-        constructorではなく、別メソッドにしているのは、
-        これらの初期化に必要な情報をconstructr時には(`self.params`に)持っていない可能性があるため。
-        """
         self.base_model = load_model(params=self.params.model_params)
         self.model = tf.keras.Sequential(
             [
@@ -59,19 +45,28 @@ class Trainer:
                 tf.keras.layers.Dense(self.dataset.num_output_features),
             ]
         )
-
-        inputs = tf.keras.Input(shape=(self.dataset.num_input_features))
-        self.model(inputs)
-
         self.loss_fn = get_loss(self.params.loss_params)
         self.optimizer = tf.keras.optimizers.Adam()
-
         self.checkpoint = tf.train.Checkpoint(
             step=self.step, model=self.model, optimizer=self.optimizer
         )
-        self.load()
 
-        self.callbacks.append(SummaryWriter(self.params.output_dir / self.LOG_DIR, self.step))
+        self.callbacks = tf.keras.callbacks.CallbackList(
+            [(SummaryWriter(self.params.output_dir / self.LOG_DIR, self.step))]
+        )
+        self.callbacks._should_call_train_batch_hooks = True
+
+        self.build()
+
+    def build(self):
+        """モデル、loss関数、optimizerを作成する
+        constructorではなく、別メソッドにしているのは、
+        これらの初期化に必要な情報をconstructr時には(`self.params`に)持っていない可能性があるため。
+        """
+        inputs = tf.keras.Input(shape=(self.dataset.num_input_features))
+        self.model(inputs)
+        # 過去の学習状態を読み込む
+        self.load()
 
     def train(self):
         """ """
