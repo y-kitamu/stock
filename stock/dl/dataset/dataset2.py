@@ -36,22 +36,28 @@ class Dataset(DatasetBase):
     STOCK_DATA_KEYS = ["start", "high", "low", "end", "volume"]
     TRAIN_VAL_TEST_RATIO = [0.7, 0.1, 0.2]  # train, val, test ratio
 
-    def __init__(self, params: DatasetParams):
+    def __init__(self, params: DatasetParams, force_recreate: bool = False):
         self.params = params
         self.us_symbols = self._get_symbols(self.params.us_data_dir)
         self.jp_symbols = self._get_symbols(self.params.jp_data_dir)
 
-        if not self._restore_dataset():
+        # 時間がかかる処理は処理後の状態を保存しておく
+        if force_recreate or not self._restore_dataset():
             # s&p500のデータを取得
-            data = self._load_data(self.us_symbols, self.params.us_data_dir, only_high_lows=False)
-            self.us_data = self.preprocess_on_init(data)
+            self.us_data = self._load_data(
+                self.us_symbols, self.params.us_data_dir, only_high_lows=False
+            )
             # nikkei225のデータを取得
-            data = self._load_data(self.jp_symbols, self.params.jp_data_dir, only_high_lows=True)
-            self.jp_data = self.preprocess_on_init(data)
-            # s&p 500とnikkei225を結合
-            self.data, self.invalid_mask = self._merge_data(self.us_data, self.jp_data)
-
+            self.jp_data = self._load_data(
+                self.jp_symbols, self.params.jp_data_dir, only_high_lows=True
+            )
             self.save_dataset()
+
+        # データの前処理
+        self.us_data, self.us_symbols = self.preprocess_on_init(self.us_data, self.us_symbols)
+        self.jp_data, self.jp_symbols = self.preprocess_on_init(self.jp_data, self.jp_symbols)
+        # s&p 500とnikkei225を結合
+        self.data, self.invalid_mask = self._merge_data(self.us_data, self.jp_data)
 
     @property
     def num_input_features(self):
@@ -79,27 +85,37 @@ class Dataset(DatasetBase):
             return False
 
         # 保存済みのdatasetを検索
-        regex = re.compile(r"dataset_\d{8}_\d{6}\.npy")
+        regex = re.compile(r"dataset_\d{8}_\d{6}\_us.npy")
         dataset_paths = []
         for path in self.params.dataset_path.glob("*.npy"):
             if regex.match(path.name):
-                us_path = path.parent / path.name.replace(".npy", "_us.npy")
-                jp_path = path.parent / path.name.replace(".npy", "_jp.npy")
-                if us_path.exists() and jp_path.exists():
-                    dataset_paths.append([path, us_path, jp_path])
+                jp_path = path.parent / path.name.replace("_us.npy", "_jp.npy")
+                if path.exists() and jp_path.exists():
+                    dataset_paths.append([path, jp_path])
 
         if len(dataset_paths) == 0:
             return False
 
         # 最新のdatasetを取得
-        path, us_path, jp_path = sorted(dataset_paths, key=lambda x: x[0].name)[-1]
+        us_path, jp_path = sorted(dataset_paths, key=lambda x: x[0].name)[-1]
 
         # 復元
-        self.data, self.invalid_mask = np.load(path)
         self.us_data = np.load(us_path)
         self.jp_data = np.load(jp_path)
 
         return True
+
+    def save_dataset(self):
+        """作成したデータを保存する"""
+        basename = "dataset_{}".format(datetime.now().strftime("%Y%m%d_%H%M%S"))
+        self._save_data(self.params.dataset_path / f"{basename}_us.npy", self.us_data)
+        self._save_data(self.params.dataset_path / f"{basename}_jp.npy", self.jp_data)
+
+    def _save_data(self, path: Path, data: Optional[Union[np.ndarray, List[np.ndarray]]] = None):
+        """`data`をnpyファイル (`path`)に保存する"""
+        _data: Union[np.ndarray, List[np.ndarray]] = self.data if data is None else data
+        path.parent.mkdir(parents=True, exist_ok=True)
+        np.save(path, _data)
 
     def _load_data(
         self, symbols: List[str], input_dir: Path, only_high_lows: bool = False
@@ -115,14 +131,20 @@ class Dataset(DatasetBase):
         """
         # 銘柄別に保存されているcsvを読み込む
         dfs: List[pd.DataFrame] = []
+        unused_symbols = []  # 欠損データがあるので使用しない銘柄
         timestamp_set = set()
         for symbol in symbols:
             data_csv = input_dir / f"{symbol}.csv"
             df = pd.read_csv(data_csv)
+            if np.any(np.isnan(df.to_numpy())):
+                unused_symbols.append(symbol)
+                logger.debug(f"Symbol {symbol} has nan values.")
+                continue
             timestamp_set.update(df.timestamp.to_list())
             if only_high_lows:
                 df = df[["timestamp", "high", "low"]]
-            dfs.append(df)
+                self.STOCK_DATA_KEYS = ["high", "low"]
+            dfs.append(df)  #
 
         # timestampをindexにして、すべての銘柄のデータを一つのnp.arrayに格納
         arr = np.zeros((len(timestamp_set), len(dfs) * len(self.STOCK_DATA_KEYS) + 1))
@@ -144,31 +166,17 @@ class Dataset(DatasetBase):
         timestampはJPのものを1日ずらす。
         （同じタイムスタンプのデータを見ると、US -> JPの時系列になるようにする）
         """
+        jp_data[:, 0] += 24 * 60 * 60  # 時系列をus -> jpとするためにtimestampを1日ずらす
         us_timestamps: Set[int] = set(us_data[:, 0])  # utcでYYYY/MM/DD 00:00:00のタイムスタンプ
-        jp_timestamps: Set[int] = set(jp_data[:, 0] + 24 * 60 * 60)  # 時系列をus -> jpとするため1日ずらす
+        jp_timestamps: Set[int] = set(jp_data[:, 0])
         common_timestamps = sorted(us_timestamps & jp_timestamps)
         us_data = us_data[np.isin(us_data[:, 0], common_timestamps)]
         jp_data = jp_data[np.isin(jp_data[:, 0], common_timestamps)]
         # us_dataとjp_dataを結合する
-        data = np.concatenate([us_data[:, 1:], jp_data[:, 1:]], axis=1)
+        data = np.concatenate([us_data[:, 1:], jp_data[:, 1:]], axis=1)  # timestampは不要なので除く
         invalid_mask = np.isnan(data)
         data[invalid_mask] = -100
         return data, invalid_mask
-
-    def save_dataset(self):
-        """作成したデータを保存する"""
-        basename = "dataset_{}".format(datetime.now().strftime("%Y%m%d_%H%M%S"))
-        self._save_data(
-            self.params.dataset_path / f"{basename}.npy", [self.data, self.invalid_mask]
-        )
-        self._save_data(self.params.dataset_path / f"{basename}_us.npy", self.us_data)
-        self._save_data(self.params.dataset_path / f"{basename}_jp.npy", self.jp_data)
-
-    def _save_data(self, path: Path, data: Optional[Union[np.ndarray, List[np.ndarray]]] = None):
-        """`data`をnpyファイル (`path`)に保存する"""
-        _data: Union[np.ndarray, List[np.ndarray]] = self.data if data is None else data
-        path.parent.mkdir(parents=True, exist_ok=True)
-        np.save(path, _data)
 
     def get_train_val_test_dataset(
         self,
@@ -211,16 +219,37 @@ class Dataset(DatasetBase):
         )
         return ds
 
-    def preprocess_on_init(self, data):
-        """データ読み込み時の前処理"""
-        # nanを0に置き換える
-        data[np.isnan(data)] = 0
+    def preprocess_on_init(self, data, symbols):
+        """データ読み込み時の前処理
+        `data`は1列目がtimestamp, 2列目以降が銘柄のデータであるとする
+
+        Args:
+            data (np.ndarray) :
+            symbols (List[str]) :
+        """
+        # 生データ（株価、売買高）が0になることはないので、0のデータをnanに置き換える
+        data[data < 1e-5] = np.nan
+        # 無効なデータが含まれている列, symbolを削除する
+        cols_per_symbol = (data.shape[1] - 1) // len(symbols)
+        valid_cols = [0]  # timestamp列は残す
+        invalid_symbol_indices = []
+        for col_idx in range(1, data.shape[1], cols_per_symbol):
+            for offset in range(cols_per_symbol):
+                if np.any(np.isnan(data[:, col_idx + offset])):
+                    invalid_symbol_indices.append((col_idx - 1) // cols_per_symbol)
+                    break
+            else:
+                valid_cols += list(range(col_idx, col_idx + cols_per_symbol))
+        data = data[:, valid_cols]
+        valid_symbols = [
+            symbol for i, symbol in enumerate(symbols) if i not in invalid_symbol_indices
+        ]
+
         # 騰落率を計算する
-        percentage_change = (data[:, 1:] / (data[:, :-1] + 1e-5) - 1) * 100
-        # 無効なデータをnanに置き換える
-        percentage_change[data[:, 1:] < 1e-5] = np.nan
-        percentage_change[data[:, :-1] < 1e-5] = np.nan
-        return percentage_change
+        percentage_change = np.zeros((data.shape[0] - 1, data.shape[1]))
+        percentage_change[:, 0] = data[1:, 0]
+        percentage_change[:, 1:] = (data[1:, 1:] / (data[:-1, 1:] + 1e-5) - 1) * 100
+        return percentage_change, valid_symbols
 
     # def preprocess_on_make(self, data: np.ndarray):
     #     """データセット作成時の前処理"""

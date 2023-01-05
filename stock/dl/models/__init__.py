@@ -6,13 +6,7 @@ from pydantic import BaseModel
 
 
 class ModelParams(BaseModel):
-    name: str = "lstm"
-
-
-class NNParams(ModelParams):
-    """ """
-
-    n_units: int = 32
+    name: str = "mlp"
 
 
 class LSTMParams(ModelParams):
@@ -23,11 +17,14 @@ class LSTMParams(ModelParams):
 
 def load_model(params: ModelParams):
     """ """
-    if params.name == "nn":
-        params = NNParams(**params.dict())
-        return tf.keras.layers.Dense(params.n_units)
+    if params.name == "mlp":
+        params = MLPParams(**params.dict())
+        return MultiLayerPerceptron(params)
     elif params.name == "lstm":
         params = LSTMParams(**params.dict())
         return tf.keras.layers.LSTM(params.n_units)
 
     raise ValueError(f"Unknown model: {params.name}")
+
+
+from .mlp import MLPParams, MultiLayerPerceptron

@@ -19,9 +19,9 @@ from .models import ModelParams, load_model
 class TrainerParams(BaseModel):
     """ """
 
-    dataset_params: DatasetParams
-    model_params: ModelParams
-    loss_params: LossParams
+    dataset_params: DatasetParams = DatasetParams()
+    model_params: ModelParams = ModelParams()
+    loss_params: LossParams = LossParams()
 
     epochs: int = 10
     output_dir: Path
@@ -90,7 +90,7 @@ class Trainer:
 
     def train_step(self, x: tf.Tensor, y: tf.Tensor, debug: bool = False) -> np.ndarray:
         """ """
-        self.callbacks.on_train_batch_begin([x, y], {})
+        self.callbacks.on_train_batch_begin(self.step.numpy(), {})
 
         with tf.GradientTape() as tape:
             y_pred = self.model(x)
@@ -98,10 +98,9 @@ class Trainer:
 
         grads = tape.gradient(loss_value, self.model.trainable_weights)
         self.optimizer.apply_gradients(zip(grads, self.model.trainable_weights))
-        self.step.assign_add(1)
 
         self.callbacks.on_train_batch_end(
-            [x, y],
+            self.step.numpy(),
             {"lr": self.optimizer.lr, "loss": loss_value},
         )
 
@@ -112,6 +111,7 @@ class Trainer:
         #         "train loss = {:.4f}, ({})".format(loss_value.numpy(), detail),
         #         end="\r",
         #     )
+        self.step.assign_add(1)
         return loss_value
 
     def load(self):
@@ -147,11 +147,11 @@ class Trainer:
 
     def val_step(self, x: tf.Tensor, y: tf.Tensor) -> tf.Tensor:
         """ """
-        self.callbacks.on_test_batch_begin([x, y], {})
+        self.callbacks.on_test_batch_begin(self.step.numpy(), {})
 
         y_pred = self.model(x, training=False)
         loss_value: tf.Tensor = self.loss_fn(y, y_pred)
 
-        self.callbacks.on_test_batch_end([x, y], {})
+        self.callbacks.on_test_batch_end(self.step.numpy(), {})
 
         return loss_value
