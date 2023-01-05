@@ -31,7 +31,7 @@ class SimulatedLoss(tf.keras.losses.Loss):
         self.relu = tf.keras.layers.ReLU()
         assert len(self.params.high_lows) > 0
 
-    def __call__(self, y_true: tf.Tensor, y_pred: tf.Tensor, sample_weight=None, debug=False):
+    def __call__(self, y_true: tf.Tensor, y_pred: tf.Tensor, debug=False):
         """
         TODO: lossの妥当性、値は検証の必要あり
         Args:

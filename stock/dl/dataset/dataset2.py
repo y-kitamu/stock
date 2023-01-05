@@ -11,6 +11,7 @@ from typing import List, Optional, Set, Tuple, Union
 import numpy as np
 import pandas as pd
 import tensorflow as tf
+from keras.api._v2.keras import preprocessing
 from pydantic import BaseModel
 from tensorflow.python.ops.array_ops import Slice
 from tqdm import tqdm
@@ -44,18 +45,16 @@ class Dataset(DatasetBase):
         # 時間がかかる処理は処理後の状態を保存しておく
         if force_recreate or not self._restore_dataset():
             # s&p500のデータを取得
-            self.us_data = self._load_data(
-                self.us_symbols, self.params.us_data_dir, only_high_lows=False
-            )
+            self.us_data = self._load_data(self.us_symbols, self.params.us_data_dir)
             # nikkei225のデータを取得
-            self.jp_data = self._load_data(
-                self.jp_symbols, self.params.jp_data_dir, only_high_lows=True
-            )
+            self.jp_data = self._load_data(self.jp_symbols, self.params.jp_data_dir)
             self.save_dataset()
 
         # データの前処理
         self.us_data, self.us_symbols = self.preprocess_on_init(self.us_data, self.us_symbols)
-        self.jp_data, self.jp_symbols = self.preprocess_on_init(self.jp_data, self.jp_symbols)
+        self.jp_data, self.jp_symbols = self.preprocess_on_init(
+            self.jp_data, self.jp_symbols, only_high_lows=True
+        )
         # s&p 500とnikkei225を結合
         self.data, self.invalid_mask = self._merge_data(self.us_data, self.jp_data)
 
@@ -117,9 +116,7 @@ class Dataset(DatasetBase):
         path.parent.mkdir(parents=True, exist_ok=True)
         np.save(path, _data)
 
-    def _load_data(
-        self, symbols: List[str], input_dir: Path, only_high_lows: bool = False
-    ) -> np.ndarray:
+    def _load_data(self, symbols: List[str], input_dir: Path) -> np.ndarray:
         """`symbols`に格納されている銘柄の株価データを`input_dir`から読み込む。
         timestampがindexになるように整列したnumpy array (2d)を返す
         (行 : timestamp, 列 : 各銘柄の株価(start, hihg, low, end, volume))
@@ -127,7 +124,6 @@ class Dataset(DatasetBase):
         Args:
             symbols: 銘柄のコードのリスト
             input_dir: 株価データが格納されているディレクトリ
-            only_high_lows: high, lowのみを読み込むかどうか
         """
         # 銘柄別に保存されているcsvを読み込む
         dfs: List[pd.DataFrame] = []
@@ -141,9 +137,6 @@ class Dataset(DatasetBase):
                 logger.debug(f"Symbol {symbol} has nan values.")
                 continue
             timestamp_set.update(df.timestamp.to_list())
-            if only_high_lows:
-                df = df[["timestamp", "high", "low"]]
-                self.STOCK_DATA_KEYS = ["high", "low"]
             dfs.append(df)  #
 
         # timestampをindexにして、すべての銘柄のデータを一つのnp.arrayに格納
@@ -166,7 +159,7 @@ class Dataset(DatasetBase):
         timestampはJPのものを1日ずらす。
         （同じタイムスタンプのデータを見ると、US -> JPの時系列になるようにする）
         """
-        jp_data[:, 0] += 24 * 60 * 60  # 時系列をus -> jpとするためにtimestampを1日ずらす
+        jp_data[:, 0] -= 24 * 60 * 60  # 時系列をus -> jpとするためにtimestampを1日ずらす
         us_timestamps: Set[int] = set(us_data[:, 0])  # utcでYYYY/MM/DD 00:00:00のタイムスタンプ
         jp_timestamps: Set[int] = set(jp_data[:, 0])
         common_timestamps = sorted(us_timestamps & jp_timestamps)
@@ -219,13 +212,17 @@ class Dataset(DatasetBase):
         )
         return ds
 
-    def preprocess_on_init(self, data, symbols):
-        """データ読み込み時の前処理
-        `data`は1列目がtimestamp, 2列目以降が銘柄のデータであるとする
+    def preprocess_on_init(self, data, symbols, only_high_lows=False):
+        """データ読み込み時の前処理。無効なデータの削除、騰落率を計算する。
+        `data`は1列目がtimestamp, 2列目以降が銘柄のデータであるとする。
+        (`self.STOCK_DATA_KEYS`の順番であることを想定。`self._load_data`で読み込んだデータを想定)
 
         Args:
             data (np.ndarray) :
             symbols (List[str]) :
+            only_high_lows: high, lowのみを読み込むかどうか
+        Returns:
+            Tuple[np.ndarray, np.ndarray]: (前処理後のデータ, データに含まれる銘柄のリスト)
         """
         # 生データ（株価、売買高）が0になることはないので、0のデータをnanに置き換える
         data[data < 1e-5] = np.nan
@@ -245,10 +242,36 @@ class Dataset(DatasetBase):
             symbol for i, symbol in enumerate(symbols) if i not in invalid_symbol_indices
         ]
 
-        # 騰落率を計算する
-        percentage_change = np.zeros((data.shape[0] - 1, data.shape[1]))
+        # 騰落率を計算する。株価の騰落率は前日終値を基準にする。
+        # close_idx = self.STOCK_DATA_KEYS.index("end")
+        # volume_idx = self.STOCK_DATA_KEYS.index("volume")
+        # n_keys = len(self.STOCK_DATA_KEYS)
+        # offsets = [
+        #     j * n_keys + close_idx + 1 if i % n_keys != volume_idx else j * n_keys + volume_idx + 1
+        #     for j in range(len(valid_symbols))
+        #     for i in range(len(self.STOCK_DATA_KEYS))
+        # ]
+        # previous_close = data[:-1, offsets]
+        # percentage_change: np.ndarray = np.zeros((data.shape[0] - 1, data.shape[1]))
+        # percentage_change[:, 0] = data[1:, 0]
+        # percentage_change[:, 1:] = (data[1:, 1:] / (previous_close + 1e-5) - 1) * 100
+
+        percentage_change: np.ndarray = np.zeros((data.shape[0] - 1, data.shape[1]))
         percentage_change[:, 0] = data[1:, 0]
         percentage_change[:, 1:] = (data[1:, 1:] / (data[:-1, 1:] + 1e-5) - 1) * 100
+
+        # only_high_lows == Trueの場合、high, lowの列のみを残す
+        if only_high_lows:
+            target_offset = [
+                idx for idx, key in enumerate(self.STOCK_DATA_KEYS) if key in ["high", "low"]
+            ]
+            target_cols = [0] + [
+                idx + 1
+                for idx in range(data.shape[1])
+                if idx % len(self.STOCK_DATA_KEYS) in target_offset
+            ]
+            percentage_change = percentage_change[:, target_cols]
+
         return percentage_change, valid_symbols
 
     # def preprocess_on_make(self, data: np.ndarray):

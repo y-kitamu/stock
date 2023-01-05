@@ -5,6 +5,7 @@ from typing import Optional
 
 import numpy as np
 import tensorflow as tf
+import tensorflow_probability as tfp
 from pydantic import BaseModel
 
 from .. import logger
@@ -39,10 +40,16 @@ class Trainer:
 
         self.step = tf.Variable(0, trainable=False, dtype=tf.int64)
         self.base_model = load_model(params=self.params.model_params)
+        n_output = self.dataset.num_output_features
         self.model = tf.keras.Sequential(
             [
                 self.base_model,
-                tf.keras.layers.Dense(self.dataset.num_output_features),
+                tf.keras.layers.Dense(n_output * 2),
+                tfp.layers.DistributionLambda(
+                    lambda t: tfp.distributions.Normal(
+                        t[..., :n_output], tf.math.softplus(t[..., n_output:]) + 1e-5
+                    )
+                ),
             ]
         )
         self.loss_fn = get_loss(self.params.loss_params)
