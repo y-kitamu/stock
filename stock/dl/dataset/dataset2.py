@@ -243,22 +243,22 @@ class Dataset(DatasetBase):
         ]
 
         # 騰落率を計算する。株価の騰落率は前日終値を基準にする。
-        # close_idx = self.STOCK_DATA_KEYS.index("end")
-        # volume_idx = self.STOCK_DATA_KEYS.index("volume")
-        # n_keys = len(self.STOCK_DATA_KEYS)
-        # offsets = [
-        #     j * n_keys + close_idx + 1 if i % n_keys != volume_idx else j * n_keys + volume_idx + 1
-        #     for j in range(len(valid_symbols))
-        #     for i in range(len(self.STOCK_DATA_KEYS))
-        # ]
-        # previous_close = data[:-1, offsets]
-        # percentage_change: np.ndarray = np.zeros((data.shape[0] - 1, data.shape[1]))
-        # percentage_change[:, 0] = data[1:, 0]
-        # percentage_change[:, 1:] = (data[1:, 1:] / (previous_close + 1e-5) - 1) * 100
-
+        close_idx = self.STOCK_DATA_KEYS.index("end")
+        volume_idx = self.STOCK_DATA_KEYS.index("volume")
+        n_keys = len(self.STOCK_DATA_KEYS)
+        offsets = [
+            j * n_keys + close_idx + 1 if i % n_keys != volume_idx else j * n_keys + volume_idx + 1
+            for j in range(len(valid_symbols))
+            for i in range(len(self.STOCK_DATA_KEYS))
+        ]
+        previous_close = data[:-1, offsets]
         percentage_change: np.ndarray = np.zeros((data.shape[0] - 1, data.shape[1]))
         percentage_change[:, 0] = data[1:, 0]
-        percentage_change[:, 1:] = (data[1:, 1:] / (data[:-1, 1:] + 1e-5) - 1) * 100
+        percentage_change[:, 1:] = (data[1:, 1:] / (previous_close + 1e-5) - 1) * 100
+
+        # percentage_change: np.ndarray = np.zeros((data.shape[0] - 1, data.shape[1]))
+        # percentage_change[:, 0] = data[1:, 0]
+        # percentage_change[:, 1:] = (data[1:, 1:] / (data[:-1, 1:] + 1e-5) - 1) * 100
 
         # only_high_lows == Trueの場合、high, lowの列のみを残す
         if only_high_lows:
@@ -269,6 +269,12 @@ class Dataset(DatasetBase):
                 idx + 1
                 for idx in range(data.shape[1])
                 if idx % len(self.STOCK_DATA_KEYS) in target_offset
+            ]
+            percentage_change = percentage_change[:, target_cols]
+        else:
+            # volumeの列を削除する
+            target_cols = [0] + [
+                i for i in range(percentage_change.shape[1]) if (i - 1) % n_keys != volume_idx
             ]
             percentage_change = percentage_change[:, target_cols]
 

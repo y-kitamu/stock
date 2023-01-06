@@ -12,6 +12,7 @@ class MLPParams(ModelParams):
     activation: str = "relu"
     n_hidden_layers: int = 2
     n_hidden_layer_units: int = 1024
+    dropout_rate: float = 0.5
 
 
 class MultiLayerPerceptron(tf.keras.layers.Layer):
@@ -29,6 +30,9 @@ class MultiLayerPerceptron(tf.keras.layers.Layer):
                 ),
             )
             self.layers.append(tf.keras.layers.LayerNormalization(name=f"hidden_layer_{i}_norm"))
+            self.layers.append(
+                tf.keras.layers.Dropout(params.dropout_rate, name=f"hidden_layer_{i}_dropout")
+            )
 
     def call(self, inputs):
         for layer in self.layers:
