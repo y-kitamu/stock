@@ -180,9 +180,7 @@ class Dataset(DatasetBase):
         n_train = int(n_data * ratio[0])
         n_val = int(n_data * ratio[1])
 
-        train_data = self.data[:n_train]
-
-        train_ds = self.make_dataset(train_data, is_train=True)
+        train_ds = self.make_dataset(self.data[:n_train], is_train=True)
         val_ds = self.make_dataset(self.data[n_train : n_train + n_val], is_train=False)
         test_ds = self.make_dataset(self.data[n_train + n_val :], is_train=False)
         return train_ds, val_ds, test_ds
