@@ -21,7 +21,7 @@ class TradingType(Enum):
 
 class OrderType(Enum):
     Normal = 0
-    NormalWitStop = 1
+    NormalWithStop = 1
     Stop = 2
 
 
@@ -60,3 +60,8 @@ class StopType(Enum):
 class PairOrder(Enum):
     NO = 0
     YES = 1
+
+
+class PairOrderPriceType(Enum):
+    Limit = 1
+    PriceRange = 2
