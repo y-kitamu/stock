@@ -23,9 +23,16 @@ class OrderParams(BaseModel):
     account_type: constants.AcccountType  # 口座区分
     stop_condition_price: Optional[int] = None  # 逆指値条件価格
     stop_condition_type: Optional[constants.StopType] = None  # 逆指値条件区分
-    stop_price_type: Optional[constants.PriceType] = None  # 逆指値価格
+    stop_price_type: Optional[constants.PriceType] = None  # 逆指値価格区分
+    stop_price: Optional[int] = None  # 逆指値価格
     pair_order: constants.PairOrder = constants.PairOrder.NO  # セット注文区分
-    pair_order_price_type: Optional[constants.PairOrderPriceType] = None  # セット注文価格区分
     pair_order_price: Optional[int] = None  # セット注文価格
     pair_order_condition: Optional[constants.OrderCondition] = None  # セット注文執行条件
     pair_order_limit: Optional[str] = None  # セット注文期限
+
+    def get_api_arg_list(self):
+        """ """
+
+
+class MarginOrderParams(OrderParams):
+    pair_order_price_type: Optional[constants.PairOrderPriceType] = None  # セット注文価格区分
