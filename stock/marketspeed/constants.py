@@ -46,7 +46,7 @@ class OrderCondition(Enum):
     UnsuccessfulOnClose = 8
 
 
-class AcccountType(Enum):
+class AccountType(Enum):
     Specific = 0
     Normal = 1
     NISA = 2
@@ -65,3 +65,10 @@ class PairOrder(Enum):
 class PairOrderPriceType(Enum):
     Limit = 1
     PriceRange = 2
+
+
+class MarginType(Enum):
+    SystemMargin = 1  # 制度信用
+    Infinite = 2  # 一般信用(無制限)
+    TwoWeeks = 3  # 一般信用(14日)
+    OneDay = 4  # 一般信用(いちにち)

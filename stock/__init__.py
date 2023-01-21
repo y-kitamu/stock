@@ -6,6 +6,7 @@ Copyright (c) 2019- Yusuke Kitamura <ymyk6602@gmail.com>
 """
 import logging
 import pdb
+import platform
 import sys
 import traceback
 from pathlib import Path
@@ -101,4 +102,8 @@ def run_debug(func, *args, **kwargs):
         pdb.post_mortem(tb)
 
 
-from . import dl, scraping, storage
+if platform.system() == "Linux":
+    # windowsだとtensorflowのエラーが出て動かないので、linuxのときだけimportする
+    from . import dl
+
+from . import marketspeed, scraping, storage
