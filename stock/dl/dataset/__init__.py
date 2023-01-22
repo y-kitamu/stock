@@ -11,4 +11,4 @@ class DatasetBase:
         raise NotImplementedError
 
 
-from .dataset2 import Dataset, DatasetParams
+from .dataset3 import Dataset, DatasetParams

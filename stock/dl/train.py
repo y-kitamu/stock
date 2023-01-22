@@ -33,10 +33,10 @@ class Trainer:
     CHECKPOINT_DIR = "checkpoints"
     CHECKPOINT_TEMPLATE = "ckpt-{step:08d}"
 
-    def __init__(self, params: TrainerParams):
+    def __init__(self, params: TrainerParams, force_recreate: bool = False):
         """ """
         self.params = params
-        self.dataset = Dataset(self.params.dataset_params)
+        self.dataset = Dataset(self.params.dataset_params, force_recreate=force_recreate)
 
         self.step = tf.Variable(0, trainable=False, dtype=tf.int64)
         self.base_model = load_model(params=self.params.model_params)
@@ -74,6 +74,37 @@ class Trainer:
         self.model(inputs)
         # 過去の学習状態を読み込む
         self.load()
+
+    def load(self):
+        """保存済みの学習状態（重み、optimizer、step数）を読み込む
+        Args:
+            checkpoint_dir (Path, optional): checkpointが保存されているディレクトリのパス.
+                Noneの場合は最新の重みを読み込む。
+        """
+        if self.checkpoint is None:
+            logger.warning("`self.checkpoint` is not initialized")
+            return
+
+        ckpt_file = tf.train.latest_checkpoint(self.params.output_dir / self.CHECKPOINT_DIR)
+        if ckpt_file is None:
+            logger.info(f"checkpoint is not found: {ckpt_file}")
+            return
+
+        self.checkpoint.restore(ckpt_file)
+        logger.info(f"checkpoint is loaded: {ckpt_file}")
+
+    def save(self):
+        """現在の状態をチェックポイントファイルに保存する"""
+        if self.checkpoint is None:
+            logger.warning("`self.checkpoint` is not initialized")
+            return
+
+        ckpt_dir = self.params.output_dir / self.CHECKPOINT_DIR
+        ckpt_dir.mkdir(parents=True, exist_ok=True)
+
+        checkpoint_path = ckpt_dir / self.CHECKPOINT_TEMPLATE.format(step=self.step.numpy())
+        output = self.checkpoint.save(checkpoint_path)
+        logger.info(f"checkpoint is saved: {output}")
 
     def train(self):
         """ """
@@ -121,37 +152,6 @@ class Trainer:
         self.step.assign_add(1)
         return loss_value
 
-    def load(self):
-        """保存済みの学習状態（重み、optimizer、step数）を読み込む
-        Args:
-            checkpoint_dir (Path, optional): checkpointが保存されているディレクトリのパス.
-                Noneの場合は最新の重みを読み込む。
-        """
-        if self.checkpoint is None:
-            logger.warning("`self.checkpoint` is not initialized")
-            return
-
-        ckpt_file = tf.train.latest_checkpoint(self.params.output_dir / self.CHECKPOINT_DIR)
-        if ckpt_file is None:
-            logger.info(f"checkpoint is not found: {ckpt_file}")
-            return
-
-        self.checkpoint.restore(ckpt_file)
-        logger.info(f"checkpoint is loaded: {ckpt_file}")
-
-    def save(self):
-        """現在の状態をチェックポイントファイルに保存する"""
-        if self.checkpoint is None:
-            logger.warning("`self.checkpoint` is not initialized")
-            return
-
-        ckpt_dir = self.params.output_dir / self.CHECKPOINT_DIR
-        ckpt_dir.mkdir(parents=True, exist_ok=True)
-
-        checkpoint_path = ckpt_dir / self.CHECKPOINT_TEMPLATE.format(step=self.step.numpy())
-        output = self.checkpoint.save(checkpoint_path)
-        logger.info(f"checkpoint is saved: {output}")
-
     def val_step(self, x: tf.Tensor, y: tf.Tensor) -> tf.Tensor:
         """ """
         self.callbacks.on_test_batch_begin(self.step.numpy(), {})
@@ -162,3 +162,18 @@ class Trainer:
         self.callbacks.on_test_batch_end(self.step.numpy(), {})
 
         return loss_value
+
+    def test(self):
+        self.load()
+        _, _, test_ds = self.dataset.get_train_val_test_dataset()
+
+        trues = []
+        preds = []
+        for x, y in test_ds:
+            y_pred = self.model(x, training=False)
+            trues.append(y)
+            preds.append(y_pred)
+
+        trues = tf.concat(trues, axis=0)
+        preds = tf.concat(preds, axis=0)
+        return trues, preds

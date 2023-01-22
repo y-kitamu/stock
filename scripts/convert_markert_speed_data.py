@@ -15,8 +15,8 @@ if __name__ == "__main__":
     import pathlib
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("--input_dir", type=pathlib.Path, default=stock.DATA_DIR / "nikkei225/raw")
-    parser.add_argument("--output_dir", type=pathlib.Path, default=stock.DATA_DIR / "nikkei225")
+    parser.add_argument("--input_dir", type=pathlib.Path, default=stock.DATA_DIR / "etfs/raw")
+    parser.add_argument("--output_dir", type=pathlib.Path, default=stock.DATA_DIR / "etfs")
     args = parser.parse_args()
 
     stock.run_debug(run, args.input_dir, args.output_dir)
