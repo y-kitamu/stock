@@ -25,7 +25,8 @@ from . import DatasetBase
 class DatasetParams(BaseModel):
     # Path to the directory where the stock data is stored.
     # Assuming the symbol's data is storead to {data_dir}/{symbol}.csv.
-    us_data_dir: Path = DATA_DIR / "sp500"
+    # us_data_dir: Path = DATA_DIR / "sp500"
+    us_data_dir: Path = DATA_DIR / "us_etf"
     jp_data_dir: Path = DATA_DIR / "etfs"
     # jp_data_dir: Path = DATA_DIR / "nikkei225"
     # # Path to the directory where the dataset will be stored.
@@ -53,11 +54,13 @@ class Dataset(DatasetBase):
             self.save_dataset()
 
         # データの前処理
-        self.us_data, self.us_symbols = self.preprocess_on_init(self.us_data, self.us_symbols)
+        self.us_data, self.us_symbols = self.preprocess_on_init(
+            self.us_data, self.us_symbols, calc_change=["start", "end"]
+        )
         self.jp_data, self.jp_symbols = self.preprocess_on_init(
             self.jp_data, self.jp_symbols, calc_change=["start", "end"]
         )
-        # s&p 500とetfを結合
+        # us_dataとjp_dataを結合
         self.data, self.invalid_mask = self._merge_data(self.us_data, self.jp_data)
 
     @property
@@ -111,6 +114,7 @@ class Dataset(DatasetBase):
         basename = "dataset_{}".format(datetime.now().strftime("%Y%m%d_%H%M%S"))
         self._save_data(self.params.dataset_path / f"{basename}_us.npy", self.us_data)
         self._save_data(self.params.dataset_path / f"{basename}_jp.npy", self.jp_data)
+        print("Save dataset to {}".format(self.params.dataset_path / basename))
 
     def _save_data(self, path: Path, data: Optional[Union[np.ndarray, List[np.ndarray]]] = None):
         """`data`をnpyファイル (`path`)に保存する"""
@@ -199,7 +203,7 @@ class Dataset(DatasetBase):
             outputs = data.numpy()[self._jp_data_indices]
             return inputs, outputs
 
-        # data = self.preprocess_on_make(data)
+        data = self.preprocess_on_make(data)
         ds = tf.data.Dataset.from_tensor_slices(data.astype(np.float32))
         ds = ds.map(
             lambda x: tf.py_function(func=map_func, inp=[x], Tout=[tf.float32, tf.float32]),
@@ -283,11 +287,11 @@ class Dataset(DatasetBase):
 
         return percentage_change, valid_symbols
 
-    # def preprocess_on_make(self, data: np.ndarray):
-    #     """データセット作成時の前処理"""
-    #     us_data = data[:, self._us_data_indices]
-    #     jp_data = data[:, self._jp_data_indices]
-    #     # 日本のデータは一日の上昇率を計算する
-    #     jp_data = jp_data[1::2] - jp_data[::2]
-    #     data = np.concatenate([us_data, jp_data], axis=1)
-    #     return data
+    def preprocess_on_make(self, data: np.ndarray, threshold: float = 1.25):
+        """データセット作成時の前処理"""
+        us_data = data[:, self._us_data_indices]
+        jp_data = data[:, self._jp_data_indices]
+        # 変化が大きいデータだけを使用する
+
+        changes = np.abs(us_data).mean(axis=1)
+        return data[changes > threshold]
