@@ -115,3 +115,6 @@ tmp/
 data/sp500/*.csv
 data/nikkei225/*.csv
 data/nikkei225/raw
+data/us_etf/*.csv
+data/etfs/raw
+data/etfs/*.csv

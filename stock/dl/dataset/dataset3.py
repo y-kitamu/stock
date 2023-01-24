@@ -54,12 +54,8 @@ class Dataset(DatasetBase):
             self.save_dataset()
 
         # データの前処理
-        self.us_data, self.us_symbols = self.preprocess_on_init(
-            self.us_data, self.us_symbols, calc_change=["start", "end"]
-        )
-        self.jp_data, self.jp_symbols = self.preprocess_on_init(
-            self.jp_data, self.jp_symbols, calc_change=["start", "end"]
-        )
+        self.us_data, self.us_symbols = self.preprocess_on_init(self.us_data, self.us_symbols)
+        self.jp_data, self.jp_symbols = self.preprocess_on_init(self.jp_data, self.jp_symbols)
         # us_dataとjp_dataを結合
         self.data, self.invalid_mask = self._merge_data(self.us_data, self.jp_data)
 
@@ -216,7 +212,7 @@ class Dataset(DatasetBase):
         )
         return ds
 
-    def preprocess_on_init(self, data, symbols, calc_change: bool = False):
+    def preprocess_on_init(self, data, symbols):
         """データ読み込み時の前処理。無効なデータの削除、騰落率を計算する。
         `data`は1列目がtimestamp, 2列目以降が銘柄のデータであるとする。
         (`self.STOCK_DATA_KEYS`の順番であることを想定。`self._load_data`で読み込んだデータを想定)
@@ -224,7 +220,6 @@ class Dataset(DatasetBase):
         Args:
             data (np.ndarray) :
             symbols (List[str]) :
-            calc_change (Optional[List[str]], optional): その日の終値と始値の差(上昇率)を計算するか
         Returns:
             Tuple[np.ndarray, np.ndarray]: (前処理後のデータ, データに含まれる銘柄のリスト)
         """
@@ -246,44 +241,20 @@ class Dataset(DatasetBase):
             symbol for i, symbol in enumerate(symbols) if i not in invalid_symbol_indices
         ]
 
-        # 騰落率を計算する。株価の騰落率は前日終値を基準にする。
-        close_idx = self.STOCK_DATA_KEYS.index("end")
-        volume_idx = self.STOCK_DATA_KEYS.index("volume")
-        n_keys = len(self.STOCK_DATA_KEYS)
-        offsets = [
-            j * n_keys + close_idx + 1 if i % n_keys != volume_idx else j * n_keys + volume_idx + 1
-            for j in range(len(valid_symbols))
-            for i in range(len(self.STOCK_DATA_KEYS))
+        # 当日の始値と終値だけを抜き出して騰落率を計算する。
+        target_offset = [
+            idx for idx, key in enumerate(self.STOCK_DATA_KEYS) if key in ["start", "end"]
         ]
-        previous_close = data[:-1, offsets]
-        percentage_change: np.ndarray = np.zeros((data.shape[0] - 1, data.shape[1]))
-        percentage_change[:, 0] = data[1:, 0]
-        percentage_change[:, 1:] = (data[1:, 1:] / (previous_close + 1e-5) - 1) * 100
+        target_cols = [
+            idx
+            for idx in range(1, data.shape[1])
+            if (idx - 1) % len(self.STOCK_DATA_KEYS) in target_offset
+        ]
+        targets = data[:, target_cols]
+        changes = (targets[:, 1::2] - targets[:, ::2]) / targets[:, ::2]
 
-        # percentage_change: np.ndarray = np.zeros((data.shape[0] - 1, data.shape[1]))
-        # percentage_change[:, 0] = data[1:, 0]
-        # percentage_change[:, 1:] = (data[1:, 1:] / (data[:-1, 1:] + 1e-5) - 1) * 100
-
-        if calc_change:
-            # その日の上昇率を計算する
-            target_offset = [
-                idx for idx, key in enumerate(self.STOCK_DATA_KEYS) if key in ["start", "end"]
-            ]
-            timestamps = percentage_change[:, 0]
-            target_cols = [
-                idx
-                for idx in range(1, data.shape[1])
-                if (idx - 1) % len(self.STOCK_DATA_KEYS) in target_offset
-            ]
-            targets = percentage_change[:, target_cols]
-            changes = targets[:, 1::2] - targets[:, ::2]
-            percentage_change = np.concatenate([timestamps[:, None], changes], axis=1)
-        else:
-            # volumeの列を削除する
-            target_cols = [0] + [
-                i for i in range(percentage_change.shape[1]) if (i - 1) % n_keys != volume_idx
-            ]
-            percentage_change = percentage_change[:, target_cols]
+        timestamps = data[:, 0]
+        percentage_change = np.concatenate([timestamps[:, None], changes], axis=1)
 
         return percentage_change, valid_symbols
 
