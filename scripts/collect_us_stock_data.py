@@ -7,6 +7,8 @@ Copyright (c) 2019- Yusuke Kitamura <ymyk6602@gmail.com>
 import csv
 import time
 from datetime import datetime, timezone
+from pathlib import Path
+from typing import List
 
 import stock
 
@@ -17,19 +19,17 @@ def convert_timestamp_to_day(timestamp: int):
     return int(datetime(dt.year, dt.month, dt.day, tzinfo=timezone.utc).timestamp())
 
 
-def run(csv_path, output_dir, interval="1d", time_range="10y", overwrite=False):
+def run(
+    company_list: List[str], output_dir: Path, interval="1d", time_range="10y", overwrite=False
+):
     """s&p500のデータを取得する。
     データのタイムスタンプはUTCのYYYY/MM/DD 00:00:00にする。
     """
 
-    with open(csv_path, "r") as f:
-        csv_reader = csv.reader(f)
-        company_list = list(csv_reader)
-
     for company in company_list:
-        ticker = company[0].replace(".", "-")
+        ticker = company.replace(".", "-")
         output_csv = output_dir / f"{ticker}.csv"
-        if output_csv.exists():
+        if output_csv.exists() and not overwrite:
             continue
         try:
             data = stock.scraping.yahoo_finance.get_stock_time_series(
@@ -62,8 +62,13 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
+    with open(args.codes_csv, "r") as f:
+        csv_reader = csv.reader(f)
+        company_list = [row[0] for row in csv_reader]
+    company_list = ["DIA", "SPXL"]
+
     run(
-        args.codes_csv,
+        company_list,
         args.output_dir,
         interval=args.interval,
         time_range=args.time_range,
