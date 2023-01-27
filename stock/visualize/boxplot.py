@@ -44,26 +44,25 @@ def boxplot(start: np.ndarray, high: np.ndarray, low: np.ndarray, end: np.ndarra
     points = 72.0 / fig.dpi
     left_pix, _ = ax.transData.transform((0.0, 1.0))
     right_pix, _ = ax.transData.transform((box_width, 1.0))
-    linewidth = (right_pix - left_pix) * points
+    box_linewidth = (right_pix - left_pix) * points
+    linewidth = min(box_linewidth * 0.3, 1)
 
-    ax.vlines(
-        acsending_indices, acsending_xmins, acsending_xmaxs, color="red", linewidth=linewidth * 0.5
-    )
+    ax.vlines(acsending_indices, acsending_xmins, acsending_xmaxs, color="red", linewidth=linewidth)
     ax.vlines(
         acsending_indices,
         acsending_box_xmins,
         acsending_box_xmaxs,
         color="red",
-        linewidth=linewidth,
+        linewidth=box_linewidth,
     )
     ax.vlines(
-        decending_indices, decending_xmins, decending_xmaxs, color="blue", linewidth=linewidth * 0.5
+        decending_indices, decending_xmins, decending_xmaxs, color="blue", linewidth=linewidth
     )
     ax.vlines(
         decending_indices,
         decending_boxes_xmins,
         decending_boxes_xmaxs,
         color="blue",
-        linewidth=linewidth,
+        linewidth=box_linewidth,
     )
     ax.grid()
