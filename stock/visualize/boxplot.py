@@ -7,15 +7,35 @@ Copyright (c) 2019- Yusuke Kitamura <ymyk6602@gmail.com>
 import matplotlib.pyplot as plt
 import numpy as np
 
+from . import create_figure
 
-def boxplot(start: np.ndarray, high: np.ndarray, low: np.ndarray, end: np.ndarray, box_width=0.5):
-    """ """
-    fig, ax = plt.subplots()
-    max_val = high.max() * 1.05
-    min_val = low.min() * 0.95
 
+def boxplot(
+    start: np.ndarray,
+    high: np.ndarray,
+    low: np.ndarray,
+    end: np.ndarray,
+    box_width=0.5,
+    fig=None,
+    ax=None,
+):
+    """
+    Args:
+        start (np.ndarray): start price
+        high (np.ndarray): high price
+        low (np.ndarray): low price
+        end (np.ndarray): end price
+        box_width (float, optional): box width. Defaults to 0.5.
+        fig (Figure, optional): matplotlib.Figure object. Defaults to None.
+        ax (Axes, optional): matplotlib.Axes object. Defaults to None.
+    """
+    if fig is None or ax is None:
+        fig, ax = create_figure(start)
+
+    ymax = high.max() * 1.05
+    ymin = low.min() * 0.95
     ax.set_xlim([0 - box_width, len(start)])
-    ax.set_ylim([min_val, max_val])
+    ax.set_ylim([ymin, ymax])
 
     acsending_indices = []
     acsending_box_xmins = []
@@ -66,3 +86,5 @@ def boxplot(start: np.ndarray, high: np.ndarray, low: np.ndarray, end: np.ndarra
         linewidth=box_linewidth,
     )
     ax.grid()
+
+    return fig, ax
