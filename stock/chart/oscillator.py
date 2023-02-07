@@ -117,3 +117,16 @@ def momentum(prices, period=14):
         else:
             momentum.append((prices[i] - prices[i - period]) / prices[i - period] * 100)
     return momentum
+
+
+def rci():
+    """RCIの計算"""
+    pass
+
+
+def moving_average_deviation_rate():
+    pass
+
+
+def psychological_line():
+    pass
