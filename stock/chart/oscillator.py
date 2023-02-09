@@ -33,49 +33,6 @@ def rsi(prices, period=14):
     return rsi
 
 
-def macd(prices, short=12, long=26, signal=9):
-    """MACDの計算
-    Args:
-        prices (list): 株価のリスト
-        short (int, optional): 短期のパラメーター. Defaults to 12.
-        long (int, optional): 長期のパラメーター. Defaults to 26.
-        signal (int, optional): シグナルのパラメーター. Defaults to 9.
-    Returns:
-        list: MACDのリスト
-        list: シグナルのリスト
-        list: ヒストグラムのリスト
-    """
-    macd = []
-    signal_line = []
-    histogram = []
-    for i in range(len(prices)):
-        if i < long:
-            macd.append(0)
-            signal_line.append(0)
-            histogram.append(0)
-        else:
-            short_ema = 0
-            long_ema = 0
-            for j in range(short):
-                short_ema += prices[i - j]
-            short_ema /= short
-            for j in range(long):
-                long_ema += prices[i - j]
-            long_ema /= long
-            macd.append(short_ema - long_ema)
-            if i < long + signal:
-                signal_line.append(0)
-                histogram.append(0)
-            else:
-                signal_ema = 0
-                for j in range(signal):
-                    signal_ema += macd[i - j]
-                signal_ema /= signal
-                signal_line.append(signal_ema)
-                histogram.append(macd[i] - signal_ema)
-    return macd, signal_line, histogram
-
-
 def stocastic(prices, highs, lows, period=14):
     """ステオキャスティックの計算
     Args:

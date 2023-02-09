@@ -5,4 +5,4 @@ Create Date : 2023-01-30 21:59:58
 Copyright (c) 2019- Yusuke Kitamura <ymyk6602@gmail.com>
 """
 # 参考: https://info.monex.co.jp/technical-analysis/indicators/
-from . import candlestick, formation, oscilator, trend
+from . import candlestick, formation, oscillator, trend
