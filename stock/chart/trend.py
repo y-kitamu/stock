@@ -23,13 +23,13 @@ def moving_average(
     """
     if weights is None:
         weights = np.ones(window_size)
-    weights /= weights.sum()
+    weights = weights / weights.sum()
     return np.convolve(data, weights, mode="full")[: len(data)]
 
 
 def ema(data: np.ndarray, window_size: int = 5, alpha: float = 2.0) -> np.ndarray:
     """指数平滑化移動平均"""
-    weights = np.array([alpha**i for i in range(window_size)])
+    weights = np.array([alpha**i for i in range(window_size)][::-1])
     return moving_average(data, window_size, weights=weights)
 
 
