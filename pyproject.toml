@@ -27,6 +27,7 @@ tensorflow = {version = "^2.11.0", platform = "linux"}
 tensorflow-probability = {version = "^0.19.0", platform = "linux"}
 xlwings = "^0.29.1"
 plotly = "^5.13.0"
+requests-html = "^0.10.0"
 
 [tool.poetry.dev-dependencies]
 ipykernel = "^6.15.1"
