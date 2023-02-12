@@ -73,10 +73,32 @@ class DriverWrapper:
             self.driver.quit()
 
 
-def run(target_codes: List[Union[int, str]]):
+def run(target_codes: List[str], max_retry: int = 5):
     logger.debug("Start scraping")
     dw = DriverWrapper()
     logger.debug("Successfully create selenium driver.")
+
+    for i in range(max_retry):
+        try:
+            _open_scouter_page(dw)
+            break
+        except:
+            logger.exception(f"Failed to open scouter page. Retry... ({i + 1} / {max_retry})")
+
+    datas = {}
+    for code in target_codes:
+        logger.debug(f"Start scraping code : {code}, current_url : {dw.driver.current_url}")
+        for i in range(max_retry):
+            try:
+                datas[code] = _get_code_info(dw, code)
+                logger.debug(f"Finish scraping code : {code}")
+                break
+            except:
+                logger.exception(f"Failed to get code info. Retry... ({i + 1} / {max_retry})")
+    return datas
+
+
+def _open_scouter_page(dw: DriverWrapper):
     # ログイン画面でIDとパスワードを入力してログインする
     dw.driver.get(MANEX_LOGIN_PAGE_URL)
     logger.debug(f"Open login page. {dw.driver.current_url}")
@@ -123,13 +145,6 @@ def run(target_codes: List[Union[int, str]]):
     else:
         raise Exception("マネックス銘柄スカウターが開かれているタブが見つかりません")
     logger.debug(f"Switch to new tab and open scouter : {dw.driver.current_url}")
-
-    datas = {}
-    for code in target_codes:
-        logger.debug(f"Start scraping code : {code}, current_url : {dw.driver.current_url}")
-        datas[code] = _get_code_info(dw, code)
-        logger.debug(f"Finish scraping code : {code}")
-    return datas
 
 
 def _get_code_info(dw: DriverWrapper, code: Union[str, int]):

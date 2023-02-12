@@ -26,3 +26,11 @@ services:
       PROJECT_ROOT: ${HOME}/work/stock
     entrypoint: ${HOME}/work/stock/docker/entrypoint.sh
     restart: always
+
+  selenium_server:
+    image: selenium/standalone-chrome
+    ports:
+      - "4444:4444"
+    volumes:
+      - /dev/shm:/dev/shm
+    restart: always
