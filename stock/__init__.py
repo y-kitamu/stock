@@ -106,4 +106,4 @@ if platform.system() == "Linux":
     # windowsだとtensorflowのエラーが出て動かないので、linuxのときだけimportする
     from . import dl
 
-from . import chart, marketspeed, scraping, storage, visualize
+from . import autotrade, chart, marketspeed, scraping, storage, visualize

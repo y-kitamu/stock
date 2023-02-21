@@ -40,8 +40,8 @@ class BaseAlgorighm:
             logger.warning("There are missing values in the input data.")
             return []
 
-        buy_indices = self._search_buy_indices(df[self.CLOSE_KEY].to_numpy())
-        sell_indices = self._calc_sell_indices(df[self.CLOSE_KEY].to_numpy(), buy_indices)
+        buy_indices = self._search_buy_indices(df)
+        sell_indices = self._calc_sell_indices(df, buy_indices)
         results: List[TradeResult] = []
         for bidx, sidx in zip(buy_indices, sell_indices):
             bprice = df[self.OPEN_KEY][bidx + 1]
@@ -54,11 +54,11 @@ class BaseAlgorighm:
             self.plot(df, results=results)
         return results
 
-    def _search_buy_indices(self, close_prices: np.ndarray) -> List[int]:
+    def _search_buy_indices(self, df: pd.DataFrame) -> List[int]:
         """終値の時系列配列（`close_prices`）で買いシグナルが出ているインデックスを探す"""
         raise NotImplementedError
 
-    def _calc_sell_indices(self, close_prices: np.ndarray, buy_indices: List[int]) -> List[int]:
+    def _calc_sell_indices(self, df: pd.DataFrame, buy_indices: List[int]) -> List[int]:
         """買い(`buy_indices`)に対する売りのタイミングを計算する"""
         raise NotImplementedError
 

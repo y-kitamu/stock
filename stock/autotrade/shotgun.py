@@ -27,7 +27,8 @@ class Shotgun(BaseAlgorighm):
     def __init__(self, params: ShotgunParams):
         self.params: ShotgunParams = params
 
-    def _search_buy_indices(self, close_prices: np.ndarray) -> List[int]:
+    def _search_buy_indices(self, df: pd.DataFrame) -> List[int]:
+        close_prices = df[self.CLOSE_KEY].to_numpy()
         short_ma = chart.trend.moving_average(close_prices, window_size=self.params.short_term)
         mid_ma = chart.trend.moving_average(close_prices, window_size=self.params.mid_term)
         long_ma = chart.trend.moving_average(close_prices, window_size=self.params.long_term)
@@ -35,12 +36,21 @@ class Shotgun(BaseAlgorighm):
         max_idx = len(close_prices) - 1
         # 買いシグナルの探索
         buy_signals = []
-        i = self.params.long_term + self.params.long_term
+        i = max(self.params.long_term + self.params.long_term, 1)
         while i < max_idx:
             # 移動平均線が下向きの場合は除外
-            if short_ma[i] < 0 or mid_ma[i] < 0 or long_ma[i] < 0:
+            if (
+                short_ma[i] < short_ma[i - 1]
+                or mid_ma[i] < mid_ma[i - 1]
+                or long_ma[i] < long_ma[i - 1]
+            ):
                 i += 1
                 continue
+
+            # 中期の移動平均線が一定期間以上上昇している場は除外
+            # if np.all((mid_ma[i - 20 : i] - mid_ma[i - 21 : i - 1]) > 0):
+            #     i += 1
+            #     continue
 
             # 移動平均線が短期 > 中期 順になっているか
             if short_ma[i] <= mid_ma[i]:  # or mid_ma[i] <= long_ma[i]:
@@ -51,9 +61,9 @@ class Shotgun(BaseAlgorighm):
             while (
                 i < max_idx
                 and short_ma[i] > mid_ma[i]
-                and short_ma[i] >= 0
-                and mid_ma[i] >= 0
-                and long_ma[i] >= 0
+                and short_ma[i] >= short_ma[i - 1]
+                and mid_ma[i] >= mid_ma[i - 1]
+                # and long_ma[i] >= long_ma[i - 1]
             ):
                 i += 1
             # # 短期移動平均線が中期移動平均線で反発しているか
@@ -69,8 +79,10 @@ class Shotgun(BaseAlgorighm):
 
         return buy_signals
 
-    def _calc_sell_indices(self, close_prices: np.ndarray, buy_indices: List[int]) -> List[int]:
+    def _calc_sell_indices(self, df: pd.DataFrame, buy_indices: List[int]) -> List[int]:
         """ """
+        close_prices = df[self.CLOSE_KEY].to_numpy()
+        open_prices = df[self.OPEN_KEY].to_numpy()
         short_ma = chart.trend.moving_average(close_prices, window_size=self.params.short_term)
         mid_ma = chart.trend.moving_average(close_prices, window_size=self.params.mid_term)
         long_ma = chart.trend.moving_average(close_prices, window_size=self.params.long_term)
@@ -85,6 +97,11 @@ class Shotgun(BaseAlgorighm):
 
             if max_sell_idx <= buy_idx:
                 sell_indices.append(buy_idx)
+                continue
+
+            # 買った当日に下落した場合は売り
+            if open_prices[buy_idx + 1] > close_prices[buy_idx + 1]:
+                sell_indices.append(buy_idx + 1)
                 continue
 
             # 買いポイントからの経過日数
@@ -104,9 +121,9 @@ class Shotgun(BaseAlgorighm):
     def plot(
         self, df: pd.DataFrame, fig: Optional[go.Figure] = None, results: List[TradeResult] = []
     ) -> go.Figure:
-        buy_pt_xs = [df["day"][res.buy_index + 1] for res in results]
+        buy_pt_xs = [datetime.strptime(df["day"][res.buy_index + 1], "%Y/%m/%d") for res in results]
         buy_pt_ys = [res.buy for res in results]
-        sell_pt_xs = [df["day"][res.sell_index] for res in results]
+        sell_pt_xs = [datetime.strptime(df["day"][res.sell_index], "%Y/%m/%d") for res in results]
         sell_pt_ys = [res.sell for res in results]
 
         close_prices = df[self.CLOSE_KEY].to_numpy()
@@ -151,13 +168,15 @@ class Shotgun(BaseAlgorighm):
                 y=sell_pt_ys,
                 mode="markers",
                 name="sell",
-                marker=dict(size=10, color="yellow"),
+                marker=dict(size=10, color="gray"),
             ),
             row=1,
             col=1,
         )
         # 移動平均線
-        fig.add_trace(go.Scatter(x=xdata[short:], y=short_ma[short:], name="short_ma"), row=1, col=1)
+        fig.add_trace(
+            go.Scatter(x=xdata[short:], y=short_ma[short:], name="short_ma"), row=1, col=1
+        )
         fig.add_trace(go.Scatter(x=xdata[mid:], y=mid_ma[mid:], name="mid_ma"), row=1, col=1)
         fig.add_trace(go.Scatter(x=xdata[lng:], y=long_ma[lng:], name="long_ma"), row=1, col=1)
         # 売買高
