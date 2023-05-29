@@ -24,7 +24,7 @@ seaborn = "^0.12.1"
 boto3 = "^1.26.13"
 tqdm = "^4.64.1"
 tensorflow = {version = "^2.11.0", platform = "linux"}
-tensorflow-probability = {version = "^0.19.0", platform = "linux"}
+tensorflow-probability = {version = "^0.20.1", platform = "linux"}
 xlwings = "^0.29.1"
 plotly = "^5.13.0"
 requests-html = "^0.10.0"
