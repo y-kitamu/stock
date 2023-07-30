@@ -127,6 +127,7 @@ def run(
         table["Annual"].update(extract_table_data(source))
 
     # save data
+    output_dir.mkdir(exist_ok=True)
     json_path = output_dir / f"{code}.json"
 
     # if json file exists, update it
