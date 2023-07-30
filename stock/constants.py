@@ -8,6 +8,7 @@ from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).absolute().parent.parent
 DATA_DIR = PROJECT_ROOT / "data"
+LOG_DIR = PROJECT_ROOT / "log"
 
 # Interval seconds for each requests of scraping
 REQUEST_INTERVAL_SEC = 5

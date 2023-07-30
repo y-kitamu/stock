@@ -111,11 +111,7 @@ poetry.lock
 # project
 *.log
 tmp/
+log/
 *.npy
-data/sp500/*.csv
-data/nikkei225/*.csv
-data/nikkei225/raw
-data/us_etf/*.csv
-data/etfs/raw
-data/etfs/*.csv
-data/code_info/
+data/old/
+data/financials/
