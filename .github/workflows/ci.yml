@@ -22,7 +22,9 @@ jobs:
     - name: Build
       uses: ./.github/actions/install_deps
     - name: Run
-      run: poetry run python scripts/update_financial_data.py
+      run: |
+        poetry run python scripts/update_financial_data.py
+        poetry run python scripts/update_watch_list.py
     - name: Diff
       id: diff
       run: |

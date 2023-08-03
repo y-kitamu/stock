@@ -4,15 +4,6 @@ Author : Yusuke Kitamura
 Create Date : 2023-08-03 11:19:57
 Copyright (c) 2019- Yusuke Kitamura <ymyk6602@gmail.com>
 """
-"""update_financial_data.py
-
-Update financial data from Yahoo Finance.
-Data is saved in ${PROJECT_ROOT}/data/codes/${ticker}.json.
-33
-Author : Yusuke Kitamura
-Create Date : 2023-08-03 09:50:02
-Copyright (c) 2019- Yusuke Kitamura <ymyk6602@gmail.com>
-"""
 import argparse
 import csv
 import json
@@ -20,6 +11,7 @@ from pathlib import Path
 from typing import Any
 
 import numpy as np
+import pandas as pd
 import yfinance as yf
 from pyrate_limiter import Duration, Limiter, RequestRate
 from requests import Session
@@ -79,29 +71,30 @@ def fundamentals_template_for_stage2(q_data: dict[str, Any], y_data: dict[str, A
         q_data (dict[str, Any]): Quarterly financial data
         y_data (dict[str, Any]): Yearly financial data
     """
-    dates = sorted(q_data.keys())[::-1]
+    q_dates = sorted(q_data.keys())[::-1]
+    y_dates = sorted(y_data.keys())[::-1]
 
     flag = True
     # 直近四半期の利益がプラス
     try:
-        flag &= q_data[dates[0]]["Diluted EPS"] > 0
+        flag &= q_data[q_dates[0]]["Diluted EPS"] > 0
     except:
         stock.logger.exception("Failed to get Diluted EPS")
         flag = False
 
     # 直近2四半期のepsが前年同期比で20%以上上昇
     try:
-        if len(dates) > 4:
-            flag &= q_data[dates[0]]["Diluted EPS"] > q_data[dates[4]]["Diluted EPS"] * 1.2
-        if len(dates) > 5:
-            flag &= q_data[dates[1]]["Diluted EPS"] > q_data[dates[5]]["Diluted EPS"] * 1.2
+        if len(q_dates) > 4:
+            flag &= q_data[q_dates[0]]["Diluted EPS"] > q_data[q_dates[4]]["Diluted EPS"] * 1.2
+        if len(q_dates) > 5:
+            flag &= q_data[q_dates[1]]["Diluted EPS"] > q_data[q_dates[5]]["Diluted EPS"] * 1.2
     except:
         stock.logger.exception("Failed to get Diluted EPS")
         flag = False
 
     # 直近年度の売上高が前年比で10%以上上昇
     try:
-        flag &= y_data[dates[0]]["Total Revenue"] > y_data[dates[1]]["Total Revenue"] * 1.1
+        flag &= y_data[y_dates[0]]["Total Revenue"] > y_data[y_dates[1]]["Total Revenue"] * 1.1
     except:
         stock.logger.exception("Failed to get Total Revenue")
         flag = False
@@ -110,26 +103,31 @@ def fundamentals_template_for_stage2(q_data: dict[str, Any], y_data: dict[str, A
 
 
 def calculate_relative_strengths(
-    history: pd.DataFrame, num_division: int = 12, division_factor=1.1
+    history: pd.DataFrame,
+    sp500_closes: np.ndarray,
+    dow_closes: np.ndarray,
+    nasdaq_closes: np.ndarray,
+    num_division: int = 12,
+    division_factor=1.1,
 ) -> tuple[float, float, float]:
     close_values = history.Close.to_numpy()
     if len(close_values) < 52:
-        return 0.0
+        return 0.0, 0.0, 0.0
 
     # relative strength
-    rs_sp500 = relative_strength_52wk(
+    rs_sp500 = stock.relative_strength.relative_strength_52wk(
         close_values[-52:],
         sp500_closes[-52:],
         num_division=num_division,
         division_factor=division_factor,
     )
-    rs_dow = relative_strength_52wk(
+    rs_dow = stock.relative_strength.relative_strength_52wk(
         close_values[-52:],
         dow_closes[-52:],
         num_division=num_division,
         division_factor=division_factor,
     )
-    rs_nasdaq = relative_strength_52wk(
+    rs_nasdaq = stock.relative_strength.relative_strength_52wk(
         close_values[-52:],
         nasdaq_closes[-52:],
         num_division=num_division,
@@ -139,7 +137,11 @@ def calculate_relative_strengths(
     return rs_sp500, rs_dow, rs_nasdaq
 
 
-def main(ticker_list_path: Path, financial_data_dir: Path = stock.DATA_DIR / "codes"):
+def main(
+    ticker_list_path: Path,
+    financial_data_dir: Path = stock.DATA_DIR / "codes",
+    watch_list_path: Path = stock.DATA_DIR / "watch_list.csv",
+):
     """ """
     sp500_history = yf.Ticker("^GSPC").history(interval="1wk", period="2y")
     sp500_closes = sp500_history.Close.to_numpy()
@@ -153,8 +155,10 @@ def main(ticker_list_path: Path, financial_data_dir: Path = stock.DATA_DIR / "co
         next(reader)
         tickers = [row[0] for row in reader]
 
-    watch_list = []
-    for ticker in tickers:
+    judges = np.ones(len(tickers), dtype=bool)
+    rss = np.zeros(len(tickers))
+    for idx, ticker in enumerate(tickers):
+        stock.logger.info(f"Processing {ticker} ({idx+1}/{len(tickers)})")
         try:
             yf_ticker = yf.Ticker(ticker, session=session)
             history = yf_ticker.history(interval="1wk", period="2y")
@@ -162,19 +166,48 @@ def main(ticker_list_path: Path, financial_data_dir: Path = stock.DATA_DIR / "co
             with open(financial_data_dir / f"{ticker}.json", "r") as f:
                 quarterly_financials = json.load(f)
 
-            trand_template_for_stage2(history=history)
-            fundamentals_template_for_stage2(q_data=quarterly_financials, y_data=yearly_financials)
+            judges[idx] &= trand_template_for_stage2(history=history)
+            judges[idx] &= fundamentals_template_for_stage2(
+                q_data=quarterly_financials, y_data=yearly_financials
+            )
+            rs_sp500, rs_dow, rs_nasdaq = calculate_relative_strengths(
+                history=history,
+                sp500_closes=sp500_closes,
+                dow_closes=dow_closes,
+                nasdaq_closes=nasdaq_closes,
+            )
+            rss[idx] = rs_sp500 + rs_dow + rs_nasdaq
         except KeyboardInterrupt:
             stock.logger.exception("Keyboard Interrupt.")
             break
         except:
             stock.logger.exception(f"Failed to update financial data. : {ticker}")
 
+    # relative strengthが上位20%の銘柄のみを選択
+    pt80 = np.percentile(rss, 80)
+    is_good = np.logical_and(judges, rss > pt80)
+
+    watch_list = []
+    for ticker, judge in zip(tickers, is_good):
+        if judge:
+            watch_list.append(ticker)
+
+    with open(watch_list_path, "w") as f:
+        writer = csv.writer(f)
+        writer.writerow(["ticker"])
+        for ticker in watch_list:
+            writer.writerow([ticker])
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
+    parser.add_argument("--ticker_list", type=Path, default=stock.DATA_DIR / "us_stock_codes.csv")
     parser.add_argument("--watch_list", type=Path, default=stock.DATA_DIR / "watch_list.csv")
     parser.add_argument("--financial_data_dir", type=Path, default=stock.DATA_DIR / "codes")
     args = parser.parse_args()
 
-    main(ticker_list_path=args.ticker_list, output_dir=args.output_dir)
+    main(
+        ticker_list_path=args.ticker_list,
+        financial_data_dir=args.financial_data_dir,
+        watch_list_path=args.watch_list,
+    )
