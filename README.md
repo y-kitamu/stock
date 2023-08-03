@@ -28,3 +28,12 @@ poetry run nbstripout --install --attributes .gitattributes
 
 米国株データはyahoo financeからスクレイピングで取得。ローカルファイル + mongo dbで保存する。  
 日本株データをMarket SpeedからPower Automateで半自動取得。Google Driveにcsvをアップする。
+
+
+##  スクリーニングの実施手順
+以下の作業を自動（または手動）で実施する
+1. 楽天証券の取り扱い銘柄一覧を取得する
+   https://www.trkd-asia.com/rakutensec/exportcsvus?all=on&vall=on&forwarding=na&target=0&theme=na&returns=na&head_office=na&name=&code=&sector=na&pageNo=&c=us&p=result&r1=on
+2. yahoo financeから取得した情報をもとに自動（スクリプト）でスクリーニングする
+   (情報が足りない場合はEDGAR(https://www.sec.gov/edgar/search)で手動で調べる)
+3. 抽出した銘柄のスクリーニングを行う

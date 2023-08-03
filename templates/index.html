@@ -1,0 +1,51 @@
+<!-- minimal react html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Watch list</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <style>
+      {% for chart_id in chart_ids %}
+       #checkbox_{{ chart_id}}:not(:checked) ~ #main_{{ chart_id }} {
+         display: none;
+       }
+      {% endfor %}
+    </style>
+  </head>
+  <body style="min-height: 100vh">
+    {% for chart_id in chart_ids %}
+    <input
+      type="checkbox"
+      id="checkbox_{{ chart_id }}"
+      checked
+      class="watchlist"
+      name="{{ chart_id }}"
+    />
+    <label for="checkbox_{{ chart_id }}">{{ chart_id }}</label>
+    <div id="main_{{ chart_id }}" style="width: 95vw; height: 100vh"></div>
+    <script src="js/bundle_{{chart_id}}.js"></script>
+    <br />
+    {% endfor %}
+
+    <a id="download" download="target.csv">CSVダウンロード</a>
+    <script>
+      const download = () => {
+        const watch_list = document.querySelectorAll(".watchlist");
+        const target_list = [];
+        for (const target of watch_list) {
+          if (target.checked) {
+            console.log(target.name);
+            target_list.push(target.name);
+          }
+        }
+        const blob = new Blob(target_list, { type: "text/csv" });
+        const objectUrl = URL.createObjectURL(blob);
+        const downloadLink = document.getElementById("download");
+        downloadLink.href = objectUrl;
+      };
+      const downloadLink = document.getElementById("download");
+      downloadLink.onclick = download;
+    </script>
+  </body>
+</html>
