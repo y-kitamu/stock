@@ -117,6 +117,8 @@ option = {
             splitArea: {
                 show: true,
             },
+            min: (value) => {return value.min * 0.9},
+            max: (value) => {return value.max * 1.1},
         },
         {
             scale: true,
@@ -132,10 +134,8 @@ option = {
         {
             type: "inside",
             xAxisIndex: [0, 1],
-            start: 40,
-            end: 70,
-            top: 30,
-            height: 20,
+            start: 50,
+            end: 100,
         },
     ],
     series: [
