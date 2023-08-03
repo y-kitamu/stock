@@ -22,4 +22,9 @@ jobs:
     - name: Build
       uses: ./.github/actions/install_deps
     - name: Run
-      run: poetry run python scripts/collect_financial_infos.py
+      run: poetry run python scripts/update_financial_data.py
+    - name: Commit
+      run: |
+        git add .
+        git commit -m "update financial data"
+        git push

@@ -12,6 +12,9 @@ pydantic = "^1.9.0"
 matplotlib = "^3.5.3"
 selenium = "^4.8.0"
 lxml = "^4.9.3"
+yfinance = "^0.2.26"
+requests-cache = "^1.1.0"
+requests-ratelimiter = "^0.4.1"
 
 [tool.poetry.dev-dependencies]
 ipykernel = "^6.15.1"
