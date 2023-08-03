@@ -23,8 +23,18 @@ jobs:
       uses: ./.github/actions/install_deps
     - name: Run
       run: poetry run python scripts/update_financial_data.py
-    - name: Commit
+    - name: Diff
+      id: diff
       run: |
+        git add -N .
+        git diff --name-only --exit-code
+      continue-on-error: true
+    - name: Commit & Push
+      run: |
+        set -x
+        git config user.name github-actions[bot]
+        git config user.email stock@noreply.github.com
         git add .
-        git commit -m "update financial data"
+        git commit --author=. -m 'update data'
         git push
+      if: steps.diff.outcome == 'failure'
