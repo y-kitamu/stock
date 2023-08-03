@@ -36,7 +36,7 @@
         for (const target of watch_list) {
           if (target.checked) {
             console.log(target.name);
-            target_list.push(target.name);
+            target_list.push([target.name]);
           }
         }
         const blob = new Blob(target_list, { type: "text/csv" });
