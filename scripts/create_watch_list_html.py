@@ -68,7 +68,7 @@ def main(
 
     # render bundle javascript files
     for ticker in watch_list:
-        print(render_bundle_js(env, ticker, output_dir / "js"))
+        stock.logger.info(render_bundle_js(env, ticker, output_dir / "js"))
 
 
 if __name__ == "__main__":
