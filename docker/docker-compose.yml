@@ -26,6 +26,19 @@ services:
   #     PROJECT_ROOT: ${HOME}/work/stock
   #   entrypoint: ${HOME}/work/stock/docker/entrypoint.sh
   #   restart: always
+  # pptr_server:
+  #   build:
+  #     context: ..
+  #     dockerfile: docker/Dockerfile.pptr
+  #   ports:
+  #     - "22222:22"
+  #   volumes:
+  #     - ../:${HOME}/work/stock
+  #   environment:
+  #     USER_NAME: ${USER}
+  #     PROJECT_ROOT: ${HOME}/work/stock
+  #   entrypoint: /sbin/sshd -D
+  #   restart: always
 
   selenium_server:
     image: selenium/standalone-chrome:latest
