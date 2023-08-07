@@ -4,31 +4,45 @@
   <head>
     <meta charset="utf-8" />
     <title>Watch list</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
       {% for chart_id in chart_ids %}
-       #checkbox_{{ chart_id}}:not(:checked) ~ #main_{{ chart_id }} {
-         display: none;
-       }
+      #checkbox_{{ chart_id}}:not(:checked) ~ #main_{{ chart_id }} {
+          display: none;
+      }
       {% endfor %}
     </style>
   </head>
   <body style="min-height: 100vh">
     {% for chart_id in chart_ids %}
-    <input
-      type="checkbox"
-      id="checkbox_{{ chart_id }}"
-      checked
-      class="watchlist"
-      name="{{ chart_id }}"
-    />
-    <label for="checkbox_{{ chart_id }}">{{ chart_id }}</label>
-    <div id="main_{{ chart_id }}" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_{{chart_id}}.js"></script>
-    <br />
+    <div>
+      <input
+        type="checkbox"
+        name="{{ chart_id }}"
+        id="checkbox_{{ chart_id }}"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_{{ chart_id }}">
+        {{ chart_id }}
+      </label>
+
+      <div
+        id="main_{{ chart_id }}"
+        class="peer-[#checkbox_{{ chart_id }}]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_{{chart_id}}.js"></script>
+    </div>
     {% endfor %}
 
-    <a id="download" download="target.csv">CSVダウンロード</a>
+    <a id="download" download="target.csv">
+      <button class="bg-indigo-700 font-semibold text-white py-2 px-4 rounded">
+        CSVダウンロード
+      </button>
+    </a>
     <script>
       const download = () => {
         const watch_list = document.querySelectorAll(".watchlist");

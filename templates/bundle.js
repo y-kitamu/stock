@@ -51,10 +51,10 @@ function calculateMA(dayCount) {
 }
 
 option = {
-    title: {
-        text: "{{ chart_id }}",
-        left: 0,
-    },
+    /* title: {
+     *     text: "{{ chart_id }}",
+     *     left: 0,
+     * }, */
     tooltip: {
         trigger: "axis",
         axisPointer: {
