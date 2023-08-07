@@ -90,5 +90,445 @@
         "Cost Of Revenue": 485600000.0,
         "Total Revenue": 815100000.0,
         "Operating Revenue": 815100000.0
+    },
+    "2022-12-31": {
+        "Diluted EPS": 1.72,
+        "Total Revenue": 824,
+        "Gross Profit": 336,
+        "Operating Income": 129,
+        "EBIT": 158,
+        "Net Income": 97
+    },
+    "2022-06-30": {
+        "Diluted EPS": 4.54,
+        "Total Revenue": 864,
+        "Gross Profit": 329,
+        "Operating Income": 124,
+        "EBIT": 157,
+        "Net Income": 258
+    },
+    "2022-03-31": {
+        "Diluted EPS": 1.81,
+        "Total Revenue": 872,
+        "Gross Profit": 345,
+        "Operating Income": 147,
+        "EBIT": 176,
+        "Net Income": 105
+    },
+    "2021-12-31": {
+        "Diluted EPS": 1.23,
+        "Total Revenue": 879,
+        "Gross Profit": 309,
+        "Operating Income": 100,
+        "EBIT": 130,
+        "Net Income": 72
+    },
+    "2021-09-30": {
+        "Diluted EPS": 1.96,
+        "Total Revenue": 894,
+        "Gross Profit": 338,
+        "Operating Income": 145,
+        "EBIT": 174,
+        "Net Income": 117
+    },
+    "2021-06-30": {
+        "Diluted EPS": 2.33,
+        "Total Revenue": 856,
+        "Gross Profit": 332,
+        "Operating Income": 145,
+        "EBIT": 176,
+        "Net Income": 138
+    },
+    "2021-03-31": {
+        "Diluted EPS": 1.84,
+        "Total Revenue": 780,
+        "Gross Profit": 309,
+        "Operating Income": 140,
+        "EBIT": 171,
+        "Net Income": 108
+    },
+    "2020-12-31": {
+        "Diluted EPS": 0.81,
+        "Total Revenue": 808,
+        "Gross Profit": 256,
+        "Operating Income": 70,
+        "EBIT": 105,
+        "Net Income": 47
+    },
+    "2020-09-30": {
+        "Diluted EPS": 0.97,
+        "Total Revenue": 687,
+        "Gross Profit": 243,
+        "Operating Income": 76,
+        "EBIT": 107,
+        "Net Income": 57
+    },
+    "2020-06-30": {
+        "Diluted EPS": 0.25,
+        "Total Revenue": 644,
+        "Gross Profit": 220,
+        "Operating Income": 29,
+        "EBIT": 60,
+        "Net Income": 15
+    },
+    "2020-03-31": {
+        "Diluted EPS": 1.05,
+        "Total Revenue": 798,
+        "Gross Profit": 287,
+        "Operating Income": 89,
+        "EBIT": 119,
+        "Net Income": 63
+    },
+    "2019-12-31": {
+        "Diluted EPS": -1.85,
+        "Total Revenue": 629,
+        "Gross Profit": 243,
+        "Operating Income": -163,
+        "EBIT": -139,
+        "Net Income": -113
+    },
+    "2019-09-30": {
+        "Diluted EPS": 1.19,
+        "Total Revenue": 772,
+        "Gross Profit": 278,
+        "Operating Income": 109,
+        "EBIT": 137,
+        "Net Income": 73
+    },
+    "2019-06-30": {
+        "Diluted EPS": 1.5,
+        "Total Revenue": 842,
+        "Gross Profit": 307,
+        "Operating Income": 123,
+        "EBIT": 151,
+        "Net Income": 91
+    },
+    "2019-03-31": {
+        "Diluted EPS": 1.36,
+        "Total Revenue": 832,
+        "Gross Profit": 305,
+        "Operating Income": 114,
+        "EBIT": 141,
+        "Net Income": 82
+    },
+    "2018-12-31": {
+        "Diluted EPS": 1.46,
+        "Total Revenue": 840,
+        "Gross Profit": 295,
+        "Operating Income": 110,
+        "EBIT": 146,
+        "Net Income": 89
+    },
+    "2018-09-30": {
+        "Diluted EPS": 1.59,
+        "Total Revenue": 856,
+        "Gross Profit": 311,
+        "Operating Income": 124,
+        "EBIT": 152,
+        "Net Income": 97
+    },
+    "2018-06-30": {
+        "Diluted EPS": 1.32,
+        "Total Revenue": 851,
+        "Gross Profit": 305,
+        "Operating Income": 113,
+        "EBIT": 141,
+        "Net Income": 81
+    },
+    "2018-03-31": {
+        "Diluted EPS": 1.13,
+        "Total Revenue": 799,
+        "Gross Profit": 278,
+        "Operating Income": 94,
+        "EBIT": 122,
+        "Net Income": 69
+    },
+    "2017-12-31": {
+        "Diluted EPS": -0.48,
+        "Total Revenue": 714,
+        "Gross Profit": 259,
+        "Operating Income": 87,
+        "EBIT": 106,
+        "Net Income": -29
+    },
+    "2017-09-30": {
+        "Diluted EPS": 1.13,
+        "Total Revenue": 696,
+        "Gross Profit": 254,
+        "Operating Income": 102,
+        "EBIT": 121,
+        "Net Income": 68
+    },
+    "2017-06-30": {
+        "Diluted EPS": 1.14,
+        "Total Revenue": 703,
+        "Gross Profit": 258,
+        "Operating Income": 106,
+        "EBIT": 124,
+        "Net Income": 69
+    },
+    "2017-03-31": {
+        "Diluted EPS": 1.05,
+        "Total Revenue": 673,
+        "Gross Profit": 244,
+        "Operating Income": 93,
+        "EBIT": 111,
+        "Net Income": 63
+    },
+    "2016-12-31": {
+        "Diluted EPS": -1.08,
+        "Total Revenue": 682,
+        "Gross Profit": 248,
+        "Operating Income": -105,
+        "EBIT": -89,
+        "Net Income": -64
+    },
+    "2016-09-30": {
+        "Diluted EPS": 1.07,
+        "Total Revenue": 694,
+        "Gross Profit": 245,
+        "Operating Income": 104,
+        "EBIT": 121,
+        "Net Income": 64
+    },
+    "2016-06-30": {
+        "Diluted EPS": 1.15,
+        "Total Revenue": 712,
+        "Gross Profit": 263,
+        "Operating Income": 103,
+        "EBIT": 120,
+        "Net Income": 68
+    },
+    "2016-03-31": {
+        "Diluted EPS": 0.93,
+        "Total Revenue": 660,
+        "Gross Profit": 234,
+        "Operating Income": 86,
+        "EBIT": 102,
+        "Net Income": 55
+    },
+    "2015-12-31": {
+        "Diluted EPS": 1.1,
+        "Total Revenue": 681,
+        "Gross Profit": 239,
+        "Operating Income": 103,
+        "EBIT": 121,
+        "Net Income": 65
+    },
+    "2015-09-30": {
+        "Diluted EPS": 0.97,
+        "Total Revenue": 670,
+        "Gross Profit": 238,
+        "Operating Income": 93,
+        "EBIT": 109,
+        "Net Income": 57
+    },
+    "2015-06-30": {
+        "Diluted EPS": 0.95,
+        "Total Revenue": 711,
+        "Gross Profit": 241,
+        "Operating Income": 90,
+        "EBIT": 108,
+        "Net Income": 56
+    },
+    "2015-03-31": {
+        "Diluted EPS": 0.87,
+        "Total Revenue": 679,
+        "Gross Profit": 237,
+        "Operating Income": 86,
+        "EBIT": 103,
+        "Net Income": 51
+    },
+    "2014-12-31": {
+        "Diluted EPS": 0.94,
+        "Total Revenue": 731,
+        "Gross Profit": 249,
+        "Operating Income": 90,
+        "EBIT": 107,
+        "Net Income": 56
+    },
+    "2014-09-30": {
+        "Diluted EPS": 0.47,
+        "Total Revenue": 727,
+        "Gross Profit": 251,
+        "Operating Income": 48,
+        "EBIT": 66,
+        "Net Income": 28
+    },
+    "2014-06-30": {
+        "Diluted EPS": 1.0,
+        "Total Revenue": 750,
+        "Gross Profit": 262,
+        "Operating Income": 98,
+        "EBIT": 116,
+        "Net Income": 60
+    },
+    "2014-03-31": {
+        "Diluted EPS": 0.82,
+        "Total Revenue": 717,
+        "Gross Profit": 254,
+        "Operating Income": 82,
+        "EBIT": 103,
+        "Net Income": 49
+    },
+    "2013-12-31": {
+        "Diluted EPS": 0.84,
+        "Total Revenue": 681,
+        "Gross Profit": 227,
+        "Operating Income": 83,
+        "EBIT": 100,
+        "Net Income": 50
+    },
+    "2013-09-30": {
+        "Diluted EPS": 0.97,
+        "Total Revenue": 638,
+        "Gross Profit": 216,
+        "Operating Income": 89,
+        "EBIT": 101,
+        "Net Income": 57
+    },
+    "2013-06-30": {
+        "Diluted EPS": 0.93,
+        "Total Revenue": 649,
+        "Gross Profit": 223,
+        "Operating Income": 89,
+        "EBIT": 102,
+        "Net Income": 55
+    },
+    "2013-03-31": {
+        "Diluted EPS": 0.99,
+        "Total Revenue": 628,
+        "Gross Profit": 218,
+        "Operating Income": 87,
+        "EBIT": 100,
+        "Net Income": 58
+    },
+    "2012-12-31": {
+        "Diluted EPS": 0.78,
+        "Total Revenue": 630,
+        "Gross Profit": 212,
+        "Operating Income": 76,
+        "EBIT": 90,
+        "Net Income": 46
+    },
+    "2012-09-30": {
+        "Diluted EPS": 0.99,
+        "Total Revenue": 646,
+        "Gross Profit": 220,
+        "Operating Income": 87,
+        "EBIT": 100,
+        "Net Income": 57
+    },
+    "2012-06-30": {
+        "Diluted EPS": 1.07,
+        "Total Revenue": 658,
+        "Gross Profit": 222,
+        "Operating Income": 69,
+        "EBIT": 85,
+        "Net Income": 63
+    },
+    "2012-03-31": {
+        "Diluted EPS": 0.88,
+        "Total Revenue": 646,
+        "Gross Profit": 216,
+        "Operating Income": 78,
+        "EBIT": 93,
+        "Net Income": 52
+    },
+    "2011-12-31": {
+        "Diluted EPS": -2.11,
+        "Total Revenue": 609,
+        "Gross Profit": 198,
+        "Operating Income": -195,
+        "EBIT": -180,
+        "Net Income": -125
+    },
+    "2011-09-30": {
+        "Diluted EPS": 0.89,
+        "Total Revenue": 647,
+        "Gross Profit": 219,
+        "Operating Income": 80,
+        "EBIT": 96,
+        "Net Income": 53
+    },
+    "2011-06-30": {
+        "Diluted EPS": 0.85,
+        "Total Revenue": 633,
+        "Gross Profit": 217,
+        "Operating Income": 79,
+        "EBIT": 95,
+        "Net Income": 50
+    },
+    "2011-03-31": {
+        "Diluted EPS": 0.81,
+        "Total Revenue": 611,
+        "Gross Profit": 213,
+        "Operating Income": 73,
+        "EBIT": 89,
+        "Net Income": 48
+    },
+    "2010-12-31": {
+        "Diluted EPS": 0.66,
+        "Total Revenue": 536,
+        "Gross Profit": 185,
+        "Operating Income": 52,
+        "EBIT": 67,
+        "Net Income": 39
+    },
+    "2010-09-30": {
+        "Diluted EPS": 0.7,
+        "Total Revenue": 561,
+        "Gross Profit": 188,
+        "Operating Income": 63,
+        "EBIT": 78,
+        "Net Income": 42
+    },
+    "2010-06-30": {
+        "Diluted EPS": 0.67,
+        "Total Revenue": 553,
+        "Gross Profit": 191,
+        "Operating Income": 65,
+        "EBIT": 81,
+        "Net Income": 40
+    },
+    "2010-03-31": {
+        "Diluted EPS": 0.56,
+        "Total Revenue": 530,
+        "Gross Profit": 178,
+        "Operating Income": 53,
+        "EBIT": 68,
+        "Net Income": 33
+    },
+    "2009-12-31": {
+        "Diluted EPS": 0.81,
+        "Total Revenue": 545,
+        "Gross Profit": 196,
+        "Operating Income": 69,
+        "EBIT": 84,
+        "Net Income": 48
+    },
+    "2009-09-30": {
+        "Diluted EPS": 0.6,
+        "Total Revenue": 551,
+        "Gross Profit": 185,
+        "Operating Income": 55,
+        "EBIT": 69,
+        "Net Income": 35
+    },
+    "2009-06-30": {
+        "Diluted EPS": 0.47,
+        "Total Revenue": 545,
+        "Gross Profit": 176,
+        "Operating Income": 45,
+        "EBIT": 60,
+        "Net Income": 28
+    },
+    "2009-03-31": {
+        "Diluted EPS": 0.4,
+        "Total Revenue": 555,
+        "Gross Profit": 173,
+        "Operating Income": 38,
+        "EBIT": 53,
+        "Net Income": 23
     }
 }

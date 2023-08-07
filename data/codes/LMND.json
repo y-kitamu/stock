@@ -25,7 +25,10 @@
         "General And Administrative Expense": 32700000.0,
         "Other Gand A": 32700000.0,
         "Total Revenue": 95200000.0,
-        "Operating Revenue": 95200000.0
+        "Operating Revenue": 95200000.0,
+        "Gross Profit": 32,
+        "Operating Income": -65,
+        "EBIT": -59
     },
     "2022-12-31": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -53,7 +56,10 @@
         "General And Administrative Expense": 31200000.0,
         "Other Gand A": 31200000.0,
         "Total Revenue": 88400000.0,
-        "Operating Revenue": 88400000.0
+        "Operating Revenue": 88400000.0,
+        "Gross Profit": 27,
+        "Operating Income": -68,
+        "EBIT": -62
     },
     "2022-09-30": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -81,7 +87,10 @@
         "General And Administrative Expense": 40500000.0,
         "Other Gand A": 40500000.0,
         "Total Revenue": 74000000.0,
-        "Operating Revenue": 74000000.0
+        "Operating Revenue": 74000000.0,
+        "Gross Profit": 21,
+        "Operating Income": -89,
+        "EBIT": -84
     },
     "2022-06-30": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -109,6 +118,113 @@
         "General And Administrative Expense": 22400000.0,
         "Other Gand A": 22400000.0,
         "Total Revenue": 50000000.0,
-        "Operating Revenue": 50000000.0
+        "Operating Revenue": 50000000.0,
+        "Gross Profit": 22,
+        "Operating Income": -65,
+        "EBIT": -61
+    },
+    "2022-03-31": {
+        "Diluted EPS": -1.21,
+        "Total Revenue": 44,
+        "Gross Profit": 20,
+        "Operating Income": -73,
+        "EBIT": -69,
+        "Net Income": -75
+    },
+    "2021-12-31": {
+        "Diluted EPS": -1.15,
+        "Total Revenue": 41,
+        "Gross Profit": 16,
+        "Operating Income": -68,
+        "EBIT": -70,
+        "Net Income": -70
+    },
+    "2021-09-30": {
+        "Diluted EPS": -1.08,
+        "Total Revenue": 36,
+        "Gross Profit": 18,
+        "Operating Income": -64,
+        "EBIT": -65,
+        "Net Income": -66
+    },
+    "2021-06-30": {
+        "Diluted EPS": -0.9,
+        "Total Revenue": 28,
+        "Gross Profit": 15,
+        "Operating Income": -53,
+        "EBIT": -52,
+        "Net Income": -56
+    },
+    "2021-03-31": {
+        "Diluted EPS": -0.81,
+        "Total Revenue": 24,
+        "Gross Profit": 7,
+        "Operating Income": -48,
+        "EBIT": -47,
+        "Net Income": -49
+    },
+    "2020-12-31": {
+        "Diluted EPS": 1.87,
+        "Total Revenue": 21,
+        "Gross Profit": 11,
+        "Operating Income": -33,
+        "EBIT": -33,
+        "Net Income": -34
+    },
+    "2020-09-30": {
+        "Diluted EPS": -0.57,
+        "Total Revenue": 18,
+        "Gross Profit": 11,
+        "Operating Income": -31,
+        "EBIT": -30,
+        "Net Income": -31
+    },
+    "2020-06-30": {
+        "Diluted EPS": -1.77,
+        "Total Revenue": 30,
+        "Gross Profit": 9,
+        "Operating Income": -21,
+        "EBIT": -20,
+        "Net Income": -21
+    },
+    "2020-03-31": {
+        "Diluted EPS": -3.16,
+        "Total Revenue": 26,
+        "Gross Profit": 8,
+        "Operating Income": -36,
+        "EBIT": -36,
+        "Net Income": -37
+    },
+    "2019-12-31": {
+        "Diluted EPS": 0.0,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": NaN,
+        "EBIT": NaN,
+        "Net Income": NaN
+    },
+    "2019-09-30": {
+        "Diluted EPS": -2.78,
+        "Total Revenue": 19,
+        "Gross Profit": 6,
+        "Operating Income": -31,
+        "EBIT": -31,
+        "Net Income": -31
+    },
+    "2019-06-30": {
+        "Diluted EPS": -2.09,
+        "Total Revenue": 14,
+        "Gross Profit": 4,
+        "Operating Income": -23,
+        "EBIT": -23,
+        "Net Income": -23
+    },
+    "2018-12-31": {
+        "Diluted EPS": 0.0,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": NaN,
+        "EBIT": NaN,
+        "Net Income": NaN
     }
 }

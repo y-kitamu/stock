@@ -37,7 +37,10 @@
         "Rent And Landing Fees": 1312000.0,
         "Salaries And Wages": 233830000.0,
         "Total Revenue": 1498012000.0,
-        "Operating Revenue": 1498012000.0
+        "Operating Revenue": 1498012000.0,
+        "Gross Profit": 304,
+        "Operating Income": 97,
+        "EBIT": NaN
     },
     "2022-12-31": {
         "Tax Effect Of Unusual Items": -3177406.613889,
@@ -117,7 +120,9 @@
         "Rent And Landing Fees": 3156000.0,
         "Salaries And Wages": 222717000.0,
         "Total Revenue": 1877312000.0,
-        "Operating Revenue": 1877312000.0
+        "Operating Revenue": 1877312000.0,
+        "Gross Profit": NaN,
+        "Operating Income": NaN
     },
     "2022-06-30": {
         "Tax Effect Of Unusual Items": 28631762.013355,
@@ -158,5 +163,45 @@
         "Salaries And Wages": 226861000.0,
         "Total Revenue": 1467898000.0,
         "Operating Revenue": 1467898000.0
+    },
+    "2022-03-31": {
+        "Diluted EPS": 0.92,
+        "Total Revenue": 373,
+        "Gross Profit": 292,
+        "Operating Income": 133,
+        "EBIT": NaN,
+        "Net Income": 106
+    },
+    "2021-03-31": {
+        "Diluted EPS": 1.26,
+        "Total Revenue": 422,
+        "Gross Profit": 353,
+        "Operating Income": 179,
+        "EBIT": NaN,
+        "Net Income": 145
+    },
+    "2020-03-31": {
+        "Diluted EPS": 0.37,
+        "Total Revenue": 343,
+        "Gross Profit": 242,
+        "Operating Income": 73,
+        "EBIT": NaN,
+        "Net Income": 43
+    },
+    "2019-03-31": {
+        "Diluted EPS": 0.96,
+        "Total Revenue": 406,
+        "Gross Profit": 304,
+        "Operating Income": 137,
+        "EBIT": NaN,
+        "Net Income": 106
+    },
+    "2018-12-31": {
+        "Diluted EPS": 0.0,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": NaN,
+        "EBIT": NaN,
+        "Net Income": NaN
     }
 }

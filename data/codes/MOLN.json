@@ -38,7 +38,8 @@
         "Research And Development": 12695000.0,
         "Selling General And Administration": 5443000.0,
         "Total Revenue": 3050000.0,
-        "Operating Revenue": 3050000.0
+        "Operating Revenue": 3050000.0,
+        "Gross Profit": -10
     },
     "2022-12-31": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -120,7 +121,8 @@
         "Research And Development": 11496000.0,
         "Selling General And Administration": 5560000.0,
         "Total Revenue": 2337000.0,
-        "Operating Revenue": 2337000.0
+        "Operating Revenue": 2337000.0,
+        "Gross Profit": -9
     },
     "2022-06-30": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -161,6 +163,39 @@
         "Research And Development": 12571000.0,
         "Selling General And Administration": 5480000.0,
         "Total Revenue": 11748000.0,
-        "Operating Revenue": 11748000.0
+        "Operating Revenue": 11748000.0,
+        "Gross Profit": NaN
+    },
+    "2022-03-31": {
+        "Diluted EPS": 5.0,
+        "Total Revenue": 187,
+        "Gross Profit": 171,
+        "Operating Income": 165,
+        "EBIT": 166,
+        "Net Income": 166
+    },
+    "2021-09-30": {
+        "Diluted EPS": -0.41,
+        "Total Revenue": 4,
+        "Gross Profit": -9,
+        "Operating Income": -14,
+        "EBIT": -14,
+        "Net Income": -13
+    },
+    "2021-03-31": {
+        "Diluted EPS": -0.63,
+        "Total Revenue": 1,
+        "Gross Profit": -17,
+        "Operating Income": -20,
+        "EBIT": -20,
+        "Net Income": -18
+    },
+    "2020-12-31": {
+        "Diluted EPS": 0.0,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": NaN,
+        "EBIT": NaN,
+        "Net Income": NaN
     }
 }

@@ -43,7 +43,8 @@
         "Other Gand A": 5179000.0,
         "Salaries And Wages": 2873000.0,
         "Total Revenue": 0.0,
-        "Operating Revenue": 0.0
+        "Operating Revenue": 0.0,
+        "Gross Profit": NaN
     },
     "2022-12-31": {
         "Tax Effect Of Unusual Items": -671600.0,
@@ -89,7 +90,8 @@
         "Other Gand A": 3424000.0,
         "Salaries And Wages": 2221000.0,
         "Total Revenue": 0.0,
-        "Operating Revenue": 0.0
+        "Operating Revenue": 0.0,
+        "Gross Profit": NaN
     },
     "2022-09-30": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -135,7 +137,8 @@
         "Other Gand A": 4411000.0,
         "Salaries And Wages": 4321000.0,
         "Total Revenue": 0.0,
-        "Operating Revenue": 0.0
+        "Operating Revenue": 0.0,
+        "Gross Profit": NaN
     },
     "2022-06-30": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -182,5 +185,45 @@
         "Salaries And Wages": 3808000.0,
         "Total Revenue": 0.0,
         "Operating Revenue": 0.0
+    },
+    "2022-03-31": {
+        "Diluted EPS": -0.63,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": -28,
+        "EBIT": -28,
+        "Net Income": -27
+    },
+    "2021-03-31": {
+        "Diluted EPS": -14.63,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": -34,
+        "EBIT": -33,
+        "Net Income": -35
+    },
+    "2020-12-31": {
+        "Diluted EPS": 0.0,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": NaN,
+        "EBIT": NaN,
+        "Net Income": NaN
+    },
+    "2020-03-31": {
+        "Diluted EPS": -27.61,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": -21,
+        "EBIT": -21,
+        "Net Income": -17
+    },
+    "2019-12-31": {
+        "Diluted EPS": 0.0,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": NaN,
+        "EBIT": NaN,
+        "Net Income": NaN
     }
 }

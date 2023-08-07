@@ -268,5 +268,429 @@
         "Cost Of Revenue": 937000000.0,
         "Total Revenue": 1796000000.0,
         "Operating Revenue": 1796000000.0
+    },
+    "2022-03-31": {
+        "Diluted EPS": 5.43,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": NaN,
+        "EBIT": NaN,
+        "Net Income": NaN
+    },
+    "2021-12-31": {
+        "Diluted EPS": 1.05,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": 654,
+        "EBIT": 986,
+        "Net Income": 382
+    },
+    "2021-09-30": {
+        "Diluted EPS": -0.3,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": 122,
+        "EBIT": 457,
+        "Net Income": -113
+    },
+    "2021-06-30": {
+        "Diluted EPS": 0.82,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": 495,
+        "EBIT": 846,
+        "Net Income": 316
+    },
+    "2021-03-31": {
+        "Diluted EPS": 1.02,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": 620,
+        "EBIT": 962,
+        "Net Income": 388
+    },
+    "2020-12-31": {
+        "Diluted EPS": 0.04,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": 70,
+        "EBIT": 460,
+        "Net Income": 10
+    },
+    "2020-09-30": {
+        "Diluted EPS": -0.02,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": 72,
+        "EBIT": 470,
+        "Net Income": -4
+    },
+    "2020-06-30": {
+        "Diluted EPS": -1.02,
+        "Total Revenue": 596,
+        "Gross Profit": 478,
+        "Operating Income": -416,
+        "EBIT": 2,
+        "Net Income": -386
+    },
+    "2020-03-31": {
+        "Diluted EPS": -11.86,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": NaN,
+        "EBIT": NaN,
+        "Net Income": NaN
+    },
+    "2019-12-31": {
+        "Diluted EPS": -7.9,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": NaN,
+        "EBIT": NaN,
+        "Net Income": NaN
+    },
+    "2019-09-30": {
+        "Diluted EPS": -0.45,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": 14,
+        "EBIT": 725,
+        "Net Income": -170
+    },
+    "2019-06-30": {
+        "Diluted EPS": -0.96,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": -152,
+        "EBIT": 450,
+        "Net Income": -360
+    },
+    "2019-03-31": {
+        "Diluted EPS": -0.12,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": 165,
+        "EBIT": 811,
+        "Net Income": -47
+    },
+    "2018-12-31": {
+        "Diluted EPS": -0.99,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": -344,
+        "EBIT": 290,
+        "Net Income": -381
+    },
+    "2018-09-30": {
+        "Diluted EPS": 0.21,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": 406,
+        "EBIT": NaN,
+        "Net Income": 81
+    },
+    "2018-06-30": {
+        "Diluted EPS": 0.51,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": 508,
+        "EBIT": NaN,
+        "Net Income": 195
+    },
+    "2018-03-31": {
+        "Diluted EPS": 0.38,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": 388,
+        "EBIT": 941,
+        "Net Income": 145
+    },
+    "2017-12-31": {
+        "Diluted EPS": 1.19,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": 278,
+        "EBIT": 851,
+        "Net Income": 456
+    },
+    "2017-09-30": {
+        "Diluted EPS": 0.16,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": 93,
+        "EBIT": 652,
+        "Net Income": 63
+    },
+    "2017-06-30": {
+        "Diluted EPS": 1.5,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": 9,
+        "EBIT": 581,
+        "Net Income": 572
+    },
+    "2017-03-31": {
+        "Diluted EPS": 0.56,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": 538,
+        "EBIT": NaN,
+        "Net Income": 213
+    },
+    "2016-12-31": {
+        "Diluted EPS": -0.48,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": -114,
+        "EBIT": 509,
+        "Net Income": -182
+    },
+    "2016-09-30": {
+        "Diluted EPS": -1.6,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": -905,
+        "EBIT": -257,
+        "Net Income": -607
+    },
+    "2016-06-30": {
+        "Diluted EPS": -0.65,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": -281,
+        "EBIT": 388,
+        "Net Income": -244
+    },
+    "2016-03-31": {
+        "Diluted EPS": -0.98,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": -382,
+        "EBIT": 296,
+        "Net Income": -372
+    },
+    "2015-12-31": {
+        "Diluted EPS": -1.83,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": -89,
+        "EBIT": 719,
+        "Net Income": -698
+    },
+    "2015-09-30": {
+        "Diluted EPS": -10.95,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": NaN,
+        "EBIT": NaN,
+        "Net Income": NaN
+    },
+    "2015-06-30": {
+        "Diluted EPS": -2.28,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": -186,
+        "EBIT": NaN,
+        "Net Income": -860
+    },
+    "2015-03-31": {
+        "Diluted EPS": -12.34,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": NaN,
+        "EBIT": 778,
+        "Net Income": NaN
+    },
+    "2014-12-31": {
+        "Diluted EPS": -20.17,
+        "Total Revenue": NaN,
+        "Gross Profit": 997,
+        "Operating Income": NaN,
+        "EBIT": NaN,
+        "Net Income": NaN
+    },
+    "2014-09-30": {
+        "Diluted EPS": -3.5,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": -317,
+        "EBIT": NaN,
+        "Net Income": NaN
+    },
+    "2014-06-30": {
+        "Diluted EPS": 1.31,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": 911,
+        "EBIT": NaN,
+        "Net Income": 505
+    },
+    "2014-03-31": {
+        "Diluted EPS": 0.6,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": NaN,
+        "EBIT": NaN,
+        "Net Income": 236
+    },
+    "2013-12-31": {
+        "Diluted EPS": 0.45,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": 239,
+        "EBIT": NaN,
+        "Net Income": 174
+    },
+    "2013-09-30": {
+        "Diluted EPS": 0.75,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": 641,
+        "EBIT": NaN,
+        "Net Income": 300
+    },
+    "2013-06-30": {
+        "Diluted EPS": 2.54,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": NaN,
+        "EBIT": NaN,
+        "Net Income": NaN
+    },
+    "2013-03-31": {
+        "Diluted EPS": 1.76,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": NaN,
+        "EBIT": NaN,
+        "Net Income": 698
+    },
+    "2012-12-31": {
+        "Diluted EPS": 1.65,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": NaN,
+        "EBIT": NaN,
+        "Net Income": 649
+    },
+    "2012-09-30": {
+        "Diluted EPS": 0.41,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": 865,
+        "EBIT": NaN,
+        "Net Income": 161
+    },
+    "2012-06-30": {
+        "Diluted EPS": 0.86,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": 811,
+        "EBIT": NaN,
+        "Net Income": 337
+    },
+    "2012-03-31": {
+        "Diluted EPS": 2.0,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": NaN,
+        "EBIT": NaN,
+        "Net Income": 778
+    },
+    "2011-12-31": {
+        "Diluted EPS": 2.94,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": NaN,
+        "EBIT": NaN,
+        "Net Income": NaN
+    },
+    "2011-09-30": {
+        "Diluted EPS": 2.5,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": NaN,
+        "EBIT": NaN,
+        "Net Income": 983
+    },
+    "2011-06-30": {
+        "Diluted EPS": 3.17,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": NaN,
+        "EBIT": NaN,
+        "Net Income": NaN
+    },
+    "2011-03-31": {
+        "Diluted EPS": 2.86,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": NaN,
+        "EBIT": NaN,
+        "Net Income": NaN
+    },
+    "2010-12-31": {
+        "Diluted EPS": 1.73,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": NaN,
+        "EBIT": NaN,
+        "Net Income": 670
+    },
+    "2010-09-30": {
+        "Diluted EPS": 2.12,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": NaN,
+        "EBIT": NaN,
+        "Net Income": 765
+    },
+    "2010-06-30": {
+        "Diluted EPS": 2.53,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": NaN,
+        "EBIT": NaN,
+        "Net Income": 860
+    },
+    "2010-03-31": {
+        "Diluted EPS": 2.08,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": NaN,
+        "EBIT": NaN,
+        "Net Income": 705
+    },
+    "2009-12-31": {
+        "Diluted EPS": 1.77,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": NaN,
+        "EBIT": NaN,
+        "Net Income": 582
+    },
+    "2009-09-30": {
+        "Diluted EPS": 1.3,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": 871,
+        "EBIT": NaN,
+        "Net Income": 441
+    },
+    "2009-06-30": {
+        "Diluted EPS": 1.31,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": 787,
+        "EBIT": NaN,
+        "Net Income": 443
+    },
+    "2009-03-31": {
+        "Diluted EPS": -5.25,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": NaN,
+        "EBIT": 945,
+        "Net Income": NaN
     }
 }

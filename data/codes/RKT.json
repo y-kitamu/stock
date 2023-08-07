@@ -31,7 +31,10 @@
         "Other Gand A": 195390000.0,
         "Salaries And Wages": 603775000.0,
         "Total Revenue": 627735000.0,
-        "Operating Revenue": 627735000.0
+        "Operating Revenue": 627735000.0,
+        "Gross Profit": 666,
+        "Operating Income": -416,
+        "EBIT": -347
     },
     "2022-12-31": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -65,7 +68,10 @@
         "Other Gand A": 196342000.0,
         "Salaries And Wages": 519024000.0,
         "Total Revenue": 442459000.0,
-        "Operating Revenue": 442459000.0
+        "Operating Revenue": 442459000.0,
+        "Gross Profit": 481,
+        "Operating Income": -505,
+        "EBIT": -443
     },
     "2022-09-30": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -99,7 +105,10 @@
         "Other Gand A": 204290000.0,
         "Salaries And Wages": 670804000.0,
         "Total Revenue": 1256369000.0,
-        "Operating Revenue": 1256369000.0
+        "Operating Revenue": 1256369000.0,
+        "Gross Profit": NaN,
+        "Operating Income": 106,
+        "EBIT": 169
     },
     "2022-06-30": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -133,6 +142,113 @@
         "Other Gand A": 229706000.0,
         "Salaries And Wages": 754125000.0,
         "Total Revenue": 1354137000.0,
-        "Operating Revenue": 1354137000.0
+        "Operating Revenue": 1354137000.0,
+        "Gross Profit": NaN,
+        "Operating Income": 79,
+        "EBIT": 142
+    },
+    "2022-03-31": {
+        "Diluted EPS": 0.4,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": NaN,
+        "EBIT": NaN,
+        "Net Income": 54
+    },
+    "2021-12-31": {
+        "Diluted EPS": 0.31,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": 855,
+        "EBIT": NaN,
+        "Net Income": 48
+    },
+    "2021-09-30": {
+        "Diluted EPS": 0.54,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": NaN,
+        "EBIT": NaN,
+        "Net Income": 75
+    },
+    "2021-06-30": {
+        "Diluted EPS": 0.4,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": NaN,
+        "EBIT": NaN,
+        "Net Income": 61
+    },
+    "2021-03-31": {
+        "Diluted EPS": 1.07,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": NaN,
+        "EBIT": NaN,
+        "Net Income": 124
+    },
+    "2020-12-31": {
+        "Diluted EPS": 1.22,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": NaN,
+        "EBIT": NaN,
+        "Net Income": 140
+    },
+    "2020-09-30": {
+        "Diluted EPS": 0.54,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": NaN,
+        "EBIT": NaN,
+        "Net Income": 58
+    },
+    "2020-06-30": {
+        "Diluted EPS": 0.0,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": NaN,
+        "EBIT": NaN,
+        "Net Income": NaN
+    },
+    "2020-03-31": {
+        "Diluted EPS": 0.0,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": 100,
+        "EBIT": 150,
+        "Net Income": NaN
+    },
+    "2019-12-31": {
+        "Diluted EPS": 0.0,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": NaN,
+        "EBIT": NaN,
+        "Net Income": NaN
+    },
+    "2019-09-30": {
+        "Diluted EPS": 0.0,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": 500,
+        "EBIT": 554,
+        "Net Income": NaN
+    },
+    "2019-06-30": {
+        "Diluted EPS": 0.0,
+        "Total Revenue": 938,
+        "Gross Profit": 938,
+        "Operating Income": -54,
+        "EBIT": -21,
+        "Net Income": -54
+    },
+    "2018-12-31": {
+        "Diluted EPS": 0.0,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": NaN,
+        "EBIT": NaN,
+        "Net Income": NaN
     }
 }

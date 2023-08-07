@@ -39,7 +39,8 @@
         "General And Administrative Expense": NaN,
         "Other Gand A": NaN,
         "Total Revenue": 24208000.0,
-        "Operating Revenue": 24208000.0
+        "Operating Revenue": 24208000.0,
+        "Gross Profit": 24
     },
     "2022-12-31": {
         "Tax Effect Of Unusual Items": 17610000.0,
@@ -81,7 +82,8 @@
         "General And Administrative Expense": 22681000.0,
         "Other Gand A": 22681000.0,
         "Total Revenue": 20037000.0,
-        "Operating Revenue": 20037000.0
+        "Operating Revenue": 20037000.0,
+        "Gross Profit": 20
     },
     "2022-09-30": {
         "Tax Effect Of Unusual Items": 1862400.0,
@@ -123,7 +125,8 @@
         "General And Administrative Expense": 21815000.0,
         "Other Gand A": 21815000.0,
         "Total Revenue": 15799000.0,
-        "Operating Revenue": 15799000.0
+        "Operating Revenue": 15799000.0,
+        "Gross Profit": 16
     },
     "2022-06-30": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -165,6 +168,119 @@
         "General And Administrative Expense": 24062000.0,
         "Other Gand A": 24062000.0,
         "Total Revenue": 16652000.0,
-        "Operating Revenue": 16652000.0
+        "Operating Revenue": 16652000.0,
+        "Gross Profit": 17
+    },
+    "2022-03-31": {
+        "Diluted EPS": -1.01,
+        "Total Revenue": 8,
+        "Gross Profit": 8,
+        "Operating Income": -76,
+        "EBIT": -73,
+        "Net Income": -69
+    },
+    "2021-12-31": {
+        "Diluted EPS": -0.77,
+        "Total Revenue": 51,
+        "Gross Profit": 51,
+        "Operating Income": -63,
+        "EBIT": -61,
+        "Net Income": -65
+    },
+    "2021-09-30": {
+        "Diluted EPS": -0.42,
+        "Total Revenue": 1,
+        "Gross Profit": 1,
+        "Operating Income": -70,
+        "EBIT": -68,
+        "Net Income": -28
+    },
+    "2021-06-30": {
+        "Diluted EPS": -1.23,
+        "Total Revenue": 0,
+        "Gross Profit": 0,
+        "Operating Income": -59,
+        "EBIT": -57,
+        "Net Income": -76
+    },
+    "2021-03-31": {
+        "Diluted EPS": -3.35,
+        "Total Revenue": 0,
+        "Gross Profit": 0,
+        "Operating Income": -200,
+        "EBIT": -199,
+        "Net Income": -202
+    },
+    "2020-12-31": {
+        "Diluted EPS": -1.78,
+        "Total Revenue": 0,
+        "Gross Profit": 0,
+        "Operating Income": -41,
+        "EBIT": -39,
+        "Net Income": -95
+    },
+    "2020-09-30": {
+        "Diluted EPS": -0.69,
+        "Total Revenue": 0,
+        "Gross Profit": 0,
+        "Operating Income": -37,
+        "EBIT": -36,
+        "Net Income": -34
+    },
+    "2020-06-30": {
+        "Diluted EPS": -0.69,
+        "Total Revenue": 0,
+        "Gross Profit": 0,
+        "Operating Income": -26,
+        "EBIT": -25,
+        "Net Income": -34
+    },
+    "2020-03-31": {
+        "Diluted EPS": -1.03,
+        "Total Revenue": 0,
+        "Gross Profit": 0,
+        "Operating Income": -28,
+        "EBIT": -27,
+        "Net Income": -32
+    },
+    "2019-12-31": {
+        "Diluted EPS": -4.5,
+        "Total Revenue": 0,
+        "Gross Profit": 0,
+        "Operating Income": -26,
+        "EBIT": -26,
+        "Net Income": -28
+    },
+    "2019-09-30": {
+        "Diluted EPS": -3.31,
+        "Total Revenue": 0,
+        "Gross Profit": 0,
+        "Operating Income": -18,
+        "EBIT": -17,
+        "Net Income": -22
+    },
+    "2019-06-30": {
+        "Diluted EPS": -3.38,
+        "Total Revenue": 0,
+        "Gross Profit": 0,
+        "Operating Income": -18,
+        "EBIT": -17,
+        "Net Income": -21
+    },
+    "2019-03-31": {
+        "Diluted EPS": -2.86,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": -13,
+        "EBIT": -12,
+        "Net Income": -14
+    },
+    "2018-12-31": {
+        "Diluted EPS": 0.0,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": NaN,
+        "EBIT": NaN,
+        "Net Income": NaN
     }
 }

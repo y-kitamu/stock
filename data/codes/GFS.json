@@ -186,5 +186,85 @@
         "Cost Of Revenue": 1455000000.0,
         "Total Revenue": 1993000000.0,
         "Operating Revenue": 1993000000.0
+    },
+    "2022-03-31": {
+        "Diluted EPS": 0.33,
+        "Total Revenue": NaN,
+        "Gross Profit": 469,
+        "Operating Income": 225,
+        "EBIT": 625,
+        "Net Income": 179
+    },
+    "2021-12-31": {
+        "Diluted EPS": 0.1,
+        "Total Revenue": NaN,
+        "Gross Profit": 383,
+        "Operating Income": 86,
+        "EBIT": 495,
+        "Net Income": 43
+    },
+    "2021-09-30": {
+        "Diluted EPS": 0.01,
+        "Total Revenue": NaN,
+        "Gross Profit": 300,
+        "Operating Income": 52,
+        "EBIT": 460,
+        "Net Income": 6
+    },
+    "2021-06-30": {
+        "Diluted EPS": -0.35,
+        "Total Revenue": NaN,
+        "Gross Profit": 231,
+        "Operating Income": -103,
+        "EBIT": 297,
+        "Net Income": -173
+    },
+    "2021-03-31": {
+        "Diluted EPS": -0.25,
+        "Total Revenue": NaN,
+        "Gross Profit": 99,
+        "Operating Income": -95,
+        "EBIT": 273,
+        "Net Income": -126
+    },
+    "2020-12-31": {
+        "Diluted EPS": 0.0,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": NaN,
+        "EBIT": NaN,
+        "Net Income": NaN
+    },
+    "2020-09-30": {
+        "Diluted EPS": -0.58,
+        "Total Revenue": NaN,
+        "Gross Profit": -134,
+        "Operating Income": -350,
+        "EBIT": NaN,
+        "Net Income": -293
+    },
+    "2020-06-30": {
+        "Diluted EPS": 0.0,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": NaN,
+        "EBIT": NaN,
+        "Net Income": NaN
+    },
+    "2019-12-31": {
+        "Diluted EPS": 0.0,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": NaN,
+        "EBIT": NaN,
+        "Net Income": NaN
+    },
+    "2018-12-31": {
+        "Diluted EPS": 0.0,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": NaN,
+        "EBIT": NaN,
+        "Net Income": NaN
     }
 }

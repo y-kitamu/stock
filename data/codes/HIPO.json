@@ -35,7 +35,10 @@
         "Other Gand A": 19800000.0,
         "Salaries And Wages": 3000000.0,
         "Total Revenue": 39800000.0,
-        "Operating Revenue": 39800000.0
+        "Operating Revenue": 39800000.0,
+        "Gross Profit": 40,
+        "Operating Income": -68,
+        "EBIT": -63
     },
     "2022-12-31": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -73,7 +76,10 @@
         "Other Gand A": 17800000.0,
         "Salaries And Wages": 3200000.0,
         "Total Revenue": 35800000.0,
-        "Operating Revenue": 35800000.0
+        "Operating Revenue": 35800000.0,
+        "Gross Profit": 36,
+        "Operating Income": -59,
+        "EBIT": -55
     },
     "2022-09-30": {
         "Tax Effect Of Unusual Items": -22120000.0,
@@ -111,7 +117,10 @@
         "Other Gand A": 19000000.0,
         "Salaries And Wages": 3400000.0,
         "Total Revenue": 30700000.0,
-        "Operating Revenue": 30700000.0
+        "Operating Revenue": 30700000.0,
+        "Gross Profit": 31,
+        "Operating Income": -72,
+        "EBIT": -68
     },
     "2022-06-30": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -149,6 +158,65 @@
         "Other Gand A": 18200000.0,
         "Salaries And Wages": NaN,
         "Total Revenue": 28700000.0,
-        "Operating Revenue": 28700000.0
+        "Operating Revenue": 28700000.0,
+        "Gross Profit": 29,
+        "Operating Income": -72,
+        "EBIT": -69
+    },
+    "2022-03-31": {
+        "Diluted EPS": -3.01,
+        "Total Revenue": 25,
+        "Gross Profit": 25,
+        "Operating Income": -67,
+        "EBIT": -63,
+        "Net Income": -68
+    },
+    "2021-12-31": {
+        "Diluted EPS": 40.14,
+        "Total Revenue": 32,
+        "Gross Profit": 32,
+        "Operating Income": -263,
+        "EBIT": -260,
+        "Net Income": -61
+    },
+    "2021-09-30": {
+        "Diluted EPS": -2.0,
+        "Total Revenue": 21,
+        "Gross Profit": 21,
+        "Operating Income": -56,
+        "EBIT": -50,
+        "Net Income": -31
+    },
+    "2021-06-30": {
+        "Diluted EPS": -21.5,
+        "Total Revenue": 21,
+        "Gross Profit": 21,
+        "Operating Income": -48,
+        "EBIT": -36,
+        "Net Income": -85
+    },
+    "2021-03-31": {
+        "Diluted EPS": -50.75,
+        "Total Revenue": 17,
+        "Gross Profit": 17,
+        "Operating Income": -48,
+        "EBIT": -37,
+        "Net Income": -195
+    },
+    "2020-12-31": {
+        "Diluted EPS": 0.0,
+        "Total Revenue": NaN,
+        "Gross Profit": NaN,
+        "Operating Income": NaN,
+        "EBIT": NaN,
+        "Net Income": NaN
+    },
+    "2020-09-30": {
+        "Diluted EPS": -11.0,
+        "Total Revenue": 13,
+        "Gross Profit": 13,
+        "Operating Income": -41,
+        "EBIT": -41,
+        "Net Income": -39
     }
 }
