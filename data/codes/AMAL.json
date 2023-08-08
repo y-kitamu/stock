@@ -27,6 +27,7 @@
         "Depreciation And Amortization In Income Statement": 222000.0,
         "Amortization": 222000.0,
         "Amortization Of Intangibles Income Statement": 222000.0,
+        "Depreciation Income Statement": NaN,
         "Selling General And Administration": 25047000.0,
         "Selling And Marketing Expense": 1587000.0,
         "General And Administrative Expense": 23460000.0,
@@ -34,10 +35,7 @@
         "Insurance And Claims": 718000.0,
         "Salaries And Wages": 22014000.0,
         "Total Revenue": 72335000.0,
-        "Operating Revenue": 72335000.0,
-        "Gross Profit": 72,
-        "Operating Income": 29,
-        "EBIT": NaN
+        "Operating Revenue": 72335000.0
     },
     "2022-12-31": {
         "Tax Effect Of Unusual Items": -36257.729346,
@@ -67,6 +65,7 @@
         "Depreciation And Amortization In Income Statement": 3273000.0,
         "Amortization": 261000.0,
         "Amortization Of Intangibles Income Statement": 261000.0,
+        "Depreciation Income Statement": NaN,
         "Selling General And Administration": 8053000.0,
         "Selling And Marketing Expense": 1331000.0,
         "General And Administrative Expense": 6722000.0,
@@ -74,10 +73,7 @@
         "Insurance And Claims": NaN,
         "Salaries And Wages": 19470000.0,
         "Total Revenue": 72988000.0,
-        "Operating Revenue": 72988000.0,
-        "Gross Profit": 72,
-        "Operating Income": 32,
-        "EBIT": NaN
+        "Operating Revenue": 72988000.0
     },
     "2022-09-30": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -107,6 +103,7 @@
         "Depreciation And Amortization In Income Statement": 262000.0,
         "Amortization": 262000.0,
         "Amortization Of Intangibles Income Statement": 262000.0,
+        "Depreciation Income Statement": NaN,
         "Selling General And Administration": 25278000.0,
         "Selling And Marketing Expense": 795000.0,
         "General And Administrative Expense": 24483000.0,
@@ -114,10 +111,7 @@
         "Insurance And Claims": NaN,
         "Salaries And Wages": 19527000.0,
         "Total Revenue": 73782000.0,
-        "Operating Revenue": 73782000.0,
-        "Gross Profit": 73,
-        "Operating Income": 31,
-        "EBIT": NaN
+        "Operating Revenue": 73782000.0
     },
     "2022-06-30": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -147,6 +141,7 @@
         "Depreciation And Amortization In Income Statement": 261000.0,
         "Amortization": 261000.0,
         "Amortization Of Intangibles Income Statement": 261000.0,
+        "Depreciation Income Statement": NaN,
         "Selling General And Administration": 23918000.0,
         "Selling And Marketing Expense": 761000.0,
         "General And Administrative Expense": 23157000.0,
@@ -154,10 +149,7 @@
         "Insurance And Claims": NaN,
         "Salaries And Wages": 18046000.0,
         "Total Revenue": 64382000.0,
-        "Operating Revenue": 64382000.0,
-        "Gross Profit": 64,
-        "Operating Income": 26,
-        "EBIT": NaN
+        "Operating Revenue": 64382000.0
     },
     "2022-03-31": {
         "Diluted EPS": 0.45,
@@ -286,5 +278,43 @@
         "Operating Income": 46,
         "EBIT": NaN,
         "Net Income": 12
+    },
+    "2023-06-30": {
+        "Tax Effect Of Unusual Items": 0.0,
+        "Tax Rate For Calcs": 0.265377,
+        "Total Unusual Items": NaN,
+        "Total Unusual Items Excluding Goodwill": NaN,
+        "Net Income From Continuing Operation Net Minority Interest": 21642000.0,
+        "Reconciled Depreciation": 1119000.0,
+        "Net Interest Income": 62985000.0,
+        "Interest Expense": 22937000.0,
+        "Interest Income": 85922000.0,
+        "Normalized Income": 21642000.0,
+        "Net Income From Continuing And Discontinued Operation": 21642000.0,
+        "Diluted Average Shares": 30776000.0,
+        "Basic Average Shares": 30619000.0,
+        "Diluted EPS": 0.7,
+        "Basic EPS": 0.71,
+        "Diluted NI Availto Com Stockholders": 21642000.0,
+        "Net Income Common Stockholders": 21642000.0,
+        "Net Income": 21642000.0,
+        "Net Income Including Noncontrolling Interests": 21642000.0,
+        "Net Income Continuous Operations": 21642000.0,
+        "Tax Provision": 7818000.0,
+        "Pretax Income": 29460000.0,
+        "Gain On Sale Of Security": -267000.0,
+        "Depreciation Amortization Depletion Income Statement": 940000.0,
+        "Depreciation And Amortization In Income Statement": 940000.0,
+        "Amortization": 222000.0,
+        "Amortization Of Intangibles Income Statement": 222000.0,
+        "Depreciation Income Statement": 718000.0,
+        "Selling General And Administration": 23293000.0,
+        "Selling And Marketing Expense": 1028000.0,
+        "General And Administrative Expense": 22265000.0,
+        "Other Gand A": NaN,
+        "Insurance And Claims": 1100000.0,
+        "Salaries And Wages": 21165000.0,
+        "Total Revenue": 70373000.0,
+        "Operating Revenue": 70373000.0
     }
 }

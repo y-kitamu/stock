@@ -33,8 +33,7 @@
         "General And Administrative Expense": NaN,
         "Other Gand A": NaN,
         "Total Revenue": 0.0,
-        "Operating Revenue": 0.0,
-        "Gross Profit": NaN
+        "Operating Revenue": 0.0
     },
     "2022-12-31": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -70,8 +69,7 @@
         "General And Administrative Expense": 3622000.0,
         "Other Gand A": 3622000.0,
         "Total Revenue": 0.0,
-        "Operating Revenue": 0.0,
-        "Gross Profit": NaN
+        "Operating Revenue": 0.0
     },
     "2022-09-30": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -107,8 +105,7 @@
         "General And Administrative Expense": 3579000.0,
         "Other Gand A": 3579000.0,
         "Total Revenue": 0.0,
-        "Operating Revenue": 0.0,
-        "Gross Profit": NaN
+        "Operating Revenue": 0.0
     },
     "2022-06-30": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -144,8 +141,7 @@
         "General And Administrative Expense": 4072000.0,
         "Other Gand A": 4072000.0,
         "Total Revenue": 0.0,
-        "Operating Revenue": 0.0,
-        "Gross Profit": NaN
+        "Operating Revenue": 0.0
     },
     "2022-03-31": {
         "Diluted EPS": -0.74,
@@ -450,5 +446,41 @@
         "Operating Income": NaN,
         "EBIT": NaN,
         "Net Income": NaN
+    },
+    "2023-06-30": {
+        "Tax Effect Of Unusual Items": 0.0,
+        "Tax Rate For Calcs": 0.0,
+        "Normalized EBITDA": -24999000.0,
+        "Net Income From Continuing Operation Net Minority Interest": -23999000.0,
+        "Reconciled Depreciation": 22000.0,
+        "EBIT": -25021000.0,
+        "Net Interest Income": 968000.0,
+        "Interest Income": 968000.0,
+        "Normalized Income": -23999000.0,
+        "Net Income From Continuing And Discontinued Operation": -23999000.0,
+        "Total Expenses": 25021000.0,
+        "Total Operating Income As Reported": -25021000.0,
+        "Diluted Average Shares": 44432955.0,
+        "Basic Average Shares": 44432955.0,
+        "Diluted EPS": -0.54,
+        "Basic EPS": -0.54,
+        "Diluted NI Availto Com Stockholders": -23999000.0,
+        "Net Income Common Stockholders": -23999000.0,
+        "Net Income": -23999000.0,
+        "Net Income Including Noncontrolling Interests": -23999000.0,
+        "Net Income Continuous Operations": -23999000.0,
+        "Pretax Income": -23999000.0,
+        "Other Income Expense": 54000.0,
+        "Other Non Operating Income Expenses": 54000.0,
+        "Net Non Operating Interest Income Expense": 968000.0,
+        "Interest Income Non Operating": 968000.0,
+        "Operating Income": -25021000.0,
+        "Operating Expense": 25021000.0,
+        "Research And Development": 21172000.0,
+        "Selling General And Administration": 3849000.0,
+        "General And Administrative Expense": NaN,
+        "Other Gand A": NaN,
+        "Total Revenue": 0.0,
+        "Operating Revenue": 0.0
     }
 }

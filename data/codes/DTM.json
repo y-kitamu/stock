@@ -42,8 +42,7 @@
         "Depreciation Amortization Depletion Income Statement": 43000000.0,
         "Depreciation And Amortization In Income Statement": 43000000.0,
         "Total Revenue": 220000000.0,
-        "Operating Revenue": 220000000.0,
-        "Gross Profit": 220
+        "Operating Revenue": 220000000.0
     },
     "2022-12-31": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -88,8 +87,7 @@
         "Depreciation Amortization Depletion Income Statement": 44000000.0,
         "Depreciation And Amortization In Income Statement": 44000000.0,
         "Total Revenue": 243000000.0,
-        "Operating Revenue": 243000000.0,
-        "Gross Profit": 243
+        "Operating Revenue": 243000000.0
     },
     "2022-09-30": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -134,8 +132,7 @@
         "Depreciation Amortization Depletion Income Statement": 42000000.0,
         "Depreciation And Amortization In Income Statement": 42000000.0,
         "Total Revenue": 235000000.0,
-        "Operating Revenue": 235000000.0,
-        "Gross Profit": 235
+        "Operating Revenue": 235000000.0
     },
     "2022-06-30": {
         "Tax Effect Of Unusual Items": 5980000.0,
@@ -180,16 +177,52 @@
         "Depreciation Amortization Depletion Income Statement": 42000000.0,
         "Depreciation And Amortization In Income Statement": 42000000.0,
         "Total Revenue": 227000000.0,
-        "Operating Revenue": 227000000.0,
-        "Gross Profit": 227
+        "Operating Revenue": 227000000.0
     },
     "2023-06-30": {
+        "Tax Effect Of Unusual Items": 720000.0,
+        "Tax Rate For Calcs": 0.24,
+        "Normalized EBITDA": 204000000.0,
+        "Total Unusual Items": 3000000.0,
+        "Total Unusual Items Excluding Goodwill": 3000000.0,
+        "Net Income From Continuing Operation Net Minority Interest": 91000000.0,
+        "Reconciled Depreciation": 48000000.0,
+        "EBIT": 159000000.0,
+        "Net Interest Income": -34000000.0,
+        "Interest Expense": 35000000.0,
+        "Interest Income": 1000000.0,
+        "Normalized Income": 88720000.0,
+        "Net Income From Continuing And Discontinued Operation": 91000000.0,
+        "Total Expenses": 110000000.0,
+        "Total Operating Income As Reported": 117000000.0,
+        "Diluted Average Shares": 97400000.0,
+        "Basic Average Shares": 96900000.0,
         "Diluted EPS": 0.93,
-        "Total Revenue": 224,
-        "Gross Profit": 224,
-        "Operating Income": 117,
-        "EBIT": 165,
-        "Net Income": 91
+        "Basic EPS": 0.93,
+        "Diluted NI Availto Com Stockholders": 91000000.0,
+        "Net Income Common Stockholders": 91000000.0,
+        "Net Income": 91000000.0,
+        "Minority Interests": -3000000.0,
+        "Net Income Including Noncontrolling Interests": 94000000.0,
+        "Net Income Continuous Operations": 94000000.0,
+        "Tax Provision": 30000000.0,
+        "Pretax Income": 124000000.0,
+        "Other Income Expense": 44000000.0,
+        "Other Non Operating Income Expenses": NaN,
+        "Special Income Charges": 3000000.0,
+        "Gain On Sale Of Ppe": 3000000.0,
+        "Earnings From Equity Interest": 41000000.0,
+        "Net Non Operating Interest Income Expense": -34000000.0,
+        "Total Other Finance Cost": NaN,
+        "Interest Expense Non Operating": 35000000.0,
+        "Interest Income Non Operating": 1000000.0,
+        "Operating Income": 114000000.0,
+        "Operating Expense": 110000000.0,
+        "Other Taxes": 6000000.0,
+        "Depreciation Amortization Depletion Income Statement": 44000000.0,
+        "Depreciation And Amortization In Income Statement": 44000000.0,
+        "Total Revenue": 224000000.0,
+        "Operating Revenue": 224000000.0
     },
     "2022-03-31": {
         "Diluted EPS": 0.84,

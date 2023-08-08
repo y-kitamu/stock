@@ -11,7 +11,6 @@ var downBorderColor = "#008F28";
 
 // Each item: open，close，lowest，highest
 var data = splitData([
-    ['2022/08/08', 7.97, 8.03, 8.19, 7.97],
     ['2022/08/09', 8.0, 8.12, 8.21, 8.0],
     ['2022/08/10', 8.32, 8.45, 8.9, 8.18],
     ['2022/08/11', 8.46, 8.12, 8.64, 8.0],
@@ -261,9 +260,9 @@ var data = splitData([
     ['2023/08/02', 12.84, 13.25, 13.25, 12.7],
     ['2023/08/03', 12.72, 12.94, 13.06, 12.7],
     ['2023/08/04', 13.33, 13.08, 13.84, 12.96],
+    ['2023/08/07', 13.86, 13.0, 13.86, 13.0],
 ]);
 var volumes = [
-    3100.0,
     1900.0,
     30700.0,
     3400.0,
@@ -513,6 +512,7 @@ var volumes = [
     5900.0,
     3100.0,
     11400.0,
+    5500.0,
 ]
 
 function splitData(rawData) {
@@ -545,10 +545,10 @@ function calculateMA(dayCount) {
 }
 
 option = {
-    title: {
-        text: "CSPI",
-        left: 0,
-    },
+    /* title: {
+     *     text: "CSPI",
+     *     left: 0,
+     * }, */
     tooltip: {
         trigger: "axis",
         axisPointer: {

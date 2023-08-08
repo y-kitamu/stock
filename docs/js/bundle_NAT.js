@@ -11,7 +11,6 @@ var downBorderColor = "#008F28";
 
 // Each item: open，close，lowest，highest
 var data = splitData([
-    ['2022/08/08', 2.53, 2.62, 2.68, 2.52],
     ['2022/08/09', 2.64, 2.69, 2.7, 2.58],
     ['2022/08/10', 2.69, 2.59, 2.71, 2.58],
     ['2022/08/11', 2.63, 2.67, 2.75, 2.57],
@@ -261,9 +260,9 @@ var data = splitData([
     ['2023/08/02', 4.3, 4.32, 4.34, 4.24],
     ['2023/08/03', 4.35, 4.41, 4.43, 4.3],
     ['2023/08/04', 4.39, 4.33, 4.43, 4.29],
+    ['2023/08/07', 4.38, 4.34, 4.38, 4.26],
 ]);
 var volumes = [
-    5779600.0,
     2592400.0,
     6918400.0,
     5927400.0,
@@ -513,6 +512,7 @@ var volumes = [
     1909900.0,
     2274700.0,
     2315700.0,
+    2169500.0,
 ]
 
 function splitData(rawData) {
@@ -545,10 +545,10 @@ function calculateMA(dayCount) {
 }
 
 option = {
-    title: {
-        text: "NAT",
-        left: 0,
-    },
+    /* title: {
+     *     text: "NAT",
+     *     left: 0,
+     * }, */
     tooltip: {
         trigger: "axis",
         axisPointer: {

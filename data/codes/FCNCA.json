@@ -14,7 +14,7 @@
         "Rent Expense Supplemental": 56000000.0,
         "Diluted Average Shares": 14539709.0,
         "Basic Average Shares": 14526693.0,
-        "Diluted EPS": 654.22,
+        "Diluted EPS": 653.64,
         "Basic EPS": 654.22,
         "Diluted NI Availto Com Stockholders": 9504000000.0,
         "Net Income Common Stockholders": 9504000000.0,
@@ -39,10 +39,7 @@
         "Rent And Landing Fees": 56000000.0,
         "Salaries And Wages": 420000000.0,
         "Total Revenue": 1256000000.0,
-        "Operating Revenue": 1256000000.0,
-        "Gross Profit": NaN,
-        "Operating Income": NaN,
-        "EBIT": NaN
+        "Operating Revenue": 1256000000.0
     },
     "2022-12-31": {
         "Tax Effect Of Unusual Items": -9298469.387755,
@@ -84,10 +81,7 @@
         "Rent And Landing Fees": 47000000.0,
         "Salaries And Wages": 352000000.0,
         "Total Revenue": 1205000000.0,
-        "Operating Revenue": 1205000000.0,
-        "Gross Profit": NaN,
-        "Operating Income": 447,
-        "EBIT": NaN
+        "Operating Revenue": 1205000000.0
     },
     "2022-09-30": {
         "Tax Effect Of Unusual Items": -6870000.0,
@@ -129,10 +123,7 @@
         "Rent And Landing Fees": 52000000.0,
         "Salaries And Wages": 351000000.0,
         "Total Revenue": 1200000000.0,
-        "Operating Revenue": 1200000000.0,
-        "Gross Profit": NaN,
-        "Operating Income": 468,
-        "EBIT": NaN
+        "Operating Revenue": 1200000000.0
     },
     "2022-06-30": {
         "Tax Effect Of Unusual Items": -7018000.0,
@@ -174,10 +165,7 @@
         "Rent And Landing Fees": 47000000.0,
         "Salaries And Wages": 341000000.0,
         "Total Revenue": 1098000000.0,
-        "Operating Revenue": 1098000000.0,
-        "Gross Profit": NaN,
-        "Operating Income": 397,
-        "EBIT": NaN
+        "Operating Revenue": 1098000000.0
     },
     "2022-03-31": {
         "Diluted EPS": 16.7,
@@ -602,5 +590,47 @@
         "Operating Income": 12,
         "EBIT": NaN,
         "Net Income": 9
+    },
+    "2023-06-30": {
+        "Tax Effect Of Unusual Items": -34870535.714286,
+        "Tax Rate For Calcs": 0.238839,
+        "Total Unusual Items": -146000000.0,
+        "Total Unusual Items Excluding Goodwill": -146000000.0,
+        "Net Income From Continuing Operation Net Minority Interest": 682000000.0,
+        "Reconciled Depreciation": -34000000.0,
+        "Net Interest Income": 1961000000.0,
+        "Interest Expense": 992000000.0,
+        "Interest Income": 2953000000.0,
+        "Normalized Income": 793129464.285714,
+        "Net Income From Continuing And Discontinued Operation": 682000000.0,
+        "Rent Expense Supplemental": 56000000.0,
+        "Diluted Average Shares": 14537938.0,
+        "Basic Average Shares": 14528134.0,
+        "Diluted EPS": 45.87,
+        "Basic EPS": 45.9,
+        "Diluted NI Availto Com Stockholders": 667000000.0,
+        "Net Income Common Stockholders": 667000000.0,
+        "Preferred Stock Dividends": 15000000.0,
+        "Net Income": 682000000.0,
+        "Net Income Including Noncontrolling Interests": 682000000.0,
+        "Net Income Continuous Operations": 682000000.0,
+        "Tax Provision": 214000000.0,
+        "Pretax Income": 896000000.0,
+        "Special Income Charges": -150000000.0,
+        "Restructuring And Mergern Acquisition": 150000000.0,
+        "Gain On Sale Of Security": -10000000.0,
+        "Depreciation Amortization Depletion Income Statement": 109000000.0,
+        "Depreciation And Amortization In Income Statement": 109000000.0,
+        "Amortization": 18000000.0,
+        "Amortization Of Intangibles Income Statement": 18000000.0,
+        "Depreciation Income Statement": 91000000.0,
+        "Selling General And Administration": 894000000.0,
+        "Selling And Marketing Expense": 41000000.0,
+        "General And Administrative Expense": 853000000.0,
+        "Insurance And Claims": 22000000.0,
+        "Rent And Landing Fees": 56000000.0,
+        "Salaries And Wages": 775000000.0,
+        "Total Revenue": 2510000000.0,
+        "Operating Revenue": 2510000000.0
     }
 }

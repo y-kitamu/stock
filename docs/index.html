@@ -4,2175 +4,2133 @@
   <head>
     <meta charset="utf-8" />
     <title>Watch list</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
       
-       #checkbox_AAON:not(:checked) ~ #main_AAON {
-         display: none;
-       }
-      
-       #checkbox_ACLS:not(:checked) ~ #main_ACLS {
-         display: none;
-       }
-      
-       #checkbox_AGM:not(:checked) ~ #main_AGM {
-         display: none;
-       }
-      
-       #checkbox_ALSN:not(:checked) ~ #main_ALSN {
-         display: none;
-       }
-      
-       #checkbox_ALTG:not(:checked) ~ #main_ALTG {
-         display: none;
-       }
-      
-       #checkbox_AMAT:not(:checked) ~ #main_AMAT {
-         display: none;
-       }
-      
-       #checkbox_AMPH:not(:checked) ~ #main_AMPH {
-         display: none;
-       }
-      
-       #checkbox_AMWD:not(:checked) ~ #main_AMWD {
-         display: none;
-       }
-      
-       #checkbox_ANET:not(:checked) ~ #main_ANET {
-         display: none;
-       }
-      
-       #checkbox_ANIP:not(:checked) ~ #main_ANIP {
-         display: none;
-       }
-      
-       #checkbox_APG:not(:checked) ~ #main_APG {
-         display: none;
-       }
-      
-       #checkbox_ARCO:not(:checked) ~ #main_ARCO {
-         display: none;
-       }
-      
-       #checkbox_ARCT:not(:checked) ~ #main_ARCT {
-         display: none;
-       }
-      
-       #checkbox_ARTW:not(:checked) ~ #main_ARTW {
-         display: none;
-       }
-      
-       #checkbox_ATKR:not(:checked) ~ #main_ATKR {
-         display: none;
-       }
-      
-       #checkbox_AVGO:not(:checked) ~ #main_AVGO {
-         display: none;
-       }
-      
-       #checkbox_AZEK:not(:checked) ~ #main_AZEK {
-         display: none;
-       }
-      
-       #checkbox_BECN:not(:checked) ~ #main_BECN {
-         display: none;
-       }
-      
-       #checkbox_BKNG:not(:checked) ~ #main_BKNG {
-         display: none;
-       }
-      
-       #checkbox_BLKB:not(:checked) ~ #main_BLKB {
-         display: none;
-       }
-      
-       #checkbox_BLX:not(:checked) ~ #main_BLX {
-         display: none;
-       }
-      
-       #checkbox_BMI:not(:checked) ~ #main_BMI {
-         display: none;
-       }
-      
-       #checkbox_BOSC:not(:checked) ~ #main_BOSC {
-         display: none;
-       }
-      
-       #checkbox_BUR:not(:checked) ~ #main_BUR {
-         display: none;
-       }
-      
-       #checkbox_BWMN:not(:checked) ~ #main_BWMN {
-         display: none;
-       }
-      
-       #checkbox_CAAP:not(:checked) ~ #main_CAAP {
-         display: none;
-       }
-      
-       #checkbox_CAT:not(:checked) ~ #main_CAT {
-         display: none;
-       }
-      
-       #checkbox_CCJ:not(:checked) ~ #main_CCJ {
-         display: none;
-       }
-      
-       #checkbox_CLS:not(:checked) ~ #main_CLS {
-         display: none;
-       }
-      
-       #checkbox_CNF:not(:checked) ~ #main_CNF {
-         display: none;
-       }
-      
-       #checkbox_CNM:not(:checked) ~ #main_CNM {
-         display: none;
-       }
-      
-       #checkbox_CRS:not(:checked) ~ #main_CRS {
-         display: none;
-       }
-      
-       #checkbox_CSPI:not(:checked) ~ #main_CSPI {
-         display: none;
-       }
-      
-       #checkbox_CXM:not(:checked) ~ #main_CXM {
-         display: none;
-       }
-      
-       #checkbox_CXT:not(:checked) ~ #main_CXT {
-         display: none;
-       }
-      
-       #checkbox_DAL:not(:checked) ~ #main_DAL {
-         display: none;
-       }
-      
-       #checkbox_DECK:not(:checked) ~ #main_DECK {
-         display: none;
-       }
-      
-       #checkbox_DFH:not(:checked) ~ #main_DFH {
-         display: none;
-       }
-      
-       #checkbox_DTST:not(:checked) ~ #main_DTST {
-         display: none;
-       }
-      
-       #checkbox_DXPE:not(:checked) ~ #main_DXPE {
-         display: none;
-       }
-      
-       #checkbox_EC:not(:checked) ~ #main_EC {
-         display: none;
-       }
-      
-       #checkbox_EFXT:not(:checked) ~ #main_EFXT {
-         display: none;
-       }
-      
-       #checkbox_ELF:not(:checked) ~ #main_ELF {
-         display: none;
-       }
-      
-       #checkbox_EME:not(:checked) ~ #main_EME {
-         display: none;
-       }
-      
-       #checkbox_EXTR:not(:checked) ~ #main_EXTR {
-         display: none;
-       }
-      
-       #checkbox_FCNCA:not(:checked) ~ #main_FCNCA {
-         display: none;
-       }
-      
-       #checkbox_FERG:not(:checked) ~ #main_FERG {
-         display: none;
-       }
-      
-       #checkbox_FF:not(:checked) ~ #main_FF {
-         display: none;
-       }
-      
-       #checkbox_FIX:not(:checked) ~ #main_FIX {
-         display: none;
-       }
-      
-       #checkbox_FMS:not(:checked) ~ #main_FMS {
-         display: none;
-       }
-      
-       #checkbox_FRHC:not(:checked) ~ #main_FRHC {
-         display: none;
-       }
-      
-       #checkbox_GAMB:not(:checked) ~ #main_GAMB {
-         display: none;
-       }
-      
-       #checkbox_GIII:not(:checked) ~ #main_GIII {
-         display: none;
-       }
-      
-       #checkbox_GMS:not(:checked) ~ #main_GMS {
-         display: none;
-       }
-      
-       #checkbox_GRVY:not(:checked) ~ #main_GRVY {
-         display: none;
-       }
-      
-       #checkbox_GXO:not(:checked) ~ #main_GXO {
-         display: none;
-       }
-      
-       #checkbox_HCCI:not(:checked) ~ #main_HCCI {
-         display: none;
-       }
-      
-       #checkbox_HCI:not(:checked) ~ #main_HCI {
-         display: none;
-       }
-      
-       #checkbox_HEES:not(:checked) ~ #main_HEES {
-         display: none;
-       }
-      
-       #checkbox_HLX:not(:checked) ~ #main_HLX {
-         display: none;
-       }
-      
-       #checkbox_HURN:not(:checked) ~ #main_HURN {
-         display: none;
-       }
-      
-       #checkbox_IESC:not(:checked) ~ #main_IESC {
-         display: none;
-       }
-      
-       #checkbox_IPAR:not(:checked) ~ #main_IPAR {
-         display: none;
-       }
-      
-       #checkbox_JFIN:not(:checked) ~ #main_JFIN {
-         display: none;
-       }
-      
-       #checkbox_KOP:not(:checked) ~ #main_KOP {
-         display: none;
-       }
-      
-       #checkbox_KRT:not(:checked) ~ #main_KRT {
-         display: none;
-       }
-      
-       #checkbox_LI:not(:checked) ~ #main_LI {
-         display: none;
-       }
-      
-       #checkbox_LII:not(:checked) ~ #main_LII {
-         display: none;
-       }
-      
-       #checkbox_LPG:not(:checked) ~ #main_LPG {
-         display: none;
-       }
-      
-       #checkbox_MAMA:not(:checked) ~ #main_MAMA {
-         display: none;
-       }
-      
-       #checkbox_MEDP:not(:checked) ~ #main_MEDP {
-         display: none;
-       }
-      
-       #checkbox_MLR:not(:checked) ~ #main_MLR {
-         display: none;
-       }
-      
-       #checkbox_MNSO:not(:checked) ~ #main_MNSO {
-         display: none;
-       }
-      
-       #checkbox_MOD:not(:checked) ~ #main_MOD {
-         display: none;
-       }
-      
-       #checkbox_NAT:not(:checked) ~ #main_NAT {
-         display: none;
-       }
-      
-       #checkbox_NATI:not(:checked) ~ #main_NATI {
-         display: none;
-       }
-      
-       #checkbox_NE:not(:checked) ~ #main_NE {
-         display: none;
-       }
-      
-       #checkbox_NEU:not(:checked) ~ #main_NEU {
-         display: none;
-       }
-      
-       #checkbox_NOA:not(:checked) ~ #main_NOA {
-         display: none;
-       }
-      
-       #checkbox_NR:not(:checked) ~ #main_NR {
-         display: none;
-       }
-      
-       #checkbox_NTES:not(:checked) ~ #main_NTES {
-         display: none;
-       }
-      
-       #checkbox_NU:not(:checked) ~ #main_NU {
-         display: none;
-       }
-      
-       #checkbox_NVT:not(:checked) ~ #main_NVT {
-         display: none;
-       }
-      
-       #checkbox_ODC:not(:checked) ~ #main_ODC {
-         display: none;
-       }
-      
-       #checkbox_OII:not(:checked) ~ #main_OII {
-         display: none;
-       }
-      
-       #checkbox_OMAB:not(:checked) ~ #main_OMAB {
-         display: none;
-       }
-      
-       #checkbox_OMEX:not(:checked) ~ #main_OMEX {
-         display: none;
-       }
-      
-       #checkbox_ON:not(:checked) ~ #main_ON {
-         display: none;
-       }
-      
-       #checkbox_ONON:not(:checked) ~ #main_ONON {
-         display: none;
-       }
-      
-       #checkbox_ONTO:not(:checked) ~ #main_ONTO {
-         display: none;
-       }
-      
-       #checkbox_OVLY:not(:checked) ~ #main_OVLY {
-         display: none;
-       }
-      
-       #checkbox_PARR:not(:checked) ~ #main_PARR {
-         display: none;
-       }
-      
-       #checkbox_PH:not(:checked) ~ #main_PH {
-         display: none;
-       }
-      
-       #checkbox_PKX:not(:checked) ~ #main_PKX {
-         display: none;
-       }
-      
-       #checkbox_PLAB:not(:checked) ~ #main_PLAB {
-         display: none;
-       }
-      
-       #checkbox_PLTR:not(:checked) ~ #main_PLTR {
-         display: none;
-       }
-      
-       #checkbox_PLUS:not(:checked) ~ #main_PLUS {
-         display: none;
-       }
-      
-       #checkbox_POWL:not(:checked) ~ #main_POWL {
-         display: none;
-       }
-      
-       #checkbox_PRIM:not(:checked) ~ #main_PRIM {
-         display: none;
-       }
-      
-       #checkbox_RAVE:not(:checked) ~ #main_RAVE {
-         display: none;
-       }
-      
-       #checkbox_RCL:not(:checked) ~ #main_RCL {
-         display: none;
-       }
-      
-       #checkbox_RCMT:not(:checked) ~ #main_RCMT {
-         display: none;
-       }
-      
-       #checkbox_SCPL:not(:checked) ~ #main_SCPL {
-         display: none;
-       }
-      
-       #checkbox_SCX:not(:checked) ~ #main_SCX {
-         display: none;
-       }
-      
-       #checkbox_SHAK:not(:checked) ~ #main_SHAK {
-         display: none;
-       }
-      
-       #checkbox_SKX:not(:checked) ~ #main_SKX {
-         display: none;
-       }
-      
-       #checkbox_SMCI:not(:checked) ~ #main_SMCI {
-         display: none;
-       }
-      
-       #checkbox_SQSP:not(:checked) ~ #main_SQSP {
-         display: none;
-       }
-      
-       #checkbox_STN:not(:checked) ~ #main_STN {
-         display: none;
-       }
-      
-       #checkbox_STRL:not(:checked) ~ #main_STRL {
-         display: none;
-       }
-      
-       #checkbox_SUPV:not(:checked) ~ #main_SUPV {
-         display: none;
-       }
-      
-       #checkbox_SXI:not(:checked) ~ #main_SXI {
-         display: none;
-       }
-      
-       #checkbox_TBBK:not(:checked) ~ #main_TBBK {
-         display: none;
-       }
-      
-       #checkbox_TDG:not(:checked) ~ #main_TDG {
-         display: none;
-       }
-      
-       #checkbox_TDW:not(:checked) ~ #main_TDW {
-         display: none;
-       }
-      
-       #checkbox_TEX:not(:checked) ~ #main_TEX {
-         display: none;
-       }
-      
-       #checkbox_THO:not(:checked) ~ #main_THO {
-         display: none;
-       }
-      
-       #checkbox_TK:not(:checked) ~ #main_TK {
-         display: none;
-       }
-      
-       #checkbox_TNK:not(:checked) ~ #main_TNK {
-         display: none;
-       }
-      
-       #checkbox_TOL:not(:checked) ~ #main_TOL {
-         display: none;
-       }
-      
-       #checkbox_UBER:not(:checked) ~ #main_UBER {
-         display: none;
-       }
-      
-       #checkbox_UGP:not(:checked) ~ #main_UGP {
-         display: none;
-       }
-      
-       #checkbox_URI:not(:checked) ~ #main_URI {
-         display: none;
-       }
-      
-       #checkbox_USAP:not(:checked) ~ #main_USAP {
-         display: none;
-       }
-      
-       #checkbox_USLM:not(:checked) ~ #main_USLM {
-         display: none;
-       }
-      
-       #checkbox_VECO:not(:checked) ~ #main_VECO {
-         display: none;
-       }
-      
-       #checkbox_VEL:not(:checked) ~ #main_VEL {
-         display: none;
-       }
-      
-       #checkbox_VICR:not(:checked) ~ #main_VICR {
-         display: none;
-       }
-      
-       #checkbox_VRT:not(:checked) ~ #main_VRT {
-         display: none;
-       }
-      
-       #checkbox_VST:not(:checked) ~ #main_VST {
-         display: none;
-       }
-      
-       #checkbox_WFRD:not(:checked) ~ #main_WFRD {
-         display: none;
-       }
-      
-       #checkbox_XNET:not(:checked) ~ #main_XNET {
-         display: none;
-       }
-      
-       #checkbox_XPRO:not(:checked) ~ #main_XPRO {
-         display: none;
-       }
-      
-       #checkbox_YALA:not(:checked) ~ #main_YALA {
-         display: none;
-       }
-      
-       #checkbox_ZEUS:not(:checked) ~ #main_ZEUS {
-         display: none;
-       }
+      #checkbox_ABNB:not(:checked) ~ #main_ABNB {
+          display: none;
+      }
+      
+      #checkbox_ALSN:not(:checked) ~ #main_ALSN {
+          display: none;
+      }
+      
+      #checkbox_AMWD:not(:checked) ~ #main_AMWD {
+          display: none;
+      }
+      
+      #checkbox_ANET:not(:checked) ~ #main_ANET {
+          display: none;
+      }
+      
+      #checkbox_ANIP:not(:checked) ~ #main_ANIP {
+          display: none;
+      }
+      
+      #checkbox_APG:not(:checked) ~ #main_APG {
+          display: none;
+      }
+      
+      #checkbox_ARCT:not(:checked) ~ #main_ARCT {
+          display: none;
+      }
+      
+      #checkbox_ARHS:not(:checked) ~ #main_ARHS {
+          display: none;
+      }
+      
+      #checkbox_ARTW:not(:checked) ~ #main_ARTW {
+          display: none;
+      }
+      
+      #checkbox_ASTE:not(:checked) ~ #main_ASTE {
+          display: none;
+      }
+      
+      #checkbox_ATI:not(:checked) ~ #main_ATI {
+          display: none;
+      }
+      
+      #checkbox_AVGO:not(:checked) ~ #main_AVGO {
+          display: none;
+      }
+      
+      #checkbox_BJRI:not(:checked) ~ #main_BJRI {
+          display: none;
+      }
+      
+      #checkbox_BKNG:not(:checked) ~ #main_BKNG {
+          display: none;
+      }
+      
+      #checkbox_BLX:not(:checked) ~ #main_BLX {
+          display: none;
+      }
+      
+      #checkbox_BMI:not(:checked) ~ #main_BMI {
+          display: none;
+      }
+      
+      #checkbox_BOSC:not(:checked) ~ #main_BOSC {
+          display: none;
+      }
+      
+      #checkbox_CAAP:not(:checked) ~ #main_CAAP {
+          display: none;
+      }
+      
+      #checkbox_COCO:not(:checked) ~ #main_COCO {
+          display: none;
+      }
+      
+      #checkbox_CRS:not(:checked) ~ #main_CRS {
+          display: none;
+      }
+      
+      #checkbox_CSPI:not(:checked) ~ #main_CSPI {
+          display: none;
+      }
+      
+      #checkbox_DAL:not(:checked) ~ #main_DAL {
+          display: none;
+      }
+      
+      #checkbox_DECK:not(:checked) ~ #main_DECK {
+          display: none;
+      }
+      
+      #checkbox_DOLE:not(:checked) ~ #main_DOLE {
+          display: none;
+      }
+      
+      #checkbox_DXPE:not(:checked) ~ #main_DXPE {
+          display: none;
+      }
+      
+      #checkbox_ELF:not(:checked) ~ #main_ELF {
+          display: none;
+      }
+      
+      #checkbox_EME:not(:checked) ~ #main_EME {
+          display: none;
+      }
+      
+      #checkbox_EXP:not(:checked) ~ #main_EXP {
+          display: none;
+      }
+      
+      #checkbox_EXTR:not(:checked) ~ #main_EXTR {
+          display: none;
+      }
+      
+      #checkbox_FCNCA:not(:checked) ~ #main_FCNCA {
+          display: none;
+      }
+      
+      #checkbox_FF:not(:checked) ~ #main_FF {
+          display: none;
+      }
+      
+      #checkbox_HCCI:not(:checked) ~ #main_HCCI {
+          display: none;
+      }
+      
+      #checkbox_HEES:not(:checked) ~ #main_HEES {
+          display: none;
+      }
+      
+      #checkbox_HLX:not(:checked) ~ #main_HLX {
+          display: none;
+      }
+      
+      #checkbox_IESC:not(:checked) ~ #main_IESC {
+          display: none;
+      }
+      
+      #checkbox_INMD:not(:checked) ~ #main_INMD {
+          display: none;
+      }
+      
+      #checkbox_IPAR:not(:checked) ~ #main_IPAR {
+          display: none;
+      }
+      
+      #checkbox_IRMD:not(:checked) ~ #main_IRMD {
+          display: none;
+      }
+      
+      #checkbox_JFIN:not(:checked) ~ #main_JFIN {
+          display: none;
+      }
+      
+      #checkbox_KNSL:not(:checked) ~ #main_KNSL {
+          display: none;
+      }
+      
+      #checkbox_KOP:not(:checked) ~ #main_KOP {
+          display: none;
+      }
+      
+      #checkbox_KRUS:not(:checked) ~ #main_KRUS {
+          display: none;
+      }
+      
+      #checkbox_LI:not(:checked) ~ #main_LI {
+          display: none;
+      }
+      
+      #checkbox_LII:not(:checked) ~ #main_LII {
+          display: none;
+      }
+      
+      #checkbox_LPG:not(:checked) ~ #main_LPG {
+          display: none;
+      }
+      
+      #checkbox_MEDP:not(:checked) ~ #main_MEDP {
+          display: none;
+      }
+      
+      #checkbox_MLR:not(:checked) ~ #main_MLR {
+          display: none;
+      }
+      
+      #checkbox_MOD:not(:checked) ~ #main_MOD {
+          display: none;
+      }
+      
+      #checkbox_NAT:not(:checked) ~ #main_NAT {
+          display: none;
+      }
+      
+      #checkbox_NATI:not(:checked) ~ #main_NATI {
+          display: none;
+      }
+      
+      #checkbox_NEU:not(:checked) ~ #main_NEU {
+          display: none;
+      }
+      
+      #checkbox_NOA:not(:checked) ~ #main_NOA {
+          display: none;
+      }
+      
+      #checkbox_NSSC:not(:checked) ~ #main_NSSC {
+          display: none;
+      }
+      
+      #checkbox_NTES:not(:checked) ~ #main_NTES {
+          display: none;
+      }
+      
+      #checkbox_NU:not(:checked) ~ #main_NU {
+          display: none;
+      }
+      
+      #checkbox_NVT:not(:checked) ~ #main_NVT {
+          display: none;
+      }
+      
+      #checkbox_ODC:not(:checked) ~ #main_ODC {
+          display: none;
+      }
+      
+      #checkbox_OII:not(:checked) ~ #main_OII {
+          display: none;
+      }
+      
+      #checkbox_OMAB:not(:checked) ~ #main_OMAB {
+          display: none;
+      }
+      
+      #checkbox_ON:not(:checked) ~ #main_ON {
+          display: none;
+      }
+      
+      #checkbox_PARR:not(:checked) ~ #main_PARR {
+          display: none;
+      }
+      
+      #checkbox_PBPB:not(:checked) ~ #main_PBPB {
+          display: none;
+      }
+      
+      #checkbox_PH:not(:checked) ~ #main_PH {
+          display: none;
+      }
+      
+      #checkbox_PLPC:not(:checked) ~ #main_PLPC {
+          display: none;
+      }
+      
+      #checkbox_PLTR:not(:checked) ~ #main_PLTR {
+          display: none;
+      }
+      
+      #checkbox_POWL:not(:checked) ~ #main_POWL {
+          display: none;
+      }
+      
+      #checkbox_PRIM:not(:checked) ~ #main_PRIM {
+          display: none;
+      }
+      
+      #checkbox_RCL:not(:checked) ~ #main_RCL {
+          display: none;
+      }
+      
+      #checkbox_SCPL:not(:checked) ~ #main_SCPL {
+          display: none;
+      }
+      
+      #checkbox_SCX:not(:checked) ~ #main_SCX {
+          display: none;
+      }
+      
+      #checkbox_SHAK:not(:checked) ~ #main_SHAK {
+          display: none;
+      }
+      
+      #checkbox_STN:not(:checked) ~ #main_STN {
+          display: none;
+      }
+      
+      #checkbox_STNE:not(:checked) ~ #main_STNE {
+          display: none;
+      }
+      
+      #checkbox_TBBK:not(:checked) ~ #main_TBBK {
+          display: none;
+      }
+      
+      #checkbox_TDG:not(:checked) ~ #main_TDG {
+          display: none;
+      }
+      
+      #checkbox_TDW:not(:checked) ~ #main_TDW {
+          display: none;
+      }
+      
+      #checkbox_TEX:not(:checked) ~ #main_TEX {
+          display: none;
+      }
+      
+      #checkbox_TK:not(:checked) ~ #main_TK {
+          display: none;
+      }
+      
+      #checkbox_TNK:not(:checked) ~ #main_TNK {
+          display: none;
+      }
+      
+      #checkbox_TOL:not(:checked) ~ #main_TOL {
+          display: none;
+      }
+      
+      #checkbox_TTD:not(:checked) ~ #main_TTD {
+          display: none;
+      }
+      
+      #checkbox_UBER:not(:checked) ~ #main_UBER {
+          display: none;
+      }
+      
+      #checkbox_URI:not(:checked) ~ #main_URI {
+          display: none;
+      }
+      
+      #checkbox_USAP:not(:checked) ~ #main_USAP {
+          display: none;
+      }
+      
+      #checkbox_USLM:not(:checked) ~ #main_USLM {
+          display: none;
+      }
+      
+      #checkbox_VRT:not(:checked) ~ #main_VRT {
+          display: none;
+      }
+      
+      #checkbox_WFRD:not(:checked) ~ #main_WFRD {
+          display: none;
+      }
+      
+      #checkbox_WLDN:not(:checked) ~ #main_WLDN {
+          display: none;
+      }
       
     </style>
   </head>
   <body style="min-height: 100vh">
     
-    <input
-      type="checkbox"
-      id="checkbox_AAON"
-      checked
-      class="watchlist"
-      name="AAON"
-    />
-    <label for="checkbox_AAON">AAON</label>
-    <div id="main_AAON" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_AAON.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_ACLS"
-      checked
-      class="watchlist"
-      name="ACLS"
-    />
-    <label for="checkbox_ACLS">ACLS</label>
-    <div id="main_ACLS" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_ACLS.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_AGM"
-      checked
-      class="watchlist"
-      name="AGM"
-    />
-    <label for="checkbox_AGM">AGM</label>
-    <div id="main_AGM" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_AGM.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_ALSN"
-      checked
-      class="watchlist"
-      name="ALSN"
-    />
-    <label for="checkbox_ALSN">ALSN</label>
-    <div id="main_ALSN" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_ALSN.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_ALTG"
-      checked
-      class="watchlist"
-      name="ALTG"
-    />
-    <label for="checkbox_ALTG">ALTG</label>
-    <div id="main_ALTG" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_ALTG.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_AMAT"
-      checked
-      class="watchlist"
-      name="AMAT"
-    />
-    <label for="checkbox_AMAT">AMAT</label>
-    <div id="main_AMAT" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_AMAT.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_AMPH"
-      checked
-      class="watchlist"
-      name="AMPH"
-    />
-    <label for="checkbox_AMPH">AMPH</label>
-    <div id="main_AMPH" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_AMPH.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_AMWD"
-      checked
-      class="watchlist"
-      name="AMWD"
-    />
-    <label for="checkbox_AMWD">AMWD</label>
-    <div id="main_AMWD" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_AMWD.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_ANET"
-      checked
-      class="watchlist"
-      name="ANET"
-    />
-    <label for="checkbox_ANET">ANET</label>
-    <div id="main_ANET" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_ANET.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_ANIP"
-      checked
-      class="watchlist"
-      name="ANIP"
-    />
-    <label for="checkbox_ANIP">ANIP</label>
-    <div id="main_ANIP" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_ANIP.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_APG"
-      checked
-      class="watchlist"
-      name="APG"
-    />
-    <label for="checkbox_APG">APG</label>
-    <div id="main_APG" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_APG.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_ARCO"
-      checked
-      class="watchlist"
-      name="ARCO"
-    />
-    <label for="checkbox_ARCO">ARCO</label>
-    <div id="main_ARCO" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_ARCO.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_ARCT"
-      checked
-      class="watchlist"
-      name="ARCT"
-    />
-    <label for="checkbox_ARCT">ARCT</label>
-    <div id="main_ARCT" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_ARCT.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_ARTW"
-      checked
-      class="watchlist"
-      name="ARTW"
-    />
-    <label for="checkbox_ARTW">ARTW</label>
-    <div id="main_ARTW" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_ARTW.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_ATKR"
-      checked
-      class="watchlist"
-      name="ATKR"
-    />
-    <label for="checkbox_ATKR">ATKR</label>
-    <div id="main_ATKR" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_ATKR.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_AVGO"
-      checked
-      class="watchlist"
-      name="AVGO"
-    />
-    <label for="checkbox_AVGO">AVGO</label>
-    <div id="main_AVGO" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_AVGO.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_AZEK"
-      checked
-      class="watchlist"
-      name="AZEK"
-    />
-    <label for="checkbox_AZEK">AZEK</label>
-    <div id="main_AZEK" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_AZEK.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_BECN"
-      checked
-      class="watchlist"
-      name="BECN"
-    />
-    <label for="checkbox_BECN">BECN</label>
-    <div id="main_BECN" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_BECN.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_BKNG"
-      checked
-      class="watchlist"
-      name="BKNG"
-    />
-    <label for="checkbox_BKNG">BKNG</label>
-    <div id="main_BKNG" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_BKNG.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_BLKB"
-      checked
-      class="watchlist"
-      name="BLKB"
-    />
-    <label for="checkbox_BLKB">BLKB</label>
-    <div id="main_BLKB" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_BLKB.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_BLX"
-      checked
-      class="watchlist"
-      name="BLX"
-    />
-    <label for="checkbox_BLX">BLX</label>
-    <div id="main_BLX" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_BLX.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_BMI"
-      checked
-      class="watchlist"
-      name="BMI"
-    />
-    <label for="checkbox_BMI">BMI</label>
-    <div id="main_BMI" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_BMI.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_BOSC"
-      checked
-      class="watchlist"
-      name="BOSC"
-    />
-    <label for="checkbox_BOSC">BOSC</label>
-    <div id="main_BOSC" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_BOSC.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_BUR"
-      checked
-      class="watchlist"
-      name="BUR"
-    />
-    <label for="checkbox_BUR">BUR</label>
-    <div id="main_BUR" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_BUR.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_BWMN"
-      checked
-      class="watchlist"
-      name="BWMN"
-    />
-    <label for="checkbox_BWMN">BWMN</label>
-    <div id="main_BWMN" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_BWMN.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_CAAP"
-      checked
-      class="watchlist"
-      name="CAAP"
-    />
-    <label for="checkbox_CAAP">CAAP</label>
-    <div id="main_CAAP" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_CAAP.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_CAT"
-      checked
-      class="watchlist"
-      name="CAT"
-    />
-    <label for="checkbox_CAT">CAT</label>
-    <div id="main_CAT" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_CAT.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_CCJ"
-      checked
-      class="watchlist"
-      name="CCJ"
-    />
-    <label for="checkbox_CCJ">CCJ</label>
-    <div id="main_CCJ" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_CCJ.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_CLS"
-      checked
-      class="watchlist"
-      name="CLS"
-    />
-    <label for="checkbox_CLS">CLS</label>
-    <div id="main_CLS" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_CLS.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_CNF"
-      checked
-      class="watchlist"
-      name="CNF"
-    />
-    <label for="checkbox_CNF">CNF</label>
-    <div id="main_CNF" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_CNF.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_CNM"
-      checked
-      class="watchlist"
-      name="CNM"
-    />
-    <label for="checkbox_CNM">CNM</label>
-    <div id="main_CNM" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_CNM.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_CRS"
-      checked
-      class="watchlist"
-      name="CRS"
-    />
-    <label for="checkbox_CRS">CRS</label>
-    <div id="main_CRS" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_CRS.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_CSPI"
-      checked
-      class="watchlist"
-      name="CSPI"
-    />
-    <label for="checkbox_CSPI">CSPI</label>
-    <div id="main_CSPI" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_CSPI.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_CXM"
-      checked
-      class="watchlist"
-      name="CXM"
-    />
-    <label for="checkbox_CXM">CXM</label>
-    <div id="main_CXM" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_CXM.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_CXT"
-      checked
-      class="watchlist"
-      name="CXT"
-    />
-    <label for="checkbox_CXT">CXT</label>
-    <div id="main_CXT" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_CXT.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_DAL"
-      checked
-      class="watchlist"
-      name="DAL"
-    />
-    <label for="checkbox_DAL">DAL</label>
-    <div id="main_DAL" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_DAL.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_DECK"
-      checked
-      class="watchlist"
-      name="DECK"
-    />
-    <label for="checkbox_DECK">DECK</label>
-    <div id="main_DECK" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_DECK.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_DFH"
-      checked
-      class="watchlist"
-      name="DFH"
-    />
-    <label for="checkbox_DFH">DFH</label>
-    <div id="main_DFH" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_DFH.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_DTST"
-      checked
-      class="watchlist"
-      name="DTST"
-    />
-    <label for="checkbox_DTST">DTST</label>
-    <div id="main_DTST" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_DTST.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_DXPE"
-      checked
-      class="watchlist"
-      name="DXPE"
-    />
-    <label for="checkbox_DXPE">DXPE</label>
-    <div id="main_DXPE" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_DXPE.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_EC"
-      checked
-      class="watchlist"
-      name="EC"
-    />
-    <label for="checkbox_EC">EC</label>
-    <div id="main_EC" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_EC.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_EFXT"
-      checked
-      class="watchlist"
-      name="EFXT"
-    />
-    <label for="checkbox_EFXT">EFXT</label>
-    <div id="main_EFXT" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_EFXT.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_ELF"
-      checked
-      class="watchlist"
-      name="ELF"
-    />
-    <label for="checkbox_ELF">ELF</label>
-    <div id="main_ELF" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_ELF.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_EME"
-      checked
-      class="watchlist"
-      name="EME"
-    />
-    <label for="checkbox_EME">EME</label>
-    <div id="main_EME" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_EME.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_EXTR"
-      checked
-      class="watchlist"
-      name="EXTR"
-    />
-    <label for="checkbox_EXTR">EXTR</label>
-    <div id="main_EXTR" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_EXTR.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_FCNCA"
-      checked
-      class="watchlist"
-      name="FCNCA"
-    />
-    <label for="checkbox_FCNCA">FCNCA</label>
-    <div id="main_FCNCA" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_FCNCA.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_FERG"
-      checked
-      class="watchlist"
-      name="FERG"
-    />
-    <label for="checkbox_FERG">FERG</label>
-    <div id="main_FERG" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_FERG.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_FF"
-      checked
-      class="watchlist"
-      name="FF"
-    />
-    <label for="checkbox_FF">FF</label>
-    <div id="main_FF" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_FF.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_FIX"
-      checked
-      class="watchlist"
-      name="FIX"
-    />
-    <label for="checkbox_FIX">FIX</label>
-    <div id="main_FIX" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_FIX.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_FMS"
-      checked
-      class="watchlist"
-      name="FMS"
-    />
-    <label for="checkbox_FMS">FMS</label>
-    <div id="main_FMS" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_FMS.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_FRHC"
-      checked
-      class="watchlist"
-      name="FRHC"
-    />
-    <label for="checkbox_FRHC">FRHC</label>
-    <div id="main_FRHC" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_FRHC.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_GAMB"
-      checked
-      class="watchlist"
-      name="GAMB"
-    />
-    <label for="checkbox_GAMB">GAMB</label>
-    <div id="main_GAMB" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_GAMB.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_GIII"
-      checked
-      class="watchlist"
-      name="GIII"
-    />
-    <label for="checkbox_GIII">GIII</label>
-    <div id="main_GIII" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_GIII.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_GMS"
-      checked
-      class="watchlist"
-      name="GMS"
-    />
-    <label for="checkbox_GMS">GMS</label>
-    <div id="main_GMS" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_GMS.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_GRVY"
-      checked
-      class="watchlist"
-      name="GRVY"
-    />
-    <label for="checkbox_GRVY">GRVY</label>
-    <div id="main_GRVY" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_GRVY.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_GXO"
-      checked
-      class="watchlist"
-      name="GXO"
-    />
-    <label for="checkbox_GXO">GXO</label>
-    <div id="main_GXO" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_GXO.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_HCCI"
-      checked
-      class="watchlist"
-      name="HCCI"
-    />
-    <label for="checkbox_HCCI">HCCI</label>
-    <div id="main_HCCI" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_HCCI.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_HCI"
-      checked
-      class="watchlist"
-      name="HCI"
-    />
-    <label for="checkbox_HCI">HCI</label>
-    <div id="main_HCI" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_HCI.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_HEES"
-      checked
-      class="watchlist"
-      name="HEES"
-    />
-    <label for="checkbox_HEES">HEES</label>
-    <div id="main_HEES" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_HEES.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_HLX"
-      checked
-      class="watchlist"
-      name="HLX"
-    />
-    <label for="checkbox_HLX">HLX</label>
-    <div id="main_HLX" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_HLX.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_HURN"
-      checked
-      class="watchlist"
-      name="HURN"
-    />
-    <label for="checkbox_HURN">HURN</label>
-    <div id="main_HURN" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_HURN.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_IESC"
-      checked
-      class="watchlist"
-      name="IESC"
-    />
-    <label for="checkbox_IESC">IESC</label>
-    <div id="main_IESC" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_IESC.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_IPAR"
-      checked
-      class="watchlist"
-      name="IPAR"
-    />
-    <label for="checkbox_IPAR">IPAR</label>
-    <div id="main_IPAR" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_IPAR.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_JFIN"
-      checked
-      class="watchlist"
-      name="JFIN"
-    />
-    <label for="checkbox_JFIN">JFIN</label>
-    <div id="main_JFIN" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_JFIN.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_KOP"
-      checked
-      class="watchlist"
-      name="KOP"
-    />
-    <label for="checkbox_KOP">KOP</label>
-    <div id="main_KOP" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_KOP.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_KRT"
-      checked
-      class="watchlist"
-      name="KRT"
-    />
-    <label for="checkbox_KRT">KRT</label>
-    <div id="main_KRT" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_KRT.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_LI"
-      checked
-      class="watchlist"
-      name="LI"
-    />
-    <label for="checkbox_LI">LI</label>
-    <div id="main_LI" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_LI.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_LII"
-      checked
-      class="watchlist"
-      name="LII"
-    />
-    <label for="checkbox_LII">LII</label>
-    <div id="main_LII" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_LII.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_LPG"
-      checked
-      class="watchlist"
-      name="LPG"
-    />
-    <label for="checkbox_LPG">LPG</label>
-    <div id="main_LPG" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_LPG.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_MAMA"
-      checked
-      class="watchlist"
-      name="MAMA"
-    />
-    <label for="checkbox_MAMA">MAMA</label>
-    <div id="main_MAMA" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_MAMA.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_MEDP"
-      checked
-      class="watchlist"
-      name="MEDP"
-    />
-    <label for="checkbox_MEDP">MEDP</label>
-    <div id="main_MEDP" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_MEDP.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_MLR"
-      checked
-      class="watchlist"
-      name="MLR"
-    />
-    <label for="checkbox_MLR">MLR</label>
-    <div id="main_MLR" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_MLR.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_MNSO"
-      checked
-      class="watchlist"
-      name="MNSO"
-    />
-    <label for="checkbox_MNSO">MNSO</label>
-    <div id="main_MNSO" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_MNSO.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_MOD"
-      checked
-      class="watchlist"
-      name="MOD"
-    />
-    <label for="checkbox_MOD">MOD</label>
-    <div id="main_MOD" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_MOD.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_NAT"
-      checked
-      class="watchlist"
-      name="NAT"
-    />
-    <label for="checkbox_NAT">NAT</label>
-    <div id="main_NAT" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_NAT.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_NATI"
-      checked
-      class="watchlist"
-      name="NATI"
-    />
-    <label for="checkbox_NATI">NATI</label>
-    <div id="main_NATI" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_NATI.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_NE"
-      checked
-      class="watchlist"
-      name="NE"
-    />
-    <label for="checkbox_NE">NE</label>
-    <div id="main_NE" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_NE.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_NEU"
-      checked
-      class="watchlist"
-      name="NEU"
-    />
-    <label for="checkbox_NEU">NEU</label>
-    <div id="main_NEU" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_NEU.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_NOA"
-      checked
-      class="watchlist"
-      name="NOA"
-    />
-    <label for="checkbox_NOA">NOA</label>
-    <div id="main_NOA" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_NOA.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_NR"
-      checked
-      class="watchlist"
-      name="NR"
-    />
-    <label for="checkbox_NR">NR</label>
-    <div id="main_NR" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_NR.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_NTES"
-      checked
-      class="watchlist"
-      name="NTES"
-    />
-    <label for="checkbox_NTES">NTES</label>
-    <div id="main_NTES" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_NTES.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_NU"
-      checked
-      class="watchlist"
-      name="NU"
-    />
-    <label for="checkbox_NU">NU</label>
-    <div id="main_NU" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_NU.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_NVT"
-      checked
-      class="watchlist"
-      name="NVT"
-    />
-    <label for="checkbox_NVT">NVT</label>
-    <div id="main_NVT" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_NVT.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_ODC"
-      checked
-      class="watchlist"
-      name="ODC"
-    />
-    <label for="checkbox_ODC">ODC</label>
-    <div id="main_ODC" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_ODC.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_OII"
-      checked
-      class="watchlist"
-      name="OII"
-    />
-    <label for="checkbox_OII">OII</label>
-    <div id="main_OII" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_OII.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_OMAB"
-      checked
-      class="watchlist"
-      name="OMAB"
-    />
-    <label for="checkbox_OMAB">OMAB</label>
-    <div id="main_OMAB" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_OMAB.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_OMEX"
-      checked
-      class="watchlist"
-      name="OMEX"
-    />
-    <label for="checkbox_OMEX">OMEX</label>
-    <div id="main_OMEX" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_OMEX.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_ON"
-      checked
-      class="watchlist"
-      name="ON"
-    />
-    <label for="checkbox_ON">ON</label>
-    <div id="main_ON" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_ON.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_ONON"
-      checked
-      class="watchlist"
-      name="ONON"
-    />
-    <label for="checkbox_ONON">ONON</label>
-    <div id="main_ONON" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_ONON.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_ONTO"
-      checked
-      class="watchlist"
-      name="ONTO"
-    />
-    <label for="checkbox_ONTO">ONTO</label>
-    <div id="main_ONTO" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_ONTO.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_OVLY"
-      checked
-      class="watchlist"
-      name="OVLY"
-    />
-    <label for="checkbox_OVLY">OVLY</label>
-    <div id="main_OVLY" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_OVLY.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_PARR"
-      checked
-      class="watchlist"
-      name="PARR"
-    />
-    <label for="checkbox_PARR">PARR</label>
-    <div id="main_PARR" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_PARR.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_PH"
-      checked
-      class="watchlist"
-      name="PH"
-    />
-    <label for="checkbox_PH">PH</label>
-    <div id="main_PH" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_PH.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_PKX"
-      checked
-      class="watchlist"
-      name="PKX"
-    />
-    <label for="checkbox_PKX">PKX</label>
-    <div id="main_PKX" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_PKX.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_PLAB"
-      checked
-      class="watchlist"
-      name="PLAB"
-    />
-    <label for="checkbox_PLAB">PLAB</label>
-    <div id="main_PLAB" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_PLAB.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_PLTR"
-      checked
-      class="watchlist"
-      name="PLTR"
-    />
-    <label for="checkbox_PLTR">PLTR</label>
-    <div id="main_PLTR" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_PLTR.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_PLUS"
-      checked
-      class="watchlist"
-      name="PLUS"
-    />
-    <label for="checkbox_PLUS">PLUS</label>
-    <div id="main_PLUS" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_PLUS.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_POWL"
-      checked
-      class="watchlist"
-      name="POWL"
-    />
-    <label for="checkbox_POWL">POWL</label>
-    <div id="main_POWL" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_POWL.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_PRIM"
-      checked
-      class="watchlist"
-      name="PRIM"
-    />
-    <label for="checkbox_PRIM">PRIM</label>
-    <div id="main_PRIM" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_PRIM.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_RAVE"
-      checked
-      class="watchlist"
-      name="RAVE"
-    />
-    <label for="checkbox_RAVE">RAVE</label>
-    <div id="main_RAVE" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_RAVE.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_RCL"
-      checked
-      class="watchlist"
-      name="RCL"
-    />
-    <label for="checkbox_RCL">RCL</label>
-    <div id="main_RCL" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_RCL.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_RCMT"
-      checked
-      class="watchlist"
-      name="RCMT"
-    />
-    <label for="checkbox_RCMT">RCMT</label>
-    <div id="main_RCMT" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_RCMT.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_SCPL"
-      checked
-      class="watchlist"
-      name="SCPL"
-    />
-    <label for="checkbox_SCPL">SCPL</label>
-    <div id="main_SCPL" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_SCPL.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_SCX"
-      checked
-      class="watchlist"
-      name="SCX"
-    />
-    <label for="checkbox_SCX">SCX</label>
-    <div id="main_SCX" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_SCX.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_SHAK"
-      checked
-      class="watchlist"
-      name="SHAK"
-    />
-    <label for="checkbox_SHAK">SHAK</label>
-    <div id="main_SHAK" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_SHAK.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_SKX"
-      checked
-      class="watchlist"
-      name="SKX"
-    />
-    <label for="checkbox_SKX">SKX</label>
-    <div id="main_SKX" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_SKX.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_SMCI"
-      checked
-      class="watchlist"
-      name="SMCI"
-    />
-    <label for="checkbox_SMCI">SMCI</label>
-    <div id="main_SMCI" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_SMCI.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_SQSP"
-      checked
-      class="watchlist"
-      name="SQSP"
-    />
-    <label for="checkbox_SQSP">SQSP</label>
-    <div id="main_SQSP" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_SQSP.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_STN"
-      checked
-      class="watchlist"
-      name="STN"
-    />
-    <label for="checkbox_STN">STN</label>
-    <div id="main_STN" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_STN.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_STRL"
-      checked
-      class="watchlist"
-      name="STRL"
-    />
-    <label for="checkbox_STRL">STRL</label>
-    <div id="main_STRL" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_STRL.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_SUPV"
-      checked
-      class="watchlist"
-      name="SUPV"
-    />
-    <label for="checkbox_SUPV">SUPV</label>
-    <div id="main_SUPV" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_SUPV.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_SXI"
-      checked
-      class="watchlist"
-      name="SXI"
-    />
-    <label for="checkbox_SXI">SXI</label>
-    <div id="main_SXI" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_SXI.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_TBBK"
-      checked
-      class="watchlist"
-      name="TBBK"
-    />
-    <label for="checkbox_TBBK">TBBK</label>
-    <div id="main_TBBK" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_TBBK.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_TDG"
-      checked
-      class="watchlist"
-      name="TDG"
-    />
-    <label for="checkbox_TDG">TDG</label>
-    <div id="main_TDG" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_TDG.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_TDW"
-      checked
-      class="watchlist"
-      name="TDW"
-    />
-    <label for="checkbox_TDW">TDW</label>
-    <div id="main_TDW" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_TDW.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_TEX"
-      checked
-      class="watchlist"
-      name="TEX"
-    />
-    <label for="checkbox_TEX">TEX</label>
-    <div id="main_TEX" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_TEX.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_THO"
-      checked
-      class="watchlist"
-      name="THO"
-    />
-    <label for="checkbox_THO">THO</label>
-    <div id="main_THO" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_THO.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_TK"
-      checked
-      class="watchlist"
-      name="TK"
-    />
-    <label for="checkbox_TK">TK</label>
-    <div id="main_TK" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_TK.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_TNK"
-      checked
-      class="watchlist"
-      name="TNK"
-    />
-    <label for="checkbox_TNK">TNK</label>
-    <div id="main_TNK" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_TNK.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_TOL"
-      checked
-      class="watchlist"
-      name="TOL"
-    />
-    <label for="checkbox_TOL">TOL</label>
-    <div id="main_TOL" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_TOL.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_UBER"
-      checked
-      class="watchlist"
-      name="UBER"
-    />
-    <label for="checkbox_UBER">UBER</label>
-    <div id="main_UBER" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_UBER.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_UGP"
-      checked
-      class="watchlist"
-      name="UGP"
-    />
-    <label for="checkbox_UGP">UGP</label>
-    <div id="main_UGP" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_UGP.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_URI"
-      checked
-      class="watchlist"
-      name="URI"
-    />
-    <label for="checkbox_URI">URI</label>
-    <div id="main_URI" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_URI.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_USAP"
-      checked
-      class="watchlist"
-      name="USAP"
-    />
-    <label for="checkbox_USAP">USAP</label>
-    <div id="main_USAP" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_USAP.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_USLM"
-      checked
-      class="watchlist"
-      name="USLM"
-    />
-    <label for="checkbox_USLM">USLM</label>
-    <div id="main_USLM" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_USLM.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_VECO"
-      checked
-      class="watchlist"
-      name="VECO"
-    />
-    <label for="checkbox_VECO">VECO</label>
-    <div id="main_VECO" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_VECO.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_VEL"
-      checked
-      class="watchlist"
-      name="VEL"
-    />
-    <label for="checkbox_VEL">VEL</label>
-    <div id="main_VEL" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_VEL.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_VICR"
-      checked
-      class="watchlist"
-      name="VICR"
-    />
-    <label for="checkbox_VICR">VICR</label>
-    <div id="main_VICR" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_VICR.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_VRT"
-      checked
-      class="watchlist"
-      name="VRT"
-    />
-    <label for="checkbox_VRT">VRT</label>
-    <div id="main_VRT" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_VRT.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_VST"
-      checked
-      class="watchlist"
-      name="VST"
-    />
-    <label for="checkbox_VST">VST</label>
-    <div id="main_VST" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_VST.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_WFRD"
-      checked
-      class="watchlist"
-      name="WFRD"
-    />
-    <label for="checkbox_WFRD">WFRD</label>
-    <div id="main_WFRD" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_WFRD.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_XNET"
-      checked
-      class="watchlist"
-      name="XNET"
-    />
-    <label for="checkbox_XNET">XNET</label>
-    <div id="main_XNET" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_XNET.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_XPRO"
-      checked
-      class="watchlist"
-      name="XPRO"
-    />
-    <label for="checkbox_XPRO">XPRO</label>
-    <div id="main_XPRO" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_XPRO.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_YALA"
-      checked
-      class="watchlist"
-      name="YALA"
-    />
-    <label for="checkbox_YALA">YALA</label>
-    <div id="main_YALA" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_YALA.js"></script>
-    <br />
-    
-    <input
-      type="checkbox"
-      id="checkbox_ZEUS"
-      checked
-      class="watchlist"
-      name="ZEUS"
-    />
-    <label for="checkbox_ZEUS">ZEUS</label>
-    <div id="main_ZEUS" style="width: 95vw; height: 100vh"></div>
-    <script src="js/bundle_ZEUS.js"></script>
-    <br />
+    <div>
+      <input
+        type="checkbox"
+        name="ABNB"
+        id="checkbox_ABNB"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_ABNB">
+        ABNB
+      </label>
+
+      <div
+        id="main_ABNB"
+        class="peer-[#checkbox_ABNB]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_ABNB.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="ALSN"
+        id="checkbox_ALSN"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_ALSN">
+        ALSN
+      </label>
+
+      <div
+        id="main_ALSN"
+        class="peer-[#checkbox_ALSN]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_ALSN.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="AMWD"
+        id="checkbox_AMWD"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_AMWD">
+        AMWD
+      </label>
+
+      <div
+        id="main_AMWD"
+        class="peer-[#checkbox_AMWD]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_AMWD.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="ANET"
+        id="checkbox_ANET"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_ANET">
+        ANET
+      </label>
+
+      <div
+        id="main_ANET"
+        class="peer-[#checkbox_ANET]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_ANET.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="ANIP"
+        id="checkbox_ANIP"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_ANIP">
+        ANIP
+      </label>
+
+      <div
+        id="main_ANIP"
+        class="peer-[#checkbox_ANIP]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_ANIP.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="APG"
+        id="checkbox_APG"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_APG">
+        APG
+      </label>
+
+      <div
+        id="main_APG"
+        class="peer-[#checkbox_APG]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_APG.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="ARCT"
+        id="checkbox_ARCT"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_ARCT">
+        ARCT
+      </label>
+
+      <div
+        id="main_ARCT"
+        class="peer-[#checkbox_ARCT]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_ARCT.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="ARHS"
+        id="checkbox_ARHS"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_ARHS">
+        ARHS
+      </label>
+
+      <div
+        id="main_ARHS"
+        class="peer-[#checkbox_ARHS]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_ARHS.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="ARTW"
+        id="checkbox_ARTW"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_ARTW">
+        ARTW
+      </label>
+
+      <div
+        id="main_ARTW"
+        class="peer-[#checkbox_ARTW]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_ARTW.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="ASTE"
+        id="checkbox_ASTE"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_ASTE">
+        ASTE
+      </label>
+
+      <div
+        id="main_ASTE"
+        class="peer-[#checkbox_ASTE]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_ASTE.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="ATI"
+        id="checkbox_ATI"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_ATI">
+        ATI
+      </label>
+
+      <div
+        id="main_ATI"
+        class="peer-[#checkbox_ATI]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_ATI.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="AVGO"
+        id="checkbox_AVGO"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_AVGO">
+        AVGO
+      </label>
+
+      <div
+        id="main_AVGO"
+        class="peer-[#checkbox_AVGO]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_AVGO.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="BJRI"
+        id="checkbox_BJRI"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_BJRI">
+        BJRI
+      </label>
+
+      <div
+        id="main_BJRI"
+        class="peer-[#checkbox_BJRI]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_BJRI.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="BKNG"
+        id="checkbox_BKNG"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_BKNG">
+        BKNG
+      </label>
+
+      <div
+        id="main_BKNG"
+        class="peer-[#checkbox_BKNG]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_BKNG.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="BLX"
+        id="checkbox_BLX"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_BLX">
+        BLX
+      </label>
+
+      <div
+        id="main_BLX"
+        class="peer-[#checkbox_BLX]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_BLX.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="BMI"
+        id="checkbox_BMI"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_BMI">
+        BMI
+      </label>
+
+      <div
+        id="main_BMI"
+        class="peer-[#checkbox_BMI]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_BMI.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="BOSC"
+        id="checkbox_BOSC"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_BOSC">
+        BOSC
+      </label>
+
+      <div
+        id="main_BOSC"
+        class="peer-[#checkbox_BOSC]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_BOSC.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="CAAP"
+        id="checkbox_CAAP"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_CAAP">
+        CAAP
+      </label>
+
+      <div
+        id="main_CAAP"
+        class="peer-[#checkbox_CAAP]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_CAAP.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="COCO"
+        id="checkbox_COCO"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_COCO">
+        COCO
+      </label>
+
+      <div
+        id="main_COCO"
+        class="peer-[#checkbox_COCO]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_COCO.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="CRS"
+        id="checkbox_CRS"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_CRS">
+        CRS
+      </label>
+
+      <div
+        id="main_CRS"
+        class="peer-[#checkbox_CRS]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_CRS.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="CSPI"
+        id="checkbox_CSPI"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_CSPI">
+        CSPI
+      </label>
+
+      <div
+        id="main_CSPI"
+        class="peer-[#checkbox_CSPI]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_CSPI.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="DAL"
+        id="checkbox_DAL"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_DAL">
+        DAL
+      </label>
+
+      <div
+        id="main_DAL"
+        class="peer-[#checkbox_DAL]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_DAL.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="DECK"
+        id="checkbox_DECK"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_DECK">
+        DECK
+      </label>
+
+      <div
+        id="main_DECK"
+        class="peer-[#checkbox_DECK]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_DECK.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="DOLE"
+        id="checkbox_DOLE"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_DOLE">
+        DOLE
+      </label>
+
+      <div
+        id="main_DOLE"
+        class="peer-[#checkbox_DOLE]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_DOLE.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="DXPE"
+        id="checkbox_DXPE"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_DXPE">
+        DXPE
+      </label>
+
+      <div
+        id="main_DXPE"
+        class="peer-[#checkbox_DXPE]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_DXPE.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="ELF"
+        id="checkbox_ELF"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_ELF">
+        ELF
+      </label>
+
+      <div
+        id="main_ELF"
+        class="peer-[#checkbox_ELF]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_ELF.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="EME"
+        id="checkbox_EME"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_EME">
+        EME
+      </label>
+
+      <div
+        id="main_EME"
+        class="peer-[#checkbox_EME]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_EME.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="EXP"
+        id="checkbox_EXP"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_EXP">
+        EXP
+      </label>
+
+      <div
+        id="main_EXP"
+        class="peer-[#checkbox_EXP]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_EXP.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="EXTR"
+        id="checkbox_EXTR"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_EXTR">
+        EXTR
+      </label>
+
+      <div
+        id="main_EXTR"
+        class="peer-[#checkbox_EXTR]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_EXTR.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="FCNCA"
+        id="checkbox_FCNCA"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_FCNCA">
+        FCNCA
+      </label>
+
+      <div
+        id="main_FCNCA"
+        class="peer-[#checkbox_FCNCA]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_FCNCA.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="FF"
+        id="checkbox_FF"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_FF">
+        FF
+      </label>
+
+      <div
+        id="main_FF"
+        class="peer-[#checkbox_FF]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_FF.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="HCCI"
+        id="checkbox_HCCI"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_HCCI">
+        HCCI
+      </label>
+
+      <div
+        id="main_HCCI"
+        class="peer-[#checkbox_HCCI]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_HCCI.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="HEES"
+        id="checkbox_HEES"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_HEES">
+        HEES
+      </label>
+
+      <div
+        id="main_HEES"
+        class="peer-[#checkbox_HEES]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_HEES.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="HLX"
+        id="checkbox_HLX"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_HLX">
+        HLX
+      </label>
+
+      <div
+        id="main_HLX"
+        class="peer-[#checkbox_HLX]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_HLX.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="IESC"
+        id="checkbox_IESC"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_IESC">
+        IESC
+      </label>
+
+      <div
+        id="main_IESC"
+        class="peer-[#checkbox_IESC]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_IESC.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="INMD"
+        id="checkbox_INMD"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_INMD">
+        INMD
+      </label>
+
+      <div
+        id="main_INMD"
+        class="peer-[#checkbox_INMD]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_INMD.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="IPAR"
+        id="checkbox_IPAR"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_IPAR">
+        IPAR
+      </label>
+
+      <div
+        id="main_IPAR"
+        class="peer-[#checkbox_IPAR]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_IPAR.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="IRMD"
+        id="checkbox_IRMD"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_IRMD">
+        IRMD
+      </label>
+
+      <div
+        id="main_IRMD"
+        class="peer-[#checkbox_IRMD]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_IRMD.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="JFIN"
+        id="checkbox_JFIN"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_JFIN">
+        JFIN
+      </label>
+
+      <div
+        id="main_JFIN"
+        class="peer-[#checkbox_JFIN]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_JFIN.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="KNSL"
+        id="checkbox_KNSL"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_KNSL">
+        KNSL
+      </label>
+
+      <div
+        id="main_KNSL"
+        class="peer-[#checkbox_KNSL]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_KNSL.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="KOP"
+        id="checkbox_KOP"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_KOP">
+        KOP
+      </label>
+
+      <div
+        id="main_KOP"
+        class="peer-[#checkbox_KOP]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_KOP.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="KRUS"
+        id="checkbox_KRUS"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_KRUS">
+        KRUS
+      </label>
+
+      <div
+        id="main_KRUS"
+        class="peer-[#checkbox_KRUS]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_KRUS.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="LI"
+        id="checkbox_LI"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_LI">
+        LI
+      </label>
+
+      <div
+        id="main_LI"
+        class="peer-[#checkbox_LI]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_LI.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="LII"
+        id="checkbox_LII"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_LII">
+        LII
+      </label>
+
+      <div
+        id="main_LII"
+        class="peer-[#checkbox_LII]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_LII.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="LPG"
+        id="checkbox_LPG"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_LPG">
+        LPG
+      </label>
+
+      <div
+        id="main_LPG"
+        class="peer-[#checkbox_LPG]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_LPG.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="MEDP"
+        id="checkbox_MEDP"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_MEDP">
+        MEDP
+      </label>
+
+      <div
+        id="main_MEDP"
+        class="peer-[#checkbox_MEDP]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_MEDP.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="MLR"
+        id="checkbox_MLR"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_MLR">
+        MLR
+      </label>
+
+      <div
+        id="main_MLR"
+        class="peer-[#checkbox_MLR]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_MLR.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="MOD"
+        id="checkbox_MOD"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_MOD">
+        MOD
+      </label>
+
+      <div
+        id="main_MOD"
+        class="peer-[#checkbox_MOD]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_MOD.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="NAT"
+        id="checkbox_NAT"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_NAT">
+        NAT
+      </label>
+
+      <div
+        id="main_NAT"
+        class="peer-[#checkbox_NAT]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_NAT.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="NATI"
+        id="checkbox_NATI"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_NATI">
+        NATI
+      </label>
+
+      <div
+        id="main_NATI"
+        class="peer-[#checkbox_NATI]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_NATI.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="NEU"
+        id="checkbox_NEU"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_NEU">
+        NEU
+      </label>
+
+      <div
+        id="main_NEU"
+        class="peer-[#checkbox_NEU]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_NEU.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="NOA"
+        id="checkbox_NOA"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_NOA">
+        NOA
+      </label>
+
+      <div
+        id="main_NOA"
+        class="peer-[#checkbox_NOA]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_NOA.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="NSSC"
+        id="checkbox_NSSC"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_NSSC">
+        NSSC
+      </label>
+
+      <div
+        id="main_NSSC"
+        class="peer-[#checkbox_NSSC]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_NSSC.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="NTES"
+        id="checkbox_NTES"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_NTES">
+        NTES
+      </label>
+
+      <div
+        id="main_NTES"
+        class="peer-[#checkbox_NTES]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_NTES.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="NU"
+        id="checkbox_NU"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_NU">
+        NU
+      </label>
+
+      <div
+        id="main_NU"
+        class="peer-[#checkbox_NU]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_NU.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="NVT"
+        id="checkbox_NVT"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_NVT">
+        NVT
+      </label>
+
+      <div
+        id="main_NVT"
+        class="peer-[#checkbox_NVT]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_NVT.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="ODC"
+        id="checkbox_ODC"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_ODC">
+        ODC
+      </label>
+
+      <div
+        id="main_ODC"
+        class="peer-[#checkbox_ODC]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_ODC.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="OII"
+        id="checkbox_OII"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_OII">
+        OII
+      </label>
+
+      <div
+        id="main_OII"
+        class="peer-[#checkbox_OII]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_OII.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="OMAB"
+        id="checkbox_OMAB"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_OMAB">
+        OMAB
+      </label>
+
+      <div
+        id="main_OMAB"
+        class="peer-[#checkbox_OMAB]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_OMAB.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="ON"
+        id="checkbox_ON"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_ON">
+        ON
+      </label>
+
+      <div
+        id="main_ON"
+        class="peer-[#checkbox_ON]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_ON.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="PARR"
+        id="checkbox_PARR"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_PARR">
+        PARR
+      </label>
+
+      <div
+        id="main_PARR"
+        class="peer-[#checkbox_PARR]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_PARR.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="PBPB"
+        id="checkbox_PBPB"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_PBPB">
+        PBPB
+      </label>
+
+      <div
+        id="main_PBPB"
+        class="peer-[#checkbox_PBPB]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_PBPB.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="PH"
+        id="checkbox_PH"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_PH">
+        PH
+      </label>
+
+      <div
+        id="main_PH"
+        class="peer-[#checkbox_PH]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_PH.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="PLPC"
+        id="checkbox_PLPC"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_PLPC">
+        PLPC
+      </label>
+
+      <div
+        id="main_PLPC"
+        class="peer-[#checkbox_PLPC]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_PLPC.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="PLTR"
+        id="checkbox_PLTR"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_PLTR">
+        PLTR
+      </label>
+
+      <div
+        id="main_PLTR"
+        class="peer-[#checkbox_PLTR]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_PLTR.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="POWL"
+        id="checkbox_POWL"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_POWL">
+        POWL
+      </label>
+
+      <div
+        id="main_POWL"
+        class="peer-[#checkbox_POWL]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_POWL.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="PRIM"
+        id="checkbox_PRIM"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_PRIM">
+        PRIM
+      </label>
+
+      <div
+        id="main_PRIM"
+        class="peer-[#checkbox_PRIM]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_PRIM.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="RCL"
+        id="checkbox_RCL"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_RCL">
+        RCL
+      </label>
+
+      <div
+        id="main_RCL"
+        class="peer-[#checkbox_RCL]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_RCL.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="SCPL"
+        id="checkbox_SCPL"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_SCPL">
+        SCPL
+      </label>
+
+      <div
+        id="main_SCPL"
+        class="peer-[#checkbox_SCPL]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_SCPL.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="SCX"
+        id="checkbox_SCX"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_SCX">
+        SCX
+      </label>
+
+      <div
+        id="main_SCX"
+        class="peer-[#checkbox_SCX]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_SCX.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="SHAK"
+        id="checkbox_SHAK"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_SHAK">
+        SHAK
+      </label>
+
+      <div
+        id="main_SHAK"
+        class="peer-[#checkbox_SHAK]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_SHAK.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="STN"
+        id="checkbox_STN"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_STN">
+        STN
+      </label>
+
+      <div
+        id="main_STN"
+        class="peer-[#checkbox_STN]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_STN.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="STNE"
+        id="checkbox_STNE"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_STNE">
+        STNE
+      </label>
+
+      <div
+        id="main_STNE"
+        class="peer-[#checkbox_STNE]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_STNE.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="TBBK"
+        id="checkbox_TBBK"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_TBBK">
+        TBBK
+      </label>
+
+      <div
+        id="main_TBBK"
+        class="peer-[#checkbox_TBBK]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_TBBK.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="TDG"
+        id="checkbox_TDG"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_TDG">
+        TDG
+      </label>
+
+      <div
+        id="main_TDG"
+        class="peer-[#checkbox_TDG]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_TDG.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="TDW"
+        id="checkbox_TDW"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_TDW">
+        TDW
+      </label>
+
+      <div
+        id="main_TDW"
+        class="peer-[#checkbox_TDW]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_TDW.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="TEX"
+        id="checkbox_TEX"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_TEX">
+        TEX
+      </label>
+
+      <div
+        id="main_TEX"
+        class="peer-[#checkbox_TEX]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_TEX.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="TK"
+        id="checkbox_TK"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_TK">
+        TK
+      </label>
+
+      <div
+        id="main_TK"
+        class="peer-[#checkbox_TK]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_TK.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="TNK"
+        id="checkbox_TNK"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_TNK">
+        TNK
+      </label>
+
+      <div
+        id="main_TNK"
+        class="peer-[#checkbox_TNK]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_TNK.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="TOL"
+        id="checkbox_TOL"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_TOL">
+        TOL
+      </label>
+
+      <div
+        id="main_TOL"
+        class="peer-[#checkbox_TOL]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_TOL.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="TTD"
+        id="checkbox_TTD"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_TTD">
+        TTD
+      </label>
+
+      <div
+        id="main_TTD"
+        class="peer-[#checkbox_TTD]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_TTD.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="UBER"
+        id="checkbox_UBER"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_UBER">
+        UBER
+      </label>
+
+      <div
+        id="main_UBER"
+        class="peer-[#checkbox_UBER]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_UBER.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="URI"
+        id="checkbox_URI"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_URI">
+        URI
+      </label>
+
+      <div
+        id="main_URI"
+        class="peer-[#checkbox_URI]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_URI.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="USAP"
+        id="checkbox_USAP"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_USAP">
+        USAP
+      </label>
+
+      <div
+        id="main_USAP"
+        class="peer-[#checkbox_USAP]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_USAP.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="USLM"
+        id="checkbox_USLM"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_USLM">
+        USLM
+      </label>
+
+      <div
+        id="main_USLM"
+        class="peer-[#checkbox_USLM]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_USLM.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="VRT"
+        id="checkbox_VRT"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_VRT">
+        VRT
+      </label>
+
+      <div
+        id="main_VRT"
+        class="peer-[#checkbox_VRT]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_VRT.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="WFRD"
+        id="checkbox_WFRD"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_WFRD">
+        WFRD
+      </label>
+
+      <div
+        id="main_WFRD"
+        class="peer-[#checkbox_WFRD]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_WFRD.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
+        name="WLDN"
+        id="checkbox_WLDN"
+        class="peer"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_WLDN">
+        WLDN
+      </label>
+
+      <div
+        id="main_WLDN"
+        class="peer-[#checkbox_WLDN]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_WLDN.js"></script>
+    </div>
     
 
-    <a id="download" download="target.csv">CSVダウンロード</a>
+    <a id="download" download="target.csv">
+      <button class="bg-indigo-700 font-semibold text-white py-2 px-4 rounded">
+        CSVダウンロード
+      </button>
+    </a>
     <script>
       const download = () => {
         const watch_list = document.querySelectorAll(".watchlist");
