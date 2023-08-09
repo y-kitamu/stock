@@ -33,15 +33,7 @@
           display: none;
       }
       
-      #checkbox_ARCT:not(:checked) ~ #main_ARCT {
-          display: none;
-      }
-      
       #checkbox_ARHS:not(:checked) ~ #main_ARHS {
-          display: none;
-      }
-      
-      #checkbox_ARTW:not(:checked) ~ #main_ARTW {
           display: none;
       }
       
@@ -78,6 +70,10 @@
       }
       
       #checkbox_CAAP:not(:checked) ~ #main_CAAP {
+          display: none;
+      }
+      
+      #checkbox_CNF:not(:checked) ~ #main_CNF {
           display: none;
       }
       
@@ -133,11 +129,11 @@
           display: none;
       }
       
-      #checkbox_HCCI:not(:checked) ~ #main_HCCI {
+      #checkbox_GGAL:not(:checked) ~ #main_GGAL {
           display: none;
       }
       
-      #checkbox_HEES:not(:checked) ~ #main_HEES {
+      #checkbox_HCCI:not(:checked) ~ #main_HCCI {
           display: none;
       }
       
@@ -157,15 +153,7 @@
           display: none;
       }
       
-      #checkbox_IRMD:not(:checked) ~ #main_IRMD {
-          display: none;
-      }
-      
       #checkbox_JFIN:not(:checked) ~ #main_JFIN {
-          display: none;
-      }
-      
-      #checkbox_KNSL:not(:checked) ~ #main_KNSL {
           display: none;
       }
       
@@ -217,6 +205,10 @@
           display: none;
       }
       
+      #checkbox_NR:not(:checked) ~ #main_NR {
+          display: none;
+      }
+      
       #checkbox_NSSC:not(:checked) ~ #main_NSSC {
           display: none;
       }
@@ -249,19 +241,7 @@
           display: none;
       }
       
-      #checkbox_PARR:not(:checked) ~ #main_PARR {
-          display: none;
-      }
-      
-      #checkbox_PBPB:not(:checked) ~ #main_PBPB {
-          display: none;
-      }
-      
       #checkbox_PH:not(:checked) ~ #main_PH {
-          display: none;
-      }
-      
-      #checkbox_PLPC:not(:checked) ~ #main_PLPC {
           display: none;
       }
       
@@ -269,11 +249,11 @@
           display: none;
       }
       
-      #checkbox_POWL:not(:checked) ~ #main_POWL {
+      #checkbox_PLUS:not(:checked) ~ #main_PLUS {
           display: none;
       }
       
-      #checkbox_PRIM:not(:checked) ~ #main_PRIM {
+      #checkbox_POWL:not(:checked) ~ #main_POWL {
           display: none;
       }
       
@@ -293,6 +273,10 @@
           display: none;
       }
       
+      #checkbox_SOVO:not(:checked) ~ #main_SOVO {
+          display: none;
+      }
+      
       #checkbox_STN:not(:checked) ~ #main_STN {
           display: none;
       }
@@ -302,10 +286,6 @@
       }
       
       #checkbox_TBBK:not(:checked) ~ #main_TBBK {
-          display: none;
-      }
-      
-      #checkbox_TDG:not(:checked) ~ #main_TDG {
           display: none;
       }
       
@@ -349,6 +329,10 @@
           display: none;
       }
       
+      #checkbox_VICR:not(:checked) ~ #main_VICR {
+          display: none;
+      }
+      
       #checkbox_VRT:not(:checked) ~ #main_VRT {
           display: none;
       }
@@ -370,7 +354,7 @@
         type="checkbox"
         name="ABNB"
         id="checkbox_ABNB"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_ABNB">
@@ -390,7 +374,7 @@
         type="checkbox"
         name="ALSN"
         id="checkbox_ALSN"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_ALSN">
@@ -410,7 +394,7 @@
         type="checkbox"
         name="AMWD"
         id="checkbox_AMWD"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_AMWD">
@@ -430,7 +414,7 @@
         type="checkbox"
         name="ANET"
         id="checkbox_ANET"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_ANET">
@@ -450,7 +434,7 @@
         type="checkbox"
         name="ANIP"
         id="checkbox_ANIP"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_ANIP">
@@ -470,7 +454,7 @@
         type="checkbox"
         name="APG"
         id="checkbox_APG"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_APG">
@@ -488,29 +472,9 @@
     <div>
       <input
         type="checkbox"
-        name="ARCT"
-        id="checkbox_ARCT"
-        class="peer"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_ARCT">
-        ARCT
-      </label>
-
-      <div
-        id="main_ARCT"
-        class="peer-[#checkbox_ARCT]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_ARCT.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
         name="ARHS"
         id="checkbox_ARHS"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_ARHS">
@@ -528,29 +492,9 @@
     <div>
       <input
         type="checkbox"
-        name="ARTW"
-        id="checkbox_ARTW"
-        class="peer"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_ARTW">
-        ARTW
-      </label>
-
-      <div
-        id="main_ARTW"
-        class="peer-[#checkbox_ARTW]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_ARTW.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
         name="ASTE"
         id="checkbox_ASTE"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_ASTE">
@@ -570,7 +514,7 @@
         type="checkbox"
         name="ATI"
         id="checkbox_ATI"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_ATI">
@@ -590,7 +534,7 @@
         type="checkbox"
         name="AVGO"
         id="checkbox_AVGO"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_AVGO">
@@ -610,7 +554,7 @@
         type="checkbox"
         name="BJRI"
         id="checkbox_BJRI"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_BJRI">
@@ -630,7 +574,7 @@
         type="checkbox"
         name="BKNG"
         id="checkbox_BKNG"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_BKNG">
@@ -650,7 +594,7 @@
         type="checkbox"
         name="BLX"
         id="checkbox_BLX"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_BLX">
@@ -670,7 +614,7 @@
         type="checkbox"
         name="BMI"
         id="checkbox_BMI"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_BMI">
@@ -690,7 +634,7 @@
         type="checkbox"
         name="BOSC"
         id="checkbox_BOSC"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_BOSC">
@@ -710,7 +654,7 @@
         type="checkbox"
         name="CAAP"
         id="checkbox_CAAP"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_CAAP">
@@ -728,9 +672,29 @@
     <div>
       <input
         type="checkbox"
+        name="CNF"
+        id="checkbox_CNF"
+        class="peer watchlist"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_CNF">
+        CNF
+      </label>
+
+      <div
+        id="main_CNF"
+        class="peer-[#checkbox_CNF]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_CNF.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
         name="COCO"
         id="checkbox_COCO"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_COCO">
@@ -750,7 +714,7 @@
         type="checkbox"
         name="CRS"
         id="checkbox_CRS"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_CRS">
@@ -770,7 +734,7 @@
         type="checkbox"
         name="CSPI"
         id="checkbox_CSPI"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_CSPI">
@@ -790,7 +754,7 @@
         type="checkbox"
         name="DAL"
         id="checkbox_DAL"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_DAL">
@@ -810,7 +774,7 @@
         type="checkbox"
         name="DECK"
         id="checkbox_DECK"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_DECK">
@@ -830,7 +794,7 @@
         type="checkbox"
         name="DOLE"
         id="checkbox_DOLE"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_DOLE">
@@ -850,7 +814,7 @@
         type="checkbox"
         name="DXPE"
         id="checkbox_DXPE"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_DXPE">
@@ -870,7 +834,7 @@
         type="checkbox"
         name="ELF"
         id="checkbox_ELF"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_ELF">
@@ -890,7 +854,7 @@
         type="checkbox"
         name="EME"
         id="checkbox_EME"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_EME">
@@ -910,7 +874,7 @@
         type="checkbox"
         name="EXP"
         id="checkbox_EXP"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_EXP">
@@ -930,7 +894,7 @@
         type="checkbox"
         name="EXTR"
         id="checkbox_EXTR"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_EXTR">
@@ -950,7 +914,7 @@
         type="checkbox"
         name="FCNCA"
         id="checkbox_FCNCA"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_FCNCA">
@@ -970,7 +934,7 @@
         type="checkbox"
         name="FF"
         id="checkbox_FF"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_FF">
@@ -988,9 +952,29 @@
     <div>
       <input
         type="checkbox"
+        name="GGAL"
+        id="checkbox_GGAL"
+        class="peer watchlist"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_GGAL">
+        GGAL
+      </label>
+
+      <div
+        id="main_GGAL"
+        class="peer-[#checkbox_GGAL]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_GGAL.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
         name="HCCI"
         id="checkbox_HCCI"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_HCCI">
@@ -1008,29 +992,9 @@
     <div>
       <input
         type="checkbox"
-        name="HEES"
-        id="checkbox_HEES"
-        class="peer"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_HEES">
-        HEES
-      </label>
-
-      <div
-        id="main_HEES"
-        class="peer-[#checkbox_HEES]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_HEES.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
         name="HLX"
         id="checkbox_HLX"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_HLX">
@@ -1050,7 +1014,7 @@
         type="checkbox"
         name="IESC"
         id="checkbox_IESC"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_IESC">
@@ -1070,7 +1034,7 @@
         type="checkbox"
         name="INMD"
         id="checkbox_INMD"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_INMD">
@@ -1090,7 +1054,7 @@
         type="checkbox"
         name="IPAR"
         id="checkbox_IPAR"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_IPAR">
@@ -1108,29 +1072,9 @@
     <div>
       <input
         type="checkbox"
-        name="IRMD"
-        id="checkbox_IRMD"
-        class="peer"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_IRMD">
-        IRMD
-      </label>
-
-      <div
-        id="main_IRMD"
-        class="peer-[#checkbox_IRMD]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_IRMD.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
         name="JFIN"
         id="checkbox_JFIN"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_JFIN">
@@ -1148,29 +1092,9 @@
     <div>
       <input
         type="checkbox"
-        name="KNSL"
-        id="checkbox_KNSL"
-        class="peer"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_KNSL">
-        KNSL
-      </label>
-
-      <div
-        id="main_KNSL"
-        class="peer-[#checkbox_KNSL]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_KNSL.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
         name="KOP"
         id="checkbox_KOP"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_KOP">
@@ -1190,7 +1114,7 @@
         type="checkbox"
         name="KRUS"
         id="checkbox_KRUS"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_KRUS">
@@ -1210,7 +1134,7 @@
         type="checkbox"
         name="LI"
         id="checkbox_LI"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_LI">
@@ -1230,7 +1154,7 @@
         type="checkbox"
         name="LII"
         id="checkbox_LII"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_LII">
@@ -1250,7 +1174,7 @@
         type="checkbox"
         name="LPG"
         id="checkbox_LPG"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_LPG">
@@ -1270,7 +1194,7 @@
         type="checkbox"
         name="MEDP"
         id="checkbox_MEDP"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_MEDP">
@@ -1290,7 +1214,7 @@
         type="checkbox"
         name="MLR"
         id="checkbox_MLR"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_MLR">
@@ -1310,7 +1234,7 @@
         type="checkbox"
         name="MOD"
         id="checkbox_MOD"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_MOD">
@@ -1330,7 +1254,7 @@
         type="checkbox"
         name="NAT"
         id="checkbox_NAT"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_NAT">
@@ -1350,7 +1274,7 @@
         type="checkbox"
         name="NATI"
         id="checkbox_NATI"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_NATI">
@@ -1370,7 +1294,7 @@
         type="checkbox"
         name="NEU"
         id="checkbox_NEU"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_NEU">
@@ -1390,7 +1314,7 @@
         type="checkbox"
         name="NOA"
         id="checkbox_NOA"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_NOA">
@@ -1408,9 +1332,29 @@
     <div>
       <input
         type="checkbox"
+        name="NR"
+        id="checkbox_NR"
+        class="peer watchlist"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_NR">
+        NR
+      </label>
+
+      <div
+        id="main_NR"
+        class="peer-[#checkbox_NR]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_NR.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
         name="NSSC"
         id="checkbox_NSSC"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_NSSC">
@@ -1430,7 +1374,7 @@
         type="checkbox"
         name="NTES"
         id="checkbox_NTES"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_NTES">
@@ -1450,7 +1394,7 @@
         type="checkbox"
         name="NU"
         id="checkbox_NU"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_NU">
@@ -1470,7 +1414,7 @@
         type="checkbox"
         name="NVT"
         id="checkbox_NVT"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_NVT">
@@ -1490,7 +1434,7 @@
         type="checkbox"
         name="ODC"
         id="checkbox_ODC"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_ODC">
@@ -1510,7 +1454,7 @@
         type="checkbox"
         name="OII"
         id="checkbox_OII"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_OII">
@@ -1530,7 +1474,7 @@
         type="checkbox"
         name="OMAB"
         id="checkbox_OMAB"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_OMAB">
@@ -1550,7 +1494,7 @@
         type="checkbox"
         name="ON"
         id="checkbox_ON"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_ON">
@@ -1568,49 +1512,9 @@
     <div>
       <input
         type="checkbox"
-        name="PARR"
-        id="checkbox_PARR"
-        class="peer"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_PARR">
-        PARR
-      </label>
-
-      <div
-        id="main_PARR"
-        class="peer-[#checkbox_PARR]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_PARR.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="PBPB"
-        id="checkbox_PBPB"
-        class="peer"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_PBPB">
-        PBPB
-      </label>
-
-      <div
-        id="main_PBPB"
-        class="peer-[#checkbox_PBPB]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_PBPB.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
         name="PH"
         id="checkbox_PH"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_PH">
@@ -1628,29 +1532,9 @@
     <div>
       <input
         type="checkbox"
-        name="PLPC"
-        id="checkbox_PLPC"
-        class="peer"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_PLPC">
-        PLPC
-      </label>
-
-      <div
-        id="main_PLPC"
-        class="peer-[#checkbox_PLPC]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_PLPC.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
         name="PLTR"
         id="checkbox_PLTR"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_PLTR">
@@ -1668,9 +1552,29 @@
     <div>
       <input
         type="checkbox"
+        name="PLUS"
+        id="checkbox_PLUS"
+        class="peer watchlist"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_PLUS">
+        PLUS
+      </label>
+
+      <div
+        id="main_PLUS"
+        class="peer-[#checkbox_PLUS]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_PLUS.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
         name="POWL"
         id="checkbox_POWL"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_POWL">
@@ -1688,29 +1592,9 @@
     <div>
       <input
         type="checkbox"
-        name="PRIM"
-        id="checkbox_PRIM"
-        class="peer"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_PRIM">
-        PRIM
-      </label>
-
-      <div
-        id="main_PRIM"
-        class="peer-[#checkbox_PRIM]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_PRIM.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
         name="RCL"
         id="checkbox_RCL"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_RCL">
@@ -1730,7 +1614,7 @@
         type="checkbox"
         name="SCPL"
         id="checkbox_SCPL"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_SCPL">
@@ -1750,7 +1634,7 @@
         type="checkbox"
         name="SCX"
         id="checkbox_SCX"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_SCX">
@@ -1770,7 +1654,7 @@
         type="checkbox"
         name="SHAK"
         id="checkbox_SHAK"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_SHAK">
@@ -1788,9 +1672,29 @@
     <div>
       <input
         type="checkbox"
+        name="SOVO"
+        id="checkbox_SOVO"
+        class="peer watchlist"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_SOVO">
+        SOVO
+      </label>
+
+      <div
+        id="main_SOVO"
+        class="peer-[#checkbox_SOVO]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_SOVO.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
         name="STN"
         id="checkbox_STN"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_STN">
@@ -1810,7 +1714,7 @@
         type="checkbox"
         name="STNE"
         id="checkbox_STNE"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_STNE">
@@ -1830,7 +1734,7 @@
         type="checkbox"
         name="TBBK"
         id="checkbox_TBBK"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_TBBK">
@@ -1848,29 +1752,9 @@
     <div>
       <input
         type="checkbox"
-        name="TDG"
-        id="checkbox_TDG"
-        class="peer"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_TDG">
-        TDG
-      </label>
-
-      <div
-        id="main_TDG"
-        class="peer-[#checkbox_TDG]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_TDG.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
         name="TDW"
         id="checkbox_TDW"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_TDW">
@@ -1890,7 +1774,7 @@
         type="checkbox"
         name="TEX"
         id="checkbox_TEX"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_TEX">
@@ -1910,7 +1794,7 @@
         type="checkbox"
         name="TK"
         id="checkbox_TK"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_TK">
@@ -1930,7 +1814,7 @@
         type="checkbox"
         name="TNK"
         id="checkbox_TNK"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_TNK">
@@ -1950,7 +1834,7 @@
         type="checkbox"
         name="TOL"
         id="checkbox_TOL"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_TOL">
@@ -1970,7 +1854,7 @@
         type="checkbox"
         name="TTD"
         id="checkbox_TTD"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_TTD">
@@ -1990,7 +1874,7 @@
         type="checkbox"
         name="UBER"
         id="checkbox_UBER"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_UBER">
@@ -2010,7 +1894,7 @@
         type="checkbox"
         name="URI"
         id="checkbox_URI"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_URI">
@@ -2030,7 +1914,7 @@
         type="checkbox"
         name="USAP"
         id="checkbox_USAP"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_USAP">
@@ -2050,7 +1934,7 @@
         type="checkbox"
         name="USLM"
         id="checkbox_USLM"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_USLM">
@@ -2068,9 +1952,29 @@
     <div>
       <input
         type="checkbox"
+        name="VICR"
+        id="checkbox_VICR"
+        class="peer watchlist"
+        checked
+      />
+      <label class="text-4xl font-semibold" for="checkbox_VICR">
+        VICR
+      </label>
+
+      <div
+        id="main_VICR"
+        class="peer-[#checkbox_VICR]:peer-checked:collapse"
+        style="width: 100%; height: 90vh"
+      ></div>
+      <script src="js/bundle_VICR.js"></script>
+    </div>
+    
+    <div>
+      <input
+        type="checkbox"
         name="VRT"
         id="checkbox_VRT"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_VRT">
@@ -2090,7 +1994,7 @@
         type="checkbox"
         name="WFRD"
         id="checkbox_WFRD"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_WFRD">
@@ -2110,7 +2014,7 @@
         type="checkbox"
         name="WLDN"
         id="checkbox_WLDN"
-        class="peer"
+        class="peer watchlist"
         checked
       />
       <label class="text-4xl font-semibold" for="checkbox_WLDN">
