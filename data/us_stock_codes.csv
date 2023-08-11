@@ -2607,7 +2607,6 @@ LSPD,LIGHTSPEED COMM,ライトスピード・コマース,NYSE,ソフトウェ�
 LSTA,LISATA THERAP,リサタ・セラピューティクス,NASDAQ,医薬品（バイオテクノロジー）,○
 LSTR,LANDSTAR SYSTEM,ランドスター・システム,NASDAQ,運輸,○
 LTBR,LIGHTBRIDGE CORP,ライトブリッジ,NASDAQ,その他,○
-LTCH,LATCH INC,ラッチ,NASDAQ,ソフトウェア・サービス,○
 LTH,LIFE TIME GP HLD,ライフ・タイム・グループ・ホールディングス,NYSE,ヘルスケア,○
 LTHM,LIVENT CORP,ライベント,NYSE,化学,○
 LTRN,LANTERN PHARMA,ランタン・ファーマ,NASDAQ,医薬品（バイオテクノロジー）,○
@@ -2805,7 +2804,6 @@ MODG,TOPGOLF CALLAWAY,トップゴルフ・キャロウェイ・ブランズ,NYS
 MODN,MODEL N INC,モデルN,NYSE,ソフトウェア・サービス,○
 MODV,MODIVCARE INC,モディブケア,NASDAQ,ヘルスケア,○
 MOFG,MIDWESTONE FNCAL,ミッドウエストワン・ファイナンシャル・グループ,NASDAQ,金融（銀行）,○
-MOGO,MOGO INC,モゴ,NASDAQ,医薬品,○
 MOGU,MOGU INC,モグ,NYSE,小売,○
 MOH,MOLINA HEALTH,モリナ・ヘルスケア,NYSE,ヘルスケア,○
 MOLN,MOLECULAR PART,モレキュラー・パートナーズ,NASDAQ,医薬品（バイオテクノロジー）,○
@@ -3492,7 +3490,9 @@ QDIV,GBLX SP500 Q DIV,グローバルX 高配当・優良・米国株 ETF,NYSE,�
 QFIN,QIFU TECHNOLOGY,チーフ・テクノロジー,NASDAQ,その他,○
 QGEN,QIAGEN,キアゲン,NYSE,医薬品（バイオテクノロジー）,○
 QH,QUHUO LTD,チューフオ,NASDAQ,ソフトウェア・サービス,○
+QID,PROS QQQ -2X,プロシェアーズ・ウルトラショートQQQ,NYSE,その他,○
 QIPT,QUIPT HOME MED,クイプト・ホーム・メディカル,NASDAQ,ヘルスケア,○
+QLD,PROS QQQ 2X,プロシェアーズ・ウルトラQQQ,NYSE,その他,○
 QLGN,QUALIGEN THERAPE,クアリジェン・セラピューティクス,NASDAQ,医薬品（バイオテクノロジー）,○
 QLYS,QUALYS INC,クォリス,NASDAQ,ネットワークセキュリティー,○
 QNCX,QUINCE THERA,クインス・セラピューティクス,NASDAQ,医薬品（バイオテクノロジー）,○
@@ -3763,6 +3763,7 @@ SDGR,SCHRODINGER INC,シュレーディンガー,NASDAQ,ソフトウェア・サ
 SDIG,STRONGHD D MININ,ストロングホールド・デジタル・マイニング,NASDAQ,ソフトウェア・サービス,○
 SDIV,GLX SUPERDVD ETF,グローバルX スーパーディビィデンド-世界株式 ETF,NYSE,その他,○
 SDOT,SADOT GROUP INC,サドット・グループ,NASDAQ,外食,○
+SDOW,PROS DOW30 -3X,プロシェアーズ・ウルトラプロ・ショート・ダウ30,NYSE,その他,○
 SDY,SPDR SP DIVIDEND,SPDR S&P 米国高配当株式 ETF,NYSE,その他,○
 SE,SEA LIMITED,シー,NYSE,ソフトウェア・サービス,○
 SEAS,SEAWORLD ENTERTA,シーワールド・エンタテインメント,NYSE,エンターテイメント,○
@@ -3806,6 +3807,7 @@ SGRP,SPAR GROUP INC,SPARグループ,NASDAQ,ソフトウェア・サービス,�
 SGRY,SURGERY PARTNERS,サージェリー・パートナーズ,NASDAQ,医療サービス,○
 SGTX,SIGILON THERAPEU,シジロン・セラピューティクス,NASDAQ,医薬品（バイオテクノロジー）,○
 SGU,STAR GROUP LP,スター・グループ,NYSE,その他製造,○
+SH,PROS SP500 -1X,プロシェアーズ・ショートS&P500,NYSE,その他,○
 SHAK,SHAKE SHACK,シェイク・シャック,NYSE,外食,○
 SHBI,SHORE BANCSHARES,ショアー・バンクシェアーズ,NASDAQ,金融（銀行）,○
 SHC,SOTERA HEALTH CO,ソテラ・ヘルス,NASDAQ,ヘルスケア,○
@@ -3989,6 +3991,7 @@ SPWR,SUNPOWER,サンパワー,NASDAQ,その他製造,○
 SPXC,SPX TECHNOLOGIES,SPXテクノロジーズ,NYSE,その他製造,○
 SPXL,DRX DL SP500BL3X,Direxion デイリー S&P 500 ブル3倍 ETF,NYSE,その他,○
 SPXS,DRX DL SP500BR3X,Direxion デイリー S&P 500 ベア3倍 ETF,NYSE,その他,○
+SPXU,PROS SP500 -3X,プロシェアーズ・ウルトラプロ・ショートS&P500,NYSE,その他,○
 SPY,SPDR SP500 TRUST,SPDR S&P 500 ETF,NYSE,その他,○
 SPYD,SPDR SP500 H DIV,SPDR ポートフォリオS&P 500 高配当株式ETF,NYSE,その他,○
 SPYG,SPDR SP500 GRWTH,SPDR ポートフォリオS&P 500 グロース株式ETF,NYSE,その他,○
@@ -4353,6 +4356,7 @@ UCBI,UNITED COMM BANK,ユナイテッド・コミュニティー・バンクス,
 UCL,UCLOUDLINK GROUP,ユークラウドリンク・グループ,NASDAQ,通信サービス,○
 UCTT,ULTRA CLEAN HLD,ウルトラ・クリーン・ホールディングス,NASDAQ,半導体製造,○
 UDMY,UDEMY INC,ユーデミー,NASDAQ,ソフトウェア・サービス,○
+UDOW,PROS DOW30 3X,プロシェアーズ・ウルトラプロ・ダウ30,NYSE,その他,○
 UEIC,UNIVERSAL ELECTR,ユニバーサル・エレクトロニクス,NASDAQ,その他製造,○
 UFCS,UNITED FIRE GR,ユナイテッド・ファイヤ・グループ,NASDAQ,金融(保険),○
 UFI,UNIFI INC,ユニファイ,NYSE,その他製造,○
@@ -4390,6 +4394,7 @@ UPBD,UPBOUND GROUP,アップバウンド・グループ,NASDAQ,専門店,○
 UPC,UNIVERSE PHARMA,ユニバース・ファーマシューティカルズ,NASDAQ,医薬品,○
 UPH,UPHEALTH,アップヘルス,NYSE,ヘルスケア,○
 UPLD,UPLAND SOFTWARE,アップランド・ソフトウエア,NASDAQ,ソフトウェア・サービス,○
+UPRO,PROS SP500 3X,プロシェアーズ・ウルトラプロS&P500,NYSE,その他,○
 UPS,UPS INC.,ユナイテッド・パーセル・サービス,NYSE,運輸,○
 UPST,UPSTART HOLDINGS,アップスタート・ホールディングス,NASDAQ,ソフトウェア・サービス,○
 UPWK,UPWORK INC,アップワーク,NASDAQ,ソフトウェア・サービス,○
