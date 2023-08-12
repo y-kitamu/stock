@@ -137,56 +137,64 @@ def calculate_relative_strengths(
     return rs_sp500, rs_dow, rs_nasdaq
 
 
-def main(
-    ticker_list_path: Path,
-    financial_data_dir: Path = stock.DATA_DIR / "codes",
-    watch_list_path: Path = stock.DATA_DIR / "watch_list.csv",
-):
-    """ """
-    sp500_history = yf.Ticker("^GSPC").history(interval="1wk", period="2y")
+def collect_index_data():
+    sp500_history = yf.Ticker("^GSPC", session=session).history(interval="1wk", period="2y")
     sp500_closes = sp500_history.Close.to_numpy()
-    dow_history = yf.Ticker("^DJI").history(interval="1wk", period="2y")
+    dow_history = yf.Ticker("^DJI", session=session).history(interval="1wk", period="2y")
     dow_closes = dow_history.Close.to_numpy()
-    nasdaq_history = yf.Ticker("^IXIC").history(interval="1wk", period="2y")
+    nasdaq_history = yf.Ticker("^IXIC", session=session).history(interval="1wk", period="2y")
     nasdaq_closes = nasdaq_history.Close.to_numpy()
+    return sp500_closes, dow_closes, nasdaq_closes
 
+
+def read_ticker_list(ticker_list_path: Path) -> dict[str, Any]:
     with open(ticker_list_path, "r") as f:
         reader = csv.reader(f)
         next(reader)
-        tickers = [row[0] for row in reader]
+        rows = list(reader)
+    tickers = [row[0] for row in rows]
+    sectors_set = set([row[4] for row in rows])
+    sectors_dict = {sector: idx for idx, sector in enumerate(sorted(sectors_set))}
+    sectors = np.array([sectors_dict[row[4]] for row in rows], dtype=int)
+    return {"tickers": tickers, "sectors": sectors, "sectors_dict": sectors_dict}
 
-    judges = np.ones(len(tickers), dtype=bool)
-    rss = np.zeros(len(tickers))
-    for idx, ticker in enumerate(tickers):
-        stock.logger.info(f"Processing {ticker} ({idx+1}/{len(tickers)})")
-        try:
-            yf_ticker = yf.Ticker(ticker, session=session)
-            history = yf_ticker.history(interval="1wk", period="2y")
-            yearly_financials = yf_ticker.financials.to_dict()
-            with open(financial_data_dir / f"{ticker}.json", "r") as f:
-                quarterly_financials = json.load(f)
 
-            judges[idx] &= trand_template_for_stage2(history=history)
-            judges[idx] &= fundamentals_template_for_stage2(
-                q_data=quarterly_financials, y_data=yearly_financials
-            )
-            rs_sp500, rs_dow, rs_nasdaq = calculate_relative_strengths(
-                history=history,
-                sp500_closes=sp500_closes,
-                dow_closes=dow_closes,
-                nasdaq_closes=nasdaq_closes,
-            )
-            rss[idx] = rs_sp500 + rs_dow + rs_nasdaq
-        except KeyboardInterrupt:
-            stock.logger.exception("Keyboard Interrupt.")
-            break
-        except:
-            stock.logger.exception(f"Failed to update financial data. : {ticker}")
+def calculate_conditions(ticker: str, financial_data_dir: Path) -> dict[str, Any]:
+    yf_ticker = yf.Ticker(ticker, session=session)
+    history = yf_ticker.history(interval="1wk", period="2y")
+    yearly_financials = yf_ticker.financials.to_dict()
+    with open(financial_data_dir / f"{ticker}.json", "r") as f:
+        quarterly_financials = json.load(f)
 
-    # relative strengthが上位20%の銘柄のみを選択
+    judge = True
+    judge &= trand_template_for_stage2(history=history)
+    judge &= fundamentals_template_for_stage2(q_data=quarterly_financials, y_data=yearly_financials)
+
+    sp500_closes, dow_closes, nasdaq_closes = collect_index_data()
+    rs_sp500, rs_dow, rs_nasdaq = calculate_relative_strengths(
+        history=history,
+        sp500_closes=sp500_closes,
+        dow_closes=dow_closes,
+        nasdaq_closes=nasdaq_closes,
+    )
+    rs = rs_sp500 + rs_dow + rs_nasdaq
+
+    return {
+        "judge": judge,
+        "relative_strength": rs,
+    }
+
+
+def create_watch_list(
+    watch_list_path: Path,
+    tickers: list[str],
+    judges: np.ndarray,
+    rss: np.ndarray,
+):
     pt80 = np.percentile(rss, 80)
     is_good = np.logical_and(judges, rss > pt80)
 
+    # watch listの作成
     watch_list = []
     for ticker, judge in zip(tickers, is_good):
         if judge:
@@ -198,12 +206,131 @@ def main(
         for ticker in watch_list:
             writer.writerow([ticker])
 
+    return watch_list
+
+
+def calculate_relative_strengths_per_sector(
+    sectors: np.ndarray,
+    rss: np.ndarray,
+    sectors_dict: dict[str, int],
+) -> dict[str, float]:
+    # sectorごとのrelative strengthの計算
+    rss_per_sector = {}
+    for sector in sectors_dict.keys():
+        idx = sectors_dict[sector]
+        rss_per_sector[sector] = np.mean(rss[sectors == idx])
+
+    return rss_per_sector
+
+
+def count_watch_list_per_sector(
+    sectors: np.ndarray,
+    tickers: list[str],
+    watch_list: list[str],
+    sectors_dict: dict[str, int],
+) -> tuple[dict[str, int], dict[str, int]]:
+    # sectorごとのwatch listの銘柄数を計算
+    counts = np.zeros(len(sectors_dict), dtype=int)
+    for ticker in watch_list:
+        counts[sectors[tickers.index(ticker)]] += 1
+
+    total = np.zeros(len(sectors_dict), dtype=int)
+    for sector_idx in sectors:
+        total[sector_idx] += 1
+
+    watch_list_per_sector = {}
+    for setor, indx in sectors_dict.items():
+        watch_list_per_sector[setor] = int(counts[indx])
+
+    total_per_sector = {}
+    for setor, indx in sectors_dict.items():
+        total_per_sector[setor] = int(total[indx])
+    return watch_list_per_sector, total_per_sector
+
+
+def create_summary(
+    summary_file: Path,
+    tickers: list[str],
+    sectors: np.ndarray,
+    sectors_dict: dict[str, int],
+    rss: np.ndarray,
+    watch_list: list[str],
+):
+    rss_per_sector = calculate_relative_strengths_per_sector(
+        sectors=sectors,
+        rss=rss,
+        sectors_dict=sectors_dict,
+    )
+
+    watch_list_per_sector, count_per_sector = count_watch_list_per_sector(
+        sectors=sectors,
+        tickers=tickers,
+        watch_list=watch_list,
+        sectors_dict=sectors_dict,
+    )
+    summary = {
+        "rss_per_sector": rss_per_sector,
+        "watch_list_per_sector": watch_list_per_count,
+        "sector_per_sector": count_per_sector,
+    }
+    print(summary)
+
+    with open(summary_file, "w", encoding="utf-8") as f:
+        json.dump(summary, f, indent=4, ensure_ascii=False)
+
+
+def main(
+    ticker_list_path: Path,
+    financial_data_dir: Path = stock.DATA_DIR / "codes",
+    watch_list_path: Path = stock.DATA_DIR / "watch_list.csv",
+    summary_file: Path = stock.DATA_DIR / "summary.json",
+):
+    """watch listを作成するために必要な情報を収集し、ファイルに出力する。"""
+    # 対象銘柄のtickerとsectorを取得
+    ticker_info = read_ticker_list(ticker_list_path)
+    tickers: list[str] = ticker_info["tickers"]
+    sectors: np.ndarray = ticker_info["sectors"]
+
+    # 対象銘柄の情報の取得、判定
+    judges = np.ones(len(tickers), dtype=bool)
+    rss = np.zeros(len(tickers))
+    for idx, ticker in enumerate(tickers):
+        stock.logger.info(f"Processing {ticker} ({idx+1}/{len(tickers)})")
+        try:
+            res = calculate_conditions(ticker, financial_data_dir)
+            judges[idx] = res["judge"]
+            rss[idx] = res["relative_strength"]
+        except KeyboardInterrupt:
+            stock.logger.exception("Keyboard Interrupt.")
+            break
+        except:
+            stock.logger.exception(f"Failed to update financial data. : {ticker}")
+
+    # watch listの作成
+    watch_list = create_watch_list(
+        watch_list_path=watch_list_path,
+        tickers=tickers,
+        judges=judges,
+        rss=rss,
+    )
+
+    # サマリーデータの作成
+    create_summary(
+        summary_file=summary_file,
+        tickers=tickers,
+        sectors=sectors,
+        sectors_dict=ticker_info["sectors_dict"],
+        rss=rss,
+        watch_list=watch_list,
+    )
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--ticker_list", type=Path, default=stock.DATA_DIR / "us_stock_codes.csv")
     parser.add_argument("--watch_list", type=Path, default=stock.DATA_DIR / "watch_list.csv")
     parser.add_argument("--financial_data_dir", type=Path, default=stock.DATA_DIR / "codes")
+    parser.add_argument("--summary_file", type=Path, default=stock.DATA_DIR / "summary.json")
     args = parser.parse_args()
 
     main(

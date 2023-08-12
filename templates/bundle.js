@@ -1,25 +1,16 @@
 /* var echarts = require("echarts"); */
 
-var chartDom = document.getElementById("main_{{ chart_id }}");
+var chartDom = document.getElementById("chart_main");
 var myChart = echarts.init(chartDom);
-var option;
+var option = {};
+var data = {};
+var volumes = {};
 
 var upColor = "#ec0000";
 var upBorderColor = "#8A0000";
 var downColor = "#00da3c";
 var downBorderColor = "#008F28";
 
-// Each item: open，close，lowest，highest
-var data = splitData([
-    {%- for data in daily_data %}
-    {{ data }},
-    {%- endfor %}
-]);
-var volumes = [
-    {%- for data in volume_data %}
-    {{ data }},
-    {%- endfor %}
-]
 
 function splitData(rawData) {
     const categoryData = [];
@@ -34,25 +25,38 @@ function splitData(rawData) {
     };
 }
 
-function calculateMA(dayCount) {
+function calculateMA(dayCount, stock_data) {
     var result = [];
-    for (var i = 0, len = data.values.length; i < len; i++) {
+    for (var i = 0, len = stock_data.values.length; i < len; i++) {
         if (i < dayCount) {
             result.push("-");
             continue;
         }
         var sum = 0;
         for (var j = 0; j < dayCount; j++) {
-            sum += +data.values[i - j][1];
+            sum += +stock_data.values[i - j][1];
         }
         result.push(sum / dayCount);
     }
     return result;
 }
 
-option = {
+{% for ticker in tickers %}
+// Each item: open，close，lowest，highest
+data["{{ ticker.code }}"] = splitData([
+    {%- for data in ticker.daily_data %}
+    {{ data }},
+    {%- endfor %}
+]);
+volumes["{{ ticker.code }}"] = [
+    {%- for data in ticker.volume_data %}
+    {{ data }},
+    {%- endfor %}
+]
+
+option["{{ ticker.code }}"] = {
     /* title: {
-     *     text: "{{ chart_id }}",
+     *     text: "{{ ticker.code }}",
      *     left: 0,
      * }, */
     tooltip: {
@@ -89,7 +93,7 @@ option = {
         {
             type: "category",
             gridIndex: 0,
-            data: data.categoryData,
+            data: data["{{ ticker.code }}"].categoryData,
             boundaryGap: false,
             axisLine: { onZero: false },
             splitLine: { show: false },
@@ -99,7 +103,7 @@ option = {
         {
             type: "category",
             gridIndex: 1,
-            data: data.categoryData,
+            data: data["{{ ticker.code }}"].categoryData,
             boundaryGap: false,
             splitLine: { show: false },
             axisLabel: { show: false },
@@ -152,12 +156,12 @@ option = {
                     color: "#140",
                 },
             },
-            data: volumes,
+            data: volumes["{{ ticker.code }}"],
         },
         {
             name: "日K",
             type: "candlestick",
-            data: data.values,
+            data: data["{{ ticker.code }}"].values,
             itemStyle: {
                 color: upColor,
                 color0: downColor,
@@ -183,7 +187,7 @@ option = {
         {
             name: "MA5",
             type: "line",
-            data: calculateMA(5),
+            data: calculateMA(5, data["{{ ticker.code }}"]),
             smooth: true,
             lineStyle: {
                 opacity: 0.5,
@@ -192,7 +196,7 @@ option = {
         {
             name: "MA20",
             type: "line",
-            data: calculateMA(20),
+            data: calculateMA(20, data["{{ ticker.code }}"]),
             smooth: true,
             lineStyle: {
                 opacity: 0.5,
@@ -201,7 +205,7 @@ option = {
         {
             name: "MA30",
             type: "line",
-            data: calculateMA(30),
+            data: calculateMA(30, data["{{ ticker.code }}"]),
             smooth: true,
             lineStyle: {
                 opacity: 0.5,
@@ -209,5 +213,8 @@ option = {
         },
     ],
 };
+{% endfor %}
 
-option && myChart.setOption(option);
+const draw_chart = (ticker) => {
+    option[ticker] && myChart.setOption(option[ticker]);
+};
