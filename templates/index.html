@@ -7,13 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      {% for chart_id in chart_ids %}
-      #checkbox_{{ chart_id}}:not(:checked) ~ #main_{{ chart_id }} {
-          display: none;
-      }
-      {% endfor %}
-    </style>
   </head>
   <body style="min-height: 100vh">
     <div class="relative overflow-x-auto">
@@ -49,13 +42,13 @@
     </div>
 
     <div class="grid grid-cols-4 gap-4">
-      <div>
+      <div class="overflow-y-auto" style="height: 90vh">
         <fieldset class="space-y-0">
           {% for chart_id in chart_ids %}
           <div>
             <input
               type="radio"
-              name="ColorOption"
+              name="ChartRadioButtons"
               value="label_{{ chart_id }}"
               id="label_{{ chart_id }}"
               class="peer hidden"
