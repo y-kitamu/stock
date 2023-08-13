@@ -270,7 +270,7 @@ def create_summary(
     )
     summary = {
         "rss_per_sector": rss_per_sector,
-        "watch_list_per_sector": watch_list_per_count,
+        "watch_list_per_sector": watch_list_per_sector,
         "sector_per_sector": count_per_sector,
     }
     print(summary)
