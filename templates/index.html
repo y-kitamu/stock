@@ -45,7 +45,14 @@
       <div class="overflow-y-auto" style="height: 90vh">
         <fieldset class="space-y-0">
           {% for chart_id in chart_ids %}
-          <div>
+          <div class="flex items-center justify-center">
+            <input
+              type="checkbox"
+              value="checkbox_{{ chart_id }}"
+              id="checkbox_{{ chart_id }}"
+              name="{{ chart_id }}"
+              class="flex-none w-8 h-8 ml-2 mr-2 rounded watchlist"
+            />
             <input
               type="radio"
               name="ChartRadioButtons"
@@ -56,7 +63,7 @@
             />
             <label
               for="label_{{ chart_id }}"
-              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+              class="flex flex-1 cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
             >
               <p class="text-sm font-medium">{{ chart_id }}</p>
             </label>
@@ -87,7 +94,7 @@
         for (const target of watch_list) {
           if (target.checked) {
             console.log(target.name);
-            target_list.push([target.name]);
+            target_list.push([target.name + "\n"]);
           }
         }
         const blob = new Blob(target_list, { type: "text/csv" });
