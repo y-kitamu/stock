@@ -7,1843 +7,1971 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      
-      #checkbox_ALSN:not(:checked) ~ #main_ALSN {
-          display: none;
-      }
-      
-      #checkbox_AMWD:not(:checked) ~ #main_AMWD {
-          display: none;
-      }
-      
-      #checkbox_ANET:not(:checked) ~ #main_ANET {
-          display: none;
-      }
-      
-      #checkbox_ANIP:not(:checked) ~ #main_ANIP {
-          display: none;
-      }
-      
-      #checkbox_APG:not(:checked) ~ #main_APG {
-          display: none;
-      }
-      
-      #checkbox_ARTW:not(:checked) ~ #main_ARTW {
-          display: none;
-      }
-      
-      #checkbox_ASTE:not(:checked) ~ #main_ASTE {
-          display: none;
-      }
-      
-      #checkbox_ATI:not(:checked) ~ #main_ATI {
-          display: none;
-      }
-      
-      #checkbox_BJRI:not(:checked) ~ #main_BJRI {
-          display: none;
-      }
-      
-      #checkbox_BKNG:not(:checked) ~ #main_BKNG {
-          display: none;
-      }
-      
-      #checkbox_BLX:not(:checked) ~ #main_BLX {
-          display: none;
-      }
-      
-      #checkbox_BMI:not(:checked) ~ #main_BMI {
-          display: none;
-      }
-      
-      #checkbox_BOSC:not(:checked) ~ #main_BOSC {
-          display: none;
-      }
-      
-      #checkbox_BRAG:not(:checked) ~ #main_BRAG {
-          display: none;
-      }
-      
-      #checkbox_CAAP:not(:checked) ~ #main_CAAP {
-          display: none;
-      }
-      
-      #checkbox_CELH:not(:checked) ~ #main_CELH {
-          display: none;
-      }
-      
-      #checkbox_CNF:not(:checked) ~ #main_CNF {
-          display: none;
-      }
-      
-      #checkbox_CRS:not(:checked) ~ #main_CRS {
-          display: none;
-      }
-      
-      #checkbox_CSPI:not(:checked) ~ #main_CSPI {
-          display: none;
-      }
-      
-      #checkbox_DECK:not(:checked) ~ #main_DECK {
-          display: none;
-      }
-      
-      #checkbox_DOLE:not(:checked) ~ #main_DOLE {
-          display: none;
-      }
-      
-      #checkbox_ELF:not(:checked) ~ #main_ELF {
-          display: none;
-      }
-      
-      #checkbox_EME:not(:checked) ~ #main_EME {
-          display: none;
-      }
-      
-      #checkbox_EXP:not(:checked) ~ #main_EXP {
-          display: none;
-      }
-      
-      #checkbox_EXTR:not(:checked) ~ #main_EXTR {
-          display: none;
-      }
-      
-      #checkbox_FCNCA:not(:checked) ~ #main_FCNCA {
-          display: none;
-      }
-      
-      #checkbox_GGAL:not(:checked) ~ #main_GGAL {
-          display: none;
-      }
-      
-      #checkbox_GRVY:not(:checked) ~ #main_GRVY {
-          display: none;
-      }
-      
-      #checkbox_HLX:not(:checked) ~ #main_HLX {
-          display: none;
-      }
-      
-      #checkbox_IESC:not(:checked) ~ #main_IESC {
-          display: none;
-      }
-      
-      #checkbox_KNSL:not(:checked) ~ #main_KNSL {
-          display: none;
-      }
-      
-      #checkbox_KOP:not(:checked) ~ #main_KOP {
-          display: none;
-      }
-      
-      #checkbox_KRT:not(:checked) ~ #main_KRT {
-          display: none;
-      }
-      
-      #checkbox_KRUS:not(:checked) ~ #main_KRUS {
-          display: none;
-      }
-      
-      #checkbox_LII:not(:checked) ~ #main_LII {
-          display: none;
-      }
-      
-      #checkbox_MEDP:not(:checked) ~ #main_MEDP {
-          display: none;
-      }
-      
-      #checkbox_MLR:not(:checked) ~ #main_MLR {
-          display: none;
-      }
-      
-      #checkbox_MOD:not(:checked) ~ #main_MOD {
-          display: none;
-      }
-      
-      #checkbox_MPX:not(:checked) ~ #main_MPX {
-          display: none;
-      }
-      
-      #checkbox_NAT:not(:checked) ~ #main_NAT {
-          display: none;
-      }
-      
-      #checkbox_NATI:not(:checked) ~ #main_NATI {
-          display: none;
-      }
-      
-      #checkbox_NEU:not(:checked) ~ #main_NEU {
-          display: none;
-      }
-      
-      #checkbox_NOA:not(:checked) ~ #main_NOA {
-          display: none;
-      }
-      
-      #checkbox_NR:not(:checked) ~ #main_NR {
-          display: none;
-      }
-      
-      #checkbox_NSSC:not(:checked) ~ #main_NSSC {
-          display: none;
-      }
-      
-      #checkbox_NTES:not(:checked) ~ #main_NTES {
-          display: none;
-      }
-      
-      #checkbox_NU:not(:checked) ~ #main_NU {
-          display: none;
-      }
-      
-      #checkbox_NVO:not(:checked) ~ #main_NVO {
-          display: none;
-      }
-      
-      #checkbox_NVT:not(:checked) ~ #main_NVT {
-          display: none;
-      }
-      
-      #checkbox_ODC:not(:checked) ~ #main_ODC {
-          display: none;
-      }
-      
-      #checkbox_OII:not(:checked) ~ #main_OII {
-          display: none;
-      }
-      
-      #checkbox_OMAB:not(:checked) ~ #main_OMAB {
-          display: none;
-      }
-      
-      #checkbox_PAM:not(:checked) ~ #main_PAM {
-          display: none;
-      }
-      
-      #checkbox_PBPB:not(:checked) ~ #main_PBPB {
-          display: none;
-      }
-      
-      #checkbox_PCAR:not(:checked) ~ #main_PCAR {
-          display: none;
-      }
-      
-      #checkbox_PH:not(:checked) ~ #main_PH {
-          display: none;
-      }
-      
-      #checkbox_PLUS:not(:checked) ~ #main_PLUS {
-          display: none;
-      }
-      
-      #checkbox_POWL:not(:checked) ~ #main_POWL {
-          display: none;
-      }
-      
-      #checkbox_RCL:not(:checked) ~ #main_RCL {
-          display: none;
-      }
-      
-      #checkbox_SCX:not(:checked) ~ #main_SCX {
-          display: none;
-      }
-      
-      #checkbox_SHAK:not(:checked) ~ #main_SHAK {
-          display: none;
-      }
-      
-      #checkbox_SOVO:not(:checked) ~ #main_SOVO {
-          display: none;
-      }
-      
-      #checkbox_STN:not(:checked) ~ #main_STN {
-          display: none;
-      }
-      
-      #checkbox_STNE:not(:checked) ~ #main_STNE {
-          display: none;
-      }
-      
-      #checkbox_TBBK:not(:checked) ~ #main_TBBK {
-          display: none;
-      }
-      
-      #checkbox_TDW:not(:checked) ~ #main_TDW {
-          display: none;
-      }
-      
-      #checkbox_TEX:not(:checked) ~ #main_TEX {
-          display: none;
-      }
-      
-      #checkbox_TK:not(:checked) ~ #main_TK {
-          display: none;
-      }
-      
-      #checkbox_TNK:not(:checked) ~ #main_TNK {
-          display: none;
-      }
-      
-      #checkbox_TOL:not(:checked) ~ #main_TOL {
-          display: none;
-      }
-      
-      #checkbox_URI:not(:checked) ~ #main_URI {
-          display: none;
-      }
-      
-      #checkbox_USAP:not(:checked) ~ #main_USAP {
-          display: none;
-      }
-      
-      #checkbox_USLM:not(:checked) ~ #main_USLM {
-          display: none;
-      }
-      
-      #checkbox_VRT:not(:checked) ~ #main_VRT {
-          display: none;
-      }
-      
-      #checkbox_WFRD:not(:checked) ~ #main_WFRD {
-          display: none;
-      }
-      
-      #checkbox_YPF:not(:checked) ~ #main_YPF {
-          display: none;
-      }
-      
-    </style>
   </head>
   <body style="min-height: 100vh">
-    
-    <div>
-      <input
-        type="checkbox"
-        name="ALSN"
-        id="checkbox_ALSN"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_ALSN">
-        ALSN
-      </label>
-
-      <div
-        id="main_ALSN"
-        class="peer-[#checkbox_ALSN]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_ALSN.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="AMWD"
-        id="checkbox_AMWD"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_AMWD">
-        AMWD
-      </label>
-
-      <div
-        id="main_AMWD"
-        class="peer-[#checkbox_AMWD]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_AMWD.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="ANET"
-        id="checkbox_ANET"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_ANET">
-        ANET
-      </label>
-
-      <div
-        id="main_ANET"
-        class="peer-[#checkbox_ANET]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_ANET.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="ANIP"
-        id="checkbox_ANIP"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_ANIP">
-        ANIP
-      </label>
-
-      <div
-        id="main_ANIP"
-        class="peer-[#checkbox_ANIP]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_ANIP.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="APG"
-        id="checkbox_APG"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_APG">
-        APG
-      </label>
-
-      <div
-        id="main_APG"
-        class="peer-[#checkbox_APG]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_APG.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="ARTW"
-        id="checkbox_ARTW"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_ARTW">
-        ARTW
-      </label>
-
-      <div
-        id="main_ARTW"
-        class="peer-[#checkbox_ARTW]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_ARTW.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="ASTE"
-        id="checkbox_ASTE"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_ASTE">
-        ASTE
-      </label>
-
-      <div
-        id="main_ASTE"
-        class="peer-[#checkbox_ASTE]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_ASTE.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="ATI"
-        id="checkbox_ATI"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_ATI">
-        ATI
-      </label>
-
-      <div
-        id="main_ATI"
-        class="peer-[#checkbox_ATI]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_ATI.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="BJRI"
-        id="checkbox_BJRI"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_BJRI">
-        BJRI
-      </label>
-
-      <div
-        id="main_BJRI"
-        class="peer-[#checkbox_BJRI]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_BJRI.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="BKNG"
-        id="checkbox_BKNG"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_BKNG">
-        BKNG
-      </label>
-
-      <div
-        id="main_BKNG"
-        class="peer-[#checkbox_BKNG]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_BKNG.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="BLX"
-        id="checkbox_BLX"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_BLX">
-        BLX
-      </label>
-
-      <div
-        id="main_BLX"
-        class="peer-[#checkbox_BLX]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_BLX.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="BMI"
-        id="checkbox_BMI"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_BMI">
-        BMI
-      </label>
-
-      <div
-        id="main_BMI"
-        class="peer-[#checkbox_BMI]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_BMI.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="BOSC"
-        id="checkbox_BOSC"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_BOSC">
-        BOSC
-      </label>
-
-      <div
-        id="main_BOSC"
-        class="peer-[#checkbox_BOSC]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_BOSC.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="BRAG"
-        id="checkbox_BRAG"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_BRAG">
-        BRAG
-      </label>
-
-      <div
-        id="main_BRAG"
-        class="peer-[#checkbox_BRAG]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_BRAG.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="CAAP"
-        id="checkbox_CAAP"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_CAAP">
-        CAAP
-      </label>
-
-      <div
-        id="main_CAAP"
-        class="peer-[#checkbox_CAAP]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_CAAP.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="CELH"
-        id="checkbox_CELH"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_CELH">
-        CELH
-      </label>
-
-      <div
-        id="main_CELH"
-        class="peer-[#checkbox_CELH]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_CELH.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="CNF"
-        id="checkbox_CNF"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_CNF">
-        CNF
-      </label>
-
-      <div
-        id="main_CNF"
-        class="peer-[#checkbox_CNF]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_CNF.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="CRS"
-        id="checkbox_CRS"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_CRS">
-        CRS
-      </label>
-
-      <div
-        id="main_CRS"
-        class="peer-[#checkbox_CRS]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_CRS.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="CSPI"
-        id="checkbox_CSPI"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_CSPI">
-        CSPI
-      </label>
-
-      <div
-        id="main_CSPI"
-        class="peer-[#checkbox_CSPI]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_CSPI.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="DECK"
-        id="checkbox_DECK"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_DECK">
-        DECK
-      </label>
-
-      <div
-        id="main_DECK"
-        class="peer-[#checkbox_DECK]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_DECK.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="DOLE"
-        id="checkbox_DOLE"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_DOLE">
-        DOLE
-      </label>
-
-      <div
-        id="main_DOLE"
-        class="peer-[#checkbox_DOLE]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_DOLE.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="ELF"
-        id="checkbox_ELF"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_ELF">
-        ELF
-      </label>
-
-      <div
-        id="main_ELF"
-        class="peer-[#checkbox_ELF]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_ELF.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="EME"
-        id="checkbox_EME"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_EME">
-        EME
-      </label>
-
-      <div
-        id="main_EME"
-        class="peer-[#checkbox_EME]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_EME.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="EXP"
-        id="checkbox_EXP"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_EXP">
-        EXP
-      </label>
-
-      <div
-        id="main_EXP"
-        class="peer-[#checkbox_EXP]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_EXP.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="EXTR"
-        id="checkbox_EXTR"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_EXTR">
-        EXTR
-      </label>
-
-      <div
-        id="main_EXTR"
-        class="peer-[#checkbox_EXTR]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_EXTR.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="FCNCA"
-        id="checkbox_FCNCA"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_FCNCA">
-        FCNCA
-      </label>
-
-      <div
-        id="main_FCNCA"
-        class="peer-[#checkbox_FCNCA]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_FCNCA.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="GGAL"
-        id="checkbox_GGAL"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_GGAL">
-        GGAL
-      </label>
-
-      <div
-        id="main_GGAL"
-        class="peer-[#checkbox_GGAL]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_GGAL.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="GRVY"
-        id="checkbox_GRVY"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_GRVY">
-        GRVY
-      </label>
-
-      <div
-        id="main_GRVY"
-        class="peer-[#checkbox_GRVY]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_GRVY.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="HLX"
-        id="checkbox_HLX"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_HLX">
-        HLX
-      </label>
-
-      <div
-        id="main_HLX"
-        class="peer-[#checkbox_HLX]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_HLX.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="IESC"
-        id="checkbox_IESC"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_IESC">
-        IESC
-      </label>
-
-      <div
-        id="main_IESC"
-        class="peer-[#checkbox_IESC]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_IESC.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="KNSL"
-        id="checkbox_KNSL"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_KNSL">
-        KNSL
-      </label>
-
-      <div
-        id="main_KNSL"
-        class="peer-[#checkbox_KNSL]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_KNSL.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="KOP"
-        id="checkbox_KOP"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_KOP">
-        KOP
-      </label>
-
-      <div
-        id="main_KOP"
-        class="peer-[#checkbox_KOP]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_KOP.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="KRT"
-        id="checkbox_KRT"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_KRT">
-        KRT
-      </label>
-
-      <div
-        id="main_KRT"
-        class="peer-[#checkbox_KRT]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_KRT.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="KRUS"
-        id="checkbox_KRUS"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_KRUS">
-        KRUS
-      </label>
-
-      <div
-        id="main_KRUS"
-        class="peer-[#checkbox_KRUS]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_KRUS.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="LII"
-        id="checkbox_LII"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_LII">
-        LII
-      </label>
-
-      <div
-        id="main_LII"
-        class="peer-[#checkbox_LII]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_LII.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="MEDP"
-        id="checkbox_MEDP"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_MEDP">
-        MEDP
-      </label>
-
-      <div
-        id="main_MEDP"
-        class="peer-[#checkbox_MEDP]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_MEDP.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="MLR"
-        id="checkbox_MLR"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_MLR">
-        MLR
-      </label>
-
-      <div
-        id="main_MLR"
-        class="peer-[#checkbox_MLR]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_MLR.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="MOD"
-        id="checkbox_MOD"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_MOD">
-        MOD
-      </label>
-
-      <div
-        id="main_MOD"
-        class="peer-[#checkbox_MOD]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_MOD.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="MPX"
-        id="checkbox_MPX"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_MPX">
-        MPX
-      </label>
-
-      <div
-        id="main_MPX"
-        class="peer-[#checkbox_MPX]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_MPX.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="NAT"
-        id="checkbox_NAT"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_NAT">
-        NAT
-      </label>
-
-      <div
-        id="main_NAT"
-        class="peer-[#checkbox_NAT]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_NAT.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="NATI"
-        id="checkbox_NATI"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_NATI">
-        NATI
-      </label>
-
-      <div
-        id="main_NATI"
-        class="peer-[#checkbox_NATI]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_NATI.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="NEU"
-        id="checkbox_NEU"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_NEU">
-        NEU
-      </label>
-
-      <div
-        id="main_NEU"
-        class="peer-[#checkbox_NEU]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_NEU.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="NOA"
-        id="checkbox_NOA"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_NOA">
-        NOA
-      </label>
-
-      <div
-        id="main_NOA"
-        class="peer-[#checkbox_NOA]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_NOA.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="NR"
-        id="checkbox_NR"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_NR">
-        NR
-      </label>
-
-      <div
-        id="main_NR"
-        class="peer-[#checkbox_NR]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_NR.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="NSSC"
-        id="checkbox_NSSC"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_NSSC">
-        NSSC
-      </label>
-
-      <div
-        id="main_NSSC"
-        class="peer-[#checkbox_NSSC]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_NSSC.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="NTES"
-        id="checkbox_NTES"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_NTES">
-        NTES
-      </label>
-
-      <div
-        id="main_NTES"
-        class="peer-[#checkbox_NTES]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_NTES.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="NU"
-        id="checkbox_NU"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_NU">
-        NU
-      </label>
-
-      <div
-        id="main_NU"
-        class="peer-[#checkbox_NU]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_NU.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="NVO"
-        id="checkbox_NVO"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_NVO">
-        NVO
-      </label>
-
-      <div
-        id="main_NVO"
-        class="peer-[#checkbox_NVO]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_NVO.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="NVT"
-        id="checkbox_NVT"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_NVT">
-        NVT
-      </label>
-
-      <div
-        id="main_NVT"
-        class="peer-[#checkbox_NVT]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_NVT.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="ODC"
-        id="checkbox_ODC"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_ODC">
-        ODC
-      </label>
-
-      <div
-        id="main_ODC"
-        class="peer-[#checkbox_ODC]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_ODC.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="OII"
-        id="checkbox_OII"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_OII">
-        OII
-      </label>
-
-      <div
-        id="main_OII"
-        class="peer-[#checkbox_OII]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_OII.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="OMAB"
-        id="checkbox_OMAB"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_OMAB">
-        OMAB
-      </label>
-
-      <div
-        id="main_OMAB"
-        class="peer-[#checkbox_OMAB]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_OMAB.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="PAM"
-        id="checkbox_PAM"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_PAM">
-        PAM
-      </label>
-
-      <div
-        id="main_PAM"
-        class="peer-[#checkbox_PAM]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_PAM.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="PBPB"
-        id="checkbox_PBPB"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_PBPB">
-        PBPB
-      </label>
-
-      <div
-        id="main_PBPB"
-        class="peer-[#checkbox_PBPB]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_PBPB.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="PCAR"
-        id="checkbox_PCAR"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_PCAR">
-        PCAR
-      </label>
-
-      <div
-        id="main_PCAR"
-        class="peer-[#checkbox_PCAR]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_PCAR.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="PH"
-        id="checkbox_PH"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_PH">
-        PH
-      </label>
-
-      <div
-        id="main_PH"
-        class="peer-[#checkbox_PH]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_PH.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="PLUS"
-        id="checkbox_PLUS"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_PLUS">
-        PLUS
-      </label>
-
-      <div
-        id="main_PLUS"
-        class="peer-[#checkbox_PLUS]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_PLUS.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="POWL"
-        id="checkbox_POWL"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_POWL">
-        POWL
-      </label>
-
-      <div
-        id="main_POWL"
-        class="peer-[#checkbox_POWL]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_POWL.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="RCL"
-        id="checkbox_RCL"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_RCL">
-        RCL
-      </label>
-
-      <div
-        id="main_RCL"
-        class="peer-[#checkbox_RCL]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_RCL.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="SCX"
-        id="checkbox_SCX"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_SCX">
-        SCX
-      </label>
-
-      <div
-        id="main_SCX"
-        class="peer-[#checkbox_SCX]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_SCX.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="SHAK"
-        id="checkbox_SHAK"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_SHAK">
-        SHAK
-      </label>
-
-      <div
-        id="main_SHAK"
-        class="peer-[#checkbox_SHAK]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_SHAK.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="SOVO"
-        id="checkbox_SOVO"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_SOVO">
-        SOVO
-      </label>
-
-      <div
-        id="main_SOVO"
-        class="peer-[#checkbox_SOVO]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_SOVO.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="STN"
-        id="checkbox_STN"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_STN">
-        STN
-      </label>
-
-      <div
-        id="main_STN"
-        class="peer-[#checkbox_STN]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_STN.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="STNE"
-        id="checkbox_STNE"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_STNE">
-        STNE
-      </label>
-
-      <div
-        id="main_STNE"
-        class="peer-[#checkbox_STNE]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_STNE.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="TBBK"
-        id="checkbox_TBBK"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_TBBK">
-        TBBK
-      </label>
-
-      <div
-        id="main_TBBK"
-        class="peer-[#checkbox_TBBK]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_TBBK.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="TDW"
-        id="checkbox_TDW"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_TDW">
-        TDW
-      </label>
-
-      <div
-        id="main_TDW"
-        class="peer-[#checkbox_TDW]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_TDW.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="TEX"
-        id="checkbox_TEX"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_TEX">
-        TEX
-      </label>
-
-      <div
-        id="main_TEX"
-        class="peer-[#checkbox_TEX]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_TEX.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="TK"
-        id="checkbox_TK"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_TK">
-        TK
-      </label>
-
-      <div
-        id="main_TK"
-        class="peer-[#checkbox_TK]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_TK.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="TNK"
-        id="checkbox_TNK"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_TNK">
-        TNK
-      </label>
-
-      <div
-        id="main_TNK"
-        class="peer-[#checkbox_TNK]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_TNK.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="TOL"
-        id="checkbox_TOL"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_TOL">
-        TOL
-      </label>
-
-      <div
-        id="main_TOL"
-        class="peer-[#checkbox_TOL]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_TOL.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="URI"
-        id="checkbox_URI"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_URI">
-        URI
-      </label>
-
-      <div
-        id="main_URI"
-        class="peer-[#checkbox_URI]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_URI.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="USAP"
-        id="checkbox_USAP"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_USAP">
-        USAP
-      </label>
-
-      <div
-        id="main_USAP"
-        class="peer-[#checkbox_USAP]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_USAP.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="USLM"
-        id="checkbox_USLM"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_USLM">
-        USLM
-      </label>
-
-      <div
-        id="main_USLM"
-        class="peer-[#checkbox_USLM]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_USLM.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="VRT"
-        id="checkbox_VRT"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_VRT">
-        VRT
-      </label>
-
-      <div
-        id="main_VRT"
-        class="peer-[#checkbox_VRT]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_VRT.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="WFRD"
-        id="checkbox_WFRD"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_WFRD">
-        WFRD
-      </label>
-
-      <div
-        id="main_WFRD"
-        class="peer-[#checkbox_WFRD]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_WFRD.js"></script>
-    </div>
-    
-    <div>
-      <input
-        type="checkbox"
-        name="YPF"
-        id="checkbox_YPF"
-        class="peer watchlist"
-        checked
-      />
-      <label class="text-4xl font-semibold" for="checkbox_YPF">
-        YPF
-      </label>
-
-      <div
-        id="main_YPF"
-        class="peer-[#checkbox_YPF]:peer-checked:collapse"
-        style="width: 100%; height: 90vh"
-      ></div>
-      <script src="js/bundle_YPF.js"></script>
+    <div class="relative overflow-x-auto">
+      <table class="text-sm text-left text-gray-500 dark:text-gray-400">
+        <thead
+          class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+        >
+          <tr>
+            <th scope="col" class="px-6 py-3">Sector</th>
+            <th scope="col" class="px-6 py-3">Number of companies</th>
+            <th scope="col" class="px-6 py-3">Number of watching</th>
+            <th scope="col" class="px-6 py-3">Rlative Strength</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          <tr
+            class="odd:bg-white even:bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700"
+          >
+            <th
+              scope="row"
+              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            >
+              その他
+            </th>
+            <td class="px-6 py-4">738</td>
+            <td class="px-6 py-4">7</td>
+            <td class="px-6 py-4">294.90658373451686</td>
+          </tr>
+          
+          <tr
+            class="odd:bg-white even:bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700"
+          >
+            <th
+              scope="row"
+              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            >
+              その他製造
+            </th>
+            <td class="px-6 py-4">466</td>
+            <td class="px-6 py-4">16</td>
+            <td class="px-6 py-4">296.70899507781735</td>
+          </tr>
+          
+          <tr
+            class="odd:bg-white even:bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700"
+          >
+            <th
+              scope="row"
+              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            >
+              アルミ
+            </th>
+            <td class="px-6 py-4">6</td>
+            <td class="px-6 py-4">0</td>
+            <td class="px-6 py-4">296.43634515563525</td>
+          </tr>
+          
+          <tr
+            class="odd:bg-white even:bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700"
+          >
+            <th
+              scope="row"
+              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            >
+              エンターテイメント
+            </th>
+            <td class="px-6 py-4">108</td>
+            <td class="px-6 py-4">2</td>
+            <td class="px-6 py-4">281.96560404819024</td>
+          </tr>
+          
+          <tr
+            class="odd:bg-white even:bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700"
+          >
+            <th
+              scope="row"
+              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            >
+              ガス・パイプライン
+            </th>
+            <td class="px-6 py-4">40</td>
+            <td class="px-6 py-4">1</td>
+            <td class="px-6 py-4">295.21624842112504</td>
+          </tr>
+          
+          <tr
+            class="odd:bg-white even:bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700"
+          >
+            <th
+              scope="row"
+              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            >
+              コングロマリット
+            </th>
+            <td class="px-6 py-4">8</td>
+            <td class="px-6 py-4">0</td>
+            <td class="px-6 py-4">295.65628456696373</td>
+          </tr>
+          
+          <tr
+            class="odd:bg-white even:bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700"
+          >
+            <th
+              scope="row"
+              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            >
+              コンピュータ
+            </th>
+            <td class="px-6 py-4">31</td>
+            <td class="px-6 py-4">0</td>
+            <td class="px-6 py-4">298.96795056960156</td>
+          </tr>
+          
+          <tr
+            class="odd:bg-white even:bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700"
+          >
+            <th
+              scope="row"
+              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            >
+              ソフトウェア・サービス
+            </th>
+            <td class="px-6 py-4">583</td>
+            <td class="px-6 py-4">8</td>
+            <td class="px-6 py-4">299.5880230645097</td>
+          </tr>
+          
+          <tr
+            class="odd:bg-white even:bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700"
+          >
+            <th
+              scope="row"
+              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            >
+              タイヤ
+            </th>
+            <td class="px-6 py-4">1</td>
+            <td class="px-6 py-4">0</td>
+            <td class="px-6 py-4">301.1700348582968</td>
+          </tr>
+          
+          <tr
+            class="odd:bg-white even:bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700"
+          >
+            <th
+              scope="row"
+              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            >
+              トイレタリー
+            </th>
+            <td class="px-6 py-4">5</td>
+            <td class="px-6 py-4">0</td>
+            <td class="px-6 py-4">292.2559487679208</td>
+          </tr>
+          
+          <tr
+            class="odd:bg-white even:bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700"
+          >
+            <th
+              scope="row"
+              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            >
+              ネットワーク
+            </th>
+            <td class="px-6 py-4">21</td>
+            <td class="px-6 py-4">1</td>
+            <td class="px-6 py-4">298.0714618544354</td>
+          </tr>
+          
+          <tr
+            class="odd:bg-white even:bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700"
+          >
+            <th
+              scope="row"
+              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            >
+              ネットワークセキュリティー
+            </th>
+            <td class="px-6 py-4">19</td>
+            <td class="px-6 py-4">0</td>
+            <td class="px-6 py-4">295.19282905745825</td>
+          </tr>
+          
+          <tr
+            class="odd:bg-white even:bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700"
+          >
+            <th
+              scope="row"
+              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            >
+              フットウエア
+            </th>
+            <td class="px-6 py-4">10</td>
+            <td class="px-6 py-4">0</td>
+            <td class="px-6 py-4">297.4709142266051</td>
+          </tr>
+          
+          <tr
+            class="odd:bg-white even:bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700"
+          >
+            <th
+              scope="row"
+              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            >
+              ヘルスケア
+            </th>
+            <td class="px-6 py-4">234</td>
+            <td class="px-6 py-4">1</td>
+            <td class="px-6 py-4">292.6687131104374</td>
+          </tr>
+          
+          <tr
+            class="odd:bg-white even:bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700"
+          >
+            <th
+              scope="row"
+              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            >
+              ホテル
+            </th>
+            <td class="px-6 py-4">19</td>
+            <td class="px-6 py-4">0</td>
+            <td class="px-6 py-4">287.60422808972464</td>
+          </tr>
+          
+          <tr
+            class="odd:bg-white even:bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700"
+          >
+            <th
+              scope="row"
+              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            >
+              化学
+            </th>
+            <td class="px-6 py-4">68</td>
+            <td class="px-6 py-4">3</td>
+            <td class="px-6 py-4">292.49243004500084</td>
+          </tr>
+          
+          <tr
+            class="odd:bg-white even:bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700"
+          >
+            <th
+              scope="row"
+              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            >
+              医療サービス
+            </th>
+            <td class="px-6 py-4">61</td>
+            <td class="px-6 py-4">0</td>
+            <td class="px-6 py-4">284.4180266760784</td>
+          </tr>
+          
+          <tr
+            class="odd:bg-white even:bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700"
+          >
+            <th
+              scope="row"
+              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            >
+              医薬品
+            </th>
+            <td class="px-6 py-4">154</td>
+            <td class="px-6 py-4">2</td>
+            <td class="px-6 py-4">293.95446227179</td>
+          </tr>
+          
+          <tr
+            class="odd:bg-white even:bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700"
+          >
+            <th
+              scope="row"
+              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            >
+              医薬品（バイオテクノロジー）
+            </th>
+            <td class="px-6 py-4">592</td>
+            <td class="px-6 py-4">0</td>
+            <td class="px-6 py-4">294.8038389947331</td>
+          </tr>
+          
+          <tr
+            class="odd:bg-white even:bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700"
+          >
+            <th
+              scope="row"
+              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            >
+              半導体
+            </th>
+            <td class="px-6 py-4">66</td>
+            <td class="px-6 py-4">0</td>
+            <td class="px-6 py-4">291.544522999902</td>
+          </tr>
+          
+          <tr
+            class="odd:bg-white even:bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700"
+          >
+            <th
+              scope="row"
+              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            >
+              半導体製造
+            </th>
+            <td class="px-6 py-4">21</td>
+            <td class="px-6 py-4">0</td>
+            <td class="px-6 py-4">299.8112729294884</td>
+          </tr>
+          
+          <tr
+            class="odd:bg-white even:bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700"
+          >
+            <th
+              scope="row"
+              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            >
+              周辺機器
+            </th>
+            <td class="px-6 py-4">9</td>
+            <td class="px-6 py-4">1</td>
+            <td class="px-6 py-4">302.5404300994477</td>
+          </tr>
+          
+          <tr
+            class="odd:bg-white even:bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700"
+          >
+            <th
+              scope="row"
+              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            >
+              外食
+            </th>
+            <td class="px-6 py-4">43</td>
+            <td class="px-6 py-4">4</td>
+            <td class="px-6 py-4">305.0514303882749</td>
+          </tr>
+          
+          <tr
+            class="odd:bg-white even:bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700"
+          >
+            <th
+              scope="row"
+              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            >
+              専門店
+            </th>
+            <td class="px-6 py-4">57</td>
+            <td class="px-6 py-4">0</td>
+            <td class="px-6 py-4">294.6555962898992</td>
+          </tr>
+          
+          <tr
+            class="odd:bg-white even:bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700"
+          >
+            <th
+              scope="row"
+              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            >
+              小売
+            </th>
+            <td class="px-6 py-4">161</td>
+            <td class="px-6 py-4">0</td>
+            <td class="px-6 py-4">293.81591761497407</td>
+          </tr>
+          
+          <tr
+            class="odd:bg-white even:bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700"
+          >
+            <th
+              scope="row"
+              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            >
+              情報処理サービス
+            </th>
+            <td class="px-6 py-4">37</td>
+            <td class="px-6 py-4">1</td>
+            <td class="px-6 py-4">287.79187436806745</td>
+          </tr>
+          
+          <tr
+            class="odd:bg-white even:bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700"
+          >
+            <th
+              scope="row"
+              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            >
+              機械
+            </th>
+            <td class="px-6 py-4">57</td>
+            <td class="px-6 py-4">5</td>
+            <td class="px-6 py-4">302.87956886577894</td>
+          </tr>
+          
+          <tr
+            class="odd:bg-white even:bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700"
+          >
+            <th
+              scope="row"
+              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            >
+              百貨店
+            </th>
+            <td class="px-6 py-4">2</td>
+            <td class="px-6 py-4">0</td>
+            <td class="px-6 py-4">291.770284245477</td>
+          </tr>
+          
+          <tr
+            class="odd:bg-white even:bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700"
+          >
+            <th
+              scope="row"
+              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            >
+              石油
+            </th>
+            <td class="px-6 py-4">119</td>
+            <td class="px-6 py-4">6</td>
+            <td class="px-6 py-4">299.42762000102385</td>
+          </tr>
+          
+          <tr
+            class="odd:bg-white even:bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700"
+          >
+            <th
+              scope="row"
+              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            >
+              紙・パルプ
+            </th>
+            <td class="px-6 py-4">9</td>
+            <td class="px-6 py-4">0</td>
+            <td class="px-6 py-4">292.02201488399106</td>
+          </tr>
+          
+          <tr
+            class="odd:bg-white even:bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700"
+          >
+            <th
+              scope="row"
+              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            >
+              自動車
+            </th>
+            <td class="px-6 py-4">56</td>
+            <td class="px-6 py-4">1</td>
+            <td class="px-6 py-4">298.24446380838333</td>
+          </tr>
+          
+          <tr
+            class="odd:bg-white even:bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700"
+          >
+            <th
+              scope="row"
+              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            >
+              航空
+            </th>
+            <td class="px-6 py-4">30</td>
+            <td class="px-6 py-4">2</td>
+            <td class="px-6 py-4">296.813357931302</td>
+          </tr>
+          
+          <tr
+            class="odd:bg-white even:bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700"
+          >
+            <th
+              scope="row"
+              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            >
+              航空機・宇宙
+            </th>
+            <td class="px-6 py-4">25</td>
+            <td class="px-6 py-4">0</td>
+            <td class="px-6 py-4">295.48885093757866</td>
+          </tr>
+          
+          <tr
+            class="odd:bg-white even:bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700"
+          >
+            <th
+              scope="row"
+              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            >
+              通信サービス
+            </th>
+            <td class="px-6 py-4">71</td>
+            <td class="px-6 py-4">0</td>
+            <td class="px-6 py-4">294.09765615474055</td>
+          </tr>
+          
+          <tr
+            class="odd:bg-white even:bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700"
+          >
+            <th
+              scope="row"
+              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            >
+              通信機器
+            </th>
+            <td class="px-6 py-4">44</td>
+            <td class="px-6 py-4">1</td>
+            <td class="px-6 py-4">287.9874136988506</td>
+          </tr>
+          
+          <tr
+            class="odd:bg-white even:bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700"
+          >
+            <th
+              scope="row"
+              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            >
+              運輸
+            </th>
+            <td class="px-6 py-4">84</td>
+            <td class="px-6 py-4">3</td>
+            <td class="px-6 py-4">291.0485075019685</td>
+          </tr>
+          
+          <tr
+            class="odd:bg-white even:bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700"
+          >
+            <th
+              scope="row"
+              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            >
+              金融(カード)
+            </th>
+            <td class="px-6 py-4">9</td>
+            <td class="px-6 py-4">0</td>
+            <td class="px-6 py-4">296.56469998521465</td>
+          </tr>
+          
+          <tr
+            class="odd:bg-white even:bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700"
+          >
+            <th
+              scope="row"
+              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            >
+              金融(保険)
+            </th>
+            <td class="px-6 py-4">110</td>
+            <td class="px-6 py-4">1</td>
+            <td class="px-6 py-4">291.2567131355873</td>
+          </tr>
+          
+          <tr
+            class="odd:bg-white even:bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700"
+          >
+            <th
+              scope="row"
+              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            >
+              金融コングロマリット
+            </th>
+            <td class="px-6 py-4">28</td>
+            <td class="px-6 py-4">0</td>
+            <td class="px-6 py-4">299.956188570612</td>
+          </tr>
+          
+          <tr
+            class="odd:bg-white even:bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700"
+          >
+            <th
+              scope="row"
+              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            >
+              金融（証券）
+            </th>
+            <td class="px-6 py-4">43</td>
+            <td class="px-6 py-4">0</td>
+            <td class="px-6 py-4">300.2327078686331</td>
+          </tr>
+          
+          <tr
+            class="odd:bg-white even:bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700"
+          >
+            <th
+              scope="row"
+              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            >
+              金融（銀行）
+            </th>
+            <td class="px-6 py-4">392</td>
+            <td class="px-6 py-4">6</td>
+            <td class="px-6 py-4">296.15892139846176</td>
+          </tr>
+          
+          <tr
+            class="odd:bg-white even:bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700"
+          >
+            <th
+              scope="row"
+              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            >
+              電力
+            </th>
+            <td class="px-6 py-4">87</td>
+            <td class="px-6 py-4">1</td>
+            <td class="px-6 py-4">293.6379287662146</td>
+          </tr>
+          
+          <tr
+            class="odd:bg-white even:bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700"
+          >
+            <th
+              scope="row"
+              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            >
+              食品
+            </th>
+            <td class="px-6 py-4">75</td>
+            <td class="px-6 py-4">1</td>
+            <td class="px-6 py-4">294.24261437541895</td>
+          </tr>
+          
+          <tr
+            class="odd:bg-white even:bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700"
+          >
+            <th
+              scope="row"
+              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            >
+              食品・タバコ
+            </th>
+            <td class="px-6 py-4">10</td>
+            <td class="px-6 py-4">0</td>
+            <td class="px-6 py-4">279.9917631310608</td>
+          </tr>
+          
+          <tr
+            class="odd:bg-white even:bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700"
+          >
+            <th
+              scope="row"
+              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            >
+              飲料
+            </th>
+            <td class="px-6 py-4">33</td>
+            <td class="px-6 py-4">2</td>
+            <td class="px-6 py-4">276.71373858600134</td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+
+    <div class="grid grid-cols-4 gap-4">
+      <div class="overflow-y-auto" style="height: 90vh">
+        <fieldset class="space-y-0">
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_ALSN"
+              id="label_ALSN"
+              class="peer hidden"
+              onclick="on_change_ticker('ALSN')"
+            />
+            <label
+              for="label_ALSN"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">ALSN</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_AMWD"
+              id="label_AMWD"
+              class="peer hidden"
+              onclick="on_change_ticker('AMWD')"
+            />
+            <label
+              for="label_AMWD"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">AMWD</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_ANET"
+              id="label_ANET"
+              class="peer hidden"
+              onclick="on_change_ticker('ANET')"
+            />
+            <label
+              for="label_ANET"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">ANET</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_ANIP"
+              id="label_ANIP"
+              class="peer hidden"
+              onclick="on_change_ticker('ANIP')"
+            />
+            <label
+              for="label_ANIP"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">ANIP</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_APG"
+              id="label_APG"
+              class="peer hidden"
+              onclick="on_change_ticker('APG')"
+            />
+            <label
+              for="label_APG"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">APG</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_ARTW"
+              id="label_ARTW"
+              class="peer hidden"
+              onclick="on_change_ticker('ARTW')"
+            />
+            <label
+              for="label_ARTW"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">ARTW</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_ASTE"
+              id="label_ASTE"
+              class="peer hidden"
+              onclick="on_change_ticker('ASTE')"
+            />
+            <label
+              for="label_ASTE"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">ASTE</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_ATI"
+              id="label_ATI"
+              class="peer hidden"
+              onclick="on_change_ticker('ATI')"
+            />
+            <label
+              for="label_ATI"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">ATI</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_BJRI"
+              id="label_BJRI"
+              class="peer hidden"
+              onclick="on_change_ticker('BJRI')"
+            />
+            <label
+              for="label_BJRI"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">BJRI</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_BKNG"
+              id="label_BKNG"
+              class="peer hidden"
+              onclick="on_change_ticker('BKNG')"
+            />
+            <label
+              for="label_BKNG"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">BKNG</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_BLX"
+              id="label_BLX"
+              class="peer hidden"
+              onclick="on_change_ticker('BLX')"
+            />
+            <label
+              for="label_BLX"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">BLX</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_BMI"
+              id="label_BMI"
+              class="peer hidden"
+              onclick="on_change_ticker('BMI')"
+            />
+            <label
+              for="label_BMI"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">BMI</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_BOSC"
+              id="label_BOSC"
+              class="peer hidden"
+              onclick="on_change_ticker('BOSC')"
+            />
+            <label
+              for="label_BOSC"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">BOSC</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_BRAG"
+              id="label_BRAG"
+              class="peer hidden"
+              onclick="on_change_ticker('BRAG')"
+            />
+            <label
+              for="label_BRAG"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">BRAG</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_CAAP"
+              id="label_CAAP"
+              class="peer hidden"
+              onclick="on_change_ticker('CAAP')"
+            />
+            <label
+              for="label_CAAP"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">CAAP</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_CELH"
+              id="label_CELH"
+              class="peer hidden"
+              onclick="on_change_ticker('CELH')"
+            />
+            <label
+              for="label_CELH"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">CELH</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_CNF"
+              id="label_CNF"
+              class="peer hidden"
+              onclick="on_change_ticker('CNF')"
+            />
+            <label
+              for="label_CNF"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">CNF</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_CRS"
+              id="label_CRS"
+              class="peer hidden"
+              onclick="on_change_ticker('CRS')"
+            />
+            <label
+              for="label_CRS"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">CRS</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_CSPI"
+              id="label_CSPI"
+              class="peer hidden"
+              onclick="on_change_ticker('CSPI')"
+            />
+            <label
+              for="label_CSPI"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">CSPI</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_DECK"
+              id="label_DECK"
+              class="peer hidden"
+              onclick="on_change_ticker('DECK')"
+            />
+            <label
+              for="label_DECK"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">DECK</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_DOLE"
+              id="label_DOLE"
+              class="peer hidden"
+              onclick="on_change_ticker('DOLE')"
+            />
+            <label
+              for="label_DOLE"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">DOLE</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_ELF"
+              id="label_ELF"
+              class="peer hidden"
+              onclick="on_change_ticker('ELF')"
+            />
+            <label
+              for="label_ELF"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">ELF</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_EME"
+              id="label_EME"
+              class="peer hidden"
+              onclick="on_change_ticker('EME')"
+            />
+            <label
+              for="label_EME"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">EME</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_EXP"
+              id="label_EXP"
+              class="peer hidden"
+              onclick="on_change_ticker('EXP')"
+            />
+            <label
+              for="label_EXP"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">EXP</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_EXTR"
+              id="label_EXTR"
+              class="peer hidden"
+              onclick="on_change_ticker('EXTR')"
+            />
+            <label
+              for="label_EXTR"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">EXTR</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_FCNCA"
+              id="label_FCNCA"
+              class="peer hidden"
+              onclick="on_change_ticker('FCNCA')"
+            />
+            <label
+              for="label_FCNCA"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">FCNCA</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_GGAL"
+              id="label_GGAL"
+              class="peer hidden"
+              onclick="on_change_ticker('GGAL')"
+            />
+            <label
+              for="label_GGAL"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">GGAL</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_GRVY"
+              id="label_GRVY"
+              class="peer hidden"
+              onclick="on_change_ticker('GRVY')"
+            />
+            <label
+              for="label_GRVY"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">GRVY</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_HLX"
+              id="label_HLX"
+              class="peer hidden"
+              onclick="on_change_ticker('HLX')"
+            />
+            <label
+              for="label_HLX"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">HLX</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_IESC"
+              id="label_IESC"
+              class="peer hidden"
+              onclick="on_change_ticker('IESC')"
+            />
+            <label
+              for="label_IESC"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">IESC</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_KNSL"
+              id="label_KNSL"
+              class="peer hidden"
+              onclick="on_change_ticker('KNSL')"
+            />
+            <label
+              for="label_KNSL"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">KNSL</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_KOP"
+              id="label_KOP"
+              class="peer hidden"
+              onclick="on_change_ticker('KOP')"
+            />
+            <label
+              for="label_KOP"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">KOP</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_KRT"
+              id="label_KRT"
+              class="peer hidden"
+              onclick="on_change_ticker('KRT')"
+            />
+            <label
+              for="label_KRT"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">KRT</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_KRUS"
+              id="label_KRUS"
+              class="peer hidden"
+              onclick="on_change_ticker('KRUS')"
+            />
+            <label
+              for="label_KRUS"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">KRUS</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_LII"
+              id="label_LII"
+              class="peer hidden"
+              onclick="on_change_ticker('LII')"
+            />
+            <label
+              for="label_LII"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">LII</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_MEDP"
+              id="label_MEDP"
+              class="peer hidden"
+              onclick="on_change_ticker('MEDP')"
+            />
+            <label
+              for="label_MEDP"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">MEDP</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_MLR"
+              id="label_MLR"
+              class="peer hidden"
+              onclick="on_change_ticker('MLR')"
+            />
+            <label
+              for="label_MLR"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">MLR</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_MOD"
+              id="label_MOD"
+              class="peer hidden"
+              onclick="on_change_ticker('MOD')"
+            />
+            <label
+              for="label_MOD"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">MOD</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_MPX"
+              id="label_MPX"
+              class="peer hidden"
+              onclick="on_change_ticker('MPX')"
+            />
+            <label
+              for="label_MPX"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">MPX</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_NAT"
+              id="label_NAT"
+              class="peer hidden"
+              onclick="on_change_ticker('NAT')"
+            />
+            <label
+              for="label_NAT"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">NAT</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_NATI"
+              id="label_NATI"
+              class="peer hidden"
+              onclick="on_change_ticker('NATI')"
+            />
+            <label
+              for="label_NATI"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">NATI</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_NEU"
+              id="label_NEU"
+              class="peer hidden"
+              onclick="on_change_ticker('NEU')"
+            />
+            <label
+              for="label_NEU"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">NEU</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_NOA"
+              id="label_NOA"
+              class="peer hidden"
+              onclick="on_change_ticker('NOA')"
+            />
+            <label
+              for="label_NOA"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">NOA</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_NR"
+              id="label_NR"
+              class="peer hidden"
+              onclick="on_change_ticker('NR')"
+            />
+            <label
+              for="label_NR"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">NR</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_NSSC"
+              id="label_NSSC"
+              class="peer hidden"
+              onclick="on_change_ticker('NSSC')"
+            />
+            <label
+              for="label_NSSC"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">NSSC</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_NTES"
+              id="label_NTES"
+              class="peer hidden"
+              onclick="on_change_ticker('NTES')"
+            />
+            <label
+              for="label_NTES"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">NTES</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_NU"
+              id="label_NU"
+              class="peer hidden"
+              onclick="on_change_ticker('NU')"
+            />
+            <label
+              for="label_NU"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">NU</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_NVO"
+              id="label_NVO"
+              class="peer hidden"
+              onclick="on_change_ticker('NVO')"
+            />
+            <label
+              for="label_NVO"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">NVO</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_NVT"
+              id="label_NVT"
+              class="peer hidden"
+              onclick="on_change_ticker('NVT')"
+            />
+            <label
+              for="label_NVT"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">NVT</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_ODC"
+              id="label_ODC"
+              class="peer hidden"
+              onclick="on_change_ticker('ODC')"
+            />
+            <label
+              for="label_ODC"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">ODC</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_OII"
+              id="label_OII"
+              class="peer hidden"
+              onclick="on_change_ticker('OII')"
+            />
+            <label
+              for="label_OII"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">OII</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_OMAB"
+              id="label_OMAB"
+              class="peer hidden"
+              onclick="on_change_ticker('OMAB')"
+            />
+            <label
+              for="label_OMAB"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">OMAB</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_PAM"
+              id="label_PAM"
+              class="peer hidden"
+              onclick="on_change_ticker('PAM')"
+            />
+            <label
+              for="label_PAM"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">PAM</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_PBPB"
+              id="label_PBPB"
+              class="peer hidden"
+              onclick="on_change_ticker('PBPB')"
+            />
+            <label
+              for="label_PBPB"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">PBPB</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_PCAR"
+              id="label_PCAR"
+              class="peer hidden"
+              onclick="on_change_ticker('PCAR')"
+            />
+            <label
+              for="label_PCAR"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">PCAR</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_PH"
+              id="label_PH"
+              class="peer hidden"
+              onclick="on_change_ticker('PH')"
+            />
+            <label
+              for="label_PH"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">PH</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_PLUS"
+              id="label_PLUS"
+              class="peer hidden"
+              onclick="on_change_ticker('PLUS')"
+            />
+            <label
+              for="label_PLUS"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">PLUS</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_POWL"
+              id="label_POWL"
+              class="peer hidden"
+              onclick="on_change_ticker('POWL')"
+            />
+            <label
+              for="label_POWL"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">POWL</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_RCL"
+              id="label_RCL"
+              class="peer hidden"
+              onclick="on_change_ticker('RCL')"
+            />
+            <label
+              for="label_RCL"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">RCL</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_SCX"
+              id="label_SCX"
+              class="peer hidden"
+              onclick="on_change_ticker('SCX')"
+            />
+            <label
+              for="label_SCX"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">SCX</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_SHAK"
+              id="label_SHAK"
+              class="peer hidden"
+              onclick="on_change_ticker('SHAK')"
+            />
+            <label
+              for="label_SHAK"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">SHAK</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_SOVO"
+              id="label_SOVO"
+              class="peer hidden"
+              onclick="on_change_ticker('SOVO')"
+            />
+            <label
+              for="label_SOVO"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">SOVO</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_STN"
+              id="label_STN"
+              class="peer hidden"
+              onclick="on_change_ticker('STN')"
+            />
+            <label
+              for="label_STN"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">STN</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_STNE"
+              id="label_STNE"
+              class="peer hidden"
+              onclick="on_change_ticker('STNE')"
+            />
+            <label
+              for="label_STNE"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">STNE</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_TBBK"
+              id="label_TBBK"
+              class="peer hidden"
+              onclick="on_change_ticker('TBBK')"
+            />
+            <label
+              for="label_TBBK"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">TBBK</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_TDW"
+              id="label_TDW"
+              class="peer hidden"
+              onclick="on_change_ticker('TDW')"
+            />
+            <label
+              for="label_TDW"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">TDW</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_TEX"
+              id="label_TEX"
+              class="peer hidden"
+              onclick="on_change_ticker('TEX')"
+            />
+            <label
+              for="label_TEX"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">TEX</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_TK"
+              id="label_TK"
+              class="peer hidden"
+              onclick="on_change_ticker('TK')"
+            />
+            <label
+              for="label_TK"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">TK</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_TNK"
+              id="label_TNK"
+              class="peer hidden"
+              onclick="on_change_ticker('TNK')"
+            />
+            <label
+              for="label_TNK"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">TNK</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_TOL"
+              id="label_TOL"
+              class="peer hidden"
+              onclick="on_change_ticker('TOL')"
+            />
+            <label
+              for="label_TOL"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">TOL</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_URI"
+              id="label_URI"
+              class="peer hidden"
+              onclick="on_change_ticker('URI')"
+            />
+            <label
+              for="label_URI"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">URI</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_USAP"
+              id="label_USAP"
+              class="peer hidden"
+              onclick="on_change_ticker('USAP')"
+            />
+            <label
+              for="label_USAP"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">USAP</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_USLM"
+              id="label_USLM"
+              class="peer hidden"
+              onclick="on_change_ticker('USLM')"
+            />
+            <label
+              for="label_USLM"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">USLM</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_VRT"
+              id="label_VRT"
+              class="peer hidden"
+              onclick="on_change_ticker('VRT')"
+            />
+            <label
+              for="label_VRT"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">VRT</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_WFRD"
+              id="label_WFRD"
+              class="peer hidden"
+              onclick="on_change_ticker('WFRD')"
+            />
+            <label
+              for="label_WFRD"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">WFRD</p>
+            </label>
+          </div>
+          
+          <div>
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_YPF"
+              id="label_YPF"
+              class="peer hidden"
+              onclick="on_change_ticker('YPF')"
+            />
+            <label
+              for="label_YPF"
+              class="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">YPF</p>
+            </label>
+          </div>
+          
+        </fieldset>
+      </div>
+      <div class="col-span-3">
+        <div id="chart_main" style="width: 100%; height: 90vh"></div>
+      </div>
     </div>
-    
 
     <a id="download" download="target.csv">
       <button class="bg-indigo-700 font-semibold text-white py-2 px-4 rounded">
         CSVダウンロード
       </button>
     </a>
+
+    <script src="bundle.js"></script>
     <script>
+      const on_change_ticker = (ticker) => {
+        draw_chart(ticker);
+      };
+
       const download = () => {
         const watch_list = document.querySelectorAll(".watchlist");
         const target_list = [];
