@@ -189,6 +189,7 @@ ALLK,ALLAKOS INC,アラコス,NASDAQ,医薬品（バイオテクノロジー）,
 ALLO,ALLOGENE THRPTCS,アロジーン・セラピューティクス,NASDAQ,ヘルスケア,○
 ALLT,ALLOT,アロット,NASDAQ,ネットワーク,○
 ALLY,ALLY FINANCIAL,アライ・ファイナンシャル,NYSE,金融（銀行）,○
+ALNT,ALLIENT,アライアント,NASDAQ,その他製造,○
 ALNY,ALNYLAM PHARMACE,アルナイラム・ファーマシューティカルズ,NASDAQ,ヘルスケア,○
 ALOT,ASTRONOVA INC,アストロノバ,NASDAQ,コンピュータ,○
 ALPN,ALPINE IMMUNE,アルパイン・イミューン・サイエンシズ,NASDAQ,医薬品（バイオテクノロジー）,○
@@ -229,7 +230,6 @@ AMKR,AMKOR TECHNOLOGY,アムコー・テクノロジー,NASDAQ,半導体,○
 AMLX,AMYLYX PHARMA,アミリックス・ファーマシューティカルズ,NASDAQ,医薬品（バイオテクノロジー）,○
 AMN,AMN HEALTHCARE,AMNヘルスケア・サービシズ,NYSE,ソフトウェア・サービス,○
 AMNB,AMRCAN NTNL BANK,アメリカン・ナショナル・バンクシェアーズ,NASDAQ,金融（銀行）,○
-AMOT,ALLIED MOTION,アライド・モーション・テクノロジーズ,NASDAQ,その他製造,○
 AMP,AMERIPRISE FIN,アメリプライズ・ファイナンシャル,NYSE,金融（証券）,○
 AMPG,AMPLITECH GROUP,アンプリテック・グループ,NASDAQ,通信機器,○
 AMPH,AMPHASTAR PHARMA,アンファスター・ファーマシューティカルズ,NASDAQ,医薬品,○
@@ -1702,7 +1702,6 @@ FPX,FT US EQTY OPPTY,ファースト・トラスト・米国エクイティ・�
 FPXI,FT INTL EQ OPPTY,ファースト・トラスト・インターナショナル・エクイティ・オポチュニティーズ・ETF,NASDAQ,その他,○
 FRAF,FRANKLIN FIN SRV,フランクリン・ファイナンシャル・サービシズ,NASDAQ,金融（銀行）,○
 FRBA,FIRST BANK,ファースト・バンク,NASDAQ,金融（銀行）,○
-FRBK,REPUBLIC FIRST,リパブリック・ファ－スト・バンコープ,NASDAQ,金融（銀行）,○
 FREE,WHOLE EARTH BRND,ホール・アース・ブランズ,NASDAQ,食品,○
 FREQ,FREQUENCY THERAP,フリークエンシー・セラピューティクス,NASDAQ,医薬品（バイオテクノロジー）,○
 FREY,FREYR BATTERY SA,フレイ・バッテリー,NYSE,その他製造,○
@@ -2356,6 +2355,7 @@ JPST,JPM ULST INC ETF,JPモルガン・ウルトラショート・インカムET
 JRSH,JERASH HOLDINGS,ジェラシュ・ホールディングスUS,NASDAQ,その他製造,○
 JRVR,JAMES RIVER GRP,ジェームズ・リバー・グループ・ホールディンク,NASDAQ,金融(保険),○
 JSPR,JASPER THERAPEU,ジャスパー・セラピューティクス,NASDAQ,医薬品（バイオテクノロジー）,○
+JUPW,JUPITER WELLNESS,ジュピター・ウェルネス,NASDAQ,医薬品,○
 JVA,COFFEE HLDING CO,コーヒー・ホールディング,NASDAQ,飲料,○
 JWEL,JOWELL GLOBAL,ジョウェル・グローバル,NASDAQ,小売,○
 JWN,NORDSTROM,ノードストローム,NYSE,専門店,○
@@ -4796,7 +4796,6 @@ YTEN,YIELD10 BIOSCNCE,イールド10・バイオサイエンス,NASDAQ,医薬品
 YTRA,YATRA ONLINE,ヤトラ・オンライン,NASDAQ,ソフトウェア・サービス,○
 YUM,YUM BRANDS INC,ヤム・ブランズ,NYSE,外食,○
 YUMC,YUM CHINA HLD,ヤム・チャイナ,NYSE,外食,○
-YVR,LIQUID MEDIA GR,リキッド・メディア・グループ,NASDAQ,エンターテイメント,○
 YY,JOYY INC,ジェイオーワイワイ,NASDAQ,ネットワーク,○
 YYY,AMPLIFY H INCOME,アンプリファイ・ハイ・インカム・ETF,NYSE,その他,○
 Z,ZILLOW GROUP C,ジロー グループ クラスC,NASDAQ,その他,○
