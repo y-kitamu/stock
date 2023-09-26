@@ -290,7 +290,7 @@ APPF,APPFOLIO INC,アップフォリオ,NASDAQ,ソフトウェア・サービス
 APPN,APPIAN CORP,アピアン・コーポレーション,NASDAQ,ソフトウェア・サービス,○
 APPS,DIGITAL TURBINE,デジタル・タービン,NASDAQ,ソフトウェア・サービス,○
 APRE,APREA THERAPEU,アプレア・セラピューティクス,NASDAQ,医薬品（バイオテクノロジー）,○
-APRN,BLUE APRON,ブルーエプロン,NYSE,小売,○
+APRN,BLUE APRON,ブルーエプロン,NASDAQ,小売,○
 APTO,APTOSE BIOSCNCS,アポトース・バイオサイエンシズ,NASDAQ,医薬品（バイオテクノロジー）,○
 APTV,APTIV PLC,アプティブ・PLC,NYSE,その他製造,○
 APVO,APTEVO THERAPEU,アプテボ・セラピューティクス,NASDAQ,医薬品（バイオテクノロジー）,○
@@ -390,7 +390,7 @@ ATUS,ALTICE USA INC,アルティスUSA,NYSE,通信サービス,○
 ATVI,ACTIVISION BLIZZ,アクティビジョン・ブリザード,NASDAQ,ソフトウェア・サービス,○
 ATXI,AVENUE THERAPE,アベニュー・セラピューティクス,NASDAQ,医薬品（バイオテクノロジー）,○
 ATXS,ASTRIA THERAPE,アストリア・セラピューティクス,NASDAQ,医薬品（バイオテクノロジー）,○
-AU,ANGLOGOLD ASHANT,アングロゴールド・アシャンティ,NYSE,その他,○
+AU,ANGLO ASH  NEWCO,アングロゴールド・アシャンティ,NYSE,その他,○
 AUB,ATLANTIC UNI BNK,アトランティック・ユニオン・バンクシェアーズ,NYSE,金融（銀行）,○
 AUBN,AUBURN NATL BANC,オーバーン・ナショナル・バンコーポレーション,NASDAQ,金融（銀行）,○
 AUDC,AUDIOCODES LTD,オーディオコーズ,NASDAQ,通信機器,○
@@ -639,7 +639,6 @@ BRAG,BRAGG GAMING GP,ブラグ・ゲーミング・グループ,NASDAQ,エンタ
 BRBR,BELLRING INTRMDT,ベルリング・インターメディエイト・ホールディングス,NYSE,食品,○
 BRC,BRADY CORP,ブレイディ,NYSE,ソフトウェア・サービス,○
 BRCC,BRC INC,BRC,NYSE,その他,○
-BRDS,BIRD GLOBAL INC,バード・グローバル,NYSE,自動車,○
 BRF,V BRAZIL S-CAP,ヴァンエック・ブラジル小型株ETF,NYSE,その他,○
 BRFH,BARFRESH FOOD GP,バーフレッシュ・フード・グループ,NASDAQ,食品,○
 BRFS,BRF ADR,ビーアールエフ,NYSE,食品,○
@@ -1030,7 +1029,7 @@ CRESY,CRESUD SACIF Y A,クレサッド・サシフYA,NASDAQ,その他,○
 CREX,CREATIV REALITIE,クリエイティブ・リアリティーズ,NASDAQ,ソフトウェア・サービス,○
 CRGE,CHARGE ENTER,チャージ・エンタープライズ,NASDAQ,その他製造,○
 CRGY,CRESCENT ENERGY,クレセント・エナジー,NYSE,石油,○
-CRH,CRH PUBLIC LTD,CRH,NYSE,その他製造,○
+CRH,CRH PUBLIC NEWCO,CRH,NYSE,その他製造,○
 CRI,CARTERS INC,カーターズ,NYSE,専門店,○
 CRK,COMSTOCK RESRCES,コムストック・リソーシズ,NYSE,石油,○
 CRL,CHARLS RIVER LAB,チャールズリバー・ラボラトリーズ・インターナショナル,NYSE,ヘルスケア,○
@@ -1171,7 +1170,6 @@ DBC,INVESCO COMMODIT,インベスコDB コモディティ・インデックス�
 DBGI,DIGITAL BRANDS,デジタル・ブランズ・グループ,NASDAQ,小売,○
 DBI,DSW INC CLASS A,デザイナー・ブランズ,NYSE,専門店,○
 DBRG,DIGITALBRIDGE,デジタルブリッジ・グループ,NYSE,通信サービス,○
-DBTX,DECIBEL THERAPE,デシベル・セラピューティクス,NASDAQ,医薬品（バイオテクノロジー）,○
 DBX,DROPBOX INC,ドロップボックス,NASDAQ,ソフトウェア・サービス,○
 DCBO,DOCEBO INC,ドセボ,NASDAQ,ソフトウェア・サービス,○
 DCFC,TRITIUM DCFC,トリチウムDCFC,NASDAQ,その他,○
@@ -2006,7 +2004,6 @@ HIBB,HIBBETT INC,ヒベット,NASDAQ,専門店,○
 HIFS,HINGHAM INST SAV,ヒンガム・インスティチューション・フォー・セイビングス,NASDAQ,金融（銀行）,○
 HIG,HARTFORD FIN,ハートフォード・フィナンシャル・サービシズ,NYSE,金融(保険),○
 HII,HUNTINGTON,ハンティントン・インガルス・インダストリーズ,NYSE,その他製造,○
-HILS,HILLSTREAM BIO,ヒルストリーム・バイオファーマ,NASDAQ,医薬品（バイオテクノロジー）,○
 HIMS,HIMS HERS HEALTH,ヒムズ・ハーズ・ヘルス,NYSE,ソフトウェア・サービス,○
 HIMX,HIMAX TECHNOLOGS,ハイマックス・テクノロジーズ,NASDAQ,半導体,○
 HIPO,HIPPO HOLDINGS,ヒッポ・ホールディングス,NYSE,金融(保険),○
@@ -4161,6 +4158,7 @@ TGS,TRANSPORTADORA,トランスポルタドラ・デ・ガス・デル・スル,
 TGT,TARGET CP.,ターゲット,NYSE,小売,○
 TGTX,TG THERAPEUTICS,TGセラピューティクス,NASDAQ,医薬品（バイオテクノロジー）,○
 TH,TARGET HOSPTALTY,ターゲット・ホスピタリティ,NASDAQ,ホテル,○
+THAR,THARIMMUNE,タリムーネ,NASDAQ,医薬品（バイオテクノロジー）,○
 THC,TENET HEALTHCARE,テネット・ヘルスケア,NYSE,医療サービス,○
 THCH,TH INTERNATIONAL,THインターナショナル,NASDAQ,飲料,○
 THD,ISHARES THAILAND,iシェアーズ MSCI タイ ETF,NYSE,その他,○
