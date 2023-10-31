@@ -61,7 +61,7 @@
     },
     "2022-12-31": {
         "Tax Effect Of Unusual Items": 0.0,
-        "Tax Rate For Calcs": 0.4,
+        "Tax Rate For Calcs": 0.21,
         "Net Income From Continuing Operation Net Minority Interest": 557854000.0,
         "Reconciled Depreciation": 14809000.0,
         "Net Interest Income": 2303000.0,
@@ -91,7 +91,7 @@
     },
     "2022-09-30": {
         "Tax Effect Of Unusual Items": 0.0,
-        "Tax Rate For Calcs": 0.4,
+        "Tax Rate For Calcs": 0.21,
         "Net Income From Continuing Operation Net Minority Interest": 2296000.0,
         "Reconciled Depreciation": 14892000.0,
         "Net Interest Income": -28087000.0,
@@ -148,5 +148,35 @@
         "General And Administrative Expense": 293723000.0,
         "Total Revenue": 760516000.0,
         "Operating Revenue": 760516000.0
+    },
+    "2023-09-30": {
+        "Tax Effect Of Unusual Items": 0.0,
+        "Tax Rate For Calcs": 0.175924,
+        "Net Income From Continuing Operation Net Minority Interest": 551994000.0,
+        "Reconciled Depreciation": NaN,
+        "Net Interest Income": -1466000.0,
+        "Interest Expense": 110599000.0,
+        "Interest Income": 109133000.0,
+        "Normalized Income": 551994000.0,
+        "Net Income From Continuing And Discontinued Operation": 551994000.0,
+        "Diluted Average Shares": 758046096.0,
+        "Basic Average Shares": 757958602.0,
+        "Diluted EPS": 0.73,
+        "Basic EPS": 0.73,
+        "Diluted NI Availto Com Stockholders": 551994000.0,
+        "Net Income Common Stockholders": 551994000.0,
+        "Net Income": 551994000.0,
+        "Minority Interests": -368748000.0,
+        "Net Income Including Noncontrolling Interests": 920742000.0,
+        "Net Income Continuous Operations": 920742000.0,
+        "Tax Provision": 196560000.0,
+        "Pretax Income": 1117302000.0,
+        "Gain On Sale Of Security": 498925000.0,
+        "Operating Expense": 1018388000.0,
+        "Other Operating Expenses": NaN,
+        "Selling General And Administration": 318120000.0,
+        "General And Administrative Expense": 318120000.0,
+        "Total Revenue": 2135690000.0,
+        "Operating Revenue": 2135690000.0
     }
 }
