@@ -1,7 +1,7 @@
 {
     "2023-06-30": {
         "Tax Effect Of Unusual Items": 0.0,
-        "Tax Rate For Calcs": 0.4,
+        "Tax Rate For Calcs": 0.21,
         "Total Unusual Items": 0.0,
         "Total Unusual Items Excluding Goodwill": 0.0,
         "Net Income From Continuing Operation Net Minority Interest": 39000.0,
@@ -248,5 +248,39 @@
         "Operating Income": NaN,
         "EBIT": NaN,
         "Net Income": NaN
+    },
+    "2023-09-30": {
+        "Tax Effect Of Unusual Items": 0.0,
+        "Tax Rate For Calcs": 0.137056,
+        "Total Unusual Items": 0.0,
+        "Total Unusual Items Excluding Goodwill": 0.0,
+        "Net Income From Continuing Operation Net Minority Interest": 170000.0,
+        "Reconciled Depreciation": NaN,
+        "Net Interest Income": 1972000.0,
+        "Interest Expense": 497000.0,
+        "Interest Income": 2469000.0,
+        "Normalized Income": 170000.0,
+        "Net Income From Continuing And Discontinued Operation": 170000.0,
+        "Diluted Average Shares": 5666667.0,
+        "Basic Average Shares": 5666667.0,
+        "Diluted EPS": 0.03,
+        "Basic EPS": 0.03,
+        "Diluted NI Availto Com Stockholders": 170000.0,
+        "Net Income Common Stockholders": 170000.0,
+        "Net Income": 170000.0,
+        "Net Income Including Noncontrolling Interests": 170000.0,
+        "Net Income Continuous Operations": 170000.0,
+        "Tax Provision": 27000.0,
+        "Pretax Income": 197000.0,
+        "Special Income Charges": 0.0,
+        "Other Special Charges": NaN,
+        "Selling General And Administration": 1282000.0,
+        "Selling And Marketing Expense": 25000.0,
+        "General And Administrative Expense": 1257000.0,
+        "Other Gand A": NaN,
+        "Insurance And Claims": NaN,
+        "Salaries And Wages": 1257000.0,
+        "Total Revenue": 2210000.0,
+        "Operating Revenue": 2210000.0
     }
 }
