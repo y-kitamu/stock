@@ -1,7 +1,7 @@
 {
     "2023-03-31": {
         "Tax Effect Of Unusual Items": 0.0,
-        "Tax Rate For Calcs": 0.4,
+        "Tax Rate For Calcs": 0.21,
         "Normalized EBITDA": -97000000.0,
         "Total Unusual Items": 18098000.0,
         "Total Unusual Items Excluding Goodwill": 18098000.0,
@@ -48,8 +48,8 @@
         "Operating Revenue": 131000000.0
     },
     "2022-12-31": {
-        "Tax Effect Of Unusual Items": 60000000.0,
-        "Tax Rate For Calcs": 0.4,
+        "Tax Effect Of Unusual Items": 31500000.0,
+        "Tax Rate For Calcs": 0.21,
         "Normalized EBITDA": -358000000.0,
         "Total Unusual Items": 150000000.0,
         "Total Unusual Items Excluding Goodwill": 150000000.0,
@@ -60,12 +60,12 @@
         "EBIT": -208000000.0,
         "Net Interest Income": -1722000.0,
         "Interest Expense": 5722000.0,
-        "Normalized Income": -142000000.0,
+        "Normalized Income": -170500000.0,
         "Net Income From Continuing And Discontinued Operation": -52000000.0,
         "Total Expenses": 360000000.0,
         "Total Operating Income As Reported": -208000000.0,
-        "Diluted Average Shares": 142046000.0,
-        "Basic Average Shares": 142046000.0,
+        "Diluted Average Shares": 142000000.0,
+        "Basic Average Shares": 142000000.0,
         "Diluted EPS": -0.37,
         "Basic EPS": -0.37,
         "Diluted NI Availto Com Stockholders": -52000000.0,
@@ -617,7 +617,7 @@
     },
     "2023-06-30": {
         "Tax Effect Of Unusual Items": 0.0,
-        "Tax Rate For Calcs": 0.4,
+        "Tax Rate For Calcs": 0.21,
         "Normalized EBITDA": -59000000.0,
         "Total Unusual Items": 21510000.0,
         "Total Unusual Items Excluding Goodwill": 21510000.0,
