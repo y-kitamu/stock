@@ -43,6 +43,7 @@
         "Gross Profit": 45726000.0,
         "Cost Of Revenue": 143151000.0,
         "Total Revenue": 188877000.0,
+        "Excise Taxes": NaN,
         "Operating Revenue": 188877000.0
     },
     "2022-12-31": {
@@ -89,6 +90,7 @@
         "Gross Profit": 148271000.0,
         "Cost Of Revenue": 191741000.0,
         "Total Revenue": 340012000.0,
+        "Excise Taxes": NaN,
         "Operating Revenue": 340012000.0
     },
     "2022-09-30": {
@@ -135,6 +137,7 @@
         "Gross Profit": 521973000.0,
         "Cost Of Revenue": 522451000.0,
         "Total Revenue": 1044424000.0,
+        "Excise Taxes": NaN,
         "Operating Revenue": 1044424000.0
     },
     "2022-06-30": {
@@ -290,6 +293,54 @@
         "Gross Profit": 98537000.0,
         "Cost Of Revenue": 279586000.0,
         "Total Revenue": 378123000.0,
+        "Excise Taxes": NaN,
         "Operating Revenue": 378123000.0
+    },
+    "2023-09-30": {
+        "Tax Effect Of Unusual Items": 64820.68452,
+        "Tax Rate For Calcs": 0.003083,
+        "Normalized EBITDA": -60330000.0,
+        "Total Unusual Items": 21028000.0,
+        "Total Unusual Items Excluding Goodwill": 21028000.0,
+        "Net Income From Continuing Operation Net Minority Interest": 170988000.0,
+        "Reconciled Cost Of Revenue": 222056000.0,
+        "EBITDA": -39302000.0,
+        "EBIT": -39302000.0,
+        "Net Interest Income": 158259000.0,
+        "Interest Income": 158259000.0,
+        "Normalized Income": 150024820.68452,
+        "Net Income From Continuing And Discontinued Operation": 170988000.0,
+        "Total Expenses": 367058000.0,
+        "Total Operating Income As Reported": -39302000.0,
+        "Diluted Average Shares": 1344359144.0,
+        "Basic Average Shares": 1316452743.0,
+        "Diluted EPS": 0.127,
+        "Basic EPS": 0.13,
+        "Diluted NI Availto Com Stockholders": 170988000.0,
+        "Net Income Common Stockholders": 170988000.0,
+        "Net Income": 170988000.0,
+        "Minority Interests": -1709000.0,
+        "Net Income Including Noncontrolling Interests": 172697000.0,
+        "Net Income Continuous Operations": 172697000.0,
+        "Tax Provision": 534000.0,
+        "Pretax Income": 173231000.0,
+        "Other Income Expense": 54274000.0,
+        "Other Non Operating Income Expenses": 33246000.0,
+        "Gain On Sale Of Security": 21028000.0,
+        "Net Non Operating Interest Income Expense": 158259000.0,
+        "Total Other Finance Cost": NaN,
+        "Interest Income Non Operating": 158259000.0,
+        "Operating Income": -39302000.0,
+        "Operating Expense": 145002000.0,
+        "Research And Development": 30785000.0,
+        "Selling General And Administration": 114217000.0,
+        "Selling And Marketing Expense": 39698000.0,
+        "General And Administrative Expense": 74519000.0,
+        "Other Gand A": 74519000.0,
+        "Gross Profit": 105700000.0,
+        "Cost Of Revenue": 222056000.0,
+        "Total Revenue": 327756000.0,
+        "Excise Taxes": 100313000.0,
+        "Operating Revenue": 428069000.0
     }
 }

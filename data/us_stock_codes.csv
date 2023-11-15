@@ -280,6 +280,7 @@ APD,AIR PRODUCTS,エアープロダクツ・アンド・ケミカルズ,NYSE,化
 APDN,APPLIED DNA SCNC,アプライドDNAサイエンシス,NASDAQ,ネットワークセキュリティー,○
 APEI,AMERICAN PUB EDU,アメリカン・パブリック・エデュケーション,NASDAQ,ソフトウェア・サービス,○
 APG,API GROUP CORP,エーピーアイ・グループ,NYSE,ソフトウェア・サービス,○
+APGB,APOLLO STR GR 2,アポロ・ストラテジック・グロース・キャピタル2,NYSE,その他,○
 APH,AMPHENOL CORP CL,アンフェノール,NYSE,その他製造,○
 API,AGORA INC,アゴラ,NASDAQ,ソフトウェア・サービス,○
 APLS,APELLIS PHARMA,アペリス・ファーマシューティカルズ,NASDAQ,医薬品（バイオテクノロジー）,○
@@ -3367,7 +3368,6 @@ PRAX,PRAXIS PRECISION,プラクシス・プレシジョン・メディシンズ,
 PRCH,PORCH GROUP INC,ポーチ・グループ,NASDAQ,ソフトウェア・サービス,○
 PRCT,PROCEPT BIOROBO,プロセプト・バイオロボティクス,NASDAQ,医療サービス,○
 PRDO,PERDOCEO EDU,パルドセオ・エデュケーション,NASDAQ,ソフトウェア・サービス,○
-PRE,PRENETICS GLOBAL,プレネティクス・グローバル,NASDAQ,その他,○
 PRFT,PERFICIENT INC,パーフィシェント,NASDAQ,ソフトウェア・サービス,○
 PRG,PROG HOLDINGS,プログ・ホールディングス,NYSE,小売,○
 PRGO,PERRIGO CO PLC,ペリゴ,NYSE,医薬品,○
@@ -3584,6 +3584,7 @@ RMNI,RIMINI STREET,リミニ・ストリート,NASDAQ,ソフトウェア・サ�
 RMR,THE RMR GROUP,RMRグループ,NASDAQ,ソフトウェア・サービス,○
 RMTI,ROCKWELL MEDICAL,ロックウェル・メディカル,NASDAQ,医薬品（バイオテクノロジー）,○
 RNA,AVIDITY BSCIENCE,アヴィディティ・バイオサイエンシズ,NASDAQ,医薬品（バイオテクノロジー）,○
+RNAC,CARTESIAN THERAP,カーティージャン・セラピューティクス,NASDAQ,医薬品（バイオテクノロジー）,○
 RNAZ,TRANSCODE THERA,トランスコード・セラピューティクス,NASDAQ,医薬品（バイオテクノロジー）,○
 RNG,RINGCENTRAL INC,リングセントラル,NYSE,ソフトウェア・サービス,○
 RNGR,RANGER ENRG SERV,レンジャー・エナジー・サービシズ,NYSE,石油,○
@@ -3729,7 +3730,6 @@ SEED,ORIGIN AGRITECH,オリジン・アグリテック,NASDAQ,化学,○
 SEEL,SEELOS THERAPEU,ゼーロス・セラピューティクス,NASDAQ,医薬品（バイオテクノロジー）,○
 SEER,SEER INC,シーア,NASDAQ,医薬品（バイオテクノロジー）,○
 SEIC,SEI INVESTMENTS,SEIインベストメンツ,NASDAQ,情報処理サービス,○
-SELB,SELECTA BSCIENCE,セレクタ・バイオサイエンシズ,NASDAQ,医薬品（バイオテクノロジー）,○
 SEM,SELECT MEDICAL,セレクト・メディカル・ホールディングス,NYSE,ヘルスケア,○
 SEMR,SEMRUSH HOLDINGS,セムラッシュ・ホールディングス,NYSE,ソフトウェア・サービス,○
 SENEA,SENECA FOODS CO,セネカ・フーズ,NASDAQ,食品,○
@@ -4084,6 +4084,7 @@ TC,TUANCHE LTD,トワンチョー,NASDAQ,ソフトウェア・サービス,○
 TCBC,TC BANCSHARES,TCバンクシェアーズ,NASDAQ,金融（銀行）,○
 TCBI,TEXAS CAPITAL BA,テキサス・キャピタル・バンクシェアズ,NASDAQ,金融（銀行）,○
 TCBK,TRICO BANCSHARES,トリコ・バンクシェアーズ,NASDAQ,金融（銀行）,○
+TCBP,TC BIOPHARM HOLD,TCバイオファーム・ホールディングス,NASDAQ,医薬品（バイオテクノロジー）,○
 TCBX,3RD COAST BNCSHR,サード・コースト・バンクシェアーズ,NASDAQ,金融（銀行）,○
 TCI,TRANSCN REAL INV,トランスコンチネンタル・リアルティ・インベスターズ,NYSE,その他,○
 TCMD,TACTILE SYS TECH,タクタイル・システムズ・テクノロジー,NASDAQ,ヘルスケア,○
@@ -4151,7 +4152,6 @@ TIGR,UP FINTECH HLD,アップ・フィンテック・ホールディング,NASDA
 TIL,INSTIL BIO INC,インスティル・バイオ,NASDAQ,医薬品（バイオテクノロジー）,○
 TILE,INTERFACE INC,インターフェース,NASDAQ,その他製造,○
 TIMB,TIM,ティム,NYSE,通信サービス,○
-TIO,TINGO GROUP,ティンゴ・グループ,NASDAQ,コンピュータ,○
 TIP,ISHARES TIPSBOND,iシェアーズ 米国物価連動国債 ETF,NYSE,その他,○
 TIPT,TIPTREE INC,ティップツリー,NASDAQ,金融(保険),○
 TISI,TEAM INC,チーム,NYSE,ソフトウェア・サービス,○
@@ -4724,7 +4724,6 @@ XPON,EXPION360 INC,エクスピオン360,NASDAQ,その他製造,○
 XPRO,EXPRO GROUP HLD,エクスプロ・グループ・ホールディングス,NYSE,ガス・パイプライン,○
 XRAY,DENTSPLY SIRONA,デンツプライ・シロナ,NASDAQ,ヘルスケア,○
 XRMI,GLBLX SP500 RMNG,グローバルX S&P500・リスク管理・インカム ETF,NYSE,その他,○
-XRTX,XORTX THERAPEUT,XORTXセラピューティクス,NASDAQ,医薬品（バイオテクノロジー）,○
 XRX,XEROX CORP.,ゼロックス,NASDAQ,その他製造,○
 XSOE,WT EM EX STATE,ウィズダムツリー新興国株ニューエコノミーファンド,NYSE,その他,○
 XWEL,XWELL,エクスウェル,NASDAQ,ソフトウェア・サービス,○
