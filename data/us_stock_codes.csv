@@ -758,7 +758,6 @@ CBNK,CAPITAL BANCORP,キャピタル・バンコープ,NASDAQ,金融（銀行）
 CBOE,CBOE GLOBAL,シービーオーイー・グローバル・マーケッツ,NYSE,その他,○
 CBRE,CBRE GROUP INC,CBREグループ,NYSE,その他,○
 CBRL,CRACKER BARREL O,クラッカー・バレル・オールド・カントリー・ストアー,NASDAQ,外食,○
-CBSH,COMMERCE BANC,コマース・バンクシェアーズ,NASDAQ,金融（銀行）,○
 CBT,CABOT CORP,キャボット,NYSE,化学,○
 CBU,COMMUNTY BNK SYS,コミュニティー・バンク・システム,NYSE,金融（銀行）,○
 CBUS,CIBUS INC,シバス,NASDAQ,食品,○
@@ -865,6 +864,7 @@ CIFR,CIPHER MINING,サイファー・マイニング,NASDAQ,ソフトウェア�
 CIG,CEMIG SA SPONS,ミナスジェライス電力,NYSE,電力,○
 CIGI,COLLIERS INTL,コリアーズ・インターナショナル・グループ,NASDAQ,その他,○
 CINF,CINCINNATI FINAN,シンシナティ・ファイナンシャル,NASDAQ,金融(保険),○
+CING,CINGULATE INC,シンギュレイト,NASDAQ,医薬品（バイオテクノロジー）,○
 CINT,CIT INC,CI&T,NYSE,ソフトウェア・サービス,○
 CISO,CISO GLOBAL,CISOグローバル,NASDAQ,ソフトウェア・サービス,○
 CIVB,CIVISTA BANCSHAR,シビスタ・バンクシェアーズ,NASDAQ,金融（銀行）,○
@@ -1401,7 +1401,6 @@ EMN,EASTMAN CHEMICAL,イーストマン・ケミカル,NYSE,化学,○
 EMR,EMERSON ELECTRIC,エマソン・エレクトリック,NYSE,その他製造,○
 ENB,ENBRIDGE INC,エンブリッジ,NYSE,ガス・パイプライン,○
 ENFN,ENFUSION INC,エンフュージョン,NYSE,ソフトウェア・サービス,○
-ENG,ENGLOBAL CORP,エングローバル,NASDAQ,ソフトウェア・サービス,○
 ENIC,ENEL CHILE SA,エネル・チリSA,NYSE,電力,○
 ENLV,ENLIVEX THERAPEU,エンライベックス・セラピューティクス,NASDAQ,医薬品（バイオテクノロジー）,○
 ENOV,ENOVIS CORP,イノヴィス,NYSE,機械,○
@@ -1643,7 +1642,7 @@ FMAO,FARMERS MERCHANT,ファーマーズ＆マーチャンツ・バンコープ,
 FMBH,FIRST MID BANC,ファースト・ミッド・バンクシェアーズ,NASDAQ,金融（銀行）,○
 FMC,FMC CORP,FMC,NYSE,化学,○
 FMNB,FARMERS NTNL BNC,ファーマーズ・ナショナル・バンク,NASDAQ,金融（銀行）,○
-FMS,FRESENIUS MEDICL,フレゼニウス・メディカル・ケア,NYSE,医薬品,○
+FMS,FRESENIUS MCL AG,フレゼニウス・メディカル・ケアAG,NYSE,医薬品,○
 FMX,FOMENTO ECONO,フォメント・エコノミコ・メヒカノ,NYSE,飲料,○
 FN,FABRINET,ファブリネット,NYSE,その他製造,○
 FNA,PARAGON 28 INC,パラゴン28,NYSE,ヘルスケア,○
@@ -1799,7 +1798,6 @@ GGR,GOGORO INC,ゴゴロ,NASDAQ,自動車,○
 GH,GUARDANT HEALTH,ガーダント・ヘルス,NASDAQ,ヘルスケア,○
 GHC,GRAHAM HLDNGS CO,グラハム・ホールディングス,NYSE,ソフトウェア・サービス,○
 GHG,GREENTREE HOSPTL,グリーン・ツリー・ホスピタリティー・グループ,NYSE,ホテル,○
-GHL,GREENHILL & CO,グリーンヒル・アンド・カンパニー,NYSE,金融（銀行）,○
 GHLD,GUILD HOLDINGS,ギルド・ホールディングス,NYSE,金融（銀行）,○
 GHM,GRAHAM CORPRTION,グラハム,NYSE,その他製造,○
 GHRS,GH RESEARCH PLC,GHリサーチ,NASDAQ,医薬品（バイオテクノロジー）,○
@@ -2680,7 +2678,6 @@ MELI,MERCADOLIBRE INC,メルカドリブレ,NASDAQ,情報処理サービス,○
 MEOH,METHANEX CORP,メサネックス,NASDAQ,化学,○
 MERC,MERCER INTL,マーサー・インターナショナル,NASDAQ,紙・パルプ,○
 MESA,MESA AIR GROUP,メサ・エアー,NASDAQ,航空,○
-MESO,MESOBLAST LMITED,メソブラスト,NASDAQ,医薬品（バイオテクノロジー）,○
 MET,METLIFE INC,メットライフ,NYSE,金融(保険),○
 META,META PLATFORMS,メタ・プラットフォームズ,NASDAQ,ソフトウェア・サービス,○
 METC,RAMACO RESOURCES,ラマコ・リソーシズ,NASDAQ,その他,○
@@ -3175,7 +3172,6 @@ PAAS,PAN AMERICAN,パン・アメリカン・シルバー,NYSE,その他,○
 PAC,GR AERO PACIFICO,グルポ・アエロポルチュアリオ・デル・パシフィコ,NYSE,その他製造,○
 PACB,PACIFIC BIO CALI,パシフィック・バイオサイエンシズ・オブ・カリフォルニア,NASDAQ,ヘルスケア,○
 PACK,RANPAK HOLDINGS,ランパック・ホールディングス,NYSE,紙・パルプ,○
-PACW,PACWEST BANCORP,パックウェスト・バンコープ　,NASDAQ,金融（銀行）,○
 PAG,PENSKE AUTOMOTIV,ペンスキー・オートモーティブ・グループ,NYSE,小売,○
 PAGP,PLAINS GP HLD,プレーンズGPホールディングス,NASDAQ,石油,○
 PAGS,PAGSEGURO DIGI,パグセグロ・デジタル,NYSE,情報処理サービス,○
@@ -3402,7 +3398,6 @@ PTIX,PROTAGENIC THERP,プロタジェニック・セラピューティクス,NAS
 PTLO,PORTILLOS INC,ポーティロス,NASDAQ,外食,○
 PTON,PELOTON INTERACT,ペロトン・インタラクティブ,NASDAQ,ヘルスケア,○
 PTPI,PETROS PHARMA,ペトロス・ファーマシューティカルズ,NASDAQ,医薬品,○
-PTRS,PARTNERS BANCORP,パートナーズ・バンコープ,NASDAQ,金融（銀行）,○
 PTSI,PAM TRANSPRT SRV,PAMトランスポーテーション・サービシズ,NASDAQ,運輸,○
 PTVE,PACTIV EVERGREEN,パクティブ・エバーグリーン,NASDAQ,その他,○
 PUBM,PUBMATIC INC,パブティック,NASDAQ,ソフトウェア・サービス,○
@@ -3571,7 +3566,6 @@ RMNI,RIMINI STREET,リミニ・ストリート,NASDAQ,ソフトウェア・サ�
 RMR,THE RMR GROUP,RMRグループ,NASDAQ,ソフトウェア・サービス,○
 RMTI,ROCKWELL MEDICAL,ロックウェル・メディカル,NASDAQ,医薬品（バイオテクノロジー）,○
 RNA,AVIDITY BSCIENCE,アヴィディティ・バイオサイエンシズ,NASDAQ,医薬品（バイオテクノロジー）,○
-RNAC,CARTESIAN THERAP,カーティージャン・セラピューティクス,NASDAQ,医薬品（バイオテクノロジー）,○
 RNAZ,TRANSCODE THERA,トランスコード・セラピューティクス,NASDAQ,医薬品（バイオテクノロジー）,○
 RNG,RINGCENTRAL INC,リングセントラル,NYSE,ソフトウェア・サービス,○
 RNGR,RANGER ENRG SERV,レンジャー・エナジー・サービシズ,NYSE,石油,○
@@ -4307,6 +4301,7 @@ UHAL,UHAUL HD COMPANY,ユーホール・ホールディング・カンパニー,
 UHS,UNIVERSAL HEALTH,ユニバーサル・ヘルス・サービシズ,NYSE,ヘルスケア,○
 UI,UBIQUITI INC,ユビキティ,NYSE,ソフトウェア・サービス,○
 UIS,UNISYS CORP.,ユニシス,NYSE,ソフトウェア・サービス,○
+UK,UCOMMUNE INTRNTN,Uコミューン・インターナショナル,NASDAQ,その他,○
 UL,UNILEVER PLC,ユニリーバ,NYSE,食品,○
 ULBI,ULTRALIFE CORP,ウルトラライフ,NASDAQ,その他製造,○
 ULCC,FRONTIER GP HD,フロンティア・グループ・ホールディングス,NASDAQ,航空,○
@@ -4633,7 +4628,7 @@ WNW,MEIWU TECHNOLOGY,メイウー・テクノロジー,NASDAQ,小売,○
 WOLF,WOLFSPEED,ウルフスピード,NYSE,半導体,○
 WOOD,ISHARES T&F,iシェアーズ グローバル・ティンバー＆フォレストリー ETF,NASDAQ,その他,○
 WOOF,PETCO HEALTH,ペトコ・ヘルス・アンド・ウェルネス・カンパニー,NASDAQ,医療サービス,○
-WOR,WORTHNGTON INDST,ワージントン・インダストリーズ,NYSE,その他製造,○
+WOR,WORTHINGTON ENT,ワージントン・エンタープライズ,NYSE,その他製造,○
 WORX,SCWORX CORP,SCワークス,NASDAQ,ソフトウェア・サービス,○
 WOW,WIDEOPENWEST INC,ワイドオープンウエスト,NYSE,エンターテイメント,○
 WPM,WHEATON PRECIOUS,ウィートン・プレシャス・メタルズ,NYSE,その他,○
