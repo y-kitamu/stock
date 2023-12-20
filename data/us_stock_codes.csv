@@ -756,6 +756,7 @@ CBNK,CAPITAL BANCORP,キャピタル・バンコープ,NASDAQ,金融（銀行）
 CBOE,CBOE GLOBAL,シービーオーイー・グローバル・マーケッツ,NYSE,その他,○
 CBRE,CBRE GROUP INC,CBREグループ,NYSE,その他,○
 CBRL,CRACKER BARREL O,クラッカー・バレル・オールド・カントリー・ストアー,NASDAQ,外食,○
+CBSH,COMMERCE BANC,コマース・バンクシェアーズ,NASDAQ,金融（銀行）,○
 CBT,CABOT CORP,キャボット,NYSE,化学,○
 CBU,COMMUNTY BNK SYS,コミュニティー・バンク・システム,NYSE,金融（銀行）,○
 CBUS,CIBUS INC,シバス,NASDAQ,食品,○
@@ -779,7 +780,6 @@ CCRN,CROSS CTR HEALTH,クロス・カントリー・ヘルスケア,NASDAQ,ヘ�
 CCS,CENTURY COMMUNIT,センチュリー・コミュニティーズ,NYSE,その他製造,○
 CCSI,CONSENSUS CLD SL,コンセンサス・クラウド・ソリューションズ,NASDAQ,ソフトウェア・サービス,○
 CCU,COMPANIA CERVECE,コンパニア・セルベセリアス・ウニダス,NYSE,飲料,○
-CD,CHINDATA GROUP,チンデータ・グループ・ホールディングス,NASDAQ,通信サービス,○
 CDAY,CERIDIAN HCM HLD,セリディアンHCMホールディングス,NYSE,ソフトウェア・サービス,○
 CDE,COEUR MINING,コーマイニング,NYSE,その他,○
 CDLX,CARDLYTICS INC,カードリティックス,NASDAQ,ソフトウェア・サービス,○
@@ -1683,7 +1683,6 @@ FRPT,FRESHPET INC,フレッシュペット,NASDAQ,食品,○
 FRSH,FRESHWORKS,フレッシュワークス,NASDAQ,ソフトウェア・サービス,○
 FRST,PRIMIS FINANCIAL,プリミス・フィナンシャル,NASDAQ,金融（銀行）,○
 FRSX,FORESIGHT AUTO,フォレサイト・オートノマス・ホールディングス,NASDAQ,その他製造,○
-FRTX,FRESH TRACKS,フレッシュ・トラック・セラピュティクス,NASDAQ,医薬品（バイオテクノロジー）,○
 FRZA,FORZA X1,フォルツァX1,NASDAQ,運輸,○
 FSBC,FIVE STAR BANCO,ファイブ・スター・バンコープ,NASDAQ,金融（銀行）,○
 FSBW,FS BANCORP INC,FSバンコープ,NASDAQ,金融（銀行）,○
@@ -1695,7 +1694,6 @@ FSM,FORTUNA SILVER,フォルトゥナ・シルバー・マインズ,NYSE,その�
 FSR,FISKER INC,フィスカー,NYSE,自動車,○
 FSS,FEDERAL SIGNAL,フェデラル・シグナル,NYSE,その他製造,○
 FSTR,LB FOSTER CMPANY,LBフォスター,NASDAQ,その他製造,○
-FTCH,FARFETCH LIMITED,ファーフェッチ,NYSE,小売,○
 FTCI,FTC SOLAR INC,FTCソーラー,NASDAQ,電力,○
 FTCS,FT CAPIT STR ETF,ファースト・トラスト・キャピタル・ストレングスETF,NASDAQ,その他,○
 FTDR,FRONTDOOR INC,フロントドア,NASDAQ,その他,○
@@ -2905,6 +2903,7 @@ NFLX,NETFLIX INC.,ネットフリックス,NASDAQ,エンターテイメント,�
 NGG,NATIONAL GRID,ナショナル・グリッド,NYSE,電力,○
 NGM,NGM BIOPHARMA,NGMバイオファーマシューティカルズ,NASDAQ,医薬品（バイオテクノロジー）,○
 NGMS,NEOGAMES SA,ネオゲームス,NASDAQ,ソフトウェア・サービス,○
+NGNE,NEUROGENE,ニューロウジェネスィス,NASDAQ,医薬品（バイオテクノロジー）,○
 NGS,NATURAL GAS SRVC,ナチュラル・ガス・サービシズ・グループ,NYSE,ガス・パイプライン,○
 NGVC,NTRL GROC VIT CO,ナチュラルグローサーズ・バイバイタミンコテージ,NYSE,専門店,○
 NGVT,INGEVITY CORP,インジェビティ,NYSE,化学,○
@@ -2924,7 +2923,6 @@ NKTR,NEKTAR THERAPEUT,ネクター・セラピューティクス,NASDAQ,医薬�
 NKTX,NKARTA INC,ンカルタ,NASDAQ,医薬品（バイオテクノロジー）,○
 NL,NL INDUSTRIES,NLインダストリーズ,NYSE,その他製造,○
 NLR,V URANIUM,ヴァンエック・ウラン+原子力エネルギーETF,NYSE,その他,○
-NLTX,NEOLEUKIN THERA,ネオロイキン・ファーマシューティカルズ,NASDAQ,医薬品（バイオテクノロジー）,○
 NMG,NOUVEAU MONDE,ヌーボー・モンド・グラファイト,NYSE,その他製造,○
 NMIH,NMI HOLDINGS INC,NMIホールディングス,NASDAQ,金融(保険),○
 NMRD,NEMAURA MEDICAL,ネマウラ・メディカル,NASDAQ,ヘルスケア,○
@@ -3810,6 +3808,7 @@ SMAR,SMARTSHEET INC,スマートシート,NYSE,ソフトウェア・サービス
 SMBC,STHERN MISSOURI,サザン・ミズーリ・バンコープ,NASDAQ,金融（銀行）,○
 SMBK,SMARTFINCIAL INC,スマートファイナンシャル,NYSE,金融（銀行）,○
 SMCI,SUPER MICRO COMP,スーパー・マイクロ・コンピューター,NASDAQ,コンピュータ,○
+SMFL,SMART FOR LIFE,スマート・フォー・ライフ,NASDAQ,医薬品,○
 SMG,SCOTTS MIRACLE,スコッツ・ミラクルグロー,NYSE,その他製造,○
 SMH,V SEMICONDUCTOR,ヴァンエック・半導体株ETF,NASDAQ,その他,○
 SMHI,SEACOR MARINE,シーコア・マリン・ホールディングス,NYSE,運輸,○
@@ -3938,7 +3937,7 @@ SRPT,SAREPTA THERAP,サレプタ・セラピューティックス,NASDAQ,医薬�
 SRRK,SCHOLAR ROCK HLD,スカラー・ロック・ホールディング,NASDAQ,医薬品（バイオテクノロジー）,○
 SRT,STARTEK INC,スターテック,NYSE,ソフトウェア・サービス,○
 SRTS,SENSUS HEALTHCAR,センサス・ヘルスケア,NASDAQ,ヘルスケア,○
-SSB,SOUTH STATE CORP,サウス・ステート,NASDAQ,金融（銀行）,○
+SSB,SOUTH STATE CORP,サウス・ステート,NYSE,金融（銀行）,○
 SSBI,SUMMIT STATE BNK,サミット・ステート・バンク,NASDAQ,金融（銀行）,○
 SSBK,SOUTH STATE BAN,サザン・ステーツ・バンクシェアーズ,NASDAQ,金融（銀行）,○
 SSD,SIMPSON MANUFCTR,シンプソン・マニュファクチャリング,NYSE,その他製造,○
@@ -4086,7 +4085,6 @@ TERN,TERNS PHARMACEU,ターンズ・ファーマスーティカルス,NASDAQ,医
 TEVA,TEVA PHARM. IND.,テバ・ファーマスーティカル・インダストリーズ,NYSE,医薬品,○
 TEX,TEREX CORP,テレックス,NYSE,機械,○
 TFC,TRUIST FINANCIAL,トゥルーイスト・ファイナンシャル,NYSE,金融（銀行）,○
-TFFP,TFF PHARMACEUTIC,TFFファーマシューティカルズ,NASDAQ,医薬品（バイオテクノロジー）,○
 TFII,TFI INTERNATIONL,TFIインターナショナル,NYSE,運輸,○
 TFIN,TRIUMPH FINANCIA,トライアンフ・フィナンシャル,NASDAQ,金融（銀行）,○
 TFSL,TFS FINANCIAL,TFSファイナンシャル,NASDAQ,金融（銀行）,○
