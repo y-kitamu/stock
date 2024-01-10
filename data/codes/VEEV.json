@@ -62,8 +62,8 @@
         "Net Income Continuous Operations": 188533000.0,
         "Tax Provision": -53170000.0,
         "Pretax Income": 135363000.0,
-        "Other Income Expense": 26440000.0,
-        "Other Non Operating Income Expenses": 26440000.0,
+        "Other Income Expense": -19420000.0,
+        "Other Non Operating Income Expenses": -22993000.0,
         "Operating Income": 108923000.0,
         "Operating Expense": 290152000.0,
         "Research And Development": 142538000.0,
@@ -79,7 +79,7 @@
     },
     "2022-10-31": {
         "Tax Effect Of Unusual Items": 0.0,
-        "Tax Rate For Calcs": 0.189785,
+        "Tax Rate For Calcs": 0.208,
         "Normalized EBITDA": 128561000.0,
         "Net Income From Continuing Operation Net Minority Interest": 108457000.0,
         "Reconciled Depreciation": 7157000.0,
@@ -485,7 +485,7 @@
     },
     "2023-07-31": {
         "Tax Effect Of Unusual Items": 0.0,
-        "Tax Rate For Calcs": 0.218702,
+        "Tax Rate For Calcs": 0.219,
         "Normalized EBITDA": 112136000.0,
         "Net Income From Continuing Operation Net Minority Interest": 111628000.0,
         "Reconciled Depreciation": 8087000.0,
@@ -524,7 +524,7 @@
     },
     "2023-10-31": {
         "Tax Effect Of Unusual Items": 0.0,
-        "Tax Rate For Calcs": 0.208102,
+        "Tax Rate For Calcs": 0.208,
         "Normalized EBITDA": 136853000.0,
         "Net Income From Continuing Operation Net Minority Interest": 135158000.0,
         "Reconciled Depreciation": 8364000.0,

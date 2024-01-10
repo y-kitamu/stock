@@ -1,7 +1,7 @@
 {
     "2023-04-30": {
         "Tax Effect Of Unusual Items": 0.0,
-        "Tax Rate For Calcs": 0.263421,
+        "Tax Rate For Calcs": 0.263,
         "Normalized EBITDA": 33031000.0,
         "Total Unusual Items": NaN,
         "Total Unusual Items Excluding Goodwill": NaN,
@@ -43,18 +43,18 @@
         "Cost Of Revenue": 40731000.0,
         "Total Revenue": 91242000.0,
         "Excise Taxes": 1126000.0,
-        "Operating Revenue": 91242000.0
+        "Operating Revenue": 92368000.0
     },
     "2023-01-31": {
         "Tax Effect Of Unusual Items": 0.0,
-        "Tax Rate For Calcs": 0.260902,
-        "Normalized EBITDA": 22864000.0,
+        "Tax Rate For Calcs": 0.261,
+        "Normalized EBITDA": 30397000.0,
         "Total Unusual Items": NaN,
         "Total Unusual Items Excluding Goodwill": NaN,
         "Net Income From Continuing Operation Net Minority Interest": 14917000.0,
         "Reconciled Depreciation": 7533000.0,
         "Reconciled Cost Of Revenue": 48302000.0,
-        "EBITDA": 22864000.0,
+        "EBITDA": 30397000.0,
         "EBIT": 22864000.0,
         "Net Interest Income": -2684000.0,
         "Interest Expense": 2684000.0,
@@ -134,8 +134,8 @@
         "Gross Profit": 54710000.0,
         "Cost Of Revenue": 53461000.0,
         "Total Revenue": 108171000.0,
-        "Excise Taxes": NaN,
-        "Operating Revenue": 108171000.0
+        "Excise Taxes": 1584000.0,
+        "Operating Revenue": 109755000.0
     },
     "2022-07-31": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -308,11 +308,11 @@
         "Cost Of Revenue": 44813000.0,
         "Total Revenue": 100095000.0,
         "Excise Taxes": 1267000.0,
-        "Operating Revenue": 100095000.0
+        "Operating Revenue": 101362000.0
     },
     "2023-10-31": {
         "Tax Effect Of Unusual Items": 0.0,
-        "Tax Rate For Calcs": 0.265782,
+        "Tax Rate For Calcs": 0.266,
         "Normalized EBITDA": 32512000.0,
         "Total Unusual Items": NaN,
         "Total Unusual Items Excluding Goodwill": NaN,
@@ -354,6 +354,6 @@
         "Cost Of Revenue": 48656000.0,
         "Total Revenue": 102509000.0,
         "Excise Taxes": 1394000.0,
-        "Operating Revenue": 102509000.0
+        "Operating Revenue": 103903000.0
     }
 }

@@ -1,7 +1,7 @@
 {
     "2023-04-30": {
         "Tax Effect Of Unusual Items": 0.0,
-        "Tax Rate For Calcs": 0.4,
+        "Tax Rate For Calcs": 0.23,
         "Normalized EBITDA": -2212000.0,
         "Net Income From Continuing Operation Net Minority Interest": -8753000.0,
         "Reconciled Depreciation": 3343000.0,
@@ -48,11 +48,11 @@
     "2023-01-31": {
         "Tax Effect Of Unusual Items": 0.0,
         "Tax Rate For Calcs": 0.23,
-        "Normalized EBITDA": -14946000.0,
+        "Normalized EBITDA": -10424000.0,
         "Net Income From Continuing Operation Net Minority Interest": -27104000.0,
-        "Reconciled Depreciation": 26000.0,
-        "Reconciled Cost Of Revenue": 28413000.0,
-        "EBITDA": -14946000.0,
+        "Reconciled Depreciation": 4548000.0,
+        "Reconciled Cost Of Revenue": 23891000.0,
+        "EBITDA": -10424000.0,
         "EBIT": -14972000.0,
         "Net Interest Income": 28000.0,
         "Interest Expense": 212000.0,
@@ -74,7 +74,7 @@
         "Tax Provision": 10867000.0,
         "Pretax Income": -15184000.0,
         "Other Income Expense": 5709000.0,
-        "Other Non Operating Income Expenses": 5709000.0,
+        "Other Non Operating Income Expenses": -1238000.0,
         "Net Non Operating Interest Income Expense": 28000.0,
         "Interest Expense Non Operating": 212000.0,
         "Interest Income Non Operating": 240000.0,
@@ -93,7 +93,7 @@
     },
     "2022-10-31": {
         "Tax Effect Of Unusual Items": 0.0,
-        "Tax Rate For Calcs": 0.4,
+        "Tax Rate For Calcs": 0.23,
         "Normalized EBITDA": -20157000.0,
         "Net Income From Continuing Operation Net Minority Interest": -27786000.0,
         "Reconciled Depreciation": 4410000.0,
@@ -281,7 +281,7 @@
     },
     "2023-07-31": {
         "Tax Effect Of Unusual Items": 0.0,
-        "Tax Rate For Calcs": 0.4,
+        "Tax Rate For Calcs": 0.23,
         "Normalized EBITDA": -1759000.0,
         "Net Income From Continuing Operation Net Minority Interest": -9426000.0,
         "Reconciled Depreciation": 3512000.0,
