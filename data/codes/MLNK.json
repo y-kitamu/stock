@@ -1,7 +1,7 @@
 {
     "2023-03-31": {
-        "Tax Effect Of Unusual Items": -507195.338674,
-        "Tax Rate For Calcs": 0.174654,
+        "Tax Effect Of Unusual Items": -493680.0,
+        "Tax Rate For Calcs": 0.17,
         "Normalized EBITDA": 19601000.0,
         "Total Unusual Items": -2904000.0,
         "Total Unusual Items Excluding Goodwill": -2904000.0,
@@ -13,7 +13,7 @@
         "Net Interest Income": -9031000.0,
         "Interest Expense": 9031000.0,
         "Interest Income": NaN,
-        "Normalized Income": -3269195.338674,
+        "Normalized Income": -3255680.0,
         "Net Income From Continuing And Discontinued Operation": -5666000.0,
         "Total Expenses": 72535000.0,
         "Total Operating Income As Reported": 1696000.0,
@@ -45,20 +45,20 @@
         "Gross Profit": 49180000.0,
         "Cost Of Revenue": 27955000.0,
         "Total Revenue": 77135000.0,
-        "Operating Revenue": 77135000.0
+        "Operating Revenue": 74840000.0
     },
     "2022-12-31": {
         "Tax Effect Of Unusual Items": -299902.571042,
         "Tax Rate For Calcs": 0.17862,
-        "Normalized EBITDA": 2606000.0,
+        "Normalized EBITDA": 16842000.0,
         "Total Unusual Items": -1679000.0,
         "Total Unusual Items Excluding Goodwill": -1679000.0,
         "Net Income From Continuing Operation Net Minority Interest": -5463000.0,
         "Reconciled Depreciation": 14236000.0,
         "Reconciled Cost Of Revenue": 26752000.0,
-        "EBITDA": 927000.0,
+        "EBITDA": 15163000.0,
         "EBIT": 927000.0,
-        "Net Interest Income": -7578000.0,
+        "Net Interest Income": -8284000.0,
         "Interest Expense": 7578000.0,
         "Interest Income": NaN,
         "Normalized Income": -4083902.571042,
@@ -76,11 +76,11 @@
         "Net Income Continuous Operations": -5463000.0,
         "Tax Provision": -1188000.0,
         "Pretax Income": -6651000.0,
-        "Other Income Expense": -1322000.0,
+        "Other Income Expense": -616000.0,
         "Other Non Operating Income Expenses": 357000.0,
         "Special Income Charges": -1679000.0,
         "Restructuring And Mergern Acquisition": 1679000.0,
-        "Net Non Operating Interest Income Expense": -7578000.0,
+        "Net Non Operating Interest Income Expense": -8284000.0,
         "Interest Expense Non Operating": 7578000.0,
         "Interest Income Non Operating": NaN,
         "Operating Income": 2249000.0,
@@ -93,7 +93,7 @@
         "Gross Profit": 43799000.0,
         "Cost Of Revenue": 26752000.0,
         "Total Revenue": 70551000.0,
-        "Operating Revenue": 70551000.0
+        "Operating Revenue": 68254000.0
     },
     "2022-09-30": {
         "Tax Effect Of Unusual Items": -65200.0,
@@ -190,8 +190,8 @@
         "Operating Revenue": 72987000.0
     },
     "2023-06-30": {
-        "Tax Effect Of Unusual Items": -185022.414527,
-        "Tax Rate For Calcs": 0.258051,
+        "Tax Effect Of Unusual Items": -184986.0,
+        "Tax Rate For Calcs": 0.258,
         "Normalized EBITDA": 17408000.0,
         "Total Unusual Items": -717000.0,
         "Total Unusual Items Excluding Goodwill": -717000.0,
@@ -203,7 +203,7 @@
         "Net Interest Income": -9316000.0,
         "Interest Expense": 9316000.0,
         "Interest Income": NaN,
-        "Normalized Income": -4698022.414527,
+        "Normalized Income": -4697986.0,
         "Net Income From Continuing And Discontinued Operation": -5230000.0,
         "Total Expenses": 73215000.0,
         "Total Operating Income As Reported": 1483000.0,
@@ -235,7 +235,7 @@
         "Gross Profit": 46921000.0,
         "Cost Of Revenue": 28494000.0,
         "Total Revenue": 75415000.0,
-        "Operating Revenue": 75415000.0
+        "Operating Revenue": 72772000.0
     },
     "2022-03-31": {
         "Diluted EPS": 0.09,
@@ -319,7 +319,7 @@
     },
     "2023-09-30": {
         "Tax Effect Of Unusual Items": 0.0,
-        "Tax Rate For Calcs": 0.278843,
+        "Tax Rate For Calcs": 0.279,
         "Normalized EBITDA": 21344000.0,
         "Total Unusual Items": 0.0,
         "Total Unusual Items Excluding Goodwill": 0.0,

@@ -1,7 +1,7 @@
 {
     "2023-06-30": {
         "Tax Effect Of Unusual Items": 0.0,
-        "Tax Rate For Calcs": 0.261,
+        "Tax Rate For Calcs": 0.2613,
         "Total Unusual Items": NaN,
         "Total Unusual Items Excluding Goodwill": NaN,
         "Net Income From Continuing Operation Net Minority Interest": 38022000.0,
@@ -34,7 +34,7 @@
     },
     "2023-03-31": {
         "Tax Effect Of Unusual Items": 0.0,
-        "Tax Rate For Calcs": 0.259,
+        "Tax Rate For Calcs": 0.2591,
         "Total Unusual Items": NaN,
         "Total Unusual Items Excluding Goodwill": NaN,
         "Net Income From Continuing Operation Net Minority Interest": 39121000.0,
@@ -67,7 +67,7 @@
     },
     "2022-12-31": {
         "Tax Effect Of Unusual Items": 0.0,
-        "Tax Rate For Calcs": 0.261,
+        "Tax Rate For Calcs": 0.260467,
         "Total Unusual Items": 0.0,
         "Total Unusual Items Excluding Goodwill": 0.0,
         "Net Income From Continuing Operation Net Minority Interest": 51703000.0,
@@ -90,13 +90,13 @@
         "Special Income Charges": 0.0,
         "Impairment Of Capital Assets": 0.0,
         "Securities Amortization": NaN,
-        "Selling General And Administration": 56159000.0,
+        "Selling General And Administration": 61760000.0,
         "Selling And Marketing Expense": 1869000.0,
         "General And Administrative Expense": 54290000.0,
         "Insurance And Claims": 1596000.0,
         "Salaries And Wages": 52694000.0,
-        "Total Revenue": 161591000.0,
-        "Operating Revenue": 161591000.0
+        "Total Revenue": 156734000.0,
+        "Operating Revenue": 156734000.0
     },
     "2022-09-30": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -614,7 +614,7 @@
         "Pretax Income": 40010000.0,
         "Special Income Charges": NaN,
         "Impairment Of Capital Assets": NaN,
-        "Securities Amortization": NaN,
+        "Securities Amortization": 1933000.0,
         "Selling General And Administration": 54716000.0,
         "Selling And Marketing Expense": NaN,
         "General And Administrative Expense": 54716000.0,

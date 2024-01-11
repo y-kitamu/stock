@@ -1,7 +1,7 @@
 {
     "2023-03-31": {
         "Tax Effect Of Unusual Items": 0.0,
-        "Tax Rate For Calcs": 0.211022,
+        "Tax Rate For Calcs": 0.211,
         "Normalized EBITDA": 141868000.0,
         "Net Income From Continuing Operation Net Minority Interest": 71524000.0,
         "Reconciled Depreciation": 46352000.0,
@@ -37,16 +37,16 @@
         "Gross Profit": 469118000.0,
         "Cost Of Revenue": 652934000.0,
         "Total Revenue": 1122052000.0,
-        "Operating Revenue": 1122052000.0
+        "Operating Revenue": 1101867000.0
     },
     "2022-12-31": {
         "Tax Effect Of Unusual Items": 0.0,
         "Tax Rate For Calcs": 0.225961,
-        "Normalized EBITDA": 94721000.0,
+        "Normalized EBITDA": 137053000.0,
         "Net Income From Continuing Operation Net Minority Interest": 69237000.0,
         "Reconciled Depreciation": 42332000.0,
         "Reconciled Cost Of Revenue": 612168000.0,
-        "EBITDA": 94721000.0,
+        "EBITDA": 137053000.0,
         "EBIT": 94721000.0,
         "Net Interest Income": -5272000.0,
         "Interest Expense": 5272000.0,
@@ -77,7 +77,7 @@
         "Gross Profit": 435901000.0,
         "Cost Of Revenue": 612168000.0,
         "Total Revenue": 1048069000.0,
-        "Operating Revenue": 1048069000.0
+        "Operating Revenue": 1016684000.0
     },
     "2022-09-30": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -161,7 +161,7 @@
     },
     "2023-06-30": {
         "Tax Effect Of Unusual Items": 0.0,
-        "Tax Rate For Calcs": 0.223989,
+        "Tax Rate For Calcs": 0.224,
         "Normalized EBITDA": 144650000.0,
         "Net Income From Continuing Operation Net Minority Interest": 71452000.0,
         "Reconciled Depreciation": 49676000.0,
@@ -417,12 +417,12 @@
     },
     "2023-09-30": {
         "Tax Effect Of Unusual Items": 0.0,
-        "Tax Rate For Calcs": 0.210749,
-        "Normalized EBITDA": 84772000.0,
+        "Tax Rate For Calcs": 0.211,
+        "Normalized EBITDA": 135691000.0,
         "Net Income From Continuing Operation Net Minority Interest": 65923000.0,
-        "Reconciled Depreciation": NaN,
+        "Reconciled Depreciation": 50919000.0,
         "Reconciled Cost Of Revenue": 640357000.0,
-        "EBITDA": 84772000.0,
+        "EBITDA": 135691000.0,
         "EBIT": 84772000.0,
         "Net Interest Income": -1246000.0,
         "Interest Expense": 1246000.0,
@@ -453,6 +453,6 @@
         "Gross Profit": 467455000.0,
         "Cost Of Revenue": 640357000.0,
         "Total Revenue": 1107812000.0,
-        "Operating Revenue": 1107812000.0
+        "Operating Revenue": 1081258000.0
     }
 }

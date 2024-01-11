@@ -1,7 +1,7 @@
 {
     "2023-03-31": {
         "Tax Effect Of Unusual Items": 0.0,
-        "Tax Rate For Calcs": 0.230769,
+        "Tax Rate For Calcs": 0.231,
         "Normalized EBITDA": 222000000.0,
         "Total Unusual Items": 0.0,
         "Total Unusual Items Excluding Goodwill": 0.0,
@@ -48,7 +48,7 @@
         "Gross Profit": 180000000.0,
         "Cost Of Revenue": 108000000.0,
         "Total Revenue": 288000000.0,
-        "Operating Revenue": 288000000.0
+        "Operating Revenue": 276000000.0
     },
     "2022-12-31": {
         "Tax Effect Of Unusual Items": -3695652.173913,
@@ -99,7 +99,7 @@
         "Gross Profit": 171000000.0,
         "Cost Of Revenue": 97000000.0,
         "Total Revenue": 268000000.0,
-        "Operating Revenue": 338000000.0
+        "Operating Revenue": 256000000.0
     },
     "2022-09-30": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -548,8 +548,8 @@
         "Net Income": NaN
     },
     "2023-06-30": {
-        "Tax Effect Of Unusual Items": -415094.339623,
-        "Tax Rate For Calcs": 0.207547,
+        "Tax Effect Of Unusual Items": -416000.0,
+        "Tax Rate For Calcs": 0.208,
         "Normalized EBITDA": 338000000.0,
         "Total Unusual Items": -2000000.0,
         "Total Unusual Items Excluding Goodwill": -2000000.0,
@@ -560,7 +560,7 @@
         "EBIT": 161000000.0,
         "Net Interest Income": -55000000.0,
         "Interest Expense": 55000000.0,
-        "Normalized Income": 39584905.660377,
+        "Normalized Income": 39584000.0,
         "Net Income From Continuing And Discontinued Operation": 38000000.0,
         "Total Expenses": 255000000.0,
         "Total Operating Income As Reported": 149000000.0,
@@ -596,7 +596,7 @@
         "Gross Profit": 288000000.0,
         "Cost Of Revenue": 118000000.0,
         "Total Revenue": 406000000.0,
-        "Operating Revenue": 406000000.0
+        "Operating Revenue": 358000000.0
     },
     "2023-09-30": {
         "Tax Effect Of Unusual Items": -210000.0,
@@ -647,6 +647,6 @@
         "Gross Profit": 237000000.0,
         "Cost Of Revenue": 134000000.0,
         "Total Revenue": 371000000.0,
-        "Operating Revenue": 371000000.0
+        "Operating Revenue": 351000000.0
     }
 }

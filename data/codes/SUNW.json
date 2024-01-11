@@ -80,7 +80,7 @@
         "Other Non Operating Income Expenses": -30000.0,
         "Special Income Charges": 5000.0,
         "Gain On Sale Of Ppe": 5000.0,
-        "Impairment Of Capital Assets": NaN,
+        "Impairment Of Capital Assets": 0.0,
         "Net Non Operating Interest Income Expense": -57000.0,
         "Interest Expense Non Operating": 57000.0,
         "Operating Income": -6944000.0,
@@ -467,8 +467,8 @@
         "Net Income": NaN
     },
     "2023-06-30": {
-        "Tax Effect Of Unusual Items": -7200.0,
-        "Tax Rate For Calcs": 0.4,
+        "Tax Effect Of Unusual Items": -3780.0,
+        "Tax Rate For Calcs": 0.21,
         "Normalized EBITDA": -11030000.0,
         "Total Unusual Items": -18000.0,
         "Total Unusual Items Excluding Goodwill": -18000.0,
@@ -479,7 +479,7 @@
         "EBIT": -12391000.0,
         "Net Interest Income": -173000.0,
         "Interest Expense": 173000.0,
-        "Normalized Income": -12665200.0,
+        "Normalized Income": -12661780.0,
         "Net Income From Continuing And Discontinued Operation": -12676000.0,
         "Total Expenses": 45995000.0,
         "Total Operating Income As Reported": -11357000.0,

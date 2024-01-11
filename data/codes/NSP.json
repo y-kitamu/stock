@@ -1,7 +1,7 @@
 {
     "2023-03-31": {
         "Tax Effect Of Unusual Items": 0.0,
-        "Tax Rate For Calcs": 0.234538,
+        "Tax Rate For Calcs": 0.235,
         "Normalized EBITDA": 140281000.0,
         "Net Income From Continuing Operation Net Minority Interest": 94595000.0,
         "Reconciled Depreciation": 10497000.0,
@@ -42,7 +42,7 @@
         "Gross Profit": 332146000.0,
         "Cost Of Revenue": 1437506000.0,
         "Total Revenue": 1769652000.0,
-        "Operating Revenue": 1769652000.0
+        "Operating Revenue": 1753081000.0
     },
     "2022-12-31": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -64,8 +64,8 @@
         "Basic Average Shares": 37819802.0,
         "Diluted EPS": 0.99,
         "Basic EPS": 1.01,
-        "Diluted NI Availto Com Stockholders": 38198000.0,
-        "Net Income Common Stockholders": 38198000.0,
+        "Diluted NI Availto Com Stockholders": 38225000.0,
+        "Net Income Common Stockholders": 38225000.0,
         "Otherunder Preferred Stock Dividend": -27000.0,
         "Net Income": 38198000.0,
         "Net Income Including Noncontrolling Interests": 38198000.0,
@@ -87,7 +87,7 @@
         "Gross Profit": 241038000.0,
         "Cost Of Revenue": 1248676000.0,
         "Total Revenue": 1489714000.0,
-        "Operating Revenue": 1489714000.0
+        "Operating Revenue": 35721462000.0
     },
     "2022-09-30": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -650,7 +650,7 @@
     },
     "2023-09-30": {
         "Tax Effect Of Unusual Items": 0.0,
-        "Tax Rate For Calcs": 0.265625,
+        "Tax Rate For Calcs": 0.266,
         "Normalized EBITDA": 78080000.0,
         "Net Income From Continuing Operation Net Minority Interest": 44332000.0,
         "Reconciled Depreciation": 10666000.0,
@@ -670,7 +670,7 @@
         "Basic EPS": 1.17,
         "Diluted NI Availto Com Stockholders": 44332000.0,
         "Net Income Common Stockholders": 44332000.0,
-        "Otherunder Preferred Stock Dividend": NaN,
+        "Otherunder Preferred Stock Dividend": 0.0,
         "Net Income": 44332000.0,
         "Net Income Including Noncontrolling Interests": 44332000.0,
         "Net Income Continuous Operations": 44332000.0,
@@ -691,6 +691,6 @@
         "Gross Profit": 257931000.0,
         "Cost Of Revenue": 1292956000.0,
         "Total Revenue": 1550887000.0,
-        "Operating Revenue": 1550887000.0
+        "Operating Revenue": 1535205000.0
     }
 }

@@ -1,7 +1,7 @@
 {
     "2023-03-31": {
-        "Tax Effect Of Unusual Items": 65971786.833856,
-        "Tax Rate For Calcs": 0.286834,
+        "Tax Effect Of Unusual Items": 66010000.0,
+        "Tax Rate For Calcs": 0.287,
         "Total Unusual Items": 230000000.0,
         "Total Unusual Items Excluding Goodwill": 230000000.0,
         "Net Income From Continuing Operation Net Minority Interest": 455000000.0,
@@ -9,7 +9,7 @@
         "Net Interest Income": 1117000000.0,
         "Interest Expense": 218000000.0,
         "Interest Income": 1335000000.0,
-        "Normalized Income": 290971786.833856,
+        "Normalized Income": 291010000.0,
         "Net Income From Continuing And Discontinued Operation": 455000000.0,
         "Diluted Average Shares": 50100000.0,
         "Basic Average Shares": 50000000.0,
@@ -37,8 +37,8 @@
     "2022-12-31": {
         "Tax Effect Of Unusual Items": 0.0,
         "Tax Rate For Calcs": 0.355769,
-        "Total Unusual Items": NaN,
-        "Total Unusual Items Excluding Goodwill": NaN,
+        "Total Unusual Items": 0.0,
+        "Total Unusual Items Excluding Goodwill": 0.0,
         "Net Income From Continuing Operation Net Minority Interest": -134000000.0,
         "Reconciled Depreciation": 33000000.0,
         "Net Interest Income": 1130000000.0,
@@ -58,7 +58,7 @@
         "Net Income Continuous Operations": -134000000.0,
         "Tax Provision": -74000000.0,
         "Pretax Income": -208000000.0,
-        "Special Income Charges": NaN,
+        "Special Income Charges": 0.0,
         "Other Special Charges": NaN,
         "Depreciation Amortization Depletion Income Statement": 33000000.0,
         "Depreciation And Amortization In Income Statement": 33000000.0,
@@ -141,7 +141,7 @@
     },
     "2023-06-30": {
         "Tax Effect Of Unusual Items": 0.0,
-        "Tax Rate For Calcs": 0.255814,
+        "Tax Rate For Calcs": 0.26,
         "Total Unusual Items": 0.0,
         "Total Unusual Items Excluding Goodwill": 0.0,
         "Net Income From Continuing Operation Net Minority Interest": 64000000.0,

@@ -1,7 +1,7 @@
 {
     "2023-03-31": {
         "Tax Effect Of Unusual Items": 0.0,
-        "Tax Rate For Calcs": 0.4,
+        "Tax Rate For Calcs": 0.21,
         "Normalized EBITDA": 11800000.0,
         "Total Unusual Items": NaN,
         "Total Unusual Items Excluding Goodwill": NaN,
@@ -51,13 +51,13 @@
     "2022-12-31": {
         "Tax Effect Of Unusual Items": 0.0,
         "Tax Rate For Calcs": 0.21,
-        "Normalized EBITDA": 8800000.0,
+        "Normalized EBITDA": 20200000.0,
         "Total Unusual Items": -600000.0,
         "Total Unusual Items Excluding Goodwill": -600000.0,
         "Net Income From Continuing Operation Net Minority Interest": 8900000.0,
         "Reconciled Depreciation": 11400000.0,
         "Reconciled Cost Of Revenue": 12200000.0,
-        "EBITDA": 8800000.0,
+        "EBITDA": 20200000.0,
         "EBIT": 8800000.0,
         "Net Interest Income": -300000.0,
         "Interest Expense": 1200000.0,
@@ -95,7 +95,7 @@
         "Gross Profit": 129800000.0,
         "Cost Of Revenue": 12200000.0,
         "Total Revenue": 142000000.0,
-        "Operating Revenue": 142000000.0
+        "Operating Revenue": 295000000.0
     },
     "2022-09-30": {
         "Tax Effect Of Unusual Items": -160000.0,
@@ -197,7 +197,7 @@
     },
     "2023-06-30": {
         "Tax Effect Of Unusual Items": 0.0,
-        "Tax Rate For Calcs": 0.4,
+        "Tax Rate For Calcs": 0.21,
         "Normalized EBITDA": 8800000.0,
         "Total Unusual Items": NaN,
         "Total Unusual Items Excluding Goodwill": NaN,
@@ -303,13 +303,13 @@
     "2023-09-30": {
         "Tax Effect Of Unusual Items": 0.0,
         "Tax Rate For Calcs": 0.21,
-        "Normalized EBITDA": 4900000.0,
+        "Normalized EBITDA": 17000000.0,
         "Total Unusual Items": NaN,
         "Total Unusual Items Excluding Goodwill": NaN,
         "Net Income From Continuing Operation Net Minority Interest": -500000.0,
         "Reconciled Depreciation": 12100000.0,
         "Reconciled Cost Of Revenue": 13300000.0,
-        "EBITDA": 4900000.0,
+        "EBITDA": 17000000.0,
         "EBIT": 4900000.0,
         "Net Interest Income": 700000.0,
         "Interest Expense": 200000.0,
@@ -347,6 +347,6 @@
         "Gross Profit": 139500000.0,
         "Cost Of Revenue": 13300000.0,
         "Total Revenue": 152800000.0,
-        "Operating Revenue": 152800000.0
+        "Operating Revenue": 86900000.0
     }
 }

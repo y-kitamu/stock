@@ -1,7 +1,7 @@
 {
     "2023-03-31": {
         "Tax Effect Of Unusual Items": 0.0,
-        "Tax Rate For Calcs": 0.259735,
+        "Tax Rate For Calcs": 0.259,
         "Normalized EBITDA": 146579000.0,
         "Net Income From Continuing Operation Net Minority Interest": 71671000.0,
         "Reconciled Depreciation": 31465000.0,
@@ -31,7 +31,7 @@
         "Interest Expense Non Operating": 18296000.0,
         "Operating Income": 113508000.0,
         "Operating Expense": 52307000.0,
-        "Other Operating Expenses": 1248000.0,
+        "Other Operating Expenses": 6623000.0,
         "Other Taxes": 14219000.0,
         "Depreciation Amortization Depletion Income Statement": 31465000.0,
         "Depreciation And Amortization In Income Statement": 31465000.0,
@@ -42,7 +42,7 @@
         "Gross Profit": 165815000.0,
         "Cost Of Revenue": 296608000.0,
         "Total Revenue": 462423000.0,
-        "Operating Revenue": 462423000.0
+        "Operating Revenue": 466777000.0
     },
     "2022-12-31": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -76,7 +76,7 @@
         "Interest Expense Non Operating": 17091000.0,
         "Operating Income": 81227000.0,
         "Operating Expense": 46753000.0,
-        "Other Operating Expenses": 806000.0,
+        "Other Operating Expenses": -7144000.0,
         "Other Taxes": 10366000.0,
         "Depreciation Amortization Depletion Income Statement": 31142000.0,
         "Depreciation And Amortization In Income Statement": 31142000.0,
@@ -87,7 +87,7 @@
         "Gross Profit": 127980000.0,
         "Cost Of Revenue": 247273000.0,
         "Total Revenue": 375253000.0,
-        "Operating Revenue": 375253000.0
+        "Operating Revenue": 381989000.0
     },
     "2022-09-30": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -181,7 +181,7 @@
     },
     "2023-06-30": {
         "Tax Effect Of Unusual Items": 0.0,
-        "Tax Rate For Calcs": 0.163416,
+        "Tax Rate For Calcs": 0.163,
         "Normalized EBITDA": 51754000.0,
         "Net Income From Continuing Operation Net Minority Interest": 1244000.0,
         "Reconciled Depreciation": 31293000.0,
@@ -211,7 +211,7 @@
         "Interest Expense Non Operating": 18974000.0,
         "Operating Income": 13843000.0,
         "Operating Expense": 45579000.0,
-        "Other Operating Expenses": 1257000.0,
+        "Other Operating Expenses": 3397000.0,
         "Other Taxes": 10889000.0,
         "Depreciation Amortization Depletion Income Statement": 31293000.0,
         "Depreciation And Amortization In Income Statement": 31293000.0,
@@ -222,7 +222,7 @@
         "Gross Profit": 59422000.0,
         "Cost Of Revenue": 178437000.0,
         "Total Revenue": 237859000.0,
-        "Operating Revenue": 237859000.0
+        "Operating Revenue": 229986000.0
     },
     "2022-03-31": {
         "Diluted EPS": 1.8,
@@ -650,7 +650,7 @@
     },
     "2023-09-30": {
         "Tax Effect Of Unusual Items": 0.0,
-        "Tax Rate For Calcs": 0.259295,
+        "Tax Rate For Calcs": 0.259,
         "Normalized EBITDA": 17488000.0,
         "Net Income From Continuing Operation Net Minority Interest": -23687000.0,
         "Reconciled Depreciation": 30061000.0,
@@ -691,6 +691,6 @@
         "Gross Profit": 25252000.0,
         "Cost Of Revenue": 116227000.0,
         "Total Revenue": 141479000.0,
-        "Operating Revenue": 141479000.0
+        "Operating Revenue": 134591000.0
     }
 }

@@ -1,7 +1,7 @@
 {
     "2023-06-30": {
-        "Tax Effect Of Unusual Items": -31060.751559,
-        "Tax Rate For Calcs": 0.2567,
+        "Tax Effect Of Unusual Items": -31097.0,
+        "Tax Rate For Calcs": 0.257,
         "Normalized EBITDA": 74762000.0,
         "Total Unusual Items": -121000.0,
         "Total Unusual Items Excluding Goodwill": -121000.0,
@@ -12,7 +12,7 @@
         "EBIT": 66012000.0,
         "Net Interest Income": NaN,
         "Interest Expense": NaN,
-        "Normalized Income": 48234939.248441,
+        "Normalized Income": 48234903.0,
         "Net Income From Continuing And Discontinued Operation": 48145000.0,
         "Total Expenses": 433419000.0,
         "Total Operating Income As Reported": 111596000.0,
@@ -47,11 +47,11 @@
         "Gross Profit": 253801000.0,
         "Cost Of Revenue": 245630000.0,
         "Total Revenue": 499431000.0,
-        "Operating Revenue": 499431000.0
+        "Operating Revenue": 492723000.0
     },
     "2023-03-31": {
-        "Tax Effect Of Unusual Items": -68148.391913,
-        "Tax Rate For Calcs": 0.224172,
+        "Tax Effect Of Unusual Items": -68096.0,
+        "Tax Rate For Calcs": 0.224,
         "Normalized EBITDA": 76791000.0,
         "Total Unusual Items": -304000.0,
         "Total Unusual Items Excluding Goodwill": -304000.0,
@@ -62,7 +62,7 @@
         "EBIT": 65947000.0,
         "Net Interest Income": -43321000.0,
         "Interest Expense": 43321000.0,
-        "Normalized Income": 51158851.608087,
+        "Normalized Income": 51158904.0,
         "Net Income From Continuing And Discontinued Operation": 50923000.0,
         "Total Expenses": 417309000.0,
         "Total Operating Income As Reported": 109268000.0,
@@ -97,7 +97,7 @@
         "Gross Profit": 242569000.0,
         "Cost Of Revenue": 240687000.0,
         "Total Revenue": 483256000.0,
-        "Operating Revenue": 483256000.0
+        "Operating Revenue": 475467000.0
     },
     "2022-12-31": {
         "Tax Effect Of Unusual Items": -171438.872036,
@@ -147,7 +147,7 @@
         "Gross Profit": 252578000.0,
         "Cost Of Revenue": 233586000.0,
         "Total Revenue": 486164000.0,
-        "Operating Revenue": 486164000.0
+        "Operating Revenue": 478945000.0
     },
     "2022-09-30": {
         "Tax Effect Of Unusual Items": 31254.763877,
@@ -593,6 +593,6 @@
         "Gross Profit": 270945000.0,
         "Cost Of Revenue": 280415000.0,
         "Total Revenue": 551360000.0,
-        "Operating Revenue": 551360000.0
+        "Operating Revenue": 543124000.0
     }
 }

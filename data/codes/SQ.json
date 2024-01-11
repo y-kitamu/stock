@@ -1,7 +1,7 @@
 {
     "2023-03-31": {
         "Tax Effect Of Unusual Items": 0.0,
-        "Tax Rate For Calcs": 0.096156,
+        "Tax Rate For Calcs": 0.25,
         "Normalized EBITDA": 87001000.0,
         "Total Unusual Items": NaN,
         "Total Unusual Items Excluding Goodwill": NaN,
@@ -53,8 +53,8 @@
         "Operating Revenue": 4990131000.0
     },
     "2022-12-31": {
-        "Tax Effect Of Unusual Items": -3596400.0,
-        "Tax Rate For Calcs": 0.4,
+        "Tax Effect Of Unusual Items": -1888110.0,
+        "Tax Rate For Calcs": 0.21,
         "Normalized EBITDA": -10876000.0,
         "Total Unusual Items": -8991000.0,
         "Total Unusual Items Excluding Goodwill": -8991000.0,
@@ -65,14 +65,14 @@
         "EBIT": -110774000.0,
         "Net Interest Income": -1472000.0,
         "Interest Expense": 1472000.0,
-        "Normalized Income": -108428400.0,
+        "Normalized Income": -106720110.0,
         "Net Income From Continuing And Discontinued Operation": -113823000.0,
         "Total Expenses": 4777092000.0,
         "Total Operating Income As Reported": -135181000.0,
-        "Diluted Average Shares": 599094000.0,
-        "Basic Average Shares": 599094000.0,
-        "Diluted EPS": -0.18,
-        "Basic EPS": -0.18,
+        "Diluted Average Shares": NaN,
+        "Basic Average Shares": NaN,
+        "Diluted EPS": NaN,
+        "Basic EPS": NaN,
         "Diluted NI Availto Com Stockholders": -113823000.0,
         "Net Income Common Stockholders": -113823000.0,
         "Net Income": -113823000.0,
@@ -213,7 +213,7 @@
     },
     "2023-06-30": {
         "Tax Effect Of Unusual Items": 0.0,
-        "Tax Rate For Calcs": 0.028562,
+        "Tax Rate For Calcs": 0.3,
         "Normalized EBITDA": -37562000.0,
         "Total Unusual Items": 0.0,
         "Total Unusual Items Excluding Goodwill": 0.0,
@@ -266,7 +266,7 @@
     },
     "2023-09-30": {
         "Tax Effect Of Unusual Items": 0.0,
-        "Tax Rate For Calcs": 0.21,
+        "Tax Rate For Calcs": 0.29,
         "Normalized EBITDA": 105610000.0,
         "Total Unusual Items": 0.0,
         "Total Unusual Items Excluding Goodwill": 0.0,

@@ -1,7 +1,7 @@
 {
     "2023-04-30": {
         "Tax Effect Of Unusual Items": 0.0,
-        "Tax Rate For Calcs": 0.245,
+        "Tax Rate For Calcs": 0.231646,
         "Normalized EBITDA": 147389000.0,
         "Total Unusual Items": NaN,
         "Total Unusual Items Excluding Goodwill": NaN,
@@ -48,7 +48,7 @@
     },
     "2023-01-31": {
         "Tax Effect Of Unusual Items": 0.0,
-        "Tax Rate For Calcs": 0.255,
+        "Tax Rate For Calcs": 0.268,
         "Normalized EBITDA": 136834000.0,
         "Total Unusual Items": NaN,
         "Total Unusual Items Excluding Goodwill": NaN,
@@ -97,8 +97,8 @@
         "Tax Effect Of Unusual Items": 0.0,
         "Tax Rate For Calcs": 0.259,
         "Normalized EBITDA": 187429000.0,
-        "Total Unusual Items": NaN,
-        "Total Unusual Items Excluding Goodwill": NaN,
+        "Total Unusual Items": 0.0,
+        "Total Unusual Items Excluding Goodwill": 0.0,
         "Net Income From Continuing Operation Net Minority Interest": 103153000.0,
         "Reconciled Depreciation": 32226000.0,
         "Reconciled Cost Of Revenue": 966479000.0,
@@ -123,8 +123,8 @@
         "Pretax Income": 139148000.0,
         "Other Income Expense": 1923000.0,
         "Other Non Operating Income Expenses": 1923000.0,
-        "Special Income Charges": NaN,
-        "Write Off": NaN,
+        "Special Income Charges": 0.0,
+        "Write Off": 0.0,
         "Net Non Operating Interest Income Expense": -16055000.0,
         "Interest Expense Non Operating": 16055000.0,
         "Operating Income": 153280000.0,
@@ -436,8 +436,8 @@
         "Net Income": NaN
     },
     "2023-07-31": {
-        "Tax Effect Of Unusual Items": -357255.0,
-        "Tax Rate For Calcs": 0.255,
+        "Tax Effect Of Unusual Items": -329235.0,
+        "Tax Rate For Calcs": 0.235,
         "Normalized EBITDA": 165897000.0,
         "Total Unusual Items": -1401000.0,
         "Total Unusual Items Excluding Goodwill": -1401000.0,
@@ -448,7 +448,7 @@
         "EBIT": 132478000.0,
         "Net Interest Income": -18914000.0,
         "Interest Expense": 18914000.0,
-        "Normalized Income": 87873745.0,
+        "Normalized Income": 87901765.0,
         "Net Income From Continuing And Discontinued Operation": 86830000.0,
         "Total Expenses": 1277860000.0,
         "Total Operating Income As Reported": 131740000.0,
@@ -484,7 +484,7 @@
     },
     "2023-10-31": {
         "Tax Effect Of Unusual Items": 0.0,
-        "Tax Rate For Calcs": 0.255,
+        "Tax Rate For Calcs": 0.252,
         "Normalized EBITDA": 159841000.0,
         "Total Unusual Items": 0.0,
         "Total Unusual Items Excluding Goodwill": 0.0,

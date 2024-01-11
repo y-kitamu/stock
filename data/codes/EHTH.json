@@ -1,7 +1,7 @@
 {
     "2023-03-31": {
         "Tax Effect Of Unusual Items": 0.0,
-        "Tax Rate For Calcs": 0.153623,
+        "Tax Rate For Calcs": 0.154,
         "Normalized EBITDA": -17649000.0,
         "Total Unusual Items": 0.0,
         "Total Unusual Items Excluding Goodwill": 0.0,
@@ -82,7 +82,7 @@
         "Other Non Operating Income Expenses": -841000.0,
         "Special Income Charges": -8926000.0,
         "Write Off": NaN,
-        "Impairment Of Capital Assets": 8926000.0,
+        "Impairment Of Capital Assets": 8368000.0,
         "Restructuring And Mergern Acquisition": 558000.0,
         "Operating Income": 39669000.0,
         "Operating Expense": 155795000.0,
@@ -629,7 +629,7 @@
     },
     "2023-06-30": {
         "Tax Effect Of Unusual Items": 0.0,
-        "Tax Rate For Calcs": 0.097642,
+        "Tax Rate For Calcs": 0.098,
         "Normalized EBITDA": -21001000.0,
         "Total Unusual Items": 0.0,
         "Total Unusual Items Excluding Goodwill": 0.0,
@@ -680,7 +680,7 @@
     },
     "2023-09-30": {
         "Tax Effect Of Unusual Items": 0.0,
-        "Tax Rate For Calcs": 0.063464,
+        "Tax Rate For Calcs": 0.063,
         "Normalized EBITDA": -34651000.0,
         "Total Unusual Items": 0.0,
         "Total Unusual Items Excluding Goodwill": 0.0,
@@ -710,8 +710,8 @@
         "Other Non Operating Income Expenses": -138000.0,
         "Special Income Charges": 0.0,
         "Write Off": 0.0,
-        "Impairment Of Capital Assets": NaN,
-        "Restructuring And Mergern Acquisition": NaN,
+        "Impairment Of Capital Assets": 0.0,
+        "Restructuring And Mergern Acquisition": 0.0,
         "Operating Income": -39396000.0,
         "Operating Expense": 103920000.0,
         "Other Operating Expenses": 54510000.0,

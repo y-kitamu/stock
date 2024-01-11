@@ -54,7 +54,6 @@ ACNT,ASCENT INDUSTR,アセント・インダストリーズ,NASDAQ,その他製�
 ACOR,ACORDA THERAPEUT,アコルダ・セラピューティクス,NASDAQ,医薬品（バイオテクノロジー）,○
 ACRS,ACLARIS THERAPEU,アクラリス・セラピューティクス,NASDAQ,医薬品（バイオテクノロジー）,○
 ACRV,ACRIVON THERAP,アクリボン・セラピューティクス,NASDAQ,医薬品（バイオテクノロジー）,○
-ACRX,ACELRX PHARMACEU,アセルRXファーマシューティカルズ,NASDAQ,医薬品,○
 ACT,ENACT HOLDINGS,エナクト・ホールディングス,NASDAQ,金融(保険),○
 ACTG,ACACIA RESEARCH,アカシア・リサーチ,NASDAQ,その他,○
 ACVA,ACV AUCTIONS INC,ACVオークションズ,NASDAQ,ソフトウェア・サービス,○
@@ -211,6 +210,7 @@ AMAM,AMBRX BIOPHARMA,アンブレックス・バイオファーマ,NASDAQ,医薬
 AMAT,APPLIED MATERIAL,アプライド　マテリアルズ,NASDAQ,半導体製造,○
 AMBA,AMBARELLA INC.,アンバレラ,NASDAQ,半導体製造,○
 AMBC,AMBAC FINANCIAL,アンバック・フィナンシャル・グループ,NYSE,金融(保険),○
+AMBP,ARDAGH METAL PAC,アルダ・メタル・パッケージング,NYSE,その他製造,○
 AMC,AMC ENTERTAINMNT,AMCエンターテインメント・ホールディングス,NYSE,エンターテイメント,○
 AMCR,AMCOR LIMITED,アムコア,NYSE,その他製造,○
 AMCX,AMC NETWORKS INC,AMCネットワークス,NASDAQ,エンターテイメント,○
@@ -507,7 +507,6 @@ BEN,FRANKLIN INC,フランクリン・リソーシズ,NYSE,その他,○
 BEPC,BROOKFIELD RENEW,ブルックフィールド・リニューアブル,NYSE,電力,○
 BERY,BERRY GLOBAL,ベリー・グローバル・グループ,NYSE,その他製造,○
 BEST,BEST INC,ベスト,NYSE,運輸,○
-BETS,BIT BROTHER LTD,ビット・ブラザー,NASDAQ,化学,○
 BF.A,BROWN-FORMAN A,ブラウン・フォーマン　クラスA,NYSE,飲料,○
 BF.B,BROWN-FORMAN B,ブラウン・フォーマン　クラスB,NYSE,飲料,○
 BFAM,BRIGHT HORIZONS,ブライト・ホライズン・ファミリー・ソリューションズ,NYSE,ソフトウェア・サービス,○
@@ -2657,7 +2656,6 @@ MELI,MERCADOLIBRE INC,メルカドリブレ,NASDAQ,情報処理サービス,○
 MEOH,METHANEX CORP,メサネックス,NASDAQ,化学,○
 MERC,MERCER INTL,マーサー・インターナショナル,NASDAQ,紙・パルプ,○
 MESA,MESA AIR GROUP,メサ・エアー,NASDAQ,航空,○
-MESO,MESOBLAST LMITED,メソブラスト,NASDAQ,医薬品（バイオテクノロジー）,○
 MET,METLIFE INC,メットライフ,NYSE,金融(保険),○
 META,META PLATFORMS,メタ・プラットフォームズ,NASDAQ,ソフトウェア・サービス,○
 METC,RAMACO RESOURCES,ラマコ・リソーシズ,NASDAQ,その他,○
@@ -2882,6 +2880,7 @@ NET,CLOUDFLARE INC,クラウドフレア,NYSE,ソフトウェア・サービス,
 NEU,NEWMARKET CORP,ニューマーケット,NYSE,化学,○
 NEXA,NEXA RESOURCES,ネクサ・リソーシズ,NYSE,その他,○
 NEXI,NEXIMMUNE INC,ネクスイミューン,NASDAQ,医薬品（バイオテクノロジー）,○
+NEXN,NEXXEN INTER,ネクセン・インターナショナル,NASDAQ,その他,○
 NEXT,NEXTDECADE CORP,ネクストデケード,NASDAQ,ガス・パイプライン,○
 NFBK,NORTHFIELD BANC,ノースフィールド・バンコープ,NASDAQ,金融（銀行）,○
 NFE,NEW FORTRSS ENGY,ニュー・フォートレス・エナジー,NASDAQ,電力,○
@@ -4117,6 +4116,7 @@ TKO,TKO GROUP HD,TKOグループ・ホールディングス,NYSE,エンターテ
 TKR,THE TIMKEN COM,ティムケン ,NYSE,その他製造,○
 TLIS,TALIS BIOMEDICAL,タリス・バイオメディカル,NASDAQ,ヘルスケア,○
 TLK,TELKOM INDONESIA,テルコム・インドネシア,NYSE,通信サービス,○
+TLPH,TALPHERA,タルフェラ,NASDAQ,医薬品,○
 TLRY,TILRAY BRANDS,ティルレイ・ブランズ,NASDAQ,医薬品,○
 TLS,TELOS CORP,テロス,NASDAQ,ネットワークセキュリティー,○
 TLT,ISHARES 20YR TR,iシェアーズ 米国国債 20年超 ETF,NASDAQ,その他,○
@@ -4174,7 +4174,6 @@ TRMB,TRIMBLE INC,トリンブル,NASDAQ,通信機器,○
 TRMD,TORM PLC,トーム,NASDAQ,運輸,○
 TRMK,TRUSTMARK CORP,トラストマーク,NASDAQ,金融コングロマリット,○
 TRML,TOURMALINE BIO,トルマリン・バイオ,NASDAQ,医薬品（バイオテクノロジー）,○
-TRMR,TREMOR INTER,トレマー・インターナショナル,NASDAQ,その他,○
 TRN,TRINITY INDSTRIE,トリニティ・インダストリーズ,NYSE,その他製造,○
 TRNS,TRANSCAT INC,トランスキャット,NASDAQ,その他製造,○
 TROO,TROOPS INC,トゥループス,NASDAQ,その他製造,○
@@ -4214,6 +4213,7 @@ TTEK,TETRA TECH INC,テトラ・テック,NASDAQ,その他,○
 TTGT,TECHTARGET INC,テックターゲット,NASDAQ,ソフトウェア・サービス,○
 TTI,TETRA TECHNO,テトラ・テクノロジーズ,NYSE,石油,○
 TTMI,TTM TECHNOLOGIES,TTMテクノロジーズ,NASDAQ,その他製造,○
+TTNP,TITAN PHARMA,タイタン・ファーマシューティカルズ,NASDAQ,医薬品（バイオテクノロジー）,○
 TTOO,T2 BIOSYSTEMS,T2バイオシステムズ,NASDAQ,ヘルスケア,○
 TTSH,TILE SHOP HLD,タイル・ショップ・ホールディングス,NASDAQ,小売,○
 TTWO,TAKE-TWO INTERAC,テイクツー・インタラクティブ・ソフトウエア,NASDAQ,ソフトウェア・サービス,○

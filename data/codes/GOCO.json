@@ -1,14 +1,14 @@
 {
     "2023-03-31": {
         "Tax Effect Of Unusual Items": 0.0,
-        "Tax Rate For Calcs": 0.001948,
-        "Normalized EBITDA": 17818000.0,
+        "Tax Rate For Calcs": 0.0019,
+        "Normalized EBITDA": 20571000.0,
         "Total Unusual Items": NaN,
         "Total Unusual Items Excluding Goodwill": NaN,
         "Net Income From Continuing Operation Net Minority Interest": -9179000.0,
-        "Reconciled Depreciation": 23514000.0,
-        "Reconciled Cost Of Revenue": 45462000.0,
-        "EBITDA": 17818000.0,
+        "Reconciled Depreciation": 26267000.0,
+        "Reconciled Cost Of Revenue": 42709000.0,
+        "EBITDA": 20571000.0,
         "EBIT": -5696000.0,
         "Net Interest Income": -16891000.0,
         "Interest Expense": 16891000.0,
@@ -50,18 +50,18 @@
         "Gross Profit": 137696000.0,
         "Cost Of Revenue": 45462000.0,
         "Total Revenue": 183158000.0,
-        "Operating Revenue": 183158000.0
+        "Operating Revenue": 169627000.0
     },
     "2022-12-31": {
         "Tax Effect Of Unusual Items": -65520.0,
         "Tax Rate For Calcs": 0.21,
-        "Normalized EBITDA": -109302000.0,
+        "Normalized EBITDA": -106238000.0,
         "Total Unusual Items": -312000.0,
         "Total Unusual Items Excluding Goodwill": -312000.0,
         "Net Income From Continuing Operation Net Minority Interest": -61399000.0,
-        "Reconciled Depreciation": 23514000.0,
-        "Reconciled Cost Of Revenue": 20629000.0,
-        "EBITDA": -109614000.0,
+        "Reconciled Depreciation": 26578000.0,
+        "Reconciled Cost Of Revenue": 17565000.0,
+        "EBITDA": -106550000.0,
         "EBIT": -133128000.0,
         "Net Interest Income": -17317000.0,
         "Interest Expense": 17317000.0,
@@ -73,8 +73,8 @@
         "Basic Average Shares": 8895000.0,
         "Diluted EPS": -7.0,
         "Basic EPS": -7.0,
-        "Diluted NI Availto Com Stockholders": -61399000.0,
-        "Net Income Common Stockholders": -61399000.0,
+        "Diluted NI Availto Com Stockholders": -62275000.0,
+        "Net Income Common Stockholders": -62275000.0,
         "Preferred Stock Dividends": 876000.0,
         "Net Income": -61399000.0,
         "Minority Interests": 89338000.0,
@@ -103,7 +103,7 @@
         "Gross Profit": 48747000.0,
         "Cost Of Revenue": 20629000.0,
         "Total Revenue": 69376000.0,
-        "Operating Revenue": 69376000.0
+        "Operating Revenue": 151365000.0
     },
     "2022-09-30": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -300,8 +300,8 @@
         "Net Income": NaN
     },
     "2023-06-30": {
-        "Tax Effect Of Unusual Items": -2790.119769,
-        "Tax Rate For Calcs": 0.001038,
+        "Tax Effect Of Unusual Items": -2687.0,
+        "Tax Rate For Calcs": 0.001,
         "Normalized EBITDA": -23982000.0,
         "Total Unusual Items": -2687000.0,
         "Total Unusual Items Excluding Goodwill": -2687000.0,
@@ -312,7 +312,7 @@
         "EBIT": -53037000.0,
         "Net Interest Income": -17265000.0,
         "Interest Expense": 17265000.0,
-        "Normalized Income": -26257790.119769,
+        "Normalized Income": -26257687.0,
         "Net Income From Continuing And Discontinued Operation": -28942000.0,
         "Total Expenses": 193108000.0,
         "Total Operating Income As Reported": -53016000.0,

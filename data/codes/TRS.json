@@ -1,7 +1,7 @@
 {
     "2023-06-30": {
         "Tax Effect Of Unusual Items": 0.0,
-        "Tax Rate For Calcs": 0.321846,
+        "Tax Rate For Calcs": 0.322,
         "Normalized EBITDA": 36610000.0,
         "Total Unusual Items": NaN,
         "Total Unusual Items Excluding Goodwill": NaN,
@@ -43,7 +43,7 @@
     },
     "2023-03-31": {
         "Tax Effect Of Unusual Items": 0.0,
-        "Tax Rate For Calcs": 0.210611,
+        "Tax Rate For Calcs": 0.211,
         "Normalized EBITDA": 23270000.0,
         "Total Unusual Items": NaN,
         "Total Unusual Items Excluding Goodwill": NaN,
@@ -86,13 +86,13 @@
     "2022-12-31": {
         "Tax Effect Of Unusual Items": 4049331.97556,
         "Tax Rate For Calcs": 0.232587,
-        "Normalized EBITDA": 10740000.0,
+        "Normalized EBITDA": 24020000.0,
         "Total Unusual Items": 17410000.0,
         "Total Unusual Items Excluding Goodwill": 17410000.0,
         "Net Income From Continuing Operation Net Minority Interest": 18840000.0,
         "Reconciled Depreciation": 13280000.0,
         "Reconciled Cost Of Revenue": 157730000.0,
-        "EBITDA": 28150000.0,
+        "EBITDA": 41430000.0,
         "EBIT": 28150000.0,
         "Net Interest Income": -3600000.0,
         "Interest Expense": 3600000.0,
@@ -634,8 +634,8 @@
         "Net Income": -4
     },
     "2023-09-30": {
-        "Tax Effect Of Unusual Items": 19502.285424,
-        "Tax Rate For Calcs": 0.162519,
+        "Tax Effect Of Unusual Items": 19560.0,
+        "Tax Rate For Calcs": 0.163,
         "Normalized EBITDA": 37420000.0,
         "Total Unusual Items": 120000.0,
         "Total Unusual Items Excluding Goodwill": 120000.0,
@@ -646,7 +646,7 @@
         "EBIT": 23640000.0,
         "Net Interest Income": -3950000.0,
         "Interest Expense": 3950000.0,
-        "Normalized Income": 16389502.285424,
+        "Normalized Income": 16389560.0,
         "Net Income From Continuing And Discontinued Operation": 16490000.0,
         "Total Expenses": 211700000.0,
         "Total Operating Income As Reported": 23760000.0,

@@ -1,7 +1,7 @@
 {
     "2023-06-30": {
-        "Tax Effect Of Unusual Items": -6400.0,
-        "Tax Rate For Calcs": 0.4,
+        "Tax Effect Of Unusual Items": -3360.0,
+        "Tax Rate For Calcs": 0.21,
         "Normalized EBITDA": 52673000.0,
         "Total Unusual Items": -16000.0,
         "Total Unusual Items Excluding Goodwill": -16000.0,
@@ -13,7 +13,7 @@
         "Net Interest Income": -28955000.0,
         "Interest Expense": 33947000.0,
         "Interest Income": 4992000.0,
-        "Normalized Income": -19133400.0,
+        "Normalized Income": -19130360.0,
         "Net Income From Continuing And Discontinued Operation": -19143000.0,
         "Total Expenses": 222670000.0,
         "Total Operating Income As Reported": 630000.0,
@@ -85,7 +85,7 @@
         "Tax Provision": -1278000.0,
         "Pretax Income": -23905000.0,
         "Other Income Expense": -72000.0,
-        "Special Income Charges": 0.0,
+        "Special Income Charges": 4730000.0,
         "Gain On Sale Of Ppe": 4730000.0,
         "Other Special Charges": NaN,
         "Write Off": NaN,
@@ -107,7 +107,7 @@
         "Gross Profit": 81944000.0,
         "Cost Of Revenue": 114345000.0,
         "Total Revenue": 196289000.0,
-        "Operating Revenue": 177321000.0
+        "Operating Revenue": 196289000.0
     },
     "2022-12-31": {
         "Tax Effect Of Unusual Items": 6206036.562005,
@@ -116,8 +116,8 @@
         "Total Unusual Items": 23937000.0,
         "Total Unusual Items Excluding Goodwill": 23937000.0,
         "Net Income From Continuing Operation Net Minority Interest": 52751000.0,
-        "Reconciled Depreciation": 52777000.0,
-        "Reconciled Cost Of Revenue": 293464000.0,
+        "Reconciled Depreciation": 52682000.0,
+        "Reconciled Cost Of Revenue": 293559000.0,
         "EBITDA": 155747000.0,
         "EBIT": 102970000.0,
         "Net Interest Income": -28383000.0,

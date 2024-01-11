@@ -44,11 +44,11 @@
         "Gross Profit": 289094000.0,
         "Cost Of Revenue": 739615000.0,
         "Total Revenue": 1028709000.0,
-        "Operating Revenue": 1028709000.0
+        "Operating Revenue": 954747000.0
     },
     "2022-12-31": {
-        "Tax Effect Of Unusual Items": -1269432.0,
-        "Tax Rate For Calcs": 0.243,
+        "Tax Effect Of Unusual Items": -1269532.342221,
+        "Tax Rate For Calcs": 0.243019,
         "Normalized EBITDA": 250550000.0,
         "Total Unusual Items": -5224000.0,
         "Total Unusual Items Excluding Goodwill": -5224000.0,
@@ -59,7 +59,7 @@
         "EBIT": 171087000.0,
         "Net Interest Income": -49002000.0,
         "Interest Expense": 49002000.0,
-        "Normalized Income": 96259568.0,
+        "Normalized Income": 96259467.657779,
         "Net Income From Continuing And Discontinued Operation": 92305000.0,
         "Total Expenses": 855507000.0,
         "Total Operating Income As Reported": 166952000.0,
@@ -78,7 +78,7 @@
         "Other Income Expense": -1089000.0,
         "Other Non Operating Income Expenses": 4135000.0,
         "Special Income Charges": -5224000.0,
-        "Gain On Sale Of Ppe": -5224000.0,
+        "Gain On Sale Of Ppe": -4569000.0,
         "Other Special Charges": 0.0,
         "Write Off": 655000.0,
         "Net Non Operating Interest Income Expense": -49002000.0,
@@ -91,7 +91,7 @@
         "Gross Profit": 280088000.0,
         "Cost Of Revenue": 747595000.0,
         "Total Revenue": 1027683000.0,
-        "Operating Revenue": 1027683000.0
+        "Operating Revenue": 964742000.0
     },
     "2022-09-30": {
         "Tax Effect Of Unusual Items": 3413511.0,
@@ -232,7 +232,7 @@
         "Gross Profit": 261468000.0,
         "Cost Of Revenue": 751946000.0,
         "Total Revenue": 1013414000.0,
-        "Operating Revenue": 1013414000.0
+        "Operating Revenue": 942800000.0
     },
     "2022-03-31": {
         "Diluted EPS": 1.34,
@@ -692,7 +692,7 @@
         "Special Income Charges": 2542000.0,
         "Gain On Sale Of Ppe": 2542000.0,
         "Other Special Charges": NaN,
-        "Write Off": NaN,
+        "Write Off": 0.0,
         "Net Non Operating Interest Income Expense": -61512000.0,
         "Interest Expense Non Operating": 61512000.0,
         "Operating Income": 220470000.0,
@@ -703,6 +703,6 @@
         "Gross Profit": 253683000.0,
         "Cost Of Revenue": 748176000.0,
         "Total Revenue": 1001859000.0,
-        "Operating Revenue": 1001859000.0
+        "Operating Revenue": 928122000.0
     }
 }

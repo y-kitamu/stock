@@ -44,8 +44,8 @@
         "Operating Revenue": 9467000000.0
     },
     "2023-01-31": {
-        "Tax Effect Of Unusual Items": -11580000.0,
-        "Tax Rate For Calcs": 0.193,
+        "Tax Effect Of Unusual Items": -11587561.374795,
+        "Tax Rate For Calcs": 0.193126,
         "Normalized EBITDA": 922000000.0,
         "Total Unusual Items": -60000000.0,
         "Total Unusual Items Excluding Goodwill": -60000000.0,
@@ -56,7 +56,7 @@
         "EBIT": 623000000.0,
         "Net Interest Income": -12000000.0,
         "Interest Expense": 12000000.0,
-        "Normalized Income": 543420000.0,
+        "Normalized Income": 543412438.625205,
         "Net Income From Continuing And Discontinued Operation": 495000000.0,
         "Total Expenses": 14052000000.0,
         "Total Operating Income As Reported": 597000000.0,
@@ -118,7 +118,7 @@
         "Pretax Income": 359000000.0,
         "Other Income Expense": -22000000.0,
         "Special Income Charges": -26000000.0,
-        "Gain On Sale Of Business": NaN,
+        "Gain On Sale Of Business": 0.0,
         "Restructuring And Mergern Acquisition": 26000000.0,
         "Gain On Sale Of Security": 4000000.0,
         "Net Non Operating Interest Income Expense": -10000000.0,
@@ -684,8 +684,8 @@
         "Operating Revenue": 9583000000.0
     },
     "2023-10-31": {
-        "Tax Effect Of Unusual Items": 1977011.494253,
-        "Tax Rate For Calcs": 0.247126,
+        "Tax Effect Of Unusual Items": 1976000.0,
+        "Tax Rate For Calcs": 0.247,
         "Normalized EBITDA": 583000000.0,
         "Total Unusual Items": 8000000.0,
         "Total Unusual Items Excluding Goodwill": 8000000.0,
@@ -696,7 +696,7 @@
         "EBIT": 362000000.0,
         "Net Interest Income": -14000000.0,
         "Interest Expense": 14000000.0,
-        "Normalized Income": 256977011.494253,
+        "Normalized Income": 256976000.0,
         "Net Income From Continuing And Discontinued Operation": 263000000.0,
         "Total Expenses": 9402000000.0,
         "Total Operating Income As Reported": 354000000.0,
