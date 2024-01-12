@@ -1,13 +1,13 @@
 {
     "2023-05-31": {
         "Tax Effect Of Unusual Items": 0.0,
-        "Tax Rate For Calcs": 0.27303,
-        "Normalized EBITDA": 14524000.0,
+        "Tax Rate For Calcs": 0.273,
+        "Normalized EBITDA": 216400.0,
         "Net Income From Continuing Operation Net Minority Interest": -872800.0,
         "Reconciled Depreciation": 683600.0,
         "Reconciled Cost Of Revenue": 5150400.0,
-        "EBITDA": 14524000.0,
-        "EBIT": 14524000.0,
+        "EBITDA": 216400.0,
+        "EBIT": -467200.0,
         "Net Interest Income": -733400.0,
         "Interest Expense": 733400.0,
         "Normalized Income": -872800.0,
@@ -28,7 +28,7 @@
         "Other Non Operating Income Expenses": 391400.0,
         "Net Non Operating Interest Income Expense": -733400.0,
         "Interest Expense Non Operating": 733400.0,
-        "Operating Income": 14524000.0,
+        "Operating Income": -858600.0,
         "Operating Expense": 10232200.0,
         "Other Operating Expenses": 2397900.0,
         "Other Taxes": NaN,
@@ -39,17 +39,17 @@
         "Gross Profit": 9373600.0,
         "Cost Of Revenue": 5150400.0,
         "Total Revenue": 14524000.0,
-        "Operating Revenue": 14524000.0
+        "Operating Revenue": 21595300.0
     },
     "2023-02-28": {
         "Tax Effect Of Unusual Items": 0.0,
         "Tax Rate For Calcs": 0.263834,
-        "Normalized EBITDA": 14980400.0,
+        "Normalized EBITDA": -1298000.0,
         "Net Income From Continuing Operation Net Minority Interest": -1919700.0,
         "Reconciled Depreciation": 654300.0,
         "Reconciled Cost Of Revenue": 5926600.0,
-        "EBITDA": 14980400.0,
-        "EBIT": 14980400.0,
+        "EBITDA": -1298000.0,
+        "EBIT": -1952300.0,
         "Net Interest Income": -655400.0,
         "Interest Expense": 655400.0,
         "Normalized Income": -1919700.0,
@@ -70,7 +70,7 @@
         "Other Non Operating Income Expenses": 151800.0,
         "Net Non Operating Interest Income Expense": -655400.0,
         "Interest Expense Non Operating": 655400.0,
-        "Operating Income": 14980400.0,
+        "Operating Income": -2104100.0,
         "Operating Expense": 11157800.0,
         "Other Operating Expenses": 2813900.0,
         "Other Taxes": NaN,
@@ -80,8 +80,8 @@
         "Other Gand A": 4157600.0,
         "Gross Profit": 9053700.0,
         "Cost Of Revenue": 5926600.0,
-        "Total Revenue": 14980400.0,
-        "Operating Revenue": 14980400.0
+        "Total Revenue": 14980300.0,
+        "Operating Revenue": 22907100.0
     },
     "2022-11-30": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -123,7 +123,7 @@
         "Gross Profit": 19228000.0,
         "Cost Of Revenue": 11041400.0,
         "Total Revenue": 30269400.0,
-        "Operating Revenue": 30269400.0
+        "Operating Revenue": 44244800.0
     },
     "2022-08-31": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -633,7 +633,7 @@
     },
     "2023-08-31": {
         "Tax Effect Of Unusual Items": 0.0,
-        "Tax Rate For Calcs": 0.269255,
+        "Tax Rate For Calcs": 0.269,
         "Normalized EBITDA": 2878600.0,
         "Net Income From Continuing Operation Net Minority Interest": 1061700.0,
         "Reconciled Depreciation": 682400.0,

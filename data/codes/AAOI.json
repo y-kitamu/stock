@@ -54,8 +54,8 @@
         "Operating Revenue": 53030000.0
     },
     "2022-12-31": {
-        "Tax Effect Of Unusual Items": -13860.0,
-        "Tax Rate For Calcs": 0.21,
+        "Tax Effect Of Unusual Items": 0.0,
+        "Tax Rate For Calcs": 0.0,
         "Normalized EBITDA": -12791000.0,
         "Total Unusual Items": -66000.0,
         "Total Unusual Items Excluding Goodwill": -66000.0,
@@ -67,7 +67,7 @@
         "Net Interest Income": -1852000.0,
         "Interest Expense": 1888000.0,
         "Interest Income": 36000.0,
-        "Normalized Income": -20197860.0,
+        "Normalized Income": -20184000.0,
         "Net Income From Continuing And Discontinued Operation": -20250000.0,
         "Total Expenses": 79938000.0,
         "Total Operating Income As Reported": -18363000.0,
@@ -80,7 +80,7 @@
         "Net Income": -20250000.0,
         "Net Income Including Noncontrolling Interests": -20250000.0,
         "Net Income Continuous Operations": -20250000.0,
-        "Tax Provision": 1000.0,
+        "Tax Provision": NaN,
         "Pretax Income": -20249000.0,
         "Other Income Expense": -44000.0,
         "Other Non Operating Income Expenses": 22000.0,
@@ -98,14 +98,14 @@
         "Amortization": NaN,
         "Amortization Of Intangibles Income Statement": NaN,
         "Research And Development": 9223000.0,
-        "Selling General And Administration": 15866000.0,
+        "Selling General And Administration": 15366000.0,
         "Selling And Marketing Expense": 2616000.0,
-        "General And Administrative Expense": 13250000.0,
-        "Other Gand A": 13250000.0,
+        "General And Administrative Expense": 12750000.0,
+        "Other Gand A": 12750000.0,
         "Gross Profit": 6226000.0,
         "Cost Of Revenue": 55359000.0,
         "Total Revenue": 61585000.0,
-        "Operating Revenue": 63771000.0
+        "Operating Revenue": 61585000.0
     },
     "2022-09-30": {
         "Tax Effect Of Unusual Items": 0.0,

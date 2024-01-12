@@ -71,10 +71,10 @@
         "Net Income From Continuing And Discontinued Operation": 15877000.0,
         "Total Expenses": 519282000.0,
         "Total Operating Income As Reported": 56537000.0,
-        "Diluted Average Shares": 86142000.0,
-        "Basic Average Shares": 86110000.0,
-        "Diluted EPS": 0.18,
-        "Basic EPS": 0.18,
+        "Diluted Average Shares": NaN,
+        "Basic Average Shares": NaN,
+        "Diluted EPS": NaN,
+        "Basic EPS": NaN,
         "Diluted NI Availto Com Stockholders": 15745000.0,
         "Net Income Common Stockholders": 15745000.0,
         "Preferred Stock Dividends": 132000.0,
@@ -105,7 +105,7 @@
         "Gross Profit": 249414000.0,
         "Cost Of Revenue": 326405000.0,
         "Total Revenue": 575819000.0,
-        "Operating Revenue": 575819000.0
+        "Operating Revenue": 561250000.0
     },
     "2022-09-30": {
         "Tax Effect Of Unusual Items": -1455363.550115,
@@ -739,7 +739,7 @@
         "Depreciation Amortization Depletion Income Statement": 80192000.0,
         "Depreciation And Amortization In Income Statement": 80192000.0,
         "Selling General And Administration": 58481000.0,
-        "Selling And Marketing Expense": 25078000.0,
+        "Selling And Marketing Expense": NaN,
         "General And Administrative Expense": 58481000.0,
         "Other Gand A": 58481000.0,
         "Gross Profit": 275150000.0,
