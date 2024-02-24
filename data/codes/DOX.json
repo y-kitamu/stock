@@ -51,8 +51,8 @@
         "Operating Revenue": 718904000.0
     },
     "2022-12-31": {
-        "Tax Effect Of Unusual Items": -2576676.502815,
-        "Tax Rate For Calcs": 0.105016,
+        "Tax Effect Of Unusual Items": -2576280.0,
+        "Tax Rate For Calcs": 0.105,
         "Normalized EBITDA": 235681000.0,
         "Total Unusual Items": -24536000.0,
         "Total Unusual Items Excluding Goodwill": -24536000.0,
@@ -63,17 +63,17 @@
         "EBIT": 150074000.0,
         "Net Interest Income": -4963000.0,
         "Interest Expense": 4963000.0,
-        "Normalized Income": 151626323.497185,
+        "Normalized Income": 151626720.0,
         "Net Income From Continuing And Discontinued Operation": 129667000.0,
         "Total Expenses": 1011110000.0,
         "Total Operating Income As Reported": 150074000.0,
-        "Diluted Average Shares": 121500000.0,
-        "Basic Average Shares": 120652000.0,
+        "Diluted Average Shares": 119626000.0,
+        "Basic Average Shares": 118778000.0,
         "Diluted EPS": 1.07,
         "Basic EPS": 1.07,
-        "Diluted NI Availto Com Stockholders": 129667000.0,
+        "Diluted NI Availto Com Stockholders": 127662000.0,
         "Average Dilution Earnings": 9000.0,
-        "Net Income Common Stockholders": 129667000.0,
+        "Net Income Common Stockholders": 127653000.0,
         "Otherunder Preferred Stock Dividend": 2014000.0,
         "Net Income": 129667000.0,
         "Minority Interests": -205000.0,
@@ -99,7 +99,7 @@
         "Gross Profit": 428871000.0,
         "Cost Of Revenue": 756849000.0,
         "Total Revenue": 1185720000.0,
-        "Operating Revenue": 1185720000.0
+        "Operating Revenue": 699826000.0
     },
     "2022-09-30": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -731,7 +731,7 @@
     },
     "2023-12-31": {
         "Tax Effect Of Unusual Items": 0.0,
-        "Tax Rate For Calcs": 0.147998,
+        "Tax Rate For Calcs": 0.148,
         "Normalized EBITDA": 230195000.0,
         "Total Unusual Items": 0.0,
         "Total Unusual Items Excluding Goodwill": 0.0,
@@ -746,14 +746,14 @@
         "Net Income From Continuing And Discontinued Operation": 147965000.0,
         "Total Expenses": 1060865000.0,
         "Total Operating Income As Reported": 184334000.0,
-        "Diluted Average Shares": 117536000.0,
-        "Basic Average Shares": 116841000.0,
+        "Diluted Average Shares": 115421000.0,
+        "Basic Average Shares": 114726000.0,
         "Diluted EPS": 1.26,
         "Basic EPS": 1.27,
-        "Diluted NI Availto Com Stockholders": 147965000.0,
-        "Average Dilution Earnings": NaN,
-        "Net Income Common Stockholders": 147965000.0,
-        "Otherunder Preferred Stock Dividend": NaN,
+        "Diluted NI Availto Com Stockholders": 145297000.0,
+        "Average Dilution Earnings": 11000.0,
+        "Net Income Common Stockholders": 145286000.0,
+        "Otherunder Preferred Stock Dividend": 2679000.0,
         "Net Income": 147965000.0,
         "Minority Interests": -757000.0,
         "Net Income Including Noncontrolling Interests": 148722000.0,
@@ -778,6 +778,6 @@
         "Gross Profit": 432455000.0,
         "Cost Of Revenue": 812744000.0,
         "Total Revenue": 1245199000.0,
-        "Operating Revenue": 1245199000.0
+        "Operating Revenue": 722459000.0
     }
 }
