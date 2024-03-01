@@ -71,7 +71,7 @@
         "General And Administrative Expense": 23516000.0,
         "Other Gand A": 23516000.0,
         "Total Revenue": 10283000.0,
-        "Operating Revenue": 10283000.0
+        "Operating Revenue": 10260000.0
     },
     "2022-09-30": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -404,5 +404,42 @@
         "Other Gand A": 25325000.0,
         "Total Revenue": 1267000.0,
         "Operating Revenue": 1267000.0
+    },
+    "2023-12-31": {
+        "Tax Effect Of Unusual Items": 0.0,
+        "Tax Rate For Calcs": 0.21,
+        "Normalized EBITDA": -130395000.0,
+        "Net Income From Continuing Operation Net Minority Interest": -119473000.0,
+        "Reconciled Depreciation": 2177000.0,
+        "EBITDA": -130395000.0,
+        "EBIT": -132572000.0,
+        "Net Interest Income": 13129000.0,
+        "Interest Income": NaN,
+        "Normalized Income": -119473000.0,
+        "Net Income From Continuing And Discontinued Operation": -119473000.0,
+        "Total Expenses": 132572000.0,
+        "Total Operating Income As Reported": -132572000.0,
+        "Diluted Average Shares": NaN,
+        "Basic Average Shares": NaN,
+        "Diluted EPS": NaN,
+        "Basic EPS": NaN,
+        "Diluted NI Availto Com Stockholders": -119473000.0,
+        "Net Income Common Stockholders": -119473000.0,
+        "Net Income": -119473000.0,
+        "Net Income Including Noncontrolling Interests": -119473000.0,
+        "Net Income Continuous Operations": -119473000.0,
+        "Tax Provision": 30000.0,
+        "Pretax Income": -119443000.0,
+        "Net Non Operating Interest Income Expense": 13129000.0,
+        "Total Other Finance Cost": NaN,
+        "Interest Income Non Operating": NaN,
+        "Operating Income": -132572000.0,
+        "Operating Expense": 132572000.0,
+        "Research And Development": 107803000.0,
+        "Selling General And Administration": 24769000.0,
+        "General And Administrative Expense": 24769000.0,
+        "Other Gand A": 24769000.0,
+        "Total Revenue": 0.0,
+        "Operating Revenue": 0.0
     }
 }
