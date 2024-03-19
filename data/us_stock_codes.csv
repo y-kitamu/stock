@@ -660,7 +660,6 @@ BTE,BAYTEX ENERGY,ベイテックス・エナジー,NYSE,石油,○
 BTI,BRITISH AMERICAN,ブリティッシュ・アメリカン・タバコ,NYSE,食品・タバコ,○
 BTMD,BIOTE CORP,ビオテ,NASDAQ,医薬品,○
 BTOG,BIT ORIGIN,ビット・オリジン,NASDAQ,食品,○
-BTTX,BETTER THERAPE,ベター・セラピューティクス,NASDAQ,医療サービス,○
 BTU,PEABODY ENERGY,ピーボディ・エナジー,NYSE,その他,○
 BUD,ANHEUSER INBEV,アンハイザー・ブッシュ・インベブ,NYSE,飲料,○
 BUG,GLX CYBERSEC ETF,グローバルX サイバーセキュリティ ETF,NASDAQ,その他,○
@@ -1105,7 +1104,6 @@ CYD,CHINA YUCHAI,チャイナユチャイ,NYSE,自動車,○
 CYH,COMMNTY HLTH SYS,コミュニティー・ヘルス・システムズ,NYSE,ヘルスケア,○
 CYN,CYNGN INC,シングン,NASDAQ,ソフトウェア・サービス,○
 CYRX,CRYOPORT INC,クリオポート,NASDAQ,その他,○
-CYT,CYTEIR THERAPE,サイター・セラピューティクス,NASDAQ,医薬品（バイオテクノロジー）,○
 CYTH,CYCLO THERAPE,シクロ・セラピューティクス,NASDAQ,医薬品（バイオテクノロジー）,○
 CYTK,CYTOKINETICS,サイトカイネティックス,NASDAQ,医薬品（バイオテクノロジー）,○
 CYTO,ALTAMIRA THERA,アルタミラ・セラピューティクス,NASDAQ,医薬品（バイオテクノロジー）,○
@@ -1857,6 +1855,7 @@ GRND,GRINDR INC,グラインダー,NYSE,ソフトウェア・サービス,○
 GRNT,GR RESOURCES,グラナイト・リッジ・リソース,NYSE,その他,○
 GROM,GROM SCL ENTRPRS,グロム・ソーシャル・エンタープライジズ,NASDAQ,エンターテイメント,○
 GROW,US GLOBAL INVEST,USグローバル・インベスターズ,NASDAQ,金融（証券）,○
+GRPH,GRAPHITE BIO,グラファイト・バイオ,NASDAQ,医薬品（バイオテクノロジー）,○
 GRPN,GROUPON INC,グルーポン,NASDAQ,その他,○
 GRTS,GRITSTONE BIO,グリットストーン・バイオ,NASDAQ,医薬品,○
 GRTX,GALERA THERAPEU,ガレラ・セラピューティクス,NASDAQ,医薬品（バイオテクノロジー）,○
@@ -1994,6 +1993,7 @@ HOV,HOVNANIAN ENTERP,ホブナニアン・エンタープライジーズ,NYSE,�
 HOWL,WEREWOLF THERAPE,ウェアウルフ・セラピューティクス,NASDAQ,医薬品（バイオテクノロジー）,○
 HP,HELMERICH AND PA,ヘルメリッチ・アンド・ペイン,NYSE,石油,○
 HPE,HP ENTERPRISE,ヒューレット・パッカード・エンタープライズ,NYSE,情報処理サービス,○
+HPH,HIGHEST PFMANCE,ハイエスト・パフォーマンス・ホールディングス,NASDAQ,金融コングロマリット,○
 HPK,HIGHPEAK ENERGY,ハイピーク・エナジー,NASDAQ,石油,○
 HPQ,HP INC,HPインク,NYSE,周辺機器,○
 HQI,HIREQUEST INC,ハイヤークエスト,NASDAQ,その他,○
@@ -2373,7 +2373,6 @@ KROP,GLBLX AGTECH FD,グローバルＸ 農業テック＆フード ETF,NASDAQ,�
 KROS,KEROS THERAPEU,ケロス・セラピューティクス,NASDAQ,医薬品（バイオテクノロジー）,○
 KRRO,KORRO BIO,コロ・バイオ,NASDAQ,医薬品（バイオテクノロジー）,○
 KRT,KARAT PACKAGING,カラット ・パッケージング,NASDAQ,その他製造,○
-KRTX,KARUNA THERAPEUT,カルナ・セラピューティクス,NASDAQ,医薬品（バイオテクノロジー）,○
 KRUS,KURA SUSHI USA,くら寿司USA,NASDAQ,外食,○
 KRYS,KRYSTAL BIOTECH,クリスタル・バイオテック,NASDAQ,医薬品（バイオテクノロジー）,○
 KSCP,KNIGHTSCOPE INC,ナイトスコープ,NASDAQ,その他製造,○
@@ -2447,6 +2446,7 @@ LFMD,LIFEMD INC,ライフMD,NASDAQ,ヘルスケア,○
 LFST,LIFESTANCE HLTH,ライフスタンス・ヘルス・グループ,NASDAQ,医薬品,○
 LFUS,LITTELFUSE INC,リテルヒューズ,NASDAQ,その他製造,○
 LFVN,LIFEVANTAGE,ライフバンテージ,NASDAQ,医薬品,○
+LFWD,REWALK ROBOTICS,リウォーク・ロボティクス,NASDAQ,医療サービス,○
 LGF.A,LIONS GATE CL A,ライオンズ・ゲート・エンターテインメント　クラスA,NYSE,エンターテイメント,○
 LGF.B,LIONS GATE CL B,ライオンズ・ゲート・エンターテインメント クラスB,NYSE,エンターテイメント,○
 LGHL,LION GROUP,ライオン・グループ・ホールディング,NASDAQ,金融（証券）,○
@@ -3351,7 +3351,6 @@ PUBM,PUBMATIC INC,パブティック,NASDAQ,ソフトウェア・サービス,�
 PUK,PRUDENTIAL PLC,プルデンシャル,NYSE,金融(保険),○
 PULM,PULMATRIX INC,プルマトリックス,NASDAQ,医薬品（バイオテクノロジー）,○
 PUMP,PROPETRO HOLDING,プロペトロ・ホールディング,NYSE,石油,○
-PUYI,PUYI INC,プーイー,NASDAQ,金融コングロマリット,○
 PVBC,PROVIDENT BANCRP,プロビデント・バンコープ,NASDAQ,金融（銀行）,○
 PVH,PVH CORP,PVHコープ,NYSE,専門店,○
 PWFL,POWERFLEET INC,パワーフリート,NASDAQ,通信機器,○
@@ -3840,7 +3839,6 @@ SPIP,SPDR PTFL TIPS,SPDR ポートフォリオ米国物価連動国債ETF,NYSE,�
 SPIR,SPIRE GLOBAL INC,スパイアー・グローバル,NYSE,その他,○
 SPLB,SPDR LTM CORP BD,SPDR ポートフォリオ米国長期社債ETF,NYSE,その他,○
 SPLG,SPDR PF SP500ETF,SPDR ポートフォリオS&P 500 ETF,NYSE,その他,○
-SPLK,SPLUNK INC.,スプランク,NASDAQ,ソフトウェア・サービス,○
 SPMB,SPDR MRTGAGE BND,SPDR ポートフォリオ・モーゲージ債券ETF,NYSE,その他,○
 SPMD,SPDR SP400 M CAP,SPDR ポートフォリオS&P 400中型株式ETF,NYSE,その他,○
 SPNS,SAPIENS INTL CRP,サピエンス・インターナショナル,NASDAQ,ソフトウェア・サービス,○
