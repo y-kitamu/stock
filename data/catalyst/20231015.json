@@ -1,0 +1,1013 @@
+{
+    "date": "20231015",
+    "stocks": [
+        {
+            "code": 1401,
+            "category": "good",
+            "next_date": "20231016",
+            "target_date_values": [
+                526.0,
+                532.0,
+                520.0,
+                526.0
+            ],
+            "next_date_values": [
+                546.0,
+                550.0,
+                518.0,
+                536.0
+            ],
+            "up_rate": -0.018315018315018316
+        },
+        {
+            "code": 1434,
+            "category": "good",
+            "next_date": "20231016",
+            "target_date_values": [
+                596.0,
+                596.0,
+                570.0,
+                570.0
+            ],
+            "next_date_values": [
+                670.0,
+                670.0,
+                670.0,
+                670.0
+            ],
+            "up_rate": 0.0
+        },
+        {
+            "code": 1717,
+            "category": "good",
+            "next_date": "20231016",
+            "target_date_values": [
+                719.0,
+                719.0,
+                708.0,
+                708.0
+            ],
+            "next_date_values": [
+                752.0,
+                774.0,
+                745.0,
+                770.0
+            ],
+            "up_rate": 0.023936170212765957
+        },
+        {
+            "code": 2345,
+            "category": "good",
+            "next_date": "20231016",
+            "target_date_values": [
+                365.0,
+                381.0,
+                351.0,
+                356.0
+            ],
+            "next_date_values": [
+                388.0,
+                398.0,
+                356.0,
+                389.0
+            ],
+            "up_rate": 0.002577319587628866
+        },
+        {
+            "code": 2359,
+            "category": "good",
+            "next_date": "20231016",
+            "target_date_values": [
+                1695.0,
+                1695.0,
+                1667.0,
+                1669.0
+            ],
+            "next_date_values": [
+                1669.0,
+                1670.0,
+                1640.0,
+                1649.0
+            ],
+            "up_rate": -0.011983223487118035
+        },
+        {
+            "code": 2651,
+            "category": "good",
+            "next_date": "20231016",
+            "target_date_values": [
+                6668.0,
+                6718.0,
+                6585.0,
+                6718.0
+            ],
+            "next_date_values": [
+                7090.0,
+                7178.0,
+                6832.0,
+                6875.0
+            ],
+            "up_rate": -0.030324400564174896
+        },
+        {
+            "code": 2760,
+            "category": "good",
+            "next_date": "20231016",
+            "target_date_values": [
+                3720.0,
+                3810.0,
+                3705.0,
+                3725.0
+            ],
+            "next_date_values": [
+                3810.0,
+                3820.0,
+                3675.0,
+                3785.0
+            ],
+            "up_rate": -0.006561679790026247
+        },
+        {
+            "code": 2884,
+            "category": "good",
+            "next_date": "20231016",
+            "target_date_values": [
+                1112.0,
+                1139.0,
+                1058.0,
+                1078.0
+            ],
+            "next_date_values": [
+                1168.0,
+                1216.0,
+                1102.0,
+                1122.0
+            ],
+            "up_rate": -0.039383561643835614
+        },
+        {
+            "code": 2934,
+            "category": "good",
+            "next_date": "20231016",
+            "target_date_values": [
+                4880.0,
+                4965.0,
+                4740.0,
+                4845.0
+            ],
+            "next_date_values": [
+                5160.0,
+                5550.0,
+                4930.0,
+                5550.0
+            ],
+            "up_rate": 0.0755813953488372
+        },
+        {
+            "code": 3046,
+            "category": "good",
+            "next_date": "20231016",
+            "target_date_values": [
+                3555.0,
+                3610.0,
+                3525.0,
+                3560.0
+            ],
+            "next_date_values": [
+                3370.0,
+                3795.0,
+                3370.0,
+                3590.0
+            ],
+            "up_rate": 0.06528189910979229
+        },
+        {
+            "code": 3087,
+            "category": "good",
+            "next_date": "20231016",
+            "target_date_values": [
+                2284.0,
+                2294.0,
+                2218.0,
+                2229.0
+            ],
+            "next_date_values": [
+                1990.0,
+                2073.0,
+                1982.0,
+                2043.0
+            ],
+            "up_rate": 0.026633165829145728
+        },
+        {
+            "code": 3181,
+            "category": "good",
+            "next_date": "20231016",
+            "target_date_values": [
+                1030.0,
+                1030.0,
+                962.0,
+                965.0
+            ],
+            "next_date_values": [
+                995.0,
+                995.0,
+                895.0,
+                927.0
+            ],
+            "up_rate": -0.06834170854271357
+        },
+        {
+            "code": 3198,
+            "category": "good",
+            "next_date": "20231016",
+            "target_date_values": [
+                2150.0,
+                2162.0,
+                2102.0,
+                2107.0
+            ],
+            "next_date_values": [
+                2051.0,
+                2055.0,
+                1986.0,
+                2040.0
+            ],
+            "up_rate": -0.005363237445148708
+        },
+        {
+            "code": 3223,
+            "category": "good",
+            "next_date": "20231016",
+            "target_date_values": [
+                1050.0,
+                1090.0,
+                905.0,
+                905.0
+            ],
+            "next_date_values": [
+                950.0,
+                1039.0,
+                922.0,
+                952.0
+            ],
+            "up_rate": 0.002105263157894737
+        },
+        {
+            "code": 3244,
+            "category": "good",
+            "next_date": "20231016",
+            "target_date_values": [
+                2370.0,
+                2381.0,
+                2358.0,
+                2366.0
+            ],
+            "next_date_values": [
+                2400.0,
+                2451.0,
+                2390.0,
+                2424.0
+            ],
+            "up_rate": 0.01
+        },
+        {
+            "code": 3387,
+            "category": "good",
+            "next_date": "20231016",
+            "target_date_values": [
+                1081.0,
+                1085.0,
+                1068.0,
+                1081.0
+            ],
+            "next_date_values": [
+                1003.0,
+                1006.0,
+                972.0,
+                972.0
+            ],
+            "up_rate": -0.03090727816550349
+        },
+        {
+            "code": 3791,
+            "category": "good",
+            "next_date": "20231016",
+            "target_date_values": [
+                3715.0,
+                3715.0,
+                3620.0,
+                3620.0
+            ],
+            "next_date_values": [
+                3900.0,
+                3900.0,
+                3660.0,
+                3705.0
+            ],
+            "up_rate": -0.05
+        },
+        {
+            "code": 3835,
+            "category": "good",
+            "next_date": "20231016",
+            "target_date_values": [
+                676.0,
+                676.0,
+                651.0,
+                651.0
+            ],
+            "next_date_values": [
+                661.0,
+                672.0,
+                659.0,
+                661.0
+            ],
+            "up_rate": 0.0
+        },
+        {
+            "code": 3996,
+            "category": "good",
+            "next_date": "20231016",
+            "target_date_values": [
+                440.0,
+                440.0,
+                423.0,
+                424.0
+            ],
+            "next_date_values": [
+                455.0,
+                471.0,
+                446.0,
+                456.0
+            ],
+            "up_rate": 0.002197802197802198
+        },
+        {
+            "code": 4015,
+            "category": "good",
+            "next_date": "20231016",
+            "target_date_values": [
+                750.0,
+                761.0,
+                720.0,
+                725.0
+            ],
+            "next_date_values": [
+                725.0,
+                785.0,
+                681.0,
+                725.0
+            ],
+            "up_rate": 0.0
+        },
+        {
+            "code": 4019,
+            "category": "good",
+            "next_date": "20231016",
+            "target_date_values": [
+                716.0,
+                716.0,
+                677.0,
+                685.0
+            ],
+            "next_date_values": [
+                685.0,
+                709.0,
+                677.0,
+                683.0
+            ],
+            "up_rate": -0.00291970802919708
+        },
+        {
+            "code": 4388,
+            "category": "good",
+            "next_date": "20231016",
+            "target_date_values": [
+                941.0,
+                941.0,
+                903.0,
+                904.0
+            ],
+            "next_date_values": [
+                904.0,
+                922.0,
+                880.0,
+                885.0
+            ],
+            "up_rate": -0.02101769911504425
+        },
+        {
+            "code": 4434,
+            "category": "good",
+            "next_date": "20231016",
+            "target_date_values": [
+                3630.0,
+                3650.0,
+                3405.0,
+                3440.0
+            ],
+            "next_date_values": [
+                3370.0,
+                3380.0,
+                3215.0,
+                3240.0
+            ],
+            "up_rate": -0.03857566765578635
+        },
+        {
+            "code": 5127,
+            "category": "good",
+            "next_date": "20231016",
+            "target_date_values": [
+                2401.0,
+                2415.0,
+                2275.0,
+                2299.0
+            ],
+            "next_date_values": [
+                2799.0,
+                2799.0,
+                2799.0,
+                2799.0
+            ],
+            "up_rate": 0.0
+        },
+        {
+            "code": 5575,
+            "category": "good",
+            "next_date": "20231016",
+            "target_date_values": [
+                1908.0,
+                1908.0,
+                1810.0,
+                1815.0
+            ],
+            "next_date_values": [
+                1855.0,
+                1855.0,
+                1587.0,
+                1611.0
+            ],
+            "up_rate": -0.13153638814016172
+        },
+        {
+            "code": 5580,
+            "category": "good",
+            "next_date": "20231016",
+            "target_date_values": [
+                1580.0,
+                1602.0,
+                1561.0,
+                1598.0
+            ],
+            "next_date_values": [
+                1439.0,
+                1460.0,
+                1277.0,
+                1312.0
+            ],
+            "up_rate": -0.08825573314801946
+        },
+        {
+            "code": 5582,
+            "category": "good",
+            "next_date": "20231016",
+            "target_date_values": [
+                3380.0,
+                3380.0,
+                3175.0,
+                3175.0
+            ],
+            "next_date_values": [
+                3155.0,
+                3235.0,
+                3100.0,
+                3165.0
+            ],
+            "up_rate": 0.003169572107765452
+        },
+        {
+            "code": 6044,
+            "category": "good",
+            "next_date": "20231016",
+            "target_date_values": [
+                1017.0,
+                1017.0,
+                977.0,
+                980.0
+            ],
+            "next_date_values": [
+                1052.0,
+                1110.0,
+                1030.0,
+                1098.0
+            ],
+            "up_rate": 0.043726235741444866
+        },
+        {
+            "code": 6086,
+            "category": "good",
+            "next_date": "20231016",
+            "target_date_values": [
+                1637.0,
+                1637.0,
+                1560.0,
+                1605.0
+            ],
+            "next_date_values": [
+                1573.0,
+                1700.0,
+                1550.0,
+                1607.0
+            ],
+            "up_rate": 0.02161474888747616
+        },
+        {
+            "code": 6182,
+            "category": "good",
+            "next_date": "20231016",
+            "target_date_values": [
+                1127.0,
+                1130.0,
+                1084.0,
+                1093.0
+            ],
+            "next_date_values": [
+                1213.0,
+                1284.0,
+                1209.0,
+                1225.0
+            ],
+            "up_rate": 0.00989282769991756
+        },
+        {
+            "code": 6505,
+            "category": "good",
+            "next_date": "20231016",
+            "target_date_values": [
+                984.0,
+                994.0,
+                980.0,
+                985.0
+            ],
+            "next_date_values": [
+                986.0,
+                1004.0,
+                985.0,
+                994.0
+            ],
+            "up_rate": 0.008113590263691683
+        },
+        {
+            "code": 6532,
+            "category": "good",
+            "next_date": "20231016",
+            "target_date_values": [
+                4948.0,
+                5032.0,
+                4725.0,
+                4764.0
+            ],
+            "next_date_values": [
+                4624.0,
+                4643.0,
+                4064.0,
+                4064.0
+            ],
+            "up_rate": -0.12110726643598616
+        },
+        {
+            "code": 6558,
+            "category": "good",
+            "next_date": "20231016",
+            "target_date_values": [
+                1151.0,
+                1177.0,
+                1111.0,
+                1111.0
+            ],
+            "next_date_values": [
+                1000.0,
+                1000.0,
+                924.0,
+                960.0
+            ],
+            "up_rate": -0.04
+        },
+        {
+            "code": 6567,
+            "category": "good",
+            "next_date": "20231016",
+            "target_date_values": [
+                621.0,
+                637.0,
+                581.0,
+                581.0
+            ],
+            "next_date_values": [
+                556.0,
+                592.0,
+                537.0,
+                585.0
+            ],
+            "up_rate": 0.052158273381294966
+        },
+        {
+            "code": 6572,
+            "category": "good",
+            "next_date": "20231016",
+            "target_date_values": [
+                329.0,
+                334.0,
+                316.0,
+                320.0
+            ],
+            "next_date_values": [
+                312.0,
+                320.0,
+                290.0,
+                297.0
+            ],
+            "up_rate": -0.04807692307692308
+        },
+        {
+            "code": 7038,
+            "category": "good",
+            "next_date": "20231016",
+            "target_date_values": [
+                1436.0,
+                1446.0,
+                1400.0,
+                1427.0
+            ],
+            "next_date_values": [
+                1499.0,
+                1545.0,
+                1465.0,
+                1535.0
+            ],
+            "up_rate": 0.02401601067378252
+        },
+        {
+            "code": 7351,
+            "category": "good",
+            "next_date": "20231016",
+            "target_date_values": [
+                833.0,
+                833.0,
+                780.0,
+                791.0
+            ],
+            "next_date_values": [
+                686.0,
+                710.0,
+                642.0,
+                664.0
+            ],
+            "up_rate": -0.03206997084548105
+        },
+        {
+            "code": 7352,
+            "category": "good",
+            "next_date": "20231016",
+            "target_date_values": [
+                756.0,
+                756.0,
+                715.0,
+                716.0
+            ],
+            "next_date_values": [
+                731.0,
+                814.0,
+                715.0,
+                789.0
+            ],
+            "up_rate": 0.07934336525307797
+        },
+        {
+            "code": 7453,
+            "category": "good",
+            "next_date": "20231016",
+            "target_date_values": [
+                1795.5,
+                1818.0,
+                1770.5,
+                1812.5
+            ],
+            "next_date_values": [
+                1990.0,
+                2080.0,
+                1961.0,
+                1974.0
+            ],
+            "up_rate": -0.008040201005025126
+        },
+        {
+            "code": 7719,
+            "category": "good",
+            "next_date": "20231016",
+            "target_date_values": [
+                164.0,
+                164.0,
+                160.0,
+                160.0
+            ],
+            "next_date_values": [
+                185.0,
+                210.0,
+                181.0,
+                192.0
+            ],
+            "up_rate": 0.03783783783783784
+        },
+        {
+            "code": 8095,
+            "category": "good",
+            "next_date": "20231016",
+            "target_date_values": [
+                481.0,
+                482.0,
+                472.0,
+                473.0
+            ],
+            "next_date_values": [
+                496.0,
+                507.0,
+                486.0,
+                505.0
+            ],
+            "up_rate": 0.018145161290322582
+        },
+        {
+            "code": 8167,
+            "category": "good",
+            "next_date": "20231016",
+            "target_date_values": [
+                1726.0,
+                1738.0,
+                1686.0,
+                1696.0
+            ],
+            "next_date_values": [
+                1680.0,
+                1682.0,
+                1605.0,
+                1619.0
+            ],
+            "up_rate": -0.03630952380952381
+        },
+        {
+            "code": 8233,
+            "category": "good",
+            "next_date": "20231016",
+            "target_date_values": [
+                2068.0,
+                2089.5,
+                2053.0,
+                2083.0
+            ],
+            "next_date_values": [
+                2020.0,
+                2091.0,
+                1988.0,
+                1995.0
+            ],
+            "up_rate": -0.012376237623762377
+        },
+        {
+            "code": 9099,
+            "category": "good",
+            "next_date": "20231016",
+            "target_date_values": [
+                1300.0,
+                1302.0,
+                1286.0,
+                1296.0
+            ],
+            "next_date_values": [
+                1348.0,
+                1348.0,
+                1302.0,
+                1332.0
+            ],
+            "up_rate": -0.011869436201780416
+        },
+        {
+            "code": 9160,
+            "category": "good",
+            "next_date": "20231016",
+            "target_date_values": [
+                348.0,
+                350.0,
+                334.0,
+                335.0
+            ],
+            "next_date_values": [
+                375.0,
+                379.0,
+                358.0,
+                365.0
+            ],
+            "up_rate": -0.02666666666666667
+        },
+        {
+            "code": 9252,
+            "category": "good",
+            "next_date": "20231016",
+            "target_date_values": [
+                3425.0,
+                3425.0,
+                3250.0,
+                3365.0
+            ],
+            "next_date_values": [
+                3925.0,
+                4065.0,
+                3885.0,
+                4065.0
+            ],
+            "up_rate": 0.035668789808917196
+        },
+        {
+            "code": 9264,
+            "category": "good",
+            "next_date": "20231016",
+            "target_date_values": [
+                964.0,
+                987.0,
+                947.0,
+                986.0
+            ],
+            "next_date_values": [
+                1121.0,
+                1136.0,
+                1073.0,
+                1136.0
+            ],
+            "up_rate": 0.013380909901873328
+        },
+        {
+            "code": 9270,
+            "category": "good",
+            "next_date": "20231016",
+            "target_date_values": [
+                2781.0,
+                2811.0,
+                2590.0,
+                2604.0
+            ],
+            "next_date_values": [
+                2104.0,
+                2104.0,
+                2104.0,
+                2104.0
+            ],
+            "up_rate": 0.0
+        },
+        {
+            "code": 2168,
+            "category": "bad",
+            "next_date": "20231016",
+            "target_date_values": [
+                1585.0,
+                1585.0,
+                1518.0,
+                1521.0
+            ],
+            "next_date_values": [
+                1403.0,
+                1439.0,
+                1368.0,
+                1398.0
+            ],
+            "up_rate": -0.003563791874554526
+        },
+        {
+            "code": 3935,
+            "category": "bad",
+            "next_date": "20231016",
+            "target_date_values": [
+                403.0,
+                405.0,
+                396.0,
+                398.0
+            ],
+            "next_date_values": [
+                360.0,
+                387.0,
+                360.0,
+                367.0
+            ],
+            "up_rate": 0.019444444444444445
+        },
+        {
+            "code": 3990,
+            "category": "bad",
+            "next_date": "20231016",
+            "target_date_values": [
+                638.0,
+                638.0,
+                605.0,
+                612.0
+            ],
+            "next_date_values": [
+                602.0,
+                606.0,
+                565.0,
+                568.0
+            ],
+            "up_rate": -0.05647840531561462
+        },
+        {
+            "code": 5341,
+            "category": "bad",
+            "next_date": "20231016",
+            "target_date_values": [
+                692.0,
+                708.0,
+                655.0,
+                671.0
+            ],
+            "next_date_values": [
+                601.0,
+                655.0,
+                601.0,
+                646.0
+            ],
+            "up_rate": 0.07487520798668885
+        },
+        {
+            "code": 5527,
+            "category": "bad",
+            "next_date": "20231016",
+            "target_date_values": [
+                1652.0,
+                1652.0,
+                1566.0,
+                1577.0
+            ],
+            "next_date_values": [
+                1177.0,
+                1177.0,
+                1177.0,
+                1177.0
+            ],
+            "up_rate": 0.0
+        },
+        {
+            "code": 6048,
+            "category": "bad",
+            "next_date": "20231016",
+            "target_date_values": [
+                164.0,
+                187.0,
+                164.0,
+                167.0
+            ],
+            "next_date_values": [
+                144.0,
+                152.0,
+                144.0,
+                146.0
+            ],
+            "up_rate": 0.013888888888888888
+        },
+        {
+            "code": 6521,
+            "category": "bad",
+            "next_date": "20231016",
+            "target_date_values": [
+                3160.0,
+                3180.0,
+                3060.0,
+                3095.0
+            ],
+            "next_date_values": [
+                2755.0,
+                2800.0,
+                2678.0,
+                2678.0
+            ],
+            "up_rate": -0.0279491833030853
+        },
+        {
+            "code": 7879,
+            "category": "bad",
+            "next_date": "20231016",
+            "target_date_values": [
+                1330.0,
+                1330.0,
+                1295.0,
+                1309.0
+            ],
+            "next_date_values": [
+                1212.0,
+                1270.0,
+                1208.0,
+                1213.0
+            ],
+            "up_rate": 0.0008250825082508251
+        }
+    ]
+}
