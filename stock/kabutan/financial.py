@@ -48,7 +48,8 @@ class FinancialStatement(BaseModel):
         if self.duration != other.duration:
             return self.duration < other.duration
         if self.announce_date != other.announce_date:
-            return self.announce_date < other.announce_date
+            if self.announce_date is None and other.announce_date is not None:
+                return self.announce_date < other.announce_date
         return self.is_prediction < other.is_prediction
 
     def __gt__(self, other):
