@@ -13,6 +13,8 @@ from pathlib import Path
 from bs4 import BeautifulSoup
 from pydantic import BaseModel
 
+from ..util import convert_to_number
+
 
 class FinancialStatement(BaseModel):
     code: str
@@ -48,7 +50,7 @@ class FinancialStatement(BaseModel):
         if self.duration != other.duration:
             return self.duration < other.duration
         if self.announce_date != other.announce_date:
-            if self.announce_date is None and other.announce_date is not None:
+            if self.announce_date is not None and other.announce_date is not None:
                 return self.announce_date < other.announce_date
         return self.is_prediction < other.is_prediction
 
@@ -118,18 +120,6 @@ def results_to_csv(results: list[FinancialStatement], output_path: Path):
         csv_writer = csv.writer(f)
         csv_writer.writerow(FinancialStatement.get_csv_header())
         csv_writer.writerows(rows)
-
-
-def convert_to_number(val_str):
-    if val_str == "－":
-        return None
-    val_str = val_str.replace(",", "")
-    res = re.search("-*\d+\.*\d*", val_str)
-    if res is None:
-        return None
-    if "." in val_str:
-        return float(res.group(0))
-    return int(res.group(0))
 
 
 def get_annual_results(soup: BeautifulSoup, code: str):
