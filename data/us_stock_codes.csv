@@ -965,6 +965,7 @@ COUR,COURSERA INC,コーセラ,NYSE,その他,○
 CP,CAN PACIFIC KC,カナディアン・パシフィック・カンザス・シティ,NYSE,運輸,○
 CPA,COPA HOLDINGS SA,コパ・ホールディングス,NYSE,運輸,○
 CPAC,CEMENTOS PACASMA,セメント・パカスマヨSAA,NYSE,その他製造,○
+CPAY,CORPAY INC,コーペイ,NYSE,ソフトウェア・サービス,○
 CPB,CAMPBELL SOUP,キャンベルスープ,NYSE,食品,○
 CPE,CALLON PETROLEUM,キャロン・ペトロリアム,NYSE,石油,○
 CPF,CENTRAL PCF FNCL,セントラル・パシフィック・ファイナンシャル・コープ,NYSE,金融（銀行）,○
@@ -1586,7 +1587,6 @@ FIVN,FIVE9 INC,ファイブ9,NASDAQ,ソフトウェア・サービス,○
 FIW,FT WATER ETF,ファーストトラスト ウォーターETF,NYSE,その他,○
 FIX,COMFRT SYSTM USA,コンフォート・システムズUSA,NYSE,ソフトウェア・サービス,○
 FIXD,FT TCW FIXED INC,ファーストトラスト TCW オポチュニスティック債券ETF,NASDAQ,その他,○
-FIXX,HOMOLOGY MEDICNS,ホモロジー・メディシンズ,NASDAQ,医薬品（バイオテクノロジー）,○
 FIZZ,NATIONL BEVERAGE,ナショナル・ビバリッジ,NASDAQ,食品,○
 FKWL,FRANKLN WIRELESS,フランクリン・ワイヤレス,NASDAQ,通信機器,○
 FL,FOOT LOCKER INC,フット・ロッカー,NYSE,小売,○
@@ -1603,7 +1603,6 @@ FLOW,GLX CF KING ETF,グローバルX 米国キャッシュフローキングETF
 FLR,FLUOR CORP,フルアー・コープ,NYSE,その他,○
 FLRN,SPDR INV GRD FLT,SPDR ブルームバーグ投資適格変動金利ETF,NYSE,その他,○
 FLS,FLOWSERVE CORP,フローサーブ,NYSE,その他製造,○
-FLT,FLEETCOR TECHNOL,フリートコ・テクノロジーズ,NYSE,ソフトウェア・サービス,○
 FLUX,FLUX POWER HD,フラックス・パワー・ホールディングス,NASDAQ,電力,○
 FLWS,1-800FLOWERS.COM,1-800フラワーズ・ドットコム,NASDAQ,小売,○
 FLXS,FLEXSTEEL INDUST,フレックススチール・インダストリーズ,NASDAQ,その他製造,○
@@ -2433,6 +2432,7 @@ LEJU,LEJU HOLDINGS,レジュ・ホールディングス,NYSE,ソフトウェア�
 LEMB,ISHARES JPM LEMB,iシェアーズ J.P.モルガン・現地通貨建てエマージング・マーケット債券 ETF,NYSE,その他,○
 LEN,LENNAR CORP A,レナー,NYSE,その他,○
 LEN.B,LENNAR CORP B,レナー　クラスB,NYSE,その他,○
+LENZ,LENZ THERAPEUTIC,レンツ・セラピューティクス,NASDAQ,医薬品（バイオテクノロジー）,○
 LESL,LESLIES INC,レスリーズ,NASDAQ,その他製造,○
 LEV,LION ELECTRIC CO,ライオン・エレクトリック,NYSE,自動車,○
 LEVI,LEVI STRAUSS,リーバイ・ストラウス,NYSE,その他製造,○
@@ -2586,6 +2586,7 @@ MBIN,MERCHANTS BANCRP,マーチャンツ・バンコープ,NASDAQ,金融（銀�
 MBIO,MUSTANG BIO INC,ムスタング・バイオ,NASDAQ,医薬品（バイオテクノロジー）,○
 MBLY,MOBILEYE GLOBAL,モービルアイ・グローバル,NASDAQ,ソフトウェア・サービス,○
 MBOT,MICROBOT MEDICAL,マイクロボット・メディカル,NASDAQ,ヘルスケア,○
+MBRX,MOLECULIN BIOTEC,モレキュリン・バイオテック,NASDAQ,医薬品（バイオテクノロジー）,○
 MBUU,MALIBU BOATS INC,マリブボーツ,NASDAQ,その他製造,○
 MBWM,MERCANTILE BANK,マーカンタイル・バンク,NASDAQ,金融（銀行）,○
 MC,MOELIS & COMPANY,モーリス,NYSE,金融（銀行）,○
@@ -3801,7 +3802,6 @@ SOGP,SOUND GROUP,サウンド・グループ,NASDAQ,ソフトウェア・サー�
 SOHU,SOHU.COM INC,ソーフ・ドット・コム,NASDAQ,その他,○
 SOI,SOLARIS OILFIELD,ソラリス・オイルフィールド・インフラストラクチャー,NYSE,石油,○
 SOL,EMEREN GROUP,エメレン・グループ,NYSE,電力,○
-SOLO,ELECTRAMECCANICA,エレクトラメカニカ・ビークルズ,NASDAQ,自動車,○
 SON,SONOCO PRODUCTS,ソノコ･プロダクツ,NYSE,その他製造,○
 SOND,SONDER HLD,ソンダー・ホールディングス,NASDAQ,その他,○
 SONM,SONIM TECHNO,ソニム・テクノロジーズ,NASDAQ,通信サービス,○
@@ -4363,7 +4363,6 @@ VIST,VISTA ENERGY,ビスタ・エナジー,NYSE,石油,○
 VITL,VITAL FARMS INC,バイタル・ファームズ,NASDAQ,食品,○
 VIV,TELEFONCA BRASIL,テレフォニカ・ブラジル,NYSE,通信サービス,○
 VIVK,VIVAKOR INC,ビバコール,NASDAQ,その他,○
-VJET,VOXELJET AG,ヴォクセルジェット,NASDAQ,コンピュータ,○
 VKTX,VIKING THERAPEUT,バイキング・セラピューティクス,NASDAQ,医薬品（バイオテクノロジー）,○
 VLCN,VOLCON INC,ボルコン,NASDAQ,自動車,○
 VLD,VELO3D INC,VELO3D,NYSE,コンピュータ,○
