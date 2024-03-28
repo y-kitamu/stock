@@ -11,7 +11,7 @@ from stock.util import convert_to_number
 
 
 def update_csv(code: str):
-    csv_path = Path("../data/daily/{}.csv".format(code))
+    csv_path = stock.PROJECT_ROOT / Path("data/daily/{}.csv".format(code))
     data = []
     if csv_path.exists():
         with open(csv_path, "r") as f:
