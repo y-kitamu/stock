@@ -44,3 +44,7 @@ def main():
 
     for code in codes:
         update_csv(code)
+
+
+if __name__ == "__main__":
+    main()
