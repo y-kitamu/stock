@@ -218,12 +218,14 @@ def get_quarter_results(soup: BeautifulSoup, code: str):
         year, start_month, end_month = int(res.group(1)), int(res.group(2)), int(res.group(3))
         duration = end_month + 1 - start_month
         if duration < 0:
+            year += 1
             duration += 12
 
         cols = [col.text for col in row.find_all("td")]
         if len(cols) < len(headers) - 1:
             continue
 
+        print(year, start_month, end_month, cols)
         results.append(
             FinancialStatement(
                 code=code,
