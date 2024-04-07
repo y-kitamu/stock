@@ -45,6 +45,10 @@ def main():
     for code in codes:
         update_csv(code)
 
+    # 株価指数
+    update_csv("0000")  # 日経平均
+    update_csv("0010")  # topix
+
 
 if __name__ == "__main__":
     main()

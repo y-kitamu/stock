@@ -38,6 +38,8 @@ def convert(source_csv_path: Path, output_path: Path):
 def main(source_dir: Path, output_dir: Path):
     for source_csv_path in source_dir.glob("*.csv"):
         output_csv_path = output_dir / source_csv_path.name
+        if output_csv_path.exists():
+            continue
         convert(source_csv_path, output_csv_path)
 
 

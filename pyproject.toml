@@ -20,6 +20,7 @@ fake-useragent = "^1.4.0"
 openpyxl = "^3.1.2"
 xlrd = "^2.0.1"
 requests-html = "^0.10.0"
+polars = "^0.20.18"
 
 [tool.poetry.dev-dependencies]
 ipykernel = "^6.29.3"

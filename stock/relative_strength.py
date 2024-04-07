@@ -4,6 +4,7 @@ Author : Yusuke Kitamura
 Create Date : 2023-08-03 11:21:00
 Copyright (c) 2019- Yusuke Kitamura <ymyk6602@gmail.com>
 """
+
 import numpy as np
 
 
@@ -13,6 +14,11 @@ def strength(target: np.ndarray):
 
 
 def relative_strength(target: np.ndarray, reference: np.ndarray) -> float:
+    """Calculate relative strength of target to reference.
+    Args:
+        target (np.ndarray): target stock price (1D-array)
+        reference (np.ndarray): reference stock price (1D-array)
+    """
     target_strength = strength(target)
     ref_strength = strength(reference)
     rs = (target_strength + 1) / (ref_strength + 1) * 100
