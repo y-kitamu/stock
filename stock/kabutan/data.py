@@ -37,4 +37,8 @@ def get_stock_data(code: str, base_url: str = "https://kabutan.jp/stock/kabuka?c
             end = convert_to_number(tdata[3].text)
             volume = convert_to_number(tdata[6].text)
             daily_data.append([date, start, high, low, end, volume])
+
+    for row in daily_data:
+        print(row)
+
     return daily_data

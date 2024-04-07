@@ -23,7 +23,9 @@ def update_csv(code: str):
 
     new_data = stock.kabutan.data.get_stock_data(code)
     for d in new_data:
-        if bisect.bisect_left(data, d[0].strftime("%Y/%m/%d"), key=lambda x: x[0]) == len(data):
+        if bisect.bisect_left(
+            data, d[0].strftime("%Y/%m/%d"), key=lambda x: x[0]
+        ) == bisect.bisect_right(data, d[0].strftime("%Y/%m/%d"), key=lambda x: x[0]):
             data.append([d[0].strftime("%Y/%m/%d")] + d[1:])
 
     if num_data < len(data):
@@ -52,3 +54,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    # update_csv("6254")
