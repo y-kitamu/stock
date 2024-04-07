@@ -30,6 +30,7 @@ def update_csv(code: str):
 
     if num_data < len(data):
         header = ["date", "open", "high", "low", "close", "volume"]
+        data = sorted(data, key=lambda x: x[0])
         with open(csv_path, "w", encoding="utf-8") as f:
             csv_writer = csv.writer(f)
             csv_writer.writerow(header)
