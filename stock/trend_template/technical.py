@@ -6,6 +6,7 @@ from datetime import datetime, timedelta
 import numpy as np
 import polars as pl
 
+from .. import kabutan, relative_strength
 from ..constants import PROJECT_ROOT
 
 
@@ -39,6 +40,20 @@ def _calc_mean_average(df: pl.DataFrame, weeks: list[int], cur_day: datetime, ta
 
     averages = [mean_average(arr, len(arr) - target_days + 1) for arr in week_arrays]
     return averages
+
+
+def _calc_relative_strength(
+    target_df: pl.DataFrame, reference_df: pl.DataFrame, start_date: datetime, end_date: datetime
+):
+    target_df = target_df.filter((start_date < pl.col("date")) & (pl.col("date") <= end_date))
+    reference_df = reference_df.filter((start_date < pl.col("date")) & (pl.col("date") <= end_date))
+
+    if len(target_df) != len(reference_df):
+        return -1
+
+    return relative_strength.relative_strength(
+        target_df["close"].to_numpy(), reference_df["close"].to_numpy()
+    )
 
 
 def check_higher_than_mean_average(
@@ -87,8 +102,19 @@ def check_near_high(
     return cur_value > thresh
 
 
-def check_relative_strength():
+def check_relative_strength(code: str, cur_day: datetime = datetime.today()):
     """Relative strengthが高いかチェック"""
+    csv_dir = PROJECT_ROOT / "data" / "daily"
+
+    nikkei_df = kabutan.read_data_csv(csv_dir / "0000.csv", exclude_none=False)
+    topix_df = kabutan.read_data_csv(csv_dir / "0010.csv", exclude_none=False)
+
+    df = kabutan.read_data_csv(csv_dir / f"{code}.csv", exclude_none=False)
+    start_date = cur_day - timedelta(days=365)
+    end_date = cur_day
+    rs_nikkei = _calc_relative_strength(df, nikkei_df, start_date, end_date)
+    rs_topix = _calc_relative_strength(df, topix_df, start_date, end_date)
+    return rs_nikkei > 100 and rs_topix > 100
 
 
 def check_technical_trend_templates(
@@ -115,8 +141,15 @@ def check_technical_trend_templates(
 
     flag = True
     flag &= check_higher_than_mean_average(df, weeks=mean_average_weeeks)
+    if not flag:
+        return False
     flag &= check_up_trend(df, [40], 20)
+    if not flag:
+        return False
     flag &= check_near_high(df, 52, 0.25, 0.3)
+    if not flag:
+        return False
+    flag &= check_relative_strength(code, cur_day)
     return flag
 
 
