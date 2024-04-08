@@ -26,6 +26,7 @@ jobs:
         poetry run python scripts/update_code_list_jp.py
         poetry run python scripts/update_stock_data_jp.py
         poetry run python scripts/update_financial_data_jp.py
+        poetry run python scripts/divide_stocks_jp.py
     - name: Diff
       id: diff
       run: |
