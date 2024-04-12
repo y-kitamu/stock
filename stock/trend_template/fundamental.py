@@ -89,6 +89,7 @@ def check_fundamental_trend_templates(code: str, current_date=datetime.today()):
         (pl.col("is_prediction") == True)
         & (pl.col("duration") == 12)
         & (pl.col("year") >= current_date.year)
+        & (pl.col("annoounce_date") <= current_date)
     ).sort("annoounce_date")
 
     if len(quarter_df) == 0:

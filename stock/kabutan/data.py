@@ -6,6 +6,7 @@ Copyright (c) 2019- Yusuke Kitamura <ymyk6602@gmail.com>
 """
 
 import datetime
+from typing import Any
 
 import requests
 from bs4 import BeautifulSoup
@@ -13,7 +14,9 @@ from bs4 import BeautifulSoup
 from ..util import convert_to_number
 
 
-def get_stock_data(code: str, base_url: str = "https://kabutan.jp/stock/kabuka?code={}&ashi=day"):
+def get_stock_data(
+    code: str, base_url: str = "https://kabutan.jp/stock/kabuka?code={}&ashi=day"
+) -> list[list[Any]]:
     res = requests.get(base_url.format(code))
     soup = BeautifulSoup(res.text)
 

@@ -39,6 +39,11 @@ def update_csv(code: str):
 
 
 def main():
+    # 株価指数
+    update_csv("0000")  # 日経平均
+    update_csv("0010")  # topix
+
+    # 個別銘柄
     codes_csv = stock.PROJECT_ROOT / "data" / "data_j.csv"
     with open(codes_csv, "r") as f:
         csv_reader = csv.reader(f)
@@ -47,10 +52,6 @@ def main():
 
     for code in codes:
         update_csv(code)
-
-    # 株価指数
-    update_csv("0000")  # 日経平均
-    update_csv("0010")  # topix
 
 
 if __name__ == "__main__":

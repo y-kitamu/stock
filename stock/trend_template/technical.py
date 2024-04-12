@@ -16,9 +16,7 @@ def _get_week_arrays(df: pl.DataFrame, weeks: list, cur_day: datetime, target_da
 
     week_arrays = []
     for week in weeks:
-        week_df = df.filter(
-            pl.col("datetime").is_between(cur_day - timedelta(days=7 * week), cur_day)
-        )
+        week_df = df.filter(pl.col("date").is_between(cur_day - timedelta(days=7 * week), cur_day))
         if len(week_df) == 0:
             return []
         start_idx = week_df.get_column("index")[0] - target_days + 1
@@ -66,7 +64,7 @@ def check_higher_than_mean_average(
     averages = _calc_mean_average(df, weeks, cur_day, target_days=1)
     if len(averages) != len(weeks):
         return False
-    cur_value = df.filter(pl.col("datetime") <= cur_day).get_column("close").to_numpy()[-1]
+    cur_value = df.filter(pl.col("date") <= cur_day).get_column("close").to_numpy()[-1]
     flag = all([cur_value >= avg for avg in averages])
     flag &= all([averages[i] > averages[i + 1] for i in range(len(averages) - 1)])
     return flag
@@ -92,7 +90,7 @@ def check_near_high(
     """現在の株価が`week`週高値から`max_rate_from_high`%以内にあるか、
     `week`週安値から`min_rage_from_low`以上にあるかをチェック
     """
-    cur_value = df.filter(pl.col("datetime") <= cur_day).get_column("close").to_numpy()[-1]
+    cur_value = df.filter(pl.col("date") <= cur_day).get_column("close").to_numpy()[-1]
     arr = _get_week_arrays(df, [week], cur_day)
     if len(arr) == 0:
         return False
@@ -122,31 +120,18 @@ def check_technical_trend_templates(
 ) -> bool:
     """トレンドテンプレートをチェックする"""
     csv_path = PROJECT_ROOT / "data" / "daily" / f"{code}.csv"
-    df = pl.read_csv(csv_path)
-    df = df.select(
-        [
-            pl.col("date"),
-            pl.col("open").cast(pl.Float64),
-            pl.col("high").cast(pl.Float64),
-            pl.col("low").cast(pl.Float64),
-            pl.col("close").cast(pl.Float64),
-            pl.col("volume").cast(pl.Int64),
-        ]
-    ).with_columns(pl.col("date").str.to_datetime("%Y/%m/%d").alias("datetime"))
-    df = df.filter((pl.col("volume").is_not_nan().is_not_null()) & (pl.col("volume") > 0)).sort(
-        "datetime"
-    )
-    if len(df.filter(pl.col("datetime") < cur_day - timedelta(days=7 * 52))) == 0:
+    df = kabutan.read_data_csv(csv_path, exclude_none=False)
+    if len(df.filter(pl.col("date") < cur_day - timedelta(days=7 * 52))) == 0:
         return False
 
     flag = True
-    flag &= check_higher_than_mean_average(df, weeks=mean_average_weeeks)
+    flag &= check_higher_than_mean_average(df, weeks=mean_average_weeeks, cur_day=cur_day)
     if not flag:
         return False
-    flag &= check_up_trend(df, [40], 20)
+    flag &= check_up_trend(df, [40], 20, cur_day=cur_day)
     if not flag:
         return False
-    flag &= check_near_high(df, 52, 0.25, 0.3)
+    flag &= check_near_high(df, 52, 0.25, 0.3, cur_day=cur_day)
     if not flag:
         return False
     flag &= check_relative_strength(code, cur_day)
