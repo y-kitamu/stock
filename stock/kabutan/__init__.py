@@ -12,19 +12,21 @@ import polars as pl
 from . import catalyst, data, financial
 
 
-def read_data_csv(csv_path: Path, exclude_none: bool = True) -> pl.DataFrame:
+def read_data_csv(csv_path: Path, exclude_none: bool = True, with_rs: bool = True) -> pl.DataFrame:
 
     df = pl.read_csv(csv_path)
-    df = df.select(
-        [
-            pl.col("date").str.to_datetime("%Y/%m/%d"),
-            pl.col("open").cast(pl.Float64),
-            pl.col("high").cast(pl.Float64),
-            pl.col("low").cast(pl.Float64),
-            pl.col("close").cast(pl.Float64),
-            pl.col("volume").cast(pl.Int64),
-        ]
-    )
+    columns = [
+        pl.col("date").str.to_datetime("%Y/%m/%d"),
+        pl.col("open").cast(pl.Float64),
+        pl.col("high").cast(pl.Float64),
+        pl.col("low").cast(pl.Float64),
+        pl.col("close").cast(pl.Float64),
+        pl.col("volume").cast(pl.Int64),
+    ]
+    if with_rs:
+        columns.append(pl.col("rs_nikkei").cast(pl.Float64))
+        columns.append(pl.col("rs_topix").cast(pl.Float64))
+    df = df.select(columns)
 
     if exclude_none:
         df = df.filter((pl.col("volume").is_not_nan().is_not_null()) & (pl.col("volume") > 0)).sort(
