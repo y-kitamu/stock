@@ -95,8 +95,8 @@ def update_csv(code: str, update_rs: bool = True):
 
 def main():
     # 株価指数
-    update_csv("0000", update_rs=False)  # 日経平均
-    update_csv("0010", update_rs=False)  # topix
+    update_csv("0000", update_rs=True)  # 日経平均
+    update_csv("0010", update_rs=True)  # topix
 
     # 個別銘柄
     codes_csv = stock.PROJECT_ROOT / "data" / "data_j.csv"
