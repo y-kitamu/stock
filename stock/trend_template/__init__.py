@@ -3,8 +3,21 @@
 
 from datetime import datetime, timedelta
 
+from ..constants import PROJECT_ROOT
 from .fundamental import check_fundamental_trend_templates
 from .technical import check_technical_trend_templates
+
+
+def get_watch_list(date):
+    csv_dir = PROJECT_ROOT / "data" / "daily"
+    watch_list = []
+    for csv_path in sorted(csv_dir.glob("*.csv")):
+        code = csv_path.stem
+        if check_technical_trend_templates(
+            code, cur_day=date
+        ) and check_fundamental_trend_templates(code, current_date=date):
+            watch_list.append(code)
+    return watch_list
 
 
 def calc_watch_list_duration_of(
