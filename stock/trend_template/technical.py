@@ -5,8 +5,9 @@ from datetime import datetime, timedelta
 
 import numpy as np
 import polars as pl
+from pydantic import BaseModel
 
-from .. import kabutan, relative_strength
+from .. import kabutan
 from ..constants import PROJECT_ROOT
 
 
@@ -38,20 +39,6 @@ def _calc_mean_average(df: pl.DataFrame, weeks: list[int], cur_day: datetime, ta
 
     averages = [mean_average(arr, len(arr) - target_days + 1) for arr in week_arrays]
     return averages
-
-
-def _calc_relative_strength(
-    target_df: pl.DataFrame, reference_df: pl.DataFrame, start_date: datetime, end_date: datetime
-):
-    target_df = target_df.filter((start_date < pl.col("date")) & (pl.col("date") <= end_date))
-    reference_df = reference_df.filter((start_date < pl.col("date")) & (pl.col("date") <= end_date))
-
-    if len(target_df) != len(reference_df):
-        return -1
-
-    return relative_strength.relative_strength(
-        target_df["close"].to_numpy(), reference_df["close"].to_numpy()
-    )
 
 
 def check_higher_than_mean_average(
@@ -100,19 +87,10 @@ def check_near_high(
     return cur_value > thresh
 
 
-def check_relative_strength(code: str, cur_day: datetime = datetime.today()):
+def check_relative_strength(df: pl.DataFrame, cur_day: datetime = datetime.today()):
     """Relative strengthが高いかチェック"""
-    csv_dir = PROJECT_ROOT / "data" / "daily"
-
-    nikkei_df = kabutan.read_data_csv(csv_dir / "0000.csv", exclude_none=False)
-    topix_df = kabutan.read_data_csv(csv_dir / "0010.csv", exclude_none=False)
-
-    df = kabutan.read_data_csv(csv_dir / f"{code}.csv", exclude_none=False)
-    start_date = cur_day - timedelta(days=365)
-    end_date = cur_day
-    rs_nikkei = _calc_relative_strength(df, nikkei_df, start_date, end_date)
-    rs_topix = _calc_relative_strength(df, topix_df, start_date, end_date)
-    return rs_nikkei > 100 and rs_topix > 100
+    df = df.filter(pl.col("date") <= cur_day).sort("date")
+    return df["rs_nikkei"][-1] > 100 and df["rs_topix"][-1] > 100
 
 
 def check_technical_trend_templates(
@@ -125,17 +103,101 @@ def check_technical_trend_templates(
         return False
 
     flag = True
+    # 移動平均線より株価が高いか
     flag &= check_higher_than_mean_average(df, weeks=mean_average_weeeks, cur_day=cur_day)
     if not flag:
         return False
+    # 週移動平均線が上向きか
     flag &= check_up_trend(df, [40], 20, cur_day=cur_day)
     if not flag:
         return False
+    # 高値に近いく、安値から離れているか
     flag &= check_near_high(df, 52, 0.25, 0.3, cur_day=cur_day)
     if not flag:
         return False
-    flag &= check_relative_strength(code, cur_day)
+    # Relative strengthが高いか
+    flag &= check_relative_strength(df, cur_day)
     return flag
+
+
+class TechnicalTrendTemplateParams(BaseModel):
+    """ """
+
+    high_ma_weeks: list[int] = [10, 30, 40]  # 移動平均線より株価が高いか
+    uptrend_ma_weeks: list[int] = [40]  # 週移動平均線が上向きか
+    uptrend_days: int = 20  # 週移動平均線が上向きかチェックする日数
+    near_high_week: int = 52  # 高値に近いか
+    max_rate_from_high: float = 0.25  # 高値からの最大割合
+    min_rate_from_low: float = 0.3  # 安値からの最小割合
+
+
+class TechnicalTrendTemplate:
+    def __init__(
+        self,
+        code: str,
+        cur_day: datetime = datetime.today(),
+        params: TechnicalTrendTemplateParams = TechnicalTrendTemplateParams(),
+    ):
+        self.code = code
+        self.cur_day = cur_day
+        self.params = params
+
+        self.df = self._load_data()
+
+        self.is_higher_than_ma = False
+        self.is_up_trend = False
+        self.is_near_high = False
+        self.is_relative_strength = False
+
+    def _load_data(self):
+        csv_path = PROJECT_ROOT / "data" / "daily" / f"{self.code}.csv"
+        df = kabutan.read_data_csv(csv_path, exclude_none=False)
+        return df
+
+    def check(self, day: datetime | None = None):
+        """ """
+        self.cur_day = day or self.cur_day
+        self.is_higher_than_ma = check_higher_than_mean_average(
+            self.df, weeks=self.params.high_ma_weeks, cur_day=self.cur_day
+        )
+        self.is_up_trend = check_up_trend(
+            self.df, self.params.uptrend_ma_weeks, self.params.uptrend_days, self.cur_day
+        )
+        self.is_near_high = check_near_high(
+            self.df,
+            self.params.near_high_week,
+            self.params.max_rate_from_high,
+            self.params.min_rate_from_low,
+            self.cur_day,
+        )
+        self.is_relative_strength = check_relative_strength(self.df, self.cur_day)
+
+        return (
+            self.is_higher_than_ma
+            and self.is_up_trend
+            and self.is_near_high
+            and self.is_relative_strength
+        )
+
+    def get_debug_info(self):
+        """ """
+        return {
+            "code": self.code,
+            "cur_day": self.cur_day,
+            "is_higher_than_ma": self.is_higher_than_ma,
+            "is_up_trend": self.is_up_trend,
+            "is_near_high": self.is_near_high,
+            "is_relative_strength": self.is_relative_strength,
+            "higher_ma": _calc_mean_average(
+                self.df, self.params.high_ma_weeks, self.cur_day, target_days=1
+            ),
+            "up_trend_ma": _calc_mean_average(
+                self.df, self.params.uptrend_ma_weeks, self.cur_day, self.params.uptrend_days
+            ),
+            "near_high": _get_week_arrays(self.df, [self.params.near_high_week], self.cur_day),
+            "rs_nikkei": self.df["rs_nikkei"][-1],
+            "rs_topix": self.df["rs_topix"][-1],
+        }
 
 
 if __name__ == "__main__":

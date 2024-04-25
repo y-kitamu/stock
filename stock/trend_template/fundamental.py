@@ -83,10 +83,10 @@ def check_fundamental_trend_templates(code: str, current_date=datetime.today()):
     year_df = df.filter(
         (pl.col("duration") == 12)
         & (pl.col("annoounce_date") <= current_date)
-        & (pl.col("is_prediction") == False)
+        & (pl.col("is_prediction") is not True)
     ).sort("annoounce_date")
     pred_df = df.filter(
-        (pl.col("is_prediction") == True)
+        (pl.col("is_prediction") is True)
         & (pl.col("duration") == 12)
         & (pl.col("year") >= current_date.year)
         & (pl.col("annoounce_date") <= current_date)
