@@ -54,12 +54,3 @@ def read_financial_csv(csv_path: Path) -> pl.DataFrame:
         ]
     )
     return df
-
-
-# def read_financial_csv(csv_path: Path) -> list[financial.FinancialStatement]:
-#     """Read financial data from csv file."""
-#     code = csv_path.stem
-#     with open(csv_path, "r") as f:
-#         reader = csv.reader(f)
-#         next(reader)
-#         return [financial.FinancialStatement.from_csv(code, row) for row in reader]

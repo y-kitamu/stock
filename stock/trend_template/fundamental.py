@@ -2,10 +2,12 @@
 """
 
 from datetime import datetime
+from typing import Dict
 
 import polars as pl
 
 from ..constants import PROJECT_ROOT
+from ..kabutan import read_financial_csv
 
 
 def _check_growing(
@@ -54,53 +56,35 @@ def _check_growing(
     return is_growing
 
 
-def check_fundamental_trend_templates(code: str, current_date=datetime.today()):
+def check_fundamental_trend_templates(
+    code: str, current_date=datetime.today(), results: Dict[str, bool] = {}
+):
     """fundamentalのテンプレートをチェックする"""
     csv_path = PROJECT_ROOT / "data" / "financial" / f"{code}.csv"
     if not csv_path.exists():
         return False
 
-    df = pl.read_csv(csv_path)
-    df = df.select(
-        [
-            pl.col("year").cast(pl.Int64),
-            pl.col("month").cast(pl.Int64),
-            pl.col("duration").cast(pl.Int64),
-            pl.col("annoounce_date").str.to_datetime("%y/%m/%d"),
-            pl.col("is_prediction").cast(pl.Boolean),
-            pl.col("total_revenue").cast(pl.Float64),
-            pl.col("operating_income").cast(pl.Float64),
-            pl.col("ordinary_profit").cast(pl.Float64),
-            pl.col("net_income").cast(pl.Float64),
-            pl.col("eps").cast(pl.Float64),
-            pl.col("divident").cast(pl.Float64),
-        ]
+    df = read_financial_csv(csv_path)
+    df = df.filter(pl.col("annoounce_date") <= current_date)
+    quarter_df = df.filter(pl.col("duration") == 3).sort("annoounce_date")
+    year_df = df.filter((pl.col("duration") == 12) & (pl.col("is_prediction") is not True)).sort(
+        "annoounce_date"
     )
-
-    quarter_df = df.filter(
-        (pl.col("duration") == 3) & (pl.col("annoounce_date") <= current_date)
-    ).sort("annoounce_date")
-    year_df = df.filter(
-        (pl.col("duration") == 12)
-        & (pl.col("annoounce_date") <= current_date)
-        & (pl.col("is_prediction") is not True)
-    ).sort("annoounce_date")
     pred_df = df.filter(
         (pl.col("is_prediction") is True)
         & (pl.col("duration") == 12)
         & (pl.col("year") >= current_date.year)
-        & (pl.col("annoounce_date") <= current_date)
     ).sort("annoounce_date")
 
     if len(quarter_df) == 0:
         return False
 
     # fundamentalsが良好かチェック
-    flag = True
     # 直近四半期の利益がプラス
-    flag &= quarter_df["net_income"][-1] > 0
+    results["latest_net_income"] = quarter_df["net_income"][-1] > 0
+    # flag &= quarter_df["net_income"][-1] > 0
     # 直近2四半期のepsが前年同期比で20%以上増加
-    flag &= _check_growing(
+    results["net_income_growing"] = _check_growing(
         df=quarter_df,
         key="net_income",
         min_growth_rate=0.2,
@@ -108,7 +92,7 @@ def check_fundamental_trend_templates(code: str, current_date=datetime.today()):
         current_date=current_date,
     )
     # 直近年度の売上高が前年比で10%以上増加
-    flag &= _check_growing(
+    results["total_revenue_growing"] = _check_growing(
         df=year_df,
         key="total_revenue",
         min_growth_rate=0.1,
@@ -121,10 +105,16 @@ def check_fundamental_trend_templates(code: str, current_date=datetime.today()):
 
         if latest_pred["year"][0] > year_df["year"][-1]:
             if latest_pred["total_revenue"][0] is not None:
-                flag &= latest_pred["total_revenue"][0] > year_df["total_revenue"][-1]
+                results["pred_total_revenue"] = (
+                    latest_pred["total_revenue"][0] > year_df["total_revenue"][-1]
+                )
             if latest_pred["operating_income"][0] is not None:
-                flag &= latest_pred["operating_income"][0] > year_df["operating_income"][-1]
+                results["pred_operating_income"] = (
+                    latest_pred["operating_income"][0] > year_df["operating_income"][-1]
+                )
             if latest_pred["net_income"][0] is not None:
-                flag &= latest_pred["net_income"][0] > year_df["net_income"][-1]
+                results["pred_net_income"] = (
+                    latest_pred["net_income"][0] > year_df["net_income"][-1]
+                )
 
-    return flag
+    return all(results.values())
