@@ -8,6 +8,7 @@ import polars as pl
 
 from ..constants import PROJECT_ROOT
 from ..kabutan import read_financial_csv
+from ..logger import logger
 
 
 def _check_growing(
@@ -67,11 +68,11 @@ def check_fundamental_trend_templates(
     df = read_financial_csv(csv_path)
     df = df.filter(pl.col("annoounce_date") <= current_date)
     quarter_df = df.filter(pl.col("duration") == 3).sort("annoounce_date")
-    year_df = df.filter((pl.col("duration") == 12) & (pl.col("is_prediction") is not True)).sort(
+    year_df = df.filter((pl.col("duration") == 12) & (pl.col("is_prediction") == False)).sort(
         "annoounce_date"
     )
     pred_df = df.filter(
-        (pl.col("is_prediction") is True)
+        (pl.col("is_prediction") == True)
         & (pl.col("duration") == 12)
         & (pl.col("year") >= current_date.year)
     ).sort("annoounce_date")
@@ -82,7 +83,6 @@ def check_fundamental_trend_templates(
     # fundamentalsが良好かチェック
     # 直近四半期の利益がプラス
     results["latest_net_income"] = quarter_df["net_income"][-1] > 0
-    # flag &= quarter_df["net_income"][-1] > 0
     # 直近2四半期のepsが前年同期比で20%以上増加
     results["net_income_growing"] = _check_growing(
         df=quarter_df,
@@ -117,4 +117,5 @@ def check_fundamental_trend_templates(
                     latest_pred["net_income"][0] > year_df["net_income"][-1]
                 )
 
+    print(code, results)
     return all(results.values())
