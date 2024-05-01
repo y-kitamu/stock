@@ -23,16 +23,21 @@ def get_watch_list(date) -> list[str]:
 
 
 def calc_watch_list_duration_of(
-    code: str, start_date: datetime, end_date: datetime = datetime.today()
+    code: str,
+    start_date: datetime,
+    end_date: datetime = datetime.today(),
+    use_technical: bool = True,
+    use_fundamental: bool = True,
 ) -> list[list[datetime]]:
     """`code`の銘柄がウォッチリストに入っていた期間を計算する"""
+    assert use_technical or use_fundamental, "use_technical or use_fundamental must be True"
     duration = []
     date = start_date
     start = None
     while date <= end_date:
-        if check_technical_trend_templates(
-            code, cur_day=date
-        ) and check_fundamental_trend_templates(code, current_date=date):
+        if (not use_technical or check_technical_trend_templates(code, cur_day=date)) and (
+            not use_fundamental or check_fundamental_trend_templates(code, current_date=date)
+        ):
             if start is None:
                 start = date
         else:

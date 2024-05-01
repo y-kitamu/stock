@@ -117,5 +117,5 @@ def check_fundamental_trend_templates(
                     latest_pred["net_income"][0] > year_df["net_income"][-1]
                 )
 
-    print(code, results)
+    # print(code, results)
     return all(results.values())
