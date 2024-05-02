@@ -3,7 +3,7 @@
 """
 
 import csv
-from datetime import datetime, timedelta
+from datetime import date, datetime, timedelta
 from pathlib import Path
 
 import polars as pl
@@ -12,7 +12,7 @@ import stock
 from stock.util import convert_to_number
 
 
-def calc_relative_strength(df: pl.DataFrame, ref_df: pl.DataFrame, end: datetime, rs: float):
+def calc_relative_strength(df: pl.DataFrame, ref_df: pl.DataFrame, end: date, rs: float):
     if rs > -10.0:
         return rs
     start = end - timedelta(days=365)
@@ -42,8 +42,8 @@ def update_csv(code: str, update_rs: bool = True):
     new_data = [
         d
         for d in new_data
-        if df_with_epoch["epoch"].search_sorted((d[0] - datetime(1970, 1, 1)).days, side="left")
-        == df_with_epoch["epoch"].search_sorted((d[0] - datetime(1970, 1, 1)).days, side="right")
+        if df_with_epoch["epoch"].search_sorted((d[0] - date(1970, 1, 1)).days, side="left")
+        == df_with_epoch["epoch"].search_sorted((d[0] - date(1970, 1, 1)).days, side="right")
     ]
 
     if len(new_data) > 0:

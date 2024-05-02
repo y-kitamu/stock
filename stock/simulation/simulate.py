@@ -1,7 +1,7 @@
 """simulate.py
 """
 
-from datetime import datetime, timedelta
+from datetime import date, datetime, timedelta
 from pathlib import Path
 
 from pydantic import BaseModel
@@ -13,7 +13,7 @@ from ..kabutan import read_data_csv
 class StopCondition(BaseModel):
     """ """
 
-    end_date: datetime | None = None
+    end_date: date | None = None
     max_loss_rate: float = 0.1  # 買値からの最大損失率
     trailing_start_rate: float = 0.2  # 利益が出た場合のトレイリングストップ開始率
     trailing_stop_rate: float = 0.1  # トレイリングストップ率
@@ -26,14 +26,14 @@ class SimulationResult(BaseModel):
     """ """
 
     buying_price: float
-    buying_date: datetime
+    buying_date: date
     selling_price: float
-    selling_date: datetime
+    selling_date: date
     profit: float
     duration: timedelta
 
 
-def run(code: str, start_date: datetime, stop_condition: StopCondition) -> SimulationResult:
+def run(code: str, start_date: date, stop_condition: StopCondition) -> SimulationResult:
     """ """
     csv_path = PROJECT_ROOT / Path(f"data/daily/{code}.csv")
     df = read_data_csv(csv_path, exclude_none=True)

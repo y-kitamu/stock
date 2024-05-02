@@ -16,7 +16,7 @@ def read_data_csv(csv_path: Path, exclude_none: bool = True, with_rs: bool = Tru
 
     df = pl.read_csv(csv_path)
     columns = [
-        pl.col("date").str.to_datetime("%Y/%m/%d"),
+        pl.col("date").str.to_datetime("%Y/%m/%d").cast(pl.Date),
         pl.col("open").cast(pl.Float64),
         pl.col("high").cast(pl.Float64),
         pl.col("low").cast(pl.Float64),

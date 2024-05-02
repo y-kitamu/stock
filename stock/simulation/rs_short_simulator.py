@@ -15,7 +15,7 @@ from ..constants import PROJECT_ROOT
 from ..kabutan import read_data_csv
 
 
-def collect_relative_strengths_to_df(start_date, end_date):
+def collect_relative_strengths_to_df(start_date: datetime.date, end_date: datetime.date):
     # csvを読み込んでrelative strengthを取得
     dfs = []
     for csv_path in sorted((PROJECT_ROOT / "data" / "daily").glob("*.csv")):
@@ -40,9 +40,9 @@ def collect_relative_strengths_to_df(start_date, end_date):
 
 class Transaction(BaseModel):
     code: str
-    buy_date: datetime.datetime
+    buy_date: datetime.date
     buy_value: float
-    sell_date: datetime.datetime | None = None
+    sell_date: datetime.date | None = None
     sell_value: float | None = None
     profit_rate: float | None = None
     values: dict[str, Any] = {}
@@ -70,15 +70,13 @@ class BaseSimulator:
             PROJECT_ROOT / "data/daily/0000.csv", exclude_none=False, with_rs=False
         )["date"]
 
-    def _get_target_codes_of(self, date: datetime.datetime):
+    def _get_target_codes_of(self, date: datetime.date):
         """指定した日付のportfolioの銘柄を取得する。Noneを返した場合はその日は売買を行わない。"""
 
-    def _calc_realized_gain(
-        self, df: pl.DataFrame, result: Transaction, end_date: datetime.datetime
-    ):
+    def _calc_realized_gain(self, df: pl.DataFrame, result: Transaction, end_date: datetime.date):
         """ """
 
-    def _update_portfolio(self, date: datetime.datetime, new_codes: list[str]):
+    def _update_portfolio(self, date: datetime.date, new_codes: list[str]):
         """portfolioを更新する"""
         current_codes = sorted(self.portfolio.keys())
         # target_codesの銘柄がcurrent_codesに含まれていない場合はその日の始値で新しく購入
@@ -110,7 +108,7 @@ class BaseSimulator:
             close_value = df["close"][0]
             self.unrealized_gain += close_value / transaction.buy_value - 1.0
 
-    def _simulate_day(self, date: datetime.datetime):
+    def _simulate_day(self, date: datetime.date):
         """ """
         new_codes = self._get_target_codes_of(date)
         if new_codes is None:
@@ -123,9 +121,7 @@ class BaseSimulator:
             )
         )
 
-    def _simulate(
-        self, start_date: datetime.datetime, end_date: datetime.datetime = datetime.datetime.today()
-    ):
+    def _simulate(self, start_date: datetime.date, end_date: datetime.date = datetime.date.today()):
         """ """
         self.valid_dates = self.valid_dates.filter(
             (start_date <= self.valid_dates) & (self.valid_dates <= end_date)
@@ -133,7 +129,7 @@ class BaseSimulator:
         date = start_date
         while date <= end_date:
             date += datetime.timedelta(days=1)
-            if date.date() not in [d.date() for d in self.valid_dates]:
+            if date not in self.valid_dates:
                 # print("date not in valid_dates : {}".format(date))
                 continue
             self._simulate_day(date)
@@ -156,7 +152,7 @@ class RSShortSimulator(BaseSimulator):
         self.num_distribution = num_distribution
 
     def _collect_relative_strength(
-        self, start_date: datetime.datetime, end_date: datetime.datetime, rs_min, rs_max
+        self, start_date: datetime.date, end_date: datetime.date, rs_min, rs_max
     ):
         """ """
         df = collect_relative_strengths_to_df(start_date, end_date)
@@ -171,7 +167,7 @@ class RSShortSimulator(BaseSimulator):
                 codes[idx] for idx in rs_indices if rs_min < vals[idx] < rs_max
             ][: self.num_distribution]
 
-    def _get_target_codes_of(self, date: datetime.datetime):
+    def _get_target_codes_of(self, date: datetime.date):
         """ """
         df = self.valid_dates.filter(self.valid_dates < date)
         if len(df) == 0:
@@ -184,7 +180,7 @@ class RSShortSimulator(BaseSimulator):
         return self._calc_reslized_gain_buy(df, result, end_date)
 
     def _calc_reslized_gain_buy(
-        self, df: pl.DataFrame, result: Transaction, end_date: datetime.datetime
+        self, df: pl.DataFrame, result: Transaction, end_date: datetime.date
     ):
         """買いシミュレーション"""
         df = df.filter(pl.col("date") <= end_date).sort("date")
@@ -210,7 +206,7 @@ class RSShortSimulator(BaseSimulator):
         # ))
 
     def _calc_realized_gain_sell(
-        self, df: pl.DataFrame, result: Transaction, end_date: datetime.datetime
+        self, df: pl.DataFrame, result: Transaction, end_date: datetime.date
     ):
         """空売りシミュレーション"""
         df = df.filter(pl.col("date") <= end_date).sort("date")
@@ -234,9 +230,7 @@ class RSShortSimulator(BaseSimulator):
         result.values["rs_topix_start"] = df["rs_topix"][0]
         result.values["rs_topix_end"] = df["rs_topix"][i]
 
-    def simulate(
-        self, start_date: datetime.datetime, end_date: datetime.datetime = datetime.datetime.today()
-    ):
+    def simulate(self, start_date: datetime.date, end_date: datetime.date = datetime.date.today()):
         self._collect_relative_strength(
             start_date, end_date, rs_min=self.rs_min, rs_max=self.rs_max
         )

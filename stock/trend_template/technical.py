@@ -1,7 +1,7 @@
 """technical.py
 """
 
-from datetime import datetime, timedelta
+from datetime import date, datetime, timedelta
 
 import numpy as np
 import polars as pl
@@ -11,7 +11,7 @@ from .. import kabutan
 from ..constants import PROJECT_ROOT
 
 
-def _get_week_arrays(df: pl.DataFrame, weeks: list, cur_day: datetime, target_days: int = 1):
+def _get_week_arrays(df: pl.DataFrame, weeks: list, cur_day: date, target_days: int = 1):
     """ """
     df = df.with_row_index()
 
@@ -28,7 +28,7 @@ def _get_week_arrays(df: pl.DataFrame, weeks: list, cur_day: datetime, target_da
     return week_arrays
 
 
-def _calc_mean_average(df: pl.DataFrame, weeks: list[int], cur_day: datetime, target_days: int = 1):
+def _calc_mean_average(df: pl.DataFrame, weeks: list[int], cur_day: date, target_days: int = 1):
     """移動平均線を計算する"""
     week_arrays = _get_week_arrays(df, weeks, cur_day, target_days)
     if len(week_arrays) != len(weeks):
@@ -42,7 +42,7 @@ def _calc_mean_average(df: pl.DataFrame, weeks: list[int], cur_day: datetime, ta
 
 
 def check_higher_than_mean_average(
-    df: pl.DataFrame, weeks: list[int] = [10, 30, 40], cur_day: datetime = datetime.today()
+    df: pl.DataFrame, weeks: list[int] = [10, 30, 40], cur_day: date = date.today()
 ):
     """現在の株価が(`weeks`週)移動平均線を上回っているかチェック
     `weeks`週移動平均線が期間が短い順に並んでいるかチェック
@@ -57,9 +57,7 @@ def check_higher_than_mean_average(
     return flag
 
 
-def check_up_trend(
-    df: pl.DataFrame, weeks: list[int], days: int, cur_day: datetime = datetime.today()
-):
+def check_up_trend(df: pl.DataFrame, weeks: list[int], days: int, cur_day: date = date.today()):
     """`weeks`週移動平均線が過去`days`日間上向きかチェック"""
     week_arrays = _calc_mean_average(df, weeks, cur_day, days)
     if len(week_arrays) != len(weeks):
@@ -72,7 +70,7 @@ def check_near_high(
     week: int,
     max_rate_from_high: float,
     min_rate_from_low: float,
-    cur_day: datetime = datetime.today(),
+    cur_day: date = date.today(),
 ):
     """現在の株価が`week`週高値から`max_rate_from_high`%以内にあるか、
     `week`週安値から`min_rage_from_low`以上にあるかをチェック
@@ -87,14 +85,14 @@ def check_near_high(
     return cur_value > thresh
 
 
-def check_relative_strength(df: pl.DataFrame, cur_day: datetime = datetime.today()):
+def check_relative_strength(df: pl.DataFrame, cur_day: date = date.today()):
     """Relative strengthが高いかチェック"""
     df = df.filter(pl.col("date") <= cur_day).sort("date")
     return df["rs_nikkei"][-1] > 100 and df["rs_topix"][-1] > 100
 
 
 def check_technical_trend_templates(
-    code: str, mean_average_weeeks: list[int] = [10, 30, 40], cur_day: datetime = datetime.today()
+    code: str, mean_average_weeeks: list[int] = [10, 30, 40], cur_day: date = date.today()
 ) -> bool:
     """トレンドテンプレートをチェックする"""
     csv_path = PROJECT_ROOT / "data" / "daily" / f"{code}.csv"
@@ -135,7 +133,7 @@ class TechnicalTrendTemplate:
     def __init__(
         self,
         code: str,
-        cur_day: datetime = datetime.today(),
+        cur_day: date = date.today(),
         params: TechnicalTrendTemplateParams = TechnicalTrendTemplateParams(),
     ):
         self.code = code

@@ -1,14 +1,13 @@
 """fundamental.py
 """
 
-from datetime import datetime
+from datetime import date
 from typing import Dict
 
 import polars as pl
 
 from ..constants import PROJECT_ROOT
 from ..kabutan import read_financial_csv
-from ..logger import logger
 
 
 def _check_growing(
@@ -16,7 +15,7 @@ def _check_growing(
     key: str,
     min_growth_rate: float,
     min_duration: int,
-    current_date: datetime = datetime.today(),
+    current_date: date = date.today(),
     num_average: int = 1,
 ):
     if len(df) < min_duration + num_average:
@@ -58,7 +57,7 @@ def _check_growing(
 
 
 def check_fundamental_trend_templates(
-    code: str, current_date=datetime.today(), results: Dict[str, bool] = {}
+    code: str, current_date=date.today(), results: Dict[str, bool] = {}
 ):
     """fundamentalのテンプレートをチェックする"""
     csv_path = PROJECT_ROOT / "data" / "financial" / f"{code}.csv"

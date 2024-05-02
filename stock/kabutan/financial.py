@@ -21,7 +21,7 @@ class FinancialStatement(BaseModel):
     year: int
     month: int
     duration: int
-    announce_date: datetime.datetime | None
+    announce_date: datetime.date | None
     is_prediction: bool
     total_revenue: int | float | None
     operating_income: int | float | None
@@ -86,7 +86,9 @@ class FinancialStatement(BaseModel):
             year=int(row[0]),
             month=int(row[1]),
             duration=int(row[2]),
-            announce_date=None if row[3] == "" else datetime.datetime.strptime(row[3], "%y/%m/%d"),
+            announce_date=(
+                None if row[3] == "" else datetime.datetime.strptime(row[3], "%y/%m/%d").date()
+            ),
             is_prediction=row[4] == "True",
             total_revenue=convert_to_number(row[5]),
             operating_income=convert_to_number(row[6]),
@@ -172,7 +174,7 @@ def get_annual_results(soup: BeautifulSoup, code: str):
                 announce_date=(
                     None
                     if cols[indices[6]] == "－"
-                    else datetime.datetime.strptime(cols[indices[6]], "%y/%m/%d")
+                    else datetime.datetime.strptime(cols[indices[6]], "%y/%m/%d").date()
                 ),
                 is_prediction="予" in th.text,
                 total_revenue=convert_to_number(cols[indices[0]]),

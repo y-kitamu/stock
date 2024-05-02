@@ -1,7 +1,7 @@
 """__init__.py
 """
 
-from datetime import datetime, timedelta
+from datetime import date, timedelta
 
 from ..constants import PROJECT_ROOT
 from .fundamental import check_fundamental_trend_templates
@@ -9,26 +9,26 @@ from .technical import (TechnicalTrendTemplate, TechnicalTrendTemplateParams,
                         check_technical_trend_templates)
 
 
-def get_watch_list(date) -> list[str]:
+def get_watch_list(cur_day: date) -> list[str]:
     """指定した日付(`date`)時点のウォッチリストを取得する"""
     csv_dir = PROJECT_ROOT / "data" / "daily"
     watch_list = []
     for csv_path in sorted(csv_dir.glob("*.csv")):
         code = csv_path.stem
         if check_technical_trend_templates(
-            code, cur_day=date
-        ) and check_fundamental_trend_templates(code, current_date=date):
+            code, cur_day=cur_day
+        ) and check_fundamental_trend_templates(code, current_date=cur_day):
             watch_list.append(code)
     return watch_list
 
 
 def calc_watch_list_duration_of(
     code: str,
-    start_date: datetime,
-    end_date: datetime = datetime.today(),
+    start_date: date,
+    end_date: date = date.today(),
     use_technical: bool = True,
     use_fundamental: bool = True,
-) -> list[list[datetime]]:
+) -> list[list[date]]:
     """`code`の銘柄がウォッチリストに入っていた期間を計算する"""
     assert use_technical or use_fundamental, "use_technical or use_fundamental must be True"
     duration = []
