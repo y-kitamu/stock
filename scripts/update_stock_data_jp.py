@@ -50,7 +50,7 @@ def update_csv(code: str, update_rs: bool = True):
         header = ["date", "open", "high", "low", "close", "volume"]
         data = {head: [d[idx] for d in new_data] for idx, head in enumerate(header)}
         new_df = pl.DataFrame(data).with_columns(
-            pl.col("date"),
+            pl.col("date").cast(pl.Date),
             pl.col("open").cast(pl.Float64),
             pl.col("high").cast(pl.Float64),
             pl.col("low").cast(pl.Float64),
