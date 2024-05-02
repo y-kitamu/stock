@@ -49,7 +49,7 @@ def main():
             tds = tr.find_all("td")
             if len(tds) != 4:
                 continue
-            print([td.text for td in tds])
+            # print([td.text for td in tds])
             res = re_date.search(tds[0].text)
             if res is None:
                 continue
