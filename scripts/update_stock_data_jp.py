@@ -95,10 +95,12 @@ def update_csv(code: str, update_rs: bool = True):
                     return_dtype=pl.Float64,
                 )
                 .alias("rs_topix"),
-                pl.struct("date", "rs").map_elements(
+                pl.struct("date", "rs")
+                .map_elements(
                     lambda val: calc_relative_strength_v2(df, topix_df, val["date"], val["rs"]),
                     return_dtype=pl.Float64,
-                ),
+                )
+                .alias("rs"),
             )
         else:
             df = pl.concat([df, new_df])
