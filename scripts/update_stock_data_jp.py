@@ -42,8 +42,8 @@ def update_csv(code: str, update_rs: bool = True):
     new_data = [
         d
         for d in new_data
-        if df_with_epoch["epoch"].search_sorted((d[0] - date(1970, 1, 1)).days, side="left")
-        == df_with_epoch["epoch"].search_sorted((d[0] - date(1970, 1, 1)).days, side="right")
+        if df_with_epoch["epoch"].search_sorted((d[0].date() - date(1970, 1, 1)).days, side="left")
+        == df_with_epoch["epoch"].search_sorted((d[0].date() - date(1970, 1, 1)).days, side="right")
     ]
 
     if len(new_data) > 0:

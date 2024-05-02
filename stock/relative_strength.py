@@ -46,8 +46,8 @@ def relative_strength_52wk(
 def relative_strength_v2(
     df: pl.DataFrame,
     ref_df: pl.DataFrame,
-    start_date: datetime.datetime,
-    end_date: datetime.datetime,
+    start_date: datetime.date,
+    end_date: datetime.date,
 ):
     df = df.filter(pl.col("date").is_between(start_date, end_date)).with_columns(
         ((pl.col("high") - pl.col("low")) / pl.col("open")).alias("diff")

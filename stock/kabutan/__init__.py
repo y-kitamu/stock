@@ -36,6 +36,10 @@ def read_data_csv(csv_path: Path, exclude_none: bool = True, with_rs: bool = Tru
     return df
 
 
+def write_data_csv(df: pl.DataFrame, csv_path: Path):
+    df.with_columns(pl.col("date").dt.to_string("%Y/%m/%d")).write_csv(csv_path)
+
+
 def read_financial_csv(csv_path: Path) -> pl.DataFrame:
     df = pl.read_csv(csv_path)
     df = df.select(
