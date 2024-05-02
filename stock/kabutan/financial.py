@@ -227,7 +227,6 @@ def get_quarter_results(soup: BeautifulSoup, code: str):
         if len(cols) < len(headers) - 1:
             continue
 
-        print(year, start_month, end_month, cols)
         results.append(
             FinancialStatement(
                 code=code,

@@ -40,7 +40,7 @@ def main():
     res = requests.get(
         "https://www.sbisec.co.jp/ETGate/WPLETmgR001Control?OutSide=on&getFlg=on&burl=search_domestic&cat1=domestic&cat2=corporate&dir=corporate&file=stock_ca_bunkatsu.html"
     )
-    soup = BeautifulSoup(res.content)
+    soup = BeautifulSoup(res.content, features="lxml")
 
     re_date = re.compile("\d\d/\d\d/\d\d")
     main = soup.find("div", {"id": "main"})

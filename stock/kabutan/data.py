@@ -18,7 +18,7 @@ def get_stock_data(
     code: str, base_url: str = "https://kabutan.jp/stock/kabuka?code={}&ashi=day"
 ) -> list[list[Any]]:
     res = requests.get(base_url.format(code))
-    soup = BeautifulSoup(res.text)
+    soup = BeautifulSoup(res.text, features="lxml")
 
     daily_data = []
     stock_tables = soup.find("div", {"id": "stock_kabuka_table"})

@@ -27,7 +27,7 @@ def get_financial_data(code: str, output_dir: Path = stock.PROJECT_ROOT / "data/
     num_results = len(results)
 
     res = requests.get(f"https://kabutan.jp/stock/finance?code={code}")
-    soup = BeautifulSoup(res.text.replace("\r", ""))
+    soup = BeautifulSoup(res.text.replace("\r", ""), features="lxml")
     results += get_annual_results(soup, code)
     results += get_quarter_results(soup, code)
     results = sorted(set(results))
