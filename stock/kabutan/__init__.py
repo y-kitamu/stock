@@ -26,6 +26,7 @@ def read_data_csv(csv_path: Path, exclude_none: bool = True, with_rs: bool = Tru
     if with_rs:
         columns.append(pl.col("rs_nikkei").cast(pl.Float64))
         columns.append(pl.col("rs_topix").cast(pl.Float64))
+        columns.append(pl.col("rs").cast(pl.Float64))
     df = df.select(columns)
 
     if exclude_none:

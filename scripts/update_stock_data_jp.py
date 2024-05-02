@@ -29,6 +29,14 @@ def calc_relative_strength(df: pl.DataFrame, ref_df: pl.DataFrame, end: date, rs
     )
 
 
+def calc_relative_strength_v2(df: pl.DataFrame, ref_df: pl.DataFrame, end: date, rs: float):
+    if rs > -10.0:
+        return rs
+    return stock.relative_strength.relative_strength_v2(
+        df, ref_df, start_date=end - timedelta(30), end_date=end
+    )
+
+
 def update_csv(code: str, update_rs: bool = True):
     csv_path = stock.PROJECT_ROOT / Path("data/daily/{}.csv".format(code))
     if not csv_path.exists():
@@ -67,7 +75,9 @@ def update_csv(code: str, update_rs: bool = True):
             )
 
             new_df = new_df.with_columns(
-                pl.lit(-10.0).alias("rs_nikkei"), pl.lit(-10.0).alias("rs_topix")
+                pl.lit(-10.0).alias("rs_nikkei"),
+                pl.lit(-10.0).alias("rs_topix"),
+                pl.lit(-10.0).alias("rs"),
             )
             df = pl.concat([df, new_df]).sort("date")
             df = df.with_columns(
@@ -85,6 +95,10 @@ def update_csv(code: str, update_rs: bool = True):
                     return_dtype=pl.Float64,
                 )
                 .alias("rs_topix"),
+                pl.struct("date", "rs").map_elements(
+                    lambda val: calc_relative_strength_v2(df, topix_df, val["date"], val["rs"]),
+                    return_dtype=pl.Float64,
+                ),
             )
         else:
             df = pl.concat([df, new_df])
