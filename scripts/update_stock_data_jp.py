@@ -39,6 +39,7 @@ def calc_relative_strength_v2(df: pl.DataFrame, ref_df: pl.DataFrame, end: date,
 
 def update_csv(code: str, update_rs: bool = True):
     csv_path = stock.PROJECT_ROOT / Path("data/daily/{}.csv".format(code))
+    stock.logger.info(f"Start update csv : {csv_path}")
     if not csv_path.exists():
         with open(csv_path, "w") as f:
             f.write("date,open,high,low,close,volume,rs_nikkei,rs_topix\n")
@@ -106,7 +107,6 @@ def update_csv(code: str, update_rs: bool = True):
             df = pl.concat([df, new_df])
 
         df.with_columns(pl.col("date").dt.to_string("%Y/%m/%d")).write_csv(csv_path)
-        stock.logger.info(f"Update csv : {csv_path}")
 
 
 def main():

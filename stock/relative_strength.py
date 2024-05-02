@@ -49,9 +49,12 @@ def relative_strength_v2(
     start_date: datetime.date,
     end_date: datetime.date,
 ):
-    df = df.filter(pl.col("date").is_between(start_date, end_date)).with_columns(
-        ((pl.col("high") - pl.col("low")) / pl.col("open")).alias("diff")
-    )
+    df = df.filter(
+        pl.col("date").is_between(start_date, end_date)
+        & pl.col("volume").is_not_null()
+        & pl.col("volume").is_not_nan()
+        & (pl.col("volume") > 0)
+    ).with_columns(((pl.col("high") - pl.col("low")) / pl.col("open")).alias("diff"))
     ref_df = ref_df.filter(pl.col("date").is_between(start_date, end_date)).with_columns(
         ((pl.col("high") - pl.col("low")) / pl.col("open")).alias("diff")
     )
