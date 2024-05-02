@@ -63,9 +63,9 @@ def main():
 
 
 if __name__ == "__main__":
-    # main()
-    divide_date = date(2024, 4, 26)
-    codes = ["3399", "5588", "5132"]
-    rates = [2.0, 2.0, 3.0]
-    for code, rate in zip(codes, rates):
-        divide_stock(code, divide_date, rate)
+    main()
+    # divide_date = date(2024, 4, 26)
+    # codes = ["3399", "5588", "5132"]
+    # rates = [2.0, 2.0, 3.0]
+    # for code, rate in zip(codes, rates):
+    #     divide_stock(code, divide_date, rate)
