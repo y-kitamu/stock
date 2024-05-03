@@ -24,7 +24,7 @@
     },
     "2023-03-31": {
         "Tax Effect Of Unusual Items": 0.0,
-        "Tax Rate For Calcs": 0.37,
+        "Tax Rate For Calcs": 0.367059,
         "Net Income From Continuing Operation Net Minority Interest": -140100000.0,
         "Normalized Income": -140100000.0,
         "Net Income From Continuing And Discontinued Operation": -140100000.0,
@@ -583,5 +583,28 @@
         "Other Operating Expenses": 1290400000.0,
         "Total Revenue": 2690800000.0,
         "Operating Revenue": 2690800000.0
+    },
+    "2024-03-31": {
+        "Tax Effect Of Unusual Items": 0.0,
+        "Tax Rate For Calcs": 0.15165,
+        "Net Income From Continuing Operation Net Minority Interest": 532500000.0,
+        "Normalized Income": 532500000.0,
+        "Net Income From Continuing And Discontinued Operation": 532500000.0,
+        "Total Expenses": 3426200000.0,
+        "Diluted Average Shares": 239400000.0,
+        "Basic Average Shares": 236000000.0,
+        "Diluted EPS": 2.22,
+        "Basic EPS": 2.26,
+        "Diluted NI Availto Com Stockholders": 532500000.0,
+        "Net Income Common Stockholders": 532500000.0,
+        "Net Income": 532500000.0,
+        "Minority Interests": 500000.0,
+        "Net Income Including Noncontrolling Interests": 532000000.0,
+        "Net Income Continuous Operations": 532000000.0,
+        "Tax Provision": 95100000.0,
+        "Pretax Income": 627100000.0,
+        "Other Operating Expenses": 1343400000.0,
+        "Total Revenue": 4053300000.0,
+        "Operating Revenue": 4053300000.0
     }
 }
