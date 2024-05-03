@@ -5,15 +5,23 @@ Create Date : 2024-03-23 19:02:22
 Copyright (c) 2019- Yusuke Kitamura <ymyk6602@gmail.com>
 """
 
+import datetime
 from pathlib import Path
 
 import polars as pl
 
 from . import catalyst, data, financial
 
+INDEX_CODE_LIST = ["0000", "0010"]
 
-def read_data_csv(csv_path: Path, exclude_none: bool = True, with_rs: bool = True) -> pl.DataFrame:
 
+def read_data_csv(
+    csv_path: Path,
+    exclude_none: bool = True,
+    with_rs: bool = True,
+    start_date: datetime.date | None = None,
+    end_date: datetime.date | None = None,
+) -> pl.DataFrame:
     df = pl.read_csv(csv_path)
     columns = [
         pl.col("date").str.to_datetime("%Y/%m/%d").cast(pl.Date),
@@ -29,12 +37,15 @@ def read_data_csv(csv_path: Path, exclude_none: bool = True, with_rs: bool = Tru
         columns.append(pl.col("rs").cast(pl.Float64))
     df = df.select(columns)
 
-    if exclude_none:
-        df = df.filter((pl.col("volume").is_not_nan().is_not_null()) & (pl.col("volume") > 0)).sort(
-            "date"
-        )
+    if csv_path.stem not in INDEX_CODE_LIST and exclude_none:
+        df = df.filter((pl.col("volume").is_not_nan().is_not_null()) & (pl.col("volume") > 0))
 
-    return df
+    if start_date is not None:
+        df = df.filter(pl.col("date") >= start_date)
+    if end_date is not None:
+        df = df.filter(pl.col("date") <= end_date)
+
+    return df.sort("date")
 
 
 def write_data_csv(df: pl.DataFrame, csv_path: Path):

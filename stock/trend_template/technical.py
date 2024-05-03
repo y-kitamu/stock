@@ -28,7 +28,7 @@ def _get_week_arrays(df: pl.DataFrame, weeks: list, cur_day: date, target_days: 
     return week_arrays
 
 
-def _calc_mean_average(df: pl.DataFrame, weeks: list[int], cur_day: date, target_days: int = 1):
+def calc_mean_average(df: pl.DataFrame, weeks: list[int], cur_day: date, target_days: int = 1):
     """移動平均線を計算する"""
     week_arrays = _get_week_arrays(df, weeks, cur_day, target_days)
     if len(week_arrays) != len(weeks):
@@ -48,7 +48,7 @@ def check_higher_than_mean_average(
     `weeks`週移動平均線が期間が短い順に並んでいるかチェック
     """
     weeks = sorted(weeks)
-    averages = _calc_mean_average(df, weeks, cur_day, target_days=1)
+    averages = calc_mean_average(df, weeks, cur_day, target_days=1)
     if len(averages) != len(weeks):
         return False
     cur_value = df.filter(pl.col("date") <= cur_day).get_column("close").to_numpy()[-1]
@@ -59,7 +59,7 @@ def check_higher_than_mean_average(
 
 def check_up_trend(df: pl.DataFrame, weeks: list[int], days: int, cur_day: date = date.today()):
     """`weeks`週移動平均線が過去`days`日間上向きかチェック"""
-    week_arrays = _calc_mean_average(df, weeks, cur_day, days)
+    week_arrays = calc_mean_average(df, weeks, cur_day, days)
     if len(week_arrays) != len(weeks):
         return False
     return all([((arr[1:] - arr[:-1]) > 0).sum() / len(arr) > 0.7 for arr in week_arrays])
@@ -186,10 +186,10 @@ class TechnicalTrendTemplate:
             "is_up_trend": self.is_up_trend,
             "is_near_high": self.is_near_high,
             "is_relative_strength": self.is_relative_strength,
-            "higher_ma": _calc_mean_average(
+            "higher_ma": calc_mean_average(
                 self.df, self.params.high_ma_weeks, self.cur_day, target_days=1
             ),
-            "up_trend_ma": _calc_mean_average(
+            "up_trend_ma": calc_mean_average(
                 self.df, self.params.uptrend_ma_weeks, self.cur_day, self.params.uptrend_days
             ),
             "near_high": _get_week_arrays(self.df, [self.params.near_high_week], self.cur_day),

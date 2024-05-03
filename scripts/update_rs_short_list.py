@@ -25,12 +25,13 @@ def main(
         rs_indices = vals.argsort()[::-1][:num_collect]
         targets = [[codes[idx], vals[idx]] for idx in rs_indices]
 
-    with open(output_path, "w", encoding="utf-8", newline="\n") as f:
-        csv_writer = csv.writer(f, lineterminator="\n")
-        csv_writer.writerow(["code", "relative_strength"])
-        csv_writer.writerows(targets)
+        with open(output_path, "w", encoding="utf-8", newline="\n") as f:
+            csv_writer = csv.writer(f, lineterminator="\n")
+            csv_writer.writerow(["code", "relative_strength"])
+            csv_writer.writerows(targets)
 
-    stock.logger.debug("Updated rs_short_list.csv")
+        stock.logger.debug("Updated rs_short_list.csv")
+        break
 
 
 if __name__ == "__main__":
