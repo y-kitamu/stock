@@ -48,6 +48,7 @@ def relative_strength_v2(
     ref_df: pl.DataFrame,
     start_date: datetime.date,
     end_date: datetime.date,
+    use_weight: bool = False,
 ):
     df = df.filter(
         pl.col("date").is_between(start_date, end_date)
@@ -61,24 +62,21 @@ def relative_strength_v2(
     if len(df) != len(ref_df):
         return -1.0
 
-    ## 株価（終値）の動きの強さを数値化
+    # 株価（終値）の動きの強さを数値化
     close_arr = df["close"].to_numpy()
     pct_change = np.diff(close_arr) / close_arr[:-1]
     ref_close_arr = ref_df["close"].to_numpy()
     ref_pct_change = np.diff(ref_close_arr) / ref_close_arr[:-1]
-    ## 日中の値動きの大きさで重み付け
-    diff_std, ref_diff_std = df["diff"].std(), ref_df["diff"].std()
-    diff, ref_diff = (
-        df["diff"].to_numpy() / diff_std,
-        ref_df["diff"].to_numpy() / ref_diff_std,
-    )  # 正規化
-    weight = (diff / ref_diff)[1:]  # 指数に比べての値動きの大きさ
-    ## 出来高の多さで重み付け -> これを入れると、df == ref_dfの場合に1.0にならないので一旦コメントアウト
-    # volume = df["volume"].to_numpy()
-    # volume_diff = volume[1:] / volume[:-1]
-    # weight *= volume_diff
+    # 日中の値動きの大きさで重み付け
+    if use_weight:
+        diff_std, ref_diff_std = df["diff"].std(), ref_df["diff"].std()
+        diff, ref_diff = (
+            df["diff"].to_numpy() / diff_std,
+            ref_df["diff"].to_numpy() / ref_diff_std,
+        )  # 正規化
+        weight = (diff / ref_diff)[1:]  # 指数に比べての値動きの大きさ
+        pct_change = pct_change * weight
 
-    pct_change = pct_change * weight
     strength = np.cumprod((1 + pct_change))[-1] - 1
     ref_strength = np.cumprod((1 + ref_pct_change))[-1] - 1
 
