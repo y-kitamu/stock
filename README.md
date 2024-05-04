@@ -1,16 +1,18 @@
 # Stock
 
-## ルーティーン
+## 毎日のルーティーン
 - watch listの更新
-  - relative strengthが上昇している銘柄でVCPパターンを形成しつつある銘柄をwatch listに追加する
+  - 以下の銘柄からテクニカル面の条件（下記チェック事項）を満たす銘柄をwatch listに追加
+    - relative strengthが上昇している銘柄
+    - 新高値リスト
+    - 決算発表銘柄
+    - 業績の上方修正銘柄
+    https://kabutan.jp/news/?kessan_filter=ShuseiBigUpKeijo
+    https://kabutan.jp/news/?kessan_filter=YosoUpUriageKeijo
   - watch listの銘柄で値動きがイマイチな銘柄を削除する
+    - watchedに移動する
 
-- 買い銘柄選定 : 以下の銘柄からVCPパターンを形成しつつある銘柄を選定
-  - watch list
-  - 決算発表銘柄
-  - 業績の上方修正銘柄
-  https://kabutan.jp/news/?kessan_filter=ShuseiBigUpKeijo
-  https://kabutan.jp/news/?kessan_filter=YosoUpUriageKeijo
+- 買い銘柄選定 : watch listの銘柄からVCPパターンを形成しつつある銘柄を選定
   
 - 注文 : 逆指値設定 & stop loss設定
   - 業績材料がある銘柄は直近高値以上
@@ -18,6 +20,11 @@
   - それ以外はVCPのピボットポイントを上離れしたところ
   - stop lossはmaxでも8%まで。値動きによってはもっと高めに設定する
   
+- エクセルシート（売買summary）の記録
+  
+## 毎週のルーティーン
+- watchedリストの動向確認
+- 過去の高値銘柄の研究など
   
 ## 利益確定タイミング
 - 売りのタイミングは銘柄ごとに決定する
