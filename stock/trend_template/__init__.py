@@ -7,6 +7,8 @@ from ..constants import PROJECT_ROOT
 from .fundamental import check_fundamental_trend_templates
 from .technical import (TechnicalTrendTemplate, TechnicalTrendTemplateParams,
                         check_technical_trend_templates)
+from .technical_v2 import calc_rs as calc_rs_v2
+from .technical_v2 import get_watch_list as get_watch_list_v2
 
 
 def get_watch_list(cur_day: date) -> list[str]:

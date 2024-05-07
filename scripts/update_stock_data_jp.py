@@ -42,7 +42,7 @@ def update_csv(code: str, update_rs: bool = True):
     stock.logger.info(f"Start update csv : {csv_path}")
     if not csv_path.exists():
         with open(csv_path, "w") as f:
-            f.write("date,open,high,low,close,volume,rs_nikkei,rs_topix\n")
+            f.write("date,open,high,low,close,volume,rs_nikkei,rs_topix,rs\n")
 
     df = stock.kabutan.read_data_csv(csv_path, exclude_none=False, with_rs=update_rs)
     df_with_epoch = df.with_columns(pl.col("date").dt.epoch(time_unit="d").alias("epoch"))
