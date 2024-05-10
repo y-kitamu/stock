@@ -1,7 +1,7 @@
 {
     "2023-03-31": {
         "Tax Effect Of Unusual Items": 0.0,
-        "Tax Rate For Calcs": 0.185,
+        "Tax Rate For Calcs": 0.185185,
         "Net Income From Continuing Operation Net Minority Interest": 6600000.0,
         "Reconciled Depreciation": 6600000.0,
         "EBIT": 14800000.0,
@@ -647,5 +647,36 @@
         "Amortization": 3700000.0,
         "Total Revenue": 384400000.0,
         "Operating Revenue": 384400000.0
+    },
+    "2024-03-31": {
+        "Tax Effect Of Unusual Items": 0.0,
+        "Tax Rate For Calcs": 0.19697,
+        "Net Income From Continuing Operation Net Minority Interest": 26500000.0,
+        "Reconciled Depreciation": 6600000.0,
+        "EBIT": 41700000.0,
+        "Net Interest Income": -8700000.0,
+        "Interest Expense": 8700000.0,
+        "Normalized Income": 26500000.0,
+        "Net Income From Continuing And Discontinued Operation": 26500000.0,
+        "Total Expenses": 346800000.0,
+        "Diluted Average Shares": 41500000.0,
+        "Basic Average Shares": 41300000.0,
+        "Diluted EPS": 0.64,
+        "Basic EPS": 0.64,
+        "Diluted NI Availto Com Stockholders": 26500000.0,
+        "Net Income Common Stockholders": 26500000.0,
+        "Net Income": 26500000.0,
+        "Net Income Including Noncontrolling Interests": 26500000.0,
+        "Net Income Continuous Operations": 26500000.0,
+        "Tax Provision": 6500000.0,
+        "Pretax Income": 33000000.0,
+        "Other Income Expense": 3200000.0,
+        "Net Non Operating Interest Income Expense": -8700000.0,
+        "Interest Expense Non Operating": 8700000.0,
+        "Other Operating Expenses": 84500000.0,
+        "Depreciation And Amortization In Income Statement": 3600000.0,
+        "Amortization": 3600000.0,
+        "Total Revenue": 379800000.0,
+        "Operating Revenue": 379800000.0
     }
 }

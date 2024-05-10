@@ -1,7 +1,7 @@
 {
     "2023-03-31": {
-        "Tax Effect Of Unusual Items": -3914788.004137,
-        "Tax Rate For Calcs": 0.349535,
+        "Tax Effect Of Unusual Items": -3920000.0,
+        "Tax Rate For Calcs": 0.35,
         "Normalized EBITDA": 221600000.0,
         "Total Unusual Items": -11200000.0,
         "Total Unusual Items Excluding Goodwill": -11200000.0,
@@ -13,7 +13,7 @@
         "Net Interest Income": -59200000.0,
         "Interest Expense": 57800000.0,
         "Interest Income": NaN,
-        "Normalized Income": 70185211.995863,
+        "Normalized Income": 70180000.0,
         "Net Income From Continuing And Discontinued Operation": 61900000.0,
         "Total Expenses": 1182600000.0,
         "Total Operating Income As Reported": 169500000.0,
@@ -786,7 +786,7 @@
         "Basic EPS": 0.86,
         "Diluted NI Availto Com Stockholders": 124000000.0,
         "Net Income Common Stockholders": 124000000.0,
-        "Otherunder Preferred Stock Dividend": NaN,
+        "Otherunder Preferred Stock Dividend": 0.0,
         "Net Income": 124000000.0,
         "Net Income Including Noncontrolling Interests": 124000000.0,
         "Net Income Discontinuous Operations": -900000.0,
@@ -821,8 +821,8 @@
         "Operating Revenue": 1377500000.0
     },
     "2024-03-31": {
-        "Tax Effect Of Unusual Items": -5755163.72796,
-        "Tax Rate For Calcs": 0.299748,
+        "Tax Effect Of Unusual Items": -5760000.0,
+        "Tax Rate For Calcs": 0.3,
         "Normalized EBITDA": 263100000.0,
         "Total Unusual Items": -19200000.0,
         "Total Unusual Items Excluding Goodwill": -19200000.0,
@@ -834,7 +834,7 @@
         "Net Interest Income": -66100000.0,
         "Interest Expense": 65100000.0,
         "Interest Income": NaN,
-        "Normalized Income": 96844836.27204,
+        "Normalized Income": 96840000.0,
         "Net Income From Continuing And Discontinued Operation": 82000000.0,
         "Total Expenses": 1130900000.0,
         "Total Operating Income As Reported": 185000000.0,
