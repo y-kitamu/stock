@@ -24,7 +24,7 @@ def calc_relative_strength(df: pl.DataFrame, ref_df: pl.DataFrame, end: date, rs
     if len(df) != len(ref_df):
         return -1.0
 
-    return stock.relative_strength.relative_strength(
+    return stock.algorithm.relative_strength.relative_strength(
         df["close"].to_numpy(), ref_df["close"].to_numpy()
     )
 
@@ -32,7 +32,7 @@ def calc_relative_strength(df: pl.DataFrame, ref_df: pl.DataFrame, end: date, rs
 def calc_relative_strength_v2(df: pl.DataFrame, ref_df: pl.DataFrame, end: date, rs: float):
     if rs > -10.0:
         return rs
-    return stock.relative_strength.relative_strength_v2(
+    return stock.algorithm.relative_strength.relative_strength_v2(
         df, ref_df, start_date=end - timedelta(30), end_date=end
     )
 
@@ -84,9 +84,7 @@ def update_csv(code: str, update_rs: bool = True):
             df = df.with_columns(
                 pl.struct("date", "rs_nikkei")
                 .map_elements(
-                    lambda val: calc_relative_strength(
-                        df, nikkei_df, val["date"], val["rs_nikkei"]
-                    ),
+                    lambda val: calc_relative_strength(df, nikkei_df, val["date"], val["rs_nikkei"]),
                     return_dtype=pl.Float64,
                 )
                 .alias("rs_nikkei"),

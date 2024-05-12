@@ -4,6 +4,7 @@ Author : Yusuke Kitamura
 Create Date : 2023-08-03 11:19:57
 Copyright (c) 2019- Yusuke Kitamura <ymyk6602@gmail.com>
 """
+
 import argparse
 import csv
 import json
@@ -115,19 +116,19 @@ def calculate_relative_strengths(
         return 0.0, 0.0, 0.0
 
     # relative strength
-    rs_sp500 = stock.relative_strength.relative_strength_52wk(
+    rs_sp500 = stock.algorithm.relative_strength.relative_strength_52wk(
         close_values[-52:],
         sp500_closes[-52:],
         num_division=num_division,
         division_factor=division_factor,
     )
-    rs_dow = stock.relative_strength.relative_strength_52wk(
+    rs_dow = stock.algorithm.relative_strength.relative_strength_52wk(
         close_values[-52:],
         dow_closes[-52:],
         num_division=num_division,
         division_factor=division_factor,
     )
-    rs_nasdaq = stock.relative_strength.relative_strength_52wk(
+    rs_nasdaq = stock.algorithm.relative_strength.relative_strength_52wk(
         close_values[-52:],
         nasdaq_closes[-52:],
         num_division=num_division,

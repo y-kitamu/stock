@@ -10,7 +10,7 @@ import polars as pl
 
 from ..constants import PROJECT_ROOT
 from ..kabutan import read_data_csv
-from ..relative_strength import relative_strength_v2
+from ..algorithm.relative_strength import relative_strength_v2
 from .technical import calc_mean_average
 
 csv_dir = PROJECT_ROOT / "data" / "daily"
