@@ -28,9 +28,7 @@ def polars_map_batch(func):
     """
 
     def _map_batch(pl_obj, *args, **kwargs):
-        res = [] * len(pl_obj)
-        for idx, data in enumerate(pl_obj):
-            res[idx] = func(data, *args, **kwargs)
+        res = [func(data, *args, **kwargs) for data in pl_obj]
         return pl.Series(res)
 
     return _map_batch
