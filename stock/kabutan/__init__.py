@@ -59,7 +59,7 @@ def read_financial_csv(csv_path: Path) -> pl.DataFrame:
             pl.col("year").cast(pl.Int64),
             pl.col("month").cast(pl.Int64),
             pl.col("duration").cast(pl.Int64),
-            pl.col("annoounce_date").str.to_datetime("%y/%m/%d"),
+            pl.col("annoounce_date").str.to_datetime("%y/%m/%d").cast(pl.Date),
             pl.col("is_prediction").cast(pl.Boolean),
             pl.col("total_revenue").cast(pl.Float64),
             pl.col("operating_income").cast(pl.Float64),
