@@ -603,6 +603,7 @@ BND,VA TOTAL BOND,バンガード・米国トータル債券市場ETF,NASDAQ,そ
 BNDX,VA TTL INTL BOND,バンガード・トータル・インターナショナル債券ETF（米ドルヘッジあり）,NASDAQ,その他,○
 BNED,BARNES NOBLE EDU,バーンズ・アンド・ノーブル・エデュケーション,NYSE,ソフトウェア・サービス,○
 BNGO,BIONANO GENOMICS,バイオナノ・ジェノミクス,NASDAQ,ヘルスケア,○
+BNR,BURNING ROCK BIO,バーニング・ロック・バイオテック,NASDAQ,医薬品（バイオテクノロジー）,○
 BNRE,BRKFLD REINSUR,ブルックフィールド・リインシュランス,NYSE,金融(保険),○
 BNS,BANK OF NOVA SC,バンク・オブ・ノバスコシア,NYSE,金融（銀行）,○
 BNTX,BIONTECH SE,バイオエヌテック,NASDAQ,医薬品（バイオテクノロジー）,○
@@ -1379,7 +1380,6 @@ ELTX,ELICIO THERAP,エリシオ・セラピューティクス,NASDAQ,医薬品�
 ELUT,ELUTIA INC,エルティア,NASDAQ,医薬品（バイオテクノロジー）,○
 ELV,ELEVANCE HEALTH,エレバンス・ヘルス,NYSE,医療サービス,○
 ELVN,ENLIVEN THERAPEU,エンライブン・セラピューティクス,NASDAQ,医薬品（バイオテクノロジー）,○
-ELWS,EARLYWORKS,アーリーワークス,NASDAQ,情報処理サービス,○
 ELYM,ELIEM THERAPEUT,エリエム・セラピューティクス,NASDAQ,医薬品（バイオテクノロジー）,○
 EM,SMART SHARE GLBL,スマート・シェア・グローバル,NASDAQ,電力,○
 EMB,ISHARES JPM BND,iシェアーズ J.P.モルガン・米ドル建てエマージング・マーケット債券 ETF,NASDAQ,その他,○
@@ -2221,6 +2221,7 @@ IPI,INTREPID POTASH,イントレピッド・ポタッシュ,NYSE,化学,○
 IPSC,CENTURY THERAPE,センチュリー・セラピューティクス,NASDAQ,医薬品（バイオテクノロジー）,○
 IPW,IPOWER INC,アイパワー,NASDAQ,小売,○
 IPWR,IDEAL POWER INC,アイディール・パワー,NASDAQ,その他製造,○
+IPX,IPERIONX,アイペリオンX,NASDAQ,航空機・宇宙,○
 IQ,IQIYI INC,アイチーイー,NASDAQ,エンターテイメント,○
 IQV,IQVIA HOLDINGS,IQVIAホールディングス,NYSE,医療サービス,○
 IR,INGERSOLL-RAND,インガソール・ランド,NYSE,その他製造,○
@@ -2440,7 +2441,6 @@ LAUR,LAUREATE EDUCATN,ロレッテ・エデュケーション,NASDAQ,ソフト�
 LAW,CS DISCO INC,CSディスコ,NYSE,ソフトウェア・サービス,○
 LAZ,LAZARD INC,ラザード・インク,NYSE,金融（証券）,○
 LAZR,LUMINAR TECHNO,ルミナー・テクノロジーズ,NASDAQ,その他製造,○
-LBAI,LAKELAND BANCORP,レイクランド・バンコープ,NASDAQ,金融（銀行）,○
 LBPH,LONGBOARD PHARMA,ロングボード・ファーマシューティカルズ,NASDAQ,医薬品,○
 LBRDA,LIBERTY BROAD A,リバティ・ブロードバンド　クラスA,NASDAQ,通信サービス,○
 LBRDK,LIBERTY BROAD C,リバティ・ブロードバンド　クラスC,NASDAQ,通信サービス,○
@@ -3696,7 +3696,6 @@ SEB,SEABOARD CORP,シーボード,NYSE,食品,○
 SEDG,SOLAREDGE TECH,ソーラーエッジ・テクノロジー,NASDAQ,電力,○
 SEE,SEALED AIR CORP,シールドエアー,NYSE,その他製造,○
 SEED,ORIGIN AGRITECH,オリジン・アグリテック,NASDAQ,化学,○
-SEEL,SEELOS THERAPEU,ゼーロス・セラピューティクス,NASDAQ,医薬品（バイオテクノロジー）,○
 SEER,SEER INC,シーア,NASDAQ,医薬品（バイオテクノロジー）,○
 SEIC,SEI INVESTMENTS,SEIインベストメンツ,NASDAQ,情報処理サービス,○
 SEM,SELECT MEDICAL,セレクト・メディカル・ホールディングス,NYSE,ヘルスケア,○
@@ -3872,7 +3871,6 @@ SOTK,SONOTEK CORP,ソノテック,NASDAQ,その他製造,○
 SOUN,SOUNDHOUND AI,サウンドハウンド・エーアイ,NASDAQ,ソフトウェア・サービス,○
 SOXL,DRX SEMICON BL3X,Direxion デイリー 半導体株 ブル 3倍 ETF,NYSE,その他,○
 SOXS,DRX SEMICON BR3X,Direxion デイリー 半導体株 ベア 3倍 ETF,NYSE,その他,○
-SP,SP PLUS CORPO,SPプラス,NASDAQ,その他,○
 SPAB,SPDR AGG BOND,SPDR ポートフォリオ米国総合債券ETF,NYSE,その他,○
 SPB,SPECTRUM BRANDS,スペクトラム・ブランズ・ホールディング,NYSE,その他製造,○
 SPCB,SUPERCOM LTD,スーパーコム,NASDAQ,情報処理サービス,○
@@ -4040,7 +4038,6 @@ TARA,PROTARA THERAPEU,プロタラ・セラピューティック,NASDAQ,医薬�
 TARO,TARO PHARMA IND,ターロ・ファーマシューティカル・インダストリーズ,NYSE,医療サービス,○
 TARS,TARSUS PHARMACEU,ターサス・ファーマシューティカルズ,NASDAQ,医薬品（バイオテクノロジー）,○
 TASK,TASKUS INC,タスクアス,NASDAQ,コンピュータ,○
-TAST,CARROLS RESTNT,キャロルズ・レストラン・グループ,NASDAQ,外食,○
 TATT,TAT TECHNO,TATテクノロジーズ,NASDAQ,その他製造,○
 TBBK,THE BANCORP INC,バンコープ,NASDAQ,金融（銀行）,○
 TBI,TRUEBLUE INC,トゥルーブルー,NYSE,ソフトウェア・サービス,○
@@ -4715,7 +4712,6 @@ YPF,YPF SOCIEDAD ANO,YPF,NYSE,石油,○
 YQ,17 EDUCTION TECH,17エデュケーション・アンド・テクノロジー・グループ,NASDAQ,ソフトウェア・サービス,○
 YRD,YIREN DIGITAL,イレン・デジタル,NYSE,金融（銀行）,○
 YSG,YATSEN HOLDING,ヤッセン・ホールディングス,NYSE,小売,○
-YTEN,YIELD10 BIOSCNCE,イールド10・バイオサイエンス,NASDAQ,医薬品（バイオテクノロジー）,○
 YTRA,YATRA ONLINE,ヤトラ・オンライン,NASDAQ,ソフトウェア・サービス,○
 YUM,YUM BRANDS INC,ヤム・ブランズ,NYSE,外食,○
 YUMC,YUM CHINA HLD,ヤム・チャイナ,NYSE,外食,○
