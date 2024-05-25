@@ -144,6 +144,7 @@ AIZ,ASSURANT INC,アシュラント,NYSE,金融(保険),○
 AJG,ARTHUR J GALLAGH,アーサーJ.ギャラガー,NYSE,金融(保険),○
 AKA,AKA BRANDS HLD,AKAブランズ・ホールディング,NYSE,小売,○
 AKAM,AKAMAI TECH,アカマイ・テクノロジーズ,NASDAQ,ネットワーク,○
+AKAN,AKANDA CORP,アカンダ,NASDAQ,医薬品,○
 AKBA,AKEBIA THERAPEU,アケビア・セラピューティクス,NASDAQ,医薬品（バイオテクノロジー）,○
 AKRO,AKERO THERAPEUT,アケロ･セラピューティクス,NASDAQ,医薬品（バイオテクノロジー）,○
 AKTS,AKOUSTIS TECHNO,アコウスティス・テクノロジーズ,NASDAQ,その他製造,○
@@ -757,7 +758,7 @@ CBRE,CBRE GROUP INC,CBREグループ,NYSE,その他,○
 CBRL,CRACKER BARREL O,クラッカー・バレル・オールド・カントリー・ストアー,NASDAQ,外食,○
 CBSH,COMMERCE BANC,コマース・バンクシェアーズ,NASDAQ,金融（銀行）,○
 CBT,CABOT CORP,キャボット,NYSE,化学,○
-CBU,COMMUNTY BNK SYS,コミュニティー・バンク・システム,NYSE,金融（銀行）,○
+CBU,COMMUNITY FCL ST,コミュニティー・ファイナンシャル・システム,NYSE,金融（銀行）,○
 CBUS,CIBUS INC,シバス,NASDAQ,食品,○
 CBZ,CBIZ INC,CBIZ,NYSE,ソフトウェア・サービス,○
 CC,CHEMOURS CO,ケマーズ,NYSE,化学,○
@@ -855,7 +856,6 @@ CIB,BANCOLOMBIA SA,バンコロンビア,NYSE,金融コングロマリット,○
 CIBR,FT NQ CYBERSEC,ファーストトラスト ナスダック サイバーセキュリティETF,NASDAQ,その他,○
 CIEN,CIENA CORP,シエナ,NYSE,ネットワーク,○
 CIFR,CIPHER MINING,サイファー・マイニング,NASDAQ,ソフトウェア・サービス,○
-CIG,CEMIG SA SPONS,ミナスジェライス電力,NYSE,電力,○
 CIGI,COLLIERS INTL,コリアーズ・インターナショナル・グループ,NASDAQ,その他,○
 CINF,CINCINNATI FINAN,シンシナティ・ファイナンシャル,NASDAQ,金融(保険),○
 CING,CINGULATE INC,シンギュレイト,NASDAQ,医薬品（バイオテクノロジー）,○
@@ -1785,7 +1785,6 @@ GGG,GRACO INC,グレコ,NYSE,機械,○
 GGLL,DRX GOOGL BL2X,Direxion デイリー GOOGL ブル2倍株式,NASDAQ,その他,○
 GGLS,DRX GOOGL BR1X,Direxion デイリー GOOGL株 ベア 1 倍 ETF,NASDAQ,その他,○
 GGR,GOGORO INC,ゴゴロ,NASDAQ,自動車,○
-GH,GUARDANT HEALTH,ガーダント・ヘルス,NASDAQ,ヘルスケア,○
 GHC,GRAHAM HLDNGS CO,グラハム・ホールディングス,NYSE,ソフトウェア・サービス,○
 GHG,GREENTREE HOSPTL,グリーン・ツリー・ホスピタリティー・グループ,NYSE,ホテル,○
 GHLD,GUILD HOLDINGS,ギルド・ホールディングス,NYSE,金融（銀行）,○
@@ -2265,6 +2264,7 @@ IYR,ISHARES REAL EST,iシェアーズ 米国不動産 ETF,NYSE,その他,○
 IZEA,IZEA WORLDWIDE,IZEAワールドワイド,NASDAQ,通信サービス,○
 J,JACOBS SOLUTIONS,ジェイコブズ・ソリューション,NYSE,その他,○
 JACK,JACK IN THE BOX,ジャック・イン・ザ・ボックス,NASDAQ,外食,○
+JAGX,JAGUAR HEALTH,ジャガー・ヘルス,NASDAQ,医薬品,○
 JAKK,JAKKS PACIFIC,ジャックス・パシフィック,NASDAQ,その他製造,○
 JAMF,JAMF HOLDING,Jamfホールディング,NASDAQ,ソフトウェア・サービス,○
 JAN,JANONE INC,ジャンワン,NASDAQ,医薬品（バイオテクノロジー）,○
@@ -2420,7 +2420,6 @@ L,LOEWS CORP,ロウズ,NYSE,金融(保険),○
 LAAC,LITHIUM AMER ARG,リチウム・アメリカズ・アルゼンチン,NYSE,その他,○
 LAB,STANDARD BIOTOOL,スタンダード・バイオツールズ,NASDAQ,ヘルスケア,○
 LABD,DRX S&P BIO BR3X,Direxion デイリー S&P バイオテック株 ベア3倍 ETF,NYSE,その他,○
-LABP,LANDOS BIOPHARMA,ランドス・バイオファーマ,NASDAQ,医薬品,○
 LABU,DRX S&P BIO BL3X,Direxion デイリー S&P バイオテック株 ブル3倍 ETF,NYSE,その他,○
 LAC,LITHIUM AMER NC,リチウム・アメリカズ,NYSE,その他,○
 LAD,LITHIA MOTORS,リシア・モーターズ,NYSE,小売,○
@@ -3660,6 +3659,7 @@ SBSI,SOUTHSIDE BANC,サウスサイド・バンクシェアーズ,NASDAQ,金融�
 SBSW,SIBANYESTILL ADR,シバンエ・スティルウォーター,NYSE,その他,○
 SBT,STERLING BANCORP,スターリング・バンコープ,NASDAQ,金融（銀行）,○
 SBUX,STARBUCKS COFFEE,スターバックス,NASDAQ,外食,○
+SCCO,SOUTHERN COPPER,サザン・コッパー,NYSE,その他,○
 SCHL,SCHOLASTIC CORP,スコラスティック,NASDAQ,その他,○
 SCHW,CHARLES SCHWAB,チャールズ・シュワブ,NYSE,金融（証券）,○
 SCI,SERVICE CORP INT,サービス・コーポレーション・インターナショナル,NYSE,その他,○
