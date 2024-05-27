@@ -32,11 +32,11 @@ def calc_extremal(
     # チャート上の極値を計算
     df = df.with_columns(
         high_extremal_cand=(
-            (pl.col("high").diff() > 0) & (pl.col("high").diff().shift(-1) < 0)
+            (pl.col("high").diff() > 0) & (pl.col("high").diff().shift(-1) <= 0)
         ).fill_null(True),
-        low_extremal_cand=(
-            (pl.col("low").diff() < 0) & (pl.col("low").diff().shift(-1) > 0)
-        ).fill_null(True),
+        low_extremal_cand=((pl.col("low").diff() < 0) & (pl.col("low").diff().shift(-1) >= 0)).fill_null(
+            True
+        ),
         rolling_high=(
             pl.col("high")
             .rolling_max(window_size=window_size, center=use_future)

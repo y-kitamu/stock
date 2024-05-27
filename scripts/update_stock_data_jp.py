@@ -84,7 +84,9 @@ def update_csv(code: str, update_rs: bool = True):
             df = df.with_columns(
                 pl.struct("date", "rs_nikkei")
                 .map_elements(
-                    lambda val: calc_relative_strength(df, nikkei_df, val["date"], val["rs_nikkei"]),
+                    lambda val: calc_relative_strength(
+                        df, nikkei_df, val["date"], val["rs_nikkei"]
+                    ),
                     return_dtype=pl.Float64,
                 )
                 .alias("rs_nikkei"),
