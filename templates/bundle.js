@@ -114,10 +114,11 @@ option["{{ ticker.code }}"] = {
         },
     ],
     yAxis: [
-        {
+      {
+            type: "log",
             scale: true,
             gridIndex: 0,
-            splitNumber: 2,
+            splitNumber: 5,
             splitArea: {
                 show: true,
             },
@@ -215,6 +216,10 @@ option["{{ ticker.code }}"] = {
 };
 {% endfor %}
 
-const draw_chart = (ticker) => {
-    option[ticker] && myChart.setOption(option[ticker]);
+const draw_chart = (ticker, is_daily) => {
+  var option_name = ticker;
+  if (!is_daily) {
+    option_name = ticker + "_weekly";
+  }
+  option[option_name] && myChart.setOption(option[option_name]);
 };

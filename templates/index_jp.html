@@ -1,0 +1,136 @@
+<!-- minimal react html -->
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Watch list</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body style="min-height: 100vh">
+    <div class="grid grid-cols-4 gap-4">
+      <div class="overflow-y-auto" style="height: 90vh">
+        <fieldset class="space-y-0">
+          {% for chart_id in chart_ids %}
+          <div class="flex items-center justify-center">
+            <input
+              type="checkbox"
+              value="checkbox_{{ chart_id }}"
+              id="checkbox_{{ chart_id }}"
+              name="{{ chart_id }}"
+              class="flex-none w-8 h-8 ml-2 mr-2 rounded watchlist"
+            />
+            <input
+              type="radio"
+              name="ChartRadioButtons"
+              value="label_{{ chart_id }}"
+              id="label_{{ chart_id }}"
+              class="peer hidden"
+              onclick="on_change_ticker('{{ chart_id }}')"
+            />
+            <label
+              for="label_{{ chart_id }}"
+              class="flex flex-1 cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+            >
+              <p class="text-sm font-medium">{{ chart_id }}</p>
+            </label>
+          </div>
+          {% endfor %}
+        </fieldset>
+      </div>
+      <div class="col-span-3">
+        <div class="flex items-center mb-4">
+          <input
+            checked
+            id="default-radio-1"
+            type="radio"
+            value="daily"
+            name="data_span"
+            onclick="on_change_span('daily')"
+            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+          />
+          <label
+            for="default-radio-1"
+            class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+            >Daily</label
+          >
+        </div>
+        <div class="flex items-center">
+          <input
+            id="default-radio-2"
+            type="radio"
+            value="weekly"
+            name="data_span"
+            onclick="on_change_span('weekly')"
+            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+          />
+          <label
+            for="default-radio-2"
+            class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+            >Weekly</label
+          >
+        </div>
+        <div id="chart_main" style="width: 100%; height: 90vh"></div>
+      </div>
+    </div>
+
+    <a id="download" download="target.csv">
+      <button class="bg-indigo-700 font-semibold text-white py-2 px-4 rounded">
+        CSVダウンロード
+      </button>
+    </a>
+
+    <script src="bundle_jp.js"></script>
+    <script>
+      const get_current_ticker = () => {
+        const ticker_list = document.getElementsByName("ChartRadioButtons");
+        for (const ticker of ticker_list) {
+          if (ticker.checked) {
+            return ticker.value.replace("label_", "");
+          }
+        }
+        return "";
+      };
+
+      const get_current_span = () => {
+        const span_list = document.getElementsByName("data_span");
+        for (const span of span_list) {
+          if (span.checked) {
+            return span.value;
+          }
+        }
+        return "daily";
+      };
+
+      const on_change_ticker = (ticker) => {
+        const span = get_current_span();
+        draw_chart(ticker, span == "daily");
+      };
+
+      const on_change_span = (span) => {
+        const ticker = get_current_ticker();
+        if (ticker != "") {
+          draw_chart(ticker, span == "daily");
+        }
+      };
+
+      const download = () => {
+        const watch_list = document.querySelectorAll(".watchlist");
+        const target_list = [];
+        for (const target of watch_list) {
+          if (target.checked) {
+            console.log(target.name);
+            target_list.push([target.name + "\n"]);
+          }
+        }
+        const blob = new Blob(target_list, { type: "text/csv" });
+        const objectUrl = URL.createObjectURL(blob);
+        const downloadLink = document.getElementById("download");
+        downloadLink.href = objectUrl;
+      };
+      const downloadLink = document.getElementById("download");
+      downloadLink.onclick = download;
+    </script>
+  </body>
+</html>

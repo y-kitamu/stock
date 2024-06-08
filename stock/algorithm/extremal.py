@@ -20,7 +20,7 @@ def calc_extremal(
     極値を求める関数
     Args:
         df (pl.DataFrame):
-        window_size (int):
+        window_size (int):https://shikiho.toyokeizai.net/stocks/8233
         is_exact (bool): Trueの場合、極大・極小が交互に並ぶようにする
     Returns:
         pl.DataFrame: 入力の`df`から極値の列を抜き出したDataFrame
