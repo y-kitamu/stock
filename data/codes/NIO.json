@@ -44,7 +44,7 @@
         "Gross Profit": 162289000.0,
         "Cost Of Revenue": 10514182000.0,
         "Total Revenue": 10676471000.0,
-        "Operating Revenue": 10676471000.0
+        "Operating Revenue": 9224483000.0
     },
     "2022-12-31": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -344,7 +344,7 @@
         "Gross Profit": 86956000.0,
         "Cost Of Revenue": 8684779000.0,
         "Total Revenue": 8771735000.0,
-        "Operating Revenue": 8771735000.0
+        "Operating Revenue": 7185214000.0
     },
     "2023-09-30": {
         "Tax Effect Of Unusual Items": 42548250.0,
@@ -391,7 +391,7 @@
         "Gross Profit": 1523323000.0,
         "Cost Of Revenue": 17543228000.0,
         "Total Revenue": 19066551000.0,
-        "Operating Revenue": 19066551000.0
+        "Operating Revenue": 17408864000.0
     },
     "2023-12-31": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -438,6 +438,53 @@
         "Gross Profit": 1279228000.0,
         "Cost Of Revenue": 15823948000.0,
         "Total Revenue": 17103176000.0,
-        "Operating Revenue": 17103176000.0
+        "Operating Revenue": 15438709000.0
+    },
+    "2024-03-31": {
+        "Tax Effect Of Unusual Items": -4530400.0,
+        "Tax Rate For Calcs": 0.4,
+        "Normalized EBITDA": -4995386000.0,
+        "Total Unusual Items": -11326000.0,
+        "Total Unusual Items Excluding Goodwill": -11326000.0,
+        "Net Income From Continuing Operation Net Minority Interest": -5257918000.0,
+        "Reconciled Cost Of Revenue": 9420905000.0,
+        "EBITDA": -5006712000.0,
+        "EBIT": -5006712000.0,
+        "Net Interest Income": 179918000.0,
+        "Interest Expense": 170875000.0,
+        "Interest Income": 350793000.0,
+        "Normalized Income": -5251122400.0,
+        "Net Income From Continuing And Discontinued Operation": -5257918000.0,
+        "Total Expenses": 15302709000.0,
+        "Total Operating Income As Reported": -5394073000.0,
+        "Diluted Average Shares": 2044151465.0,
+        "Basic Average Shares": 2044151465.0,
+        "Diluted EPS": -2.57,
+        "Basic EPS": -2.57,
+        "Diluted NI Availto Com Stockholders": -5257918000.0,
+        "Net Income Common Stockholders": -5257918000.0,
+        "Net Income": -5257918000.0,
+        "Minority Interests": -73341000.0,
+        "Net Income Including Noncontrolling Interests": -5184577000.0,
+        "Net Income Continuous Operations": -5184577000.0,
+        "Tax Provision": 6990000.0,
+        "Pretax Income": -5177587000.0,
+        "Other Income Expense": 36568000.0,
+        "Other Non Operating Income Expenses": 67376000.0,
+        "Special Income Charges": -11326000.0,
+        "Other Special Charges": 11326000.0,
+        "Earnings From Equity Interest": -19482000.0,
+        "Net Non Operating Interest Income Expense": 179918000.0,
+        "Interest Expense Non Operating": 170875000.0,
+        "Interest Income Non Operating": 350793000.0,
+        "Operating Income": -5394073000.0,
+        "Operating Expense": 5881804000.0,
+        "Other Operating Expenses": 20790000.0,
+        "Research And Development": 2864216000.0,
+        "Selling General And Administration": 2996798000.0,
+        "Gross Profit": 487731000.0,
+        "Cost Of Revenue": 9420905000.0,
+        "Total Revenue": 9908636000.0,
+        "Operating Revenue": 8381318000.0
     }
 }

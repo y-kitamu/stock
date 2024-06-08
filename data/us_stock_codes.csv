@@ -689,7 +689,7 @@ BWEN,BROADWIND INC,ブロードウィンド,NASDAQ,その他製造,○
 BWFG,BANKWELL FNCIAL,バンクウェル・ファイナンシャル・グループ,NASDAQ,金融（銀行）,○
 BWIN,BALDWIN INSR GRP,ボールドウィン・インシュアランス・グループ,NASDAQ,金融(保険),○
 BWMN,BOWMAN CONSULT,ボーマン・コンサルティング・グループ,NASDAQ,その他製造,○
-BWMX,BETTERWARE MEXIC,ベターウェア・デ・メキシコ,NASDAQ,小売,○
+BWMX,BETTERWARE MEXIC,ベターウェア・デ・メキシコ,NYSE,小売,○
 BWX,SPDR BBG INTL BD,SPDR ブルームバーグ・世界国債（除く米国）ETF,NYSE,その他,○
 BWXT,BWX TECHNOLOGIES,BWXテクノロジーズ,NYSE,電力,○
 BX,BLACKSTONE INC,ブラックストーン,NYSE,金融コングロマリット,○
@@ -795,7 +795,6 @@ CDXC,CHROMADEX CORP,クロマデックス,NASDAQ,ヘルスケア,○
 CDXS,CODEXIS INC,コデクシス,NASDAQ,化学,○
 CDZI,CADIZ INC,カディス,NASDAQ,その他,○
 CE,CELANESE CORP,セラニーズ,NYSE,化学,○
-CEAD,CEA INDUSTRIES,CEAインダストリーズ,NASDAQ,その他製造,○
 CECO,CECO ENVRONMNTAL,CECOエンバイロメンタル,NASDAQ,その他,○
 CEG,CONSTELLATN ENE,コンステレーション・エネルギー,NASDAQ,電力,○
 CEIX,CONSOL ENERGY,コンソール・エナジー,NYSE,その他,○
@@ -2853,7 +2852,6 @@ NBHC,NATIONAL BANK,ナショナル・バンク・ホールディングス,NYSE,�
 NBIX,NEUROCRINE BIO,ニューロクライン・バイオサイエンシス,NASDAQ,医薬品,○
 NBN,NORTHEAST BANK,ノースイースト・バンク,NASDAQ,金融（銀行）,○
 NBR,NABORS INDUSTRIE,ネイバーズ・インダストリーズ,NYSE,石油,○
-NBSE,OHR PHARMACEUTCL,オール・ファーマシューティカル,NASDAQ,医薬品（バイオテクノロジー）,○
 NBTB,NBT BANCORP INC,NBTバンコープ,NASDAQ,金融（銀行）,○
 NC,NACCO INDUSTRIES,ナッコ・インダストリーズ,NYSE,その他,○
 NCLH,NORWEGIAN CRUISE,ノルウェージャン・クルーズ・ライン,NYSE,エンターテイメント,○
@@ -3100,7 +3098,6 @@ OPOF,OLD POINT FIN,オールド・ポイント・ファイナンシャル,NASDAQ
 OPRA,OPERA LTD,オペラ,NASDAQ,ソフトウェア・サービス,○
 OPRT,OPORTUN FINANCL,オポーチュン・ファイナンシャル,NASDAQ,その他,○
 OPRX,OPTIMIZERX CORP,オプティマイズRX,NASDAQ,医薬品,○
-OPT,OPTHEA LTD,オプセア,NASDAQ,医薬品（バイオテクノロジー）,○
 OPTN,OPTINOSE INC,オプティノーズ,NASDAQ,医薬品,○
 OPY,OPPENHEIMER HOLD,オッペンハイマー・ホールディングス,NYSE,金融（証券）,○
 OR,OSISKO GLD ROYAL,オシスコ・ゴールド・ロイヤルティーズ,NYSE,その他,○
@@ -3825,6 +3822,7 @@ SNDX,SYNDAX PHARMACEU,シンダックス・ファーマシューティカルズ,
 SNES,SENESTECH INC,セネステック,NASDAQ,医薬品（バイオテクノロジー）,○
 SNEX,STONEX GROUP,ストーンX・グループ,NASDAQ,その他,○
 SNFCA,SECURITY NAT FIN,セキュリティ・ナショナル・ファイナンシャル,NASDAQ,金融(保険),○
+SNGX,SOLIGENIX INC,ソリジェニックス,NASDAQ,医薬品,○
 SNN,SMITH & NEPHEW,スミス・アンド・ネフュー,NYSE,医療サービス,○
 SNOA,SONOMA PHARMA,ソノマ・ファーマシューティカルズ,NASDAQ,医薬品,○
 SNOW,SNOWFLAKE INC,スノーフレーク,NYSE,ソフトウェア・サービス,○
@@ -4409,7 +4407,6 @@ VITL,VITAL FARMS INC,バイタル・ファームズ,NASDAQ,食品,○
 VIV,TELEFONCA BRASIL,テレフォニカ・ブラジル,NYSE,通信サービス,○
 VIVK,VIVAKOR INC,ビバコール,NASDAQ,その他,○
 VKTX,VIKING THERAPEUT,バイキング・セラピューティクス,NASDAQ,医薬品（バイオテクノロジー）,○
-VLCN,VOLCON INC,ボルコン,NASDAQ,自動車,○
 VLD,VELO3D INC,VELO3D,NYSE,コンピュータ,○
 VLGEA,VILLAGE SUPMARKT,ビレッジ・スーパーマーケット,NASDAQ,食品,○
 VLN,VALENS SEMICON,バレンス・セミコンダクター,NYSE,半導体,○
@@ -4484,7 +4481,6 @@ VTLE,VITAL ENERGY,バイタル・エナジー,NYSE,石油,○
 VTNR,VERTEX ENERGY,バーテックス・エナジー,NASDAQ,石油,○
 VTOL,BRISTOW GROUP,ブリストー・グループ　,NYSE,運輸,○
 VTRS,VIATRIS INC,ヴィアトリス,NASDAQ,医薬品,○
-VTRU,VITRU LTD,ヴィトゥル,NASDAQ,ソフトウェア・サービス,○
 VTS,VITESSE ENERGY,ビテッセ・エナジー,NYSE,その他,○
 VTSI,VIRTRA INC,バートラ,NASDAQ,その他製造,○
 VTV,VA VALUE,バンガード・米国バリューETF,NYSE,その他,○
