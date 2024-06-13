@@ -20,6 +20,7 @@
               id="checkbox_{{ chart_id }}"
               name="{{ chart_id }}"
               class="flex-none w-8 h-8 ml-2 mr-2 rounded watchlist"
+              onclick="on_change_flag()"
             />
             <input
               type="radio"
@@ -31,9 +32,31 @@
             />
             <label
               for="label_{{ chart_id }}"
-              class="flex flex-1 cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+              class="flex flex-1 cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white space-x-10"
             >
               <p class="text-sm font-medium">{{ chart_id }}</p>
+              {% if results[loop.index - 1].profit < 0 %}
+              <p
+                class="text-sm font-medium simulation-results text-red-600"
+                style="display: none"
+              >
+                {{ results[loop.index - 1].profit }} / {{ results[loop.index - 1].duration }}
+              </p>
+              {% elif results[loop.index - 1].profit < 20 %}
+              <p
+                class="text-sm font-medium simulation-results text-yellow-600"
+                style="display: none"
+              >
+                {{ results[loop.index - 1].profit }} / {{ results[loop.index - 1].duration }}
+              </p>
+              {% else %}
+              <p
+                class="text-sm font-medium simulation-results text-green-600"
+                style="display: none"
+              >
+                {{ results[loop.index - 1].profit }} / {{ results[loop.index - 1].duration }}
+              </p>
+              {% endif %}
             </label>
           </div>
           {% endfor %}
@@ -80,9 +103,32 @@
         CSVダウンロード
       </button>
     </a>
+    <button
+      class="bg-indigo-700 font-semibold text-white py-2 px-4 rounded"
+      onclick="on_change_results_display()"
+    >
+      結果表示/非表示
+    </button>
+    <p class="num-checked">0 / {{ chart_ids|length }}</p>
 
     <script src="bundle_jp.js"></script>
     <script>
+     const on_change_flag = () => {
+       // チェックされている数を取得/表示
+        const watch_list = document.querySelectorAll(".watchlist");
+        const target_list = [];
+        for (const target of watch_list) {
+          if (target.checked) {
+            target_list.push(target.name);
+          }
+        }
+       const num_checked = target_list.length;
+       const num_total = watch_list.length;
+       const num_checked_element = document.querySelector(".num-checked");
+        num_checked_element.textContent = `${num_checked} / ${num_total}`;
+      };
+
+
       const get_current_ticker = () => {
         const ticker_list = document.getElementsByName("ChartRadioButtons");
         for (const ticker of ticker_list) {
@@ -112,6 +158,17 @@
         const ticker = get_current_ticker();
         if (ticker != "") {
           draw_chart(ticker, span == "daily");
+        }
+      };
+
+      const on_change_results_display = () => {
+        const results = document.getElementsByClassName("simulation-results");
+        for (const result of results) {
+          if (result.style.display == "none") {
+            result.style.display = "block";
+          } else {
+            result.style.display = "none";
+          }
         }
       };
 

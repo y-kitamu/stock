@@ -64,3 +64,22 @@ def get_market_capitalization(
             break
 
     return market_cap
+
+
+def get_number_of_shares(code: str, base_url: str = "https://kabutan.jp/stock/?code={}"):
+    res = requests.get(base_url.format(code))
+    soup = BeautifulSoup(res.text, features="lxml")
+
+    number_of_shares = 0
+    div = soup.find("div", {"id": "kobetsu_left"})
+    if div is None:
+        return 0
+    for table in div.findAll("table"):
+        for table_row in table.find_all("tr"):
+            th = table_row.find("th")
+            if th is not None and th.text == "発行済株式数":
+                td = table_row.find("td")
+                number_of_shares = convert_to_number(td.text)
+                break
+
+    return number_of_shares

@@ -10,7 +10,7 @@ from ..constants import PROJECT_ROOT
 from ..kabutan import read_financial_csv
 
 
-def _check_growing(
+def check_growing(
     df: pl.DataFrame,
     key: str,
     min_growth_rate: float,
@@ -83,7 +83,7 @@ def check_fundamental_trend_templates(
     # 直近四半期の利益がプラス
     results["latest_net_income"] = quarter_df["net_income"][-1] > 0
     # 直近2四半期のepsが前年同期比で20%以上増加
-    results["net_income_growing"] = _check_growing(
+    results["net_income_growing"] = check_growing(
         df=quarter_df,
         key="net_income",
         min_growth_rate=0.2,
@@ -91,7 +91,7 @@ def check_fundamental_trend_templates(
         current_date=current_date,
     )
     # 直近年度の売上高が前年比で10%以上増加
-    results["total_revenue_growing"] = _check_growing(
+    results["total_revenue_growing"] = check_growing(
         df=year_df,
         key="total_revenue",
         min_growth_rate=0.1,

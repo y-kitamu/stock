@@ -4,6 +4,7 @@ Author : Yusuke Kitamura
 Create Date : 2023-08-03 17:02:08
 Copyright (c) 2019- Yusuke Kitamura <ymyk6602@gmail.com>
 """
+
 import argparse
 import json
 from pathlib import Path
@@ -82,6 +83,7 @@ def load_ticker_data(ticker: str):
             "code": ticker,
             "daily_data": daily_data,
             "volume_data": volume_data,
+            "mark_points": [],
         }
     except KeyboardInterrupt:
         raise KeyboardInterrupt

@@ -14,24 +14,22 @@ import polars as pl
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 import stock
+from stock.simulation.simulate import OnielStopCondition
 
 
-def get_watch_list(target_date: datetime.date = datetime.date.today()) -> list[str]:
-    """watch listのデータを取得する"""
-    watch_list = []
+def get_success_list(target_date: datetime.date = datetime.date.today()) -> list[str]:
+    """`target_date`から損切りに合わずに利益を出した銘柄のリストを取得する"""
     code_list = stock.get_code_list()
-    for code in code_list:
-        data_csv_path = stock.DATA_DIR / f"daily/{code}.csv"
-        df = (
-            stock.kabutan.read_data_csv(data_csv_path)
-            .filter(
-                pl.col("date").is_between(target_date - datetime.timedelta(days=365), target_date)
-            )
-            .sort(pl.col("date"))
+    results = get_simulation_results(code_list, target_date)
+    cand_watch_list = [res["code"] for res in results if res["profit"] >= 20]
+    watch_list = []
+    for code in cand_watch_list:
+        df = stock.kabutan.read_data_csv(stock.PROJECT_ROOT / f"data/daily/{code}.csv")
+        df = df.filter(
+            pl.col("date").is_between(target_date - datetime.timedelta(days=30), target_date)
         )
-        if df["close"].max() * 0.99 < df["close"][-1]:
+        if len(df) > 5 and df["volume"].mean() > 5000:
             watch_list.append(code)
-
     return watch_list
 
 
@@ -86,16 +84,57 @@ def load_ticker_data(ticker: str, target_date: datetime.date = datetime.date.tod
             .tolist()
         )
         weekly_volume_data = weekly_df["volume"].to_list()
+
+        mark_points = []
+        dates = []
+        fdf = stock.kabutan.read_financial_csv(stock.PROJECT_ROOT / f"data/financial/{ticker}.csv")
+        fdf = fdf.filter(
+            pl.col("annoounce_date").is_between(
+                target_date - datetime.timedelta(days=365), target_date
+            )
+        )
+        yfdf = fdf.filter(pl.col("duration") == 12)
+        for idx in range(len(yfdf)):
+            date = yfdf["annoounce_date"][idx]
+            dates.append(date)
+            mark_points.append(
+                {
+                    "date": date.strftime("%Y/%m/%d"),
+                    "price": daily_df.filter(pl.col("date") <= date).sort(pl.col("date"))["close"][
+                        -1
+                    ],
+                    "color": "blue" if yfdf["is_prediction"][idx] else "green",
+                }
+            )
+        qfdf = fdf.filter(pl.col("duration") == 3)
+        for idx in range(len(qfdf)):
+            date = qfdf["annoounce_date"][idx]
+            if date in dates:
+                continue
+            mark_points.append(
+                {
+                    "date": date.strftime("%Y/%m/%d"),
+                    "price": daily_df.filter(pl.col("date") <= date).sort(pl.col("date"))["close"][
+                        -1
+                    ],
+                    "color": "red",
+                }
+            )
+
+        if len(weekly_data) == 0 or len(daily_data) == 0:
+            return None
         return [
             {
                 "code": ticker,
                 "daily_data": daily_data,
                 "volume_data": daily_volume_data,
+                "mark_points": mark_points,
             },
             {
                 "code": f"{ticker}_weekly",
                 "daily_data": weekly_data,
                 "volume_data": weekly_volume_data,
+                "mark_points": [],
             },
         ]
     except KeyboardInterrupt:
@@ -105,12 +144,30 @@ def load_ticker_data(ticker: str, target_date: datetime.date = datetime.date.tod
     return None
 
 
+def get_simulation_results(
+    watch_list: list[str], target_date: datetime.date = datetime.date.today()
+):
+    results = []
+    for idx, code in enumerate(watch_list):
+        stop_condition = OnielStopCondition()
+        res = stock.simulation.run(code, target_date, stop_condition)
+        if res.buying_price > 0:
+            results.append(
+                {"code": code, "duration": res.duration, "profit": round(res.profit * 100)}
+            )
+    return results
+
+
 def main(
     output_dir: Path = stock.PROJECT_ROOT / "docs",
     template_dir: Path = stock.PROJECT_ROOT / "templates",
     target_date: datetime.date = datetime.date.today(),
 ):
-    watch_list = get_watch_list(target_date)
+    watch_list = stock.trend_template.get_watch_list_v3(target_date)
+    stock.logger.debug("Number of watchlist : {}".format(len(watch_list)))
+    results = get_simulation_results(watch_list, target_date)
+    watch_list = [r["code"] for r in results]
+    stock.logger.debug("Number of watchlist : {}".format(len(watch_list)))
 
     output_dir.mkdir(exist_ok=True)
 
@@ -121,14 +178,21 @@ def main(
 
     # render index.html
     template = env.get_template("index_jp.html")
-    index_html_text = template.render(chart_ids=watch_list)
+    index_html_text = template.render(chart_ids=watch_list, results=results)
     index_html_path = output_dir / "index_jp.html"
     with open(index_html_path, "w") as f:
         f.write(index_html_text)
 
     # render bundle javascript files
     ticker_datas = sum(
-        [d for d in [load_ticker_data(ticker=ticker) for ticker in watch_list] if d is not None], []
+        [
+            d
+            for d in [
+                load_ticker_data(ticker=ticker, target_date=target_date) for ticker in watch_list
+            ]
+            if d is not None
+        ],
+        [],
     )
     template_js = env.get_template("bundle.js")
     template_js.render(tickers=ticker_datas)
@@ -136,6 +200,7 @@ def main(
     with open(bundle_js_path, "w") as f:
         f.write(template_js.render(tickers=ticker_datas))
     # stock.logger.info(render_bundle_js(env, ticker, output_dir / "js"))
+    return watch_list
 
 
 if __name__ == "__main__":
@@ -144,7 +209,14 @@ if __name__ == "__main__":
     parser.add_argument("--template_dir", type=Path, default=stock.PROJECT_ROOT / "templates")
     args = parser.parse_args()
 
-    main(
+    target_date = datetime.date(2022, 8, 8)
+
+    watch_list = stock.run_debug(
+        main,
         output_dir=args.output_dir,
         template_dir=args.template_dir,
+        target_date=target_date,
     )
+    for code in watch_list:
+        print(code)
+    print(f"Number of watchlist : {len(watch_list)}")

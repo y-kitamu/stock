@@ -3,12 +3,74 @@
 
 from datetime import date, timedelta
 
-from ..constants import PROJECT_ROOT
-from .fundamental import check_fundamental_trend_templates
+import polars as pl
+
+from ..constants import DATA_DIR, PROJECT_ROOT
+from ..kabutan import get_code_list, read_data_csv, read_financial_csv
+from ..kabutan.data import get_number_of_shares
+from .fundamental import check_fundamental_trend_templates, check_growing
 from .technical import (TechnicalTrendTemplate, TechnicalTrendTemplateParams,
                         check_technical_trend_templates)
 from .technical_v2 import calc_rs as calc_rs_v2
 from .technical_v2 import get_watch_list as get_watch_list_v2
+
+
+def get_watch_list_v3(target_date: date = date.today()) -> list[str]:
+    """watch listのデータを取得する"""
+    code_list = get_code_list()
+    watch_list = []
+    for code in code_list:
+        data_csv_path = DATA_DIR / f"daily/{code}.csv"
+        original_df = read_data_csv(data_csv_path)
+        # 3ヶ月高値付近
+        df = original_df.filter(
+            pl.col("date").is_between(target_date - timedelta(days=120), target_date)
+        ).sort(pl.col("date"))
+        if len(df) == 0 or df["close"].max() * 0.99 > df["close"][-1]:
+            continue
+
+        # 1ヶ月の平均出来高が5000以上
+        df = original_df.filter(
+            pl.col("date").is_between(target_date - timedelta(days=30), target_date)
+        )
+        if len(df) == 0 or df["volume"].mean() < 5000:
+            continue
+
+        # 直近の値動きが激しすぎない
+        df = original_df.filter(
+            pl.col("date").is_between(target_date - timedelta(days=30), target_date)
+        )
+        if len(df) < 5 or df["close"].std() > df["close"].mean() * 0.05:
+            continue
+
+        # 直近の4半期決算が良い
+        fdf = read_financial_csv(DATA_DIR / f"financial/{code}.csv")
+        fdf = fdf.filter((pl.col("annoounce_date") < target_date) & (pl.col("duration") == 3)).sort(
+            pl.col("annoounce_date")
+        )
+        if len(fdf) == 0:
+            continue
+        if len(fdf) >= 5:
+            if (
+                fdf["total_revenue"][-1] < fdf["total_revenue"][-5] * 1.1
+                and fdf["net_income"][-1] < fdf["net_income"][-5] * 1.1
+            ):
+                continue
+        else:
+            if fdf["net_income"][-1] < 0:
+                continue
+
+        # 直前の決算発表から70日以内
+        if fdf["annoounce_date"][-1] < target_date - timedelta(days=70):
+            continue
+
+        # 時価総額が大きすぎない
+        num_shares = get_number_of_shares(code)
+        if num_shares * df["close"][-1] > 100000000000:  # 1000億
+            continue
+
+        watch_list.append(code)
+    return watch_list
 
 
 def get_watch_list(cur_day: date) -> list[str]:
