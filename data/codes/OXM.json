@@ -34,7 +34,7 @@
         "Gross Profit": 275129000.0,
         "Cost Of Revenue": 144968000.0,
         "Total Revenue": 420097000.0,
-        "Operating Revenue": 420230000.0
+        "Operating Revenue": 420097000.0
     },
     "2023-01-31": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -689,5 +689,42 @@
         "Cost Of Revenue": 158121000.0,
         "Total Revenue": 404429000.0,
         "Operating Revenue": 404340000.0
+    },
+    "2024-04-30": {
+        "Tax Effect Of Unusual Items": 0.0,
+        "Tax Rate For Calcs": 0.256,
+        "Normalized EBITDA": 68992000.0,
+        "Net Income From Continuing Operation Net Minority Interest": 38373000.0,
+        "Reconciled Depreciation": 16541000.0,
+        "Reconciled Cost Of Revenue": 139823000.0,
+        "EBITDA": 68992000.0,
+        "EBIT": 52451000.0,
+        "Net Interest Income": -874000.0,
+        "Interest Expense": 874000.0,
+        "Normalized Income": 38373000.0,
+        "Net Income From Continuing And Discontinued Operation": 38373000.0,
+        "Total Expenses": 345733000.0,
+        "Total Operating Income As Reported": 52451000.0,
+        "Diluted Average Shares": 15844000.0,
+        "Basic Average Shares": 15597000.0,
+        "Diluted EPS": 2.42,
+        "Basic EPS": 2.46,
+        "Diluted NI Availto Com Stockholders": 38373000.0,
+        "Net Income Common Stockholders": 38373000.0,
+        "Net Income": 38373000.0,
+        "Net Income Including Noncontrolling Interests": 38373000.0,
+        "Net Income Continuous Operations": 38373000.0,
+        "Tax Provision": 13204000.0,
+        "Pretax Income": 51577000.0,
+        "Net Non Operating Interest Income Expense": -874000.0,
+        "Interest Expense Non Operating": 874000.0,
+        "Operating Income": 52451000.0,
+        "Operating Expense": 205910000.0,
+        "Other Operating Expenses": -7193000.0,
+        "Selling General And Administration": 213103000.0,
+        "Gross Profit": 258361000.0,
+        "Cost Of Revenue": 139823000.0,
+        "Total Revenue": 398184000.0,
+        "Operating Revenue": 398184000.0
     }
 }
