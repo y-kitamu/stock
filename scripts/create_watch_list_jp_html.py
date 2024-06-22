@@ -10,11 +10,105 @@ import datetime
 import json
 from pathlib import Path
 
+import numpy as np
 import polars as pl
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 import stock
 from stock.simulation.simulate import OnielStopCondition
+from stock.trend_template import check_growing
+
+
+def get_watch_list(current_date: datetime.date = datetime.date.today()) -> list[str]:
+    """ """
+    code_list = stock.kabutan.get_code_list()
+    window_size = 2
+    growing_rate = 0.15
+    duration = 2
+
+    # relative strengthの高い銘柄を取得
+    target_key = "rs"
+    target_code_list = []
+    rs_list = []
+    for code in code_list:
+        df = stock.kabutan.read_data_csv(
+            csv_path=stock.DATA_DIR / f"daily/{code}.csv", end_date=current_date
+        )
+        if len(df) > 0 and df[target_key][-1] > 0:
+            rs_list.append([df[target_key][-1], df["rs_topix"][-1], df["rs"][-1]])
+            target_code_list.append(code)
+
+    ind = np.argsort(rs_list, axis=0)
+    start_pos = int(len(rs_list) * 0.9)
+    end_pos = int(len(rs_list) * 0.95)
+    target_indices = ind[start_pos:end_pos, 0]
+    target_code = np.array(target_code_list)[target_indices]
+
+    # テクニカルでスクリーニング
+    watch_list = []
+    for code in target_code:
+        df = stock.kabutan.read_data_csv(
+            stock.DATA_DIR / f"daily/{code}.csv", end_date=current_date
+        )
+        # relative strengthが上昇している
+        max_rs = df.filter(pl.col("date") >= current_date - datetime.timedelta(days=10))["rs"].max()
+        if max_rs * 0.95 > df["rs"][-1]:
+            continue
+
+        # 新高値付近にある
+        highest = df.filter(pl.col("date") >= current_date - datetime.timedelta(days=90))[
+            "high"
+        ].max()
+        if highest * 0.80 > df["close"][-1]:
+            continue
+
+        watch_list.append(code)
+
+    # fundamentalsでスクリーニング
+    target_code = watch_list
+    watch_list = []
+    for code in target_code:
+        df = (
+            stock.kabutan.read_financial_csv(stock.DATA_DIR / f"financial/{code}.csv")
+            .filter((pl.col("annoounce_date") <= current_date) & (pl.col("duration") == 3))
+            .sort(pl.col("annoounce_date"))
+        )
+        # if len(df) == 0:
+        #     watch_list.append(code)
+        #     continue
+
+        if current_date - df["annoounce_date"][-1] > datetime.timedelta(days=45):
+            continue
+
+        if not (
+            check_growing(
+                df,
+                "total_revenue",
+                growing_rate,
+                min_duration=duration,
+                current_date=current_date,
+                num_average=window_size,
+            )
+            or check_growing(
+                df,
+                "operating_income",
+                growing_rate,
+                min_duration=duration,
+                current_date=current_date,
+                num_average=window_size,
+            )
+            or check_growing(
+                df,
+                "net_income",
+                growing_rate,
+                min_duration=duration,
+                current_date=current_date,
+                num_average=window_size,
+            )
+        ):
+            if stock.kabutan.data.get_market_capitalization(code) > 50:
+                watch_list.append(code)
+    return watch_list
 
 
 def get_success_list(target_date: datetime.date = datetime.date.today()) -> list[str]:
@@ -163,7 +257,8 @@ def main(
     template_dir: Path = stock.PROJECT_ROOT / "templates",
     target_date: datetime.date = datetime.date.today(),
 ):
-    watch_list = stock.trend_template.get_watch_list_v3(target_date)
+    # watch_list = stock.trend_template.get_watch_list_v3(target_date)
+    watch_list = get_watch_list(target_date)
     stock.logger.debug("Number of watchlist : {}".format(len(watch_list)))
     results = get_simulation_results(watch_list, target_date)
     watch_list = [r["code"] for r in results]
@@ -209,7 +304,7 @@ if __name__ == "__main__":
     parser.add_argument("--template_dir", type=Path, default=stock.PROJECT_ROOT / "templates")
     args = parser.parse_args()
 
-    target_date = datetime.date(2022, 8, 8)
+    target_date = datetime.date(2022, 6, 8)
 
     watch_list = stock.run_debug(
         main,

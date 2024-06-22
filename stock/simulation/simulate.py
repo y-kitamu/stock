@@ -3,7 +3,7 @@
 
 from datetime import date, datetime, timedelta
 from pathlib import Path
-from types import NotImplementedType
+from typing import Any
 
 import polars as pl
 from pydantic import BaseModel
@@ -25,6 +25,25 @@ class BaseCondition(BaseModel):
         """
         raise NotImplementedError
 
+    def get_selling_price(self, df: pl.DataFrame, index: int) -> float:
+        """`index`の日付での売値を取得
+        Returns:
+            float: 売値
+        """
+        raise NotImplementedError
+
+
+class MultiStepStopCondition(BaseCondition):
+    """利食いを複数段階で行う"""
+
+    max_loss_rate: float = 0.08  # 買値からの最大損失率
+    sell_rates: list[float] = [0.1, 0.2]  # ここまで値上がりしたら売る
+    max_days: int = 7 * 6  # 最大保持日数
+    buying_price: float = -1
+    loss_cut_price: float = -1
+    profit_fixed_price: float = -1
+    buy_date: date = date.today()
+
 
 class OnielStopCondition(BaseCondition):
     """William Onielのストップ条件"""
@@ -36,6 +55,7 @@ class OnielStopCondition(BaseCondition):
     loss_cut_price: float = -1
     profit_fixed_price: float = -1
     buy_date: date = date.today()
+    data: dict[str, Any] = {}
 
     def set_start(self, df: pl.DataFrame, start_date: date) -> float:
         df = df.filter(pl.col("date") > start_date).sort(pl.col("date"))
@@ -60,6 +80,11 @@ class OnielStopCondition(BaseCondition):
         # ここまで値上がりしたら売る
         if df["high"][index] > self.profit_fixed_price:
             return max(self.profit_fixed_price, df["open"][index])
+
+        return -1.0
+
+    def get_selling_price(self, df: pl.DataFrame, index: int) -> float:
+        """ """
 
         return -1.0
 

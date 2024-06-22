@@ -44,9 +44,7 @@ def get_stock_data(
     return daily_data
 
 
-def get_market_capitalization(
-    code: str, base_url: str = "https://kabutan.jp/stock/?code={}"
-) -> int:
+def get_market_capitalization(code: str, base_url: str = "https://kabutan.jp/stock/?code={}") -> int:
     res = requests.get(base_url.format(code))
     soup = BeautifulSoup(res.text, features="lxml")
 
@@ -58,8 +56,8 @@ def get_market_capitalization(
     if market_cap_table is None:
         return market_cap
     for table_row in market_cap_table.find_all("tr"):
-        tds = table_row.find_all("td")
-        if tds[0].text == "時価総額":
+        tds = table_row.find_all(["th", "td"])
+        if len(tds) > 0 and tds[0].text == "時価総額":
             market_cap = convert_to_number(tds[1].text)
             break
 
