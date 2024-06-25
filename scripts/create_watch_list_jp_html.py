@@ -16,7 +16,7 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 import stock
 from stock.simulation.simulate import OnielStopCondition
-from stock.trend_template import check_growing
+from stock.trend_template import check_growing, get_watch_list_v4
 
 
 def get_watch_list(current_date):
@@ -308,7 +308,7 @@ def main(
     target_date: datetime.date = datetime.date.today(),
 ):
     # watch_list = stock.trend_template.get_watch_list_v3(target_date)
-    watch_list = get_watch_list(target_date)
+    watch_list = get_watch_list_v4(target_date)
     stock.logger.debug("Number of watchlist : {}".format(len(watch_list)))
     results = get_simulation_results(watch_list, target_date)
     watch_list = [r["code"] for r in results]
