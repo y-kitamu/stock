@@ -29,12 +29,15 @@ def get_code_list() -> list[str]:
 
 
 def read_data_csv(
-    csv_path: Path,
+    csv_path: Path | str,
     exclude_none: bool = True,
     with_rs: bool = True,
     start_date: datetime.date | None = None,
     end_date: datetime.date | None = None,
 ) -> pl.DataFrame:
+    if not Path(csv_path).exists():
+        csv_path = PROJECT_ROOT / f"data/daily/{csv_path}.csv"
+
     df = pl.read_csv(csv_path)
     columns = [
         pl.col("date").str.to_datetime("%Y/%m/%d").cast(pl.Date),
@@ -65,7 +68,10 @@ def write_data_csv(df: pl.DataFrame, csv_path: Path):
     df.with_columns(pl.col("date").dt.to_string("%Y/%m/%d")).write_csv(csv_path)
 
 
-def read_financial_csv(csv_path: Path) -> pl.DataFrame:
+def read_financial_csv(csv_path: Path | str) -> pl.DataFrame:
+    if not Path(csv_path).exists():
+        csv_path = PROJECT_ROOT / f"data/financial/{csv_path}.csv"
+
     df = pl.read_csv(csv_path)
     df = df.select(
         [

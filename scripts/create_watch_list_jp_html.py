@@ -19,7 +19,52 @@ from stock.simulation.simulate import OnielStopCondition
 from stock.trend_template import check_growing
 
 
-def get_watch_list(current_date: datetime.date = datetime.date.today()) -> list[str]:
+def get_watch_list(current_date):
+    """ """
+    # 悪い決算を発表したが値上がりしてる銘柄を探す
+    code_list = stock.kabutan.get_code_list()
+    start_date = current_date - datetime.timedelta(days=365)
+    watch_list = []
+    for code in code_list:
+        df = stock.kabutan.read_data_csv(code, start_date=start_date, end_date=current_date)
+        fdf = (
+            stock.kabutan.read_financial_csv(code)
+            .filter(pl.col("annoounce_date") <= current_date)
+            .sort(pl.col("annoounce_date"))
+        )
+        if len(fdf) > 0 and current_date - fdf["annoounce_date"][-1] < datetime.timedelta(days=1):
+            continue
+
+        # 過去10日の値動きの大きさを計算
+        window_size = 10
+        avg_key = "avg{}".format(window_size)
+        stddev_key = "stddev{}".format(window_size)
+        df = df.with_columns(
+            pl.col("close").rolling_mean(window_size=window_size).alias(avg_key),
+            pl.col("close").rolling_std(window_size=window_size).alias(stddev_key),
+        )
+
+        # ギャップアップしている
+        df = df.with_columns(
+            (pl.col("close") > pl.col(avg_key) + pl.col(stddev_key)).alias("breakpoint")
+        )
+
+        # 出来高が増加（急増）
+        df = df.with_columns(
+            pl.col("volume").rolling_max(window_size=window_size).shift().alias("max_volume")
+        )
+        df = df.with_columns((pl.col("volume") > pl.col("max_volume") * 2).alias("volume_increase"))
+
+        if len(df) > 0 and df["breakpoint"][-1] and df["volume_increase"][-1]:
+            # 高値で引けている
+            if (df["close"][-1] - df["low"][-1]) / max(df["high"][-1] - df["low"][-1], 1e-5) > 0.8:
+                # 小型株
+                if stock.kabutan.data.get_market_capitalization(code) < 1000:
+                    watch_list.append(code)
+    return watch_list
+
+
+def get_watch_list_old(current_date: datetime.date = datetime.date.today()) -> list[str]:
     """ """
     code_list = stock.kabutan.get_code_list()
     window_size = 2
@@ -241,14 +286,19 @@ def load_ticker_data(ticker: str, target_date: datetime.date = datetime.date.tod
 def get_simulation_results(
     watch_list: list[str], target_date: datetime.date = datetime.date.today()
 ):
+
     results = []
-    for idx, code in enumerate(watch_list):
-        stop_condition = OnielStopCondition()
-        res = stock.simulation.run(code, target_date, stop_condition)
-        if res.buying_price > 0:
-            results.append(
-                {"code": code, "duration": res.duration, "profit": round(res.profit * 100)}
-            )
+    if target_date == datetime.date.today():
+        for code in watch_list:
+            results.append({"code": code, "duration": 0, "profit": 0})
+    else:
+        for idx, code in enumerate(watch_list):
+            stop_condition = OnielStopCondition()
+            res = stock.simulation.run(code, target_date, stop_condition)
+            if res.buying_price > 0:
+                results.append(
+                    {"code": code, "duration": res.duration, "profit": round(res.profit * 100)}
+                )
     return results
 
 
@@ -304,13 +354,11 @@ if __name__ == "__main__":
     parser.add_argument("--template_dir", type=Path, default=stock.PROJECT_ROOT / "templates")
     args = parser.parse_args()
 
-    target_date = datetime.date(2022, 6, 8)
-
     watch_list = stock.run_debug(
         main,
         output_dir=args.output_dir,
         template_dir=args.template_dir,
-        target_date=target_date,
+        # target_date=target_date,
     )
     for code in watch_list:
         print(code)
