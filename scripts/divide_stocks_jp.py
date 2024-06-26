@@ -19,6 +19,8 @@ def divide_stock(code: str, divide_date: date, rate: float):
         rate (float): divide rate
     """
     csv_path = stock.PROJECT_ROOT / "data" / "daily" / f"{code}.csv"
+    if not csv_path.exists():
+        return
     df = stock.kabutan.read_data_csv(csv_path, exclude_none=False)
 
     def _get_expression(key: str, date: date, rate):
