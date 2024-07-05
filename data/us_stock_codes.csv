@@ -348,6 +348,7 @@ ASTC,ASTROTECH CORP,アストロテック,NASDAQ,航空機・宇宙,○
 ASTE,ASTEC INDUSTRIES,アステック・インダストリーズ,NASDAQ,その他製造,○
 ASTH,ASTRANA HEALTH,アストラナ・ヘルス,NASDAQ,ヘルスケア,○
 ASTL,ALGOMA STEEL GP,アルゴマ・スティール・グループ,NASDAQ,その他製造,○
+ASTR,ASTRA SPACE INC,アストラ・スペース,NASDAQ,航空機・宇宙,○
 ASTS,AST SPACEMOBILE,ASTスペースモバイル,NASDAQ,通信サービス,○
 ASUR,ASURE SOFTWARE,アシュア・ソフトウエア,NASDAQ,ソフトウェア・サービス,○
 ASX,ASE TCHNLGY HOLD,ASEテクノロジー・ホールディングス,NYSE,半導体製造,○
@@ -1109,7 +1110,6 @@ CYCC,CYCLACEL PHARMA,サイクラセル・ファーマシューティカルズ,N
 CYCN,CYCLERION THERA,サイクレリオン・セラピューティクス,NASDAQ,医薬品（バイオテクノロジー）,○
 CYD,CHINA YUCHAI,チャイナユチャイ,NYSE,自動車,○
 CYH,COMMNTY HLTH SYS,コミュニティー・ヘルス・システムズ,NYSE,ヘルスケア,○
-CYN,CYNGN INC,シングン,NASDAQ,ソフトウェア・サービス,○
 CYRX,CRYOPORT INC,クリオポート,NASDAQ,その他,○
 CYTH,CYCLO THERAPE,シクロ・セラピューティクス,NASDAQ,医薬品（バイオテクノロジー）,○
 CYTK,CYTOKINETICS,サイトカイネティックス,NASDAQ,医薬品（バイオテクノロジー）,○
@@ -1234,7 +1234,6 @@ DOV,DOVER CORP,ドーバー,NYSE,機械,○
 DOW,DOW INC,ダウ・インク,NYSE,化学,○
 DOX,AMDOCS,アムドックス,NASDAQ,ソフトウェア・サービス,○
 DOYU,DOUYU INTL HLD,ドウユ・インターナショナル・ホールディングス,NASDAQ,ソフトウェア・サービス,○
-DPSI,DECISIONPT SYSTM,ディシジョンポイント・システムズ,NYSE,情報処理サービス,○
 DPST,DRX RGN BNK BL3X,Direxion デイリー 地方銀行 ブル3倍 ETF,NYSE,その他,○
 DPZ,DOMINOS PIZZA I,ドミノ・ピザ,NYSE,食品,○
 DQ,DAQO NEW ENERGY,ダコ・ニューエナジー,NYSE,化学,○
@@ -2304,6 +2303,7 @@ JXI,ISHARES UTILITY,iシェアーズ グローバル公益事業 ETF,NYSE,その
 JXJT,JX LUXVENTURE,JXルクスベンチャー,NASDAQ,小売,○
 JXN,JACKSON FINANCIA,ジャクソン・フィナンシャル,NYSE,金融(保険),○
 JYNT,THE JOINT CORP,ジョイント,NASDAQ,ヘルスケア,○
+JZXN,JIUZI HOLDINGS,ジウズー・ホールディングス,NASDAQ,小売,○
 K,KELLANOVA,ケラノバ,NYSE,食品,○
 KA,KINETA,キネタ,NASDAQ,医薬品（バイオテクノロジー）,○
 KAI,KADANT INC,カダント,NYSE,機械,○
@@ -2961,6 +2961,7 @@ NUE,NUCOR CORP,ニューコア,NYSE,その他,○
 NUGT,DRX GD MINE BL2X,Direxion デイリー 金鉱株 ブル2倍 ETF,NYSE,その他,○
 NURO,NEUROMETRIX INC,ニューロメトリックス,NASDAQ,ヘルスケア,○
 NUS,NU SKIN ENT INC,ニュー　スキン　エンタープライズ,NYSE,小売,○
+NUTX,NUTEX HEALTH INC,ニューテックス・ヘルス,NASDAQ,ソフトウェア・サービス,○
 NUVB,NUVATION BIO INC,ニューベーション・バイオ,NYSE,医薬品（バイオテクノロジー）,○
 NUVL,NUVALENT INC,ニューバレント,NASDAQ,医薬品（バイオテクノロジー）,○
 NUWE,NUWELLIS INC,ヌーウェリス,NASDAQ,ヘルスケア,○
@@ -3229,7 +3230,6 @@ PHAT,PHATHOM PHARMA,ファトム・ファーマスーティカルズ,NASDAQ,医�
 PHG,RL PHILIPS ADR,ロイヤルフィリップス,NYSE,その他製造,○
 PHI,PLDT INC,PLDT,NYSE,通信サービス,○
 PHIN,PHINI INC,フィニ,NYSE,その他製造,○
-PHIO,PHIO PHARMA,フィオ・ファーマシューティカルズ,NASDAQ,医薬品（バイオテクノロジー）,○
 PHM,PULTEGROUP INC,プルトグループ,NYSE,その他製造,○
 PHR,PHREESIA INC,フリージア,NYSE,ソフトウェア・サービス,○
 PHUN,PHUNWARE INC,ファンウェア,NASDAQ,ソフトウェア・サービス,○
@@ -3811,7 +3811,6 @@ SNDR,SCHNEIDER NATION,シュナイダー・ナショナル,NYSE,運輸,○
 SNDX,SYNDAX PHARMACEU,シンダックス・ファーマシューティカルズ,NASDAQ,医薬品（バイオテクノロジー）,○
 SNES,SENESTECH INC,セネステック,NASDAQ,医薬品（バイオテクノロジー）,○
 SNEX,STONEX GROUP,ストーンX・グループ,NASDAQ,その他,○
-SNFCA,SECURITY NAT FIN,セキュリティ・ナショナル・ファイナンシャル,NASDAQ,金融(保険),○
 SNGX,SOLIGENIX INC,ソリジェニックス,NASDAQ,医薬品,○
 SNN,SMITH & NEPHEW,スミス・アンド・ネフュー,NYSE,医療サービス,○
 SNOA,SONOMA PHARMA,ソノマ・ファーマシューティカルズ,NASDAQ,医薬品,○
