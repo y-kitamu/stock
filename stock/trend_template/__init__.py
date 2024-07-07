@@ -17,7 +17,7 @@ from .technical_v2 import get_watch_list as get_watch_list_v2
 
 def get_watch_list_v4(current_date):
     """ """
-    # 悪い決算を発表したが値上がりしてる銘柄を探す
+    # 特に何も材料がないのに大きく値上がりしている銘柄を探す
     code_list = get_code_list()
     start_date = current_date - timedelta(days=365)
     watch_list = []
@@ -53,10 +53,19 @@ def get_watch_list_v4(current_date):
 
         if len(df) > 0 and df["breakpoint"][-1] and df["volume_increase"][-1]:
             # 高値で引けている
-            if (df["close"][-1] - df["low"][-1]) / max(df["high"][-1] - df["low"][-1], 1e-5) > 0.8:
-                # 小型株
-                if get_market_capitalization(code) < 1000:
-                    watch_list.append(code)
+            flag = False
+            # if (df["close"][-1] - df["low"][-1]) / max(df["high"][-1] - df["low"][-1], 1e-5) > 0.8:
+            #     flag = True
+            if df["close"][-1] >= df["open"][-1]:
+                flag = True
+            # 出来高が急増
+            if df["volume"][-1] > df["max_volume"][-1] * 20:
+                flag = True
+            # if df["close"][-1] > df["open"][-1]:
+            # 小型株
+            market_cap = get_market_capitalization(code)
+            if flag and market_cap is not None and market_cap < 1000:
+                watch_list.append(code)
     return watch_list
 
 

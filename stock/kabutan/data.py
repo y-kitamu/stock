@@ -58,8 +58,9 @@ def get_market_capitalization(code: str, base_url: str = "https://kabutan.jp/sto
     for table_row in market_cap_table.find_all("tr"):
         tds = table_row.find_all(["th", "td"])
         if len(tds) > 0 and tds[0].text == "時価総額":
-            market_cap = convert_to_number(tds[1].text)
-            break
+            market_cap = convert_to_number(tds[1].text.replace("兆", "").replace("億", ""))
+            if market_cap is not None:
+                break
 
     return market_cap
 

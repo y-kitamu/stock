@@ -19,143 +19,6 @@ from stock.simulation.simulate import OnielStopCondition
 from stock.trend_template import check_growing, get_watch_list_v4
 
 
-def get_watch_list(current_date):
-    """ """
-    # 悪い決算を発表したが値上がりしてる銘柄を探す
-    code_list = stock.kabutan.get_code_list()
-    start_date = current_date - datetime.timedelta(days=365)
-    watch_list = []
-    for code in code_list:
-        df = stock.kabutan.read_data_csv(code, start_date=start_date, end_date=current_date)
-        fdf = (
-            stock.kabutan.read_financial_csv(code)
-            .filter(pl.col("annoounce_date") <= current_date)
-            .sort(pl.col("annoounce_date"))
-        )
-        if len(fdf) > 0 and current_date - fdf["annoounce_date"][-1] < datetime.timedelta(days=1):
-            continue
-
-        # 過去10日の値動きの大きさを計算
-        window_size = 10
-        avg_key = "avg{}".format(window_size)
-        stddev_key = "stddev{}".format(window_size)
-        df = df.with_columns(
-            pl.col("close").rolling_mean(window_size=window_size).alias(avg_key),
-            pl.col("close").rolling_std(window_size=window_size).alias(stddev_key),
-        )
-
-        # ギャップアップしている
-        df = df.with_columns(
-            (pl.col("close") > pl.col(avg_key) + pl.col(stddev_key)).alias("breakpoint")
-        )
-
-        # 出来高が増加（急増）
-        df = df.with_columns(
-            pl.col("volume").rolling_max(window_size=window_size).shift().alias("max_volume")
-        )
-        df = df.with_columns((pl.col("volume") > pl.col("max_volume") * 2).alias("volume_increase"))
-
-        if len(df) > 0 and df["breakpoint"][-1] and df["volume_increase"][-1]:
-            # 高値で引けている
-            if (df["close"][-1] - df["low"][-1]) / max(df["high"][-1] - df["low"][-1], 1e-5) > 0.8:
-                # 小型株
-                if stock.kabutan.data.get_market_capitalization(code) < 1000:
-                    watch_list.append(code)
-    return watch_list
-
-
-def get_watch_list_old(current_date: datetime.date = datetime.date.today()) -> list[str]:
-    """ """
-    code_list = stock.kabutan.get_code_list()
-    window_size = 2
-    growing_rate = 0.15
-    duration = 2
-
-    # relative strengthの高い銘柄を取得
-    target_key = "rs"
-    target_code_list = []
-    rs_list = []
-    for code in code_list:
-        df = stock.kabutan.read_data_csv(
-            csv_path=stock.DATA_DIR / f"daily/{code}.csv", end_date=current_date
-        )
-        if len(df) > 0 and df[target_key][-1] > 0:
-            rs_list.append([df[target_key][-1], df["rs_topix"][-1], df["rs"][-1]])
-            target_code_list.append(code)
-
-    ind = np.argsort(rs_list, axis=0)
-    start_pos = int(len(rs_list) * 0.9)
-    end_pos = int(len(rs_list) * 0.95)
-    target_indices = ind[start_pos:end_pos, 0]
-    target_code = np.array(target_code_list)[target_indices]
-
-    # テクニカルでスクリーニング
-    watch_list = []
-    for code in target_code:
-        df = stock.kabutan.read_data_csv(
-            stock.DATA_DIR / f"daily/{code}.csv", end_date=current_date
-        )
-        # relative strengthが上昇している
-        max_rs = df.filter(pl.col("date") >= current_date - datetime.timedelta(days=10))["rs"].max()
-        if max_rs * 0.95 > df["rs"][-1]:
-            continue
-
-        # 新高値付近にある
-        highest = df.filter(pl.col("date") >= current_date - datetime.timedelta(days=90))[
-            "high"
-        ].max()
-        if highest * 0.80 > df["close"][-1]:
-            continue
-
-        watch_list.append(code)
-
-    # fundamentalsでスクリーニング
-    target_code = watch_list
-    watch_list = []
-    for code in target_code:
-        df = (
-            stock.kabutan.read_financial_csv(stock.DATA_DIR / f"financial/{code}.csv")
-            .filter((pl.col("annoounce_date") <= current_date) & (pl.col("duration") == 3))
-            .sort(pl.col("annoounce_date"))
-        )
-        # if len(df) == 0:
-        #     watch_list.append(code)
-        #     continue
-
-        if current_date - df["annoounce_date"][-1] > datetime.timedelta(days=45):
-            continue
-
-        if not (
-            check_growing(
-                df,
-                "total_revenue",
-                growing_rate,
-                min_duration=duration,
-                current_date=current_date,
-                num_average=window_size,
-            )
-            or check_growing(
-                df,
-                "operating_income",
-                growing_rate,
-                min_duration=duration,
-                current_date=current_date,
-                num_average=window_size,
-            )
-            or check_growing(
-                df,
-                "net_income",
-                growing_rate,
-                min_duration=duration,
-                current_date=current_date,
-                num_average=window_size,
-            )
-        ):
-            if stock.kabutan.data.get_market_capitalization(code) > 50:
-                watch_list.append(code)
-    return watch_list
-
-
 def get_success_list(target_date: datetime.date = datetime.date.today()) -> list[str]:
     """`target_date`から損切りに合わずに利益を出した銘柄のリストを取得する"""
     code_list = stock.get_code_list()
@@ -352,13 +215,14 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--output_dir", type=Path, default=stock.PROJECT_ROOT / "docs")
     parser.add_argument("--template_dir", type=Path, default=stock.PROJECT_ROOT / "templates")
+    parser.add_argument("--target_date", type=str, default=datetime.date.today().isoformat())
     args = parser.parse_args()
 
     watch_list = stock.run_debug(
         main,
         output_dir=args.output_dir,
         template_dir=args.template_dir,
-        # target_date=target_date,
+        target_date=datetime.date.fromisoformat(args.target_date),
     )
     for code in watch_list:
         print(code)
