@@ -4,11 +4,15 @@ Author : Yusuke Kitamura
 Create Date : 2022-08-28 11:50:13
 Copyright (c) 2019- Yusuke Kitamura <ymyk6602@gmail.com>
 """
+
 from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).absolute().parent.parent
 DATA_DIR = PROJECT_ROOT / "data"
 LOG_DIR = PROJECT_ROOT / "log"
+
+# Deep Learning constants
+TRAIN_DATA_DIR = DATA_DIR / "train"
 
 # Interval seconds for each requests of scraping
 REQUEST_INTERVAL_SEC = 5

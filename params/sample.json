@@ -1,0 +1,48 @@
+{
+  "epochs": 10,
+  "output_dir": "/home/kitamura/work/stock/notebooks",
+  "pretrain_model_dir": null,
+  "network_params": {
+    "name": "stock_network",
+    "params": {
+      "hidden_dim": 128,
+      "layer_num": 2,
+      "output_dim": 1
+    }
+  },
+  "train_dataloader_params": {
+    "name": "stock_dataloader",
+    "params": {
+      "batch_size": 1000,
+      "pos_ratio": 0.3,
+      "filepath": "data/train/20240714.npz",
+      "tp_thresh": 20,
+      "tn_thresh": 10
+    }
+  },
+  "test_dataloader_params": {
+    "name": "stock_dataloader",
+    "params": {
+      "batch_size": 1000,
+      "pos_ratio": 0.3,
+      "filepath": "data/train/20240714.npz",
+      "tp_thresh": 20,
+      "tn_thresh": 10
+    }
+  },
+  "optimizer_params": {
+    "name": "adam",
+    "params": {
+      "learning_rate": 0.001
+    }
+  },
+  "loss_params": {
+    "name": "bce",
+    "params": {
+      "from_logits": false
+    }
+  },
+  "network_input_keys": ["input"],
+  "loss_input_keys": ["y_true", "y_pred"],
+  "loss_target_keys": ["loss"]
+}

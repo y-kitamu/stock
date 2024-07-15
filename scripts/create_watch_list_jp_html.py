@@ -15,7 +15,7 @@ import polars as pl
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 import stock
-from stock.simulation.simulate import OnielStopCondition
+from stock.simulation.simulate import CustomStopCondition, OnielStopCondition
 from stock.trend_template import check_growing, get_watch_list_v4
 
 
@@ -156,12 +156,12 @@ def get_simulation_results(
             results.append({"code": code, "duration": 0, "profit": 0})
     else:
         for idx, code in enumerate(watch_list):
-            stop_condition = OnielStopCondition()
+            # stop_condition = OnielStopCondition()
+            stop_condition = CustomStopCondition()
             res = stock.simulation.run(code, target_date, stop_condition)
-            if res.buying_price > 0:
-                results.append(
-                    {"code": code, "duration": res.duration, "profit": round(res.profit * 100)}
-                )
+            results.append(
+                {"code": code, "duration": res.duration, "profit": round(res.profit * 100)}
+            )
     return results
 
 

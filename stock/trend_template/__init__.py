@@ -15,57 +15,114 @@ from .technical_v2 import calc_rs as calc_rs_v2
 from .technical_v2 import get_watch_list as get_watch_list_v2
 
 
+def calc_for_watch_list(code, start_date=None, end_date=date.today()):
+    df = read_data_csv(code, start_date=start_date, end_date=end_date)
+    # 過去10日の値動きの大きさを計算
+    window_size = 10
+    avg_key = "avg{}".format(window_size)
+    stddev_key = "stddev{}".format(window_size)
+    df = df.with_columns(
+        pl.col("close").rolling_mean(window_size=window_size).alias(avg_key),
+        pl.col("close").rolling_std(window_size=window_size).alias(stddev_key),
+    )
+
+    # ギャップアップしている
+    df = df.with_columns(
+        (pl.col("close") > pl.col(avg_key) + pl.col(stddev_key)).alias("breakpoint")
+    )
+
+    # 出来高が増加（急増）
+    df = df.with_columns(
+        pl.col("volume").rolling_max(window_size=window_size).shift().alias("max_volume")
+    )
+    df = df.with_columns((pl.col("volume") > pl.col("max_volume") * 2).alias("volume_increase"))
+
+    # watch listの条件判定
+    df = df.with_columns(
+        (
+            (pl.col("breakpoint") & pl.col("volume_increase"))
+            & ((pl.col("close") >= pl.col("open")) | (pl.col("volume") > pl.col("max_volume") * 20))
+        ).alias("watch_list")
+    )
+
+    # 決算発表前後の日はwatch_listから除く
+    fdf = (
+        read_financial_csv(code)
+        .filter(pl.col("annoounce_date") <= end_date)
+        .sort(pl.col("annoounce_date"))
+    )
+    for announce_date in fdf["annoounce_date"]:
+        df = df.with_columns(
+            (
+                pl.col("watch_list")
+                & (
+                    ~pl.col("date").is_between(
+                        announce_date - timedelta(3), announce_date + timedelta(3)
+                    )
+                )
+            ).alias("watch_list")
+        )
+    return df
+
+
+def is_watch_list(code, current_date):
+    start_date = current_date - timedelta(days=365)
+    df = read_data_csv(code, start_date=start_date, end_date=current_date)
+    fdf = (
+        read_financial_csv(code)
+        .filter(pl.col("annoounce_date") <= current_date)
+        .sort(pl.col("annoounce_date"))
+    )
+    if len(fdf) > 0 and current_date - fdf["annoounce_date"][-1] < timedelta(days=1):
+        return False
+
+    # 過去10日の値動きの大きさを計算
+    window_size = 10
+    avg_key = "avg{}".format(window_size)
+    stddev_key = "stddev{}".format(window_size)
+    df = df.with_columns(
+        pl.col("close").rolling_mean(window_size=window_size).alias(avg_key),
+        pl.col("close").rolling_std(window_size=window_size).alias(stddev_key),
+    )
+
+    # ギャップアップしている
+    df = df.with_columns(
+        (pl.col("close") > pl.col(avg_key) + pl.col(stddev_key)).alias("breakpoint")
+    )
+
+    # 出来高が増加（急増）
+    df = df.with_columns(
+        pl.col("volume").rolling_max(window_size=window_size).shift().alias("max_volume")
+    )
+    df = df.with_columns((pl.col("volume") > pl.col("max_volume") * 2).alias("volume_increase"))
+
+    if len(df) > 0 and df["breakpoint"][-1] and df["volume_increase"][-1]:
+        # 高値で引けている
+        flag = False
+        # if (df["close"][-1] - df["low"][-1]) / max(df["high"][-1] - df["low"][-1], 1e-5) > 0.8:
+        #     flag = True
+        if df["close"][-1] >= df["open"][-1]:
+            flag = True
+        # 出来高が急増
+        if df["volume"][-1] > df["max_volume"][-1] * 20:
+            flag = True
+        # if df["close"][-1] > df["open"][-1]:
+        # 小型株
+        market_cap = get_market_capitalization(code)
+        if flag and market_cap is not None and market_cap < 1000:
+            return True
+            # watch_list.append(code)
+    return False
+
+
 def get_watch_list_v4(current_date):
     """ """
     # 特に何も材料がないのに大きく値上がりしている銘柄を探す
     code_list = get_code_list()
-    start_date = current_date - timedelta(days=365)
     watch_list = []
     for code in code_list:
-        df = read_data_csv(code, start_date=start_date, end_date=current_date)
-        fdf = (
-            read_financial_csv(code)
-            .filter(pl.col("annoounce_date") <= current_date)
-            .sort(pl.col("annoounce_date"))
-        )
-        if len(fdf) > 0 and current_date - fdf["annoounce_date"][-1] < timedelta(days=1):
-            continue
-
-        # 過去10日の値動きの大きさを計算
-        window_size = 10
-        avg_key = "avg{}".format(window_size)
-        stddev_key = "stddev{}".format(window_size)
-        df = df.with_columns(
-            pl.col("close").rolling_mean(window_size=window_size).alias(avg_key),
-            pl.col("close").rolling_std(window_size=window_size).alias(stddev_key),
-        )
-
-        # ギャップアップしている
-        df = df.with_columns(
-            (pl.col("close") > pl.col(avg_key) + pl.col(stddev_key)).alias("breakpoint")
-        )
-
-        # 出来高が増加（急増）
-        df = df.with_columns(
-            pl.col("volume").rolling_max(window_size=window_size).shift().alias("max_volume")
-        )
-        df = df.with_columns((pl.col("volume") > pl.col("max_volume") * 2).alias("volume_increase"))
-
-        if len(df) > 0 and df["breakpoint"][-1] and df["volume_increase"][-1]:
-            # 高値で引けている
-            flag = False
-            # if (df["close"][-1] - df["low"][-1]) / max(df["high"][-1] - df["low"][-1], 1e-5) > 0.8:
-            #     flag = True
-            if df["close"][-1] >= df["open"][-1]:
-                flag = True
-            # 出来高が急増
-            if df["volume"][-1] > df["max_volume"][-1] * 20:
-                flag = True
-            # if df["close"][-1] > df["open"][-1]:
-            # 小型株
-            market_cap = get_market_capitalization(code)
-            if flag and market_cap is not None and market_cap < 1000:
-                watch_list.append(code)
+        if is_watch_list(code, current_date):
+            watch_list.append(code)
     return watch_list
 
 
