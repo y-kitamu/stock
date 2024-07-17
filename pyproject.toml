@@ -38,7 +38,7 @@ six = "^1.16.0"
 setuptools = "^69.2.0"
 paramiko = "^3.4.0"
 rapidfuzz = "^3.6.2"
-gnn = {path = "../gnn_dev", develop = true}
+# gnn = {path = "../gnn_dev", develop = true}
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
