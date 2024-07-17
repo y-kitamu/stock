@@ -31,7 +31,6 @@ flake8 = "^7.0.0"
 pytest = "^8.0.2"
 nbstripout = "^0.7.1"
 ipywidgets = "^8.1.2"
-gnn = {path = "../gnn_dev", develop = true}
 
 [tool.poetry.group.dev.dependencies]
 epc = "^0.0.5"
@@ -41,6 +40,7 @@ six = "^1.16.0"
 setuptools = "^69.2.0"
 paramiko = "^3.4.0"
 rapidfuzz = "^3.6.2"
+gnn = {path = "../gnn_dev", develop = true}
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
