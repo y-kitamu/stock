@@ -24,15 +24,13 @@ polars = "^0.20.18"
 plotly = "^5.22.0"
 tensorflow = "^2.17.0"
 
-[tool.poetry.dev-dependencies]
+[tool.poetry.group.dev.dependencies]
 ipykernel = "^6.29.3"
 ipython = "^8.22.2"
 flake8 = "^7.0.0"
 pytest = "^8.0.2"
 nbstripout = "^0.7.1"
 ipywidgets = "^8.1.2"
-
-[tool.poetry.group.dev.dependencies]
 epc = "^0.0.5"
 orjson = "^3.9.15"
 sexpdata = "^1.0.2"
