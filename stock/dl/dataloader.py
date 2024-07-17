@@ -22,6 +22,7 @@ class DataLoader(gnn.dataloader.BaseDataloader):
         filepath: Path = TRAIN_DATA_DIR / "20240714.npz"
         tp_thresh: float = 20
         tn_thresh: float = 10
+        train_step_factor: int = 100
 
         @field_validator("filepath")
         def _validate_filepath(cls, value: Path):
@@ -65,7 +66,9 @@ class DataLoader(gnn.dataloader.BaseDataloader):
     @property
     def steps_per_epoch(self):
         if self.is_train:
-            return (len(self.positive_x) + len(self.negative_x)) // self.params.batch_size
+            return (
+                (len(self.positive_x) + len(self.negative_x)) // self.params.batch_size
+            ) * self.params.train_step_factor
         else:
             return 1
 
