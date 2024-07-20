@@ -49,7 +49,9 @@
         "Gross Profit": 18766287.0,
         "Cost Of Revenue": 2720897.0,
         "Total Revenue": 21487184.0,
-        "Operating Revenue": 21487184.0
+        "Operating Revenue": 21487184.0,
+        "Loss Adjustment Expense": NaN,
+        "Net Policyholder Benefits And Claims": NaN
     },
     "2023-12-31": {
         "Tax Effect Of Unusual Items": -257163.86506,
@@ -101,7 +103,9 @@
         "Gross Profit": 22033077.0,
         "Cost Of Revenue": 1662470.0,
         "Total Revenue": 23695547.0,
-        "Operating Revenue": 1928621.0
+        "Operating Revenue": 1928621.0,
+        "Loss Adjustment Expense": NaN,
+        "Net Policyholder Benefits And Claims": NaN
     },
     "2023-09-30": {
         "Tax Effect Of Unusual Items": -262542.0,
@@ -153,7 +157,9 @@
         "Gross Profit": 17755973.0,
         "Cost Of Revenue": 3364957.0,
         "Total Revenue": 21120930.0,
-        "Operating Revenue": 4012550.0
+        "Operating Revenue": 4012550.0,
+        "Loss Adjustment Expense": NaN,
+        "Net Policyholder Benefits And Claims": NaN
     },
     "2023-06-30": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -205,7 +211,9 @@
         "Gross Profit": 1986710.0,
         "Cost Of Revenue": 4897980.0,
         "Total Revenue": 6884690.0,
-        "Operating Revenue": 6884690.0
+        "Operating Revenue": 6884690.0,
+        "Loss Adjustment Expense": 1505333.0,
+        "Net Policyholder Benefits And Claims": 1505333.0
     },
     "2023-03-31": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -257,7 +265,9 @@
         "Gross Profit": NaN,
         "Cost Of Revenue": NaN,
         "Total Revenue": 6299986.0,
-        "Operating Revenue": 6299986.0
+        "Operating Revenue": 6299986.0,
+        "Loss Adjustment Expense": 1229616.0,
+        "Net Policyholder Benefits And Claims": 1229616.0
     },
     "2022-12-31": {
         "Tax Effect Of Unusual Items": NaN,
@@ -309,6 +319,8 @@
         "Gross Profit": -17300621.0,
         "Cost Of Revenue": 12720036.0,
         "Total Revenue": NaN,
-        "Operating Revenue": NaN
+        "Operating Revenue": NaN,
+        "Loss Adjustment Expense": NaN,
+        "Net Policyholder Benefits And Claims": NaN
     }
 }

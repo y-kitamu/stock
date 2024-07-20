@@ -29,7 +29,10 @@
         "Insurance And Claims": 115000.0,
         "Salaries And Wages": 5064000.0,
         "Total Revenue": 11107000.0,
-        "Operating Revenue": 11107000.0
+        "Operating Revenue": 11107000.0,
+        "Occupancy And Equipment": 1160000.0,
+        "Professional Expense And Contract Services Expense": 887000.0,
+        "Other Non Interest Expense": 267000.0
     },
     "2023-03-31": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -61,39 +64,45 @@
         "Insurance And Claims": 130000.0,
         "Salaries And Wages": 5461000.0,
         "Total Revenue": 11921000.0,
-        "Operating Revenue": 11921000.0
+        "Operating Revenue": 11921000.0,
+        "Occupancy And Equipment": 1165000.0,
+        "Professional Expense And Contract Services Expense": 417000.0,
+        "Other Non Interest Expense": 787000.0
     },
     "2022-12-31": {
-        "Tax Effect Of Unusual Items": 0.0,
-        "Tax Rate For Calcs": 0.192895,
-        "Net Income From Continuing Operation Net Minority Interest": 3226000.0,
-        "Reconciled Depreciation": 511000.0,
-        "Net Interest Income": 12354000.0,
-        "Interest Expense": 4901000.0,
-        "Interest Income": 17255000.0,
-        "Normalized Income": 3226000.0,
-        "Net Income From Continuing And Discontinued Operation": 3226000.0,
-        "Diluted Average Shares": 9149044.0,
-        "Basic Average Shares": 9073323.0,
-        "Diluted EPS": 0.35,
-        "Basic EPS": 0.35,
-        "Diluted NI Availto Com Stockholders": 3215000.0,
-        "Net Income Common Stockholders": 3215000.0,
-        "Otherunder Preferred Stock Dividend": 11000.0,
-        "Net Income": 3226000.0,
-        "Net Income Including Noncontrolling Interests": 3226000.0,
-        "Net Income Continuous Operations": 3226000.0,
-        "Tax Provision": 771000.0,
-        "Pretax Income": 3997000.0,
-        "Gain On Sale Of Security": 27000.0,
-        "Selling General And Administration": 5867000.0,
-        "Selling And Marketing Expense": 77000.0,
-        "General And Administrative Expense": 5790000.0,
-        "Other Gand A": 703000.0,
-        "Insurance And Claims": 110000.0,
-        "Salaries And Wages": 4977000.0,
-        "Total Revenue": 13163000.0,
-        "Operating Revenue": 13163000.0
+        "Tax Effect Of Unusual Items": NaN,
+        "Tax Rate For Calcs": NaN,
+        "Net Income From Continuing Operation Net Minority Interest": NaN,
+        "Reconciled Depreciation": NaN,
+        "Net Interest Income": NaN,
+        "Interest Expense": NaN,
+        "Interest Income": NaN,
+        "Normalized Income": NaN,
+        "Net Income From Continuing And Discontinued Operation": NaN,
+        "Diluted Average Shares": NaN,
+        "Basic Average Shares": NaN,
+        "Diluted EPS": NaN,
+        "Basic EPS": NaN,
+        "Diluted NI Availto Com Stockholders": NaN,
+        "Net Income Common Stockholders": NaN,
+        "Otherunder Preferred Stock Dividend": NaN,
+        "Net Income": NaN,
+        "Net Income Including Noncontrolling Interests": NaN,
+        "Net Income Continuous Operations": NaN,
+        "Tax Provision": NaN,
+        "Pretax Income": NaN,
+        "Gain On Sale Of Security": NaN,
+        "Selling General And Administration": NaN,
+        "Selling And Marketing Expense": NaN,
+        "General And Administrative Expense": NaN,
+        "Other Gand A": NaN,
+        "Insurance And Claims": NaN,
+        "Salaries And Wages": NaN,
+        "Total Revenue": NaN,
+        "Operating Revenue": NaN,
+        "Occupancy And Equipment": NaN,
+        "Professional Expense And Contract Services Expense": NaN,
+        "Other Non Interest Expense": 1037000.0
     },
     "2022-09-30": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -613,7 +622,10 @@
         "Insurance And Claims": 111000.0,
         "Salaries And Wages": 5018000.0,
         "Total Revenue": 10380000.0,
-        "Operating Revenue": 10380000.0
+        "Operating Revenue": 10380000.0,
+        "Occupancy And Equipment": 1193000.0,
+        "Professional Expense And Contract Services Expense": 553000.0,
+        "Other Non Interest Expense": NaN
     },
     "2023-12-31": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -645,7 +657,10 @@
         "Insurance And Claims": 112000.0,
         "Salaries And Wages": 4823000.0,
         "Total Revenue": 9907000.0,
-        "Operating Revenue": 9907000.0
+        "Operating Revenue": 9907000.0,
+        "Occupancy And Equipment": 1231000.0,
+        "Professional Expense And Contract Services Expense": 431000.0,
+        "Other Non Interest Expense": NaN
     },
     "2024-03-31": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -677,6 +692,9 @@
         "Insurance And Claims": 132000.0,
         "Salaries And Wages": 6763000.0,
         "Total Revenue": 9687000.0,
-        "Operating Revenue": 9687000.0
+        "Operating Revenue": 9687000.0,
+        "Occupancy And Equipment": 1226000.0,
+        "Professional Expense And Contract Services Expense": 1300000.0,
+        "Other Non Interest Expense": 952000.0
     }
 }

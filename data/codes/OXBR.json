@@ -23,7 +23,9 @@
         "General And Administrative Expense": 404000.0,
         "Other Gand A": 404000.0,
         "Total Revenue": 546000.0,
-        "Operating Revenue": 546000.0
+        "Operating Revenue": 546000.0,
+        "Loss Adjustment Expense": NaN,
+        "Net Policyholder Benefits And Claims": NaN
     },
     "2022-12-31": {
         "Tax Effect Of Unusual Items": NaN,
@@ -49,7 +51,9 @@
         "General And Administrative Expense": NaN,
         "Other Gand A": NaN,
         "Total Revenue": NaN,
-        "Operating Revenue": NaN
+        "Operating Revenue": NaN,
+        "Loss Adjustment Expense": 0.0,
+        "Net Policyholder Benefits And Claims": 0.0
     },
     "2022-09-30": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -405,7 +409,9 @@
         "General And Administrative Expense": 677000.0,
         "Other Gand A": 677000.0,
         "Total Revenue": 691000.0,
-        "Operating Revenue": 691000.0
+        "Operating Revenue": 691000.0,
+        "Loss Adjustment Expense": NaN,
+        "Net Policyholder Benefits And Claims": NaN
     },
     "2023-09-30": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -431,7 +437,9 @@
         "General And Administrative Expense": 628000.0,
         "Other Gand A": 628000.0,
         "Total Revenue": -6381000.0,
-        "Operating Revenue": -6381000.0
+        "Operating Revenue": -6381000.0,
+        "Loss Adjustment Expense": NaN,
+        "Net Policyholder Benefits And Claims": NaN
     },
     "2023-12-31": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -457,7 +465,9 @@
         "General And Administrative Expense": 475000.0,
         "Other Gand A": 475000.0,
         "Total Revenue": -1905000.0,
-        "Operating Revenue": -1905000.0
+        "Operating Revenue": -1905000.0,
+        "Loss Adjustment Expense": NaN,
+        "Net Policyholder Benefits And Claims": NaN
     },
     "2024-03-31": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -483,6 +493,8 @@
         "General And Administrative Expense": 488000.0,
         "Other Gand A": 488000.0,
         "Total Revenue": -125000.0,
-        "Operating Revenue": -125000.0
+        "Operating Revenue": -125000.0,
+        "Loss Adjustment Expense": NaN,
+        "Net Policyholder Benefits And Claims": NaN
     }
 }

@@ -31,7 +31,11 @@
         "General And Administrative Expense": 10108000.0,
         "Other Gand A": 10108000.0,
         "Total Revenue": 16677000.0,
-        "Operating Revenue": 16677000.0
+        "Operating Revenue": 16677000.0,
+        "Loss Adjustment Expense": 9815000.0,
+        "Net Policyholder Benefits And Claims": 9815000.0,
+        "Policyholder Benefits Gross": 9796000.0,
+        "Policyholder Benefits Ceded": -19000.0
     },
     "2022-12-31": {
         "Tax Effect Of Unusual Items": NaN,
@@ -65,7 +69,11 @@
         "General And Administrative Expense": NaN,
         "Other Gand A": NaN,
         "Total Revenue": NaN,
-        "Operating Revenue": NaN
+        "Operating Revenue": NaN,
+        "Loss Adjustment Expense": NaN,
+        "Net Policyholder Benefits And Claims": NaN,
+        "Policyholder Benefits Gross": NaN,
+        "Policyholder Benefits Ceded": NaN
     },
     "2022-09-30": {
         "Tax Effect Of Unusual Items": NaN,
@@ -591,7 +599,11 @@
         "General And Administrative Expense": 6839000.0,
         "Other Gand A": 6839000.0,
         "Total Revenue": 20159000.0,
-        "Operating Revenue": 20159000.0
+        "Operating Revenue": 20159000.0,
+        "Loss Adjustment Expense": 11532000.0,
+        "Net Policyholder Benefits And Claims": 11532000.0,
+        "Policyholder Benefits Gross": NaN,
+        "Policyholder Benefits Ceded": NaN
     },
     "2023-09-30": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -625,7 +637,11 @@
         "General And Administrative Expense": 6787000.0,
         "Other Gand A": 6787000.0,
         "Total Revenue": 26349000.0,
-        "Operating Revenue": 26349000.0
+        "Operating Revenue": 26349000.0,
+        "Loss Adjustment Expense": 15156000.0,
+        "Net Policyholder Benefits And Claims": 15156000.0,
+        "Policyholder Benefits Gross": NaN,
+        "Policyholder Benefits Ceded": NaN
     },
     "2023-12-31": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -659,7 +675,11 @@
         "General And Administrative Expense": 7062000.0,
         "Other Gand A": 7062000.0,
         "Total Revenue": 20308000.0,
-        "Operating Revenue": 20308000.0
+        "Operating Revenue": 20308000.0,
+        "Loss Adjustment Expense": 24725000.0,
+        "Net Policyholder Benefits And Claims": 24725000.0,
+        "Policyholder Benefits Gross": NaN,
+        "Policyholder Benefits Ceded": NaN
     },
     "2024-03-31": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -693,6 +713,10 @@
         "General And Administrative Expense": 8060000.0,
         "Other Gand A": 8060000.0,
         "Total Revenue": 30957000.0,
-        "Operating Revenue": 30957000.0
+        "Operating Revenue": 30957000.0,
+        "Loss Adjustment Expense": 11625000.0,
+        "Net Policyholder Benefits And Claims": 11625000.0,
+        "Policyholder Benefits Gross": NaN,
+        "Policyholder Benefits Ceded": NaN
     }
 }

@@ -31,7 +31,11 @@
         "General And Administrative Expense": 583000000.0,
         "Salaries And Wages": 583000000.0,
         "Total Revenue": 2357000000.0,
-        "Operating Revenue": 2357000000.0
+        "Operating Revenue": 2357000000.0,
+        "Loss Adjustment Expense": 754000000.0,
+        "Net Policyholder Benefits And Claims": 754000000.0,
+        "Policyholder Benefits Gross": 754000000.0,
+        "Policyholder Benefits Ceded": 165000000.0
     },
     "2022-12-31": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -167,7 +171,11 @@
         "General And Administrative Expense": 566000000.0,
         "Salaries And Wages": 566000000.0,
         "Total Revenue": 2377000000.0,
-        "Operating Revenue": 2377000000.0
+        "Operating Revenue": 2377000000.0,
+        "Loss Adjustment Expense": -298000000.0,
+        "Net Policyholder Benefits And Claims": -298000000.0,
+        "Policyholder Benefits Gross": -68000000.0,
+        "Policyholder Benefits Ceded": 230000000.0
     },
     "2022-03-31": {
         "Diluted EPS": 1.43,
@@ -337,7 +345,11 @@
         "General And Administrative Expense": 593000000.0,
         "Salaries And Wages": 593000000.0,
         "Total Revenue": 3624000000.0,
-        "Operating Revenue": 3624000000.0
+        "Operating Revenue": 3624000000.0,
+        "Loss Adjustment Expense": -75000000.0,
+        "Net Policyholder Benefits And Claims": -75000000.0,
+        "Policyholder Benefits Gross": 68000000.0,
+        "Policyholder Benefits Ceded": 143000000.0
     },
     "2023-12-31": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -371,7 +383,11 @@
         "General And Administrative Expense": 586000000.0,
         "Salaries And Wages": 586000000.0,
         "Total Revenue": 2170000000.0,
-        "Operating Revenue": 2170000000.0
+        "Operating Revenue": 2170000000.0,
+        "Loss Adjustment Expense": 641000000.0,
+        "Net Policyholder Benefits And Claims": 641000000.0,
+        "Policyholder Benefits Gross": 827000000.0,
+        "Policyholder Benefits Ceded": 186000000.0
     },
     "2024-03-31": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -405,6 +421,10 @@
         "General And Administrative Expense": 620000000.0,
         "Salaries And Wages": 620000000.0,
         "Total Revenue": 2230000000.0,
-        "Operating Revenue": 2230000000.0
+        "Operating Revenue": 2230000000.0,
+        "Loss Adjustment Expense": -422000000.0,
+        "Net Policyholder Benefits And Claims": -422000000.0,
+        "Policyholder Benefits Gross": -422000000.0,
+        "Policyholder Benefits Ceded": NaN
     }
 }

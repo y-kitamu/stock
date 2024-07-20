@@ -30,7 +30,10 @@
         "General And Administrative Expense": 167000000.0,
         "Salaries And Wages": 167000000.0,
         "Total Revenue": 1297000000.0,
-        "Operating Revenue": 1297000000.0
+        "Operating Revenue": 1297000000.0,
+        "Loss Adjustment Expense": 881000000.0,
+        "Net Policyholder Benefits And Claims": 881000000.0,
+        "Policyholder Benefits Gross": 881000000.0
     },
     "2022-12-31": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -362,7 +365,10 @@
         "General And Administrative Expense": 185000000.0,
         "Salaries And Wages": 185000000.0,
         "Total Revenue": 175000000.0,
-        "Operating Revenue": 175000000.0
+        "Operating Revenue": 175000000.0,
+        "Loss Adjustment Expense": -611000000.0,
+        "Net Policyholder Benefits And Claims": -611000000.0,
+        "Policyholder Benefits Gross": -611000000.0
     },
     "2023-09-30": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -395,7 +401,10 @@
         "General And Administrative Expense": 171000000.0,
         "Salaries And Wages": 171000000.0,
         "Total Revenue": 1117000000.0,
-        "Operating Revenue": 1117000000.0
+        "Operating Revenue": 1117000000.0,
+        "Loss Adjustment Expense": -474000000.0,
+        "Net Policyholder Benefits And Claims": -474000000.0,
+        "Policyholder Benefits Gross": -474000000.0
     },
     "2023-12-31": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -428,7 +437,10 @@
         "General And Administrative Expense": 207000000.0,
         "Salaries And Wages": 207000000.0,
         "Total Revenue": 1362000000.0,
-        "Operating Revenue": 1362000000.0
+        "Operating Revenue": 1362000000.0,
+        "Loss Adjustment Expense": 1373000000.0,
+        "Net Policyholder Benefits And Claims": 1373000000.0,
+        "Policyholder Benefits Gross": 2727000000.0
     },
     "2024-03-31": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -461,6 +473,9 @@
         "General And Administrative Expense": 174000000.0,
         "Salaries And Wages": 174000000.0,
         "Total Revenue": 0.0,
-        "Operating Revenue": 0.0
+        "Operating Revenue": 0.0,
+        "Loss Adjustment Expense": -472000000.0,
+        "Net Policyholder Benefits And Claims": -472000000.0,
+        "Policyholder Benefits Gross": -472000000.0
     }
 }
