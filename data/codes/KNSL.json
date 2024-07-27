@@ -1,7 +1,7 @@
 {
     "2023-06-30": {
         "Tax Effect Of Unusual Items": 0.0,
-        "Tax Rate For Calcs": 0.192,
+        "Tax Rate For Calcs": 0.192198,
         "Net Income From Continuing Operation Net Minority Interest": 72791000.0,
         "EBIT": 92834000.0,
         "Net Interest Income": -2724000.0,
@@ -488,5 +488,36 @@
         "Operating Revenue": 372791000.0,
         "Loss Adjustment Expense": 186786000.0,
         "Net Policyholder Benefits And Claims": 186786000.0
+    },
+    "2024-06-30": {
+        "Tax Effect Of Unusual Items": 0.0,
+        "Tax Rate For Calcs": 0.200527,
+        "Net Income From Continuing Operation Net Minority Interest": 92579000.0,
+        "EBIT": 118364000.0,
+        "Net Interest Income": -2564000.0,
+        "Interest Expense": 2564000.0,
+        "Interest Income": 36895000.0,
+        "Normalized Income": 92579000.0,
+        "Net Income From Continuing And Discontinued Operation": 92579000.0,
+        "Total Expenses": 268753000.0,
+        "Diluted Average Shares": 23329000.0,
+        "Basic Average Shares": 23165000.0,
+        "Diluted EPS": 3.97,
+        "Basic EPS": 4.0,
+        "Diluted NI Availto Com Stockholders": 92579000.0,
+        "Net Income Common Stockholders": 92579000.0,
+        "Net Income": 92579000.0,
+        "Net Income Including Noncontrolling Interests": 92579000.0,
+        "Net Income Continuous Operations": 92579000.0,
+        "Tax Provision": 23221000.0,
+        "Pretax Income": 115800000.0,
+        "Other Income Expense": 740000.0,
+        "Net Non Operating Interest Income Expense": -2564000.0,
+        "Interest Expense Non Operating": 2564000.0,
+        "Other Operating Expenses": 796000.0,
+        "Total Revenue": 384553000.0,
+        "Operating Revenue": 384553000.0,
+        "Loss Adjustment Expense": 193325000.0,
+        "Net Policyholder Benefits And Claims": 193325000.0
     }
 }
