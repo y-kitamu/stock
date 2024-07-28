@@ -1,0 +1,2925 @@
+<?xml version="1.0" encoding="utf-8"?>
+<annotations>
+  <version>1.1</version>
+  <meta>
+    <job>
+      <id>2</id>
+      <size>1014</size>
+      <mode>annotation</mode>
+      <overlap>0</overlap>
+      <bugtracker></bugtracker>
+      <created>2024-07-20 12:32:14.599539+00:00</created>
+      <updated>2024-07-27 02:20:40.480239+00:00</updated>
+      <subset>default</subset>
+      <start_frame>0</start_frame>
+      <stop_frame>1013</stop_frame>
+      <frame_filter></frame_filter>
+      <segments>
+        <segment>
+          <id>2</id>
+          <start>0</start>
+          <stop>1013</stop>
+          <url>http://localhost:8080/api/jobs/2</url>
+        </segment>
+      </segments>
+      <owner>
+        <username>kitamura</username>
+        <email>ymyk6602@gmail.com</email>
+      </owner>
+      <assignee></assignee>
+      <labels>
+        <label>
+          <name>proper base</name>
+          <color>#33ddff</color>
+          <type>tag</type>
+          <attributes>
+          </attributes>
+        </label>
+        <label>
+          <name>invalid base</name>
+          <color>#fa3253</color>
+          <type>tag</type>
+          <attributes>
+          </attributes>
+        </label>
+      </labels>
+    </job>
+    <dumped>2024-07-27 02:20:58.335805+00:00</dumped>
+  </meta>
+  <image id="0" name="code1380_date20181126_rate209.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="1" name="code1418_date20160721_rate141.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="2" name="code1431_date20190801_rate166.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="3" name="code1436_date20201118_rate160.png" width="700" height="500">
+  </image>
+  <image id="4" name="code1436_date20210906_rate158.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="5" name="code1491_date20200729_rate206.png" width="700" height="500">
+  </image>
+  <image id="6" name="code1711_date20170119_rate161.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="7" name="code1724_date20180802_rate149.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="8" name="code1730_date20171108_rate285.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="9" name="code1730_date20171109_rate286.png" width="700" height="500">
+  </image>
+  <image id="10" name="code1730_date20171116_rate177.png" width="700" height="500">
+  </image>
+  <image id="11" name="code1757_date20191220_rate142.png" width="700" height="500">
+  </image>
+  <image id="12" name="code1757_date20200604_rate189.png" width="700" height="500">
+  </image>
+  <image id="13" name="code1783_date20141120_rate146.png" width="700" height="500">
+  </image>
+  <image id="14" name="code1783_date20210914_rate194.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="15" name="code1840_date20201211_rate206.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="16" name="code1847_date20140819_rate142.png" width="700" height="500">
+  </image>
+  <image id="17" name="code1853_date20140717_rate150.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="18" name="code1966_date20140828_rate140.png" width="700" height="500">
+  </image>
+  <image id="19" name="code1966_date20191217_rate140.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="20" name="code2117_date20151109_rate143.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="21" name="code2134_date20141126_rate241.png" width="700" height="500">
+  </image>
+  <image id="22" name="code2134_date20141203_rate221.png" width="700" height="500">
+  </image>
+  <image id="23" name="code2134_date20181003_rate231.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="24" name="code2136_date20180724_rate145.png" width="700" height="500">
+  </image>
+  <image id="25" name="code2150_date20141119_rate362.png" width="700" height="500">
+  </image>
+  <image id="26" name="code2150_date20170502_rate181.png" width="700" height="500">
+  </image>
+  <image id="27" name="code2156_date20150223_rate170.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="28" name="code2162_date20150330_rate151.png" width="700" height="500">
+  </image>
+  <image id="29" name="code2164_date20180903_rate245.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="30" name="code2164_date20180905_rate219.png" width="700" height="500">
+  </image>
+  <image id="31" name="code2195_date20171130_rate147.png" width="700" height="500">
+  </image>
+  <image id="32" name="code2195_date20211201_rate206.png" width="700" height="500">
+  </image>
+  <image id="33" name="code2286_date20150624_rate142.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="34" name="code2303_date20160105_rate249.png" width="700" height="500">
+  </image>
+  <image id="35" name="code2303_date20160106_rate205.png" width="700" height="500">
+  </image>
+  <image id="36" name="code2303_date20160108_rate163.png" width="700" height="500">
+  </image>
+  <image id="37" name="code2303_date20160411_rate142.png" width="700" height="500">
+  </image>
+  <image id="38" name="code2307_date20180516_rate144.png" width="700" height="500">
+  </image>
+  <image id="39" name="code2315_date20200601_rate146.png" width="700" height="500">
+  </image>
+  <image id="40" name="code2315_date20210202_rate283.png" width="700" height="500">
+  </image>
+  <image id="41" name="code2321_date20140618_rate194.png" width="700" height="500">
+  </image>
+  <image id="42" name="code2321_date20150901_rate146.png" width="700" height="500">
+  </image>
+  <image id="43" name="code2321_date20160606_rate162.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="44" name="code2321_date20160613_rate213.png" width="700" height="500">
+  </image>
+  <image id="45" name="code2321_date20180926_rate153.png" width="700" height="500">
+  </image>
+  <image id="46" name="code2323_date20150216_rate333.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="47" name="code2323_date20150218_rate229.png" width="700" height="500">
+  </image>
+  <image id="48" name="code2330_date20141003_rate199.png" width="700" height="500">
+  </image>
+  <image id="49" name="code2330_date20141009_rate308.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="50" name="code2330_date20141015_rate198.png" width="700" height="500">
+  </image>
+  <image id="51" name="code2334_date20190618_rate142.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="52" name="code2334_date20200930_rate186.png" width="700" height="500">
+  </image>
+  <image id="53" name="code2338_date20161007_rate148.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="54" name="code2338_date20200327_rate142.png" width="700" height="500">
+  </image>
+  <image id="55" name="code2338_date20210331_rate149.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="56" name="code2340_date20141225_rate141.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="57" name="code2342_date20150618_rate226.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="58" name="code2342_date20150619_rate181.png" width="700" height="500">
+  </image>
+  <image id="59" name="code2351_date20141110_rate151.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="60" name="code2351_date20141111_rate144.png" width="700" height="500">
+  </image>
+  <image id="61" name="code2351_date20150604_rate140.png" width="700" height="500">
+  </image>
+  <image id="62" name="code2351_date20170523_rate162.png" width="700" height="500">
+  </image>
+  <image id="63" name="code2351_date20170524_rate143.png" width="700" height="500">
+  </image>
+  <image id="64" name="code2354_date20160729_rate147.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="65" name="code2370_date20141121_rate141.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="66" name="code2370_date20200521_rate167.png" width="700" height="500">
+  </image>
+  <image id="67" name="code2372_date20180209_rate146.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="68" name="code2376_date20150223_rate149.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="69" name="code2388_date20150213_rate223.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="70" name="code2388_date20150216_rate175.png" width="700" height="500">
+  </image>
+  <image id="71" name="code2388_date20151105_rate144.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="72" name="code2395_date20211015_rate149.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="73" name="code2397_date20170629_rate157.png" width="700" height="500">
+  </image>
+  <image id="74" name="code2425_date20170321_rate211.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="75" name="code2425_date20170323_rate150.png" width="700" height="500">
+  </image>
+  <image id="76" name="code2435_date20150916_rate155.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="77" name="code2435_date20160627_rate200.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="78" name="code2435_date20160628_rate158.png" width="700" height="500">
+  </image>
+  <image id="79" name="code2435_date20160630_rate166.png" width="700" height="500">
+  </image>
+  <image id="80" name="code2436_date20180219_rate146.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="81" name="code2438_date20140718_rate176.png" width="700" height="500">
+  </image>
+  <image id="82" name="code2438_date20220128_rate159.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="83" name="code2449_date20141110_rate190.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="84" name="code2449_date20141111_rate145.png" width="700" height="500">
+  </image>
+  <image id="85" name="code2454_date20150219_rate165.png" width="700" height="500">
+  </image>
+  <image id="86" name="code2454_date20170810_rate147.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="87" name="code2459_date20180828_rate177.png" width="700" height="500">
+  </image>
+  <image id="88" name="code2464_date20150424_rate215.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="89" name="code2477_date20141215_rate141.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="90" name="code2477_date20151019_rate144.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="91" name="code2479_date20160201_rate204.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="92" name="code2479_date20161025_rate143.png" width="700" height="500">
+  </image>
+  <image id="93" name="code2479_date20180319_rate150.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="94" name="code2480_date20150423_rate162.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="95" name="code2481_date20201224_rate140.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="96" name="code2497_date20140521_rate155.png" width="700" height="500">
+  </image>
+  <image id="97" name="code2586_date20200622_rate260.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="98" name="code2656_date20150130_rate144.png" width="700" height="500">
+  </image>
+  <image id="99" name="code2656_date20160831_rate218.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="100" name="code2656_date20170523_rate191.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="101" name="code2656_date20210217_rate172.png" width="700" height="500">
+  </image>
+  <image id="102" name="code2666_date20150520_rate204.png" width="700" height="500">
+  </image>
+  <image id="103" name="code2666_date20150526_rate148.png" width="700" height="500">
+  </image>
+  <image id="104" name="code2666_date20190606_rate165.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="105" name="code2667_date20140821_rate150.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="106" name="code2667_date20210409_rate219.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="107" name="code2667_date20210413_rate203.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="108" name="code2667_date20210414_rate163.png" width="700" height="500">
+  </image>
+  <image id="109" name="code2673_date20180910_rate174.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="110" name="code2683_date20140612_rate153.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="111" name="code2693_date20170925_rate208.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="112" name="code2693_date20171120_rate168.png" width="700" height="500">
+  </image>
+  <image id="113" name="code2693_date20191021_rate165.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="114" name="code2721_date20170221_rate191.png" width="700" height="500">
+  </image>
+  <image id="115" name="code2721_date20170222_rate170.png" width="700" height="500">
+  </image>
+  <image id="116" name="code2722_date20170313_rate149.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="117" name="code2743_date20161102_rate142.png" width="700" height="500">
+  </image>
+  <image id="118" name="code2743_date20171023_rate144.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="119" name="code2776_date20170926_rate154.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="120" name="code2776_date20170927_rate153.png" width="700" height="500">
+  </image>
+  <image id="121" name="code2776_date20171110_rate171.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="122" name="code2776_date20180116_rate152.png" width="700" height="500">
+  </image>
+  <image id="123" name="code2776_date20190820_rate148.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="124" name="code2778_date20171120_rate146.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="125" name="code2788_date20140916_rate202.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="126" name="code2788_date20140919_rate180.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="127" name="code2872_date20220520_rate142.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="128" name="code2876_date20150413_rate140.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="129" name="code2901_date20170824_rate141.png" width="700" height="500">
+  </image>
+  <image id="130" name="code2901_date20180717_rate146.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="131" name="code2926_date20201229_rate156.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="132" name="code2926_date20201230_rate143.png" width="700" height="500">
+  </image>
+  <image id="133" name="code2929_date20141002_rate159.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="134" name="code2929_date20150916_rate163.png" width="700" height="500">
+  </image>
+  <image id="135" name="code2929_date20151001_rate140.png" width="700" height="500">
+  </image>
+  <image id="136" name="code2929_date20180213_rate144.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="137" name="code2929_date20200107_rate158.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="138" name="code2929_date20200108_rate143.png" width="700" height="500">
+  </image>
+  <image id="139" name="code2930_date20170306_rate164.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="140" name="code2930_date20170307_rate149.png" width="700" height="500">
+  </image>
+  <image id="141" name="code3004_date20210107_rate143.png" width="700" height="500">
+  </image>
+  <image id="142" name="code3010_date20141203_rate157.png" width="700" height="500">
+  </image>
+  <image id="143" name="code3020_date20200525_rate187.png" width="700" height="500">
+  </image>
+  <image id="144" name="code3020_date20200601_rate140.png" width="700" height="500">
+  </image>
+  <image id="145" name="code3035_date20140929_rate142.png" width="700" height="500">
+  </image>
+  <image id="146" name="code3035_date20150220_rate144.png" width="700" height="500">
+  </image>
+  <image id="147" name="code3042_date20140924_rate145.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="148" name="code3042_date20150218_rate148.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="149" name="code3054_date20171129_rate155.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="150" name="code3069_date20150407_rate247.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="151" name="code3069_date20150414_rate159.png" width="700" height="500">
+  </image>
+  <image id="152" name="code3071_date20161004_rate145.png" width="700" height="500">
+  </image>
+  <image id="153" name="code3080_date20180712_rate144.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="154" name="code3082_date20140922_rate155.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="155" name="code3083_date20180227_rate185.png" width="700" height="500">
+  </image>
+  <image id="156" name="code3083_date20180228_rate195.png" width="700" height="500">
+  </image>
+  <image id="157" name="code3083_date20211025_rate478.png" width="700" height="500">
+  </image>
+  <image id="158" name="code3094_date20200622_rate164.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="159" name="code3094_date20200630_rate167.png" width="700" height="500">
+  </image>
+  <image id="160" name="code3094_date20220214_rate142.png" width="700" height="500">
+  </image>
+  <image id="161" name="code3111_date20171128_rate190.png" width="700" height="500">
+  </image>
+  <image id="162" name="code3113_date20140826_rate164.png" width="700" height="500">
+  </image>
+  <image id="163" name="code3113_date20170608_rate145.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="164" name="code3121_date20170216_rate142.png" width="700" height="500">
+  </image>
+  <image id="165" name="code3133_date20170213_rate156.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="166" name="code3134_date20160404_rate173.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="167" name="code3135_date20160304_rate140.png" width="700" height="500">
+  </image>
+  <image id="168" name="code3140_date20140616_rate150.png" width="700" height="500">
+  </image>
+  <image id="169" name="code3161_date20140729_rate148.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="170" name="code3161_date20140731_rate143.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="171" name="code3161_date20141001_rate332.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="172" name="code3161_date20141002_rate260.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="173" name="code3161_date20150601_rate176.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="174" name="code3161_date20200108_rate212.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="175" name="code3161_date20200122_rate140.png" width="700" height="500">
+  </image>
+  <image id="176" name="code3180_date20150210_rate151.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="177" name="code3180_date20150212_rate151.png" width="700" height="500">
+  </image>
+  <image id="178" name="code3185_date20211105_rate184.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="179" name="code3189_date20170627_rate148.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="180" name="code3189_date20200602_rate200.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="181" name="code3192_date20211018_rate150.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="182" name="code3195_date20160405_rate205.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="183" name="code3195_date20160411_rate161.png" width="700" height="500">
+  </image>
+  <image id="184" name="code3202_date20200121_rate342.png" width="700" height="500">
+  </image>
+  <image id="185" name="code3202_date20200130_rate186.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="186" name="code3238_date20160428_rate217.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="187" name="code3246_date20170605_rate151.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="188" name="code3264_date20150708_rate154.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="189" name="code3264_date20160426_rate355.png" width="700" height="500">
+  </image>
+  <image id="190" name="code3264_date20160427_rate315.png" width="700" height="500">
+  </image>
+  <image id="191" name="code3264_date20200420_rate161.png" width="700" height="500">
+  </image>
+  <image id="192" name="code3267_date20171109_rate158.png" width="700" height="500">
+  </image>
+  <image id="193" name="code3267_date20180116_rate148.png" width="700" height="500">
+  </image>
+  <image id="194" name="code3300_date20141111_rate171.png" width="700" height="500">
+  </image>
+  <image id="195" name="code3300_date20141112_rate151.png" width="700" height="500">
+  </image>
+  <image id="196" name="code3319_date20140710_rate140.png" width="700" height="500">
+  </image>
+  <image id="197" name="code3323_date20170627_rate141.png" width="700" height="500">
+  </image>
+  <image id="198" name="code3323_date20171219_rate194.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="199" name="code3323_date20200609_rate170.png" width="700" height="500">
+  </image>
+  <image id="200" name="code3326_date20141126_rate176.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="201" name="code3326_date20200825_rate153.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="202" name="code3326_date20210524_rate144.png" width="700" height="500">
+  </image>
+  <image id="203" name="code3326_date20210525_rate141.png" width="700" height="500">
+  </image>
+  <image id="204" name="code3326_date20210810_rate161.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="205" name="code3347_date20150421_rate146.png" width="700" height="500">
+  </image>
+  <image id="206" name="code3350_date20220303_rate152.png" width="700" height="500">
+  </image>
+  <image id="207" name="code3370_date20160311_rate199.png" width="700" height="500">
+  </image>
+  <image id="208" name="code3370_date20160629_rate140.png" width="700" height="500">
+  </image>
+  <image id="209" name="code3370_date20180109_rate182.png" width="700" height="500">
+  </image>
+  <image id="210" name="code3370_date20181126_rate161.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="211" name="code3370_date20190521_rate142.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="212" name="code3370_date20210205_rate140.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="213" name="code3374_date20140613_rate159.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="214" name="code3374_date20160701_rate154.png" width="700" height="500">
+  </image>
+  <image id="215" name="code3374_date20170427_rate144.png" width="700" height="500">
+  </image>
+  <image id="216" name="code3409_date20210817_rate153.png" width="700" height="500">
+  </image>
+  <image id="217" name="code3409_date20210818_rate143.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="218" name="code3420_date20140827_rate180.png" width="700" height="500">
+  </image>
+  <image id="219" name="code3434_date20170302_rate140.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="220" name="code3441_date20170817_rate213.png" width="700" height="500">
+  </image>
+  <image id="221" name="code3443_date20140611_rate147.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="222" name="code3443_date20140612_rate144.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="223" name="code3454_date20150401_rate151.png" width="700" height="500">
+  </image>
+  <image id="224" name="code3469_date20200501_rate140.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="225" name="code3469_date20201008_rate141.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="226" name="code3475_date20171207_rate144.png" width="700" height="500">
+  </image>
+  <image id="227" name="code3490_date20200902_rate143.png" width="700" height="500">
+  </image>
+  <image id="228" name="code3521_date20150617_rate193.png" width="700" height="500">
+  </image>
+  <image id="229" name="code3521_date20170824_rate143.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="230" name="code3526_date20140702_rate161.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="231" name="code3526_date20140703_rate149.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="232" name="code3538_date20170203_rate152.png" width="700" height="500">
+  </image>
+  <image id="233" name="code3542_date20200413_rate142.png" width="700" height="500">
+  </image>
+  <image id="234" name="code3556_date20200903_rate153.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="235" name="code3561_date20171109_rate201.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="236" name="code3604_date20141003_rate146.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="237" name="code3604_date20200110_rate298.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="238" name="code3622_date20140523_rate143.png" width="700" height="500">
+  </image>
+  <image id="239" name="code3623_date20150520_rate153.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="240" name="code3623_date20151216_rate149.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="241" name="code3623_date20170629_rate144.png" width="700" height="500">
+  </image>
+  <image id="242" name="code3624_date20151023_rate155.png" width="700" height="500">
+  </image>
+  <image id="243" name="code3624_date20160419_rate209.png" width="700" height="500">
+  </image>
+  <image id="244" name="code3624_date20190701_rate196.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="245" name="code3625_date20140718_rate158.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="246" name="code3625_date20140917_rate140.png" width="700" height="500">
+  </image>
+  <image id="247" name="code3633_date20150216_rate170.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="248" name="code3646_date20150716_rate177.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="249" name="code3646_date20150721_rate152.png" width="700" height="500">
+  </image>
+  <image id="250" name="code3646_date20180618_rate144.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="251" name="code3647_date20160204_rate148.png" width="700" height="500">
+  </image>
+  <image id="252" name="code3647_date20210419_rate146.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="253" name="code3652_date20140728_rate368.png" width="700" height="500">
+  </image>
+  <image id="254" name="code3652_date20140806_rate231.png" width="700" height="500">
+  </image>
+  <image id="255" name="code3653_date20140818_rate174.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="256" name="code3655_date20151216_rate140.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="257" name="code3655_date20151217_rate143.png" width="700" height="500">
+  </image>
+  <image id="258" name="code3661_date20140604_rate158.png" width="700" height="500">
+  </image>
+  <image id="259" name="code3662_date20140526_rate159.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="260" name="code3663_date20151109_rate169.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="261" name="code3663_date20151113_rate148.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="262" name="code3663_date20151224_rate153.png" width="700" height="500">
+  </image>
+  <image id="263" name="code3663_date20161026_rate142.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="264" name="code3664_date20160303_rate143.png" width="700" height="500">
+  </image>
+  <image id="265" name="code3664_date20160527_rate146.png" width="700" height="500">
+  </image>
+  <image id="266" name="code3667_date20170414_rate175.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="267" name="code3667_date20170417_rate167.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="268" name="code3668_date20190912_rate235.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="269" name="code3680_date20200520_rate146.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="270" name="code3686_date20200528_rate419.png" width="700" height="500">
+  </image>
+  <image id="271" name="code3686_date20200603_rate191.png" width="700" height="500">
+  </image>
+  <image id="272" name="code3690_date20151221_rate207.png" width="700" height="500">
+  </image>
+  <image id="273" name="code3690_date20160420_rate176.png" width="700" height="500">
+  </image>
+  <image id="274" name="code3690_date20160425_rate144.png" width="700" height="500">
+  </image>
+  <image id="275" name="code3690_date20160426_rate144.png" width="700" height="500">
+  </image>
+  <image id="276" name="code3691_date20150225_rate145.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="277" name="code3691_date20200221_rate143.png" width="700" height="500">
+  </image>
+  <image id="278" name="code3691_date20211105_rate182.png" width="700" height="500">
+  </image>
+  <image id="279" name="code3692_date20150612_rate145.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="280" name="code3710_date20190315_rate181.png" width="700" height="500">
+  </image>
+  <image id="281" name="code3710_date20190326_rate154.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="282" name="code3719_date20141202_rate200.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="283" name="code3723_date20140916_rate146.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="284" name="code3726_date20140829_rate155.png" width="700" height="500">
+  </image>
+  <image id="285" name="code3726_date20150121_rate143.png" width="700" height="500">
+  </image>
+  <image id="286" name="code3727_date20140513_rate145.png" width="700" height="500">
+  </image>
+  <image id="287" name="code3744_date20160308_rate182.png" width="700" height="500">
+  </image>
+  <image id="288" name="code3747_date20160307_rate160.png" width="700" height="500">
+  </image>
+  <image id="289" name="code3747_date20161212_rate198.png" width="700" height="500">
+  </image>
+  <image id="290" name="code3747_date20161221_rate166.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="291" name="code3747_date20180111_rate154.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="292" name="code3753_date20160526_rate146.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="293" name="code3753_date20161011_rate215.png" width="700" height="500">
+  </image>
+  <image id="294" name="code3753_date20180426_rate145.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="295" name="code3758_date20160830_rate192.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="296" name="code3758_date20160901_rate172.png" width="700" height="500">
+  </image>
+  <image id="297" name="code3758_date20170130_rate205.png" width="700" height="500">
+  </image>
+  <image id="298" name="code3760_date20150403_rate147.png" width="700" height="500">
+  </image>
+  <image id="299" name="code3776_date20180820_rate146.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="300" name="code3777_date20200731_rate154.png" width="700" height="500">
+  </image>
+  <image id="301" name="code3779_date20150304_rate196.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="302" name="code3779_date20190610_rate183.png" width="700" height="500">
+  </image>
+  <image id="303" name="code3779_date20190611_rate178.png" width="700" height="500">
+  </image>
+  <image id="304" name="code3787_date20150206_rate148.png" width="700" height="500">
+  </image>
+  <image id="305" name="code3798_date20150309_rate185.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="306" name="code3803_date20180326_rate142.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="307" name="code3807_date20140701_rate148.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="308" name="code3807_date20160311_rate143.png" width="700" height="500">
+  </image>
+  <image id="309" name="code3810_date20170113_rate249.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="310" name="code3810_date20170118_rate150.png" width="700" height="500">
+  </image>
+  <image id="311" name="code3810_date20220531_rate188.png" width="700" height="500">
+  </image>
+  <image id="312" name="code3814_date20160428_rate195.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="313" name="code3814_date20160502_rate140.png" width="700" height="500">
+  </image>
+  <image id="314" name="code3814_date20180313_rate156.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="315" name="code3814_date20201118_rate168.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="316" name="code3815_date20150129_rate178.png" width="700" height="500">
+  </image>
+  <image id="317" name="code3816_date20150717_rate247.png" width="700" height="500">
+  </image>
+  <image id="318" name="code3816_date20150723_rate147.png" width="700" height="500">
+  </image>
+  <image id="319" name="code3816_date20190214_rate166.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="320" name="code3816_date20200109_rate155.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="321" name="code3823_date20140827_rate225.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="322" name="code3823_date20150108_rate153.png" width="700" height="500">
+  </image>
+  <image id="323" name="code3825_date20140825_rate140.png" width="700" height="500">
+  </image>
+  <image id="324" name="code3825_date20141003_rate216.png" width="700" height="500">
+  </image>
+  <image id="325" name="code3825_date20170509_rate161.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="326" name="code3825_date20170523_rate204.png" width="700" height="500">
+  </image>
+  <image id="327" name="code3825_date20220421_rate153.png" width="700" height="500">
+  </image>
+  <image id="328" name="code3837_date20150714_rate143.png" width="700" height="500">
+  </image>
+  <image id="329" name="code3840_date20140623_rate148.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="330" name="code3840_date20140826_rate201.png" width="700" height="500">
+  </image>
+  <image id="331" name="code3840_date20140829_rate211.png" width="700" height="500">
+  </image>
+  <image id="332" name="code3840_date20170608_rate156.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="333" name="code3842_date20140612_rate143.png" width="700" height="500">
+  </image>
+  <image id="334" name="code3845_date20161226_rate202.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="335" name="code3845_date20161227_rate205.png" width="700" height="500">
+  </image>
+  <image id="336" name="code3845_date20170706_rate145.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="337" name="code3845_date20200601_rate143.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="338" name="code3848_date20161019_rate140.png" width="700" height="500">
+  </image>
+  <image id="339" name="code3850_date20140630_rate144.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="340" name="code3853_date20140925_rate141.png" width="700" height="500">
+  </image>
+  <image id="341" name="code3853_date20151204_rate255.png" width="700" height="500">
+  </image>
+  <image id="342" name="code3853_date20170525_rate157.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="343" name="code3856_date20160916_rate201.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="344" name="code3856_date20160920_rate186.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="345" name="code3856_date20170127_rate140.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="346" name="code3856_date20200109_rate169.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="347" name="code3891_date20141125_rate161.png" width="700" height="500">
+  </image>
+  <image id="348" name="code3896_date20150629_rate207.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="349" name="code3896_date20191119_rate149.png" width="700" height="500">
+  </image>
+  <image id="350" name="code3902_date20160330_rate164.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="351" name="code3904_date20160824_rate148.png" width="700" height="500">
+  </image>
+  <image id="352" name="code3905_date20160419_rate151.png" width="700" height="500">
+  </image>
+  <image id="353" name="code3907_date20160316_rate149.png" width="700" height="500">
+  </image>
+  <image id="354" name="code3909_date20200828_rate140.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="355" name="code3911_date20170818_rate141.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="356" name="code3912_date20210308_rate146.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="357" name="code3913_date20160524_rate235.png" width="700" height="500">
+  </image>
+  <image id="358" name="code3913_date20190828_rate169.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="359" name="code3913_date20210308_rate180.png" width="700" height="500">
+  </image>
+  <image id="360" name="code3913_date20210309_rate152.png" width="700" height="500">
+  </image>
+  <image id="361" name="code3917_date20151001_rate142.png" width="700" height="500">
+  </image>
+  <image id="362" name="code3920_date20160304_rate151.png" width="700" height="500">
+  </image>
+  <image id="363" name="code3927_date20160909_rate150.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="364" name="code3927_date20171219_rate161.png" width="700" height="500">
+  </image>
+  <image id="365" name="code3935_date20170508_rate160.png" width="700" height="500">
+  </image>
+  <image id="366" name="code3936_date20180418_rate144.png" width="700" height="500">
+  </image>
+  <image id="367" name="code3936_date20210727_rate398.png" width="700" height="500">
+  </image>
+  <image id="368" name="code3936_date20210728_rate304.png" width="700" height="500">
+  </image>
+  <image id="369" name="code3936_date20210730_rate221.png" width="700" height="500">
+  </image>
+  <image id="370" name="code3936_date20220315_rate231.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="371" name="code3936_date20220316_rate167.png" width="700" height="500">
+  </image>
+  <image id="372" name="code3953_date20180117_rate342.png" width="700" height="500">
+  </image>
+  <image id="373" name="code3953_date20180119_rate221.png" width="700" height="500">
+  </image>
+  <image id="374" name="code3953_date20180123_rate144.png" width="700" height="500">
+  </image>
+  <image id="375" name="code3955_date20141111_rate204.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="376" name="code3955_date20141112_rate193.png" width="700" height="500">
+  </image>
+  <image id="377" name="code3970_date20190813_rate149.png" width="700" height="500">
+  </image>
+  <image id="378" name="code3970_date20190814_rate140.png" width="700" height="500">
+  </image>
+  <image id="379" name="code3976_date20190118_rate151.png" width="700" height="500">
+  </image>
+  <image id="380" name="code3976_date20211029_rate141.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="381" name="code3989_date20220201_rate149.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="382" name="code4022_date20190219_rate142.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="383" name="code4026_date20140826_rate148.png" width="700" height="500">
+  </image>
+  <image id="384" name="code4051_date20201008_rate175.png" width="700" height="500">
+  </image>
+  <image id="385" name="code4057_date20220311_rate190.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="386" name="code4080_date20150821_rate176.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="387" name="code4080_date20150825_rate192.png" width="700" height="500">
+  </image>
+  <image id="388" name="code4093_date20210816_rate154.png" width="700" height="500">
+  </image>
+  <image id="389" name="code4100_date20170714_rate145.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="390" name="code4124_date20171122_rate146.png" width="700" height="500">
+  </image>
+  <image id="391" name="code4179_date20220329_rate141.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="392" name="code4222_date20171120_rate147.png" width="700" height="500">
+  </image>
+  <image id="393" name="code4237_date20161118_rate173.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="394" name="code4240_date20161111_rate145.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="395" name="code4240_date20190917_rate140.png" width="700" height="500">
+  </image>
+  <image id="396" name="code4241_date20140825_rate186.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="397" name="code4241_date20140826_rate191.png" width="700" height="500">
+  </image>
+  <image id="398" name="code4241_date20190822_rate141.png" width="700" height="500">
+  </image>
+  <image id="399" name="code4242_date20181130_rate237.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="400" name="code4242_date20181204_rate160.png" width="700" height="500">
+  </image>
+  <image id="401" name="code4243_date20140909_rate199.png" width="700" height="500">
+  </image>
+  <image id="402" name="code4243_date20190827_rate164.png" width="700" height="500">
+  </image>
+  <image id="403" name="code4243_date20190829_rate156.png" width="700" height="500">
+  </image>
+  <image id="404" name="code4264_date20220301_rate148.png" width="700" height="500">
+  </image>
+  <image id="405" name="code4274_date20170404_rate231.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="406" name="code4274_date20170407_rate167.png" width="700" height="500">
+  </image>
+  <image id="407" name="code4274_date20170809_rate144.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="408" name="code4274_date20201207_rate150.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="409" name="code4287_date20180326_rate165.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="410" name="code4288_date20150602_rate180.png" width="700" height="500">
+  </image>
+  <image id="411" name="code4304_date20201116_rate165.png" width="700" height="500">
+  </image>
+  <image id="412" name="code4308_date20161006_rate169.png" width="700" height="500">
+  </image>
+  <image id="413" name="code4310_date20211201_rate140.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="414" name="code4316_date20170707_rate194.png" width="700" height="500">
+  </image>
+  <image id="415" name="code4316_date20170710_rate155.png" width="700" height="500">
+  </image>
+  <image id="416" name="code4317_date20171127_rate226.png" width="700" height="500">
+  </image>
+  <image id="417" name="code4334_date20161216_rate148.png" width="700" height="500">
+  </image>
+  <image id="418" name="code4335_date20140722_rate145.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="419" name="code4335_date20150707_rate173.png" width="700" height="500">
+  </image>
+  <image id="420" name="code4335_date20150708_rate143.png" width="700" height="500">
+  </image>
+  <image id="421" name="code4335_date20170512_rate173.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="422" name="code4335_date20181015_rate222.png" width="700" height="500">
+  </image>
+  <image id="423" name="code4346_date20160412_rate144.png" width="700" height="500">
+  </image>
+  <image id="424" name="code4356_date20191031_rate146.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="425" name="code4366_date20170120_rate140.png" width="700" height="500">
+  </image>
+  <image id="426" name="code4366_date20191218_rate140.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="427" name="code4406_date20201204_rate156.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="428" name="code4406_date20201207_rate141.png" width="700" height="500">
+  </image>
+  <image id="429" name="code4416_date20220322_rate148.png" width="700" height="500">
+  </image>
+  <image id="430" name="code4417_date20220301_rate150.png" width="700" height="500">
+  </image>
+  <image id="431" name="code4421_date20200917_rate168.png" width="700" height="500">
+  </image>
+  <image id="432" name="code4440_date20200821_rate151.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="433" name="code4465_date20200121_rate149.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="434" name="code4512_date20210315_rate228.png" width="700" height="500">
+  </image>
+  <image id="435" name="code4531_date20200415_rate144.png" width="700" height="500">
+  </image>
+  <image id="436" name="code4556_date20200120_rate173.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="437" name="code4558_date20200122_rate351.png" width="700" height="500">
+  </image>
+  <image id="438" name="code4563_date20160201_rate143.png" width="700" height="500">
+  </image>
+  <image id="439" name="code4563_date20160401_rate146.png" width="700" height="500">
+  </image>
+  <image id="440" name="code4563_date20160405_rate141.png" width="700" height="500">
+  </image>
+  <image id="441" name="code4563_date20170606_rate257.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="442" name="code4563_date20190207_rate145.png" width="700" height="500">
+  </image>
+  <image id="443" name="code4564_date20200917_rate141.png" width="700" height="500">
+  </image>
+  <image id="444" name="code4571_date20180110_rate177.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="445" name="code4571_date20200602_rate229.png" width="700" height="500">
+  </image>
+  <image id="446" name="code4572_date20140611_rate164.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="447" name="code4572_date20150512_rate140.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="448" name="code4572_date20150616_rate144.png" width="700" height="500">
+  </image>
+  <image id="449" name="code4575_date20220112_rate204.png" width="700" height="500">
+  </image>
+  <image id="450" name="code4575_date20220602_rate171.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="451" name="code4579_date20171215_rate167.png" width="700" height="500">
+  </image>
+  <image id="452" name="code4582_date20160411_rate187.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="453" name="code4582_date20190214_rate140.png" width="700" height="500">
+  </image>
+  <image id="454" name="code4583_date20151210_rate163.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="455" name="code4583_date20160307_rate152.png" width="700" height="500">
+  </image>
+  <image id="456" name="code4584_date20171109_rate145.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="457" name="code4586_date20160408_rate161.png" width="700" height="500">
+  </image>
+  <image id="458" name="code4586_date20171017_rate163.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="459" name="code4586_date20171018_rate152.png" width="700" height="500">
+  </image>
+  <image id="460" name="code4586_date20200403_rate206.png" width="700" height="500">
+  </image>
+  <image id="461" name="code4591_date20211122_rate170.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="462" name="code4594_date20160328_rate147.png" width="700" height="500">
+  </image>
+  <image id="463" name="code4595_date20170512_rate146.png" width="700" height="500">
+  </image>
+  <image id="464" name="code4596_date20190220_rate148.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="465" name="code4616_date20161017_rate170.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="466" name="code4625_date20170801_rate165.png" width="700" height="500">
+  </image>
+  <image id="467" name="code4657_date20190416_rate236.png" width="700" height="500">
+  </image>
+  <image id="468" name="code4657_date20190417_rate241.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="469" name="code4657_date20210409_rate208.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="470" name="code4657_date20210412_rate188.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="471" name="code4664_date20150202_rate593.png" width="700" height="500">
+  </image>
+  <image id="472" name="code4664_date20150204_rate418.png" width="700" height="500">
+  </image>
+  <image id="473" name="code4664_date20170403_rate142.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="474" name="code4667_date20140818_rate202.png" width="700" height="500">
+  </image>
+  <image id="475" name="code4667_date20140821_rate165.png" width="700" height="500">
+  </image>
+  <image id="476" name="code4667_date20150105_rate143.png" width="700" height="500">
+  </image>
+  <image id="477" name="code4678_date20150615_rate246.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="478" name="code4678_date20150616_rate223.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="479" name="code4678_date20150617_rate164.png" width="700" height="500">
+  </image>
+  <image id="480" name="code4712_date20200507_rate144.png" width="700" height="500">
+  </image>
+  <image id="481" name="code4712_date20200508_rate142.png" width="700" height="500">
+  </image>
+  <image id="482" name="code4728_date20170608_rate180.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="483" name="code4735_date20170919_rate154.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="484" name="code4736_date20150625_rate155.png" width="700" height="500">
+  </image>
+  <image id="485" name="code4736_date20160523_rate184.png" width="700" height="500">
+  </image>
+  <image id="486" name="code4736_date20160602_rate181.png" width="700" height="500">
+  </image>
+  <image id="487" name="code4736_date20200924_rate140.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="488" name="code4754_date20150204_rate168.png" width="700" height="500">
+  </image>
+  <image id="489" name="code4766_date20170724_rate175.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="490" name="code4766_date20170725_rate169.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="491" name="code4769_date20150306_rate188.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="492" name="code4769_date20150309_rate152.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="493" name="code4769_date20150409_rate145.png" width="700" height="500">
+  </image>
+  <image id="494" name="code4770_date20140710_rate214.png" width="700" height="500">
+  </image>
+  <image id="495" name="code4770_date20141107_rate146.png" width="700" height="500">
+  </image>
+  <image id="496" name="code4771_date20140617_rate140.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="497" name="code4772_date20170622_rate187.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="498" name="code4772_date20200721_rate223.png" width="700" height="500">
+  </image>
+  <image id="499" name="code4777_date20140825_rate177.png" width="700" height="500">
+  </image>
+  <image id="500" name="code4777_date20210317_rate161.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="501" name="code4777_date20210318_rate168.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="502" name="code4777_date20211025_rate140.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="503" name="code4777_date20220519_rate192.png" width="700" height="500">
+  </image>
+  <image id="504" name="code4777_date20220520_rate146.png" width="700" height="500">
+  </image>
+  <image id="505" name="code4783_date20150522_rate178.png" width="700" height="500">
+  </image>
+  <image id="506" name="code4783_date20150525_rate150.png" width="700" height="500">
+  </image>
+  <image id="507" name="code4784_date20201008_rate145.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="508" name="code4814_date20150218_rate140.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="509" name="code4814_date20170614_rate204.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="510" name="code4824_date20141105_rate143.png" width="700" height="500">
+  </image>
+  <image id="511" name="code4829_date20140818_rate194.png" width="700" height="500">
+  </image>
+  <image id="512" name="code4829_date20140820_rate159.png" width="700" height="500">
+  </image>
+  <image id="513" name="code4829_date20160530_rate152.png" width="700" height="500">
+  </image>
+  <image id="514" name="code4833_date20140603_rate144.png" width="700" height="500">
+  </image>
+  <image id="515" name="code4833_date20160630_rate173.png" width="700" height="500">
+  </image>
+  <image id="516" name="code4833_date20191203_rate227.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="517" name="code4833_date20191210_rate207.png" width="700" height="500">
+  </image>
+  <image id="518" name="code4838_date20190214_rate146.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="519" name="code4838_date20200804_rate146.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="520" name="code4918_date20150202_rate169.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="521" name="code4918_date20210618_rate160.png" width="700" height="500">
+  </image>
+  <image id="522" name="code4960_date20140708_rate153.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="523" name="code4960_date20151126_rate141.png" width="700" height="500">
+  </image>
+  <image id="524" name="code4970_date20141008_rate187.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="525" name="code4978_date20200127_rate143.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="526" name="code4990_date20200121_rate265.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="527" name="code4990_date20200122_rate284.png" width="700" height="500">
+  </image>
+  <image id="528" name="code4990_date20200123_rate270.png" width="700" height="500">
+  </image>
+  <image id="529" name="code5025_date20220510_rate151.png" width="700" height="500">
+  </image>
+  <image id="530" name="code5103_date20150216_rate147.png" width="700" height="500">
+  </image>
+  <image id="531" name="code5103_date20150225_rate180.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="532" name="code5162_date20140825_rate203.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="533" name="code5162_date20140826_rate219.png" width="700" height="500">
+  </image>
+  <image id="534" name="code5216_date20150312_rate286.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="535" name="code5216_date20150316_rate243.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="536" name="code5216_date20150317_rate220.png" width="700" height="500">
+  </image>
+  <image id="537" name="code5216_date20151113_rate152.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="538" name="code5216_date20151126_rate154.png" width="700" height="500">
+  </image>
+  <image id="539" name="code5217_date20170130_rate143.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="540" name="code5271_date20170922_rate146.png" width="700" height="500">
+  </image>
+  <image id="541" name="code5277_date20170814_rate160.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="542" name="code5279_date20180116_rate147.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="543" name="code5341_date20150519_rate141.png" width="700" height="500">
+  </image>
+  <image id="544" name="code5458_date20150219_rate145.png" width="700" height="500">
+  </image>
+  <image id="545" name="code5610_date20190315_rate164.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="546" name="code5612_date20190626_rate214.png" width="700" height="500">
+  </image>
+  <image id="547" name="code5660_date20170726_rate142.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="548" name="code5697_date20171016_rate161.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="549" name="code5721_date20170607_rate247.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="550" name="code5721_date20170608_rate218.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="551" name="code5721_date20170609_rate160.png" width="700" height="500">
+  </image>
+  <image id="552" name="code5724_date20141111_rate286.png" width="700" height="500">
+  </image>
+  <image id="553" name="code5724_date20141114_rate157.png" width="700" height="500">
+  </image>
+  <image id="554" name="code5724_date20160914_rate161.png" width="700" height="500">
+  </image>
+  <image id="555" name="code5724_date20190521_rate151.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="556" name="code5724_date20201127_rate162.png" width="700" height="500">
+  </image>
+  <image id="557" name="code5724_date20201210_rate152.png" width="700" height="500">
+  </image>
+  <image id="558" name="code5753_date20140626_rate147.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="559" name="code5817_date20140708_rate158.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="560" name="code5817_date20170421_rate198.png" width="700" height="500">
+  </image>
+  <image id="561" name="code5817_date20170425_rate142.png" width="700" height="500">
+  </image>
+  <image id="562" name="code5817_date20200609_rate188.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="563" name="code5817_date20210405_rate143.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="564" name="code5820_date20210820_rate165.png" width="700" height="500">
+  </image>
+  <image id="565" name="code5820_date20210824_rate149.png" width="700" height="500">
+  </image>
+  <image id="566" name="code5856_date20150209_rate178.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="567" name="code5856_date20150213_rate150.png" width="700" height="500">
+  </image>
+  <image id="568" name="code5856_date20200408_rate142.png" width="700" height="500">
+  </image>
+  <image id="569" name="code5900_date20170223_rate154.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="570" name="code5905_date20161018_rate147.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="571" name="code5922_date20201203_rate166.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="572" name="code5935_date20150713_rate141.png" width="700" height="500">
+  </image>
+  <image id="573" name="code5939_date20210113_rate168.png" width="700" height="500">
+  </image>
+  <image id="574" name="code5950_date20161125_rate191.png" width="700" height="500">
+  </image>
+  <image id="575" name="code5950_date20171012_rate171.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="576" name="code5950_date20171017_rate154.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="577" name="code5950_date20200910_rate172.png" width="700" height="500">
+  </image>
+  <image id="578" name="code5952_date20190214_rate142.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="579" name="code5952_date20200910_rate210.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="580" name="code5955_date20180105_rate155.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="581" name="code5962_date20150306_rate141.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="582" name="code5974_date20201204_rate207.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="583" name="code5974_date20201207_rate176.png" width="700" height="500">
+  </image>
+  <image id="584" name="code5974_date20201209_rate158.png" width="700" height="500">
+  </image>
+  <image id="585" name="code5986_date20201124_rate183.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="586" name="code5986_date20201125_rate150.png" width="700" height="500">
+  </image>
+  <image id="587" name="code5987_date20171002_rate150.png" width="700" height="500">
+  </image>
+  <image id="588" name="code5987_date20201127_rate151.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="589" name="code6016_date20140704_rate144.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="590" name="code6016_date20161212_rate183.png" width="700" height="500">
+  </image>
+  <image id="591" name="code6016_date20200820_rate177.png" width="700" height="500">
+  </image>
+  <image id="592" name="code6026_date20160601_rate165.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="593" name="code6026_date20200602_rate156.png" width="700" height="500">
+  </image>
+  <image id="594" name="code6026_date20200623_rate144.png" width="700" height="500">
+  </image>
+  <image id="595" name="code6029_date20150415_rate148.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="596" name="code6029_date20190902_rate181.png" width="700" height="500">
+  </image>
+  <image id="597" name="code6031_date20160229_rate140.png" width="700" height="500">
+  </image>
+  <image id="598" name="code6031_date20200526_rate153.png" width="700" height="500">
+  </image>
+  <image id="599" name="code6031_date20211221_rate154.png" width="700" height="500">
+  </image>
+  <image id="600" name="code6033_date20180802_rate427.png" width="700" height="500">
+  </image>
+  <image id="601" name="code6033_date20180807_rate247.png" width="700" height="500">
+  </image>
+  <image id="602" name="code6034_date20160311_rate213.png" width="700" height="500">
+  </image>
+  <image id="603" name="code6048_date20150622_rate148.png" width="700" height="500">
+  </image>
+  <image id="604" name="code6063_date20160405_rate149.png" width="700" height="500">
+  </image>
+  <image id="605" name="code6069_date20140815_rate143.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="606" name="code6069_date20170403_rate148.png" width="700" height="500">
+  </image>
+  <image id="607" name="code6072_date20151014_rate160.png" width="700" height="500">
+  </image>
+  <image id="608" name="code6085_date20140912_rate172.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="609" name="code6085_date20200929_rate141.png" width="700" height="500">
+  </image>
+  <image id="610" name="code6092_date20150612_rate182.png" width="700" height="500">
+  </image>
+  <image id="611" name="code6095_date20140904_rate178.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="612" name="code6095_date20160316_rate141.png" width="700" height="500">
+  </image>
+  <image id="613" name="code6096_date20190218_rate157.png" width="700" height="500">
+  </image>
+  <image id="614" name="code6149_date20170810_rate188.png" width="700" height="500">
+  </image>
+  <image id="615" name="code6166_date20151125_rate146.png" width="700" height="500">
+  </image>
+  <image id="616" name="code6166_date20191024_rate205.png" width="700" height="500">
+  </image>
+  <image id="617" name="code6171_date20151014_rate159.png" width="700" height="500">
+  </image>
+  <image id="618" name="code6171_date20170623_rate181.png" width="700" height="500">
+  </image>
+  <image id="619" name="code6171_date20170626_rate192.png" width="700" height="500">
+  </image>
+  <image id="620" name="code6171_date20170627_rate178.png" width="700" height="500">
+  </image>
+  <image id="621" name="code6176_date20160316_rate166.png" width="700" height="500">
+  </image>
+  <image id="622" name="code6177_date20160713_rate191.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="623" name="code6177_date20160714_rate160.png" width="700" height="500">
+  </image>
+  <image id="624" name="code6177_date20160715_rate140.png" width="700" height="500">
+  </image>
+  <image id="625" name="code6177_date20180425_rate187.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="626" name="code6177_date20210323_rate155.png" width="700" height="500">
+  </image>
+  <image id="627" name="code6182_date20190318_rate140.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="628" name="code6198_date20210511_rate160.png" width="700" height="500">
+  </image>
+  <image id="629" name="code6208_date20170404_rate178.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="630" name="code6208_date20190306_rate149.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="631" name="code6233_date20201204_rate210.png" width="700" height="500">
+  </image>
+  <image id="632" name="code6233_date20201209_rate163.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="633" name="code6248_date20140822_rate182.png" width="700" height="500">
+  </image>
+  <image id="634" name="code6264_date20160511_rate142.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="635" name="code6266_date20150507_rate159.png" width="700" height="500">
+  </image>
+  <image id="636" name="code6266_date20151109_rate193.png" width="700" height="500">
+  </image>
+  <image id="637" name="code6276_date20180301_rate157.png" width="700" height="500">
+  </image>
+  <image id="638" name="code6291_date20141002_rate224.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="639" name="code6322_date20160912_rate143.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="640" name="code6327_date20150128_rate161.png" width="700" height="500">
+  </image>
+  <image id="641" name="code6331_date20140626_rate167.png" width="700" height="500">
+  </image>
+  <image id="642" name="code6331_date20140627_rate148.png" width="700" height="500">
+  </image>
+  <image id="643" name="code6334_date20140723_rate155.png" width="700" height="500">
+  </image>
+  <image id="644" name="code6335_date20210901_rate224.png" width="700" height="500">
+  </image>
+  <image id="645" name="code6336_date20191023_rate155.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="646" name="code6347_date20170608_rate177.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="647" name="code6347_date20170609_rate144.png" width="700" height="500">
+  </image>
+  <image id="648" name="code6347_date20200612_rate142.png" width="700" height="500">
+  </image>
+  <image id="649" name="code6356_date20141104_rate180.png" width="700" height="500">
+  </image>
+  <image id="650" name="code6380_date20140702_rate196.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="651" name="code6380_date20140704_rate190.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="652" name="code6384_date20150123_rate174.png" width="700" height="500">
+  </image>
+  <image id="653" name="code6384_date20150126_rate151.png" width="700" height="500">
+  </image>
+  <image id="654" name="code6391_date20210105_rate143.png" width="700" height="500">
+  </image>
+  <image id="655" name="code6400_date20201119_rate242.png" width="700" height="500">
+  </image>
+  <image id="656" name="code6408_date20200108_rate210.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="657" name="code6428_date20160714_rate162.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="658" name="code6433_date20191018_rate141.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="659" name="code6433_date20201125_rate164.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="660" name="code6467_date20180131_rate175.png" width="700" height="500">
+  </image>
+  <image id="661" name="code6467_date20180201_rate148.png" width="700" height="500">
+  </image>
+  <image id="662" name="code6469_date20140821_rate150.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="663" name="code6469_date20201203_rate153.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="664" name="code6494_date20150115_rate235.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="665" name="code6494_date20180109_rate149.png" width="700" height="500">
+  </image>
+  <image id="666" name="code6495_date20140701_rate141.png" width="700" height="500">
+  </image>
+  <image id="667" name="code6495_date20150106_rate251.png" width="700" height="500">
+  </image>
+  <image id="668" name="code6497_date20150107_rate185.png" width="700" height="500">
+  </image>
+  <image id="669" name="code6533_date20171115_rate163.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="670" name="code6542_date20170530_rate142.png" width="700" height="500">
+  </image>
+  <image id="671" name="code6554_date20211101_rate179.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="672" name="code6554_date20211102_rate197.png" width="700" height="500">
+  </image>
+  <image id="673" name="code6554_date20211104_rate185.png" width="700" height="500">
+  </image>
+  <image id="674" name="code6557_date20200409_rate160.png" width="700" height="500">
+  </image>
+  <image id="675" name="code6562_date20190304_rate143.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="676" name="code6573_date20211021_rate151.png" width="700" height="500">
+  </image>
+  <image id="677" name="code6578_date20220322_rate163.png" width="700" height="500">
+  </image>
+  <image id="678" name="code6580_date20190304_rate167.png" width="700" height="500">
+  </image>
+  <image id="679" name="code6597_date20191224_rate143.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="680" name="code6615_date20210204_rate142.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="681" name="code6616_date20140822_rate178.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="682" name="code6616_date20140825_rate147.png" width="700" height="500">
+  </image>
+  <image id="683" name="code6620_date20140711_rate333.png" width="700" height="500">
+  </image>
+  <image id="684" name="code6620_date20140715_rate279.png" width="700" height="500">
+  </image>
+  <image id="685" name="code6620_date20210816_rate143.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="686" name="code6625_date20161128_rate150.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="687" name="code6626_date20180813_rate140.png" width="700" height="500">
+  </image>
+  <image id="688" name="code6626_date20201106_rate148.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="689" name="code6627_date20210112_rate141.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="690" name="code6634_date20140605_rate168.png" width="700" height="500">
+  </image>
+  <image id="691" name="code6634_date20150107_rate145.png" width="700" height="500">
+  </image>
+  <image id="692" name="code6635_date20200115_rate224.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="693" name="code6635_date20200117_rate178.png" width="700" height="500">
+  </image>
+  <image id="694" name="code6635_date20201210_rate143.png" width="700" height="500">
+  </image>
+  <image id="695" name="code6656_date20160404_rate148.png" width="700" height="500">
+  </image>
+  <image id="696" name="code6656_date20160614_rate154.png" width="700" height="500">
+  </image>
+  <image id="697" name="code6656_date20191210_rate148.png" width="700" height="500">
+  </image>
+  <image id="698" name="code6658_date20160711_rate266.png" width="700" height="500">
+  </image>
+  <image id="699" name="code6658_date20170928_rate216.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="700" name="code6658_date20171002_rate140.png" width="700" height="500">
+  </image>
+  <image id="701" name="code6659_date20200824_rate164.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="702" name="code6662_date20150323_rate148.png" width="700" height="500">
+  </image>
+  <image id="703" name="code6662_date20150325_rate147.png" width="700" height="500">
+  </image>
+  <image id="704" name="code6663_date20150217_rate195.png" width="700" height="500">
+  </image>
+  <image id="705" name="code6663_date20150303_rate215.png" width="700" height="500">
+  </image>
+  <image id="706" name="code6663_date20160223_rate217.png" width="700" height="500">
+  </image>
+  <image id="707" name="code6666_date20141204_rate179.png" width="700" height="500">
+  </image>
+  <image id="708" name="code6666_date20141208_rate148.png" width="700" height="500">
+  </image>
+  <image id="709" name="code6666_date20170605_rate159.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="710" name="code6666_date20201007_rate141.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="711" name="code6668_date20140708_rate177.png" width="700" height="500">
+  </image>
+  <image id="712" name="code6668_date20161007_rate153.png" width="700" height="500">
+  </image>
+  <image id="713" name="code6699_date20200909_rate141.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="714" name="code6721_date20140821_rate178.png" width="700" height="500">
+  </image>
+  <image id="715" name="code6721_date20140829_rate253.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="716" name="code6721_date20160609_rate140.png" width="700" height="500">
+  </image>
+  <image id="717" name="code6721_date20160622_rate174.png" width="700" height="500">
+  </image>
+  <image id="718" name="code6731_date20170531_rate341.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="719" name="code6748_date20180118_rate143.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="720" name="code6768_date20210615_rate147.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="721" name="code6771_date20141226_rate147.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="722" name="code6775_date20170629_rate165.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="723" name="code6776_date20190912_rate145.png" width="700" height="500">
+  </image>
+  <image id="724" name="code6776_date20201130_rate227.png" width="700" height="500">
+  </image>
+  <image id="725" name="code6778_date20140523_rate143.png" width="700" height="500">
+  </image>
+  <image id="726" name="code6786_date20141107_rate145.png" width="700" height="500">
+  </image>
+  <image id="727" name="code6786_date20141121_rate232.png" width="700" height="500">
+  </image>
+  <image id="728" name="code6819_date20150123_rate143.png" width="700" height="500">
+  </image>
+  <image id="729" name="code6819_date20180307_rate173.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="730" name="code6822_date20191203_rate180.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="731" name="code6822_date20191204_rate160.png" width="700" height="500">
+  </image>
+  <image id="732" name="code6835_date20180111_rate205.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="733" name="code6836_date20150617_rate152.png" width="700" height="500">
+  </image>
+  <image id="734" name="code6836_date20160205_rate146.png" width="700" height="500">
+  </image>
+  <image id="735" name="code6836_date20170413_rate149.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="736" name="code6836_date20200410_rate141.png" width="700" height="500">
+  </image>
+  <image id="737" name="code6837_date20150731_rate150.png" width="700" height="500">
+  </image>
+  <image id="738" name="code6837_date20150803_rate140.png" width="700" height="500">
+  </image>
+  <image id="739" name="code6840_date20150128_rate187.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="740" name="code6840_date20161228_rate166.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="741" name="code6855_date20200630_rate143.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="742" name="code6862_date20151225_rate150.png" width="700" height="500">
+  </image>
+  <image id="743" name="code6864_date20140908_rate155.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="744" name="code6864_date20140909_rate143.png" width="700" height="500">
+  </image>
+  <image id="745" name="code6864_date20170815_rate186.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="746" name="code6867_date20191202_rate150.png" width="700" height="500">
+  </image>
+  <image id="747" name="code6879_date20160712_rate238.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="748" name="code6879_date20160715_rate155.png" width="700" height="500">
+  </image>
+  <image id="749" name="code6879_date20160720_rate140.png" width="700" height="500">
+  </image>
+  <image id="750" name="code6888_date20151221_rate196.png" width="700" height="500">
+  </image>
+  <image id="751" name="code6897_date20140821_rate157.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="752" name="code6897_date20200611_rate295.png" width="700" height="500">
+  </image>
+  <image id="753" name="code6897_date20200612_rate222.png" width="700" height="500">
+  </image>
+  <image id="754" name="code6898_date20140919_rate144.png" width="700" height="500">
+  </image>
+  <image id="755" name="code6901_date20170322_rate209.png" width="700" height="500">
+  </image>
+  <image id="756" name="code6904_date20161213_rate140.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="757" name="code6904_date20180111_rate142.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="758" name="code6937_date20140829_rate159.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="759" name="code6937_date20200609_rate198.png" width="700" height="500">
+  </image>
+  <image id="760" name="code6938_date20170922_rate145.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="761" name="code6942_date20140702_rate167.png" width="700" height="500">
+  </image>
+  <image id="762" name="code6946_date20141002_rate179.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="763" name="code6946_date20141003_rate148.png" width="700" height="500">
+  </image>
+  <image id="764" name="code6946_date20150529_rate149.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="765" name="code6946_date20170404_rate155.png" width="700" height="500">
+  </image>
+  <image id="766" name="code6969_date20201124_rate171.png" width="700" height="500">
+  </image>
+  <image id="767" name="code6969_date20210324_rate158.png" width="700" height="500">
+  </image>
+  <image id="768" name="code6973_date20140716_rate149.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="769" name="code6973_date20170719_rate225.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="770" name="code6982_date20150205_rate140.png" width="700" height="500">
+  </image>
+  <image id="771" name="code6982_date20201120_rate316.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="772" name="code6982_date20201126_rate154.png" width="700" height="500">
+  </image>
+  <image id="773" name="code7018_date20160913_rate140.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="774" name="code7021_date20210915_rate186.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="775" name="code7021_date20210921_rate183.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="776" name="code7022_date20141104_rate146.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="777" name="code7022_date20160712_rate305.png" width="700" height="500">
+  </image>
+  <image id="778" name="code7022_date20160713_rate289.png" width="700" height="500">
+  </image>
+  <image id="779" name="code7022_date20160714_rate186.png" width="700" height="500">
+  </image>
+  <image id="780" name="code7042_date20210528_rate193.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="781" name="code7044_date20220329_rate179.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="782" name="code7044_date20220331_rate156.png" width="700" height="500">
+  </image>
+  <image id="783" name="code7066_date20200410_rate140.png" width="700" height="500">
+  </image>
+  <image id="784" name="code7066_date20220404_rate262.png" width="700" height="500">
+  </image>
+  <image id="785" name="code7066_date20220405_rate250.png" width="700" height="500">
+  </image>
+  <image id="786" name="code7072_date20210817_rate182.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="787" name="code7078_date20211029_rate145.png" width="700" height="500">
+  </image>
+  <image id="788" name="code7080_date20220525_rate169.png" width="700" height="500">
+  </image>
+  <image id="789" name="code7082_date20200409_rate141.png" width="700" height="500">
+  </image>
+  <image id="790" name="code7082_date20200803_rate156.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="791" name="code7083_date20200409_rate156.png" width="700" height="500">
+  </image>
+  <image id="792" name="code7093_date20200525_rate165.png" width="700" height="500">
+  </image>
+  <image id="793" name="code7162_date20161111_rate147.png" width="700" height="500">
+  </image>
+  <image id="794" name="code7162_date20161114_rate174.png" width="700" height="500">
+  </image>
+  <image id="795" name="code7208_date20151104_rate186.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="796" name="code7208_date20151105_rate151.png" width="700" height="500">
+  </image>
+  <image id="797" name="code7217_date20150218_rate160.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="798" name="code7217_date20150602_rate144.png" width="700" height="500">
+  </image>
+  <image id="799" name="code7244_date20140903_rate144.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="800" name="code7254_date20211215_rate163.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="801" name="code7268_date20191121_rate151.png" width="700" height="500">
+  </image>
+  <image id="802" name="code7271_date20161124_rate353.png" width="700" height="500">
+  </image>
+  <image id="803" name="code7271_date20161129_rate163.png" width="700" height="500">
+  </image>
+  <image id="804" name="code7271_date20170906_rate144.png" width="700" height="500">
+  </image>
+  <image id="805" name="code7291_date20141110_rate151.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="806" name="code7291_date20151023_rate168.png" width="700" height="500">
+  </image>
+  <image id="807" name="code7297_date20171013_rate218.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="808" name="code7297_date20171019_rate159.png" width="700" height="500">
+  </image>
+  <image id="809" name="code7462_date20180625_rate146.png" width="700" height="500">
+  </image>
+  <image id="810" name="code7462_date20191211_rate165.png" width="700" height="500">
+  </image>
+  <image id="811" name="code7477_date20150520_rate146.png" width="700" height="500">
+  </image>
+  <image id="812" name="code7477_date20200529_rate145.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="813" name="code7502_date20160322_rate147.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="814" name="code7502_date20170126_rate180.png" width="700" height="500">
+  </image>
+  <image id="815" name="code7520_date20180406_rate143.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="816" name="code7527_date20160420_rate154.png" width="700" height="500">
+  </image>
+  <image id="817" name="code7527_date20210629_rate157.png" width="700" height="500">
+  </image>
+  <image id="818" name="code7527_date20210705_rate141.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="819" name="code7552_date20160714_rate146.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="820" name="code7567_date20170501_rate143.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="821" name="code7567_date20171004_rate199.png" width="700" height="500">
+  </image>
+  <image id="822" name="code7567_date20171006_rate142.png" width="700" height="500">
+  </image>
+  <image id="823" name="code7567_date20191011_rate224.png" width="700" height="500">
+  </image>
+  <image id="824" name="code7567_date20191021_rate157.png" width="700" height="500">
+  </image>
+  <image id="825" name="code7585_date20210930_rate143.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="826" name="code7585_date20211001_rate153.png" width="700" height="500">
+  </image>
+  <image id="827" name="code7602_date20191218_rate153.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="828" name="code7608_date20150902_rate232.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="829" name="code7608_date20150907_rate168.png" width="700" height="500">
+  </image>
+  <image id="830" name="code7608_date20201019_rate176.png" width="700" height="500">
+  </image>
+  <image id="831" name="code7610_date20200610_rate166.png" width="700" height="500">
+  </image>
+  <image id="832" name="code7623_date20190612_rate166.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="833" name="code7624_date20171220_rate141.png" width="700" height="500">
+  </image>
+  <image id="834" name="code7625_date20150605_rate221.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="835" name="code7625_date20161130_rate158.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="836" name="code7634_date20210802_rate146.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="837" name="code7646_date20200417_rate159.png" width="700" height="500">
+  </image>
+  <image id="838" name="code7707_date20140820_rate156.png" width="700" height="500">
+  </image>
+  <image id="839" name="code7707_date20200417_rate152.png" width="700" height="500">
+  </image>
+  <image id="840" name="code7709_date20150410_rate266.png" width="700" height="500">
+  </image>
+  <image id="841" name="code7709_date20150417_rate292.png" width="700" height="500">
+  </image>
+  <image id="842" name="code7709_date20161206_rate140.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="843" name="code7709_date20190116_rate173.png" width="700" height="500">
+  </image>
+  <image id="844" name="code7719_date20141117_rate154.png" width="700" height="500">
+  </image>
+  <image id="845" name="code7725_date20140815_rate158.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="846" name="code7725_date20160930_rate144.png" width="700" height="500">
+  </image>
+  <image id="847" name="code7726_date20161130_rate246.png" width="700" height="500">
+  </image>
+  <image id="848" name="code7726_date20201130_rate196.png" width="700" height="500">
+  </image>
+  <image id="849" name="code7727_date20140626_rate165.png" width="700" height="500">
+  </image>
+  <image id="850" name="code7746_date20170628_rate147.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="851" name="code7771_date20190117_rate140.png" width="700" height="500">
+  </image>
+  <image id="852" name="code7779_date20140723_rate143.png" width="700" height="500">
+  </image>
+  <image id="853" name="code7781_date20180215_rate177.png" width="700" height="500">
+  </image>
+  <image id="854" name="code7806_date20200811_rate143.png" width="700" height="500">
+  </image>
+  <image id="855" name="code7809_date20211104_rate174.png" width="700" height="500">
+  </image>
+  <image id="856" name="code7813_date20160415_rate147.png" width="700" height="500">
+  </image>
+  <image id="857" name="code7826_date20180118_rate140.png" width="700" height="500">
+  </image>
+  <image id="858" name="code7827_date20140707_rate153.png" width="700" height="500">
+  </image>
+  <image id="859" name="code7827_date20170403_rate204.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="860" name="code7827_date20170405_rate164.png" width="700" height="500">
+  </image>
+  <image id="861" name="code7827_date20210105_rate154.png" width="700" height="500">
+  </image>
+  <image id="862" name="code7831_date20210405_rate175.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="863" name="code7836_date20140908_rate167.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="864" name="code7836_date20140912_rate157.png" width="700" height="500">
+  </image>
+  <image id="865" name="code7844_date20141121_rate149.png" width="700" height="500">
+  </image>
+  <image id="866" name="code7851_date20210115_rate159.png" width="700" height="500">
+  </image>
+  <image id="867" name="code7863_date20210120_rate236.png" width="700" height="500">
+  </image>
+  <image id="868" name="code7878_date20140901_rate171.png" width="700" height="500">
+  </image>
+  <image id="869" name="code7886_date20150409_rate153.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="870" name="code7886_date20200115_rate149.png" width="700" height="500">
+  </image>
+  <image id="871" name="code7897_date20210423_rate155.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="872" name="code7902_date20150703_rate140.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="873" name="code7922_date20201218_rate204.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="874" name="code7923_date20170719_rate160.png" width="700" height="500">
+  </image>
+  <image id="875" name="code7963_date20200106_rate141.png" width="700" height="500">
+  </image>
+  <image id="876" name="code7963_date20200108_rate154.png" width="700" height="500">
+  </image>
+  <image id="877" name="code7963_date20200121_rate177.png" width="700" height="500">
+  </image>
+  <image id="878" name="code7980_date20200106_rate161.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="879" name="code7980_date20200108_rate190.png" width="700" height="500">
+  </image>
+  <image id="880" name="code7980_date20200121_rate164.png" width="700" height="500">
+  </image>
+  <image id="881" name="code7985_date20160923_rate144.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="882" name="code7992_date20210203_rate186.png" width="700" height="500">
+  </image>
+  <image id="883" name="code7997_date20150311_rate145.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="884" name="code8023_date20170913_rate157.png" width="700" height="500">
+  </image>
+  <image id="885" name="code8023_date20170928_rate176.png" width="700" height="500">
+  </image>
+  <image id="886" name="code8029_date20170802_rate141.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="887" name="code8040_date20210526_rate212.png" width="700" height="500">
+  </image>
+  <image id="888" name="code8040_date20210527_rate211.png" width="700" height="500">
+  </image>
+  <image id="889" name="code8057_date20191125_rate147.png" width="700" height="500">
+  </image>
+  <image id="890" name="code8105_date20150615_rate140.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="891" name="code8107_date20190405_rate143.png" width="700" height="500">
+  </image>
+  <image id="892" name="code8139_date20211116_rate170.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="893" name="code8143_date20170711_rate157.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="894" name="code8152_date20140917_rate145.png" width="700" height="500">
+  </image>
+  <image id="895" name="code8167_date20200420_rate141.png" width="700" height="500">
+  </image>
+  <image id="896" name="code8203_date20150618_rate147.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="897" name="code8225_date20141212_rate146.png" width="700" height="500">
+  </image>
+  <image id="898" name="code8226_date20140602_rate149.png" width="700" height="500">
+  </image>
+  <image id="899" name="code8226_date20200106_rate141.png" width="700" height="500">
+  </image>
+  <image id="900" name="code8226_date20211101_rate153.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="901" name="code8247_date20141218_rate159.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="902" name="code8254_date20150218_rate140.png" width="700" height="500">
+  </image>
+  <image id="903" name="code8260_date20150618_rate152.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="904" name="code8260_date20210914_rate186.png" width="700" height="500">
+  </image>
+  <image id="905" name="code8260_date20210917_rate156.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="906" name="code8260_date20211130_rate146.png" width="700" height="500">
+  </image>
+  <image id="907" name="code8462_date20150106_rate178.png" width="700" height="500">
+  </image>
+  <image id="908" name="code8462_date20150120_rate212.png" width="700" height="500">
+  </image>
+  <image id="909" name="code8462_date20151110_rate147.png" width="700" height="500">
+  </image>
+  <image id="910" name="code8508_date20210507_rate142.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="911" name="code8518_date20160520_rate152.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="912" name="code8518_date20161124_rate183.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="913" name="code8518_date20161125_rate145.png" width="700" height="500">
+  </image>
+  <image id="914" name="code8518_date20190620_rate165.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="915" name="code8704_date20141121_rate204.png" width="700" height="500">
+  </image>
+  <image id="916" name="code8704_date20151217_rate239.png" width="700" height="500">
+  </image>
+  <image id="917" name="code8704_date20160225_rate176.png" width="700" height="500">
+  </image>
+  <image id="918" name="code8704_date20170622_rate157.png" width="700" height="500">
+  </image>
+  <image id="919" name="code8705_date20180522_rate196.png" width="700" height="500">
+  </image>
+  <image id="920" name="code8705_date20180525_rate168.png" width="700" height="500">
+  </image>
+  <image id="921" name="code8732_date20160224_rate251.png" width="700" height="500">
+  </image>
+  <image id="922" name="code8732_date20160225_rate225.png" width="700" height="500">
+  </image>
+  <image id="923" name="code8732_date20160226_rate217.png" width="700" height="500">
+  </image>
+  <image id="924" name="code8739_date20150722_rate150.png" width="700" height="500">
+  </image>
+  <image id="925" name="code8739_date20150723_rate140.png" width="700" height="500">
+  </image>
+  <image id="926" name="code8746_date20220224_rate149.png" width="700" height="500">
+  </image>
+  <image id="927" name="code8789_date20141126_rate210.png" width="700" height="500">
+  </image>
+  <image id="928" name="code8789_date20141127_rate179.png" width="700" height="500">
+  </image>
+  <image id="929" name="code8836_date20160201_rate160.png" width="700" height="500">
+  </image>
+  <image id="930" name="code8836_date20191029_rate190.png" width="700" height="500">
+  </image>
+  <image id="931" name="code8889_date20151117_rate149.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="932" name="code8894_date20150115_rate180.png" width="700" height="500">
+  </image>
+  <image id="933" name="code8894_date20150127_rate148.png" width="700" height="500">
+  </image>
+  <image id="934" name="code8894_date20191029_rate291.png" width="700" height="500">
+  </image>
+  <image id="935" name="code8894_date20191105_rate209.png" width="700" height="500">
+  </image>
+  <image id="936" name="code8912_date20171113_rate142.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="937" name="code8918_date20141230_rate156.png" width="700" height="500">
+  </image>
+  <image id="938" name="code9057_date20200414_rate140.png" width="700" height="500">
+  </image>
+  <image id="939" name="code9115_date20150721_rate146.png" width="700" height="500">
+  </image>
+  <image id="940" name="code9127_date20160905_rate146.png" width="700" height="500">
+  </image>
+  <image id="941" name="code9127_date20171010_rate155.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="942" name="code9127_date20171011_rate143.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="943" name="code9127_date20210802_rate322.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="944" name="code9127_date20210803_rate317.png" width="700" height="500">
+  </image>
+  <image id="945" name="code9204_date20141210_rate167.png" width="700" height="500">
+  </image>
+  <image id="946" name="code9233_date20170706_rate221.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="947" name="code9250_date20220301_rate175.png" width="700" height="500">
+  </image>
+  <image id="948" name="code9265_date20191226_rate161.png" width="700" height="500">
+  </image>
+  <image id="949" name="code9270_date20201005_rate155.png" width="700" height="500">
+  </image>
+  <image id="950" name="code9308_date20210729_rate170.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="951" name="code9308_date20210803_rate145.png" width="700" height="500">
+  </image>
+  <image id="952" name="code9353_date20160930_rate185.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="953" name="code9353_date20161003_rate165.png" width="700" height="500">
+  </image>
+  <image id="954" name="code9360_date20150420_rate176.png" width="700" height="500">
+  </image>
+  <image id="955" name="code9362_date20180605_rate141.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="956" name="code9362_date20210805_rate158.png" width="700" height="500">
+  </image>
+  <image id="957" name="code9385_date20150914_rate143.png" width="700" height="500">
+  </image>
+  <image id="958" name="code9417_date20151016_rate144.png" width="700" height="500">
+  </image>
+  <image id="959" name="code9419_date20140626_rate148.png" width="700" height="500">
+  </image>
+  <image id="960" name="code9421_date20141106_rate321.png" width="700" height="500">
+  </image>
+  <image id="961" name="code9421_date20150212_rate152.png" width="700" height="500">
+  </image>
+  <image id="962" name="code9423_date20140730_rate156.png" width="700" height="500">
+  </image>
+  <image id="963" name="code9424_date20190529_rate150.png" width="700" height="500">
+  </image>
+  <image id="964" name="code9425_date20200821_rate190.png" width="700" height="500">
+  </image>
+  <image id="965" name="code9425_date20200831_rate151.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="966" name="code9439_date20220401_rate157.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="967" name="code9478_date20140902_rate197.png" width="700" height="500">
+  </image>
+  <image id="968" name="code9479_date20150325_rate166.png" width="700" height="500">
+  </image>
+  <image id="969" name="code9610_date20150727_rate149.png" width="700" height="500">
+  </image>
+  <image id="970" name="code9610_date20201222_rate276.png" width="700" height="500">
+  </image>
+  <image id="971" name="code9610_date20201224_rate227.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="972" name="code9625_date20220310_rate158.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="973" name="code9633_date20161114_rate168.png" width="700" height="500">
+  </image>
+  <image id="974" name="code9685_date20181112_rate185.png" width="700" height="500">
+  </image>
+  <image id="975" name="code9704_date20220302_rate145.png" width="700" height="500">
+  </image>
+  <image id="976" name="code9753_date20171227_rate156.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="977" name="code9790_date20140808_rate144.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="978" name="code9812_date20210408_rate144.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="979" name="code9816_date20140730_rate155.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="980" name="code9816_date20140804_rate167.png" width="700" height="500">
+  </image>
+  <image id="981" name="code9816_date20200722_rate142.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="982" name="code9818_date20210816_rate163.png" width="700" height="500">
+  </image>
+  <image id="983" name="code9820_date20180718_rate144.png" width="700" height="500">
+  </image>
+  <image id="984" name="code9820_date20180808_rate295.png" width="700" height="500">
+  </image>
+  <image id="985" name="code9827_date20150218_rate179.png" width="700" height="500">
+  </image>
+  <image id="986" name="code9827_date20150223_rate162.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="987" name="code9827_date20150224_rate156.png" width="700" height="500">
+  </image>
+  <image id="988" name="code9827_date20180313_rate145.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="989" name="code9835_date20170105_rate141.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="990" name="code9867_date20191223_rate395.png" width="700" height="500">
+  </image>
+  <image id="991" name="code9867_date20191230_rate172.png" width="700" height="500">
+  </image>
+  <image id="992" name="code9876_date20200525_rate145.png" width="700" height="500">
+  </image>
+  <image id="993" name="code9878_date20201012_rate188.png" width="700" height="500">
+  </image>
+  <image id="994" name="code9878_date20201016_rate175.png" width="700" height="500">
+  </image>
+  <image id="995" name="code9895_date20140827_rate144.png" width="700" height="500">
+  </image>
+  <image id="996" name="code9895_date20150108_rate144.png" width="700" height="500">
+  </image>
+  <image id="997" name="code9904_date20180508_rate162.png" width="700" height="500">
+  </image>
+  <image id="998" name="code9908_date20140903_rate161.png" width="700" height="500">
+  </image>
+  <image id="999" name="code9908_date20140912_rate163.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="1000" name="code9908_date20140916_rate154.png" width="700" height="500">
+  </image>
+  <image id="1001" name="code9941_date20150612_rate144.png" width="700" height="500">
+  </image>
+  <image id="1002" name="code9941_date20211227_rate218.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="1003" name="code9969_date20190109_rate146.png" width="700" height="500">
+  </image>
+  <image id="1004" name="code9969_date20191023_rate160.png" width="700" height="500">
+  </image>
+  <image id="1005" name="code9969_date20191025_rate150.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="1006" name="code9973_date20200511_rate143.png" width="700" height="500">
+  </image>
+  <image id="1007" name="code9973_date20200624_rate214.png" width="700" height="500">
+  </image>
+  <image id="1008" name="code9973_date20200625_rate176.png" width="700" height="500">
+  </image>
+  <image id="1009" name="code9978_date20141002_rate198.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="1010" name="code9978_date20150817_rate142.png" width="700" height="500">
+  </image>
+  <image id="1011" name="code9978_date20150821_rate149.png" width="700" height="500">
+  </image>
+  <image id="1012" name="code9980_date20160414_rate193.png" width="700" height="500">
+    <tag label="proper base" source="manual">
+    </tag>
+  </image>
+  <image id="1013" name="code9980_date20170626_rate149.png" width="700" height="500">
+  </image>
+</annotations>

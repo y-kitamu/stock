@@ -8,11 +8,11 @@ Copyright (c) 2019- Yusuke Kitamura <ymyk6602@gmail.com>
 from pathlib import Path
 from typing import Any
 
-import gnn
 import numpy as np
 from pydantic import BaseModel, field_serializer, field_validator
 
-from ..constants import PROJECT_ROOT, TRAIN_DATA_DIR
+import gnn
+from ...constants import PROJECT_ROOT, TRAIN_DATA_DIR
 
 
 class DataLoader(gnn.dataloader.BaseDataloader):

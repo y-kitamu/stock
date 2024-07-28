@@ -13,11 +13,12 @@
   "train_dataloader_params": {
     "name": "stock_dataloader",
     "params": {
-      "batch_size": 1000,
-      "pos_ratio": 0.3,
-      "filepath": "data/train/20240714.npz",
-      "tp_thresh": 20,
-      "tn_thresh": 10
+      "batch_size": 200,
+      "pos_ratio": 0.5,
+      "filepath": "data/train/20240724.npz",
+      "tp_thresh": 120,
+      "tn_thresh": 110,
+      "train_step_factor": 100
     }
   },
   "test_dataloader_params": {
@@ -25,9 +26,9 @@
     "params": {
       "batch_size": 1000,
       "pos_ratio": 0.3,
-      "filepath": "data/train/20240714.npz",
-      "tp_thresh": 20,
-      "tn_thresh": 10
+      "filepath": "data/train/20240720.npz",
+      "tp_thresh": 120,
+      "tn_thresh": 110
     }
   },
   "optimizer_params": {

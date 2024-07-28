@@ -5,10 +5,11 @@ Create Date : 2024-07-15 18:54:15
 Copyright (c) 2019- Yusuke Kitamura <ymyk6602@gmail.com>
 """
 
-import gnn
 import keras
 import tensorflow as tf
 from pydantic import BaseModel
+
+import gnn
 
 
 class Network(gnn.layers.BaseNetwork):
@@ -30,3 +31,16 @@ class Network(gnn.layers.BaseNetwork):
         for layer in self.layers:
             x = layer(x)
         return {"y_pred": x}
+
+
+class Network2D(gnn.layers.BaseNetwork):
+    class Params(BaseModel):
+        num_base_filter: int = 32
+        num_pools: int = 3
+        convs_per_pool: int = 2
+        num_classes: int = 1
+
+    def __init__(self, params: Params):
+        super().__init__()
+        self.params = params
+        self.layers = []
