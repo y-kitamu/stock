@@ -1,6 +1,7 @@
 """
 """
 
+import random
 from pathlib import Path
 from typing import Any, List
 
@@ -55,7 +56,7 @@ class ImageDataloader(gnn.dataloader.BaseDataloader):
 
     class DataSchema(BaseModel):
         image_path: Path
-        label: int
+        label: int  # 0 : negative, 1 : positive
 
         @classmethod
         def load_json(cls, filepath):
@@ -90,17 +91,19 @@ class ImageDataloader(gnn.dataloader.BaseDataloader):
 
         @field_serializer("dataset_json_path")
         def _serialize_filepath(self, value: Path, _) -> str:
-            return value.relative_to(PROJECT_ROOT).as_posix()
+            if value.is_relative_to(PROJECT_ROOT):
+                return value.relative_to(PROJECT_ROOT).as_posix()
+            return value.as_posix()
 
     def __init__(self, params: Params, is_train: bool):
-        self._params = params
+        self.params = params
         self.is_train = is_train
-        dataset = self.Dataset.load_json(self._params.dataset_json_path)
+        dataset = self.Dataset.load_json(self.params.dataset_json_path)
         data_list = dataset.train if is_train else dataset.valid
         self.data_schema = self._load_and_validate_dataset(data_list)
 
     def _load_and_validate_dataset(self, data_list: List[List[Path]]) -> List[List[DataSchema]]:
-        assert len(data_list) == len(self._params.ratio_per_group)
+        assert len(data_list) == len(self.params.ratio_per_group)
         for group in data_list:
             for data in group:
                 assert data.exists()
@@ -112,32 +115,32 @@ class ImageDataloader(gnn.dataloader.BaseDataloader):
     def steps_per_epoch(self):
         return max(
             [
-                int(len(group) / (rate * self._params.batch_size))
-                for rate, group in zip(self._params.ratio_per_group, self.data_schema)
+                int(len(group) / (rate * self.params.batch_size))
+                for rate, group in zip(self.params.ratio_per_group, self.data_schema)
             ]
         )
 
     def get_next(self) -> dict[str, Any]:
         """ """
         ratio_per_group = [
-            rate / sum(self._params.ratio_per_group) for rate in self._params.ratio_per_group
+            rate / sum(self.params.ratio_per_group) for rate in self.params.ratio_per_group
         ]
-        base_sample_per_group = [self._params.batch_size * rate for rate in ratio_per_group]
+        base_sample_per_group = [self.params.batch_size * rate for rate in ratio_per_group]
         sample_per_group = [int(n) for n in base_sample_per_group]
         residual = self.params.batch_size - sum(sample_per_group)
         res_rate = [f - i for i, f in zip(sample_per_group, base_sample_per_group)]
-        indices = np.random.choice([i for i in range(len(res_rate))], size=residual, p=res_rate)
-        for i in indices:
-            sample_per_group[i] += 1
+        if sum(res_rate) > 0.5:
+            res_rate = [r / sum(res_rate) for r in res_rate]
+            indices = np.random.choice([i for i in range(len(res_rate))], size=residual, p=res_rate)
+            for i in indices:
+                sample_per_group[i] += 1
 
-        sample = (
-            [
-                s
-                for num_sample, group in zip(sample_per_group, self.data_schema)
-                for s in np.random.choice(group, size=num_sample)
-            ],
-        )
+        sample = [
+            s
+            for num_sample, group in zip(sample_per_group, self.data_schema)
+            for s in random.sample(group, num_sample)
+        ]
         image = (np.stack([cv2.imread(s.image_path) for s in sample]) / 255.0).astype(np.float32)
-        mat = np.identity(self._params.num_class)
+        mat = np.identity(self.params.num_class)
         label = np.stack([mat[s.label] for s in sample]).astype(np.float32)
         return {"input": image, "y_true": label}

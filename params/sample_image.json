@@ -1,0 +1,50 @@
+{
+  "epochs": 5,
+  "pretrain_model_dir": null,
+  "network_params": {
+    "name": "resnet50",
+    "params": {
+      "include_top": true,
+      "weights": null,
+      "input_tensor": null,
+      "input_shape": [196, 196, 3],
+      "pooling": null,
+      "classes": 2,
+      "classifier_activation": "softmax",
+      "name": "resnet50"
+    }
+  },
+  "train_dataloader_params": {
+    "name": "stock_image_dataloader",
+    "params": {
+      "batch_size": 32,
+      "dataset_json_path": "data/train/20240727/dataset.json",
+      "ratio_per_group": [1, 1],
+      "num_class": 2
+    }
+  },
+  "test_dataloader_params": {
+    "name": "stock_image_dataloader",
+    "params": {
+      "batch_size": 32,
+      "dataset_json_path": "data/train/20240727/dataset.json",
+      "ratio_per_group": [1],
+      "num_class": 2
+    }
+  },
+  "optimizer_params": {
+    "name": "adam",
+    "params": {
+      "learning_rate": 0.001
+    }
+  },
+  "loss_params": {
+    "name": "cce",
+    "params": {
+      "from_logits": true
+    }
+  },
+  "network_input_keys": ["input"],
+  "loss_input_keys": ["y_true", "y_pred"],
+  "loss_target_keys": ["loss"]
+}

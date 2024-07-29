@@ -7,11 +7,9 @@ Copyright (c) 2019- Yusuke Kitamura <ymyk6602@gmail.com>
 
 try:
     import gnn
-
-    from .dataloader import DataLoader
+    from . import dataloader
     from .network import Network
 
-    gnn.dataloader.dataloader_list["stock_dataloader"] = DataLoader
     gnn.layers.network_list["stock_network"] = Network
 except:
     print("Failed to load gnn module.")
