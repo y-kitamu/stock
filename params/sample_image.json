@@ -41,7 +41,8 @@
   "loss_params": {
     "name": "cce",
     "params": {
-      "from_logits": true
+      "from_logits": true,
+      "num_class": 2
     }
   },
   "network_input_keys": ["input"],
