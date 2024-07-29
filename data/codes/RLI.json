@@ -1,7 +1,7 @@
 {
     "2023-06-30": {
         "Tax Effect Of Unusual Items": 0.0,
-        "Tax Rate For Calcs": 0.191,
+        "Tax Rate For Calcs": 0.191386,
         "Net Income From Continuing Operation Net Minority Interest": 77652000.0,
         "EBIT": 98078000.0,
         "Net Interest Income": -2047000.0,
@@ -10,9 +10,9 @@
         "Net Income From Continuing And Discontinued Operation": 77652000.0,
         "Total Expenses": 285831000.0,
         "Diluted Average Shares": 46044000.0,
-        "Basic Average Shares": 45591000.0,
+        "Basic Average Shares": 45596196.0,
         "Diluted EPS": 1.69,
-        "Basic EPS": 1.7,
+        "Basic EPS": 1.703037,
         "Diluted NI Availto Com Stockholders": 77652000.0,
         "Net Income Common Stockholders": 77652000.0,
         "Net Income": 77652000.0,
@@ -26,7 +26,9 @@
         "General And Administrative Expense": 4219000.0,
         "Other Gand A": 4219000.0,
         "Total Revenue": 381862000.0,
-        "Operating Revenue": 381862000.0
+        "Operating Revenue": 381862000.0,
+        "Loss Adjustment Expense": 178453000.0,
+        "Net Policyholder Benefits And Claims": 178453000.0
     },
     "2023-03-31": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -55,7 +57,9 @@
         "General And Administrative Expense": 4214000.0,
         "Other Gand A": 4214000.0,
         "Total Revenue": 364923000.0,
-        "Operating Revenue": 364923000.0
+        "Operating Revenue": 364923000.0,
+        "Loss Adjustment Expense": 138389000.0,
+        "Net Policyholder Benefits And Claims": 138389000.0
     },
     "2022-12-31": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -579,9 +583,9 @@
         "Net Income From Continuing And Discontinued Operation": 13536000.0,
         "Total Expenses": 316675000.0,
         "Diluted Average Shares": 46065000.0,
-        "Basic Average Shares": 45622000.0,
+        "Basic Average Shares": 45625771.0,
         "Diluted EPS": 0.29,
-        "Basic EPS": 0.3,
+        "Basic EPS": 0.296674,
         "Diluted NI Availto Com Stockholders": 13536000.0,
         "Net Income Common Stockholders": 13536000.0,
         "Net Income": 13536000.0,
@@ -595,7 +599,9 @@
         "General And Administrative Expense": 2372000.0,
         "Other Gand A": 2372000.0,
         "Total Revenue": 331694000.0,
-        "Operating Revenue": 331694000.0
+        "Operating Revenue": 331694000.0,
+        "Loss Adjustment Expense": 211149000.0,
+        "Net Policyholder Benefits And Claims": 211149000.0
     },
     "2023-12-31": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -624,7 +630,9 @@
         "General And Administrative Expense": 5112000.0,
         "Other Gand A": 5112000.0,
         "Total Revenue": 445372000.0,
-        "Operating Revenue": 445372000.0
+        "Operating Revenue": 445372000.0,
+        "Loss Adjustment Expense": 174805000.0,
+        "Net Policyholder Benefits And Claims": 174805000.0
     },
     "2024-03-31": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -653,6 +661,39 @@
         "General And Administrative Expense": 5010000.0,
         "Other Gand A": 5010000.0,
         "Total Revenue": 444831000.0,
-        "Operating Revenue": 444831000.0
+        "Operating Revenue": 444831000.0,
+        "Loss Adjustment Expense": 172527000.0,
+        "Net Policyholder Benefits And Claims": 172527000.0
+    },
+    "2024-06-30": {
+        "Tax Effect Of Unusual Items": 0.0,
+        "Tax Rate For Calcs": 0.206296,
+        "Net Income From Continuing Operation Net Minority Interest": 81992000.0,
+        "EBIT": 104907000.0,
+        "Net Interest Income": -1604000.0,
+        "Interest Expense": 1604000.0,
+        "Normalized Income": 81992000.0,
+        "Net Income From Continuing And Discontinued Operation": 81992000.0,
+        "Total Expenses": 313139000.0,
+        "Diluted Average Shares": 46179000.0,
+        "Basic Average Shares": 45737000.0,
+        "Diluted EPS": 1.78,
+        "Basic EPS": 1.79,
+        "Diluted NI Availto Com Stockholders": 81992000.0,
+        "Net Income Common Stockholders": 81992000.0,
+        "Net Income": 81992000.0,
+        "Net Income Including Noncontrolling Interests": 81992000.0,
+        "Net Income Continuous Operations": 81992000.0,
+        "Tax Provision": 21311000.0,
+        "Pretax Income": 103303000.0,
+        "Net Non Operating Interest Income Expense": -1604000.0,
+        "Interest Expense Non Operating": 1604000.0,
+        "Selling General And Administration": 4140000.0,
+        "General And Administrative Expense": 4140000.0,
+        "Other Gand A": 4140000.0,
+        "Total Revenue": 416442000.0,
+        "Operating Revenue": 416442000.0,
+        "Loss Adjustment Expense": 195120000.0,
+        "Net Policyholder Benefits And Claims": 195120000.0
     }
 }

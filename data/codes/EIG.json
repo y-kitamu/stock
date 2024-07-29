@@ -26,7 +26,9 @@
         "Interest Expense Non Operating": 1900000.0,
         "Other Operating Expenses": 9400000.0,
         "Total Revenue": 215200000.0,
-        "Operating Revenue": 215200000.0
+        "Operating Revenue": 215200000.0,
+        "Loss Adjustment Expense": 90500000.0,
+        "Net Policyholder Benefits And Claims": 90500000.0
     },
     "2023-03-31": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -55,7 +57,9 @@
         "Interest Expense Non Operating": 2300000.0,
         "Other Operating Expenses": NaN,
         "Total Revenue": 206500000.0,
-        "Operating Revenue": 206500000.0
+        "Operating Revenue": 206500000.0,
+        "Loss Adjustment Expense": 107400000.0,
+        "Net Policyholder Benefits And Claims": 107400000.0
     },
     "2022-12-31": {
         "Tax Effect Of Unusual Items": NaN,
@@ -84,7 +88,9 @@
         "Interest Expense Non Operating": NaN,
         "Other Operating Expenses": NaN,
         "Total Revenue": NaN,
-        "Operating Revenue": NaN
+        "Operating Revenue": NaN,
+        "Loss Adjustment Expense": NaN,
+        "Net Policyholder Benefits And Claims": NaN
     },
     "2022-09-30": {
         "Tax Effect Of Unusual Items": NaN,
@@ -595,7 +601,9 @@
         "Interest Expense Non Operating": 1000000.0,
         "Other Operating Expenses": NaN,
         "Total Revenue": 203500000.0,
-        "Operating Revenue": 203500000.0
+        "Operating Revenue": 203500000.0,
+        "Loss Adjustment Expense": 114900000.0,
+        "Net Policyholder Benefits And Claims": 114900000.0
     },
     "2023-12-31": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -624,7 +632,9 @@
         "Interest Expense Non Operating": 600000.0,
         "Other Operating Expenses": 1600000.0,
         "Total Revenue": 225700000.0,
-        "Operating Revenue": 225700000.0
+        "Operating Revenue": 225700000.0,
+        "Loss Adjustment Expense": 92900000.0,
+        "Net Policyholder Benefits And Claims": 92900000.0
     },
     "2024-03-31": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -653,6 +663,8 @@
         "Interest Expense Non Operating": 0.0,
         "Other Operating Expenses": NaN,
         "Total Revenue": 223100000.0,
-        "Operating Revenue": 223100000.0
+        "Operating Revenue": 223100000.0,
+        "Loss Adjustment Expense": 116500000.0,
+        "Net Policyholder Benefits And Claims": 116500000.0
     }
 }

@@ -35,7 +35,9 @@
         "General And Administrative Expense": 82000000.0,
         "Salaries And Wages": 82000000.0,
         "Total Revenue": 230000000.0,
-        "Operating Revenue": 230000000.0
+        "Operating Revenue": 230000000.0,
+        "Loss Adjustment Expense": 4000000.0,
+        "Net Policyholder Benefits And Claims": 4000000.0
     },
     "2022-12-31": {
         "Tax Effect Of Unusual Items": NaN,
@@ -73,7 +75,9 @@
         "General And Administrative Expense": NaN,
         "Salaries And Wages": NaN,
         "Total Revenue": NaN,
-        "Operating Revenue": NaN
+        "Operating Revenue": NaN,
+        "Loss Adjustment Expense": NaN,
+        "Net Policyholder Benefits And Claims": NaN
     },
     "2022-09-30": {
         "Tax Effect Of Unusual Items": NaN,
@@ -610,7 +614,9 @@
         "General And Administrative Expense": 70000000.0,
         "Salaries And Wages": 70000000.0,
         "Total Revenue": 357000000.0,
-        "Operating Revenue": 357000000.0
+        "Operating Revenue": 357000000.0,
+        "Loss Adjustment Expense": 55000000.0,
+        "Net Policyholder Benefits And Claims": 55000000.0
     },
     "2023-09-30": {
         "Tax Effect Of Unusual Items": 54570000.0,
@@ -648,7 +654,9 @@
         "General And Administrative Expense": 47000000.0,
         "Salaries And Wages": 47000000.0,
         "Total Revenue": 146000000.0,
-        "Operating Revenue": 146000000.0
+        "Operating Revenue": 146000000.0,
+        "Loss Adjustment Expense": 100000000.0,
+        "Net Policyholder Benefits And Claims": 100000000.0
     },
     "2023-12-31": {
         "Tax Effect Of Unusual Items": 1470000.0,
@@ -686,7 +694,9 @@
         "General And Administrative Expense": 52000000.0,
         "Salaries And Wages": 52000000.0,
         "Total Revenue": 282000000.0,
-        "Operating Revenue": 282000000.0
+        "Operating Revenue": 282000000.0,
+        "Loss Adjustment Expense": 3000000.0,
+        "Net Policyholder Benefits And Claims": 3000000.0
     },
     "2024-03-31": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -724,6 +734,8 @@
         "General And Administrative Expense": 58000000.0,
         "Salaries And Wages": 58000000.0,
         "Total Revenue": 226000000.0,
-        "Operating Revenue": 226000000.0
+        "Operating Revenue": 226000000.0,
+        "Loss Adjustment Expense": -1000000.0,
+        "Net Policyholder Benefits And Claims": -1000000.0
     }
 }

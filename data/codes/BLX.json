@@ -13,8 +13,8 @@
         "Net Income From Continuing And Discontinued Operation": 37066000.0,
         "Diluted Average Shares": 36492000.0,
         "Basic Average Shares": 36492000.0,
-        "Diluted EPS": 1.02,
-        "Basic EPS": 1.02,
+        "Diluted EPS": 1.015729,
+        "Basic EPS": 1.015729,
         "Diluted NI Availto Com Stockholders": 37066000.0,
         "Net Income Common Stockholders": 37066000.0,
         "Net Income": 37066000.0,
@@ -31,7 +31,8 @@
         "General And Administrative Expense": 9862000.0,
         "Salaries And Wages": 9862000.0,
         "Total Revenue": 57380000.0,
-        "Operating Revenue": 57380000.0
+        "Operating Revenue": 57380000.0,
+        "Other Non Interest Expense": 5019000.0
     },
     "2023-03-31": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -65,7 +66,8 @@
         "General And Administrative Expense": 9736000.0,
         "Salaries And Wages": 9736000.0,
         "Total Revenue": 59175000.0,
-        "Operating Revenue": 59175000.0
+        "Operating Revenue": 59175000.0,
+        "Other Non Interest Expense": 5419000.0
     },
     "2022-12-31": {
         "Tax Effect Of Unusual Items": NaN,
@@ -99,7 +101,8 @@
         "General And Administrative Expense": NaN,
         "Salaries And Wages": NaN,
         "Total Revenue": NaN,
-        "Operating Revenue": NaN
+        "Operating Revenue": NaN,
+        "Other Non Interest Expense": NaN
     },
     "2022-09-30": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -625,11 +628,12 @@
         "General And Administrative Expense": 14183000.0,
         "Salaries And Wages": 14183000.0,
         "Total Revenue": 71777000.0,
-        "Operating Revenue": 71777000.0
+        "Operating Revenue": 71777000.0,
+        "Other Non Interest Expense": 4558000.0
     },
     "2024-03-31": {
         "Tax Effect Of Unusual Items": 0.0,
-        "Tax Rate For Calcs": 0.4,
+        "Tax Rate For Calcs": 0.21,
         "Total Unusual Items": NaN,
         "Total Unusual Items Excluding Goodwill": NaN,
         "Net Income From Continuing Operation Net Minority Interest": 51268000.0,
@@ -659,7 +663,8 @@
         "General And Administrative Expense": 11670000.0,
         "Salaries And Wages": 11670000.0,
         "Total Revenue": 72588000.0,
-        "Operating Revenue": 72588000.0
+        "Operating Revenue": 72588000.0,
+        "Other Non Interest Expense": 5803000.0
     },
     "2023-12-31": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -693,6 +698,42 @@
         "General And Administrative Expense": 25968000.0,
         "Salaries And Wages": 14381000.0,
         "Total Revenue": 49003000.0,
-        "Operating Revenue": 49003000.0
+        "Operating Revenue": 49003000.0,
+        "Other Non Interest Expense": -13196000.0
+    },
+    "2024-06-30": {
+        "Tax Effect Of Unusual Items": 0.0,
+        "Tax Rate For Calcs": 0.21,
+        "Total Unusual Items": NaN,
+        "Total Unusual Items Excluding Goodwill": NaN,
+        "Net Income From Continuing Operation Net Minority Interest": 50122000.0,
+        "Reconciled Depreciation": 841000.0,
+        "Net Interest Income": 62759000.0,
+        "Interest Expense": 132614000.0,
+        "Interest Income": 195373000.0,
+        "Normalized Income": 50122000.0,
+        "Net Income From Continuing And Discontinued Operation": 50122000.0,
+        "Diluted Average Shares": 36775000.0,
+        "Basic Average Shares": 36775000.0,
+        "Diluted EPS": 1.36,
+        "Basic EPS": 1.362937,
+        "Diluted NI Availto Com Stockholders": 50122000.0,
+        "Net Income Common Stockholders": 50122000.0,
+        "Net Income": 50122000.0,
+        "Net Income Including Noncontrolling Interests": 50122000.0,
+        "Net Income Continuous Operations": 50122000.0,
+        "Pretax Income": 50122000.0,
+        "Gain On Sale Of Security": -351000.0,
+        "Depreciation Amortization Depletion Income Statement": 841000.0,
+        "Depreciation And Amortization In Income Statement": 841000.0,
+        "Amortization": 250000.0,
+        "Amortization Of Intangibles Income Statement": 250000.0,
+        "Depreciation Income Statement": 591000.0,
+        "Selling General And Administration": 11761000.0,
+        "General And Administrative Expense": 11761000.0,
+        "Salaries And Wages": 11761000.0,
+        "Total Revenue": 75040000.0,
+        "Operating Revenue": 75040000.0,
+        "Other Non Interest Expense": 5632000.0
     }
 }

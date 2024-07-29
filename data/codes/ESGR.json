@@ -34,7 +34,9 @@
         "General And Administrative Expense": 89000000.0,
         "Other Gand A": 89000000.0,
         "Total Revenue": 358000000.0,
-        "Operating Revenue": 358000000.0
+        "Operating Revenue": 358000000.0,
+        "Loss Adjustment Expense": NaN,
+        "Net Policyholder Benefits And Claims": NaN
     },
     "2022-12-31": {
         "Tax Effect Of Unusual Items": NaN,
@@ -71,7 +73,9 @@
         "General And Administrative Expense": NaN,
         "Other Gand A": NaN,
         "Total Revenue": NaN,
-        "Operating Revenue": NaN
+        "Operating Revenue": NaN,
+        "Loss Adjustment Expense": -416000000.0,
+        "Net Policyholder Benefits And Claims": -416000000.0
     },
     "2022-09-30": {
         "Tax Effect Of Unusual Items": NaN,
@@ -184,7 +188,9 @@
         "General And Administrative Expense": 85000000.0,
         "Other Gand A": 85000000.0,
         "Total Revenue": 147000000.0,
-        "Operating Revenue": 147000000.0
+        "Operating Revenue": 147000000.0,
+        "Loss Adjustment Expense": -7000000.0,
+        "Net Policyholder Benefits And Claims": -7000000.0
     },
     "2022-03-31": {
         "Diluted EPS": -15.19,
@@ -645,7 +651,9 @@
         "General And Administrative Expense": 91000000.0,
         "Other Gand A": 91000000.0,
         "Total Revenue": 186000000.0,
-        "Operating Revenue": 186000000.0
+        "Operating Revenue": 186000000.0,
+        "Loss Adjustment Expense": -10000000.0,
+        "Net Policyholder Benefits And Claims": -10000000.0
     },
     "2023-12-31": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -682,7 +690,9 @@
         "General And Administrative Expense": 104000000.0,
         "Other Gand A": 104000000.0,
         "Total Revenue": 462000000.0,
-        "Operating Revenue": 462000000.0
+        "Operating Revenue": 462000000.0,
+        "Loss Adjustment Expense": -84000000.0,
+        "Net Policyholder Benefits And Claims": -84000000.0
     },
     "2024-03-31": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -719,6 +729,8 @@
         "General And Administrative Expense": 87000000.0,
         "Other Gand A": 87000000.0,
         "Total Revenue": 259000000.0,
-        "Operating Revenue": 259000000.0
+        "Operating Revenue": 259000000.0,
+        "Loss Adjustment Expense": -19000000.0,
+        "Net Policyholder Benefits And Claims": -19000000.0
     }
 }

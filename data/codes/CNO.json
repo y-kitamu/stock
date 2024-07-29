@@ -27,7 +27,9 @@
         "Depreciation And Amortization In Income Statement": 56000000.0,
         "Amortization": 56000000.0,
         "Total Revenue": 1022800000.0,
-        "Operating Revenue": 1022800000.0
+        "Operating Revenue": 1022800000.0,
+        "Loss Adjustment Expense": 556600000.0,
+        "Net Policyholder Benefits And Claims": 556600000.0
     },
     "2023-03-31": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -57,7 +59,9 @@
         "Depreciation And Amortization In Income Statement": 55500000.0,
         "Amortization": 55500000.0,
         "Total Revenue": 1006000000.0,
-        "Operating Revenue": 1006000000.0
+        "Operating Revenue": 1006000000.0,
+        "Loss Adjustment Expense": 625100000.0,
+        "Net Policyholder Benefits And Claims": 625100000.0
     },
     "2022-12-31": {
         "Tax Effect Of Unusual Items": NaN,
@@ -87,7 +91,9 @@
         "Depreciation And Amortization In Income Statement": 30100000.0,
         "Amortization": 30100000.0,
         "Total Revenue": NaN,
-        "Operating Revenue": NaN
+        "Operating Revenue": NaN,
+        "Loss Adjustment Expense": NaN,
+        "Net Policyholder Benefits And Claims": NaN
     },
     "2022-09-30": {
         "Tax Effect Of Unusual Items": NaN,
@@ -601,7 +607,9 @@
         "Depreciation And Amortization In Income Statement": NaN,
         "Amortization": NaN,
         "Total Revenue": 947500000.0,
-        "Operating Revenue": 947500000.0
+        "Operating Revenue": 947500000.0,
+        "Loss Adjustment Expense": 365200000.0,
+        "Net Policyholder Benefits And Claims": 365200000.0
     },
     "2023-12-31": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -631,7 +639,9 @@
         "Depreciation And Amortization In Income Statement": NaN,
         "Amortization": NaN,
         "Total Revenue": 1170500000.0,
-        "Operating Revenue": 1170500000.0
+        "Operating Revenue": 1170500000.0,
+        "Loss Adjustment Expense": 728800000.0,
+        "Net Policyholder Benefits And Claims": 728800000.0
     },
     "2024-03-31": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -661,6 +671,8 @@
         "Depreciation And Amortization In Income Statement": NaN,
         "Amortization": NaN,
         "Total Revenue": 1156500000.0,
-        "Operating Revenue": 1156500000.0
+        "Operating Revenue": 1156500000.0,
+        "Loss Adjustment Expense": 611300000.0,
+        "Net Policyholder Benefits And Claims": 611300000.0
     }
 }
