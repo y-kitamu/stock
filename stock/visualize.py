@@ -5,7 +5,9 @@ Create Date : 2024-05-05 10:33:50
 import datetime
 
 import matplotlib.pyplot as plt
+import plotly.graph_objects as go
 import polars as pl
+from plotly.subplots import make_subplots
 
 
 def plot_with_rs(
@@ -25,3 +27,46 @@ def plot_with_rs(
     ax1.tick_params(axis="x", labelrotation=90)
 
     plt.legend()
+
+
+def plot_chart(df: pl.DataFrame, before_days=-1):
+    """plotlyでchartを作成する"""
+    df = df.sort("date")
+    fig = make_subplots(
+        rows=2, cols=1, shared_xaxes=True, vertical_spacing=0.0, row_heights=[0.7, 0.3]
+    )
+    fig.add_trace(
+        go.Candlestick(
+            x=df["date"],
+            open=df["open"],
+            high=df["high"],
+            low=df["low"],
+            close=df["close"],
+            name="candle",
+        ),
+        row=1,
+        col=1,
+    )
+
+    if before_days > 0:  # 売り買いポイント
+        fig.add_trace(
+            go.Scatter(
+                x=df[before_days]["date"],
+                y=df[before_days]["open"],
+                mode="markers",
+                name="buy",
+                marker=dict(size=10, color="blue"),
+            ),
+            row=1,
+            col=1,
+        )
+    # 売買高
+    fig.add_trace(go.Bar(x=df["date"], y=df["volume"], name="volume"), row=2, col=1)
+    # グラフの設定
+    fig.update_layout(
+        xaxis_rangeslider_visible=False,
+        margin=go.layout.Margin(l=5, r=5, t=5, b=5, autoexpand=True),
+    )
+    fig.update_layout(hovermode="x unified")
+    fig.update_xaxes(rangebreaks=[dict(bounds=["sat", "mon"])])  # 土日を除外
+    return fig

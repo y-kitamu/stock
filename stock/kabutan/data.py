@@ -8,10 +8,12 @@ Copyright (c) 2019- Yusuke Kitamura <ymyk6602@gmail.com>
 import datetime
 from typing import Any
 
+import polars as pl
 import requests
 from bs4 import BeautifulSoup
 
 from ..util import convert_to_number
+from .io import read_data_csv, read_financial_csv
 
 
 def get_stock_data(
@@ -44,7 +46,9 @@ def get_stock_data(
     return daily_data
 
 
-def get_market_capitalization(code: str, base_url: str = "https://kabutan.jp/stock/?code={}") -> int:
+def get_market_capitalization(
+    code: str, base_url: str = "https://kabutan.jp/stock/?code={}"
+) -> int:
     res = requests.get(base_url.format(code))
     soup = BeautifulSoup(res.text, features="lxml")
 
@@ -82,3 +86,19 @@ def get_number_of_shares(code: str, base_url: str = "https://kabutan.jp/stock/?c
                 break
 
     return number_of_shares
+
+
+def calc_estimated_capitalization(code, current_date=datetime.date.today()):
+    # eps、純利益から時価総額を計算する
+    fdf = (
+        read_financial_csv(code)
+        .filter((pl.col("duration") == 3) & (pl.col("eps").abs() > 1e-5))
+        .sort(pl.col("annoounce_date"))
+    )
+    df = read_data_csv(code, end_date=current_date).sort(pl.col("date"))
+
+    if len(fdf) == 0:
+        return -1
+    num_stock = fdf["net_income"][-1] * 1000000 / fdf["eps"][-1]
+    est_capit = num_stock * df["close"][-1]
+    return est_capit

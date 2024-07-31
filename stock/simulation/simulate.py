@@ -8,6 +8,7 @@ from typing import Any
 import polars as pl
 from pydantic import BaseModel
 
+from ..algorithm.market import is_limit_high
 from ..constants import PROJECT_ROOT
 from ..kabutan import read_data_csv
 
@@ -64,10 +65,10 @@ class CustomStopCondition(BaseCondition):
         if df["date"][0] - start_date > timedelta(days=10):
             return -1
 
-        if df["high"][1] < df["close"][0]:
+        if is_limit_high(df["close"][0], df["open"][1]):
             return -1
 
-        self.buying_price = max(df["open"][1], df["close"][0])
+        self.buying_price = df["open"][1]
         self.loss_cut_price = self.buying_price * (1 - self.max_loss_rate)
         self.profit_fixed_price = self.buying_price * (1 + self.sell_rate)
         self.buy_date = df["date"][1]
@@ -78,9 +79,7 @@ class CustomStopCondition(BaseCondition):
         # 最大保持日数を超えた場合は売る
         if df["date"][index] - self.buy_date > timedelta(days=self.total_max_days):
             if self.reach_target_price:
-                return (
-                    self.target_selling_price + min(self.loss_cut_price, df["open"][index])
-                ) * 0.5
+                return (self.target_selling_price + min(self.loss_cut_price, df["open"][index])) * 0.5
             return df["open"][index]
 
         # 値上がりも値下がりもせず、一定期間過ぎた場合は売る
@@ -92,16 +91,19 @@ class CustomStopCondition(BaseCondition):
         # 最大損失率を超えた場合は売る
         if df["low"][index] < self.loss_cut_price:
             if self.reach_target_price:
-                return (
-                    self.target_selling_price + min(self.loss_cut_price, df["open"][index])
-                ) * 0.5
+                return (self.target_selling_price + min(self.loss_cut_price, df["open"][index])) * 0.5
             return min(self.loss_cut_price, df["open"][index])
 
         # ここまで値上がりしたら半分売る
         if df["high"][index] > self.profit_fixed_price:
             self.reach_target_price = True
             self.target_selling_price = max(self.profit_fixed_price, df["open"][index])
-            self.loss_cut_price = self.target_selling_price * (1 - self.trailling_stop_rate)
+
+        # 十分値上がりしたらtrailling stop lossを適用
+        if self.reach_target_price:
+            self.loss_cut_price = max(
+                self.loss_cut_price, df["hight"][index] * (1 - self.trailling_stop_rate)
+            )
 
         return -1.0
 
@@ -165,7 +167,7 @@ def run(code: str, start_date: date, condition: BaseCondition) -> SimulationResu
     """ """
     csv_path = PROJECT_ROOT / Path(f"data/daily/{code}.csv")
     df = read_data_csv(csv_path, exclude_none=True)
-    df = df.filter(df["date"] > start_date)
+    df = df.filter(pl.col("date") >= start_date)
     if len(df) == 0:
         return SimulationResult(
             buying_price=-1,
@@ -189,7 +191,7 @@ def run(code: str, start_date: date, condition: BaseCondition) -> SimulationResu
 
     selling_price = -1
     selling_date = df["date"][-1]
-    for i in range(len(df)):
+    for i in range(1, len(df)):
         selling_price = condition.run_simulation(df, i)
         if selling_price > 0:
             selling_date = df["date"][i]
@@ -201,7 +203,7 @@ def run(code: str, start_date: date, condition: BaseCondition) -> SimulationResu
 
     return SimulationResult(
         buying_price=buying_price,
-        buying_date=df["date"][0],
+        buying_date=df["date"][1],
         selling_price=selling_price,
         selling_date=selling_date,
         profit=(selling_price - buying_price) / buying_price,

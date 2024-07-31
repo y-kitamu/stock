@@ -2,4 +2,4 @@
 Author : Yusuke Kitamura
 """
 
-from . import extremal, relative_strength
+from . import extremal, market, relative_strength

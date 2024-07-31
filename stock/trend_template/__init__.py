@@ -57,7 +57,7 @@ def calc_for_watch_list(code, start_date=None, end_date=date.today()):
                 pl.col("watch_list")
                 & (
                     ~pl.col("date").is_between(
-                        announce_date - timedelta(3), announce_date + timedelta(3)
+                        announce_date - timedelta(7), announce_date + timedelta(7)
                     )
                 )
             ).alias("watch_list")
