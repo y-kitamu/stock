@@ -2,7 +2,6 @@
 """
 
 from datetime import date
-from typing import Dict
 
 import polars as pl
 
@@ -17,7 +16,7 @@ def check_growing(
     min_duration: int,
     current_date: date = date.today(),
     num_average: int = 1,
-):
+) -> bool:
     if len(df) < min_duration + num_average:
         return False
     df = df.filter(pl.col("annoounce_date") < current_date).sort(
@@ -57,7 +56,7 @@ def check_growing(
 
 
 def check_fundamental_trend_templates(
-    code: str, current_date=date.today(), results: Dict[str, bool] = {}
+    code: str, current_date: date = date.today(), results: dict[str, bool] = {}
 ):
     """fundamentalのテンプレートをチェックする"""
     csv_path = PROJECT_ROOT / "data" / "financial" / f"{code}.csv"

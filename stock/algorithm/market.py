@@ -1,24 +1,24 @@
-def is_limit_high(prev_close, target):
+def is_limit_high(prev_close: float, target: float) -> bool:
     """ """
     if is_limit(prev_close, target):
         return prev_close < target
     return False
 
 
-def is_limit_low(prev_close, target):
+def is_limit_low(prev_close: float, target: float) -> bool:
     """ """
     if is_limit(prev_close, target):
         return prev_close > target
     return False
 
 
-def is_limit(prev_close, target):
+def is_limit(prev_close: float, target: float) -> bool:
     prev_close, target = int(prev_close), int(target)
     diff = abs(prev_close - target)
-    return diff == get_limit_range(prev_close)
+    return diff == int(get_limit_range(prev_close))
 
 
-def get_limit_range(prev_close):
+def get_limit_range(prev_close: float) -> float:
     if prev_close < 100:
         return 30
     elif prev_close < 200:

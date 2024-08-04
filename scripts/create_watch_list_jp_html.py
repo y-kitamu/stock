@@ -7,36 +7,16 @@ Copyright (c) 2019- Yusuke Kitamura <ymyk6602@gmail.com>
 
 import argparse
 import datetime
-import json
 from pathlib import Path
 
-import numpy as np
 import polars as pl
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 import stock
-from stock.simulation.simulate import CustomStopCondition, OnielStopCondition
-from stock.trend_template import check_growing, get_watch_list_v4
+from stock.simulation import CustomStopCondition
+from stock.watchlist.v1 import get_watch_list
 
-
-def get_success_list(target_date: datetime.date = datetime.date.today()) -> list[str]:
-    """`target_date`から損切りに合わずに利益を出した銘柄のリストを取得する"""
-    code_list = stock.get_code_list()
-    results = get_simulation_results(code_list, target_date)
-    cand_watch_list = [res["code"] for res in results if res["profit"] >= 20]
-    watch_list = []
-    for code in cand_watch_list:
-        df = stock.kabutan.read_data_csv(stock.PROJECT_ROOT / f"data/daily/{code}.csv")
-        df = df.filter(
-            pl.col("date").is_between(target_date - datetime.timedelta(days=30), target_date)
-        )
-        if len(df) > 5 and df["volume"].mean() > 5000:
-            watch_list.append(code)
-    return watch_list
-
-
-def format_number(value):
-    return float("{:.2f}".format(value))
+# from stock.trend_template import check_growing, get_watch_list_v4
 
 
 def load_ticker_data(ticker: str, target_date: datetime.date = datetime.date.today()):
@@ -47,13 +27,14 @@ def load_ticker_data(ticker: str, target_date: datetime.date = datetime.date.tod
         daily_df = df.filter(
             pl.col("date").is_between(target_date - datetime.timedelta(days=365), target_date)
         )
+        base = daily_df["close"][-1]
         daily_data = (
             daily_df.select(
                 pl.col("date").dt.strftime("%Y/%m/%d"),
-                pl.col("open"),
-                pl.col("close"),
-                pl.col("high"),
-                pl.col("low"),
+                pl.col("open") / base,
+                pl.col("close") / base,
+                pl.col("high") / base,
+                pl.col("low") / base,
             )
             .to_numpy()
             .tolist()
@@ -77,10 +58,10 @@ def load_ticker_data(ticker: str, target_date: datetime.date = datetime.date.tod
         weekly_data = (
             weekly_df.select(
                 pl.col("date").dt.strftime("%Y/%m/%d"),
-                pl.col("open"),
-                pl.col("close"),
-                pl.col("high"),
-                pl.col("low"),
+                pl.col("open") / base,
+                pl.col("close") / base,
+                pl.col("high") / base,
+                pl.col("low") / base,
             )
             .to_numpy()
             .tolist()
@@ -104,7 +85,8 @@ def load_ticker_data(ticker: str, target_date: datetime.date = datetime.date.tod
                     "date": date.strftime("%Y/%m/%d"),
                     "price": daily_df.filter(pl.col("date") <= date).sort(pl.col("date"))["close"][
                         -1
-                    ],
+                    ]
+                    / base,
                     "color": "blue" if yfdf["is_prediction"][idx] else "green",
                 }
             )
@@ -113,12 +95,15 @@ def load_ticker_data(ticker: str, target_date: datetime.date = datetime.date.tod
             date = qfdf["annoounce_date"][idx]
             if date in dates:
                 continue
+            if date < daily_df["date"][0]:
+                continue
             mark_points.append(
                 {
                     "date": date.strftime("%Y/%m/%d"),
                     "price": daily_df.filter(pl.col("date") <= date).sort(pl.col("date"))["close"][
                         -1
-                    ],
+                    ]
+                    / base,
                     "color": "red",
                 }
             )
@@ -171,7 +156,7 @@ def main(
     target_date: datetime.date = datetime.date.today(),
 ):
     # watch_list = stock.trend_template.get_watch_list_v3(target_date)
-    watch_list = get_watch_list_v4(target_date)
+    watch_list = get_watch_list(target_date)
     stock.logger.debug("Number of watchlist : {}".format(len(watch_list)))
     results = get_simulation_results(watch_list, target_date)
     watch_list = [r["code"] for r in results]
@@ -186,7 +171,9 @@ def main(
 
     # render index.html
     template = env.get_template("index_jp.html")
-    index_html_text = template.render(chart_ids=watch_list, results=results)
+    index_html_text = template.render(
+        target_date=target_date.strftime("%Y%m%d"), chart_ids=watch_list, results=results
+    )
     index_html_path = output_dir / "index_jp.html"
     with open(index_html_path, "w") as f:
         f.write(index_html_text)

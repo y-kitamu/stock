@@ -22,7 +22,7 @@ def get_stock_data(
     res = requests.get(base_url.format(code))
     soup = BeautifulSoup(res.text, features="lxml")
 
-    daily_data = []
+    daily_data: list[list[Any]] = []
     stock_tables = soup.find("div", {"id": "stock_kabuka_table"})
     if stock_tables is None:
         return daily_data
@@ -48,7 +48,7 @@ def get_stock_data(
 
 def get_market_capitalization(
     code: str, base_url: str = "https://kabutan.jp/stock/?code={}"
-) -> int:
+) -> int | float | None:
     res = requests.get(base_url.format(code))
     soup = BeautifulSoup(res.text, features="lxml")
 
@@ -69,7 +69,9 @@ def get_market_capitalization(
     return market_cap
 
 
-def get_number_of_shares(code: str, base_url: str = "https://kabutan.jp/stock/?code={}"):
+def get_number_of_shares(
+    code: str, base_url: str = "https://kabutan.jp/stock/?code={}"
+) -> float | int | None:
     res = requests.get(base_url.format(code))
     soup = BeautifulSoup(res.text, features="lxml")
 
@@ -88,7 +90,9 @@ def get_number_of_shares(code: str, base_url: str = "https://kabutan.jp/stock/?c
     return number_of_shares
 
 
-def calc_estimated_capitalization(code, current_date=datetime.date.today()):
+def calc_estimated_capitalization(
+    code: str, current_date: datetime.date = datetime.date.today()
+) -> float:
     # eps、純利益から時価総額を計算する
     fdf = (
         read_financial_csv(code)

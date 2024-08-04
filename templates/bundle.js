@@ -97,7 +97,7 @@ option["{{ ticker.code }}"] = {
       boundaryGap: false,
       axisLine: { onZero: false },
       splitLine: { show: false },
-      min: "dataMin",
+      min: (value) => value.max - 60,
       max: "dataMax",
     },
     {
@@ -109,21 +109,20 @@ option["{{ ticker.code }}"] = {
       axisLabel: { show: false },
       axisTick: { show: false },
       axisLine: { lineStyle: { color: "#777" } },
-      min: "dataMin",
+      min: (value) => value.max - 60,
       max: "dataMax",
     },
   ],
   yAxis: [
     {
-      type: "log",
       scale: true,
       gridIndex: 0,
-      splitNumber: 5,
+      splitNumber: 8,
       splitArea: {
         show: true,
       },
-      min: (value) => {return value.min * 0.9},
-      max: (value) => {return value.max * 1.1},
+      min: 1.5,
+      max: 0.7,
     },
     {
       scale: true,
@@ -141,6 +140,7 @@ option["{{ ticker.code }}"] = {
       xAxisIndex: [0, 1],
       start: 50,
       end: 100,
+      minSpan: 50,
     },
   ],
   series: [

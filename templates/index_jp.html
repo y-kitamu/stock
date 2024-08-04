@@ -11,7 +11,8 @@
   <body style="min-height: 100vh">
     <div class="grid grid-cols-4 gap-4">
       <div class="overflow-y-auto" style="height: 90vh">
-        <fieldset class="space-y-0">
+        <p class="text-sm font-medium">target date = {{ target_date }}</p>
+          <fieldset class="space-y-0">
           {% for chart_id in chart_ids %}
           <div class="flex items-center justify-center">
             <input
@@ -98,7 +99,7 @@
       </div>
     </div>
 
-    <a id="download" download="target.csv">
+    <a id="download" download="target_{{ target_date }}.csv">
       <button class="bg-indigo-700 font-semibold text-white py-2 px-4 rounded">
         CSVダウンロード
       </button>
@@ -178,7 +179,7 @@
         for (const target of watch_list) {
           if (target.checked) {
             console.log(target.name);
-            target_list.push([target.name + "\n"]);
+            target_list.push([{{ target_date }} + "," + target.name + "\n"]);
           }
         }
         const blob = new Blob(target_list, { type: "text/csv" });
