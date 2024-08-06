@@ -4,6 +4,7 @@ Author : Yusuke Kitamura
 Create Date : 2022-05-06 13:53:59
 Copyright (c) 2019- Yusuke Kitamura <ymyk6602@gmail.com>
 """
+
 import csv
 import json
 import re
@@ -15,9 +16,9 @@ import requests
 from pydantic import BaseModel
 
 try:
-    from .. import logger
+    from ..logger import logger
 except:
-    from stock import logger
+    from stock.logger import logger
 
 BASE_URL: str = "https://finance.yahoo.com/"
 REQUEST_HEADER = {}
@@ -59,7 +60,7 @@ class TimeSeries(BaseModel):
         csv_path.parent.mkdir(parents=True, exist_ok=True)
         with open(csv_path, "w") as f:
             csv_writer = csv.writer(f)
-            csv_writer.writerow(["timestamp", "start", "high", "low", "end", "volume"])
+            csv_writer.writerow(["timestamp", "open", "high", "low", "close", "volume"])
             csv_writer.writerows(
                 [
                     [
@@ -149,7 +150,7 @@ def get_stock_time_series(
     kwargs_str = "&".join([f"{key}={value}" for key, value in kwargs.items()])
     url = f"https://query1.finance.yahoo.com/v8/finance/chart/{code}?{kwargs_str}"
     response = requests.get(url, headers=REQUEST_HEADER, **REQUEST_CONFIG)
-    # logger.debug(url)
+    logger.debug(url)
 
     if response.status_code != requests.codes.ok:
         logger.error(
@@ -168,8 +169,8 @@ def get_stock_time_series(
         volume=data["indicators"]["quote"][0]["volume"],
     )
 
-    if is_date_specified:
-        return ts.range(0, len(ts.timestamp) - 1)
+    # if is_date_specified:
+    #     return ts.range(0, len(ts.timestamp) - 1)
 
     return ts
 
