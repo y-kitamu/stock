@@ -19,12 +19,13 @@ def get_code_df() -> pl.DataFrame:
     code_csv_path = PROJECT_ROOT / "data/data_j.csv"
     code_df = pl.read_csv(code_csv_path)
     code_df = code_df.filter(pl.col("市場・商品区分").str.contains("内国株式"))
+    code_df = code_df.filter(pl.col("コード").str.lengths() == 4)
     return code_df
 
 
 def get_code_list() -> list[str]:
     code_df = get_code_df()
-    return code_df["コード"].to_list()
+    return [code for code in code_df["コード"].to_list() if len(code) == 4]
 
 
 def read_data_csv(
