@@ -60,6 +60,7 @@ ACVA,ACV AUCTIONS INC,ACVオークションズ,NASDAQ,ソフトウェア・サ�
 ACWI,ISHARES ACWI,iシェアーズ MSCI ACWI ETF,NASDAQ,その他,○
 ACXP,ACURX PHARMA,アクルックス・ファーマスーティカルズ,NASDAQ,医薬品（バイオテクノロジー）,○
 ADAG,ADAGENE INC,アダジェン,NASDAQ,医薬品（バイオテクノロジー）,○
+ADAP,ADAPTIMMUNE THER,アダプティミューン・セラピューティクス,NASDAQ,医薬品（バイオテクノロジー）,○
 ADBE,ADOBE INC,アドビ,NASDAQ,ソフトウェア・サービス,○
 ADCT,ADC THERAPEUTICS,ADCセラピューティクス,NYSE,医薬品（バイオテクノロジー）,○
 ADD,COLOR STAR TECHN,カラー・スター・テクノロジー,NASDAQ,ソフトウェア・サービス,○
@@ -477,6 +478,7 @@ BBWI,BATH AND BODY,バス&ボディ・ワークス,NYSE,専門店,○
 BBY,BEST BUY COMPANY,ベスト・バイ,NYSE,小売,○
 BC,BRUNSWICK CORP,ブランズウィック・コープ,NYSE,その他製造,○
 BCAB,BIOATLA INC,バイオアトラ,NASDAQ,医薬品（バイオテクノロジー）,○
+BCAL,CALIFORNIA BANC,カリフォルニア・バンコープ,NASDAQ,金融コングロマリット,○
 BCBP,BCB BANCORP,BCBバンコープ,NASDAQ,金融（銀行）,○
 BCC,BOISE CASCADE,ボイジー・カスケード,NYSE,その他製造,○
 BCE,BCE INC,BCE,NYSE,通信サービス,○
@@ -662,7 +664,6 @@ BTBT,BIT DIGITAL INC,ビット・デジタル,NASDAQ,その他,○
 BTCM,BIT MINING LTD,ビット・マイニング,NYSE,エンターテイメント,○
 BTCS,BTCS INC,BTCS,NASDAQ,ソフトウェア・サービス,○
 BTCT,BTC DIGITAL,BTCデジタル,NASDAQ,ソフトウェア・サービス,○
-BTCY,BIOTRICITY INC,バイオトリシティ,NASDAQ,ヘルスケア,○
 BTDR,BITDEER TECH,ビットディア・テクノロジーズ・グループ,NASDAQ,情報処理サービス,○
 BTE,BAYTEX ENERGY,ベイテックス・エナジー,NYSE,石油,○
 BTG,B2GOLD CORP,B2ゴールド,NYSE,その他,○
@@ -964,7 +965,6 @@ COM,DRX AUSP COM ETF,Direxion オースピス・ブロード・コモディテ�
 COMM,COMMSCOPE HLD,コムスコープ・ホールディング,NASDAQ,通信機器,○
 COMP,COMPASS INC,コンパス,NYSE,ソフトウェア・サービス,○
 CONL,GNS COIN BL2X,グラナイトシェアーズ2倍ロングCOINデイリーETF,NASDAQ,その他,○
-CONN,CONNS INC,コンズ,NASDAQ,小売,○
 COO,COOPER COMPANIES,クーパー,NASDAQ,ヘルスケア,○
 COOK,TRAEGER INC,トレーガ―,NYSE,その他製造,○
 COOP,MR COOPER GROUP,ミスター・クーパー・グループ,NASDAQ,金融(保険),○
@@ -1078,7 +1078,7 @@ CVGI,COMMERCIAL VEHIC,コマーシャル・ビークル・グループ,NASDAQ,�
 CVGW,CALAVO GROWERS,キャラボ・グロワーズ,NASDAQ,食品,○
 CVI,CVR ENERGY INC,CVRエナジー,NYSE,石油,○
 CVII,CHURCHILL CAP 7,チャーチル・キャピタル7,NASDAQ,その他,○
-CVLG,COVENANT LOGISTI,コベナント・ロジスティックス・グループ,NASDAQ,運輸,○
+CVLG,COVENANT LOGISTI,コベナント・ロジスティックス・グループ,NYSE,運輸,○
 CVLT,COMMVAULT SYSTEM,コムボールト・システムズ,NASDAQ,ソフトウェア・サービス,○
 CVM,CEL SCI CORP,セル・サイ,NYSE,医薬品,○
 CVNA,CARVANA CO,カルバナ,NYSE,小売,○
@@ -1658,7 +1658,6 @@ FPXI,FT INTL EQ OPPTY,ファーストトラスト インターナショナル株
 FRAF,FRANKLIN FIN SRV,フランクリン・ファイナンシャル・サービシズ,NASDAQ,金融（銀行）,○
 FRBA,FIRST BANK,ファースト・バンク,NASDAQ,金融（銀行）,○
 FRD,FRIEDMAN INDSTRS,フリードマン・インダストリーズ,NYSE,その他,○
-FREE,WHOLE EARTH BRND,ホール・アース・ブランズ,NASDAQ,食品,○
 FREY,FREYR BATTERY IN,フレイ・バッテリー・インク,NYSE,その他製造,○
 FRGE,FORGE GLOBAL HLD,フォージ・グローバル・ホールディングス,NYSE,その他,○
 FRHC,FREEDOM HOLDING,フリーダム・ホールディング,NASDAQ,金融（証券）,○
@@ -3284,7 +3283,6 @@ PMVP,PMV PHARMACEUTIC,PMVファーマシューティカルズ,NASDAQ,医薬品,�
 PNBK,PATRIOT NATIONAL,パトリオット・ナショナル・バンコープ,NASDAQ,金融（銀行）,○
 PNC,PNC FINANCIAL,PNCファイナンシャルサービシーズ・グループ,NYSE,金融（銀行）,○
 PNFP,PINNACLE FINANCL,ピナクル・ファイナンシャル・パートナーズ,NASDAQ,金融（銀行）,○
-PNM,PNM RESOURCES IN,PNMリソーシーズ,NYSE,電力,○
 PNR,PENTAIR PLC,ペンテア,NYSE,機械,○
 PNRG,PRIMEENERGY RESR,プライムエナジー・リソーシズ,NASDAQ,石油,○
 PNTG,PENNANT GROUP,ペナント・グループ,NASDAQ,ヘルスケア,○
@@ -3677,6 +3675,7 @@ SEE,SEALED AIR CORP,シールドエアー,NYSE,その他製造,○
 SEED,ORIGIN AGRITECH,オリジン・アグリテック,NASDAQ,化学,○
 SEEL,SEELOS THERAPEU,ゼーロス・セラピューティクス,NASDAQ,医薬品（バイオテクノロジー）,○
 SEER,SEER INC,シーア,NASDAQ,医薬品（バイオテクノロジー）,○
+SEG,SEAPORT ENTMT,シーポート・エンターテイメント,NYSE,エンターテイメント,○
 SEIC,SEI INVESTMENTS,SEIインベストメンツ,NASDAQ,情報処理サービス,○
 SEM,SELECT MEDICAL,セレクト・メディカル・ホールディングス,NYSE,ヘルスケア,○
 SEMR,SEMRUSH HOLDINGS,セムラッシュ・ホールディングス,NYSE,ソフトウェア・サービス,○
@@ -4229,6 +4228,7 @@ TX,TERNIUM SA,テルニウム,NYSE,その他,○
 TXG,10X GENOMICS INC,10Xゲノミクス,NASDAQ,医薬品（バイオテクノロジー）,○
 TXMD,THERAPEUTICS MD,セラピューティクスMD,NASDAQ,医薬品,○
 TXN,TEXAS INSTRUMENT,テキサス・インスツルメンツ,NASDAQ,半導体,○
+TXNM,TXNM ENERGY INC,TXNMエナジー,NYSE,電力,○
 TXRH,TEXAS ROADHOUSE,テキサス・ロードハウス,NASDAQ,外食,○
 TXT,TEXTRON INC,テクストロン,NYSE,コングロマリット,○
 TYL,TYLER TECH,タイラー・テクノロジーズ,NYSE,ソフトウェア・サービス,○
@@ -4246,7 +4246,6 @@ UBOT,DRX ROBO AI BL2X,Direxion デイリー　ロボティックスAI&オート�
 UBS,UBS GROUP AG,UBSグループ,NYSE,金融（証券）,○
 UBSI,UNITED BANKSHARE,ユナイテッド・バンクシェアーズ,NASDAQ,金融（銀行）,○
 UBX,UNITY BIOTECH,ユニティー・バイオテクノロジー,NASDAQ,医薬品（バイオテクノロジー）,○
-UCBI,UNITED COMM BANK,ユナイテッド・コミュニティー・バンクス,NASDAQ,金融（銀行）,○
 UCL,UCLOUDLINK GROUP,ユークラウドリンク・グループ,NASDAQ,通信サービス,○
 UCTT,ULTRA CLEAN HLD,ウルトラ・クリーン・ホールディングス,NASDAQ,半導体製造,○
 UDMY,UDEMY INC,ユーデミー,NASDAQ,ソフトウェア・サービス,○
