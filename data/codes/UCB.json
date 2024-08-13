@@ -38,9 +38,9 @@
         "Salaries And Wages": 84985000.0,
         "Total Revenue": 233991000.0,
         "Operating Revenue": 233991000.0,
-        "Occupancy And Equipment": 11099000.0,
+        "Occupancy And Equipment": 23019000.0,
         "Professional Expense And Contract Services Expense": 5988000.0,
-        "Other Non Interest Expense": 22744000.0
+        "Other Non Interest Expense": 10824000.0
     },
     "2023-12-31": {
         "Tax Effect Of Unusual Items": -1210860.0,
@@ -81,9 +81,9 @@
         "Salaries And Wages": 82343000.0,
         "Total Revenue": 175256000.0,
         "Operating Revenue": 175256000.0,
-        "Occupancy And Equipment": 11616000.0,
+        "Occupancy And Equipment": 23226000.0,
         "Professional Expense And Contract Services Expense": 7062000.0,
-        "Other Non Interest Expense": 21087000.0
+        "Other Non Interest Expense": 9477000.0
     },
     "2023-09-30": {
         "Tax Effect Of Unusual Items": -1828509.307421,
@@ -124,9 +124,9 @@
         "Salaries And Wages": 81173000.0,
         "Total Revenue": 229275000.0,
         "Operating Revenue": 229275000.0,
-        "Occupancy And Equipment": 10941000.0,
+        "Occupancy And Equipment": 21843000.0,
         "Professional Expense And Contract Services Expense": 7006000.0,
-        "Other Non Interest Expense": 20192000.0
+        "Other Non Interest Expense": 9290000.0
     },
     "2023-06-30": {
         "Tax Effect Of Unusual Items": -814963.564094,
@@ -167,9 +167,9 @@
         "Salaries And Wages": 76250000.0,
         "Total Revenue": 231483000.0,
         "Operating Revenue": 231483000.0,
-        "Occupancy And Equipment": 10194000.0,
+        "Occupancy And Equipment": 20938000.0,
         "Professional Expense And Contract Services Expense": 6592000.0,
-        "Other Non Interest Expense": 20659000.0
+        "Other Non Interest Expense": 9915000.0
     },
     "2023-03-31": {
         "Tax Effect Of Unusual Items": -1917245.645578,
@@ -213,5 +213,48 @@
         "Occupancy And Equipment": 9889000.0,
         "Professional Expense And Contract Services Expense": 6072000.0,
         "Other Non Interest Expense": 20893000.0
+    },
+    "2024-06-30": {
+        "Tax Effect Of Unusual Items": -485755.888203,
+        "Tax Rate For Calcs": 0.2252,
+        "Total Unusual Items": -2157000.0,
+        "Total Unusual Items Excluding Goodwill": -2157000.0,
+        "Net Income From Continuing Operation Net Minority Interest": 66615000.0,
+        "Reconciled Depreciation": 9736000.0,
+        "Net Interest Income": 208700000.0,
+        "Interest Expense": 138265000.0,
+        "Interest Income": 346965000.0,
+        "Normalized Income": 68286244.111797,
+        "Net Income From Continuing And Discontinued Operation": 66615000.0,
+        "Diluted Average Shares": 119785000.0,
+        "Basic Average Shares": 119726000.0,
+        "Diluted EPS": 0.54,
+        "Basic EPS": 0.54,
+        "Diluted NI Availto Com Stockholders": 64674000.0,
+        "Net Income Common Stockholders": 64674000.0,
+        "Otherunder Preferred Stock Dividend": 368000.0,
+        "Preferred Stock Dividends": 1573000.0,
+        "Net Income": 66615000.0,
+        "Net Income Including Noncontrolling Interests": 66615000.0,
+        "Net Income Continuous Operations": 66615000.0,
+        "Tax Provision": 19362000.0,
+        "Pretax Income": 85977000.0,
+        "Special Income Charges": -2157000.0,
+        "Restructuring And Mergern Acquisition": 2157000.0,
+        "Gain On Sale Of Security": 2044000.0,
+        "Depreciation Amortization Depletion Income Statement": 3794000.0,
+        "Depreciation And Amortization In Income Statement": 3794000.0,
+        "Amortization": 3794000.0,
+        "Amortization Of Intangibles Income Statement": 3794000.0,
+        "Selling General And Administration": 92744000.0,
+        "Selling And Marketing Expense": 2459000.0,
+        "General And Administrative Expense": 90285000.0,
+        "Insurance And Claims": 4467000.0,
+        "Salaries And Wages": 85818000.0,
+        "Total Revenue": 240430000.0,
+        "Operating Revenue": 240430000.0,
+        "Occupancy And Equipment": 23044000.0,
+        "Professional Expense And Contract Services Expense": 6044000.0,
+        "Other Non Interest Expense": 14435000.0
     }
 }

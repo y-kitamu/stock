@@ -1,7 +1,7 @@
 {
     "2023-06-30": {
         "Tax Effect Of Unusual Items": 0.0,
-        "Tax Rate For Calcs": 0.305525,
+        "Tax Rate For Calcs": 0.31,
         "Total Unusual Items": NaN,
         "Total Unusual Items Excluding Goodwill": NaN,
         "Net Income From Continuing Operation Net Minority Interest": 2539000.0,
@@ -33,7 +33,7 @@
         "Operating Revenue": 18095000.0,
         "Occupancy And Equipment": 2051000.0,
         "Professional Expense And Contract Services Expense": 3521000.0,
-        "Other Non Interest Expense": 2291000.0
+        "Other Non Interest Expense": 2232000.0
     },
     "2023-03-31": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -473,5 +473,41 @@
         "Occupancy And Equipment": 2084000.0,
         "Professional Expense And Contract Services Expense": 2182000.0,
         "Other Non Interest Expense": 2404000.0
+    },
+    "2024-06-30": {
+        "Tax Effect Of Unusual Items": 0.0,
+        "Tax Rate For Calcs": 0.33,
+        "Total Unusual Items": NaN,
+        "Total Unusual Items Excluding Goodwill": NaN,
+        "Net Income From Continuing Operation Net Minority Interest": 1316000.0,
+        "Reconciled Depreciation": 260000.0,
+        "Net Interest Income": 14395000.0,
+        "Interest Expense": 19469000.0,
+        "Interest Income": 33864000.0,
+        "Normalized Income": 1316000.0,
+        "Net Income From Continuing And Discontinued Operation": 1316000.0,
+        "Diluted Average Shares": 51349764.0,
+        "Basic Average Shares": 50920703.0,
+        "Diluted EPS": 0.03,
+        "Basic EPS": 0.03,
+        "Diluted NI Availto Com Stockholders": 1316000.0,
+        "Net Income Common Stockholders": 1316000.0,
+        "Net Income": 1316000.0,
+        "Net Income Including Noncontrolling Interests": 1316000.0,
+        "Net Income Continuous Operations": 1316000.0,
+        "Tax Provision": 647000.0,
+        "Pretax Income": 1963000.0,
+        "Special Income Charges": NaN,
+        "Gain On Sale Of Business": NaN,
+        "Gain On Sale Of Security": -19000.0,
+        "Selling General And Administration": 8458000.0,
+        "General And Administrative Expense": 8458000.0,
+        "Insurance And Claims": 262000.0,
+        "Salaries And Wages": 8196000.0,
+        "Total Revenue": 14807000.0,
+        "Operating Revenue": 14807000.0,
+        "Occupancy And Equipment": 2005000.0,
+        "Professional Expense And Contract Services Expense": 2147000.0,
+        "Other Non Interest Expense": 2313000.0
     }
 }
