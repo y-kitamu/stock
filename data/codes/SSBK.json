@@ -28,8 +28,8 @@
         "Total Revenue": 26294000.0,
         "Operating Revenue": 26294000.0,
         "Occupancy And Equipment": 694000.0,
-        "Professional Expense And Contract Services Expense": NaN,
-        "Other Non Interest Expense": 4875000.0
+        "Professional Expense And Contract Services Expense": 1243000.0,
+        "Other Non Interest Expense": 3632000.0
     },
     "2023-03-31": {
         "Tax Effect Of Unusual Items": 0.0,
@@ -310,5 +310,37 @@
         "Occupancy And Equipment": 689000.0,
         "Professional Expense And Contract Services Expense": NaN,
         "Other Non Interest Expense": 3455000.0
+    },
+    "2024-06-30": {
+        "Tax Effect Of Unusual Items": 0.0,
+        "Tax Rate For Calcs": 0.216926,
+        "Net Income From Continuing Operation Net Minority Interest": 8198000.0,
+        "Reconciled Depreciation": 378000.0,
+        "Net Interest Income": 21579000.0,
+        "Interest Expense": 19428000.0,
+        "Interest Income": 41007000.0,
+        "Normalized Income": 8198000.0,
+        "Net Income From Continuing And Discontinued Operation": 8198000.0,
+        "Diluted Average Shares": 9070568.0,
+        "Basic Average Shares": 8957608.0,
+        "Diluted EPS": 0.9,
+        "Basic EPS": 0.91,
+        "Diluted NI Availto Com Stockholders": 8198000.0,
+        "Average Dilution Earnings": NaN,
+        "Net Income Common Stockholders": 8198000.0,
+        "Net Income": 8198000.0,
+        "Net Income Including Noncontrolling Interests": 8198000.0,
+        "Net Income Continuous Operations": 8198000.0,
+        "Tax Provision": 2271000.0,
+        "Pretax Income": 10469000.0,
+        "Gain On Sale Of Security": 20000.0,
+        "Selling General And Administration": 6112000.0,
+        "General And Administrative Expense": 6112000.0,
+        "Salaries And Wages": 6112000.0,
+        "Total Revenue": 22947000.0,
+        "Operating Revenue": 22947000.0,
+        "Occupancy And Equipment": 667000.0,
+        "Professional Expense And Contract Services Expense": 0.0,
+        "Other Non Interest Expense": 4632000.0
     }
 }
