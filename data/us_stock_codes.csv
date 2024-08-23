@@ -301,6 +301,7 @@ ARCH,ARCH RESOURCES,アーチ・リソーシズ,NYSE,その他製造,○
 ARCO,ARCOS DORADOS,アルコス・ドラドス,NYSE,外食,○
 ARCT,ARCTURUS THERAP,アークトゥルス・セラピューティクス・ホールディングス,NASDAQ,医薬品（バイオテクノロジー）,○
 ARDX,ARDELYX INC,アーデリックス,NASDAQ,医薬品（バイオテクノロジー）,○
+AREC,AMERICAN RESRCES,アメリカン・リソーシズ,NASDAQ,その他製造,○
 AREN,ARENA GROUP,アリーナ・グループ・ホールディングス,NYSE,情報処理サービス,○
 ARES,ARES MANAGEMENT,アレス・マネジメント,NYSE,金融（証券）,○
 ARGX,ARGENX SE,アルジェンX,NASDAQ,医薬品（バイオテクノロジー）,○
@@ -542,7 +543,6 @@ BIGC,BIGCOMMERCE HOLD,ビックコマース・ホールディングス,NASDAQ,�
 BIIB,BIOGEN INC,バイオジェン,NASDAQ,医薬品,○
 BILI,BILIBILI INC,ビリビリ,NASDAQ,エンターテイメント,○
 BILL,BILL HOLDINGS,ビル・ホールディングス,NYSE,ソフトウェア・サービス,○
-BIMI,BIMI INTL MEDICA,BIMIインターナショナル・メディカル,NASDAQ,小売,○
 BIO,BIO-RAD LABO,バイオ・ラッド・ラボラトリーズ,NYSE,ヘルスケア,○
 BIOR,BIORA THERAPE,ビオラ・セラピューティクス,NASDAQ,ヘルスケア,○
 BIOX,BIOCERES CROP SL,バイオセレス・クロップ・ソリューションズ,NASDAQ,その他,○
@@ -1722,6 +1722,7 @@ GALT,GALECTIN THERA,ガレクチン・セラピューティクス,NASDAQ,医薬�
 GAMB,GAMBLING COM GR,ギャンブリング・ドットコム・グループ,NASDAQ,ソフトウェア・サービス,○
 GAN,GAN LIMITED,ギャン,NASDAQ,エンターテイメント,○
 GANX,GAIN THERAPEU,ゲイン・セラピューティクス,NASDAQ,医薬品（バイオテクノロジー）,○
+GAP,GAP INC,ギャップ,NYSE,専門店,○
 GASS,STEALTHGAS INC,ステルスガス,NASDAQ,運輸,○
 GATO,GATOS SILVER INC,ガトス・シルバー,NYSE,その他,○
 GATX,GATX CORPORATION,ガテックス,NYSE,その他,○
@@ -1847,7 +1848,6 @@ GPOR,GULFPORT ENERGY,ガルフポート・エナジー,NYSE,石油,○
 GPRE,GREEN PLAINS INC,グリーン・プレインズ,NASDAQ,その他,○
 GPRK,GEOPARK LIMITED,ジオパーク,NYSE,石油,○
 GPRO,GOPRO,ゴープロ,NASDAQ,その他製造,○
-GPS,GAP INC,ギャップ,NYSE,専門店,○
 GRAB,GRAB HOLDINGS,グラブ・ホールディングス,NASDAQ,ソフトウェア・サービス,○
 GRAL,GRAIL INC,グレイル・インク,NASDAQ,医薬品（バイオテクノロジー）,○
 GRBK,GREEN BRICK PART,グリーンブリック・パートナーズ,NYSE,その他製造,○
@@ -3838,7 +3838,6 @@ SOXL,DRX SEMICON BL3X,Direxion デイリー 半導体株 ブル 3倍 ETF,NYSE,�
 SOXS,DRX SEMICON BR3X,Direxion デイリー 半導体株 ベア 3倍 ETF,NYSE,その他,○
 SPAB,SPDR AGG BOND,SPDR ポートフォリオ米国総合債券ETF,NYSE,その他,○
 SPB,SPECTRUM BRANDS,スペクトラム・ブランズ・ホールディング,NYSE,その他製造,○
-SPCB,SUPERCOM LTD,スーパーコム,NASDAQ,情報処理サービス,○
 SPCE,VIRGIN GALACTIC,ヴァージン・ギャラクティック・ホールディングス,NYSE,航空機・宇宙,○
 SPDN,DRX SP500 BR1X,Direxion デイリー S&P 500 ベア 1 倍 ETF,NYSE,その他,○
 SPDW,SPDR DEV WD X-US,SPDR ポートフォリオ先進国株式（除く米国）ETF,NYSE,その他,○
@@ -4396,7 +4395,6 @@ VLO,VALERO ENERGY CO,バレロ・エナジー,NYSE,石油,○
 VLRS,CONTROLADOR AVCN,コントロラドラ・ブエラ・コンパニア・デ・アビア,NYSE,航空,○
 VLTO,VERALTO,ヴェラルト,NYSE,その他,○
 VLY,VALLEY NATIONAL,バレー･ナショナル･バンコープ ,NASDAQ,金融（銀行）,○
-VMAR,VISION MARN TECH,ビジョン・マリン・テクノロジーズ,NASDAQ,その他製造,○
 VMBS,VA MBS,バンガード・米国モーゲージ担保証券ETF,NASDAQ,その他,○
 VMC,VULCAN MATERIALS,ヴァルカン・マテリアルズ,NYSE,その他,○
 VMD,VIEMED HEALTHCR,ビームド・ヘルスケア,NASDAQ,ヘルスケア,○
