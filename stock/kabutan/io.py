@@ -15,16 +15,17 @@ from ..constants import PROJECT_ROOT
 INDEX_CODE_LIST = ["0000", "0010"]
 
 
-def get_code_df() -> pl.DataFrame:
+def get_code_df(include_etf: bool = False) -> pl.DataFrame:
     code_csv_path = PROJECT_ROOT / "data/data_j.csv"
     code_df = pl.read_csv(code_csv_path)
-    code_df = code_df.filter(pl.col("市場・商品区分").str.contains("内国株式"))
+    if not include_etf:
+        code_df = code_df.filter(pl.col("市場・商品区分").str.contains("内国株式"))
     code_df = code_df.filter(pl.col("コード").str.lengths() == 4)
     return code_df
 
 
-def get_code_list() -> list[str]:
-    code_df = get_code_df()
+def get_code_list(include_etf: bool = False) -> list[str]:
+    code_df = get_code_df(include_etf=include_etf)
     return [code for code in code_df["コード"].to_list() if len(code) == 4]
 
 
@@ -34,6 +35,7 @@ def read_data_csv(
     with_rs: bool = True,
     start_date: datetime.date | None = None,
     end_date: datetime.date | None = None,
+    weekly: bool = False,
 ) -> pl.DataFrame:
     if not Path(csv_path).exists():
         csv_path = PROJECT_ROOT / f"data/daily/{csv_path}.csv"
@@ -53,7 +55,7 @@ def read_data_csv(
         columns.append(pl.col("rs").cast(pl.Float64))
     df = df.select(columns)
 
-    if csv_path.stem not in INDEX_CODE_LIST and exclude_none:
+    if Path(csv_path).stem not in INDEX_CODE_LIST and exclude_none:
         df = df.filter((pl.col("volume").is_not_nan().is_not_null()) & (pl.col("volume") > 0))
 
     if start_date is not None:
@@ -61,7 +63,23 @@ def read_data_csv(
     if end_date is not None:
         df = df.filter(pl.col("date") <= end_date)
 
-    return df.sort("date")
+    df = df.sort("date")
+    if weekly:
+        df = convert_to_weekly(df)
+
+    return df
+
+
+def convert_to_weekly(df: pl.DataFrame) -> pl.DataFrame:
+    return df.group_by_dynamic(pl.col("date"), every="1w", start_by="monday").agg(
+        pl.col("date").first().alias("start_date"),
+        pl.col("date").last().alias("end_date"),
+        pl.col("open").first(),
+        pl.col("close").last(),
+        pl.col("high").max(),
+        pl.col("low").min(),
+        pl.col("volume").sum(),
+    )
 
 
 def write_data_csv(df: pl.DataFrame, csv_path: Path):

@@ -4,6 +4,7 @@
 from datetime import date, datetime, timedelta
 
 import numpy as np
+import numpy.typing as npt
 import polars as pl
 from pydantic import BaseModel
 
@@ -28,17 +29,15 @@ def _get_week_arrays(df: pl.DataFrame, weeks: list, cur_day: date, target_days: 
     return week_arrays
 
 
-def calc_mean_average(df: pl.DataFrame, weeks: list[int], cur_day: date, target_days: int = 1):
+def calc_mean_average(
+    df: pl.DataFrame, weeks: list[int], cur_day: date, target_days: int = 1
+) -> list[npt.NDArray[np.float64]]:
     """移動平均線を計算する"""
-    week_arrays = _get_week_arrays(df, weeks, cur_day, target_days)
-    if len(week_arrays) != len(weeks):
-        return []
-
-    def mean_average(array: np.ndarray, days: int):
-        return np.convolve(array, np.ones(days), mode="valid") / days
-
-    averages = [mean_average(arr, len(arr) - target_days + 1) for arr in week_arrays]
-    return averages
+    df = df.filter(pl.col("date") <= cur_day)
+    weekly_df = kabutan.io.convert_to_weekly(df).with_columns(
+        *[pl.col("close").rolling_mean(window_size=week).alias(f"ma_{week}") for week in weeks]
+    )
+    return [weekly_df[f"ma_{week}"].to_numpy()[-target_days:] for week in weeks]
 
 
 def check_higher_than_mean_average(

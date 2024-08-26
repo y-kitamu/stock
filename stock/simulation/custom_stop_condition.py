@@ -3,8 +3,8 @@ import datetime
 import polars as pl
 from pydantic import ConfigDict
 
-from .base_condition import BaseCondition
 from ..algorithm.market import is_limit_high
+from .base_condition import BaseCondition
 
 
 class CustomStopCondition(BaseCondition):
@@ -64,7 +64,7 @@ class CustomStopCondition(BaseCondition):
             return -1
 
         # 前日終値から下がりすぎている場合は買わない
-        if df["open"][1] < prev_df["close"][-1] or df["open"][1] < df["close"][0] * 0.9:
+        if df["open"][1] < df["close"][0] * 0.95:
             return -1
 
         self.buying_price = df["open"][1]
@@ -94,9 +94,9 @@ class CustomStopCondition(BaseCondition):
             return self.selling_price
 
         # 値上がりも値下がりもせず、一定期間過ぎた場合は売る
-        if not self.reach_target_price and df["date"][
-            index
-        ] - self.buying_date > datetime.timedelta(days=self.max_days):
+        if not self.reach_target_price and df["date"][index] - self.buying_date > datetime.timedelta(
+            days=self.max_days
+        ):
             self.selling_price = df["open"][index]
             self.selling_date = df["date"][index]
             return self.selling_price
