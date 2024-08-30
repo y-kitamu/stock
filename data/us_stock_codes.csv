@@ -7,6 +7,7 @@ AAN,AARONS COMPANY,アーロンズ・カンパニー,NYSE,小売,○
 AAOI,APPLIED OPTOELEC,アプライド・オプトエレクトロニクス,NASDAQ,その他製造,○
 AAON,AAON INC,AAON,NASDAQ,その他製造,○
 AAP,ADVANCE AUTO PAR,アドバンス・オート・パーツ,NYSE,小売,○
+AAPB,GNS AAPL 2X LONG,グラナイトシェアーズ2倍ロングAAPLデイリーETF,NASDAQ,その他,○
 AAPD,DRX AAPL BR1X,Direxion デイリー AAPL株 ベア1倍 ETF,NASDAQ,その他,○
 AAPL,APPLE INC,アップル,NASDAQ,コンピュータ,○
 AAPU,DRX AAPL BL2X,Direxion デイリー AAPL ブル2倍株式,NASDAQ,その他,○
@@ -243,6 +244,7 @@ AMX,AMERICA MOVILB,アメリカ・モービル（ADR Sr.B）,NYSE,通信サー�
 AMZD,DRX AMZN BR1X,Direxion デイリーAMZN株 ベア 1 倍 ETF,NASDAQ,その他,○
 AMZN,AMAZON.COM INC,アマゾン・ドット・コム,NASDAQ,小売,○
 AMZU,DRX AMZN BL2X,Direxion デイリー AMZN ブル2倍株式,NASDAQ,その他,○
+AMZZ,GNS AMZN 2X LONG,グラナイトシェアーズ2倍ロングAMZNデイリーETF,NASDAQ,その他,○
 AN,AUTONATION INC,オートネーション,NYSE,小売,○
 ANAB,ANAPTYSBIO INC,アナプティスバイオ,NASDAQ,医薬品（バイオテクノロジー）,○
 ANDE,ANDERSONS INC,アンダーソンズ,NASDAQ,その他,○
@@ -443,6 +445,7 @@ AZZ,AZZ INC,AZZ,NYSE,その他製造,○
 B,BARNES GROUP INC,バーンズ・グループ,NYSE,その他製造,○
 BA,BOEING CO,ボーイング,NYSE,航空機・宇宙,○
 BABA,ALIBABA GROUP,アリババ・グループ・ホールディング,NYSE,小売,○
+BABX,GNS BABA 2X LONG,グラナイトシェアーズ2倍ロングBABAデイリーETF,NASDAQ,その他,○
 BAC,BANK OF AMERICA,バンク・オブ・アメリカ,NYSE,金融（銀行）,○
 BACK,IMAC HOLDINGS,アイマック・ホールディングス,NASDAQ,医療サービス,○
 BAER,BRIDGER AEROSPCE,ブリジャー・エアロスペース・グループ・ホールディングス,NASDAQ,その他,○
@@ -1528,6 +1531,7 @@ FBL,GNS META BL2X,グラナイトシェアーズ2倍ロングMETAデイリーETF
 FBMS,FIRST BANCSHARES,ファースト・バンクシェアーズ,NYSE,金融（銀行）,○
 FBNC,FIRST BANCORP,ファースト・バンコープ,NASDAQ,金融（銀行）,○
 FBP,FIRST BANCORP,ファースト・バンコープ,NYSE,金融（銀行）,○
+FBRX,FORTE BIOSCIENCE,フォルテ・バイオサイエンシズ,NASDAQ,医薬品（バイオテクノロジー）,○
 FBT,FT NYSE BIOTECH,ファーストトラスト NYSE Arca バイオテクノロジー指数ファンド,NYSE,その他,○
 FBYD,FALCONS BEYND GL,ファルコンズ・ビヨンド・グローバル,NASDAQ,エンターテイメント,○
 FC,FRANKLIN COVEY,フランクリン・コヴィー,NYSE,その他,○
@@ -1739,7 +1743,6 @@ GCT,GIGACLOUD TECH,ギガクラウド・テクノロジー,NASDAQ,情報処理�
 GD,GENERAL DYNAMICS,ゼネラル・ダイナミクス,NYSE,航空機・宇宙,○
 GDDY,GODADDY INC.,ゴーダディ,NYSE,ソフトウェア・サービス,○
 GDEN,GOLDEN ENTERTAIN,ゴールデン・エンターテインメント,NASDAQ,エンターテイメント,○
-GDEV,GDEV INC,GDEVインク,NASDAQ,エンターテイメント,○
 GDOT,GREEN DOT CORP,グリーンドット,NYSE,その他,○
 GDRX,GOODRX HOLDINGS,グッド・アール・エックス,NASDAQ,ヘルスケア,○
 GDS,GDS HOLDINGS,GDSホールディングス,NASDAQ,ソフトウェア・サービス,○
@@ -2067,7 +2070,6 @@ IBRX,IMMUNITYBIO INC,イミュニティバイオ,NASDAQ,医薬品（バイオテ
 IBTX,INDEPENDENT BANK,インディペンデント・バンク・グループ,NASDAQ,金融（銀行）,○
 ICAD,ICAD,アイキャド,NASDAQ,ヘルスケア,○
 ICCC,IMMUCELL CORP,イミュセル,NASDAQ,医薬品（バイオテクノロジー）,○
-ICD,INPDCE CTR DRILL,インディペンデンス・コントラクト・ドリリング,NYSE,石油,○
 ICE,INTERCONTI EXCHG,インターコンチネンタル・エクスチェンジ,NYSE,金融コングロマリット,○
 ICFI,ICF INTERNATIONL,ICFインターナショナル,NASDAQ,ソフトウェア・サービス,○
 ICHR,ICHOR HOLDINGS,イコル・ホールディングス,NASDAQ,半導体製造,○
@@ -2759,6 +2761,7 @@ MSC,STUDIO CITY INTL,スタジオ・シティ・インターナショナル・�
 MSCI,MSCI INC,MSCI,NYSE,金融コングロマリット,○
 MSEX,MIDDLESEX WATER,ミドルセックス・ウォーター,NASDAQ,ソフトウェア・サービス,○
 MSFD,DRX MSFT BR1X,Direxion デイリーMSFT株 ベア 1 倍 ETF,NASDAQ,その他,○
+MSFL,GNS MSFT 2X LONG,グラナイトシェアーズ2倍ロングMSFTデイリーETF,NASDAQ,その他,○
 MSFT,MICROSOFT CORP.,マイクロソフト,NASDAQ,ソフトウェア・サービス,○
 MSFU,DRX MSFT BL2X,Direxion デイリー MSFT ブル2倍株式,NASDAQ,その他,○
 MSGE,MADISON SQ ENTN,マディソン・スクエア・ガーデン・エンターテインメントN,NYSE,エンターテイメント,○
@@ -4611,6 +4614,7 @@ X,US STEEL,USスチール,NYSE,その他,○
 XAIR,BEYOND AIR INC,ビヨンド・エアー,NASDAQ,医薬品（バイオテクノロジー）,○
 XBIO,XENETIC BIOSCE,ゼネティック・バイオサイエンシズ,NASDAQ,医薬品（バイオテクノロジー）,○
 XBIT,XBIOTECH INC,Xバイオテック,NASDAQ,医薬品（バイオテクノロジー）,○
+XCUR,EXICURE INC,エクシキュア,NASDAQ,医薬品（バイオテクノロジー）,○
 XEL,XCEL ENERGY INC,エクセル・エナジー,NASDAQ,その他製造,○
 XELA,EXELA TECHNO,エクセラ・テクノロジーズ,NASDAQ,ソフトウェア・サービス,○
 XENE,XENON PHARMACEU,ゼノン・ファーマシューティカルズ,NASDAQ,医薬品（バイオテクノロジー）,○
