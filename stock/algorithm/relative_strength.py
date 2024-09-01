@@ -8,15 +8,16 @@ Copyright (c) 2019- Yusuke Kitamura <ymyk6602@gmail.com>
 import datetime
 
 import numpy as np
+import numpy.typing as npt
 import polars as pl
 
 
-def strength(target: np.ndarray):
+def strength(target: npt.NDArray[np.float64]) -> float:
     pct_change = np.diff(target) / target[:-1]
-    return np.cumprod((1 + pct_change))[-1] - 1
+    return np.cumprod((1 + pct_change))[-1] - 1.0
 
 
-def relative_strength(target: np.ndarray, reference: np.ndarray) -> float:
+def _relative_strength(target: npt.NDArray[np.float64], reference: npt.NDArray[np.float64]) -> float:
     """Calculate relative strength of target to reference.
     Args:
         target (np.ndarray): target stock price (1D-array)
@@ -28,18 +29,20 @@ def relative_strength(target: np.ndarray, reference: np.ndarray) -> float:
     return rs
 
 
-def relative_strength_52wk(
-    target: np.ndarray, reference: np.ndarray, num_division: int = 52, division_factor: float = 1.02
-):
+def relative_strength(
+    target: npt.NDArray[np.float64],
+    reference: npt.NDArray[np.float64],
+    num_division: int = 5,
+    division_factor: float = 1.02,
+) -> float:
     weights = np.array([division_factor**i for i in range(num_division)], dtype=float)
     weights /= np.linalg.norm(weights, ord=1)
 
-    rs = 0.0
+    rs: float = 0.0
     for i in range(num_division):
         start = max(i * len(target) // num_division - 1, 0)
         end = min((i + 1) * len(target) // num_division + 1, len(target))
-        # print(start, end)
-        rs += weights[i] * relative_strength(target[start:end], reference[start:end])
+        rs += weights[i] * _relative_strength(target[start:end], reference[start:end])
     return rs
 
 

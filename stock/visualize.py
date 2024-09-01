@@ -5,9 +5,11 @@ Create Date : 2024-05-05 10:33:50
 import datetime
 
 import matplotlib.pyplot as plt
-import plotly.graph_objects as go
 import polars as pl
+import plotly.graph_objects as go
 from plotly.subplots import make_subplots
+
+from .kabutan.io import read_data_csv
 
 
 def plot_with_rs(
@@ -29,12 +31,26 @@ def plot_with_rs(
     plt.legend()
 
 
-def plot_chart(df: pl.DataFrame, before_days=-1):
+def plot_chart_from_code(
+    code: str,
+    start_date: datetime.date | None = None,
+    end_date: datetime.date = datetime.date.today(),
+    weekly: bool = False,
+    before_days: int = 1,
+):
+    df = read_data_csv(code, start_date=start_date, end_date=end_date, weekly=weekly)
+    if weekly and before_days > 0:
+        before_days = before_days // 7
+    return plot_chart(df, before_days)
+
+
+def plot_chart(df: pl.DataFrame, before_days: int = -1, fig: go.Figure | None = None) -> go.Figure:
     """plotlyでchartを作成する"""
     df = df.sort("date")
-    fig = make_subplots(
-        rows=2, cols=1, shared_xaxes=True, vertical_spacing=0.0, row_heights=[0.7, 0.3]
-    )
+    if fig is None:
+        fig = make_subplots(
+            rows=2, cols=1, shared_xaxes=True, vertical_spacing=0.0, row_heights=[0.7, 0.3]
+        )
     fig.add_trace(
         go.Candlestick(
             x=df["date"],

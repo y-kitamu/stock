@@ -3,6 +3,10 @@
 
 import re
 
+import pandas as pd
+import polars as pl
+import yfinance as yf
+
 # import polars as pl
 
 
@@ -16,19 +20,42 @@ def convert_to_number(val_str: str) -> int | float | None:
     return int(res.group(0))
 
 
-# def polars_map_batch(func):
-#     """
-#     ```python
-#     @polars_map_batch
-#     def test(dates, days=30):
-#         return dates - datetime.timedelta(days=days)
+def pd_to_pl(df: pd.DataFrame) -> pl.DataFrame:
+    df = df.reset_index()
+    if len(df) == 0:
+        return pl.DataFrame()
+    if "Date" in df:
+        pdf = pl.DataFrame(
+            {
+                "date": df["Date"].to_list(),
+                "open": df["Open"],
+                "high": df["High"],
+                "low": df["Low"],
+                "close": df["Close"],
+                "volume": df["Volume"],
+                "dividends": df["Dividends"],
+                "stock_splits": df["Stock Splits"],
+            }
+        ).with_columns(pl.col("date").cast(pl.Date))
+    elif "Datetime" in df:
+        pdf = pl.DataFrame(
+            {
+                "datetime": df["Datetime"].to_list(),
+                "open": df["Open"],
+                "high": df["High"],
+                "low": df["Low"],
+                "close": df["Close"],
+                "volume": df["Volume"],
+                "dividends": df["Dividends"],
+                "stock_splits": df["Stock Splits"],
+            }
+        ).with_columns(pl.col("datetime").cast(pl.Datetime))
+    else:
+        raise ValueError("Date or Datetime column is not found in the DataFrame.")
+    return pdf
 
-#     df = df.with_columns(pl.col("date").map_batches(test).alias("test"))
-#     ```
-#     """
 
-#     def _map_batch(pl_obj, *args, **kwargs):
-#         res = [func(data, *args, **kwargs) for data in pl_obj]
-#         return pl.Series(res)
-
-#     return _map_batch
+def get_history_data(code: str, **kwargs) -> pl.DataFrame:
+    ticker = yf.Ticker(code)
+    res = ticker.history(period="max", interval="1d", **kwargs).reset_index()
+    return pd_to_pl(res)

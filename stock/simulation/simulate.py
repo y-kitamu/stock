@@ -29,6 +29,7 @@ class MultiStepStopCondition(BaseCondition):
 class SimulationResult(BaseModel):
     """ """
 
+    code: str
     buying_price: float
     buying_date: date
     selling_price: float
@@ -44,6 +45,7 @@ def run(code: str, start_date: date, condition: BaseCondition) -> SimulationResu
     # df = df.filter(pl.col("date") >= start_date)
     if len(df) == 0:
         return SimulationResult(
+            code=code,
             buying_price=-1,
             buying_date=start_date,
             selling_price=-1,
@@ -55,6 +57,7 @@ def run(code: str, start_date: date, condition: BaseCondition) -> SimulationResu
     buying_price = condition.set_start(df, start_date)
     if buying_price == -1:
         return SimulationResult(
+            code=code,
             buying_price=-1,
             buying_date=start_date,
             selling_price=-1,
@@ -72,6 +75,7 @@ def run(code: str, start_date: date, condition: BaseCondition) -> SimulationResu
             break
 
     return SimulationResult(
+        code=code,
         buying_price=buying_price,
         buying_date=condition.buying_date,
         selling_price=selling_price,
