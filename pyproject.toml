@@ -56,7 +56,8 @@ build-backend = "poetry.core.masonry.api"
 # venvPath = ".venv"
 
 [tool.basedpyright]
-exclude = ["data/"]
+include = ["stock/**/*.py"]
+exclude = ["data", "**/node_modules", "**/__pycache__"]
 venvPath = ".venv"
 
 [tool.black]
