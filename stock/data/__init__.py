@@ -5,11 +5,54 @@ Create Date : 2024-08-12 15:45:39
 Copyright (c) 2019- Yusuke Kitamura <ymyk6602@gmail.com>
 """
 
+import csv
 import datetime
+from pathlib import Path
 
 import polars as pl
+import requests
+import xlrd
+from fake_useragent import UserAgent
 
+from ..constants import PROJECT_ROOT
 from ..kabutan.io import get_code_list, read_data_csv
+from ..logger import logger
+
+
+def update_us_ticker_list(output_path: Path = PROJECT_ROOT / "data" / "us_tickers.csv"):
+    ua = UserAgent()
+    headers = {"User-Agent": str(ua.chrome)}
+
+    url = "https://api.nasdaq.com/api/screener/stocks?tableonly=true&limit=25&offset=0&download=true"
+    response = requests.get(url, headers=headers)
+    res = response.json()
+    df = pl.from_dicts(res["data"]["rows"])
+    if len(df) < 100:
+        logger.debug("Something went wrong. Failed to update symbol ticker list.")
+        return
+    df.write_csv(output_path)
+    return df
+
+
+def update_jp_ticker_list(
+    output_csv_path: Path = PROJECT_ROOT / "data" / "data_j.csv",
+):
+    source_url: str = (
+        "https://www.jpx.co.jp/markets/statistics-equities/misc/tvdivq0000001vg2-att/data_j.xls"
+    )
+    res = requests.get(source_url)
+    workbook = xlrd.open_workbook(file_contents=res.content)
+    sheets = workbook.sheets()
+
+    rows = []
+    for i in range(sheets[0].nrows):
+        rows.append([str(col).replace(".0", "") for col in sheets[0].row_values(i)[1:]])
+    workbook.release_resources()
+
+    output_csv_path.parent.mkdir(exist_ok=True, parents=True)
+    with open(output_csv_path, "w", encoding="utf-8") as f:
+        csv_writer = csv.writer(f)
+        csv_writer.writerows(rows)
 
 
 def get_jumpups(

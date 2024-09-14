@@ -59,9 +59,10 @@ build-backend = "poetry.core.masonry.api"
 include = ["stock/**/*.py"]
 exclude = ["data", "**/node_modules", "**/__pycache__"]
 venvPath = ".venv"
+typeCheckingMode = "standard"
 
 [tool.black]
-line-length = 100
+line-length = 105
 
 [tool.flake8]
 max-complexity = 10

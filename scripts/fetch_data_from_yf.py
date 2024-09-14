@@ -6,18 +6,18 @@ Copyright (c) 2019- Yusuke Kitamura <ymyk6602@gmail.com>
 """
 
 import datetime
-from pathlib import Path
-import requests
 import json
+from pathlib import Path
 
-from tqdm import tqdm
-import yfinance as yf
 import polars as pl
+import requests
+import yfinance as yf
 from fake_useragent import UserAgent
+from pyrate_limiter import Duration, Limiter, RequestRate
 from requests import Session
 from requests_cache import CacheMixin, SQLiteCache
 from requests_ratelimiter import LimiterMixin, MemoryQueueBucket
-from pyrate_limiter import Duration, RequestRate, Limiter
+from tqdm import tqdm
 
 import stock
 
@@ -31,22 +31,22 @@ session = CachedLimiterSession(
     bucket_class=MemoryQueueBucket,
     backend=SQLiteCache("yfinance.cache"),
 )
-ua = UserAgent()
-headers = {"User-Agent": str(ua.chrome)}
+# ua = UserAgent()
+# headers = {"User-Agent": str(ua.chrome)}
 
 
-def update_us_ticker_list(output_path: Path = stock.PROJECT_ROOT / "data" / "us_tickers.csv"):
-    url = (
-        "https://api.nasdaq.com/api/screener/stocks?tableonly=true&limit=25&offset=0&download=true"
-    )
-    response = requests.get(url, headers=headers)
-    res = response.json()
-    df = pl.from_dicts(res["data"]["rows"])
-    if len(df) < 100:
-        stock.logger.debug("Something went wrong. Failed to update symbol ticker list.")
-        return
-    df.write_csv(output_path)
-    return df
+# def update_us_ticker_list(output_path: Path = stock.PROJECT_ROOT / "data" / "us_tickers.csv"):
+#     url = (
+#         "https://api.nasdaq.com/api/screener/stocks?tableonly=true&limit=25&offset=0&download=true"
+#     )
+#     response = requests.get(url, headers=headers)
+#     res = response.json()
+#     df = pl.from_dicts(res["data"]["rows"])
+#     if len(df) < 100:
+#         stock.logger.debug("Something went wrong. Failed to update symbol ticker list.")
+#         return
+#     df.write_csv(output_path)
+#     return df
 
 
 def fetch_data(symbol: str, date: datetime.date, output_path: Path):
@@ -75,17 +75,19 @@ def fetch_data(symbol: str, date: datetime.date, output_path: Path):
 
 
 if __name__ == "__main__":
-    start_date = datetime.date.today() - datetime.timedelta(days=1)
-    end_date = start_date  # datetime.date.today()
+    start_date = datetime.date.today() - datetime.timedelta(days=7)
+    end_date = datetime.date.today() - datetime.timedelta(days=1)  # datetime.date.today()
     date = start_date
 
     ticker_csv_path = stock.PROJECT_ROOT / "data" / "us_tickers.csv"
-    df = update_us_ticker_list(ticker_csv_path)
+    df = stock.data.update_us_ticker_list(ticker_csv_path)
     if df is None:
         df = pl.read_csv(ticker_csv_path)
 
     symbol_list = df["symbol"].to_list()
     for symbol in tqdm(symbol_list):
+        if "^" in symbol:
+            continue
         date = start_date
         while date <= end_date:
             date_str = date.strftime("%Y%m%d")

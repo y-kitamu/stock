@@ -93,29 +93,31 @@ def fetch_and_save(symbol: str, date: datetime.date, output_path: Path):
 
 
 if __name__ == "__main__":
-    # start_date = datetime.date(2021, 4, 15)
-    # end_date = datetime.date.today() - datetime.timedelta(days=1)
-    # date = start_date
-
-    # while date <= end_date:
-    #     stock.logger.debug("Fetching data for {}".format(date))
-    #     for symbol in symbols:
-    #         date_str = date.strftime("%Y%m%d")
-    #         save_path = stock.DATA_DIR / "minutes_gmo" / date_str / f"{symbol}_{date_str}.csv"
-    #         save_path.parent.mkdir(exist_ok=True, parents=True)
-    #         fetch_and_save("BTC", date, save_path)
-    #     date += datetime.timedelta(days=1)
+    start_date = datetime.date.today() - datetime.timedelta(days=7)
     if datetime.datetime.now().hour >= 6:
-        date = datetime.date.today() - datetime.timedelta(days=1)
+        end_date = datetime.date.today() - datetime.timedelta(days=1)
     else:
-        date = datetime.date.today() - datetime.timedelta(days=2)
+        end_date = datetime.date.today() - datetime.timedelta(days=2)
+    date = start_date
 
-    stock.logger.debug("Fetching data for {}".format(date))
-    for symbol in symbols:
-        date_str = date.strftime("%Y%m%d")
-        save_path = stock.DATA_DIR / "minutes_gmo" / date_str / f"{symbol}_{date_str}.csv"
-        if save_path.exists():
-            stock.logger.debug(f"{save_path} already exists. Skipping.")
-            continue
-        save_path.parent.mkdir(exist_ok=True, parents=True)
-        fetch_and_save("BTC", date, save_path)
+    while date <= end_date:
+        stock.logger.debug("Fetching data for {}".format(date))
+        for symbol in symbols:
+            date_str = date.strftime("%Y%m%d")
+            save_path = stock.DATA_DIR / "minutes_gmo" / date_str / f"{symbol}_{date_str}.csv"
+            if save_path.exists():
+                continue
+            save_path.parent.mkdir(exist_ok=True, parents=True)
+            fetch_and_save("BTC", date, save_path)
+        date += datetime.timedelta(days=1)
+
+    # stock.logger.debug("Fetching data for {}".format(date))
+    # for symbol in symbols:
+    #     date_str = date.strftime("%Y%m%d")
+    #     save_path = stock.DATA_DIR / "minutes_gmo" / date_str / f"{symbol}_{date_str}.csv"
+    #     if save_path.exists():
+    #         stock.logger.debug(f"{save_path} already exists. Skipping.")
+    #         continue
+    #     save_path.parent.mkdir(exist_ok=True, parents=True)
+    #     fetch_and_save("BTC", date, save_path)
+    stock.logger.debug("Done.")
