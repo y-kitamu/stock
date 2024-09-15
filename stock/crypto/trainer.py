@@ -64,6 +64,10 @@ class RayConfig(BaseModel):
     environment: Environment = Environment()
 
 
+class TrainerConfig(BaseModel):
+    dataloader: DataLoader.Config = DataLoader.Config()
+
+
 class Trainer:
 
     def __init__(self, config: RayConfig):
