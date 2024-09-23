@@ -7,14 +7,14 @@ Copyright (c) 2019- Yusuke Kitamura <ymyk6602@gmail.com>
 
 from typing import Any, override
 
+import gymnasium as gym
 import matplotlib.pyplot as plt
 import numpy as np
 import numpy.typing as npt
 import polars as pl
-import gymnasium as gym
 
 from .dataloader import DataLoader
-from .portfolio import Portfolio, Action
+from .portfolio import Action, Portfolio
 
 
 class TradingEnv(gym.Env[Any, dict[str, Any]]):
@@ -48,6 +48,7 @@ class TradingEnv(gym.Env[Any, dict[str, Any]]):
         info: dict[str, Any] = {
             "index": self.current_index - 1,
             "action": action,
+            "price": self.dataloader.get_price(self.current_index - 1),
             "reward": reward,
             "total_portfolio": self.portfolio.total,
             "current_cash": self.portfolio.cash,

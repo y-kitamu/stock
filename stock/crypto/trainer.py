@@ -6,10 +6,14 @@ Copyright (c) 2019- Yusuke Kitamura <ymyk6602@gmail.com>
 """
 
 import datetime
+from pathlib import Path
 from typing import Any, Type
 
 import gymnasium as gym
+import numpy as np
+import torch
 from pydantic import BaseModel, ConfigDict
+from ray.rllib.algorithms.algorithm import Algorithm
 from ray.rllib.algorithms.ppo import PPOConfig
 
 from .dataloader import DataLoader
@@ -64,32 +68,55 @@ class RayConfig(BaseModel):
     environment: Environment = Environment()
 
 
-class TrainerConfig(BaseModel):
-    dataloader: DataLoader.Config = DataLoader.Config()
+class TrainParams(BaseModel):
+    epoch: int = 30
+    dataloader: DataLoader.Params = DataLoader.Params()
+    portfolio: Portfolio.Params = Portfolio.Params()
+    ray: RayConfig = RayConfig()
 
 
 class Trainer:
 
-    def __init__(self, config: RayConfig):
-        self.dataloader = DataLoader(
-            "BTC", datetime.datetime(2022, 1, 1), datetime.datetime(2023, 1, 1), 1440, 25
-        )
-        self.portfolio = Portfolio(100000)
-        config.environment.env_config["dataloader"] = self.dataloader
-        config.environment.env_config["portfolio"] = self.portfolio
+    def __init__(self, params: TrainParams):
+        self.params = params
+        self.dataloader = DataLoader(params.dataloader)
+        self.portfolio = Portfolio(params.portfolio)
+        params.ray.environment.env_config["dataloader"] = self.dataloader
+        params.ray.environment.env_config["portfolio"] = self.portfolio
 
         self.config = (
             PPOConfig()
-            .api_stack(**config.api_stack.dict())
-            .learners(**config.learners.dict())
-            .training(**config.training.dict())
-            .environment(**config.environment.dict())
+            .api_stack(**params.ray.api_stack.model_dump())
+            .learners(**params.ray.learners.model_dump())
+            .training(**params.ray.training.model_dump())
+            .environment(**params.ray.environment.model_dump())
         )
         self.algo = self.config.build()
+        self.checkpoint_dir = ""
 
     def train(self):
-        for i in range(30):
+        for i in range(self.params.epoch):
             result = self.algo.train()
             print("Episode reward mean: {}".format(result["env_runners"]["episode_return_mean"]))
 
-        checkpoint_dir = self.algo.save_to_path()
+        self.checkpoint_dir = self.algo.save_to_path()
+
+    def restore(self, checkpoint_dir: Path | None = None):
+        ckpt_dir: Path = Path(checkpoint_dir or self.checkpoint_dir)
+        algo = Algorithm.from_checkpoint(ckpt_dir.as_posix())
+        rl_module = algo.get_module()
+        return rl_module
+
+    def inference(
+        self, dataloader: DataLoader, portfolio: Portfolio, checkpoint_dir: Path | None = None
+    ):
+        rl_module = self.restore(checkpoint_dir=checkpoint_dir)
+        env = TradingEnv({"dataloader": dataloader, "portfolio": portfolio})
+        obs, info = env.reset()
+        while True:
+            input = torch.from_numpy(np.array([obs]))
+            action_logits = rl_module.forward_inference({"obs": input})["action_dist_inputs"]
+            action = torch.argmax(action_logits[0]).numpy()
+            obs, reward, is_terminated, is_truncated, _ = env.step(action)
+            if is_terminated:
+                break
