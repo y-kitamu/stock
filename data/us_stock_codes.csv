@@ -316,7 +316,6 @@ ARMP,ARMATA PHARMA,アルマータ・ファーマシューティカルズ,NYSE,�
 AROC,ARCHROCK INC,アーチロック,NYSE,ガス・パイプライン,○
 AROW,ARROW FINANCIAL,アロー・ファイナンシャル,NASDAQ,金融（銀行）,○
 ARQ,ARQ INC,ARQインク,NASDAQ,ガス・パイプライン,○
-ARQQ,ARQIT QUANTUM,アーキット・クオンタム,NASDAQ,ソフトウェア・サービス,○
 ARQT,ARCUTIS BIOTHERA,アークティス・バイオセラピューティクス,NASDAQ,医薬品（バイオテクノロジー）,○
 ARRY,ARRAY TECHNO,アレイ・テクノロジーズ,NASDAQ,電力,○
 ARTL,ARTELO BIOSCIENC,アルテロ・バイオサイエンシズ,NASDAQ,医薬品（バイオテクノロジー）,○
@@ -1007,6 +1006,7 @@ CRK,COMSTOCK RESRCES,コムストック・リソーシズ,NYSE,石油,○
 CRL,CHARLS RIVER LAB,チャールズリバー・ラボラトリーズ・インターナショナル,NYSE,ヘルスケア,○
 CRM,SALESFORCE,セールスフォース,NYSE,ソフトウェア・サービス,○
 CRMD,CORMEDIX INC,コーメディックス,NASDAQ,医薬品（バイオテクノロジー）,○
+CRML,CRITICAL METALS,クリティカル・メタルズ,NASDAQ,その他,○
 CRMT,AMERICAS CAR-MRT,アメリカズ・カーマート,NASDAQ,小売,○
 CRNC,CERENCE INC,セレンス・インク,NASDAQ,ソフトウェア・サービス,○
 CRNT,CERAGON NETWORKS,セラゴン・ネットワークス,NASDAQ,通信機器,○
@@ -1338,6 +1338,7 @@ EHTH,EHEALTH INC,eヘルス,NASDAQ,金融(保険),○
 EIDO,ISHRS INDONESIA,iシェアーズ MSCI インドネシア ETF,NYSE,その他,○
 EIG,EMPLOYERS HLD,エンプロイヤーズ・ホールディングス,NYSE,金融(保険),○
 EIX,EDISON INTER,エジソン・インターナショナル,NYSE,電力,○
+EJH,EHOME HOUSE SERV,Eホーム・ハウスホールド・サービス・ホールディングス,NASDAQ,ソフトウェア・サービス,○
 EKSO,EKSO BIONICS HLD,エクソ・バイオニクス・ホールディングス,NASDAQ,ヘルスケア,○
 EL,ESTEE LAUDER,エスティ　ローダー,NYSE,ヘルスケア,○
 ELA,ENVELA CORP,エンベラ,NYSE,小売,○
@@ -1669,10 +1670,12 @@ FSLY,FASTLY INC,ファストリー,NYSE,ソフトウェア・サービス,○
 FSM,FORTUNA MINING,フォルトゥナ・マイニング,NYSE,その他,○
 FSS,FEDERAL SIGNAL,フェデラル・シグナル,NYSE,その他製造,○
 FSTR,LB FOSTER CMPANY,LBフォスター,NASDAQ,その他製造,○
+FTAI,FTAI AVIATION,FTAIアビエーション,NASDAQ,航空機・宇宙,○
 FTCI,FTC SOLAR INC,FTCソーラー,NASDAQ,電力,○
 FTCS,FT CAPIT STR ETF,ファーストトラスト キャピタル ストレングス ETF,NASDAQ,その他,○
 FTDR,FRONTDOOR INC,フロントドア,NASDAQ,その他,○
 FTEK,FUEL TECH INC,フュエル・テック,NASDAQ,ソフトウェア・サービス,○
+FTEL,FITELL CORP,フィテル,NASDAQ,小売,○
 FTFT,FUTURE FINTECH,フューチャー・フィンテック・グループ,NASDAQ,ソフトウェア・サービス,○
 FTGC,FT GBL TAC COMMO,ファーストトラスト グローバル タクティカル コモディティ戦略ファンド,NASDAQ,その他,○
 FTGS,FT GRWTH STR ETF,ファーストトラスト グロース ストレングス ETF,NASDAQ,その他,○
@@ -1690,6 +1693,7 @@ FTSM,FT SHORT MAT ETF,ファーストトラスト エンハンスト ショー�
 FTV,FORTIVE CORP,フォーティブ,NYSE,機械,○
 FTXL,FT NQ SEMICON,ファーストトラスト ナスダック 半導体ETF,NASDAQ,その他,○
 FUBO,FUBOTV INC,フボTV,NYSE,エンターテイメント,○
+FUFU,BITFUFU INC,ビットフフ,NASDAQ,情報処理サービス,○
 FUL,H.B. FULLER CO.,H.B.フラー,NYSE,その他製造,○
 FULC,FULCRUM THERAPEU,フルクラム・セラピューティクス,NASDAQ,医薬品（バイオテクノロジー）,○
 FULT,FULTON FINANCIAL,フルトン・ファイナンシャル,NASDAQ,金融（銀行）,○
@@ -1699,6 +1703,7 @@ FUTU,FUTU HOLDINGS,フツ・ホールディングス,NASDAQ,金融（証券）,�
 FVCB,FVCBANKCORP INC,FVCバンクコープ,NASDAQ,金融（銀行）,○
 FVD,FT VAL LINE DIVD,ファーストトラスト バリューライン 配当指数ファンド,NYSE,その他,○
 FVRR,FIVERR INTL,ファイバー・インターナショナル,NYSE,ソフトウェア・サービス,○
+FWONA,LIBERTY MEDIA,リバティ・メディア・コーポレーション・フォーミュラ・ワン,NASDAQ,エンターテイメント,○
 FWRD,FORWARD AIR CORP,フォワード・エアー,NASDAQ,運輸,○
 FWRG,1ST WATCH RESTRN,ファースト・ウォッチ・レストラン・グループ,NASDAQ,外食,○
 FXH,FT HEALTH CARE,ファーストトラスト ヘルスケア AlphaDEXファンド,NYSE,その他,○
@@ -1835,6 +1840,7 @@ GOTU,GAOTU TECHEDU,ガオトゥ・テックエデュ,NYSE,ソフトウェア・�
 GOVX,GEOVAX LABS INC,ジオバックス・ラブズ,NASDAQ,医薬品（バイオテクノロジー）,○
 GP,GREENPOWER MOTOR,グリーンパワー・モーター,NASDAQ,機械,○
 GPC,GENUINE PARTS CO,ジェニュイン・パーツ,NYSE,小売,○
+GPCR,STRUCTURE THERAP,ストラクチャー・セラピューティクス,NASDAQ,医薬品（バイオテクノロジー）,○
 GPI,GROUP 1 AUTOMOTI,グループ・ワン・オートモーティブ,NYSE,自動車,○
 GPK,GRAPHIC PACKAGIN,グラフィック・パッケージング・ホールディング,NYSE,その他製造,○
 GPN,GLOBAL PAYMENTS,グローバル･ペイメンツ,NYSE,情報処理サービス,○
@@ -1997,6 +2003,7 @@ HRMY,HARMONY BIO,ハーモニー・バイオサイエンシーズ,NASDAQ,医薬�
 HROW,HARROW INC,ハロー,NASDAQ,医薬品,○
 HRTG,HERITAGE INSURNC,ヘリテージ・インシュアランス・ホールディングス,NYSE,金融(保険),○
 HRTX,HERON THERAPEUT,ヘロン・セラピューティクス,NASDAQ,医薬品（バイオテクノロジー）,○
+HSAI,HESAI GROUP,へーサイ・グループ,NASDAQ,周辺機器,○
 HSBC,HSBC (ADR),HSBCホールディングス,NYSE,金融コングロマリット,○
 HSDT,HELIUS MED TECH,ヘリウス・メディカル・テクノロジーズ,NASDAQ,医薬品（バイオテクノロジー）,○
 HSIC,HENRY SCHEIN INC,ヘンリー・シャイン,NASDAQ,ヘルスケア,○
@@ -2463,6 +2470,7 @@ LIN,LINDE PLC,リンデ,NASDAQ,ガス・パイプライン,○
 LINC,LINCOLN EDUCTNAL,リンカーン・エジュケーショナル・サービシーズ,NASDAQ,ソフトウェア・サービス,○
 LIND,LINDBLAD EXPEDIT,リンドブラッド・エクスペディションズ・ホールディングス,NASDAQ,エンターテイメント,○
 LINK,INTERLINK ELECTR,インターリンク・エレクトロニクス,NASDAQ,ソフトウェア・サービス,○
+LION,LIONSGATE STUDIO,ライオンズゲート・ステュディオス,NASDAQ,エンターテイメント,○
 LIQT,LIQTECH INTL INC,リクテック・インターナショナル,NASDAQ,その他製造,○
 LIT,GBLX LIT BATTERY,グローバルX リチウム&バッテリーテック ETF,NYSE,その他,○
 LITE,LUMENTUM,ルメンタム・ホールディングス,NASDAQ,その他製造,○
@@ -2484,6 +2492,7 @@ LMNR,LIMONEIRA COMP,リモネイラ,NASDAQ,その他,○
 LMT,LOCKHEED MARTIN,ロッキード・マーチン,NYSE,航空機・宇宙,○
 LNC,LINCOLN NATIONAL,リンカーン・ナショナル,NYSE,金融(保険),○
 LND,BR AGRO PRPRIEDA,ブラジルアグロ：プロプ・アグリコラス,NYSE,その他,○
+LNG,CHENIERE ENERGY,シェニエール・エナジー,NYSE,ガス・パイプライン,○
 LNKB,LINKBANCORP INC,リンクバンコープ,NASDAQ,金融（銀行）,○
 LNN,LINDSAY CORP,リンゼー,NYSE,機械,○
 LNSR,LENSAR INC,レンサー,NASDAQ,医療サービス,○
@@ -2499,6 +2508,7 @@ LOGI,LOGITECH INTL,ロジテック・インターナショナル,NASDAQ,コン�
 LOMA,LOMA NEGRA COMP,ロマ・ネグラ・コンパニーア・インダストリアル・アルゼンチン,NYSE,その他製造,○
 LOOP,LOOP INDUSTRIES,ループ・インダストリーズ,NASDAQ,その他製造,○
 LOPE,GRAND CANYON EDU,グランド・キャニオン・エデュケーション,NASDAQ,ソフトウェア・サービス,○
+LOT,LOTUS TECHNOLOGY,ロータス・テクノロジー,NASDAQ,自動車,○
 LOVE,THE LOVESAC,ザ･ラブサック,NASDAQ,小売,○
 LOW,LOWES COS INC,ロウズ・カンパニーズ,NYSE,小売,○
 LPCN,LIPOCINE INC,リポシン,NASDAQ,医薬品（バイオテクノロジー）,○
@@ -3028,6 +3038,7 @@ OIH,V OIL SERVICES,ヴァンエック・石油サービスETF,NYSE,その他,○
 OII,OCEANEERING INTL,オーシャニアリング・インターナショナル,NYSE,ガス・パイプライン,○
 OIS,OIL STATES INTL,オイル・ステーツ・インターナショナル,NYSE,その他製造,○
 OKE,ONEOK INC,ONEOK,NYSE,ガス・パイプライン,○
+OKLO,OKLO INC,オクロ,NYSE,電力,○
 OKTA,OKTA INC,オクタ,NASDAQ,ソフトウェア・サービス,○
 OKYO,OKYO PHARMA LTD,オキョ・ファーマ,NASDAQ,医薬品（バイオテクノロジー）,○
 OLB,OLB GROUP INC,OLBグループ,NASDAQ,ソフトウェア・サービス,○
@@ -3079,7 +3090,6 @@ ORA,ORMAT TECHNOLOGI,オーマット・テクノロジーズ,NYSE,電力,○
 ORCL,ORACLE CORP.,オラクル,NYSE,ソフトウェア・サービス,○
 ORGN,ORIGIN MATERIALS,オリジン・マティアリアルズ,NASDAQ,その他,○
 ORGO,ORGANOGENESIS,オーガノジェネシス・ホールディングス,NASDAQ,医薬品（バイオテクノロジー）,○
-ORGS,ORGENESIS INC,オルジェネシス,NASDAQ,医薬品（バイオテクノロジー）,○
 ORI,OLD REPUBLIC INT,オールド・リパブリック・インターナショナル　,NYSE,金融(保険),○
 ORIC,ORIC PHARMACEU,ORICファーマシューティカルズ,NASDAQ,医薬品（バイオテクノロジー）,○
 ORKA,ORUKA THERAPEUTI,オルカ・セラピューティクス,NASDAQ,医薬品（バイオテクノロジー）,○
@@ -3454,6 +3464,7 @@ RDW,REDWIRE CORP,レッドワイヤー,NYSE,航空機・宇宙,○
 RDWR,RADWARE LTD,ラドウェア,NASDAQ,ソフトウェア・サービス,○
 RDY,DOCTOR REDDYS,ドクター・レディース・ラボラトリーズ,NYSE,医薬品,○
 REAL,THE REALREAL INC,リアルリアル,NASDAQ,小売,○
+REAX,REAL BROKERAGE,リアル・ブローカレッジ,NASDAQ,その他,○
 REE,REE AUTOMOTIVE,リー・オートモーティブ,NASDAQ,自動車,○
 REFR,RESEARCH FRONT,リサーチ・フロンティアーズ,NASDAQ,その他製造,○
 REGN,REGENERON PHARMA,リジェネロン・ファーマシューティカルズ,NASDAQ,医薬品（バイオテクノロジー）,○
@@ -3651,6 +3662,7 @@ SDIG,STRONGHD D MININ,ストロングホールド・デジタル・マイニン�
 SDIV,GLX SUPERDVD ETF,グローバルX スーパーディビィデンド-世界株式 ETF,NYSE,その他,○
 SDOT,SADOT GROUP INC,サドット・グループ,NASDAQ,外食,○
 SDOW,PROS DOW30 -3X,プロシェアーズ・ウルトラプロ・ショート・ダウ30,NYSE,その他,○
+SDRL,SEADRILL LTD,シードリル,NYSE,石油,○
 SDVY,FT SMID CAP ETF,ファーストトラスト 中小型増配アチーバーズETF,NASDAQ,その他,○
 SDY,SPDR SP DIVIDEND,SPDR S&P 米国高配当株式 ETF,NYSE,その他,○
 SE,SEA LIMITED,シー,NYSE,ソフトウェア・サービス,○
@@ -3722,6 +3734,7 @@ SIGI,SELECTIVE INSURA,セレクティブ・インシュアランス・グルー�
 SIL,GLX SIL MINE ETF,グローバルＸ 銀ビジネス ETF,NYSE,その他,○
 SILC,SILICOM LTD,シリコム,NASDAQ,ネットワーク,○
 SILV,SILVERCREST MTLS,シルバークレスト・メタルズ,NYSE,その他,○
+SIM,GRUPO SIMEC SAB,グルポ・シメク,NYSE,その他製造,○
 SIMO,SILICON MOTION,シリコン・モーション・テクノロジー,NASDAQ,半導体,○
 SINT,SINTX TECHNO,シントクス・テクノロジーズ,NASDAQ,化学,○
 SIRI,SIRIUS XM HLD,シリウスXMホールディングス,NASDAQ,その他,○
@@ -3811,6 +3824,7 @@ SNV,SYNOVUS FINANCIA,シノバス・ファイナンシャル,NYSE,金融（銀�
 SNX,TD SYNNEX,TDシネックス,NYSE,運輸,○
 SO,SOUTHERN CO,サザン,NYSE,その他製造,○
 SOAR,VOLATO GROUP INC,ボラト・グループ,NYSE,航空,○
+SOC,SABLE OFFSHORE,セーブル・オフショア,NYSE,石油,○
 SOCL,GLX SOC MDIA ETF,グローバルX ソーシャルメディア ETF,NASDAQ,その他,○
 SOFI,SOFI TECHNOLOGY,ソーファイ・テクノロジーズ,NASDAQ,金融（銀行）,○
 SOGP,SOUND GROUP,サウンド・グループ,NASDAQ,ソフトウェア・サービス,○
@@ -4685,6 +4699,7 @@ ZIM,ZIM INTGRTD SHIP,ジム・インテグレーテッド・シッピング・�
 ZIMV,ZIMVIE INC,ジムヴィー,NASDAQ,医療サービス,○
 ZION,ZIONS BANCORP,ザイオンズ・バンコープ,NASDAQ,金融（銀行）,○
 ZIP,ZIPRECRUITER,ジップリクルーター,NYSE,その他,○
+ZK,ZEEKR INTLI TECH,ジーカー・インテリジェント・テクノロジー・ホールディング,NYSE,自動車,○
 ZKIN,ZK INTERNATIONAL,ZKインターナショナル・グループ,NASDAQ,その他製造,○
 ZLAB,ZAI LAB LTD,ザイ・ラボ,NASDAQ,医薬品（バイオテクノロジー）,○
 ZM,ZOOM VIDEO COMMU,ズーム・ビデオ・コミュニケーションズ,NASDAQ,ソフトウェア・サービス,○
