@@ -21,6 +21,7 @@ def convert_to_number(val_str: str) -> int | float | None:
 
 
 def pd_to_pl(df: pd.DataFrame) -> pl.DataFrame:
+    """yfinanceで取得したのpd.DataFrameをpolarsのDataFrameに変換する"""
     df = df.reset_index()
     if len(df) == 0:
         return pl.DataFrame()

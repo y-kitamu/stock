@@ -12,3 +12,12 @@ def run_debug(func, *args, **kwargs):
         extype, value, tb = sys.exc_info()
         traceback.print_exc()
         pdb.post_mortem(tb)
+
+
+def debug(func):
+    """エラーが発生したときにpdbを起動するデコレータ"""
+
+    def wrapper(*args, **kwargs):
+        return run_debug(func, *args, **kwargs)
+
+    return wrapper

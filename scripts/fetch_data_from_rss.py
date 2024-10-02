@@ -178,6 +178,8 @@ def merge_data(output_path, data):
 
 
 if __name__ == "__main__":
+    stock.data.update_jp_ticker_list()
+
     # 日本株
     code_list = domestic_market_indices + stock.get_code_list(include_etf=True)
     fetch_stock_data(code_list, 302, 8)
