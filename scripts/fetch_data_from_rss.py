@@ -110,12 +110,12 @@ def fetch_stock_data(code_list, valid_data_len=302, max_days=8, merge=False):
     sheet = wb.sheets[0]
 
     data_num = valid_data_len * max_days
-    output_root_dir = Path("/d/stock/data/minutes")
+    output_root_dir = Path(r"D:\stock\data\minutes")
     if not output_root_dir.exists():
         output_root_dir = stock.PROJECT_ROOT / "data/minutes"
     # output_root_dir.mkdir(exist_ok=True)
 
-    re_date = re.compile("\d+/\d+/\d+")
+    re_date = re.compile("[0-9]+/[0-9]+/[0-9]+")
 
     for code in tqdm(code_list):
         sheet["A1"].formula = f'=RssChart(A2:J2,"{code}", "1M", {data_num})'
@@ -147,7 +147,7 @@ def fetch_stock_data(code_list, valid_data_len=302, max_days=8, merge=False):
             output_path.parent.mkdir(exist_ok=True)
 
             if output_path.exists() and merge:
-                merge_data(output_path, data)
+                merge_data(output_path, day_data)
             else:
                 with open(output_path, "w", encoding="utf-8") as f:
                     writer = csv.writer(f, lineterminator="\n")
@@ -182,11 +182,11 @@ if __name__ == "__main__":
     code_list = domestic_market_indices + stock.get_code_list(include_etf=True)
     fetch_stock_data(code_list, 302, 8)
 
-    # us
+    # # us
     code_list = us_market_indices
     fetch_stock_data(code_list, 391, 6, merge=True)
 
-    # 先物
+    # # 先物
     code_list = jp_futures
     fetch_stock_data(code_list, 3000, 1, merge=True)
 

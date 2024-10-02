@@ -1,0 +1,1 @@
+powershell -executionpolicy unrestricted -File c:\Users\kitamura\work\stock\scripts\run_wsl.ps1
