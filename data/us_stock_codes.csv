@@ -77,7 +77,6 @@ ADSE,ADS TEC ENERGY,ADSテック・エナジー,NASDAQ,自動車,○
 ADSK,AUTODESK.INC.,オートデスク,NASDAQ,その他,○
 ADT,ADT INC,ADT,NYSE,ソフトウェア・サービス,○
 ADTN,ADTRAN HOLDINGS,アドトラン・ホールディングス,NASDAQ,通信機器,○
-ADTX,ADITXT INC,アディトクス,NASDAQ,ヘルスケア,○
 ADUS,ADDUS HOMECARE,アダス・ホームケア,NASDAQ,ヘルスケア,○
 ADV,ADVANTAGE SOLN,アドバンテージ・ソリューションズ,NASDAQ,ソフトウェア・サービス,○
 ADVM,ADVERUM BIOTECH,アドベラム・バイオテクノロジーズ,NASDAQ,医薬品（バイオテクノロジー）,○
@@ -232,7 +231,6 @@ AMRX,AMNEAL PHARMA,アムニール・ファーマシューティカルズ,NASDAQ
 AMSC,AMERICN SUPERCON,アメリカン・スーパーコンダクター,NASDAQ,電力,○
 AMSF,AMERISAFE INC,アメリセーフ,NASDAQ,金融(保険),○
 AMST,AMESITE INC,アメサイト,NASDAQ,ソフトウェア・サービス,○
-AMSWA,AMERICA SOFTWARE,アメリカン・ソフトウエア,NASDAQ,ソフトウェア・サービス,○
 AMTB,AMERANT BANCORP,アメラント・バンコープ,NYSE,金融（銀行）,○
 AMTX,AEMETIS INC,アメティス,NASDAQ,電力,○
 AMWD,AMERICAN WOODMRK,アメリカン・ウッドマーク,NASDAQ,その他製造,○
@@ -480,6 +478,7 @@ BCBP,BCB BANCORP,BCBバンコープ,NASDAQ,金融（銀行）,○
 BCC,BOISE CASCADE,ボイジー・カスケード,NYSE,その他製造,○
 BCE,BCE INC,BCE,NYSE,通信サービス,○
 BCH,BANCO DE CHILE,バンコ・デ・チリ,NYSE,金融（銀行）,○
+BCLI,BRAINSTORM CELL,ブレインストーム・セル・セラピューティクス,NASDAQ,医薬品（バイオテクノロジー）,○
 BCML,BAYCOM CORP,ベイコム,NASDAQ,金融（銀行）,○
 BCO,THE BRINKS,ブリンクス,NYSE,ソフトウェア・サービス,○
 BCOV,BRIGHTCOVE INC,ブライトコーブ,NASDAQ,ソフトウェア・サービス,○
@@ -826,7 +825,6 @@ CHEF,CHEFS WAREHOUSE,シェフズ・ウェアハウス,NASDAQ,食品,○
 CHEK,CHECK CAP LTD,チェック・キャップ,NASDAQ,ヘルスケア,○
 CHGG,CHEGG INC,チェグ,NYSE,ソフトウェア・サービス,○
 CHH,CHOICE HOTELS,チョイス・ホテルズ・インターナショナル,NYSE,ホテル,○
-CHK,CHESAPEAKE ENRGY,チェサピーク・エナジー,NASDAQ,石油,○
 CHKP,CHECK POINT SOFT,チェック・ポイント・ソフトウェア・テクノロジーズ,NASDAQ,ネットワークセキュリティー,○
 CHMG,CHEMUNG FINANCL,シェマング・ファイナンシャル,NASDAQ,金融（銀行）,○
 CHPT,CHARGEPOINT,チャージポイント,NYSE,電力,○
@@ -1479,6 +1477,7 @@ EWZ,ISHARES BRAZIL,iシェアーズ MSCI ブラジル ETF,NYSE,その他,○
 EXAI,EXSCIENTIA PLC,エクセンシア,NASDAQ,医薬品（バイオテクノロジー）,○
 EXAS,EXACT SCIENCES,イグザクド・サイエンシズ,NASDAQ,医薬品（バイオテクノロジー）,○
 EXC,EXELON CORP,エクセロン,NASDAQ,その他製造,○
+EXE,EXPAND ENERGY CO,エクスパンド・エナジー・コーポレーション,NASDAQ,石油,○
 EXEL,EXELIXIS INC,エクセリクス,NASDAQ,医薬品（バイオテクノロジー）,○
 EXFY,EXPENSIFY INC,エクスペンシファイ,NASDAQ,ソフトウェア・サービス,○
 EXI,ISHARES INDUSTRY,iシェアーズ グローバル資本財 ETF,NYSE,その他,○
@@ -2454,6 +2453,7 @@ LGL,LGL GROUP,LGLグループ,NYSE,その他製造,○
 LGMK,LOGICMARK INC,ロジックマーク,NASDAQ,ソフトウェア・サービス,○
 LGND,LIGAND PHARMA,リガンド・ファーマシューティカルズ,NASDAQ,医薬品（バイオテクノロジー）,○
 LGO,LARGO INC,ラルゴ,NASDAQ,電力,○
+LGTY,LOGILITY SC SOL,ロジリティ・サプライチェーン・ソリューションズ,NASDAQ,ソフトウェア・サービス,○
 LGVN,LONGEVERON INC,ロンジェベロン,NASDAQ,医薬品（バイオテクノロジー）,○
 LH,LABCORP HOLDINGS,ラボコープ・ホールディングス,NYSE,医療サービス,○
 LHX,L3HARRIS TECHNOL,L3ハリス・テクノロジーズ,NYSE,通信機器,○
@@ -3305,7 +3305,6 @@ PRCH,PORCH GROUP INC,ポーチ・グループ,NASDAQ,ソフトウェア・サー
 PRCT,PROCEPT BIOROBO,プロセプト・バイオロボティクス,NASDAQ,医療サービス,○
 PRDO,PERDOCEO EDU,パルドセオ・エデュケーション,NASDAQ,ソフトウェア・サービス,○
 PRE,PRENETICS GLOBAL,プレネティクス・グローバル,NASDAQ,その他,○
-PRFT,PERFICIENT INC,パーフィシェント,NASDAQ,ソフトウェア・サービス,○
 PRG,PROG HOLDINGS,プログ・ホールディングス,NYSE,小売,○
 PRGO,PERRIGO CO PLC,ペリゴ,NYSE,医薬品,○
 PRGS,PROGRSS SOFTWARE,プログレス・ソフトウェア,NASDAQ,ソフトウェア・サービス,○
@@ -4090,7 +4089,7 @@ TISI,TEAM INC,チーム,NYSE,ソフトウェア・サービス,○
 TITN,TITAN MACHINERY,タイタン・マシーナリー,NASDAQ,機械,○
 TIXT,TELUS INTRNL CDA,ティラス・インターナショナル,NYSE,コンピュータ,○
 TJX,TJX COS INC,TJXカンパニー,NYSE,小売,○
-TK,TEEKAY CORP,ティーケイ,NYSE,運輸,○
+TK,TEEKAY CORP LTD,ティーケイ・コーポレーション,NYSE,運輸,○
 TKC,TURKCELL ILETISI,タークセル,NYSE,通信サービス,○
 TKLF,YOSHITSU CO LTD,ヨシツウ,NASDAQ,小売,○
 TKNO,ALPHA TEKNOVA,アルファ・テクノバ,NASDAQ,医薬品（バイオテクノロジー）,○
@@ -4119,6 +4118,7 @@ TNDM,TANDEM DIABETES,タンデム・ダイアベティス・ケア,NASDAQ,ヘル
 TNET,TRINET GROUP INC,トライネット・グループ,NYSE,ソフトウェア・サービス,○
 TNFA,TNF PHARMACEUTIC,TNFファーマシューティカルズ,NASDAQ,医薬品,○
 TNGX,TANGO THERAPE,タンゴ・セラピューティクス,NASDAQ,医薬品（バイオテクノロジー）,○
+TNK,TEEKAY TANKERS,ティーケイ・タンカーズ,NYSE,運輸,○
 TNL,TRAVEL LEISURE,トラベル・レージャー,NYSE,ホテル,○
 TNON,TENON MEDICAL,テノン・メディカル,NASDAQ,医薬品,○
 TNXP,TONIX PHARMACEUT,トニックス・ファーマシュティカルズ・ホールディング,NASDAQ,医薬品,○
