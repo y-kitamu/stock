@@ -16,7 +16,7 @@ from fake_useragent import UserAgent
 
 from ..constants import PROJECT_ROOT
 from ..kabutan.io import get_code_list, read_data_csv
-from ..logger import logger
+from ..logging import logger
 
 
 def update_us_ticker_list(output_path: Path = PROJECT_ROOT / "data" / "us_tickers.csv"):
