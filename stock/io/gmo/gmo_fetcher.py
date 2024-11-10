@@ -1,4 +1,5 @@
 """gmo_fetcher.py
+gmoの過去データを取得する
 """
 
 import datetime
@@ -11,9 +12,37 @@ from tqdm import tqdm
 
 from ...constants import PROJECT_ROOT
 from ..session import get_session
+from .volume_bar import convert_ticker_to_volume_bar
 
-# base_url = "https://api.coin.z.com/data/trades/{ticker}/{yyyy}/{mm:02d}/{yyyymmdd}_{ticker}.csv.gz"
-# output_root_dir = stock.PROJECT_ROOT / "data" / "tick_data"
+
+def convert_timedelta_to_str(interval: datetime.timedelta):
+    interval_str = ""
+    if interval.days > 0:
+        interval_str += f"{interval.days}d"
+    hours = interval.seconds // 3600
+    minutes = (interval.seconds % 3600) // 60
+    seconds = interval.seconds % 60
+    if hours > 0:
+        interval_str += f"{hours}h"
+    if minutes > 0:
+        interval_str += f"{minutes}m"
+    if seconds > 0:
+        interval_str += f"{seconds}s"
+    return interval_str
+
+
+def add_maker_fee(df: pl.DataFrame):
+    df = df.with_columns(
+        pl.when(pl.col("datetime") < datetime.datetime(2020, 8, 5, 6, 0, 0))
+        .then(0.0)
+        .when(pl.col("datetime") < datetime.datetime(2020, 9, 9, 6, 0, 0))
+        .then(-0.00035)
+        .when(pl.col("datetime") < datetime.datetime(2020, 11, 4, 6, 0, 0))
+        .then(-0.00025)
+        .otherwise(0.0)
+        .alias("maker_fee")
+    )
+    return df
 
 
 class GMOFethcer:
@@ -80,35 +109,45 @@ class GMOFethcer:
         for file_path in ticker_file_list:
             date = datetime.datetime.strptime(file_path.parent.name, "%Y%m%d")
             if start_date.date() <= date.date() <= end_date.date():
-                dfs.append(pl.read_csv(file_path))
+                dfs.append(
+                    pl.read_csv(file_path).select(
+                        pl.col("symbol"),
+                        pl.col("side"),
+                        pl.col("price"),
+                        pl.col("size"),
+                        pl.col("timestamp").str.to_datetime("%Y-%m-%d %H:%M:%S.%3f").alias("datetime"),
+                    )
+                )
         if len(dfs) == 0:
             return pl.DataFrame()
 
-        df = (
-            pl.concat(dfs)
-            .lazy()
-            .select(
-                pl.col("symbol"),
-                pl.col("side"),
-                pl.col("price"),
-                pl.col("size"),
-                pl.col("timestamp").str.to_datetime("%Y-%m-%d %H:%M:%S.%3f").alias("datetime"),
-            )
-            .filter(pl.col("datetime").is_between(start_date, end_date))
-            .collect()
-        )
+        df = pl.concat(dfs).filter(pl.col("datetime").is_between(start_date, end_date))
         return df
 
     def fetch_ohlc(
         self,
         symbol: str,
-        inteval: datetime.timedelta,
+        interval: datetime.timedelta,
         start_date: datetime.datetime | None = None,
         end_date: datetime.datetime | None = None,
         fill_missing_date: bool = False,
     ) -> pl.DataFrame:
         if symbol not in self.available_tickers:
             raise ValueError(f"{symbol} is not available")
+
+        df = self.fetch_ticker(symbol, start_date, end_date)
+        ohlc_df = (
+            df.group_by_dynamic(pl.col("datetime"), every=convert_timedelta_to_str(interval))
+            .agg(
+                pl.col("price").first().alias("open"),
+                pl.col("price").max().alias("high"),
+                pl.col("price").min().alias("low"),
+                pl.col("price").last().alias("close"),
+                pl.col("size").sum(),
+            )
+            .sort(pl.col("datetime"))
+        )
+        return ohlc_df
 
     def fetch_volume_bar(
         self,
@@ -119,4 +158,25 @@ class GMOFethcer:
     ) -> pl.DataFrame:
         if symbol not in self.available_tickers:
             raise ValueError(f"{symbol} is not available")
+        df = self.fetch_ticker(symbol, start_date, end_date)
+        return convert_ticker_to_volume_bar(df, volume_size)
+
+    def fetch_TIB(
+        self, symbol: str, start_date: datetime.datetime, end_date: datetime.datetime
+    ) -> pl.DataFrame:
+        pass
+
+    def fetch_VIB(
+        self, symbol: str, start_date: datetime.datetime, end_date: datetime.datetime
+    ) -> pl.DataFrame:
+        pass
+
+    def fetch_TRB(
+        self, symbol: str, start_date: datetime.datetime, end_date: datetime.datetime
+    ) -> pl.DataFrame:
+        pass
+
+    def fetch_VRB(
+        self, symbol: str, start_date: datetime.datetime, end_date: datetime.datetime
+    ) -> pl.DataFrame:
         pass

@@ -1,50 +1,38 @@
-version: '3'
+# version: '3.9'
+# https://docs.docker.com/compose/environment-variables/envvars/#compose_project_name
+name: "stock"
 
 services:
-  # stock_dev:
-  #   hostname: stock_dev
-  #   build:
-  #     context: ..
-  #     dockerfile: docker/Dockerfile
-  #     shm_size: "2g"
-  #     args:
-  #       user: ${UESR}
-  #       uid: ${USER_ID}
-  #       gid: ${GROUP_ID}
-  #   ports:
-  #     - "22222:22" # for ssh
-  #     - "5050:5000" # for many objectives
-  #   volumes:
-  #     - /etc/passwd:/etc/passwd
-  #     - /etc/shadow:/etc/shadow
-  #     - /etc/group:/etc/group
-  #     - ../:${HOME}/work/stock
-  #     - ./.jupyter:${HOME}/.jupyter
-  #     - ${HOME}/.ssh:${HOME}/.ssh
-  #   environment:
-  #     USER_NAME: ${USER}
-  #     PROJECT_ROOT: ${HOME}/work/stock
-  #   entrypoint: ${HOME}/work/stock/docker/entrypoint.sh
-  #   restart: always
-  # pptr_server:
-  #   build:
-  #     context: ..
-  #     dockerfile: docker/Dockerfile.pptr
-  #   ports:
-  #     - "22222:22"
-  #   volumes:
-  #     - ../:${HOME}/work/stock
-  #   environment:
-  #     USER_NAME: ${USER}
-  #     PROJECT_ROOT: ${HOME}/work/stock
-  #   entrypoint: /sbin/sshd -D
-  #   restart: always
-
-  selenium_server:
-    image: selenium/standalone-chrome:latest
+  stock:
+    build:
+      context: .
+      args:
+        user:
+        uid:
+        gid:
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - capabilities: ["gpu"]
+    #           driver: nvidia
+    #           device_ids: ["1"]
+    hostname: ${COMPOSE_PROJECT_NAME}
     ports:
-      - "4444:4444"
-      - "7900:7900"
+      # - "8886:8888" # jupyter
+      - "32222:22"  # ssh
     volumes:
-      - /dev/shm:/dev/shm
+      - /etc/localtime:/etc/localtime
+      - /etc/passwd:/etc/passwd  # same password, uid, gid with host
+      - /etc/shadow:/etc/shadow
+      - /etc/group:/etc/group
+      - ../:${HOME}/work/${COMPOSE_PROJECT_NAME}
+      - ${HOME}/.bashrc:${HOME}/.bashrc
+      - ${HOME}/.ssh:${HOME}/.ssh
+    environment:
+      SHELL: "/bin/bash"
+      USER_HOME: ${HOME}
+      USER_NAME: ${USER}
+      COMPOSE_PROJECT_NAME: ${COMPOSE_PROJECT_NAME}
+    entrypoint: ${HOME}/work/${COMPOSE_PROJECT_NAME}/docker/entrypoint.sh
     restart: always
