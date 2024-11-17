@@ -1,29 +1,54 @@
 FROM python:latest
 
+ENV DEBIAN_FRONTEND=noninteractive
+
+USER root
 # add user
-RUN apt-get update && apt-get install -y sudo
+ARG user
 ARG uid
 ARG gid
-ARG user
-RUN groupadd --gid ${gid} ${user} && useradd -ms /bin/bash --uid ${uid} --gid ${gid} ${user}
-RUN usermod -aG sudo ${user}
+RUN groupadd --gid ${gid} ${user} && useradd -m --uid ${uid} --gid ${gid} ${user}
 
-# ssh
+# ssh (https://docs.docker.com/engine/examples/running_ssh_service/)
 RUN apt-get update && apt-get upgrade -y && apt-get install openssh-server -y
 RUN mkdir /var/run/sshd
 RUN sed -ri 's/^#?PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config
 RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
 
-# poetry
-RUN curl -sSL https://install.python-poetry.org | POETRY_HOME=/usr/local python3 -
+# node
+RUN apt-get update && apt-get upgrade -y &&\
+    apt-get install git curl gcc nodejs npm sudo cmake build-essential -y
+# npm
+RUN npm install n -g && n stable
+RUN apt purge -y nodejs npm
 
-# talib
-COPY ./ta-lib-0.4.0-src.tar.gz /tmp/ta-lib-0.4.0-src.tar.gz
-WORKDIR /tmp
-RUN apt-get install -y build-essential
-RUN tar -xvf ta-lib-0.4.0-src.tar.gz && \
-    cd ta-lib/ &&\
-    ./configure --prefix=/usr &&\
-    make &&\
-    make install
-RUN pip install TA-Lib
+# pyright
+RUN npm install pyright -g
+
+# jupyter lab
+RUN pip install jupyterlab
+
+# jupyter lab extension
+RUN pip install\
+    lckr-jupyterlab-variableinspector\
+    jupyterlab-lsp
+# jupyterlab-emacskeys
+WORKDIR /opt
+RUN git clone https://github.com/kpe/jupyterlab-emacskeys.git &&\
+    cd jupyterlab-emacskeys &&\
+    npm install &&\
+    npm run build &&\
+    jupyter labextension link .
+RUN jupyter lab build
+
+# remove old version python
+RUN rm -rf /usr/bin/python* && cp /usr/local/bin/python* /usr/bin/
+
+# poetry
+USER ${user}
+RUN curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+USER root
+
+ENV DEBIAN_FRONTEND=newt
+
+WORKDIR /

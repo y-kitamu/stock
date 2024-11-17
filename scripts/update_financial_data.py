@@ -27,7 +27,7 @@ class CachedLimiterSession(CacheMixin, LimiterMixin, Session):
 
 
 session = CachedLimiterSession(
-    limiter=Limiter(RequestRate(2, Duration.SECOND * 0.2)),
+    limiter=Limiter(RequestRate(1, Duration.SECOND * 0.2)),
     bucket_class=MemoryQueueBucket,
     backend=SQLiteCache("yfinance.cache"),
 )
