@@ -885,7 +885,6 @@ CLX,CLOROX COMPANY,クロロックス,NYSE,小売,○
 CLYM,CLIMB BIO INC,クライム・バイオ,NASDAQ,医薬品（バイオテクノロジー）,○
 CM,CANADIAN IMPER,カナディアン・インペリアル・バンク・オブ・コマース,NYSE,金融（銀行）,○
 CMA,COMERICA,コメリカ,NYSE,金融（銀行）,○
-CMAX,CAREMAX INC,ケアマックス,NASDAQ,ヘルスケア,○
 CMBM,CAMBIUM NETWORKS,カンビアム・ネットワークス,NASDAQ,通信機器,○
 CMBT,CMB TECH NV,CMBテック,NYSE,運輸,○
 CMC,COMMERCIAL METAL,コマーシャル・メタルズ,NYSE,その他製造,○
@@ -954,6 +953,7 @@ COLM,COLUMBIA SPORTS,コロンビア・スポーツウエア,NASDAQ,その他製
 COM,DRX AUSP COM ETF,Direxion オースピス・ブロード・コモディティ戦略 ETF,NYSE,その他,○
 COMM,COMMSCOPE HLD,コムスコープ・ホールディング,NASDAQ,通信機器,○
 COMP,COMPASS INC,コンパス,NYSE,ソフトウェア・サービス,○
+CON,CONCENTRA GROUP,コンセントラ・グループ・ホールディングス・ペアレント,NYSE,ヘルスケア,○
 CONI,GNS COIN 1X SHRT,グラナイトシェアーズ1倍ショートCOINデイリーETF,NASDAQ,その他,○
 CONL,GNS COIN BL2X,グラナイトシェアーズ2倍ロングCOINデイリーETF,NASDAQ,その他,○
 COO,COOPER COMPANIES,クーパー,NASDAQ,ヘルスケア,○
@@ -1020,7 +1020,7 @@ CRVL,CORVEL CORP,コーベル,NASDAQ,ヘルスケア,○
 CRVO,CERVOMED INC,セルボメッド,NASDAQ,医薬品（バイオテクノロジー）,○
 CRVS,CORVUS PHARMACEU,コーバス・ファーマシューティカルズ,NASDAQ,医薬品（バイオテクノロジー）,○
 CRWD,CROWDSTRIKE HLD,クラウドストライク,NASDAQ,ソフトウェア・サービス,○
-CRWL,GNS 2x LONG CRWD,GraniteShares2倍ロングCRWDデイリーETF,NASDAQ,その他,○
+CRWL,GNS 2X LONG CRWD,GraniteShares2倍ロングCRWDデイリーETF,NASDAQ,その他,○
 CRWS,CROWN CRAFTS INC,クラウン・クラフツ,NASDAQ,その他製造,○
 CSAN,COSAN SA,コサン SA,NYSE,その他,○
 CSBR,CHAMPIONS ONCLGY,チャンピオンズ・オンコロジー,NASDAQ,医薬品（バイオテクノロジー）,○
@@ -2777,11 +2777,12 @@ MTRX,MATRIX SERVICE,マトリックス・サービス,NASDAQ,石油,○
 MTSI,MACOM TECHNOLOGY,メイコム・テクノロジー・ソリューションズ・ホールディングス,NASDAQ,半導体,○
 MTTR,MATTERPORT INC,マターポート,NASDAQ,ソフトウェア・サービス,○
 MTUS,METALLUS INC,メタルス,NYSE,その他製造,○
+MTVA,METAVIA INC,メタビア,NASDAQ,医薬品（バイオテクノロジー）,○
 MTW,MANITOWOC,マニトウォック,NYSE,機械,○
 MTX,MINERALS TECHNO,ミネラルズ・テクノロジーズ,NYSE,化学,○
 MTZ,MASTEC INC,マステック,NYSE,その他,○
 MU,MICRON TECH,マイクロン　テクノロジー,NASDAQ,半導体,○
-MULL,GNS 2x LONG MU,GraniteShares2倍ロングMUデイリーETF,NASDAQ,その他,○
+MULL,GNS 2X LONG MU,GraniteShares2倍ロングMUデイリーETF,NASDAQ,その他,○
 MULN,MULLEN AUTOMOTIV,ミューレン・オートモーティブ,NASDAQ,ソフトウェア・サービス,○
 MUR,MURPHY OIL CORP,マーフィー・オイル,NYSE,石油,○
 MURA,MURAL ONCOLOGY,ミューラル・オンコロジー,NASDAQ,医療サービス,○
@@ -2910,7 +2911,6 @@ NPK,NATIONAL PRESTO,ナショナル・プレスト・インダストリーズ,NY
 NPO,ENPRO INC,エンプロ,NYSE,その他製造,○
 NPWR,NET POWER INC,ネット・パワー,NYSE,電力,○
 NR,NEWPARK RESOURCE,ニューパーク・リソーシーズ,NYSE,石油,○
-NRBO,NEUROBO PHARMA,ニューロボ・ファーマシューティカルズ,NASDAQ,医薬品（バイオテクノロジー）,○
 NRC,NATIONL RESEARCH,ナショナル・リサーチ,NASDAQ,その他,○
 NRDS,NERDWALLET INC,ナードウォレット,NASDAQ,金融（銀行）,○
 NRDY,NERDY INC,ナーディ ,NYSE,ソフトウェア・サービス,○
@@ -4165,7 +4165,7 @@ TSLL,DRX TSLA BL2X,Direxion デイリー TSLA ブル2倍株式,NASDAQ,その他,
 TSLR,GNS TSLA BL2X,グラナイトシェアーズ2倍ロングTSLAデイリーETF,NASDAQ,その他,○
 TSLS,DRX TSLA BR1X,Direxion デイリー TSLA 株 ベア1倍 ETF,NASDAQ,その他,○
 TSM,TAIWAN SEMI ADR,タイワン・セミコンダクター・マニュファクチャリング,NYSE,半導体,○
-TSMU,GNS 2x LONG TSM,GraniteShares2倍ロングTSMデイリーETF,NASDAQ,その他,○
+TSMU,GNS 2X LONG TSM,GraniteShares2倍ロングTSMデイリーETF,NASDAQ,その他,○
 TSN,TYSON FOODS,タイソン・フーズ,NYSE,食品,○
 TSQ,TOWNSQUARE MEDIA,タウンスクエア・メディア,NYSE,エンターテイメント,○
 TSVT,2SEVENTY BIO,2セブンティ・バイオ,NASDAQ,ヘルスケア,○
