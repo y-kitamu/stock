@@ -20,13 +20,13 @@ fake-useragent = "^1.4.0"
 openpyxl = "^3.1.2"
 xlrd = "^2.0.1"
 requests-html = "^0.10.0"
-polars = "^0.20.18"
+polars = "^1.17.1"
 plotly = "^5.22.0"
 #tensorflow = "^2.17.0"
 opencv-python = "^4.10.0.84"
 xlwings = "^0.32.1"
 pandas = "^2.2.2"
-numpy = "^1.19.5"
+numpy = "^2.2.1"
 # ray = {extras = ["default", "rllib", "tune"], version = "^2.34.0"}
 symfit = "^0.5.6"
 # tensortrade = {git = "https://github.com/tensortrade-org/tensortrade.git"}
@@ -36,6 +36,7 @@ hvplot = "^0.11.1"
 pyarrow = "^18.0.0"
 lightgbm = "^4.5.0"
 scikit-learn = "^1.5.2"
+crypto = {path = "../crypto", develop = true}
 
 [tool.poetry.group.dev.dependencies]
 ipykernel = "^6.29.3"

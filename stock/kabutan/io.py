@@ -1,8 +1,4 @@
 """io.py
-
-Author : Yusuke Kitamura
-Create Date : 2024-07-29 18:43:01
-Copyright (c) 2019- Yusuke Kitamura <ymyk6602@gmail.com>
 """
 
 import datetime
@@ -20,7 +16,7 @@ def get_code_df(include_etf: bool = False) -> pl.DataFrame:
     code_df = pl.read_csv(code_csv_path)
     if not include_etf:
         code_df = code_df.filter(pl.col("市場・商品区分").str.contains("内国株式"))
-    code_df = code_df.filter(pl.col("コード").str.lengths() == 4)
+    code_df = code_df.filter(pl.col("コード").str.len_chars() == 4)
     return code_df
 
 
