@@ -54,7 +54,7 @@ rapidfuzz = "^3.6.2"
 # gnn = {path = "../gnn_dev", develop = true}
 #gnn = {path = "../gnn_dev"}
 black = "^24.4.2"
-crypto = {path = "../../../crypto", develop = true}
+crypto = {path = "../crypto", develop = true}
 
 # [build-system]
 # requires = ["poetry>=1.00"]
