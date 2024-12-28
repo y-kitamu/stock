@@ -23,5 +23,5 @@ runs:
       with:
         poetry-version: ${{ matrix.poetry-version }}
     - name: Install dependencies
-      run: poetry install --no-directory --without dev
+      run: poetry install --no-directory
       shell: bash
