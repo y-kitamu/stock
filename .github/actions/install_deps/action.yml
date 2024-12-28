@@ -19,7 +19,7 @@ runs:
           sudo apt-get install google-chrome-stable
       shell: bash
     - name: Set up Poetry
-      uses: abatilo/actions-poetry
+      uses: abatilo/actions-poetry@latest
       with:
         poetry-version: ${{ matrix.poetry-version }}
     - name: Install dependencies
