@@ -16,14 +16,13 @@ jobs:
       fail-fast: false
       matrix:
         python-version: ["3.12"]
-        poetry-version: ["1.2.2"]
     steps:
     - uses: actions/checkout@v2
     - name: Build
       uses: ./.github/actions/install_deps
     - name: Run
       run: |
-        poetry run python scripts/update_financial_data.py
+        python scripts/update_financial_data.py
         # poetry run python scripts/update_watch_list.py
         # poetry run python scripts/create_watch_list_html.py
     - name: Diff

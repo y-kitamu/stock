@@ -19,5 +19,5 @@ runs:
           sudo apt-get install google-chrome-stable
       shell: bash
     - name: Install dependencies
-      run: pip install .
+      run: pip install -e .
       shell: bash

@@ -16,17 +16,16 @@ jobs:
       fail-fast: false
       matrix:
         python-version: ["3.12"]
-        poetry-version: ["1.2.2"]
     steps:
     - uses: actions/checkout@v2
     - name: Build
       uses: ./.github/actions/install_deps
     - name: Run
       run: |
-        poetry run python scripts/update_code_list_jp.py
-        poetry run python scripts/update_stock_data_jp.py
-        poetry run python scripts/update_financial_data_jp.py
-        poetry run python scripts/divide_stocks_jp.py
+        python scripts/update_code_list_jp.py
+        python scripts/update_stock_data_jp.py
+        python scripts/update_financial_data_jp.py
+        python scripts/divide_stocks_jp.py
         # poetry run python scripts/update_watch_list_jp.py
         # poetry run python scripts/create_watch_list_jp_html.py
     - name: Diff
