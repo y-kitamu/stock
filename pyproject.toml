@@ -36,6 +36,7 @@ hvplot = "^0.11.1"
 pyarrow = "^18.0.0"
 lightgbm = "^4.5.0"
 scikit-learn = "^1.5.2"
+crypto = {path = "../crypto", develop = true}
 
 [tool.poetry.group.dev.dependencies]
 ipykernel = "^6.29.3"
@@ -54,7 +55,6 @@ rapidfuzz = "^3.6.2"
 # gnn = {path = "../gnn_dev", develop = true}
 #gnn = {path = "../gnn_dev"}
 black = "^24.4.2"
-crypto = {path = "../crypto", develop = true}
 
 # [build-system]
 # requires = ["poetry>=1.00"]
