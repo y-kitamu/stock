@@ -642,7 +642,6 @@ BSAC,BNC SANTANDER CH,バンコ・サンタンデール・チリ,NYSE,金融（�
 BSBK,BOGOTA FINANCIAL,ボゴタ・ファイナンシャル,NASDAQ,金融（銀行）,○
 BSBR,BANCO SNT BRASIL,バンコ・サンタンデール・ブラジル,NYSE,金融（銀行）,○
 BSET,BASSETT FRNITURE,バセット・ファニチャー・インダストリーズ,NASDAQ,小売,○
-BSIG,BRIGHTSPHR INVST,ブライトスフィア・インベストメント・グループ,NYSE,その他,○
 BSRR,SIERRA BANCORP,シエラ・バンコープ,NASDAQ,金融（銀行）,○
 BSV,VA S-TERM BOND,バンガード・米国短期債券ETF,NYSE,その他,○
 BSVN,BANK7 CORP,バンク7,NASDAQ,金融（銀行）,○
@@ -716,6 +715,7 @@ CAN,CANAAN INC,カナン,NASDAQ,半導体,○
 CANG,CANGO INC,カンゴ,NYSE,その他,○
 CAPR,CAPRICOR THERA,カプリコー・セラピューティクス,NASDAQ,医薬品（バイオテクノロジー）,○
 CAR,AVIS BUDGET,エイビス・バジェット・グループ ,NASDAQ,運輸,○
+CARA,CARA THERAPEUTCS,カラ・セラピューティクス,NASDAQ,医薬品（バイオテクノロジー）,○
 CARE,CARTER BANK TRST,カーター・バンク・アンド・トラスト,NASDAQ,金融（銀行）,○
 CARG,CARGURUS INC,カーグルズ,NASDAQ,小売,○
 CARM,CARISMA THERAP,カリスマ・セラピューティクス,NASDAQ,医薬品（バイオテクノロジー）,○
@@ -1219,7 +1219,6 @@ DOW,DOW INC,ダウ・インク,NYSE,化学,○
 DOX,AMDOCS,アムドックス,NASDAQ,ソフトウェア・サービス,○
 DOYU,DOUYU INTL HLD,ドウユ・インターナショナル・ホールディングス,NASDAQ,ソフトウェア・サービス,○
 DPST,DRX RGN BNK BL3X,Direxion デイリー 地方銀行 ブル3倍 ETF,NYSE,その他,○
-DPZ,DOMINOS PIZZA I,ドミノ・ピザ,NYSE,食品,○
 DQ,DAQO NEW ENERGY,ダコ・ニューエナジー,NYSE,化学,○
 DRCT,DIRECT DIGITAL,ダイレクト・デジタル・ホールディングス,NASDAQ,ソフトウェア・サービス,○
 DRD,DRDGOLD LTD-ADR,DRDゴールド,NYSE,その他,○
@@ -1735,7 +1734,6 @@ GDX,V GOLD MINERS,ヴァンエック・金鉱株ETF,NYSE,その他,○
 GDXJ,V JR GOLD MINER,ヴァンエック・中小型金鉱株ETF,NYSE,その他,○
 GDYN,GRID DYNAMICS HL,グリッド・ダイナミクス・ホールディングス,NASDAQ,ソフトウェア・サービス,○
 GE,GE AEROSPACE,GEエアロスペース,NYSE,コングロマリット,○
-GEAR,REVELYST INC,レべリスト,NYSE,エンターテイメント,○
 GEF,GREIF INC,グライフ,NYSE,その他製造,○
 GEG,GREAT ELM CAPITA,グレート・エルム・キャピタル・グループ,NASDAQ,ソフトウェア・サービス,○
 GEHC,GE HEALTHCA TECH,GEヘルスケア・テクノロジーズ,NASDAQ,その他製造,○
@@ -2048,7 +2046,6 @@ IBN,ICICI BANK ADR,ICICIバンク,NYSE,金融（銀行）,○
 IBOC,INTERNATIONAL BA,インターナショナル・バンクシェアーズ,NASDAQ,金融（銀行）,○
 IBP,INSTALLD BUILDNG,インストールド・ビルディング・プロダクツ,NYSE,その他製造,○
 IBRX,IMMUNITYBIO INC,イミュニティバイオ,NASDAQ,医薬品（バイオテクノロジー）,○
-IBTX,INDEPENDENT BANK,インディペンデント・バンク・グループ,NASDAQ,金融（銀行）,○
 ICAD,ICAD,アイキャド,NASDAQ,ヘルスケア,○
 ICCC,IMMUCELL CORP,イミュセル,NASDAQ,医薬品（バイオテクノロジー）,○
 ICE,INTERCONTI EXCHG,インターコンチネンタル・エクスチェンジ,NYSE,金融コングロマリット,○
@@ -2593,7 +2590,6 @@ MCO,MOODYS CORP,ムーディーズ,NYSE,その他,○
 MCRB,SERES THERAPEU,セレス・セラピューティクス,NASDAQ,医薬品（バイオテクノロジー）,○
 MCRI,MONARCH CNO RSRT,モナーク・カジノ＆リゾート,NASDAQ,エンターテイメント,○
 MCS,THE MARCUS CORP,マーカス,NYSE,エンターテイメント,○
-MCW,MISTER CAR WASH,ミスター・カー・ウォッシュ,NYSE,その他,○
 MCY,MERCURY GENERAL,マーキュリー・ゼネラル,NYSE,金融(保険),○
 MD,PEDIATRIX MEDICL,ペディアトリックス・メディカル・グループ,NYSE,医療サービス,○
 MDB,MONGODB INC,モンゴDB,NASDAQ,ソフトウェア・サービス,○
@@ -2687,7 +2683,6 @@ MNSO,MINISO GROUP,ミニソー・グループ・ホールディングス,NYSE,�
 MNST,MONSTER BEVERAGE,モンスタービバレッジ,NASDAQ,飲料,○
 MNTK,MONTAUK RENEWABL,モントーク・リニューアブルズ,NASDAQ,電力,○
 MNTS,MOMENTUS INC,モメンタス,NASDAQ,航空機・宇宙,○
-MNTX,MANITEX INTL,マニテックス・インターナショナル,NASDAQ,小売,○
 MNY,MONEYHERO,マネーヒーロー,NASDAQ,その他,○
 MO,ALTRIA GROUP INC,アルトリア・グループ,NYSE,食品・タバコ,○
 MOD,MODINE MANUFACTR,モーディン・マニュファクチャリング,NYSE,その他製造,○
@@ -3058,6 +3053,7 @@ OPRA,OPERA LTD,オペラ,NASDAQ,ソフトウェア・サービス,○
 OPRT,OPORTUN FINANCL,オポーチュン・ファイナンシャル,NASDAQ,その他,○
 OPRX,OPTIMIZERX CORP,オプティマイズRX,NASDAQ,医薬品,○
 OPT,OPTHEA LTD,オプセア,NASDAQ,医薬品（バイオテクノロジー）,○
+OPTN,OPTINOSE INC,オプティノーズ,NASDAQ,医薬品,○
 OPY,OPPENHEIMER HOLD,オッペンハイマー・ホールディングス,NYSE,金融（証券）,○
 OR,OSISKO GLD ROYAL,オシスコ・ゴールド・ロイヤルティーズ,NYSE,その他,○
 ORA,ORMAT TECHNOLOGI,オーマット・テクノロジーズ,NYSE,電力,○
@@ -3078,6 +3074,7 @@ OSIS,OSI SYSTEMS INC,OSIシステムズ,NASDAQ,その他製造,○
 OSK,OSHKOSH CORP,オシュコシュ,NYSE,自動車,○
 OSPN,ONESPAN INC,ワンスパン,NASDAQ,ネットワークセキュリティー,○
 OSS,ONE STOP SYSTEMS,ワン・ストップ・システムズ,NASDAQ,通信サービス,○
+OST,OSTIN TECHNOLOGY,オスティン・テクノロジー・グループ,NASDAQ,その他製造,○
 OSUR,ORASURE TECHNO,オラシュア・テクノロジーズ,NASDAQ,ヘルスケア,○
 OSW,ONESPAWORLD HLD,ワンスパワールド・ホールディングス,NASDAQ,ソフトウェア・サービス,○
 OTEX,OPEN TEXT CORP,オープンテキスト,NASDAQ,ソフトウェア・サービス,○
