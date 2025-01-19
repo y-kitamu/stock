@@ -72,7 +72,7 @@ def fetch_data(symbol: str, date: datetime.date, output_path: Path):
 
 
 if __name__ == "__main__":
-    start_date = datetime.date.today() - datetime.timedelta(days=7)
+    start_date = datetime.date.today() - datetime.timedelta(days=14)
     end_date = datetime.date.today() - datetime.timedelta(days=1)  # datetime.date.today()
     date = start_date
 
@@ -89,7 +89,7 @@ if __name__ == "__main__":
         while date <= end_date:
             date_str = date.strftime("%Y%m%d")
             output_path = stock.DATA_DIR / "minutes_yf" / date_str / f"{symbol}_{date_str}.csv"
-            if output_path.exists() or date.weekday() >= 5 or date == datetime.date(2024, 9, 2):
+            if output_path.exists() or date.weekday() >= 5:
                 date += datetime.timedelta(days=1)
                 continue
 

@@ -1,0 +1,41 @@
+{
+  "epochs": 100,
+  "pretrain_model_dir": null,
+  "network_params": {
+    "name": "conv_classifier",
+    "params": {
+      "pool_num": 1,
+      "conv_per_pool": 2,
+      "base_filters": 32,
+      "num_classes": 10,
+      "use_redisual": true
+    }
+  },
+  "train_dataloader_params": {
+    "name": "mnist",
+    "params": {
+      "batch_size": 128
+    }
+  },
+  "test_dataloader_params": {
+    "name": "mnist",
+    "params": {
+      "batch_size": 32
+    }
+  },
+  "optimizer_params": {
+    "name": "adam",
+    "params": {
+      "learning_rate": 0.001
+    }
+  },
+  "loss_params": {
+    "name": "cce",
+    "params": {
+      "from_logits": true
+    }
+  },
+  "network_input_keys": ["input"],
+  "loss_input_keys": ["y_true", "y_pred"],
+  "loss_target_keys": ["loss"]
+}
