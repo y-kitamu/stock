@@ -182,7 +182,7 @@ if __name__ == "__main__":
 
     # 日本株
     code_list = domestic_market_indices + stock.get_code_list(include_etf=True)
-    fetch_stock_data(code_list, 302, 8)
+    fetch_stock_data(code_list, 332, 8)
 
     # # us
     code_list = us_market_indices

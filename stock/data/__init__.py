@@ -51,7 +51,7 @@ def update_jp_ticker_list(
 
     output_csv_path.parent.mkdir(exist_ok=True, parents=True)
     with open(output_csv_path, "w", encoding="utf-8") as f:
-        csv_writer = csv.writer(f)
+        csv_writer = csv.writer(f, lineterminator="\n")
         csv_writer.writerows(rows)
 
 
