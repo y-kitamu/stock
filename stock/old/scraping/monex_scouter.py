@@ -13,8 +13,8 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.command import Command
 
-from .. import logger
 from ..constants import PROJECT_ROOT
+from ..logging import logger
 
 MANEX_BASE_URL = "https://mst.monex.co.jp"
 MANEX_LOGIN_PAGE_URL = f"{MANEX_BASE_URL}/pc/ITS/login/LoginIDPassword.jsp"

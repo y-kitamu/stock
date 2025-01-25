@@ -116,6 +116,12 @@ log/
 data/old/
 data/financials/
 data/ms_data
+data/preprocessed
+data/us_data
+data/us_tickers.csv
+data/tick_data
+docker/old/
+docker/ta-lib-0.4.0-src.tar.gz
 *.cache
 results/
 *.npz
@@ -125,3 +131,4 @@ data/train/*/schema/*.json
 *.zip
 data/minutes*
 cert/
+*.pkl

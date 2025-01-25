@@ -2,13 +2,11 @@
 
 Update financial data from Yahoo Finance.
 Data is saved in ${PROJECT_ROOT}/data/codes/${ticker}.json.
-33
-Author : Yusuke Kitamura
-Create Date : 2023-08-03 09:50:02
-Copyright (c) 2019- Yusuke Kitamura <ymyk6602@gmail.com>
 """
+
 import argparse
 import csv
+import functools
 import json
 from pathlib import Path
 
@@ -29,10 +27,11 @@ class CachedLimiterSession(CacheMixin, LimiterMixin, Session):
 
 
 session = CachedLimiterSession(
-    limiter=Limiter(RequestRate(2, Duration.SECOND * 0.2)),
+    limiter=Limiter(RequestRate(1, Duration.SECOND * 0.2)),
     bucket_class=MemoryQueueBucket,
     backend=SQLiteCache("yfinance.cache"),
 )
+session.request = functools.partial(session.request, timeout=10)
 
 
 def update_ticker_list(ticker_list_path: Path, ticker_list_url: str = TICKER_LIST_URL):
@@ -42,9 +41,7 @@ def update_ticker_list(ticker_list_path: Path, ticker_list_url: str = TICKER_LIS
             with open(ticker_list_path, "w") as f:
                 f.write(res.text)
         else:
-            stock.logger.error(
-                f"Failed to get ticker list. Status code: {res.status_code}\n{res.text}"
-            )
+            stock.logger.error(f"Failed to get ticker list. Status code: {res.status_code}\n{res.text}")
     except requests.exceptions.ConnectionError:
         raise ConnectionError("Connection Error. Check your network connection.")
     except requests.exceptions.Timeout:

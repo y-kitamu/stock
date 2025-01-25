@@ -1,8 +1,5 @@
 """fetch_data_from_yf.py
 yahoo finance apiを使用してデータを取得する
-Author : Yusuke Kitamura
-Create Date : 2024-09-08 14:01:35
-Copyright (c) 2019- Yusuke Kitamura <ymyk6602@gmail.com>
 """
 
 import datetime
@@ -27,7 +24,7 @@ class CachedLimiterSession(CacheMixin, LimiterMixin, Session):
 
 
 session = CachedLimiterSession(
-    limiter=Limiter(RequestRate(10, Duration.SECOND)),  # max 2 requests per 1 seconds
+    limiter=Limiter(RequestRate(1, Duration.SECOND * 0.5)),  # max 2 requests per 1 seconds
     bucket_class=MemoryQueueBucket,
     backend=SQLiteCache("yfinance.cache"),
 )
@@ -75,7 +72,7 @@ def fetch_data(symbol: str, date: datetime.date, output_path: Path):
 
 
 if __name__ == "__main__":
-    start_date = datetime.date.today() - datetime.timedelta(days=7)
+    start_date = datetime.date.today() - datetime.timedelta(days=14)
     end_date = datetime.date.today() - datetime.timedelta(days=1)  # datetime.date.today()
     date = start_date
 
@@ -92,7 +89,7 @@ if __name__ == "__main__":
         while date <= end_date:
             date_str = date.strftime("%Y%m%d")
             output_path = stock.DATA_DIR / "minutes_yf" / date_str / f"{symbol}_{date_str}.csv"
-            if output_path.exists() or date.weekday() >= 5 or date == datetime.date(2024, 9, 2):
+            if output_path.exists() or date.weekday() >= 5:
                 date += datetime.timedelta(days=1)
                 continue
 
