@@ -84,7 +84,6 @@ ADUS,ADDUS HOMECARE,アダス・ホームケア,NASDAQ,ヘルスケア,○
 ADV,ADVANTAGE SOLN,アドバンテージ・ソリューションズ,NASDAQ,ソフトウェア・サービス,○
 ADVM,ADVERUM BIOTECH,アドベラム・バイオテクノロジーズ,NASDAQ,医薬品（バイオテクノロジー）,○
 ADXN,ADDEX THERAPE,アデックス・セラピューティクス,NASDAQ,医薬品（バイオテクノロジー）,○
-AE,ADAMS RES&ENER,アダムス・リソーシズ・アンド・エナジー,NYSE,石油,○
 AEE,AMEREN CORP.,アメレン,NYSE,その他製造,○
 AEG,AEGON LTD,エイゴン,NYSE,金融(保険),○
 AEHL,ANTELOPE ENT,アンテロープ・エンタープライズ・ホールディング,NASDAQ,その他製造,○
@@ -466,6 +465,7 @@ BBD,BANCO BRADESCO,バンコ・ブラデスコ,NYSE,金融（銀行）,○
 BBDO,BANCO BRADESCO,ブラデスコ銀行,NYSE,金融（銀行）,○
 BBH,V BIOTECH,ヴァンエック・バイオテクETF,NASDAQ,その他,○
 BBIO,BRIDGEBIO PHARMA,ブリッジバイオ･ファーマ,NASDAQ,医薬品（バイオテクノロジー）,○
+BBNX,BETA BIONICS,ベータ・バイオニクス,NASDAQ,医療サービス,○
 BBSI,BARRETT BUSINESS,バレット・ビジネス・サービシーズ,NASDAQ,その他,○
 BBW,BUILD-A-BEAR WRK,ビルド・ア・ベア・ワークショップ,NYSE,専門店,○
 BBWI,BATH AND BODY,バス&ボディ・ワークス,NYSE,専門店,○
@@ -572,6 +572,7 @@ BLKB,BLACKBAUD INC,ブラックボー,NASDAQ,ソフトウェア・サービス,�
 BLMN,BLOOMIN BRANDS,ブルーミン・ブランズ,NASDAQ,外食,○
 BLND,BLEND LABS INC,ブレンド・ラブス,NYSE,ソフトウェア・サービス,○
 BLNK,BLINK CHARGING,ブリンク・チャージング,NASDAQ,その他製造,○
+BLRX,BIOLINE RX LTD,バイオラインRX,NASDAQ,医薬品,○
 BLTE,BELITE BIO INC,ビーライト・バイオ,NASDAQ,医薬品（バイオテクノロジー）,○
 BLUE,BLUEBIRD BIO,ブルーバード・バイオ,NASDAQ,医薬品（バイオテクノロジー）,○
 BLV,VA L-TERM BOND,バンガード・米国長期債券ETF,NYSE,その他,○
@@ -1516,7 +1517,6 @@ FCF,1ST COMMONWEALTH,ファースト・コモンウェルス・ファイナン�
 FCFS,FIRSTCASH INC,ファーストキャッシュ,NASDAQ,専門店,○
 FCN,FTI CONSULTING,FTIコンサルティング,NYSE,ソフトウェア・サービス,○
 FCNCA,FIRST CITIZENS,ファースト・シチズンズ・バンクシェアーズ,NASDAQ,金融（銀行）,○
-FCUV,FOCUS UNIVERSAL,フォーカス・ユニバーサル,NASDAQ,ソフトウェア・サービス,○
 FCVT,FT SSI STRAT CON,ファーストトラスト SSI ストラテジック転換証券ETF,NASDAQ,その他,○
 FCX,FREEPORT MCMORAN,フリーポート・マクモラン,NYSE,アルミ,○
 FDBC,FIDELITY DD BANC,フィデリティ・D&D・バンコープ,NASDAQ,金融（銀行）,○
@@ -2023,7 +2023,6 @@ HYLN,HYLIION HOLDINGS,ハイリオン・ホールディングス,NYSE,その他�
 HYLS,FT TACTCL HYIELD,ファーストトラスト タクティカル ハイイールドETF,NASDAQ,その他,○
 HYMC,HYCROFT MINING,ハイクロフト・マイニング・ホールディング,NASDAQ,その他,○
 HYZD,WM IR HEDGED HYB,ウィズダムツリー 米国ハイイールド社債ファンド（金利ヘッジ型）,NASDAQ,その他,○
-HYZN,HYZON MOTORS INC,ハイゾン・モーターズ,NASDAQ,自動車,○
 HZO,MARINEMAX INC,マリンマックス,NYSE,小売,○
 IAC,IAC INC,IACインコーポレーティッド,NASDAQ,その他,○
 IAG,IAMGOLD CORP,イアムゴールド,NYSE,その他,○
@@ -2861,6 +2860,7 @@ NKTR,NEKTAR THERAPEUT,ネクター・セラピューティクス,NASDAQ,医薬�
 NKTX,NKARTA INC,ンカルタ,NASDAQ,医薬品（バイオテクノロジー）,○
 NL,NL INDUSTRIES,NLインダストリーズ,NYSE,その他製造,○
 NLR,V URANIUM NL ETF,ヴァンエック・ウラン・アンド・原子力エネルギーETF,NYSE,その他,○
+NMG,NOUVEAU MONDE,ヌーボー・モンド・グラファイト,NYSE,その他製造,○
 NMIH,NMI HOLDINGS INC,NMIホールディングス,NASDAQ,金融(保険),○
 NN,NEXTNAV INC,ネクストナブ,NASDAQ,ソフトウェア・サービス,○
 NNBR,NN INC,NNインク,NASDAQ,その他製造,○
@@ -4634,7 +4634,6 @@ ZIMV,ZIMVIE INC,ジムヴィー,NASDAQ,医療サービス,○
 ZION,ZIONS BANCORP,ザイオンズ・バンコープ,NASDAQ,金融（銀行）,○
 ZIP,ZIPRECRUITER,ジップリクルーター,NYSE,その他,○
 ZK,ZEEKR INTLI TECH,ジーカー・インテリジェント・テクノロジー・ホールディング,NYSE,自動車,○
-ZKIN,ZK INTERNATIONAL,ZKインターナショナル・グループ,NASDAQ,その他製造,○
 ZLAB,ZAI LAB LTD,ザイ・ラボ,NASDAQ,医薬品（バイオテクノロジー）,○
 ZM,ZOOM COMMUNICTNS,ズーム・コミュニケーションズ,NASDAQ,ソフトウェア・サービス,○
 ZNTL,ZENTALIS PHARMA,ゼンタリス・ファーマシューティカルズ,NASDAQ,医薬品（バイオテクノロジー）,○
