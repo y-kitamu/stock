@@ -1,0 +1,52 @@
+{
+  "epochs": 50,
+  "pretrain_model_dir": null,
+  "network_params": {
+    "name": "conv_net",
+    "params": {
+      "pool_num": 2,
+      "conv_per_pool": 2,
+      "base_filters": 32,
+      "output_dim": 1,
+      "residual": true
+    }
+  },
+  "train_dataloader_params": {
+    "name": "gaf",
+    "params": {
+      "batch_size": 32,
+      "csv_path_list": ["../data/daily/0000.csv"],
+      "sample_size": 20,
+      "steps_per_epoch": 10000,
+      "test_start_date": "2024-01-01",
+      "test_end_date": "2025-01-20"
+    }
+  },
+  "test_dataloader_params": {
+    "name": "gaf",
+    "params": {
+      "batch_size": 32,
+      "csv_path_list": ["../data/daily/0000.csv"],
+      "sample_size": 20,
+      "steps_per_epoch": 1000,
+      "test_start_date": "2024-01-01",
+      "test_end_date": "2025-01-20"
+    }
+  },
+  "optimizer_params": {
+    "name": "adam",
+    "params": {
+      "learning_rate": 0.001
+    }
+  },
+  "loss_params": {
+    "name": "bce",
+    "params": {
+      "label_smoothing": 0.05,
+      "scale": 10.0
+    }
+  },
+  "network_input_keys": ["input"],
+  "loss_input_keys": ["y_true", "y_pred"],
+  "loss_target_keys": ["loss"]
+}

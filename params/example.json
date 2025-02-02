@@ -2,7 +2,7 @@
   "epochs": 100,
   "pretrain_model_dir": null,
   "network_params": {
-    "name": "conv_classifier",
+    "name": "conv_net",
     "params": {
       "pool_num": 1,
       "conv_per_pool": 2,
