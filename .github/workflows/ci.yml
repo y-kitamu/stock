@@ -2,8 +2,8 @@ name: Update Stock Data
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '0 5 * * *'
+#  schedule:
+#    - cron: '0 5 * * *'
 
 # env:
 #   AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
